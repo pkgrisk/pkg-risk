@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useMemo, useRef, useCallback } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { GradeBadge } from '../components/GradeBadge';
 import { RiskBadges } from '../components/RiskBadges';
+import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 import type { PackageSummary, Grade } from '../types/package';
 
 interface PackageListProps {
@@ -33,6 +34,7 @@ function getUnavailableTooltip(pkg: PackageSummary): string {
 }
 
 export function PackageList({ packages, ecosystem }: PackageListProps) {
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [sortKey, setSortKey] = useState<SortKey>('installs');
   const [sortAsc, setSortAsc] = useState(false);
@@ -40,6 +42,8 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
   const [securityFilter, setSecurityFilter] = useState<SecurityFilter>('all');
   const [maintenanceFilter, setMaintenanceFilter] = useState<MaintenanceFilter>('all');
   const [showUnscored, setShowUnscored] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const filteredAndSorted = useMemo(() => {
     let result = [...packages];
@@ -151,12 +155,37 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
     return `${Math.floor(diffDays / 365)} years ago`;
   };
 
+  const handleNavigate = useCallback(
+    (index: number) => {
+      const pkg = filteredAndSorted[index];
+      if (pkg) {
+        navigate(`/${ecosystem}/${pkg.name}`);
+      }
+    },
+    [filteredAndSorted, ecosystem, navigate]
+  );
+
+  const handleEscape = useCallback(() => {
+    setSearch('');
+    setSelectedIndex(-1);
+  }, []);
+
+  useKeyboardNavigation({
+    itemCount: filteredAndSorted.length,
+    selectedIndex,
+    onSelect: setSelectedIndex,
+    onEnter: handleNavigate,
+    searchInputRef,
+    onEscape: handleEscape,
+  });
+
   return (
     <div>
       <div className="filters">
         <input
+          ref={searchInputRef}
           type="text"
-          placeholder="Search packages..."
+          placeholder="Search packages... (press / to focus)"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="search-input"
@@ -236,8 +265,12 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
           </tr>
         </thead>
         <tbody>
-          {filteredAndSorted.map((pkg) => (
-            <tr key={pkg.name}>
+          {filteredAndSorted.map((pkg, index) => (
+            <tr
+              key={pkg.name}
+              className={index === selectedIndex ? 'selected' : ''}
+              onClick={() => navigate(`/${ecosystem}/${pkg.name}`)}
+            >
               <td>
                 {pkg.scores ? (
                   <GradeBadge grade={pkg.scores.grade} size="sm" />
