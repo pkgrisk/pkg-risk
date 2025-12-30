@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { PackageList } from './pages/PackageList';
 import { PackageDetail } from './pages/PackageDetail';
+import { About } from './pages/About';
 import type { PackageSummary, PackageAnalysis } from './types/package';
 import './App.css';
 
@@ -75,8 +76,9 @@ function App() {
             <span className="brand-icon">📦</span>
             <span className="brand-text">pkg-risk</span>
           </Link>
-          <div className="nav-stats">
+          <div className="nav-links">
             <span className="stat">{packages.length} packages</span>
+            <Link to="/about" className="nav-link">About</Link>
           </div>
         </nav>
 
@@ -89,6 +91,10 @@ function App() {
             <Route
               path="/:ecosystem/:name"
               element={<PackageDetail packages={packageDetails} />}
+            />
+            <Route
+              path="/about"
+              element={<About />}
             />
           </Routes>
         </main>
