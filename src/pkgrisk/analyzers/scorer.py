@@ -276,10 +276,11 @@ class Scorer:
 
         Factors:
         - Commit recency (decay curve)
-        - Commit frequency
-        - Issue response rate
+        - Commit presence (normalized, not raw volume)
+        - Issue response time and close rate
         - PR merge time
-        - Release frequency
+        - Release cadence (sweet spot scoring)
+        - Deprecation/archived status
         - LLM maintenance assessment
         """
         if not github_data:
@@ -290,6 +291,13 @@ class Scorer:
         issues = github_data.issues
         prs = github_data.prs
         releases = github_data.releases
+        repo = github_data.repo
+
+        # Deprecation/archived detection (major penalty)
+        if repo.is_archived:
+            score -= 40
+        if getattr(repo, 'is_deprecated', False):
+            score -= 30
 
         # Commit recency (exponential decay)
         if commits.last_commit_date:
@@ -298,13 +306,19 @@ class Scorer:
             recency_factor = math.exp(-days_ago / 180)
             score *= (0.3 + 0.7 * recency_factor)  # Minimum 30% of score from recency
 
-        # Commit frequency (6 months)
+        # Commit presence-based scoring (normalized approach)
+        # Instead of rewarding raw commit volume, focus on activity presence
         if commits.commits_last_6mo == 0:
-            score -= 20
-        elif commits.commits_last_6mo < 5:
-            score -= 10
-        elif commits.commits_last_6mo > 50:
-            score += 5
+            score -= 20  # No activity is concerning
+        elif commits.commits_last_6mo >= 1:
+            score += 5  # Has recent activity - good sign
+            # Small bonus for consistent activity, but not proportional to volume
+            if commits.commits_last_6mo >= 10:
+                score += 3  # Sustained activity
+
+        # Issue response time scoring
+        response_adjustment = self._calculate_issue_response_score(issues)
+        score += response_adjustment
 
         # Issue close rate
         total_issues = issues.open_issues + issues.closed_issues_6mo
@@ -319,11 +333,8 @@ class Scorer:
         if prs.stale_prs > 5:
             score -= min(15, prs.stale_prs * 2)
 
-        # Release frequency
-        if releases.releases_last_year == 0:
-            score -= 10
-        elif releases.releases_last_year >= 4:
-            score += 5
+        # Release cadence (sweet spot scoring)
+        score += self._calculate_release_cadence_score(releases, commits)
 
         # LLM maintenance assessment
         if llm_assessments and llm_assessments.maintenance:
@@ -340,6 +351,62 @@ class Scorer:
             score = score * 0.7 + llm_score * 0.3
 
         return ScoreComponent(score=max(0, min(100, score)), weight=self.WEIGHTS["maintenance"])
+
+    def _calculate_issue_response_score(self, issues: "IssueStats") -> float:
+        """Calculate score adjustment based on issue response times.
+
+        Rewards quick responses:
+        - First response < 48 hours (median): +10
+        - First response < 7 days: +5
+        - First response > 30 days: -10
+        - Close time < 30 days (median): +5
+        """
+        adjustment = 0.0
+
+        # Response time scoring
+        if issues.avg_response_time_hours is not None:
+            hours = issues.avg_response_time_hours
+            if hours < 48:
+                adjustment += 10
+            elif hours < 168:  # 7 days
+                adjustment += 5
+            elif hours > 720:  # 30 days
+                adjustment -= 10
+
+        # Close time scoring
+        if issues.avg_close_time_hours is not None:
+            hours = issues.avg_close_time_hours
+            if hours < 720:  # 30 days
+                adjustment += 5
+
+        return adjustment
+
+    def _calculate_release_cadence_score(
+        self, releases: "ReleaseStats", commits: "CommitActivity"
+    ) -> float:
+        """Calculate score based on release cadence sweet spot.
+
+        Optimal release frequency:
+        - 4-12 releases/year: +10 (sweet spot)
+        - 1-3 releases/year: +5 (stable, deliberate)
+        - 0 releases but active commits: -5 (no release discipline)
+        - >24 releases/year: neutral (may be too frequent)
+        """
+        releases_year = releases.releases_last_year
+
+        if 4 <= releases_year <= 12:
+            return 10  # Sweet spot
+        elif 1 <= releases_year <= 3:
+            return 5  # Stable, deliberate
+        elif releases_year == 0:
+            # No releases - check if there's commit activity
+            if commits.commits_last_6mo > 0:
+                return -5  # Active but no release discipline
+            return -10  # Truly inactive
+        elif releases_year > 24:
+            return 0  # Very frequent - neutral
+        else:
+            return 0  # 13-24 releases - neutral
 
     def _calculate_community_score(
         self,
@@ -569,7 +636,7 @@ class Scorer:
         - Version >= 1.0
         - Pre-release ratio
         - Has tests
-        - Has CI
+        - CI/CD depth (tests, lint, security, release, multi-platform)
         - Regression issues
         - LLM changelog assessment
         """
@@ -599,19 +666,13 @@ class Scorer:
         elif releases.prerelease_ratio < 0.1:
             score += 5
 
-        # Test suite
+        # Test suite presence
         if files.has_tests_dir:
-            score += 10
+            score += 5
 
-        # CI/CD
-        if ci.has_github_actions:
-            score += 10
-            # Pass rate bonus
-            if ci.recent_runs_pass_rate is not None:
-                if ci.recent_runs_pass_rate >= 95:
-                    score += 5
-                elif ci.recent_runs_pass_rate < 70:
-                    score -= 10
+        # CI/CD depth assessment
+        ci_depth_score = self._calculate_ci_depth_score(ci)
+        score += ci_depth_score
 
         # Regression issues penalty
         if issues.regression_issue_count > 5:
@@ -628,6 +689,43 @@ class Scorer:
                 score += 5
 
         return ScoreComponent(score=max(0, min(100, score)), weight=self.WEIGHTS["stability"])
+
+    def _calculate_ci_depth_score(self, ci: "CIStatus") -> float:
+        """Calculate CI/CD depth score.
+
+        Awards points for CI maturity:
+        - Has tests workflow: +5
+        - Has lint/format workflow: +3
+        - Has security scanning workflow: +5
+        - Has release automation: +3
+        - Multiple OS/platform testing: +5
+        - High pass rate: +5
+        """
+        if not ci.has_github_actions:
+            return -5  # No CI is a negative signal
+
+        score = 5.0  # Base score for having CI
+
+        # CI depth components
+        if ci.has_tests_workflow:
+            score += 5
+        if ci.has_lint_workflow:
+            score += 3
+        if ci.has_security_workflow:
+            score += 5
+        if ci.has_release_workflow:
+            score += 3
+        if ci.has_multi_platform:
+            score += 5
+
+        # Pass rate adjustment
+        if ci.recent_runs_pass_rate is not None:
+            if ci.recent_runs_pass_rate >= 95:
+                score += 5
+            elif ci.recent_runs_pass_rate < 70:
+                score -= 10
+
+        return score
 
 
 def calculate_percentiles(packages: list[dict]) -> list[dict]:

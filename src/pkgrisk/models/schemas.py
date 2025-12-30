@@ -100,6 +100,7 @@ class GitHubRepoData(BaseModel):
     is_archived: bool = False
     is_fork: bool = False
     has_discussions: bool = False
+    is_deprecated: bool = False  # Detected from README/description
 
 
 class ContributorStats(BaseModel):
@@ -221,6 +222,12 @@ class CIStatus(BaseModel):
     has_github_actions: bool = False
     workflow_count: int = 0
     recent_runs_pass_rate: float | None = None
+    # CI/CD depth assessment fields
+    has_tests_workflow: bool = False
+    has_lint_workflow: bool = False
+    has_security_workflow: bool = False
+    has_release_workflow: bool = False
+    has_multi_platform: bool = False  # Tests on multiple OS/platforms
 
 
 class GitHubData(BaseModel):

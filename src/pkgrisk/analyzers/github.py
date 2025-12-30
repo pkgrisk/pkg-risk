@@ -175,10 +175,15 @@ class GitHubFetcher:
 
         license_info = data.get("license") or {}
 
+        # Detect deprecation signals from description and topics
+        description = data.get("description") or ""
+        topics = data.get("topics", [])
+        is_deprecated = self._detect_deprecation(description, topics)
+
         return GitHubRepoData(
             owner=owner,
             name=repo,
-            description=data.get("description"),
+            description=description,
             stars=data.get("stargazers_count", 0),
             forks=data.get("forks_count", 0),
             open_issues=data.get("open_issues_count", 0),
@@ -189,11 +194,49 @@ class GitHubFetcher:
             default_branch=data.get("default_branch", "main"),
             license=license_info.get("spdx_id"),
             language=data.get("language"),
-            topics=data.get("topics", []),
+            topics=topics,
             is_archived=data.get("archived", False),
             is_fork=data.get("fork", False),
             has_discussions=data.get("has_discussions", False),
+            is_deprecated=is_deprecated,
         )
+
+    def _detect_deprecation(self, description: str, topics: list[str]) -> bool:
+        """Detect if a repository is deprecated based on description and topics.
+
+        Looks for:
+        - "DEPRECATED" in description
+        - "deprecated" topic
+        - "unmaintained" topic
+        - "maintenance mode" language
+        """
+        desc_lower = description.lower()
+
+        # Check for deprecation keywords in description
+        deprecation_keywords = [
+            "deprecated",
+            "no longer maintained",
+            "unmaintained",
+            "not maintained",
+            "maintenance mode",
+            "abandoned",
+            "end of life",
+            "eol",
+            "superseded by",
+            "replaced by",
+            "use instead",
+        ]
+
+        for keyword in deprecation_keywords:
+            if keyword in desc_lower:
+                return True
+
+        # Check topics
+        deprecated_topics = {"deprecated", "unmaintained", "archived", "abandoned"}
+        if any(topic.lower() in deprecated_topics for topic in topics):
+            return True
+
+        return False
 
     async def _fetch_contributor_stats(self, owner: str, repo: str) -> ContributorStats:
         """Fetch contributor statistics."""
@@ -269,7 +312,7 @@ class GitHubFetcher:
         )
 
     async def _fetch_issue_stats(self, owner: str, repo: str) -> IssueStats:
-        """Fetch issue statistics."""
+        """Fetch issue statistics including response time metrics."""
         # Get open issues
         open_issues = await self._fetch_all_pages(
             f"/repos/{owner}/{repo}/issues",
@@ -307,12 +350,72 @@ class GitHubFetcher:
             )
         )
 
+        # Calculate response time and close time for closed issues
+        avg_response_hours, avg_close_hours = await self._calculate_issue_response_times(
+            owner, repo, closed_issues[:20]  # Sample of recent closed issues
+        )
+
         return IssueStats(
             open_issues=len(open_issues),
             closed_issues_6mo=len(closed_issues),
             good_first_issue_count=good_first_count,
             regression_issue_count=regression_count,
-            # avg_response_time would require fetching comments for each issue
+            avg_response_time_hours=avg_response_hours,
+            avg_close_time_hours=avg_close_hours,
+        )
+
+    async def _calculate_issue_response_times(
+        self, owner: str, repo: str, issues: list[dict]
+    ) -> tuple[float | None, float | None]:
+        """Calculate average first response time and close time for issues.
+
+        Returns:
+            Tuple of (avg_response_time_hours, avg_close_time_hours)
+        """
+        if not issues:
+            return None, None
+
+        response_times = []
+        close_times = []
+
+        for issue in issues[:10]:  # Sample 10 issues to avoid rate limiting
+            issue_number = issue.get("number")
+            created_at_str = issue.get("created_at")
+            closed_at_str = issue.get("closed_at")
+
+            if not created_at_str:
+                continue
+
+            created_at = datetime.fromisoformat(created_at_str.replace("Z", "+00:00"))
+
+            # Calculate close time
+            if closed_at_str:
+                closed_at = datetime.fromisoformat(closed_at_str.replace("Z", "+00:00"))
+                close_hours = (closed_at - created_at).total_seconds() / 3600
+                close_times.append(close_hours)
+
+            # Get first comment to calculate response time
+            comments = await self._fetch(
+                f"/repos/{owner}/{repo}/issues/{issue_number}/comments",
+                params={"per_page": 1},
+            )
+
+            if comments and isinstance(comments, list) and len(comments) > 0:
+                first_comment = comments[0]
+                comment_created_str = first_comment.get("created_at")
+                if comment_created_str:
+                    comment_created = datetime.fromisoformat(
+                        comment_created_str.replace("Z", "+00:00")
+                    )
+                    response_hours = (comment_created - created_at).total_seconds() / 3600
+                    response_times.append(response_hours)
+
+        avg_response = sum(response_times) / len(response_times) if response_times else None
+        avg_close = sum(close_times) / len(close_times) if close_times else None
+
+        return (
+            round(avg_response, 1) if avg_response else None,
+            round(avg_close, 1) if avg_close else None,
         )
 
     async def _fetch_pr_stats(self, owner: str, repo: str) -> PRStats:
@@ -711,7 +814,18 @@ class GitHubFetcher:
         )
 
     async def _fetch_ci_status(self, owner: str, repo: str) -> CIStatus:
-        """Fetch CI/CD status."""
+        """Fetch CI/CD status with depth assessment.
+
+        Detects:
+        - Presence of GitHub Actions
+        - Tests workflow
+        - Lint/format workflow
+        - Security scanning workflow
+        - Release automation
+        - Multi-platform testing (multiple OS)
+        """
+        import base64
+
         workflows = await self._fetch(f"/repos/{owner}/{repo}/actions/workflows")
 
         if not workflows:
@@ -719,6 +833,55 @@ class GitHubFetcher:
 
         workflow_list = workflows.get("workflows", [])
         has_actions = len(workflow_list) > 0
+
+        # CI/CD depth detection
+        has_tests_workflow = False
+        has_lint_workflow = False
+        has_security_workflow = False
+        has_release_workflow = False
+        has_multi_platform = False
+
+        # Analyze each workflow
+        for wf in workflow_list:
+            wf_name = wf.get("name", "").lower()
+            wf_path = wf.get("path", "").lower()
+
+            # Check workflow name patterns
+            if any(p in wf_name for p in ["test", "ci", "build", "check"]):
+                has_tests_workflow = True
+            if any(p in wf_name for p in ["lint", "format", "style", "eslint", "prettier", "ruff", "black"]):
+                has_lint_workflow = True
+            if any(p in wf_name for p in ["security", "codeql", "snyk", "trivy", "scan"]):
+                has_security_workflow = True
+            if any(p in wf_name for p in ["release", "publish", "deploy", "npm publish"]):
+                has_release_workflow = True
+
+            # Fetch workflow content to detect matrix/multi-platform
+            wf_content_data = await self._fetch(f"/repos/{owner}/{repo}/contents/{wf.get('path')}")
+            if wf_content_data and wf_content_data.get("content"):
+                try:
+                    wf_content = base64.b64decode(wf_content_data["content"]).decode("utf-8").lower()
+
+                    # Detect multi-platform testing
+                    if "matrix:" in wf_content or "strategy:" in wf_content:
+                        if any(os in wf_content for os in ["ubuntu", "windows", "macos"]):
+                            # Check if multiple OS are mentioned
+                            os_count = sum(1 for os in ["ubuntu", "windows", "macos"] if os in wf_content)
+                            if os_count >= 2:
+                                has_multi_platform = True
+
+                    # More accurate detection from content
+                    if any(p in wf_content for p in ["pytest", "jest", "npm test", "go test", "cargo test", "unittest"]):
+                        has_tests_workflow = True
+                    if any(p in wf_content for p in ["eslint", "prettier", "ruff", "black", "flake8", "mypy", "clippy"]):
+                        has_lint_workflow = True
+                    if any(p in wf_content for p in ["codeql", "snyk", "trivy", "semgrep", "dependabot"]):
+                        has_security_workflow = True
+                    if any(p in wf_content for p in ["npm publish", "twine upload", "cargo publish", "goreleaser"]):
+                        has_release_workflow = True
+
+                except Exception:
+                    pass
 
         # Get recent workflow runs to calculate pass rate
         runs = await self._fetch(
@@ -741,6 +904,11 @@ class GitHubFetcher:
             has_github_actions=has_actions,
             workflow_count=len(workflow_list),
             recent_runs_pass_rate=pass_rate,
+            has_tests_workflow=has_tests_workflow,
+            has_lint_workflow=has_lint_workflow,
+            has_security_workflow=has_security_workflow,
+            has_release_workflow=has_release_workflow,
+            has_multi_platform=has_multi_platform,
         )
 
     async def fetch_readme_content(self, owner: str, repo: str) -> str | None:
