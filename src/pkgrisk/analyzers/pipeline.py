@@ -11,6 +11,7 @@ from pkgrisk.analyzers.github import GitHubFetcher
 from pkgrisk.analyzers.llm import LLMAnalyzer
 from pkgrisk.analyzers.scorer import Scorer
 from pkgrisk.models.schemas import (
+    DataAvailability,
     Ecosystem,
     LLMAssessments,
     PackageAnalysis,
@@ -83,13 +84,30 @@ class AnalysisPipeline:
         metadata = await self.adapter.get_package_metadata(package_name)
         install_stats = await self.adapter.get_install_stats(package_name)
         repo_ref = self.adapter.get_source_repo(metadata)
+        install_count = install_stats.downloads_last_30d if install_stats else None
 
-        # Stage 2: Fetch GitHub data (if repo available)
+        # Stage 2: Determine data availability and fetch GitHub data
+        data_availability = DataAvailability.AVAILABLE
+        unavailable_reason = None
         github_data = None
-        if repo_ref and repo_ref.platform == Platform.GITHUB:
-            github_data = await self.github.fetch_repo_data(repo_ref)
 
-        # Stage 3: Run LLM assessments
+        if not repo_ref:
+            # No repository URL found
+            data_availability = DataAvailability.NO_REPO
+            unavailable_reason = "No source repository URL found in package metadata"
+        elif repo_ref.platform != Platform.GITHUB:
+            # Repository exists but not on GitHub
+            data_availability = DataAvailability.NOT_GITHUB
+            unavailable_reason = f"Repository is on {repo_ref.platform.value}, not GitHub. Limited analysis available."
+        else:
+            # Try to fetch GitHub data
+            github_data = await self.github.fetch_repo_data(repo_ref)
+            if github_data is None:
+                # Repo URL exists but couldn't fetch (404, private, etc.)
+                data_availability = DataAvailability.REPO_NOT_FOUND
+                unavailable_reason = f"Repository {repo_ref.owner}/{repo_ref.repo} not accessible (may be private, deleted, or renamed)"
+
+        # Stage 3: Run LLM assessments (only if we have GitHub data)
         llm_assessments = None
         if self.llm and github_data:
             llm_available = await self.llm.is_available()
@@ -102,12 +120,19 @@ class AnalysisPipeline:
                     github_data,
                 )
 
-        # Stage 4: Calculate scores
-        install_count = install_stats.downloads_last_30d if install_stats else None
-        scores = self.scorer.calculate_scores(github_data, llm_assessments, install_count)
+        # Stage 4: Calculate scores (only if data is available)
+        scores = None
+        analysis_summary = None
 
-        # Build analysis summary
-        analysis_summary = self._build_summary(github_data, llm_assessments, scores)
+        if data_availability == DataAvailability.AVAILABLE and github_data:
+            scores = self.scorer.calculate_scores(github_data, llm_assessments, install_count)
+            analysis_summary = self._build_summary(github_data, llm_assessments, scores)
+        else:
+            # No scores for unavailable packages
+            analysis_summary = {
+                "data_availability": data_availability.value,
+                "unavailable_reason": unavailable_reason,
+            }
 
         # Stage 5: Create result
         analysis = PackageAnalysis(
@@ -118,6 +143,8 @@ class AnalysisPipeline:
             homepage=metadata.homepage,
             repository=repo_ref,
             install_count_30d=install_count,
+            data_availability=data_availability,
+            unavailable_reason=unavailable_reason,
             scores=scores,
             github_data=github_data,
             llm_assessments=llm_assessments,
@@ -333,6 +360,8 @@ class AnalysisPipeline:
                 "version": analysis.version,
                 "description": analysis.description,
                 "install_count_30d": analysis.install_count_30d,
+                "data_availability": analysis.data_availability.value,
+                "unavailable_reason": analysis.unavailable_reason,
                 "scores": analysis.scores.model_dump() if analysis.scores else None,
                 "analysis_summary": analysis.analysis_summary,
                 "repository": analysis.repository.model_dump() if analysis.repository else None,
@@ -349,9 +378,15 @@ class AnalysisPipeline:
         if stats_file.exists():
             stats = json.loads(stats_file.read_text())
 
+        # Calculate stats only for available packages
+        available = [a for a in analyses if a.data_availability == DataAvailability.AVAILABLE]
+        unavailable = [a for a in analyses if a.data_availability != DataAvailability.AVAILABLE]
+
         stats[ecosystem.value] = {
             "total_packages": len(analyses),
-            "avg_score": sum(a.scores.overall for a in analyses if a.scores) / len(analyses),
+            "available_packages": len(available),
+            "unavailable_packages": len(unavailable),
+            "avg_score": sum(a.scores.overall for a in available if a.scores) / len(available) if available else None,
             "last_updated": datetime.now(timezone.utc).isoformat(),
         }
         stats_file.write_text(json.dumps(stats, indent=2))

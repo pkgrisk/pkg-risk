@@ -24,6 +24,16 @@ class Ecosystem(str, Enum):
     CRATES = "crates"
 
 
+class DataAvailability(str, Enum):
+    """Data availability status for a package."""
+
+    AVAILABLE = "available"  # Full data available, scores calculated
+    NO_REPO = "no_repo"  # No source repository found
+    REPO_NOT_FOUND = "repo_not_found"  # Repo URL exists but repo not accessible
+    PRIVATE_REPO = "private_repo"  # Repository is private
+    NOT_GITHUB = "not_github"  # Repo exists but not on GitHub (GitLab, etc.) - limited data
+
+
 class RepoRef(BaseModel):
     """Reference to a source code repository."""
 
@@ -329,7 +339,11 @@ class PackageAnalysis(BaseModel):
     repository: RepoRef | None = None
     install_count_30d: int | None = None
 
-    # Scores
+    # Data availability status
+    data_availability: DataAvailability = DataAvailability.AVAILABLE
+    unavailable_reason: str | None = None
+
+    # Scores (None if data not available)
     scores: Scores | None = None
 
     # Raw metrics from GitHub

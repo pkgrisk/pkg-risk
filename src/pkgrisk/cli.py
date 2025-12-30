@@ -308,14 +308,34 @@ async def _analyze_package(
             console.print(f"[red]Error analyzing package: {e}[/red]")
             raise typer.Exit(1)
 
+    from pkgrisk.models.schemas import DataAvailability
+
     # Display results
     console.print()
     console.print(f"[bold cyan]{analysis.name}[/bold cyan] v{analysis.version}")
     console.print(f"[dim]{analysis.description}[/dim]")
     console.print()
 
-    # Score display
-    if analysis.scores:
+    # Check data availability
+    if analysis.data_availability != DataAvailability.AVAILABLE:
+        # Package data not available
+        console.print(
+            Panel(
+                f"[bold yellow]Score Unavailable[/bold yellow]\n\n{analysis.unavailable_reason}",
+                title="Data Not Available",
+                expand=False,
+                border_style="yellow",
+            )
+        )
+
+        if analysis.install_count_30d:
+            console.print(f"\n[bold]30-day installs:[/bold] {analysis.install_count_30d:,}")
+
+        if analysis.homepage:
+            console.print(f"[bold]Homepage:[/bold] {analysis.homepage}")
+
+    elif analysis.scores:
+        # Score display for available packages
         scores = analysis.scores
 
         # Overall score with color coding
@@ -357,36 +377,36 @@ async def _analyze_package(
 
         console.print(scores_table)
 
-    # Analysis summary
-    if analysis.analysis_summary:
-        console.print()
-        summary = analysis.analysis_summary
-
-        if summary.get("maintenance_status"):
-            status = summary["maintenance_status"]
-            status_color = {
-                "actively-maintained": "green",
-                "maintained": "green",
-                "minimal-maintenance": "yellow",
-                "stale": "red",
-                "abandoned": "red",
-            }.get(status, "white")
-            console.print(f"[bold]Maintenance:[/bold] [{status_color}]{status}[/{status_color}]")
-
-        if summary.get("security_summary"):
-            console.print(f"[bold]Security:[/bold] {summary['security_summary']}")
-
-        if summary.get("highlights"):
+        # Analysis summary
+        if analysis.analysis_summary:
             console.print()
-            console.print("[bold green]Highlights:[/bold green]")
-            for highlight in summary["highlights"]:
-                console.print(f"  [green]+[/green] {highlight}")
+            summary = analysis.analysis_summary
 
-        if summary.get("concerns"):
-            console.print()
-            console.print("[bold yellow]Concerns:[/bold yellow]")
-            for concern in summary["concerns"]:
-                console.print(f"  [yellow]![/yellow] {concern}")
+            if summary.get("maintenance_status"):
+                status = summary["maintenance_status"]
+                status_color = {
+                    "actively-maintained": "green",
+                    "maintained": "green",
+                    "minimal-maintenance": "yellow",
+                    "stale": "red",
+                    "abandoned": "red",
+                }.get(status, "white")
+                console.print(f"[bold]Maintenance:[/bold] [{status_color}]{status}[/{status_color}]")
+
+            if summary.get("security_summary"):
+                console.print(f"[bold]Security:[/bold] {summary['security_summary']}")
+
+            if summary.get("highlights"):
+                console.print()
+                console.print("[bold green]Highlights:[/bold green]")
+                for highlight in summary["highlights"]:
+                    console.print(f"  [green]+[/green] {highlight}")
+
+            if summary.get("concerns"):
+                console.print()
+                console.print("[bold yellow]Concerns:[/bold yellow]")
+                for concern in summary["concerns"]:
+                    console.print(f"  [yellow]![/yellow] {concern}")
 
     # Save if requested
     if output:
@@ -465,18 +485,25 @@ async def _analyze_batch(
 
         progress.update(task, completed=limit)
 
+    from pkgrisk.models.schemas import DataAvailability
+
+    # Separate available and unavailable packages
+    available = [r for r in results if r.data_availability == DataAvailability.AVAILABLE]
+    unavailable = [r for r in results if r.data_availability != DataAvailability.AVAILABLE]
+
     # Summary
     console.print()
     console.print(f"[bold green]Completed:[/bold green] {len(results)} packages analyzed")
+    console.print(f"  [green]{len(available)}[/green] with scores, [yellow]{len(unavailable)}[/yellow] unavailable")
 
     if errors:
         console.print(f"[bold red]Errors:[/bold red] {len(errors)} packages failed")
         for name, error in errors[:5]:
             console.print(f"  [red]x[/red] {name}: {error}")
 
-    # Show top/bottom scores
-    if results:
-        sorted_results = sorted(results, key=lambda r: r.scores.overall if r.scores else 0, reverse=True)
+    # Show top/bottom scores (only for available packages)
+    if available:
+        sorted_results = sorted(available, key=lambda r: r.scores.overall if r.scores else 0, reverse=True)
 
         console.print()
         console.print("[bold]Top 5 Scores:[/bold]")
@@ -489,6 +516,15 @@ async def _analyze_batch(
         for r in sorted_results[-5:]:
             if r.scores:
                 console.print(f"  {r.scores.overall:5.1f} {r.scores.grade}  {r.name}")
+
+    # Show unavailable packages
+    if unavailable:
+        console.print()
+        console.print("[bold yellow]Unavailable (no open source repo):[/bold yellow]")
+        for r in unavailable[:10]:
+            console.print(f"  [dim]-[/dim] {r.name}")
+        if len(unavailable) > 10:
+            console.print(f"  [dim]... and {len(unavailable) - 10} more[/dim]")
 
     console.print()
     console.print(f"[dim]Results saved to {data_dir}[/dim]")
