@@ -730,3 +730,178 @@ class GitHubFetcher:
                 break
 
         return maintainer_comments
+
+    # Language to file extension mapping for security analysis
+    LANGUAGE_EXTENSIONS: dict[str, list[str]] = {
+        "python": [".py"],
+        "javascript": [".js", ".mjs", ".cjs"],
+        "typescript": [".ts", ".tsx"],
+        "rust": [".rs"],
+        "go": [".go"],
+        "ruby": [".rb"],
+        "java": [".java"],
+        "c": [".c", ".h"],
+        "c++": [".cpp", ".cc", ".cxx", ".hpp", ".h"],
+        "c#": [".cs"],
+        "php": [".php"],
+        "shell": [".sh", ".bash"],
+    }
+
+    # Priority patterns for security-relevant files (checked in order)
+    SECURITY_PRIORITY_PATTERNS: list[str] = [
+        # Entry points
+        "main", "app", "index", "server", "cli", "run",
+        # Configuration
+        "config", "settings", "env", "secrets",
+        # Authentication/Authorization
+        "auth", "login", "session", "token", "password", "credential",
+        # Input handling
+        "input", "parse", "request", "handler", "route", "api",
+        # Database
+        "database", "db", "query", "sql", "model",
+        # Security
+        "security", "crypto", "encrypt", "hash", "sanitize", "validate",
+        # Network
+        "http", "client", "connection", "socket",
+    ]
+
+    async def fetch_source_files_for_security(
+        self,
+        owner: str,
+        repo: str,
+        language: str | None,
+        default_branch: str = "main",
+        max_bytes: int = 15000,
+        max_files: int = 10,
+    ) -> str | None:
+        """Fetch source files for security analysis.
+
+        Prioritizes security-sensitive files like entry points, config,
+        auth handlers, and input processing.
+
+        Args:
+            owner: Repository owner.
+            repo: Repository name.
+            language: Primary language of the repo.
+            default_branch: Default branch name.
+            max_bytes: Maximum total bytes to fetch.
+            max_files: Maximum number of files to include.
+
+        Returns:
+            Combined source code with file headers, or None if no files found.
+        """
+        import base64
+
+        if not language:
+            return None
+
+        # Get file extensions for this language
+        extensions = self.LANGUAGE_EXTENSIONS.get(language.lower(), [])
+        if not extensions:
+            # Try to handle common variations
+            lang_lower = language.lower()
+            if "python" in lang_lower:
+                extensions = [".py"]
+            elif "javascript" in lang_lower or "node" in lang_lower:
+                extensions = [".js", ".mjs"]
+            elif "typescript" in lang_lower:
+                extensions = [".ts", ".tsx"]
+            elif "rust" in lang_lower:
+                extensions = [".rs"]
+            elif "go" in lang_lower:
+                extensions = [".go"]
+            else:
+                return None
+
+        # Fetch the repository tree
+        tree_data = await self._fetch(
+            f"/repos/{owner}/{repo}/git/trees/{default_branch}",
+            params={"recursive": "1"},
+        )
+
+        if not tree_data or "tree" not in tree_data:
+            return None
+
+        # Filter to source files with matching extensions
+        source_files = []
+        for item in tree_data["tree"]:
+            if item.get("type") != "blob":
+                continue
+
+            path = item.get("path", "")
+            size = item.get("size", 0)
+
+            # Skip very large files
+            if size > 50000:
+                continue
+
+            # Check extension
+            if not any(path.endswith(ext) for ext in extensions):
+                continue
+
+            # Skip test files, vendor, node_modules, etc.
+            path_lower = path.lower()
+            skip_patterns = [
+                "test", "spec", "mock", "fixture", "vendor", "node_modules",
+                "dist", "build", "__pycache__", ".min.", "example", "sample",
+                "benchmark", "doc/", "docs/",
+            ]
+            if any(pattern in path_lower for pattern in skip_patterns):
+                continue
+
+            # Calculate priority score based on security-relevant patterns
+            priority = 0
+            filename_lower = path.split("/")[-1].lower()
+            for i, pattern in enumerate(self.SECURITY_PRIORITY_PATTERNS):
+                if pattern in filename_lower or pattern in path_lower:
+                    priority = len(self.SECURITY_PRIORITY_PATTERNS) - i
+                    break
+
+            source_files.append({
+                "path": path,
+                "sha": item.get("sha"),
+                "size": size,
+                "priority": priority,
+            })
+
+        if not source_files:
+            return None
+
+        # Sort by priority (highest first), then by path depth (shallower first)
+        source_files.sort(key=lambda f: (-f["priority"], f["path"].count("/")))
+
+        # Fetch file contents up to limits
+        fetched_content = []
+        total_bytes = 0
+
+        for file_info in source_files:
+            if len(fetched_content) >= max_files:
+                break
+            if total_bytes >= max_bytes:
+                break
+
+            # Fetch file content
+            blob_data = await self._fetch(
+                f"/repos/{owner}/{repo}/git/blobs/{file_info['sha']}"
+            )
+
+            if not blob_data or "content" not in blob_data:
+                continue
+
+            try:
+                content = base64.b64decode(blob_data["content"]).decode("utf-8")
+            except Exception:
+                continue
+
+            # Truncate if needed to stay within limits
+            remaining_bytes = max_bytes - total_bytes
+            if len(content) > remaining_bytes:
+                content = content[:remaining_bytes] + "\n... (truncated)"
+
+            fetched_content.append(f"=== FILE: {file_info['path']} ===\n{content}")
+            total_bytes += len(content)
+
+        if not fetched_content:
+            return None
+
+        return "\n\n".join(fetched_content)

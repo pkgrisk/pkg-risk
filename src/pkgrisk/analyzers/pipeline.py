@@ -256,6 +256,23 @@ class AnalysisPipeline:
             except Exception:
                 pass
 
+        # 7. Security code analysis
+        try:
+            code_samples = await self.github.fetch_source_files_for_security(
+                owner,
+                repo,
+                language=github_data.repo.language,
+                default_branch=github_data.repo.default_branch,
+                max_bytes=15000,
+                max_files=10,
+            )
+            if code_samples:
+                assessments.security = await self.llm.assess_security(
+                    code_samples, package_name, ecosystem
+                )
+        except Exception:
+            pass
+
         return assessments
 
     def _build_summary(
@@ -313,6 +330,27 @@ class AnalysisPipeline:
                     summary["highlights"].append("Has succession plan for maintainers")
                 if llm_assessments.governance.bus_factor_risk == "high":
                     summary["concerns"].append("Governance: High bus factor risk identified")
+
+            if llm_assessments.security:
+                # Add critical security findings
+                if llm_assessments.security.critical_findings:
+                    for finding in llm_assessments.security.critical_findings[:3]:
+                        summary["concerns"].append(f"Security: {finding}")
+                # Add high-severity injection risks
+                if llm_assessments.security.injection_risks:
+                    high_risks = [r for r in llm_assessments.security.injection_risks
+                                  if r.get("severity") == "high"]
+                    for risk in high_risks[:2]:
+                        summary["concerns"].append(
+                            f"Security: {risk.get('description', 'Injection risk detected')}"
+                        )
+                # Highlight good security practices
+                if llm_assessments.security.overall_score >= 8:
+                    summary["highlights"].append("Code follows security best practices")
+                elif llm_assessments.security.overall_score <= 4:
+                    summary["concerns"].append(
+                        f"Security: {llm_assessments.security.summary}"
+                    )
 
         if github_data:
             # Security summary
