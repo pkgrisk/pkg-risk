@@ -2,6 +2,7 @@ import { useState, useMemo, useRef, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { GradeBadge } from '../components/GradeBadge';
 import { RiskBadges } from '../components/RiskBadges';
+import { RowActions } from '../components/RowActions';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 import type { PackageSummary, Grade } from '../types/package';
 
@@ -262,6 +263,7 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
             <th onClick={() => handleSort('installs')} className="sortable">
               Installs/30d {sortKey === 'installs' && (sortAsc ? '↑' : '↓')}
             </th>
+            <th className="actions-header"></th>
           </tr>
         </thead>
         <tbody>
@@ -301,6 +303,9 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
                 {formatRelativeTime(pkg.last_commit_date)}
               </td>
               <td>{formatInstalls(pkg.install_count_30d)}</td>
+              <td className="actions-cell">
+                <RowActions pkg={pkg} />
+              </td>
             </tr>
           ))}
         </tbody>
