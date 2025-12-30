@@ -33,6 +33,16 @@ class Scorer:
         "stability": 10,
     }
 
+    # CVE severity penalties (replaces flat -10 per CVE)
+    CVE_SEVERITY_PENALTIES = {
+        "CRITICAL": -20,
+        "HIGH": -15,
+        "MEDIUM": -8,
+        "LOW": -3,
+        "UNKNOWN": -10,
+    }
+    CVE_MAX_PENALTY = -60  # Max total CVE penalty (up from -40)
+
     def calculate_scores(
         self,
         github_data: GitHubData | None,
@@ -102,10 +112,12 @@ class Scorer:
         """Calculate security score (30% weight).
 
         Factors:
-        - Known CVEs (major penalty)
+        - Known CVEs (severity-weighted penalties)
+        - Time-to-patch responsiveness
         - SECURITY.md presence
-        - Security CI (Dependabot, CodeQL)
+        - Security CI tools (Dependabot, CodeQL, Snyk, etc.)
         - Signed commits/releases
+        - Supply chain security signals
         - LLM security assessment
         """
         if not github_data:
@@ -114,9 +126,13 @@ class Scorer:
         score = 100.0
         security = github_data.security
 
-        # CVE penalty (major impact)
-        if security.known_cves > 0:
-            score -= min(40, security.known_cves * 10)
+        # CVE severity-weighted penalties
+        cve_penalty = self._calculate_cve_penalty(security)
+        score += cve_penalty
+
+        # Time-to-patch scoring
+        patch_adjustment = self._calculate_patch_time_score(security)
+        score += patch_adjustment
 
         # Vulnerable dependencies penalty
         if security.vulnerable_deps > 0:
@@ -126,20 +142,32 @@ class Scorer:
         if not security.has_security_md and not security.has_security_policy:
             score -= 10
 
-        # Security CI tools (bonus for having them)
+        # Security CI tools (expanded detection)
         security_tools = sum([
             security.has_dependabot,
             security.has_codeql,
             security.has_security_ci,
+            getattr(security, 'has_snyk', False),
+            getattr(security, 'has_renovate', False),
+            getattr(security, 'has_trivy', False),
+            getattr(security, 'has_semgrep', False),
         ])
         if security_tools == 0:
             score -= 10
+        elif security_tools >= 3:
+            score += 10
         elif security_tools >= 2:
             score += 5
 
-        # Signed commits (small bonus)
-        if security.signed_commits_pct >= 50:
+        # Signed commits (tiered bonus)
+        if security.signed_commits_pct >= 80:
+            score += 10
+        elif security.signed_commits_pct >= 50:
             score += 5
+
+        # Supply chain security signals
+        supply_chain_bonus = self._calculate_supply_chain_score(security)
+        score += supply_chain_bonus
 
         # LLM security assessment
         if llm_assessments and llm_assessments.security:
@@ -152,6 +180,92 @@ class Scorer:
                 score -= min(20, len(llm_assessments.security.critical_findings) * 10)
 
         return ScoreComponent(score=max(0, min(100, score)), weight=self.WEIGHTS["security"])
+
+    def _calculate_cve_penalty(self, security: "SecurityData") -> float:
+        """Calculate CVE penalty based on severity.
+
+        Uses severity-weighted penalties instead of flat -10 per CVE.
+        CRITICAL: -20, HIGH: -15, MEDIUM: -8, LOW: -3, UNKNOWN: -10
+        """
+        if not security.cve_history or not security.cve_history.cves:
+            # Fall back to old method if no detailed CVE data
+            if security.known_cves > 0:
+                return max(self.CVE_MAX_PENALTY, -security.known_cves * 10)
+            return 0.0
+
+        total_penalty = 0.0
+        for cve in security.cve_history.cves:
+            severity = cve.severity.upper() if cve.severity else "UNKNOWN"
+            penalty = self.CVE_SEVERITY_PENALTIES.get(severity, -10)
+            total_penalty += penalty
+
+        return max(self.CVE_MAX_PENALTY, total_penalty)
+
+    def _calculate_patch_time_score(self, security: "SecurityData") -> float:
+        """Calculate score adjustment based on patch responsiveness.
+
+        Rewards quick patching, penalizes slow response:
+        - Avg patch time < 7 days: +10 bonus
+        - Avg patch time < 30 days: +5 bonus
+        - Avg patch time > 90 days: -10 penalty
+        - Has unpatched CVEs > 30 days: -15 additional penalty
+        """
+        if not security.cve_history:
+            return 0.0
+
+        adjustment = 0.0
+
+        # Reward fast average patch time
+        if security.cve_history.avg_days_to_patch is not None:
+            avg_days = security.cve_history.avg_days_to_patch
+            if avg_days < 7:
+                adjustment += 10
+            elif avg_days < 30:
+                adjustment += 5
+            elif avg_days > 90:
+                adjustment -= 10
+
+        # Penalize unpatched vulnerabilities
+        if security.cve_history.has_unpatched:
+            # Check for old unpatched CVEs
+            from datetime import datetime, timezone
+            now = datetime.now(timezone.utc)
+            for cve in security.cve_history.cves:
+                if cve.fixed_version is None:
+                    days_unpatched = (now - cve.published_date).days
+                    if days_unpatched > 30:
+                        adjustment -= 15
+                        break  # Only apply once
+
+        return adjustment
+
+    def _calculate_supply_chain_score(self, security: "SecurityData") -> float:
+        """Calculate supply chain security bonus.
+
+        Awards points for supply chain security practices:
+        - SLSA compliance: +5 to +15 based on level
+        - Sigstore/cosign signing: +10
+        - SBOM publication: +5
+        - Reproducible builds: +5
+        """
+        bonus = 0.0
+
+        # Check for supply chain security attributes (added via schema extension)
+        slsa_level = getattr(security, 'slsa_level', None)
+        if slsa_level:
+            slsa_bonuses = {1: 5, 2: 10, 3: 15, 4: 15}
+            bonus += slsa_bonuses.get(slsa_level, 0)
+
+        if getattr(security, 'has_sigstore', False):
+            bonus += 10
+
+        if getattr(security, 'has_sbom', False):
+            bonus += 5
+
+        if getattr(security, 'has_reproducible_builds', False):
+            bonus += 5
+
+        return bonus
 
     def _calculate_maintenance_score(
         self,

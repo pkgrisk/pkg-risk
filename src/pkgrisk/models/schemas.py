@@ -150,6 +150,29 @@ class ReleaseStats(BaseModel):
     prerelease_ratio: float = 0.0
 
 
+class CVEDetail(BaseModel):
+    """Individual CVE/vulnerability information."""
+
+    id: str  # CVE-2024-1234 or GHSA-xxxx
+    summary: str
+    severity: str  # CRITICAL, HIGH, MEDIUM, LOW, UNKNOWN
+    cvss_score: float | None = None
+    published_date: datetime
+    fixed_version: str | None = None
+    patch_release_date: datetime | None = None
+    days_to_patch: int | None = None  # Calculated: patch_release_date - published_date
+    references: list[str] = Field(default_factory=list)
+
+
+class CVEHistory(BaseModel):
+    """CVE history for a package."""
+
+    total_cves: int = 0
+    cves: list[CVEDetail] = Field(default_factory=list)
+    avg_days_to_patch: float | None = None
+    has_unpatched: bool = False
+
+
 class SecurityData(BaseModel):
     """Security-related data."""
 
@@ -159,8 +182,20 @@ class SecurityData(BaseModel):
     has_dependabot: bool = False
     has_codeql: bool = False
     has_security_ci: bool = False
+    # Expanded security tool detection
+    has_snyk: bool = False
+    has_renovate: bool = False
+    has_trivy: bool = False
+    has_semgrep: bool = False
+    # Supply chain security signals
+    slsa_level: int | None = None  # 1-4, None if not detected
+    has_sigstore: bool = False
+    has_sbom: bool = False
+    has_reproducible_builds: bool = False
+    # CVE data
     known_cves: int = 0
     vulnerable_deps: int = 0
+    cve_history: CVEHistory | None = None
 
 
 class RepoFiles(BaseModel):

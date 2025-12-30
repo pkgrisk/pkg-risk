@@ -413,8 +413,55 @@ class GitHubFetcher:
             prerelease_ratio=round(prerelease_ratio, 2),
         )
 
+    async def fetch_release_dates(
+        self, owner: str, repo: str
+    ) -> dict[str, datetime]:
+        """Fetch mapping of version tags to release dates.
+
+        Used for calculating time-to-patch for CVEs.
+
+        Args:
+            owner: Repository owner.
+            repo: Repository name.
+
+        Returns:
+            Dict mapping version string (e.g., "v1.2.3") to release datetime.
+        """
+        releases = await self._fetch_all_pages(
+            f"/repos/{owner}/{repo}/releases",
+            max_pages=10,  # Get more releases for CVE matching
+        )
+
+        if not releases:
+            return {}
+
+        release_dates = {}
+        for release in releases:
+            tag = release.get("tag_name")
+            published_str = release.get("published_at")
+            if tag and published_str:
+                try:
+                    published = datetime.fromisoformat(
+                        published_str.replace("Z", "+00:00")
+                    )
+                    release_dates[tag] = published
+                    # Also store without 'v' prefix for matching
+                    if tag.startswith("v"):
+                        release_dates[tag[1:]] = published
+                except ValueError:
+                    pass
+
+        return release_dates
+
     async def _fetch_security_data(self, owner: str, repo: str) -> SecurityData:
-        """Fetch security-related data."""
+        """Fetch security-related data.
+
+        Includes:
+        - SECURITY.md and security policy presence
+        - Security CI tools (Dependabot, CodeQL, Snyk, Renovate, Trivy, Semgrep)
+        - Signed commits percentage
+        - Supply chain security signals (SLSA, Sigstore, SBOM)
+        """
         # Check for SECURITY.md
         security_md = await self._fetch(f"/repos/{owner}/{repo}/contents/SECURITY.md")
         has_security_md = security_md is not None
@@ -437,18 +484,111 @@ class GitHubFetcher:
             )
             has_dependabot = dependabot is not None
 
-        # Check for CodeQL workflow
+        # Check for Renovate config
+        has_renovate = False
+        renovate_files = [
+            ".github/renovate.json",
+            ".github/renovate.json5",
+            "renovate.json",
+            "renovate.json5",
+            ".renovaterc",
+            ".renovaterc.json",
+        ]
+        for renovate_file in renovate_files:
+            renovate = await self._fetch(f"/repos/{owner}/{repo}/contents/{renovate_file}")
+            if renovate is not None:
+                has_renovate = True
+                break
+
+        # Check for workflows and detect security tools
         workflows = await self._fetch(f"/repos/{owner}/{repo}/contents/.github/workflows")
         has_codeql = False
-        has_security_ci = has_dependabot
+        has_snyk = False
+        has_trivy = False
+        has_semgrep = False
+        has_security_ci = has_dependabot or has_renovate
+        has_sigstore = False
+        has_sbom = False
+        slsa_level = None
 
         if workflows and isinstance(workflows, list):
+            import base64
+
             for wf in workflows:
                 name = wf.get("name", "").lower()
-                if "codeql" in name or "security" in name or "snyk" in name:
+
+                # Check workflow filename
+                if "codeql" in name:
+                    has_codeql = True
                     has_security_ci = True
-                    if "codeql" in name:
-                        has_codeql = True
+                if "snyk" in name:
+                    has_snyk = True
+                    has_security_ci = True
+                if "trivy" in name:
+                    has_trivy = True
+                    has_security_ci = True
+                if "semgrep" in name:
+                    has_semgrep = True
+                    has_security_ci = True
+                if "security" in name:
+                    has_security_ci = True
+                if "slsa" in name:
+                    has_security_ci = True
+                if "sigstore" in name or "cosign" in name:
+                    has_sigstore = True
+                if "sbom" in name or "cyclonedx" in name or "spdx" in name:
+                    has_sbom = True
+
+                # For more accurate detection, fetch workflow content
+                wf_content = await self._fetch(f"/repos/{owner}/{repo}/contents/.github/workflows/{wf.get('name')}")
+                if wf_content and wf_content.get("content"):
+                    try:
+                        content = base64.b64decode(wf_content["content"]).decode("utf-8").lower()
+                        if "github/codeql-action" in content:
+                            has_codeql = True
+                            has_security_ci = True
+                        if "snyk/actions" in content or "snyk-" in content:
+                            has_snyk = True
+                            has_security_ci = True
+                        if "aquasecurity/trivy" in content or "trivy-action" in content:
+                            has_trivy = True
+                            has_security_ci = True
+                        if "semgrep" in content or "returntocorp/semgrep" in content:
+                            has_semgrep = True
+                            has_security_ci = True
+                        if "sigstore/cosign" in content or "cosign-installer" in content:
+                            has_sigstore = True
+                        if "anchore/sbom-action" in content or "cyclonedx" in content or "spdx" in content:
+                            has_sbom = True
+                        # SLSA detection
+                        if "slsa-framework" in content or "slsa-github-generator" in content:
+                            # Try to detect SLSA level from content
+                            if "slsa-builder-go" in content or "slsa-verifier" in content:
+                                slsa_level = 3
+                            elif "provenance" in content:
+                                slsa_level = 2
+                            else:
+                                slsa_level = 1
+                    except Exception:
+                        pass
+
+        # Calculate signed commits percentage
+        signed_commits_pct = await self._calculate_signed_commits_pct(owner, repo)
+
+        # Check for reproducible builds (look for specific files/configs)
+        has_reproducible_builds = False
+        # Check for common reproducible build indicators
+        reproducible_files = [
+            ".goreleaser.yml",
+            ".goreleaser.yaml",
+            "Earthfile",  # Earthly
+            "nix/",  # Nix builds
+        ]
+        root_files = await self._fetch(f"/repos/{owner}/{repo}/contents")
+        if root_files and isinstance(root_files, list):
+            root_names = {item.get("name", "").lower() for item in root_files}
+            if any(f.lower().rstrip("/") in root_names for f in reproducible_files):
+                has_reproducible_builds = True
 
         return SecurityData(
             has_security_md=has_security_md,
@@ -456,7 +596,47 @@ class GitHubFetcher:
             has_dependabot=has_dependabot,
             has_codeql=has_codeql,
             has_security_ci=has_security_ci,
+            has_snyk=has_snyk,
+            has_renovate=has_renovate,
+            has_trivy=has_trivy,
+            has_semgrep=has_semgrep,
+            slsa_level=slsa_level,
+            has_sigstore=has_sigstore,
+            has_sbom=has_sbom,
+            has_reproducible_builds=has_reproducible_builds,
+            signed_commits_pct=signed_commits_pct,
         )
+
+    async def _calculate_signed_commits_pct(self, owner: str, repo: str) -> float:
+        """Calculate the percentage of signed commits in recent history.
+
+        Checks the verification status of recent commits.
+
+        Returns:
+            Percentage of signed commits (0.0 to 100.0)
+        """
+        # Fetch recent commits with verification info
+        commits = await self._fetch_all_pages(
+            f"/repos/{owner}/{repo}/commits",
+            params={"per_page": 100},
+            max_pages=1,  # Just check last 100 commits
+        )
+
+        if not commits:
+            return 0.0
+
+        signed_count = 0
+        total_count = len(commits)
+
+        for commit in commits:
+            verification = commit.get("commit", {}).get("verification", {})
+            if verification.get("verified", False):
+                signed_count += 1
+
+        if total_count == 0:
+            return 0.0
+
+        return round((signed_count / total_count) * 100, 1)
 
     async def _fetch_repo_files(
         self, owner: str, repo: str, default_branch: str
