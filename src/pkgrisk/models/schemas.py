@@ -264,12 +264,39 @@ class ScoreComponent(BaseModel):
     weight: int  # Percentage weight (e.g., 30 for 30%)
 
 
+class RiskTier(str, Enum):
+    """Risk tier classification for enterprise decision-making."""
+
+    APPROVED = "approved"  # Tier 1: Score ≥80, no unpatched CVEs, active maintenance
+    CONDITIONAL = "conditional"  # Tier 2: Score 60-79, or minor concerns
+    RESTRICTED = "restricted"  # Tier 3: Score <60, or critical issues
+    PROHIBITED = "prohibited"  # Tier 4: Unpatched critical CVEs, abandoned, known malicious
+
+
+class UpdateUrgency(str, Enum):
+    """Update urgency indicator."""
+
+    CRITICAL = "critical"  # Unpatched CVE, update immediately
+    HIGH = "high"  # Patched CVE in newer version, update soon
+    MEDIUM = "medium"  # Maintenance concerns, plan update
+    LOW = "low"  # Current version acceptable, update opportunistically
+
+
 class Scores(BaseModel):
     """All score components."""
 
     overall: float = Field(ge=0, le=100)
     grade: str  # A, B, C, D, F
     percentile: float | None = None
+    # Enterprise risk indicators
+    risk_tier: RiskTier | None = None
+    update_urgency: UpdateUrgency | None = None
+    # Score confidence based on data completeness
+    confidence: str = "high"  # high, medium, low
+    confidence_factors: list[str] = Field(default_factory=list)  # Reasons for lower confidence
+    # Age-based adjustments
+    project_age_band: str | None = None  # new (<1yr), established (1-3yr), mature (3-7yr), legacy (7+yr)
+    # Category scores
     security: ScoreComponent
     maintenance: ScoreComponent
     community: ScoreComponent

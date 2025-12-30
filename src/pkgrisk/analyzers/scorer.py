@@ -6,8 +6,10 @@ from datetime import datetime, timezone
 from pkgrisk.models.schemas import (
     GitHubData,
     LLMAssessments,
+    RiskTier,
     ScoreComponent,
     Scores,
+    UpdateUrgency,
 )
 
 
@@ -79,10 +81,27 @@ class Scorer:
         # Calculate grade
         grade = self._score_to_grade(overall)
 
+        # Calculate enterprise risk indicators
+        risk_tier = self._calculate_risk_tier(overall, security.score, github_data)
+        update_urgency = self._calculate_update_urgency(github_data)
+
+        # Calculate confidence based on data completeness
+        confidence, confidence_factors = self._calculate_confidence(
+            github_data, llm_assessments
+        )
+
+        # Determine project age band
+        project_age_band = self._get_project_age_band(github_data)
+
         return Scores(
             overall=round(overall, 1),
             grade=grade,
             percentile=None,  # Calculated later when we have all packages
+            risk_tier=risk_tier,
+            update_urgency=update_urgency,
+            confidence=confidence,
+            confidence_factors=confidence_factors,
+            project_age_band=project_age_band,
             security=security,
             maintenance=maintenance,
             community=community,
@@ -90,6 +109,140 @@ class Scorer:
             documentation=documentation,
             stability=stability,
         )
+
+    def _calculate_risk_tier(
+        self, overall: float, security_score: float, github_data: GitHubData | None
+    ) -> RiskTier:
+        """Calculate enterprise risk tier classification.
+
+        Tier 1 (Approved): Score ≥80, no unpatched CVEs, active maintenance
+        Tier 2 (Conditional): Score 60-79, or minor concerns
+        Tier 3 (Restricted): Score <60, or critical issues
+        Tier 4 (Prohibited): Unpatched critical CVEs, abandoned, known malicious
+        """
+        # Check for prohibition conditions
+        if github_data:
+            security = github_data.security
+            repo = github_data.repo
+
+            # Tier 4: Prohibited
+            if repo.is_archived:
+                return RiskTier.PROHIBITED
+            if security.cve_history and security.cve_history.has_unpatched:
+                for cve in security.cve_history.cves:
+                    if cve.severity and cve.severity.upper() == "CRITICAL" and not cve.fixed_version:
+                        return RiskTier.PROHIBITED
+
+            # Check for critical security issues
+            if security_score < 40:
+                return RiskTier.RESTRICTED
+
+        # Score-based tiers
+        if overall >= 80 and security_score >= 70:
+            return RiskTier.APPROVED
+        elif overall >= 60:
+            return RiskTier.CONDITIONAL
+        else:
+            return RiskTier.RESTRICTED
+
+    def _calculate_update_urgency(self, github_data: GitHubData | None) -> UpdateUrgency:
+        """Calculate update urgency indicator.
+
+        Critical: Unpatched CVE, update immediately
+        High: Patched CVE in newer version, update soon
+        Medium: Maintenance concerns, plan update
+        Low: Current version acceptable, update opportunistically
+        """
+        if not github_data:
+            return UpdateUrgency.LOW
+
+        security = github_data.security
+        repo = github_data.repo
+
+        # Critical: Unpatched vulnerabilities
+        if security.cve_history and security.cve_history.has_unpatched:
+            return UpdateUrgency.CRITICAL
+
+        # High: Has patched vulnerabilities (newer version available)
+        if security.cve_history and security.cve_history.total_cves > 0:
+            if any(cve.fixed_version for cve in security.cve_history.cves):
+                return UpdateUrgency.HIGH
+
+        # Medium: Deprecated or archived
+        if repo.is_archived or getattr(repo, 'is_deprecated', False):
+            return UpdateUrgency.MEDIUM
+
+        # Medium: Low maintenance activity
+        commits = github_data.commits
+        if commits.commits_last_6mo == 0:
+            return UpdateUrgency.MEDIUM
+
+        return UpdateUrgency.LOW
+
+    def _calculate_confidence(
+        self, github_data: GitHubData | None, llm_assessments: LLMAssessments | None
+    ) -> tuple[str, list[str]]:
+        """Calculate score confidence based on data completeness.
+
+        Returns:
+            Tuple of (confidence_level, list_of_factors_reducing_confidence)
+        """
+        factors = []
+
+        if not github_data:
+            return "low", ["No GitHub data available"]
+
+        # Check for missing data sources
+        if not llm_assessments:
+            factors.append("No LLM assessment available")
+
+        repo = github_data.repo
+
+        # Check for very new packages (< 6 months)
+        if repo.created_at:
+            age_days = (datetime.now(timezone.utc) - repo.created_at).days
+            if age_days < 180:
+                factors.append("Very new package (<6 months)")
+
+        # Check for limited contributor data
+        if github_data.contributors.total_contributors < 2:
+            factors.append("Limited contributor data")
+
+        # Check for limited issue/PR history
+        if github_data.issues.open_issues + github_data.issues.closed_issues_6mo < 5:
+            factors.append("Limited issue history")
+
+        # Determine confidence level
+        if len(factors) == 0:
+            return "high", []
+        elif len(factors) <= 2:
+            return "medium", factors
+        else:
+            return "low", factors
+
+    def _get_project_age_band(self, github_data: GitHubData | None) -> str | None:
+        """Determine project age band for normalization context.
+
+        Age bands:
+        - new: < 1 year
+        - established: 1-3 years
+        - mature: 3-7 years
+        - legacy: 7+ years
+        """
+        if not github_data or not github_data.repo.created_at:
+            return None
+
+        age_days = (datetime.now(timezone.utc) - github_data.repo.created_at).days
+        age_years = age_days / 365
+
+        if age_years < 1:
+            return "new"
+        elif age_years < 3:
+            return "established"
+        elif age_years < 7:
+            return "mature"
+        else:
+            return "legacy"
 
     def _score_to_grade(self, score: float) -> str:
         """Convert numeric score to letter grade."""
