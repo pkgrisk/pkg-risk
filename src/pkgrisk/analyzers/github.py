@@ -239,7 +239,15 @@ class GitHubFetcher:
         return False
 
     async def _fetch_contributor_stats(self, owner: str, repo: str) -> ContributorStats:
-        """Fetch contributor statistics."""
+        """Fetch contributor statistics with growth trajectory and entropy.
+
+        Calculates:
+        - Basic contributor counts
+        - Contributor growth trajectory (comparing 6mo periods)
+        - Shannon entropy for bus factor assessment
+        """
+        import math
+
         contributors = await self._fetch_all_pages(
             f"/repos/{owner}/{repo}/contributors",
             max_pages=5,
@@ -262,17 +270,108 @@ class GitHubFetcher:
         threshold = total_contributions * 0.05
         over_5pct = sum(1 for c in contributors if c.get("contributions", 0) >= threshold)
 
-        # For active contributors, we'd need to check commit dates
-        # This is a simplification - just count those with recent activity
-        # A more accurate version would fetch recent commits
-        active_6mo = min(total, 10)  # Rough estimate
+        # Calculate Shannon entropy for contributor distribution
+        # Higher entropy = better distribution = lower bus factor risk
+        entropy = self._calculate_contributor_entropy(contributors, total_contributions)
+
+        # Get active contributors by time period from commit activity
+        now = datetime.now(timezone.utc)
+        six_months_ago = now - timedelta(days=180)
+        twelve_months_ago = now - timedelta(days=365)
+
+        # Fetch commits to determine active contributors by period
+        commits = await self._fetch_all_pages(
+            f"/repos/{owner}/{repo}/commits",
+            params={"since": twelve_months_ago.isoformat()},
+            max_pages=10,
+        )
+
+        active_6mo_set = set()
+        active_prev_6mo_set = set()
+        first_time_contributors = set()
+
+        for commit in commits:
+            author = commit.get("author")
+            if not author:
+                continue
+
+            author_login = author.get("login", "")
+            if not author_login:
+                continue
+
+            commit_date_str = commit.get("commit", {}).get("author", {}).get("date")
+            if not commit_date_str:
+                continue
+
+            commit_date = datetime.fromisoformat(commit_date_str.replace("Z", "+00:00"))
+
+            if commit_date >= six_months_ago:
+                active_6mo_set.add(author_login)
+            elif commit_date >= twelve_months_ago:
+                active_prev_6mo_set.add(author_login)
+
+        # Detect first-time contributors (in last 6mo but not before)
+        first_time_contributors = active_6mo_set - active_prev_6mo_set
+
+        # Determine contributor trend
+        active_6mo = len(active_6mo_set)
+        active_prev_6mo = len(active_prev_6mo_set)
+
+        if active_6mo > active_prev_6mo * 1.3:  # >30% growth
+            trend = "growing"
+        elif active_6mo < active_prev_6mo * 0.7:  # >30% decline
+            trend = "declining"
+        else:
+            trend = "stable"
 
         return ContributorStats(
             total_contributors=total,
-            active_contributors_6mo=active_6mo,
+            active_contributors_6mo=active_6mo if active_6mo > 0 else min(total, 10),
             top_contributor_pct=round(top_pct, 1),
             contributors_over_5pct=over_5pct,
+            contributors_prev_6mo=active_prev_6mo,
+            contributor_trend=trend,
+            first_time_contributors_6mo=len(first_time_contributors),
+            contributor_entropy=entropy,
         )
+
+    def _calculate_contributor_entropy(
+        self, contributors: list[dict], total_contributions: int
+    ) -> float | None:
+        """Calculate Shannon entropy for contributor distribution.
+
+        Higher entropy indicates better distribution of contributions
+        across multiple contributors (lower bus factor risk).
+
+        Formula: H = -sum(p * log2(p)) for each contributor
+
+        Returns:
+            Entropy value (0 = single contributor, higher = better distribution)
+            Returns None if no data available.
+        """
+        import math
+
+        if not contributors or total_contributions == 0:
+            return None
+
+        # Calculate contribution percentages
+        percentages = []
+        for c in contributors:
+            contributions = c.get("contributions", 0)
+            if contributions > 0:
+                p = contributions / total_contributions
+                percentages.append(p)
+
+        if not percentages:
+            return None
+
+        # Calculate Shannon entropy
+        entropy = 0.0
+        for p in percentages:
+            if p > 0:
+                entropy -= p * math.log2(p)
+
+        return round(entropy, 2)
 
     async def _fetch_commit_activity(self, owner: str, repo: str) -> CommitActivity:
         """Fetch commit activity statistics."""
@@ -790,13 +889,31 @@ class GitHubFetcher:
             for name in root_files
         )
 
-        # Check .github directory
+        # Check .github directory for community health files
         github_dir = await self._fetch(f"/repos/{owner}/{repo}/contents/.github")
         has_ci = False
+        has_issue_templates = False
+        has_pr_template = False
+        has_funding = False
+
         if github_dir and isinstance(github_dir, list):
-            github_files = {item.get("name", "").lower() for item in github_dir}
+            github_files = {item.get("name", "").lower(): item for item in github_dir}
             has_codeowners = "codeowners" in github_files
             has_ci = "workflows" in github_files
+            has_funding = "funding.yml" in github_files
+
+            # Check for issue templates (directory or file)
+            has_issue_templates = (
+                "issue_template.md" in github_files
+                or any(
+                    item.get("name", "").lower() == "issue_template"
+                    and item.get("type") == "dir"
+                    for item in github_dir
+                )
+            )
+
+            # Check for PR template
+            has_pr_template = "pull_request_template.md" in github_files
 
         return RepoFiles(
             has_readme=has_readme,
@@ -811,6 +928,9 @@ class GitHubFetcher:
             has_examples_dir=has_examples,
             has_tests_dir=has_tests,
             has_ci_config=has_ci,
+            has_issue_templates=has_issue_templates,
+            has_pr_template=has_pr_template,
+            has_funding=has_funding,
         )
 
     async def _fetch_ci_status(self, owner: str, repo: str) -> CIStatus:

@@ -110,6 +110,12 @@ class ContributorStats(BaseModel):
     active_contributors_6mo: int = 0
     top_contributor_pct: float = 0.0
     contributors_over_5pct: int = 0
+    # Contributor growth trajectory
+    contributors_prev_6mo: int = 0  # Contributors active 6-12 months ago
+    contributor_trend: str = "stable"  # growing, stable, declining
+    first_time_contributors_6mo: int = 0
+    # Bus factor entropy (higher = better distribution)
+    contributor_entropy: float | None = None  # Shannon entropy of contributions
 
 
 class CommitActivity(BaseModel):
@@ -214,6 +220,10 @@ class RepoFiles(BaseModel):
     has_examples_dir: bool = False
     has_tests_dir: bool = False
     has_ci_config: bool = False
+    # Community health indicators
+    has_issue_templates: bool = False
+    has_pr_template: bool = False
+    has_funding: bool = False  # FUNDING.yml present
 
 
 class CIStatus(BaseModel):

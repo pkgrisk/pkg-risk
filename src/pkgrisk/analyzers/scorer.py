@@ -419,8 +419,10 @@ class Scorer:
         Factors:
         - Stars (age-normalized)
         - Fork ratio
-        - New contributors
+        - Contributor growth trajectory
+        - First-time contributors
         - Good first issues
+        - Community health indicators (templates, CoC)
         - Download/install count
         - LLM sentiment assessment
         """
@@ -431,6 +433,7 @@ class Scorer:
         repo = github_data.repo
         contributors = github_data.contributors
         issues = github_data.issues
+        files = github_data.files
 
         # Stars (logarithmic scale, normalized by age)
         if repo.stars > 0 and repo.created_at:
@@ -449,11 +452,18 @@ class Scorer:
             if fork_ratio > 0.1:
                 score += 5
 
-        # New contributors (sign of welcoming community)
-        # Note: This is estimated, actual first-time contributors would need more data
-        if contributors.total_contributors > 50:
+        # Contributor growth trajectory
+        trend = getattr(contributors, 'contributor_trend', 'stable')
+        if trend == "growing":
+            score += 10
+        elif trend == "declining":
+            score -= 15
+
+        # First-time contributors in last 6 months (welcoming community)
+        first_time = getattr(contributors, 'first_time_contributors_6mo', 0)
+        if first_time >= 5:
             score += 5
-        elif contributors.total_contributors > 10:
+        elif first_time >= 1:
             score += 2
 
         # Good first issues (welcoming to newcomers)
@@ -462,9 +472,8 @@ class Scorer:
         elif issues.good_first_issue_count >= 1:
             score += 2
 
-        # Has discussions enabled
-        if repo.has_discussions:
-            score += 3
+        # Community health indicators
+        score += self._calculate_community_health_score(files, repo)
 
         # Install/download count bonus
         if install_count:
@@ -494,6 +503,33 @@ class Scorer:
 
         return ScoreComponent(score=max(0, min(100, score)), weight=self.WEIGHTS["community"])
 
+    def _calculate_community_health_score(
+        self, files: "RepoFiles", repo: "GitHubRepoData"
+    ) -> float:
+        """Calculate community health indicators bonus.
+
+        Awards points for welcoming community signals:
+        - CONTRIBUTING.md with clear process: +5
+        - Issue templates configured: +3
+        - PR templates configured: +3
+        - Code of Conduct present: +3
+        - Active discussions/Q&A: +5
+        """
+        bonus = 0.0
+
+        if files.has_contributing:
+            bonus += 5
+        if getattr(files, 'has_issue_templates', False):
+            bonus += 3
+        if getattr(files, 'has_pr_template', False):
+            bonus += 3
+        if files.has_code_of_conduct:
+            bonus += 3
+        if repo.has_discussions:
+            bonus += 5
+
+        return bonus
+
     def _calculate_bus_factor_score(
         self,
         github_data: GitHubData | None,
@@ -502,10 +538,11 @@ class Scorer:
         """Calculate bus factor score (10% weight).
 
         Factors:
-        - Number of significant contributors
+        - Shannon entropy of contributor distribution
         - Top contributor concentration
         - Active contributors
-        - Org vs personal repo
+        - Contributor trend
+        - Governance files (CODEOWNERS, GOVERNANCE.md)
         - LLM governance assessment
         """
         if not github_data:
@@ -513,16 +550,24 @@ class Scorer:
 
         score = 50.0  # Start at midpoint
         contributors = github_data.contributors
-        repo = github_data.repo
         files = github_data.files
 
-        # Multiple significant contributors
-        if contributors.contributors_over_5pct >= 3:
-            score += 25
-        elif contributors.contributors_over_5pct >= 2:
-            score += 15
-        elif contributors.contributors_over_5pct == 1:
-            score -= 10
+        # Shannon entropy-based bus factor score
+        # Higher entropy = better distribution = lower bus factor risk
+        entropy = getattr(contributors, 'contributor_entropy', None)
+        if entropy is not None:
+            # Entropy of 0 = single contributor, 3+ = well distributed
+            # Normalize to 0-25 point range
+            entropy_score = min(25, entropy * 8)  # ~3 entropy = 24 points
+            score += entropy_score
+        else:
+            # Fall back to contributors_over_5pct method
+            if contributors.contributors_over_5pct >= 3:
+                score += 25
+            elif contributors.contributors_over_5pct >= 2:
+                score += 15
+            elif contributors.contributors_over_5pct == 1:
+                score -= 10
 
         # Top contributor concentration (penalty for high concentration)
         if contributors.top_contributor_pct > 90:
@@ -540,11 +585,16 @@ class Scorer:
         elif contributors.active_contributors_6mo == 1:
             score -= 10
 
-        # Org repo (usually more sustainable)
-        # Note: This is a simplification - would need to check repo.owner type
+        # Contributor trend affects bus factor
+        trend = getattr(contributors, 'contributor_trend', 'stable')
+        if trend == "growing":
+            score += 5  # Growing contributor base reduces risk
+        elif trend == "declining":
+            score -= 10  # Declining contributors increases risk
+
+        # Governance files
         if files.has_codeowners:
             score += 5
-
         if files.has_governance:
             score += 5
 
