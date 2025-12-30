@@ -772,61 +772,93 @@ class Scorer:
     ) -> ScoreComponent:
         """Calculate documentation score (10% weight).
 
-        Factors:
-        - README presence and size
-        - Docs directory
-        - Examples directory
-        - CHANGELOG presence
-        - LLM README assessment
+        Weighting: Quality (60%) vs Presence (40%)
+
+        Presence signals (40 points max):
+        - README presence and size: 15 points
+        - Docs directory: 10 points
+        - Examples directory: 10 points
+        - CHANGELOG: 5 points
+
+        Quality signals via LLM (60 points max):
+        - Installation instructions: 15 points
+        - Quick start/usage: 15 points
+        - API documentation/examples: 15 points
+        - Changelog quality: 15 points
         """
         if not github_data:
             return ScoreComponent(score=50.0, weight=self.WEIGHTS["documentation"])
 
-        score = 0.0
         files = github_data.files
 
-        # README (essential)
+        # Presence signals (40% = 40 points max)
+        presence_score = 0.0
+
         if files.has_readme:
-            score += 20
-            # Size bonus (more comprehensive)
+            presence_score += 10
             if files.readme_size_bytes > 5000:
-                score += 10
+                presence_score += 5
             elif files.readme_size_bytes > 1000:
-                score += 5
+                presence_score += 3
 
-        # Docs directory
         if files.has_docs_dir:
-            score += 15
+            presence_score += 10
 
-        # Examples
         if files.has_examples_dir:
-            score += 15
+            presence_score += 10
 
-        # CHANGELOG
         if files.has_changelog:
-            score += 10
+            presence_score += 5
 
-        # CONTRIBUTING guide
-        if files.has_contributing:
-            score += 5
+        # Quality signals via LLM (60% = 60 points max)
+        quality_score = 0.0
 
-        # LLM README assessment (major weight)
         if llm_assessments and llm_assessments.readme:
             readme = llm_assessments.readme
-            # Average of key dimensions, scaled to 25 points
-            llm_avg = (
-                readme.clarity
-                + readme.installation
-                + readme.quick_start
-                + readme.examples
-            ) / 4
-            score += llm_avg * 2.5
+            # Break out LLM dimensions with specific weights
+            # Installation: 15 points (scaled from 1-10)
+            quality_score += readme.installation * 1.5
+            # Quick start/usage: 15 points
+            quality_score += readme.quick_start * 1.5
+            # Examples/API docs: 15 points
+            quality_score += readme.examples * 1.5
 
-        else:
-            # If no LLM assessment, baseline from file presence
-            score += 25 if files.has_readme else 0
+        # Changelog quality (15 points)
+        if llm_assessments and llm_assessments.changelog:
+            quality_score += self._calculate_changelog_quality_score(llm_assessments.changelog)
+        elif files.has_changelog:
+            quality_score += 7.5  # Baseline for having a changelog
 
-        return ScoreComponent(score=max(0, min(100, score)), weight=self.WEIGHTS["documentation"])
+        # If no LLM assessment, provide baseline from presence
+        if not llm_assessments:
+            if files.has_readme:
+                quality_score += 30  # 50% baseline
+
+        total_score = presence_score + quality_score
+        return ScoreComponent(score=max(0, min(100, total_score)), weight=self.WEIGHTS["documentation"])
+
+    def _calculate_changelog_quality_score(self, changelog: "ChangelogAssessment") -> float:
+        """Calculate changelog quality score (up to 15 points).
+
+        Factors:
+        - Follows Keep a Changelog format: +5
+        - Breaking changes clearly marked: +5
+        - Migration guides provided: +5
+        """
+        quality_score = 0.0
+
+        # Clear version history
+        if changelog.breaking_changes_marked:
+            quality_score += 5
+
+        # Migration guides
+        if changelog.has_migration_guides:
+            quality_score += 5
+
+        # Base score for having detailed changelog
+        quality_score += 5
+
+        return quality_score
 
     def _calculate_stability_score(
         self,
