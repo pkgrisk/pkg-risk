@@ -31,6 +31,17 @@ jobs:
         working-directory: frontend
         run: npm ci
 
+      - name: Set base URL
+        id: base-url
+        run: |
+          if [ -f frontend/public/CNAME ]; then
+            echo "VITE_BASE_URL=/" >> $GITHUB_ENV
+            echo "Using custom domain, base=/"
+          else
+            echo "VITE_BASE_URL=/pkg-risk/" >> $GITHUB_ENV
+            echo "Using GitHub Pages subdomain, base=/pkg-risk/"
+          fi
+
       - name: Build frontend
         working-directory: frontend
         run: npm run build
