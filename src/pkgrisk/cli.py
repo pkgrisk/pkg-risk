@@ -263,9 +263,10 @@ def analyze(
     ecosystem: str = typer.Option("homebrew", "--ecosystem", "-e", help="Package ecosystem"),
     output: Path | None = typer.Option(None, "--output", "-o", help="Output JSON file"),
     skip_llm: bool = typer.Option(False, "--skip-llm", help="Skip LLM analysis"),
+    model: str = typer.Option("llama3.1:70b", "--model", "-m", help="Ollama model for LLM analysis"),
 ) -> None:
     """Analyze a package and calculate health scores."""
-    asyncio.run(_analyze_package(package, ecosystem, output, skip_llm))
+    asyncio.run(_analyze_package(package, ecosystem, output, skip_llm, model))
 
 
 async def _analyze_package(
@@ -273,6 +274,7 @@ async def _analyze_package(
     ecosystem: str,
     output: Path | None,
     skip_llm: bool,
+    model: str,
 ) -> None:
     """Async implementation of analyze."""
     import os
@@ -299,6 +301,7 @@ async def _analyze_package(
             adapter=adapter,
             github_token=os.environ.get("GITHUB_TOKEN"),
             skip_llm=skip_llm,
+            llm_model=model,
         )
 
         try:

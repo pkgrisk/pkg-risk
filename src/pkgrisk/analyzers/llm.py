@@ -102,7 +102,11 @@ class LLMAnalyzer:
         Raises:
             ValueError: If no valid JSON found.
         """
-        # Try to find JSON block
+        # Remove thinking tags (e.g., from deepseek-r1)
+        # <think>...</think> blocks should be stripped
+        text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
+
+        # Try to find JSON block in code fence
         json_match = re.search(r"```(?:json)?\s*\n?(.*?)\n?```", text, re.DOTALL)
         if json_match:
             text = json_match.group(1)
