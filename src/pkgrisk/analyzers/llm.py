@@ -29,25 +29,51 @@ class LLMAnalyzer:
     def __init__(
         self,
         model: str = "llama3.1:70b",
-        fast_model: str = "llama3.1:8b",
+        fast_model: str | None = None,
         client: httpx.AsyncClient | None = None,
     ) -> None:
         """Initialize the analyzer.
 
         Args:
             model: Primary model for complex analysis.
-            fast_model: Faster model for simpler tasks.
+            fast_model: Faster model for simpler tasks. If None, uses primary model.
             client: Optional httpx client.
         """
         self.model = model
-        self.fast_model = fast_model
+        # If no fast_model specified, use the main model
+        self.fast_model = fast_model if fast_model else model
         self._client = client
+        self._fast_model_verified = False
 
     async def _get_client(self) -> httpx.AsyncClient:
         """Get or create an HTTP client."""
         if self._client is not None:
             return self._client
         return httpx.AsyncClient(timeout=300.0)  # LLM can be slow
+
+    async def _verify_fast_model(self) -> None:
+        """Verify fast_model is available, fall back to main model if not."""
+        if self._fast_model_verified or self.fast_model == self.model:
+            return
+
+        client = await self._get_client()
+        try:
+            response = await client.get(f"{self.OLLAMA_URL}/api/tags")
+            if response.status_code == 200:
+                models = response.json().get("models", [])
+                model_names = [m.get("name", "") for m in models]
+                # Check if fast_model is available
+                fast_available = any(self.fast_model in name for name in model_names)
+                if not fast_available:
+                    # Fall back to main model
+                    self.fast_model = self.model
+        except Exception:
+            # On error, fall back to main model
+            self.fast_model = self.model
+        finally:
+            self._fast_model_verified = True
+            if self._client is None:
+                await client.aclose()
 
     async def _generate(
         self,
@@ -65,6 +91,11 @@ class LLMAnalyzer:
         Returns:
             The generated text response.
         """
+        # Verify fast_model availability before using it
+        if model == self.fast_model and model != self.model:
+            await self._verify_fast_model()
+            model = self.fast_model  # May have been updated to main model
+
         model = model or self.model
         client = await self._get_client()
 

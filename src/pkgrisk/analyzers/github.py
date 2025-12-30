@@ -622,3 +622,111 @@ class GitHubFetcher:
             })
 
         return result
+
+    async def fetch_changelog_content(self, owner: str, repo: str) -> str | None:
+        """Fetch CHANGELOG content for LLM analysis.
+
+        Tries multiple common changelog filenames.
+        """
+        import base64
+
+        # Try common changelog names
+        changelog_names = [
+            "CHANGELOG.md",
+            "CHANGELOG",
+            "CHANGELOG.txt",
+            "CHANGES.md",
+            "CHANGES",
+            "HISTORY.md",
+            "HISTORY",
+            "NEWS.md",
+            "NEWS",
+        ]
+
+        for name in changelog_names:
+            content_data = await self._fetch(f"/repos/{owner}/{repo}/contents/{name}")
+            if content_data and content_data.get("content"):
+                try:
+                    return base64.b64decode(content_data["content"]).decode("utf-8")
+                except Exception:
+                    continue
+
+        return None
+
+    async def fetch_governance_docs(self, owner: str, repo: str) -> str | None:
+        """Fetch governance-related documentation for LLM analysis.
+
+        Combines GOVERNANCE.md, CONTRIBUTING.md, and related docs.
+        """
+        import base64
+
+        docs = []
+
+        # Files to check
+        gov_files = [
+            "GOVERNANCE.md",
+            "CONTRIBUTING.md",
+            "MAINTAINERS.md",
+            "MAINTAINERS",
+            ".github/CONTRIBUTING.md",
+        ]
+
+        for filename in gov_files:
+            content_data = await self._fetch(f"/repos/{owner}/{repo}/contents/{filename}")
+            if content_data and content_data.get("content"):
+                try:
+                    content = base64.b64decode(content_data["content"]).decode("utf-8")
+                    docs.append(f"# {filename}\n\n{content}")
+                except Exception:
+                    continue
+
+        return "\n\n---\n\n".join(docs) if docs else None
+
+    async def fetch_maintainer_comments(
+        self, owner: str, repo: str, limit: int = 30
+    ) -> list[str]:
+        """Fetch recent comments from maintainers on issues and PRs.
+
+        Returns a list of comment texts from maintainers.
+        """
+        # First get list of contributors to identify maintainers
+        contributors = await self._fetch_all_pages(
+            f"/repos/{owner}/{repo}/contributors",
+            max_pages=1,
+        )
+
+        # Consider top contributors as maintainers (top 5 or those with significant contributions)
+        maintainer_logins = set()
+        if contributors:
+            total_contributions = sum(c.get("contributions", 0) for c in contributors[:10])
+            threshold = total_contributions * 0.05 if total_contributions > 0 else 1
+            for c in contributors[:10]:
+                if c.get("contributions", 0) >= threshold:
+                    maintainer_logins.add(c.get("login", "").lower())
+
+        # Also add repo owner
+        maintainer_logins.add(owner.lower())
+
+        if not maintainer_logins:
+            return []
+
+        # Fetch recent issue comments
+        comments = await self._fetch_all_pages(
+            f"/repos/{owner}/{repo}/issues/comments",
+            params={"sort": "updated", "direction": "desc", "per_page": 100},
+            max_pages=2,
+        )
+
+        # Filter to maintainer comments
+        maintainer_comments = []
+        for comment in comments:
+            author = comment.get("user", {}).get("login", "").lower()
+            if author in maintainer_logins:
+                body = comment.get("body", "")
+                if body and len(body) > 20:  # Skip very short comments
+                    maintainer_comments.append(body[:1000])  # Truncate long comments
+
+            if len(maintainer_comments) >= limit:
+                break
+
+        return maintainer_comments

@@ -181,7 +181,7 @@ class AnalysisPipeline:
         """
         assessments = LLMAssessments()
 
-        # README assessment
+        # 1. README assessment
         if github_data.files.has_readme:
             readme_content = await self.github.fetch_readme_content(owner, repo)
             if readme_content:
@@ -192,7 +192,7 @@ class AnalysisPipeline:
                 except Exception:
                     pass  # LLM failures shouldn't break pipeline
 
-        # Sentiment assessment from issues
+        # 2. Sentiment assessment from issues
         try:
             issues = await self.github.fetch_recent_issues(owner, repo, limit=15)
             if issues:
@@ -202,7 +202,17 @@ class AnalysisPipeline:
         except Exception:
             pass
 
-        # Maintenance assessment
+        # 3. Communication assessment from maintainer comments
+        try:
+            comments = await self.github.fetch_maintainer_comments(owner, repo, limit=30)
+            if comments and len(comments) >= 5:  # Need enough comments for meaningful analysis
+                assessments.communication = await self.llm.assess_communication(
+                    comments, package_name, ecosystem
+                )
+        except Exception:
+            pass
+
+        # 4. Maintenance assessment
         try:
             last_commit = github_data.commits.last_commit_date
             last_commit_str = last_commit.isoformat() if last_commit else "unknown"
@@ -223,6 +233,28 @@ class AnalysisPipeline:
             )
         except Exception:
             pass
+
+        # 5. Changelog assessment
+        if github_data.files.has_changelog:
+            try:
+                changelog_content = await self.github.fetch_changelog_content(owner, repo)
+                if changelog_content:
+                    assessments.changelog = await self.llm.assess_changelog(
+                        changelog_content, package_name, ecosystem
+                    )
+            except Exception:
+                pass
+
+        # 6. Governance assessment
+        if github_data.files.has_contributing or github_data.files.has_governance:
+            try:
+                governance_docs = await self.github.fetch_governance_docs(owner, repo)
+                if governance_docs:
+                    assessments.governance = await self.llm.assess_governance(
+                        governance_docs, package_name, ecosystem
+                    )
+            except Exception:
+                pass
 
         return assessments
 
@@ -256,6 +288,31 @@ class AnalysisPipeline:
                 summary["community_sentiment"] = llm_assessments.sentiment.sentiment
                 if llm_assessments.sentiment.abandonment_signals:
                     summary["concerns"].append("Possible abandonment signals detected")
+                if llm_assessments.sentiment.common_complaints:
+                    for complaint in llm_assessments.sentiment.common_complaints[:2]:
+                        summary["concerns"].append(f"Community: {complaint}")
+
+            if llm_assessments.communication:
+                summary["communication_style"] = llm_assessments.communication.communication_style
+                if llm_assessments.communication.communication_style == "exemplary":
+                    summary["highlights"].append("Excellent maintainer communication")
+                elif llm_assessments.communication.communication_style in ("poor", "hostile"):
+                    summary["concerns"].append(f"Communication: {llm_assessments.communication.summary}")
+                if llm_assessments.communication.red_flags:
+                    for flag in llm_assessments.communication.red_flags[:2]:
+                        summary["concerns"].append(f"Communication: {flag}")
+
+            if llm_assessments.changelog:
+                if llm_assessments.changelog.breaking_changes_marked:
+                    summary["highlights"].append("Breaking changes clearly marked in changelog")
+                if llm_assessments.changelog.has_migration_guides:
+                    summary["highlights"].append("Has migration guides for upgrades")
+
+            if llm_assessments.governance:
+                if llm_assessments.governance.has_succession_plan:
+                    summary["highlights"].append("Has succession plan for maintainers")
+                if llm_assessments.governance.bus_factor_risk == "high":
+                    summary["concerns"].append("Governance: High bus factor risk identified")
 
         if github_data:
             # Security summary
