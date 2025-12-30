@@ -626,6 +626,97 @@ def monitor(
 
 
 @app.command()
+def run_daemon(
+    data_dir: Path = typer.Option(Path("data"), "--data-dir", "-d", help="Data directory"),
+    skip_llm: bool = typer.Option(True, "--skip-llm/--with-llm", help="Skip LLM analysis"),
+    model: str = typer.Option("llama3.1:70b", "--model", "-m", help="Ollama model for LLM"),
+    stale_days: int = typer.Option(7, "--stale-days", help="Days before package is stale"),
+    new_ratio: int = typer.Option(3, "--new-ratio", help="New packages per interleave cycle"),
+    stale_ratio: int = typer.Option(1, "--stale-ratio", help="Stale packages per interleave cycle"),
+    publish_interval: int = typer.Option(50, "--publish-interval", help="Packages between GitHub pushes"),
+    no_publish: bool = typer.Option(False, "--no-publish", help="Disable auto-publishing to GitHub"),
+    rate_threshold: int = typer.Option(50, "--rate-threshold", help="Rate limit threshold for preemptive sleep"),
+) -> None:
+    """Run the continuous analysis daemon.
+
+    Analyzes packages continuously across all ecosystems (homebrew, npm).
+    Interleaves new package discovery with re-scanning stale packages.
+    Handles GitHub API rate limits by sleeping until reset.
+    Automatically pushes updates to GitHub to refresh the live site.
+
+    Press Ctrl+C to gracefully stop (completes current package, then publishes).
+
+    Examples:
+        pkgrisk run-daemon                      # Basic daemon
+        pkgrisk run-daemon --with-llm           # With LLM analysis
+        pkgrisk run-daemon --publish-interval 20  # More frequent publishing
+        pkgrisk run-daemon --no-publish         # Disable auto-publish (testing)
+    """
+    asyncio.run(_run_daemon(
+        data_dir=data_dir,
+        skip_llm=skip_llm,
+        model=model,
+        stale_days=stale_days,
+        new_ratio=new_ratio,
+        stale_ratio=stale_ratio,
+        publish_interval=publish_interval,
+        no_publish=no_publish,
+        rate_threshold=rate_threshold,
+    ))
+
+
+async def _run_daemon(
+    data_dir: Path,
+    skip_llm: bool,
+    model: str,
+    stale_days: int,
+    new_ratio: int,
+    stale_ratio: int,
+    publish_interval: int,
+    no_publish: bool,
+    rate_threshold: int,
+) -> None:
+    """Async implementation of run_daemon."""
+    import logging
+    import os
+
+    from pkgrisk.daemon import ContinuousPipeline
+
+    # Set up logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+
+    console.print("[bold]Starting continuous analysis daemon...[/bold]")
+    console.print(f"Data directory: {data_dir}")
+    console.print(f"LLM: {'Disabled' if skip_llm else model}")
+    console.print(f"Interleave ratio: {new_ratio} new : {stale_ratio} stale")
+    console.print(f"Stale threshold: {stale_days} days")
+    console.print(f"Auto-publish: {'Disabled' if no_publish else f'every {publish_interval} packages'}")
+    console.print()
+    console.print("[dim]Press Ctrl+C to gracefully stop[/dim]")
+    console.print()
+
+    pipeline = ContinuousPipeline(
+        data_dir=data_dir,
+        github_token=os.environ.get("GITHUB_TOKEN"),
+        skip_llm=skip_llm,
+        llm_model=model,
+        stale_threshold_days=stale_days,
+        interleave_ratio=(new_ratio, stale_ratio),
+        rate_limit_threshold=rate_threshold,
+        publish_interval=publish_interval,
+        no_publish=no_publish,
+    )
+
+    await pipeline.run()
+
+    console.print("[bold green]Daemon stopped gracefully.[/bold green]")
+
+
+@app.command()
 def version() -> None:
     """Show version information."""
     from pkgrisk import __version__
