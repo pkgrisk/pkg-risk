@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { GradeBadge } from '../components/GradeBadge';
 import { ScoreBar } from '../components/ScoreBar';
 import { CVEList } from '../components/CVEList';
@@ -10,16 +11,104 @@ import type { PackageAnalysis } from '../types/package';
 
 interface PackageDetailProps {
   packages: Map<string, PackageAnalysis>;
+  cacheDetail: (key: string, detail: PackageAnalysis) => void;
 }
 
-export function PackageDetail({ packages }: PackageDetailProps) {
-  const { ecosystem, name } = useParams<{ ecosystem: string; name: string }>();
-  const pkg = packages.get(`${ecosystem}/${name}`);
+function SkeletonLoading() {
+  return (
+    <div className="package-detail-loading">
+      <div className="skeleton skeleton-back"></div>
+      <div className="skeleton-header">
+        <div className="skeleton-title-group">
+          <div className="skeleton skeleton-grade"></div>
+          <div>
+            <div className="skeleton skeleton-title"></div>
+            <div className="skeleton skeleton-subtitle"></div>
+          </div>
+        </div>
+        <div className="skeleton skeleton-score-box"></div>
+      </div>
+      <div className="skeleton skeleton-description"></div>
+      <div className="skeleton-grid">
+        <div className="skeleton skeleton-card"></div>
+        <div className="skeleton skeleton-card"></div>
+        <div className="skeleton skeleton-card"></div>
+        <div className="skeleton skeleton-card"></div>
+      </div>
+    </div>
+  );
+}
 
-  if (!pkg) {
+export function PackageDetail({ packages, cacheDetail }: PackageDetailProps) {
+  const { ecosystem, name } = useParams<{ ecosystem: string; name: string }>();
+  const cacheKey = `${ecosystem}/${name}`;
+
+  // Check if we have cached data
+  const cachedPkg = packages.get(cacheKey);
+
+  const [pkg, setPkg] = useState<PackageAnalysis | null>(cachedPkg || null);
+  const [loading, setLoading] = useState(!cachedPkg);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // If we already have the data cached, use it
+    if (cachedPkg) {
+      setPkg(cachedPkg);
+      setLoading(false);
+      return;
+    }
+
+    // Otherwise, fetch it on-demand
+    async function loadDetail() {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const res = await fetch(
+          `${import.meta.env.BASE_URL}data/analyzed/${ecosystem}/${name}.json`
+        );
+
+        if (!res.ok) {
+          if (res.status === 404) {
+            setError('not_found');
+          } else {
+            setError(`Failed to load package: ${res.status}`);
+          }
+          setLoading(false);
+          return;
+        }
+
+        const detail: PackageAnalysis = await res.json();
+        setPkg(detail);
+        cacheDetail(cacheKey, detail);
+        setLoading(false);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load package');
+        setLoading(false);
+      }
+    }
+
+    loadDetail();
+  }, [ecosystem, name, cachedPkg, cacheDetail, cacheKey]);
+
+  if (loading) {
+    return <SkeletonLoading />;
+  }
+
+  if (error === 'not_found' || !pkg) {
     return (
       <div className="not-found">
         <h2>Package not found</h2>
+        <Link to="/">Back to list</Link>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+        <h2>Error loading package</h2>
+        <p>{error}</p>
         <Link to="/">Back to list</Link>
       </div>
     );

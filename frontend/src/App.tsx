@@ -31,7 +31,7 @@ function App() {
 
     async function loadData() {
       try {
-        // Load summary data
+        // Load summary data only - details are loaded on-demand in PackageDetail
         const summaryRes = await fetch(`${import.meta.env.BASE_URL}data/${ecosystem}.json`);
         if (!summaryRes.ok) {
           throw new Error(`Failed to load package data: ${summaryRes.status}`);
@@ -50,22 +50,6 @@ function App() {
           // Stats are optional
         }
 
-        // Load individual package details (for detail view)
-        const detailsMap = new Map<string, PackageAnalysis>();
-        for (const pkg of summaryData) {
-          try {
-            const detailRes = await fetch(
-              `${import.meta.env.BASE_URL}data/analyzed/${ecosystem}/${pkg.name}.json`
-            );
-            if (detailRes.ok) {
-              const detail: PackageAnalysis = await detailRes.json();
-              detailsMap.set(`${ecosystem}/${pkg.name}`, detail);
-            }
-          } catch {
-            // Individual package load failure is ok
-          }
-        }
-        setPackageDetails(detailsMap);
         setLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load data');
@@ -75,11 +59,22 @@ function App() {
     loadData();
   }, [ecosystem]);
 
+  // Cache a loaded package detail (called from PackageDetail component)
+  const cacheDetail = (key: string, detail: PackageAnalysis) => {
+    setPackageDetails(prev => new Map(prev).set(key, detail));
+  };
+
   if (loading) {
     return (
-      <div className="loading">
-        <div className="spinner"></div>
-        <p>Loading package data...</p>
+      <div className="loading-screen">
+        <div className="loading-content">
+          <div className="loading-icon">📦</div>
+          <h2>Loading {ECOSYSTEM_LABELS[ecosystem]} packages...</h2>
+          <div className="loading-bar">
+            <div className="loading-bar-fill"></div>
+          </div>
+          <p className="loading-hint">Fetching package health data</p>
+        </div>
       </div>
     );
   }
@@ -124,7 +119,7 @@ function App() {
             />
             <Route
               path="/:ecosystem/:name"
-              element={<PackageDetail packages={packageDetails} />}
+              element={<PackageDetail packages={packageDetails} cacheDetail={cacheDetail} />}
             />
             <Route
               path="/about"

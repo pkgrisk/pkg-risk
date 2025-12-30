@@ -118,6 +118,145 @@
   color: #ef4444;
 }
 
+/* Improved Loading Screen */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.loading-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.loading-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.loading-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 24px 0;
+}
+
+.loading-bar {
+  width: 280px;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto 16px;
+}
+
+.loading-bar-fill {
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, #646cff, #a855f7, #646cff);
+  background-size: 200% 100%;
+  border-radius: 3px;
+  animation: loading-slide 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-slide {
+  0% { transform: translateX(-100%); background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { transform: translateX(350%); background-position: 0% 0%; }
+}
+
+.loading-hint {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Skeleton Loading Styles */
+.package-detail-loading {
+  max-width: 1200px;
+  padding: 24px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #252530 25%, #333 50%, #252530 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-back {
+  width: 120px;
+  height: 20px;
+  margin-bottom: 24px;
+}
+
+.skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.skeleton-title-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.skeleton-grade {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+
+.skeleton-title {
+  height: 36px;
+  width: 200px;
+}
+
+.skeleton-subtitle {
+  height: 20px;
+  width: 120px;
+  margin-top: 8px;
+}
+
+.skeleton-score-box {
+  width: 100px;
+  height: 80px;
+}
+
+.skeleton-description {
+  height: 24px;
+  width: 60%;
+  margin-bottom: 32px;
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.skeleton-card {
+  height: 250px;
+  border-radius: 12px;
+}
+
 /* Ecosystem Stats Overview */
 .ecosystem-stats {
   margin-bottom: 24px;
