@@ -258,6 +258,243 @@ async def _github_info(owner: str, repo: str, output: Path | None) -> None:
 
 
 @app.command()
+def analyze(
+    package: str = typer.Argument(..., help="Package name to analyze"),
+    ecosystem: str = typer.Option("homebrew", "--ecosystem", "-e", help="Package ecosystem"),
+    output: Path | None = typer.Option(None, "--output", "-o", help="Output JSON file"),
+    skip_llm: bool = typer.Option(False, "--skip-llm", help="Skip LLM analysis"),
+) -> None:
+    """Analyze a package and calculate health scores."""
+    asyncio.run(_analyze_package(package, ecosystem, output, skip_llm))
+
+
+async def _analyze_package(
+    package: str,
+    ecosystem: str,
+    output: Path | None,
+    skip_llm: bool,
+) -> None:
+    """Async implementation of analyze."""
+    import os
+
+    from rich.panel import Panel
+    from rich.progress import BarColumn, TaskProgressColumn
+
+    from pkgrisk.analyzers.pipeline import AnalysisPipeline
+
+    if ecosystem.lower() != "homebrew":
+        console.print(f"[red]Ecosystem '{ecosystem}' not yet supported.[/red]")
+        raise typer.Exit(1)
+
+    adapter = HomebrewAdapter()
+
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        console=console,
+    ) as progress:
+        task = progress.add_task("Analyzing package...", total=None)
+
+        pipeline = AnalysisPipeline(
+            adapter=adapter,
+            github_token=os.environ.get("GITHUB_TOKEN"),
+            skip_llm=skip_llm,
+        )
+
+        try:
+            progress.update(task, description="Fetching package data...")
+            analysis = await pipeline.analyze_package(package, save=False)
+        except Exception as e:
+            console.print(f"[red]Error analyzing package: {e}[/red]")
+            raise typer.Exit(1)
+
+    # Display results
+    console.print()
+    console.print(f"[bold cyan]{analysis.name}[/bold cyan] v{analysis.version}")
+    console.print(f"[dim]{analysis.description}[/dim]")
+    console.print()
+
+    # Score display
+    if analysis.scores:
+        scores = analysis.scores
+
+        # Overall score with color coding
+        score_color = "green" if scores.overall >= 80 else "yellow" if scores.overall >= 60 else "red"
+        console.print(
+            Panel(
+                f"[bold][{score_color}]{scores.overall:.0f}[/{score_color}][/bold] / 100  Grade: [bold]{scores.grade}[/bold]",
+                title="Overall Health Score",
+                expand=False,
+            )
+        )
+        console.print()
+
+        # Component scores
+        scores_table = Table(title="Score Breakdown", show_header=True)
+        scores_table.add_column("Component", style="bold")
+        scores_table.add_column("Score", justify="right")
+        scores_table.add_column("Weight", justify="right", style="dim")
+        scores_table.add_column("Bar", width=20)
+
+        components = [
+            ("Security", scores.security),
+            ("Maintenance", scores.maintenance),
+            ("Community", scores.community),
+            ("Bus Factor", scores.bus_factor),
+            ("Documentation", scores.documentation),
+            ("Stability", scores.stability),
+        ]
+
+        for name, component in components:
+            bar = _score_bar(component.score)
+            color = "green" if component.score >= 80 else "yellow" if component.score >= 60 else "red"
+            scores_table.add_row(
+                name,
+                f"[{color}]{component.score:.0f}[/{color}]",
+                f"{component.weight}%",
+                bar,
+            )
+
+        console.print(scores_table)
+
+    # Analysis summary
+    if analysis.analysis_summary:
+        console.print()
+        summary = analysis.analysis_summary
+
+        if summary.get("maintenance_status"):
+            status = summary["maintenance_status"]
+            status_color = {
+                "actively-maintained": "green",
+                "maintained": "green",
+                "minimal-maintenance": "yellow",
+                "stale": "red",
+                "abandoned": "red",
+            }.get(status, "white")
+            console.print(f"[bold]Maintenance:[/bold] [{status_color}]{status}[/{status_color}]")
+
+        if summary.get("security_summary"):
+            console.print(f"[bold]Security:[/bold] {summary['security_summary']}")
+
+        if summary.get("highlights"):
+            console.print()
+            console.print("[bold green]Highlights:[/bold green]")
+            for highlight in summary["highlights"]:
+                console.print(f"  [green]+[/green] {highlight}")
+
+        if summary.get("concerns"):
+            console.print()
+            console.print("[bold yellow]Concerns:[/bold yellow]")
+            for concern in summary["concerns"]:
+                console.print(f"  [yellow]![/yellow] {concern}")
+
+    # Save if requested
+    if output:
+        output.write_text(json.dumps(analysis.model_dump(mode="json"), indent=2, default=str))
+        console.print(f"\n[green]Saved to {output}[/green]")
+
+
+def _score_bar(score: float, width: int = 20) -> str:
+    """Create a visual score bar."""
+    filled = int(score / 100 * width)
+    empty = width - filled
+    color = "green" if score >= 80 else "yellow" if score >= 60 else "red"
+    return f"[{color}]{'█' * filled}[/{color}][dim]{'░' * empty}[/dim]"
+
+
+@app.command()
+def analyze_batch(
+    ecosystem: str = typer.Option("homebrew", "--ecosystem", "-e", help="Package ecosystem"),
+    limit: int = typer.Option(10, "--limit", "-n", help="Number of packages to analyze"),
+    skip_llm: bool = typer.Option(True, "--skip-llm/--with-llm", help="Skip LLM analysis"),
+    data_dir: Path = typer.Option(Path("data"), "--data-dir", "-d", help="Data directory"),
+) -> None:
+    """Analyze multiple packages in batch."""
+    asyncio.run(_analyze_batch(ecosystem, limit, skip_llm, data_dir))
+
+
+async def _analyze_batch(
+    ecosystem: str,
+    limit: int,
+    skip_llm: bool,
+    data_dir: Path,
+) -> None:
+    """Async implementation of analyze_batch."""
+    import os
+
+    from rich.progress import BarColumn, MofNCompleteColumn, TaskProgressColumn, TimeElapsedColumn
+
+    from pkgrisk.analyzers.pipeline import AnalysisPipeline
+
+    if ecosystem.lower() != "homebrew":
+        console.print(f"[red]Ecosystem '{ecosystem}' not yet supported.[/red]")
+        raise typer.Exit(1)
+
+    adapter = HomebrewAdapter()
+    pipeline = AnalysisPipeline(
+        adapter=adapter,
+        data_dir=data_dir,
+        github_token=os.environ.get("GITHUB_TOKEN"),
+        skip_llm=skip_llm,
+    )
+
+    console.print(f"[bold]Analyzing top {limit} {ecosystem} packages...[/bold]")
+    console.print()
+
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        MofNCompleteColumn(),
+        TimeElapsedColumn(),
+        console=console,
+    ) as progress:
+        task = progress.add_task("Analyzing...", total=limit)
+        results = []
+        errors = []
+
+        packages = await adapter.list_packages(limit=limit)
+
+        for i, package_name in enumerate(packages):
+            progress.update(task, description=f"Analyzing {package_name}...", completed=i)
+            try:
+                analysis = await pipeline.analyze_package(package_name, save=True)
+                results.append(analysis)
+            except Exception as e:
+                errors.append((package_name, str(e)))
+
+        progress.update(task, completed=limit)
+
+    # Summary
+    console.print()
+    console.print(f"[bold green]Completed:[/bold green] {len(results)} packages analyzed")
+
+    if errors:
+        console.print(f"[bold red]Errors:[/bold red] {len(errors)} packages failed")
+        for name, error in errors[:5]:
+            console.print(f"  [red]x[/red] {name}: {error}")
+
+    # Show top/bottom scores
+    if results:
+        sorted_results = sorted(results, key=lambda r: r.scores.overall if r.scores else 0, reverse=True)
+
+        console.print()
+        console.print("[bold]Top 5 Scores:[/bold]")
+        for r in sorted_results[:5]:
+            if r.scores:
+                console.print(f"  {r.scores.overall:5.1f} {r.scores.grade}  {r.name}")
+
+        console.print()
+        console.print("[bold]Bottom 5 Scores:[/bold]")
+        for r in sorted_results[-5:]:
+            if r.scores:
+                console.print(f"  {r.scores.overall:5.1f} {r.scores.grade}  {r.name}")
+
+    console.print()
+    console.print(f"[dim]Results saved to {data_dir}[/dim]")
+
+
+@app.command()
 def version() -> None:
     """Show version information."""
     from pkgrisk import __version__
