@@ -1,6 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import { GradeBadge } from '../components/GradeBadge';
 import { ScoreBar } from '../components/ScoreBar';
+import { CVEList } from '../components/CVEList';
+import { ScoreJustification } from '../components/ScoreJustification';
+import { CriticalIssuesBanner } from '../components/CriticalIssuesBanner';
+import { QuickVerdict } from '../components/QuickVerdict';
+import { RecommendationsCard } from '../components/RecommendationsCard';
 import type { PackageAnalysis } from '../types/package';
 
 interface PackageDetailProps {
@@ -60,7 +65,11 @@ export function PackageDetail({ packages }: PackageDetailProps) {
         </div>
       )}
 
+      <CriticalIssuesBanner pkg={pkg} />
+      <QuickVerdict pkg={pkg} />
+
       <div className="detail-grid">
+        <RecommendationsCard pkg={pkg} />
         {pkg.scores && (
           <section className="card scores-card">
             <h2>Score Breakdown</h2>
@@ -175,7 +184,7 @@ export function PackageDetail({ packages }: PackageDetailProps) {
 
         {pkg.github_data?.security && (
           <section className="card security-card">
-            <h2>Security</h2>
+            <h2>Security Practices</h2>
             <div className="security-items">
               <div className={`security-item ${pkg.github_data.security.has_security_md ? 'positive' : 'negative'}`}>
                 {pkg.github_data.security.has_security_md ? '✓' : '✗'} SECURITY.md
@@ -186,10 +195,13 @@ export function PackageDetail({ packages }: PackageDetailProps) {
               <div className={`security-item ${pkg.github_data.security.has_codeql ? 'positive' : 'negative'}`}>
                 {pkg.github_data.security.has_codeql ? '✓' : '✗'} CodeQL
               </div>
-              <div className={`security-item ${pkg.github_data.security.known_cves === 0 ? 'positive' : 'negative'}`}>
-                {pkg.github_data.security.known_cves} Known CVEs
-              </div>
             </div>
+          </section>
+        )}
+
+        {pkg.github_data?.security?.cve_history && (
+          <section className="card cve-card">
+            <CVEList cveHistory={pkg.github_data.security.cve_history} />
           </section>
         )}
 
@@ -243,6 +255,10 @@ export function PackageDetail({ packages }: PackageDetailProps) {
           </section>
         )}
       </div>
+
+      {pkg.scores && (
+        <ScoreJustification pkg={pkg} />
+      )}
 
       <footer className="analysis-footer">
         <p>Analyzed: {formatDate(pkg.analyzed_at)}</p>
