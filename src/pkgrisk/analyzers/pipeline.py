@@ -9,6 +9,7 @@ import httpx
 from pkgrisk.adapters.base import BaseAdapter
 from pkgrisk.analyzers.github import GitHubFetcher
 from pkgrisk.analyzers.llm import LLMAnalyzer
+from pkgrisk.analyzers.osv import OSVFetcher
 from pkgrisk.analyzers.scorer import Scorer
 from pkgrisk.models.schemas import (
     DataAvailability,
@@ -50,6 +51,7 @@ class AnalysisPipeline:
         self.adapter = adapter
         self.data_dir = data_dir or Path("data")
         self.github = GitHubFetcher(token=github_token)
+        self.osv = OSVFetcher()
         self.llm = LLMAnalyzer(model=llm_model) if not skip_llm else None
         self.scorer = Scorer()
         self._http_client: httpx.AsyncClient | None = None
@@ -107,6 +109,30 @@ class AnalysisPipeline:
                 data_availability = DataAvailability.REPO_NOT_FOUND
                 unavailable_reason = f"Repository {repo_ref.owner}/{repo_ref.repo} not accessible (may be private, deleted, or renamed)"
 
+        # Stage 2.5: Fetch CVE history from OSV
+        if github_data and repo_ref:
+            try:
+                # Fetch release dates for time-to-patch calculation
+                release_dates = await self.github.fetch_release_dates(
+                    repo_ref.owner, repo_ref.repo
+                )
+
+                # Fetch CVE history
+                cve_history = await self.osv.fetch_cve_history(
+                    package_name=package_name,
+                    ecosystem=ecosystem.value,
+                    releases=github_data.releases,
+                    owner=repo_ref.owner,
+                    repo=repo_ref.repo,
+                    release_dates=release_dates,
+                )
+
+                # Attach to security data and update known_cves count
+                github_data.security.cve_history = cve_history
+                github_data.security.known_cves = cve_history.total_cves
+            except Exception:
+                pass  # CVE fetching failures shouldn't break pipeline
+
         # Stage 3: Run LLM assessments (only if we have GitHub data)
         llm_assessments = None
         if self.llm and github_data:
@@ -125,7 +151,13 @@ class AnalysisPipeline:
         analysis_summary = None
 
         if data_availability == DataAvailability.AVAILABLE and github_data:
-            scores = self.scorer.calculate_scores(github_data, llm_assessments, install_count)
+            scores = self.scorer.calculate_scores(
+                github_data,
+                llm_assessments,
+                install_count,
+                ecosystem=ecosystem.value,
+                metadata=metadata,
+            )
             analysis_summary = self._build_summary(github_data, llm_assessments, scores)
         else:
             # No scores for unavailable packages

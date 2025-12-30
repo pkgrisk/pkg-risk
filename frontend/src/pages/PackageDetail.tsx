@@ -34,6 +34,20 @@ export function PackageDetail({ packages }: PackageDetailProps) {
     });
   };
 
+  const formatRelativeTime = (dateStr: string) => {
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return 'today';
+    if (diffDays === 1) return 'yesterday';
+    if (diffDays < 7) return `${diffDays} days ago`;
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    return `${Math.floor(diffDays / 365)} years ago`;
+  };
+
   const formatNumber = (n: number) => n.toLocaleString();
 
   return (
@@ -49,13 +63,55 @@ export function PackageDetail({ packages }: PackageDetailProps) {
             <span className="ecosystem-badge">{pkg.ecosystem}</span>
           </div>
         </div>
-        {pkg.scores && (
-          <div className="overall-score">
-            <div className="score-value">{pkg.scores.overall.toFixed(1)}</div>
-            <div className="score-label">Overall Score</div>
+        <div className="header-right">
+          {pkg.scores && (
+            <div className="overall-score">
+              <div className="score-value">{pkg.scores.overall.toFixed(1)}</div>
+              <div className="score-label">Overall Score</div>
+              {pkg.scores.percentile && (
+                <div className="score-percentile">
+                  Top {(100 - pkg.scores.percentile).toFixed(0)}% in ecosystem
+                </div>
+              )}
+            </div>
+          )}
+          <div className="last-reviewed">
+            <span className="review-label">Last reviewed</span>
+            <span className="review-time" title={formatDate(pkg.analyzed_at)}>
+              {formatRelativeTime(pkg.analyzed_at)}
+            </span>
           </div>
-        )}
+        </div>
       </header>
+
+      {pkg.scores && (pkg.scores.risk_tier || pkg.scores.update_urgency || pkg.scores.confidence) && (
+        <div className="enterprise-indicators">
+          {pkg.scores.risk_tier && (
+            <div className={`indicator risk-tier tier-${pkg.scores.risk_tier}`}>
+              <span className="indicator-label">Risk Tier</span>
+              <span className="indicator-value">{pkg.scores.risk_tier}</span>
+            </div>
+          )}
+          {pkg.scores.update_urgency && (
+            <div className={`indicator update-urgency urgency-${pkg.scores.update_urgency}`}>
+              <span className="indicator-label">Update Urgency</span>
+              <span className="indicator-value">{pkg.scores.update_urgency}</span>
+            </div>
+          )}
+          {pkg.scores.confidence && (
+            <div className={`indicator confidence confidence-${pkg.scores.confidence}`}>
+              <span className="indicator-label">Confidence</span>
+              <span className="indicator-value">{pkg.scores.confidence}</span>
+            </div>
+          )}
+          {pkg.scores.project_age_band && (
+            <div className="indicator age-band">
+              <span className="indicator-label">Project Age</span>
+              <span className="indicator-value">{pkg.scores.project_age_band}</span>
+            </div>
+          )}
+        </div>
+      )}
 
       <p className="description">{pkg.description}</p>
 

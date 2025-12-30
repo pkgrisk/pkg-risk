@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/pkg-risk/',  // GitHub Pages repo name
+  base: '/',  // Custom domain (pkgrisk.com / pkgrisk.dev)
   build: {
     outDir: 'dist',
     sourcemap: true,

@@ -3,17 +3,32 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { PackageList } from './pages/PackageList';
 import { PackageDetail } from './pages/PackageDetail';
 import { About } from './pages/About';
-import type { PackageSummary, PackageAnalysis } from './types/package';
+import type { PackageSummary, PackageAnalysis, EcosystemStats } from './types/package';
 import './App.css';
+
+type Ecosystem = 'homebrew' | 'npm';
+
+const ECOSYSTEM_LABELS: Record<Ecosystem, string> = {
+  homebrew: 'Homebrew',
+  npm: 'NPM',
+};
 
 function App() {
   const [packages, setPackages] = useState<PackageSummary[]>([]);
   const [packageDetails, setPackageDetails] = useState<Map<string, PackageAnalysis>>(new Map());
+  const [ecosystemStats, setEcosystemStats] = useState<EcosystemStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [ecosystem] = useState('homebrew'); // Default ecosystem
+  const [ecosystem, setEcosystem] = useState<Ecosystem>('homebrew');
 
   useEffect(() => {
+    // Reset state when switching ecosystems
+    setLoading(true);
+    setError(null);
+    setPackages([]);
+    setPackageDetails(new Map());
+    setEcosystemStats(null);
+
     async function loadData() {
       try {
         // Load summary data
@@ -23,6 +38,17 @@ function App() {
         }
         const summaryData: PackageSummary[] = await summaryRes.json();
         setPackages(summaryData);
+
+        // Load ecosystem stats
+        try {
+          const statsRes = await fetch(`${import.meta.env.BASE_URL}data/${ecosystem}_stats.json`);
+          if (statsRes.ok) {
+            const statsData: EcosystemStats = await statsRes.json();
+            setEcosystemStats(statsData);
+          }
+        } catch {
+          // Stats are optional
+        }
 
         // Load individual package details (for detail view)
         const detailsMap = new Map<string, PackageAnalysis>();
@@ -77,6 +103,14 @@ function App() {
             <span className="brand-text">pkg-risk</span>
           </Link>
           <div className="nav-links">
+            <select
+              value={ecosystem}
+              onChange={(e) => setEcosystem(e.target.value as Ecosystem)}
+              className="ecosystem-selector"
+            >
+              <option value="homebrew">{ECOSYSTEM_LABELS.homebrew}</option>
+              <option value="npm">{ECOSYSTEM_LABELS.npm}</option>
+            </select>
             <span className="stat">{packages.length} packages</span>
             <Link to="/about" className="nav-link">About</Link>
           </div>
@@ -86,7 +120,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<PackageList packages={packages} ecosystem={ecosystem} />}
+              element={<PackageList packages={packages} ecosystem={ecosystem} stats={ecosystemStats} />}
             />
             <Route
               path="/:ecosystem/:name"

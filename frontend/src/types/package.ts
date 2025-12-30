@@ -1,6 +1,10 @@
 export type Ecosystem = 'homebrew' | 'npm' | 'pypi';
 export type Grade = 'A' | 'B' | 'C' | 'D' | 'F';
 export type DataAvailability = 'available' | 'no_repo' | 'repo_not_found' | 'private_repo' | 'not_github';
+export type RiskTier = 'approved' | 'conditional' | 'restricted' | 'prohibited';
+export type UpdateUrgency = 'critical' | 'high' | 'medium' | 'low';
+export type ConfidenceLevel = 'high' | 'medium' | 'low';
+export type ProjectAgeBand = 'new' | 'established' | 'mature' | 'legacy';
 
 export interface ScoreComponent {
   score: number;
@@ -11,6 +15,14 @@ export interface Scores {
   overall: number;
   grade: Grade;
   percentile: number | null;
+  // Enterprise risk indicators
+  risk_tier: RiskTier | null;
+  update_urgency: UpdateUrgency | null;
+  // Confidence and context
+  confidence: ConfidenceLevel | null;
+  confidence_factors: string[] | null;
+  project_age_band: ProjectAgeBand | null;
+  // Score components
   security: ScoreComponent;
   maintenance: ScoreComponent;
   community: ScoreComponent;
@@ -235,4 +247,35 @@ export interface PackageSummary {
   top_contributor_pct: number | null;
   has_security_policy: boolean;
   has_security_tools: boolean;
+  // Statistical fields
+  risk_tier: RiskTier | null;
+  update_urgency: UpdateUrgency | null;
+  confidence: ConfidenceLevel | null;
+  project_age_band: ProjectAgeBand | null;
+}
+
+// Ecosystem-level statistics
+export interface ScoreDistribution {
+  min: number;
+  max: number;
+  median: number;
+  p25: number;
+  p75: number;
+}
+
+export interface GradeDistribution {
+  A: number;
+  B: number;
+  C: number;
+  D: number;
+  F: number;
+}
+
+export interface EcosystemStats {
+  total_packages: number;
+  scored_packages: number;
+  unavailable_packages: number;
+  score_distribution: ScoreDistribution;
+  grade_distribution: GradeDistribution;
+  risk_tier_distribution: Record<RiskTier, number>;
 }

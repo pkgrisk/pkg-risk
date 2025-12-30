@@ -2,5 +2,6 @@
 
 from pkgrisk.adapters.base import BaseAdapter
 from pkgrisk.adapters.homebrew import HomebrewAdapter
+from pkgrisk.adapters.npm import NpmAdapter
 
-__all__ = ["BaseAdapter", "HomebrewAdapter"]
+__all__ = ["BaseAdapter", "HomebrewAdapter", "NpmAdapter"]

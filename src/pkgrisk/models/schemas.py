@@ -66,6 +66,11 @@ class PackageMetadata(BaseModel):
     license: str | None = None
     keywords: list[str] = Field(default_factory=list)
     dependencies: list[str] = Field(default_factory=list)
+    # NPM-specific fields
+    npm_maintainers: list[str] | None = None
+    npm_maintainer_count: int | None = None
+    has_types: bool | None = None  # TypeScript types in package.json
+    is_scoped: bool | None = None  # @org/package format
 
 
 class InstallStats(BaseModel):

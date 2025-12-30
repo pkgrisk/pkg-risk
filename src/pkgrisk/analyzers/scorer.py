@@ -6,11 +6,28 @@ from datetime import datetime, timezone
 from pkgrisk.models.schemas import (
     GitHubData,
     LLMAssessments,
+    PackageMetadata,
     RiskTier,
     ScoreComponent,
     Scores,
     UpdateUrgency,
 )
+
+# Ecosystem-specific thresholds
+ECOSYSTEM_THRESHOLDS = {
+    "homebrew": {
+        "release_sweet_spot": (4, 12),      # 4-12 releases/year
+        "response_time_good": 48,            # hours
+        "download_bonus_high": 100_000,      # monthly
+        "download_bonus_medium": 10_000,
+    },
+    "npm": {
+        "release_sweet_spot": (12, 52),     # 12-52 releases/year (monthly to weekly)
+        "response_time_good": 24,            # hours (faster expectation)
+        "download_bonus_high": 1_000_000,    # weekly (npm scale is larger)
+        "download_bonus_medium": 100_000,
+    },
+}
 
 
 class Scorer:
@@ -50,6 +67,8 @@ class Scorer:
         github_data: GitHubData | None,
         llm_assessments: LLMAssessments | None,
         install_count: int | None = None,
+        ecosystem: str = "homebrew",
+        metadata: PackageMetadata | None = None,
     ) -> Scores:
         """Calculate all score components.
 
@@ -57,15 +76,20 @@ class Scorer:
             github_data: GitHub repository data.
             llm_assessments: LLM-based assessments.
             install_count: Package install/download count.
+            ecosystem: Package ecosystem (homebrew, npm, etc.) for threshold tuning.
+            metadata: Package metadata with ecosystem-specific fields.
 
         Returns:
             Scores object with all components and overall score.
         """
+        # Get ecosystem-specific thresholds (fallback to homebrew)
+        thresholds = ECOSYSTEM_THRESHOLDS.get(ecosystem.lower(), ECOSYSTEM_THRESHOLDS["homebrew"])
+
         security = self._calculate_security_score(github_data, llm_assessments)
-        maintenance = self._calculate_maintenance_score(github_data, llm_assessments)
-        community = self._calculate_community_score(github_data, llm_assessments, install_count)
-        bus_factor = self._calculate_bus_factor_score(github_data, llm_assessments)
-        documentation = self._calculate_documentation_score(github_data, llm_assessments)
+        maintenance = self._calculate_maintenance_score(github_data, llm_assessments, thresholds)
+        community = self._calculate_community_score(github_data, llm_assessments, install_count, thresholds)
+        bus_factor = self._calculate_bus_factor_score(github_data, llm_assessments, metadata)
+        documentation = self._calculate_documentation_score(github_data, llm_assessments, metadata)
         stability = self._calculate_stability_score(github_data, llm_assessments)
 
         # Calculate weighted overall score
@@ -424,6 +448,7 @@ class Scorer:
         self,
         github_data: GitHubData | None,
         llm_assessments: LLMAssessments | None,
+        thresholds: dict | None = None,
     ) -> ScoreComponent:
         """Calculate maintenance score (25% weight).
 
@@ -438,6 +463,9 @@ class Scorer:
         """
         if not github_data:
             return ScoreComponent(score=50.0, weight=self.WEIGHTS["maintenance"])
+
+        if thresholds is None:
+            thresholds = ECOSYSTEM_THRESHOLDS["homebrew"]
 
         score = 100.0
         commits = github_data.commits
@@ -470,7 +498,7 @@ class Scorer:
                 score += 3  # Sustained activity
 
         # Issue response time scoring
-        response_adjustment = self._calculate_issue_response_score(issues)
+        response_adjustment = self._calculate_issue_response_score(issues, thresholds)
         score += response_adjustment
 
         # Issue close rate
@@ -487,7 +515,7 @@ class Scorer:
             score -= min(15, prs.stale_prs * 2)
 
         # Release cadence (sweet spot scoring)
-        score += self._calculate_release_cadence_score(releases, commits)
+        score += self._calculate_release_cadence_score(releases, commits, thresholds)
 
         # LLM maintenance assessment
         if llm_assessments and llm_assessments.maintenance:
@@ -505,21 +533,27 @@ class Scorer:
 
         return ScoreComponent(score=max(0, min(100, score)), weight=self.WEIGHTS["maintenance"])
 
-    def _calculate_issue_response_score(self, issues: "IssueStats") -> float:
+    def _calculate_issue_response_score(
+        self, issues: "IssueStats", thresholds: dict | None = None
+    ) -> float:
         """Calculate score adjustment based on issue response times.
 
-        Rewards quick responses:
-        - First response < 48 hours (median): +10
+        Rewards quick responses using ecosystem-specific thresholds:
+        - First response < threshold hours: +10
         - First response < 7 days: +5
         - First response > 30 days: -10
         - Close time < 30 days (median): +5
         """
+        if thresholds is None:
+            thresholds = ECOSYSTEM_THRESHOLDS["homebrew"]
+
         adjustment = 0.0
+        good_response_hours = thresholds.get("response_time_good", 48)
 
         # Response time scoring
         if issues.avg_response_time_hours is not None:
             hours = issues.avg_response_time_hours
-            if hours < 48:
+            if hours < good_response_hours:
                 adjustment += 10
             elif hours < 168:  # 7 days
                 adjustment += 5
@@ -535,37 +569,47 @@ class Scorer:
         return adjustment
 
     def _calculate_release_cadence_score(
-        self, releases: "ReleaseStats", commits: "CommitActivity"
+        self, releases: "ReleaseStats", commits: "CommitActivity", thresholds: dict | None = None
     ) -> float:
         """Calculate score based on release cadence sweet spot.
 
-        Optimal release frequency:
-        - 4-12 releases/year: +10 (sweet spot)
+        Optimal release frequency is ecosystem-dependent:
+        - Homebrew: 4-12 releases/year
+        - NPM: 12-52 releases/year (faster ecosystem)
+
+        Scoring:
+        - Within sweet spot: +10
         - 1-3 releases/year: +5 (stable, deliberate)
         - 0 releases but active commits: -5 (no release discipline)
-        - >24 releases/year: neutral (may be too frequent)
+        - >2x sweet spot: neutral (may be too frequent)
         """
-        releases_year = releases.releases_last_year
+        if thresholds is None:
+            thresholds = ECOSYSTEM_THRESHOLDS["homebrew"]
 
-        if 4 <= releases_year <= 12:
+        releases_year = releases.releases_last_year
+        sweet_spot = thresholds.get("release_sweet_spot", (4, 12))
+        min_releases, max_releases = sweet_spot
+
+        if min_releases <= releases_year <= max_releases:
             return 10  # Sweet spot
-        elif 1 <= releases_year <= 3:
-            return 5  # Stable, deliberate
+        elif 1 <= releases_year < min_releases:
+            return 5  # Stable, deliberate (below sweet spot)
         elif releases_year == 0:
             # No releases - check if there's commit activity
             if commits.commits_last_6mo > 0:
                 return -5  # Active but no release discipline
             return -10  # Truly inactive
-        elif releases_year > 24:
+        elif releases_year > max_releases * 2:
             return 0  # Very frequent - neutral
         else:
-            return 0  # 13-24 releases - neutral
+            return 0  # Between sweet spot and 2x - neutral
 
     def _calculate_community_score(
         self,
         github_data: GitHubData | None,
         llm_assessments: LLMAssessments | None,
         install_count: int | None = None,
+        thresholds: dict | None = None,
     ) -> ScoreComponent:
         """Calculate community health score (15% weight).
 
@@ -576,11 +620,14 @@ class Scorer:
         - First-time contributors
         - Good first issues
         - Community health indicators (templates, CoC)
-        - Download/install count
+        - Download/install count (ecosystem-aware thresholds)
         - LLM sentiment assessment
         """
         if not github_data:
             return ScoreComponent(score=50.0, weight=self.WEIGHTS["community"])
+
+        if thresholds is None:
+            thresholds = ECOSYSTEM_THRESHOLDS["homebrew"]
 
         score = 70.0  # Start at baseline
         repo = github_data.repo
@@ -628,11 +675,13 @@ class Scorer:
         # Community health indicators
         score += self._calculate_community_health_score(files, repo)
 
-        # Install/download count bonus
+        # Install/download count bonus (ecosystem-aware thresholds)
         if install_count:
-            if install_count > 100000:
+            high_threshold = thresholds.get("download_bonus_high", 100_000)
+            medium_threshold = thresholds.get("download_bonus_medium", 10_000)
+            if install_count > high_threshold:
                 score += 10
-            elif install_count > 10000:
+            elif install_count > medium_threshold:
                 score += 5
 
         # LLM sentiment assessment
@@ -687,6 +736,7 @@ class Scorer:
         self,
         github_data: GitHubData | None,
         llm_assessments: LLMAssessments | None,
+        metadata: PackageMetadata | None = None,
     ) -> ScoreComponent:
         """Calculate bus factor score (10% weight).
 
@@ -696,6 +746,7 @@ class Scorer:
         - Active contributors
         - Contributor trend
         - Governance files (CODEOWNERS, GOVERNANCE.md)
+        - NPM maintainer count (npm-specific)
         - LLM governance assessment
         """
         if not github_data:
@@ -751,6 +802,16 @@ class Scorer:
         if files.has_governance:
             score += 5
 
+        # NPM-specific: Maintainer count analysis
+        if metadata and metadata.npm_maintainer_count is not None:
+            maintainer_count = metadata.npm_maintainer_count
+            if maintainer_count >= 3:
+                score += 10  # Multiple maintainers = lower bus factor risk
+            elif maintainer_count >= 2:
+                score += 5
+            elif maintainer_count == 1:
+                score -= 5  # Single maintainer = higher bus factor risk
+
         # LLM governance assessment
         if llm_assessments and llm_assessments.governance:
             gov = llm_assessments.governance
@@ -769,6 +830,7 @@ class Scorer:
         self,
         github_data: GitHubData | None,
         llm_assessments: LLMAssessments | None,
+        metadata: PackageMetadata | None = None,
     ) -> ScoreComponent:
         """Calculate documentation score (10% weight).
 
@@ -785,6 +847,9 @@ class Scorer:
         - Quick start/usage: 15 points
         - API documentation/examples: 15 points
         - Changelog quality: 15 points
+
+        NPM-specific bonuses:
+        - TypeScript definitions: +5 points
         """
         if not github_data:
             return ScoreComponent(score=50.0, weight=self.WEIGHTS["documentation"])
@@ -833,6 +898,10 @@ class Scorer:
         if not llm_assessments:
             if files.has_readme:
                 quality_score += 30  # 50% baseline
+
+        # NPM-specific: TypeScript definitions bonus
+        if metadata and metadata.has_types:
+            quality_score += 5  # TypeScript support improves developer experience
 
         total_score = presence_score + quality_score
         return ScoreComponent(score=max(0, min(100, total_score)), weight=self.WEIGHTS["documentation"])

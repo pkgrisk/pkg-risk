@@ -4,16 +4,18 @@ import { GradeBadge } from '../components/GradeBadge';
 import { RiskBadges } from '../components/RiskBadges';
 import { RowActions } from '../components/RowActions';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
-import type { PackageSummary, Grade } from '../types/package';
+import type { PackageSummary, Grade, RiskTier, EcosystemStats } from '../types/package';
 
 interface PackageListProps {
   packages: PackageSummary[];
   ecosystem: string;
+  stats: EcosystemStats | null;
 }
 
-type SortKey = 'name' | 'score' | 'installs';
+type SortKey = 'name' | 'score' | 'installs' | 'percentile';
 type SecurityFilter = 'all' | 'has_cves' | 'has_unpatched' | 'no_policy' | 'no_tools';
 type MaintenanceFilter = 'all' | 'active' | 'stale' | 'abandoned';
+type RiskTierFilter = 'all' | RiskTier;
 
 function getDaysSinceCommit(lastCommitDate: string | null): number | null {
   if (!lastCommitDate) return null;
@@ -34,7 +36,7 @@ function getUnavailableTooltip(pkg: PackageSummary): string {
   return pkg.unavailable_reason ? `${base}: ${pkg.unavailable_reason}` : base;
 }
 
-export function PackageList({ packages, ecosystem }: PackageListProps) {
+export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [sortKey, setSortKey] = useState<SortKey>('installs');
@@ -42,6 +44,7 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
   const [gradeFilter, setGradeFilter] = useState<Grade | 'all'>('all');
   const [securityFilter, setSecurityFilter] = useState<SecurityFilter>('all');
   const [maintenanceFilter, setMaintenanceFilter] = useState<MaintenanceFilter>('all');
+  const [riskTierFilter, setRiskTierFilter] = useState<RiskTierFilter>('all');
   const [showUnscored, setShowUnscored] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -100,6 +103,11 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
       });
     }
 
+    // Risk tier filter
+    if (riskTierFilter !== 'all') {
+      result = result.filter((p) => p.risk_tier === riskTierFilter);
+    }
+
     // Hide unscored packages unless toggled on
     if (!showUnscored) {
       result = result.filter((p) => p.scores !== null);
@@ -115,6 +123,9 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
         case 'score':
           cmp = (a.scores?.overall ?? -1) - (b.scores?.overall ?? -1);
           break;
+        case 'percentile':
+          cmp = (a.scores?.percentile ?? -1) - (b.scores?.percentile ?? -1);
+          break;
         case 'installs':
           cmp = (a.install_count_30d ?? 0) - (b.install_count_30d ?? 0);
           break;
@@ -123,7 +134,7 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
     });
 
     return result;
-  }, [packages, search, sortKey, sortAsc, gradeFilter, securityFilter, maintenanceFilter, showUnscored]);
+  }, [packages, search, sortKey, sortAsc, gradeFilter, securityFilter, maintenanceFilter, riskTierFilter, showUnscored]);
 
   const handleSort = (key: SortKey) => {
     if (sortKey === key) {
@@ -182,6 +193,47 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
 
   return (
     <div>
+      {stats && (
+        <div className="ecosystem-stats">
+          <div className="stats-grid">
+            <div className="stat-card">
+              <div className="stat-value">{stats.scored_packages}</div>
+              <div className="stat-label">Scored Packages</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">{stats.score_distribution.median.toFixed(0)}</div>
+              <div className="stat-label">Median Score</div>
+            </div>
+            <div className="stat-card grade-dist">
+              <div className="grade-bars">
+                <div className="grade-bar grade-a" style={{ width: `${(stats.grade_distribution.A / stats.scored_packages) * 100}%` }}>
+                  <span className="grade-count">{stats.grade_distribution.A} A</span>
+                </div>
+                <div className="grade-bar grade-b" style={{ width: `${(stats.grade_distribution.B / stats.scored_packages) * 100}%` }}>
+                  <span className="grade-count">{stats.grade_distribution.B} B</span>
+                </div>
+                <div className="grade-bar grade-c" style={{ width: `${(stats.grade_distribution.C / stats.scored_packages) * 100}%` }}>
+                  <span className="grade-count">{stats.grade_distribution.C} C</span>
+                </div>
+                <div className="grade-bar grade-d" style={{ width: `${(stats.grade_distribution.D / stats.scored_packages) * 100}%` }}>
+                  <span className="grade-count">{stats.grade_distribution.D} D</span>
+                </div>
+                <div className="grade-bar grade-f" style={{ width: `${(stats.grade_distribution.F / stats.scored_packages) * 100}%` }}>
+                  <span className="grade-count">{stats.grade_distribution.F} F</span>
+                </div>
+              </div>
+              <div className="stat-label">Grade Distribution</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value range">
+                {stats.score_distribution.min.toFixed(0)} - {stats.score_distribution.max.toFixed(0)}
+              </div>
+              <div className="stat-label">Score Range</div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="filters">
         <input
           ref={searchInputRef}
@@ -223,6 +275,17 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
           <option value="active">Active (&lt;3 months)</option>
           <option value="stale">Stale (6-12 months)</option>
           <option value="abandoned">Abandoned (&gt;1 year)</option>
+        </select>
+        <select
+          value={riskTierFilter}
+          onChange={(e) => setRiskTierFilter(e.target.value as RiskTierFilter)}
+          className="risk-tier-filter"
+        >
+          <option value="all">All Risk Tiers</option>
+          <option value="approved">✓ Approved</option>
+          <option value="conditional">⚠ Conditional</option>
+          <option value="restricted">✗ Restricted</option>
+          <option value="prohibited">⛔ Prohibited</option>
         </select>
         <label className="filter-toggle">
           <input
@@ -291,7 +354,14 @@ export function PackageList({ packages, ecosystem }: PackageListProps) {
               </td>
               <td className="score-cell">
                 {pkg.scores ? (
-                  <span className="score">{pkg.scores.overall.toFixed(1)}</span>
+                  <div className="score-with-percentile">
+                    <span className="score">{pkg.scores.overall.toFixed(1)}</span>
+                    {pkg.scores.percentile && (
+                      <span className="percentile" title="Percentile within ecosystem">
+                        Top {(100 - pkg.scores.percentile).toFixed(0)}%
+                      </span>
+                    )}
+                  </div>
                 ) : (
                   <span className="unavailable">N/A</span>
                 )}

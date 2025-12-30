@@ -2,17 +2,51 @@
 
 import asyncio
 import json
+import os
 from pathlib import Path
+
+# Load .env file if it exists
+from dotenv import load_dotenv
+load_dotenv()
 
 import typer
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.table import Table
 
+from pkgrisk.adapters.base import BaseAdapter
 from pkgrisk.adapters.homebrew import HomebrewAdapter
+from pkgrisk.adapters.npm import NpmAdapter
 from pkgrisk.analyzers.github import GitHubFetcher
 
 app = typer.Typer(help="Package health and risk scoring tool.")
+
+# Supported ecosystems and their adapters
+ECOSYSTEM_ADAPTERS: dict[str, type[BaseAdapter]] = {
+    "homebrew": HomebrewAdapter,
+    "npm": NpmAdapter,
+}
+
+
+def get_adapter(ecosystem: str) -> BaseAdapter:
+    """Get adapter for the specified ecosystem.
+
+    Args:
+        ecosystem: Package ecosystem name (homebrew, npm, etc.)
+
+    Returns:
+        Adapter instance for the ecosystem.
+
+    Raises:
+        ValueError: If ecosystem is not supported.
+    """
+    adapter_class = ECOSYSTEM_ADAPTERS.get(ecosystem.lower())
+    if not adapter_class:
+        supported = ", ".join(ECOSYSTEM_ADAPTERS.keys())
+        raise ValueError(f"Unsupported ecosystem: {ecosystem}. Supported: {supported}")
+    return adapter_class()
+
+
 console = Console()
 
 
@@ -27,12 +61,11 @@ def list_packages(
 
 async def _list_packages(ecosystem: str, limit: int) -> None:
     """Async implementation of list_packages."""
-    if ecosystem.lower() != "homebrew":
-        console.print(f"[red]Ecosystem '{ecosystem}' not yet supported.[/red]")
-        console.print("Supported ecosystems: homebrew")
+    try:
+        adapter = get_adapter(ecosystem)
+    except ValueError as e:
+        console.print(f"[red]{e}[/red]")
         raise typer.Exit(1)
-
-    adapter = HomebrewAdapter()
 
     with Progress(
         SpinnerColumn(),
@@ -42,7 +75,7 @@ async def _list_packages(ecosystem: str, limit: int) -> None:
         progress.add_task("Fetching package list...", total=None)
         packages = await adapter.list_packages(limit=limit)
 
-    table = Table(title=f"Top {len(packages)} Homebrew Formulas")
+    table = Table(title=f"Top {len(packages)} {ecosystem.title()} Packages")
     table.add_column("Rank", style="dim", width=6)
     table.add_column("Package", style="cyan")
     table.add_column("Description", style="white", max_width=60)
@@ -75,11 +108,11 @@ async def _fetch_package(
     fetch_github: bool,
 ) -> None:
     """Async implementation of fetch."""
-    if ecosystem.lower() != "homebrew":
-        console.print(f"[red]Ecosystem '{ecosystem}' not yet supported.[/red]")
+    try:
+        adapter = get_adapter(ecosystem)
+    except ValueError as e:
+        console.print(f"[red]{e}[/red]")
         raise typer.Exit(1)
-
-    adapter = HomebrewAdapter()
     github = GitHubFetcher() if fetch_github else None
 
     with Progress(
@@ -284,11 +317,11 @@ async def _analyze_package(
 
     from pkgrisk.analyzers.pipeline import AnalysisPipeline
 
-    if ecosystem.lower() != "homebrew":
-        console.print(f"[red]Ecosystem '{ecosystem}' not yet supported.[/red]")
+    try:
+        adapter = get_adapter(ecosystem)
+    except ValueError as e:
+        console.print(f"[red]{e}[/red]")
         raise typer.Exit(1)
-
-    adapter = HomebrewAdapter()
 
     with Progress(
         SpinnerColumn(),
@@ -449,11 +482,11 @@ async def _analyze_batch(
 
     from pkgrisk.analyzers.pipeline import AnalysisPipeline
 
-    if ecosystem.lower() != "homebrew":
-        console.print(f"[red]Ecosystem '{ecosystem}' not yet supported.[/red]")
+    try:
+        adapter = get_adapter(ecosystem)
+    except ValueError as e:
+        console.print(f"[red]{e}[/red]")
         raise typer.Exit(1)
-
-    adapter = HomebrewAdapter()
     pipeline = AnalysisPipeline(
         adapter=adapter,
         data_dir=data_dir,
