@@ -32,6 +32,14 @@ def main():
         for pkg_file in ecosystem_dir.glob("*.json"):
             try:
                 data = json.loads(pkg_file.read_text())
+
+                # Extract key risk indicators from github_data
+                github_data = data.get("github_data") or {}
+                commits = github_data.get("commits") or {}
+                security = github_data.get("security") or {}
+                contributors = github_data.get("contributors") or {}
+                cve_history = security.get("cve_history") or {}
+
                 summary.append({
                     "name": data.get("name"),
                     "version": data.get("version"),
@@ -43,6 +51,13 @@ def main():
                     "analysis_summary": data.get("analysis_summary"),
                     "repository": data.get("repository"),
                     "analyzed_at": data.get("analyzed_at"),
+                    # Risk indicators for dashboard
+                    "last_commit_date": commits.get("last_commit_date"),
+                    "cve_count": security.get("known_cves", 0),
+                    "has_unpatched_cves": cve_history.get("has_unpatched", False),
+                    "top_contributor_pct": contributors.get("top_contributor_pct"),
+                    "has_security_policy": security.get("has_security_md") or security.get("has_security_policy"),
+                    "has_security_tools": security.get("has_dependabot") or security.get("has_codeql"),
                 })
             except Exception as e:
                 print(f"Error processing {pkg_file}: {e}")

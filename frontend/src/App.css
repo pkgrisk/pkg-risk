@@ -103,7 +103,9 @@
   border-color: #646cff;
 }
 
-.grade-filter {
+.grade-filter,
+.security-filter,
+.maintenance-filter {
   padding: 10px 16px;
   border-radius: 8px;
   border: 1px solid #444;
@@ -111,6 +113,84 @@
   color: white;
   font-size: 14px;
   cursor: pointer;
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #888;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-toggle:hover {
+  color: #aaa;
+}
+
+.filter-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #646cff;
+  cursor: pointer;
+}
+
+.hidden-count {
+  color: #666;
+}
+
+.no-score-warning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #f9731633;
+  color: #f97316;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: help;
+}
+
+/* Risk Badges */
+.risk-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  cursor: help;
+  white-space: nowrap;
+}
+
+.risk-badge-critical {
+  background: #dc262633;
+  color: #ef4444;
+}
+
+.risk-badge-warning {
+  background: #f9731633;
+  color: #f97316;
+}
+
+.risk-badge-info {
+  background: #3b82f633;
+  color: #60a5fa;
+}
+
+.risk-badge-ok {
+  color: #22c55e;
+  font-size: 14px;
 }
 
 .stats-row {
@@ -542,4 +622,351 @@
 
 .not-found h2 {
   margin-bottom: 16px;
+}
+
+/* CVE List Styles */
+.cve-card {
+  padding: 0 !important;
+}
+
+.cve-list {
+  padding: 20px;
+}
+
+.cve-list.empty {
+  padding: 20px;
+}
+
+.cve-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cve-list-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cve-count {
+  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  background: #333;
+}
+
+.cve-count.good {
+  background: #22c55e33;
+  color: #22c55e;
+}
+
+.cve-count.warning {
+  background: #dc262633;
+  color: #dc2626;
+}
+
+.cve-avg-patch {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.cve-warning {
+  background: #dc262620;
+  border: 1px solid #dc262650;
+  color: #f87171;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.cve-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cve-item {
+  background: #252530;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.cve-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cve-severity {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.cve-id {
+  font-family: monospace;
+  font-size: 14px;
+  color: #646cff;
+  text-decoration: none;
+}
+
+.cve-id:hover {
+  text-decoration: underline;
+}
+
+.cve-cvss {
+  font-size: 12px;
+  color: #888;
+  margin-left: auto;
+}
+
+.cve-summary {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.cve-details {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.cve-date {
+  color: #666;
+}
+
+.cve-patch {
+  color: #22c55e;
+}
+
+.patch-time {
+  color: #888;
+}
+
+.cve-unpatched {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* Score Justification Styles */
+.score-justification {
+  margin-top: 32px;
+  background: #1a1a2e;
+  border-radius: 12px;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.justification-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.justification-header:hover {
+  background: #252530;
+}
+
+.justification-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.expand-icon {
+  font-size: 12px;
+  color: #888;
+  transition: transform 0.2s;
+}
+
+.expand-icon.expanded {
+  transform: rotate(90deg);
+}
+
+.justification-content {
+  padding: 0 24px 24px;
+}
+
+.score-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Score Category Card */
+.score-category {
+  background: #252530;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.score-category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.score-category-header:hover {
+  background: #2a2a3a;
+}
+
+.score-category-content {
+  padding: 0 16px 16px;
+  border-top: 1px solid #333;
+}
+
+.justification-intro {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.justification-intro strong {
+  color: #22c55e;
+}
+
+.category-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.category-score {
+  font-size: 14px;
+  color: #888;
+}
+
+.category-score .score-value {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.category-weight {
+  font-size: 13px;
+  color: #666;
+  background: #1a1a2e;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-left: auto;
+}
+
+/* Factor Rows */
+.factors-list {
+  margin-top: 12px;
+}
+
+.factor-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #333;
+}
+
+.factor-row:last-child {
+  border-bottom: none;
+}
+
+.factor-icon {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.factor-row.factor-positive .factor-icon {
+  color: #22c55e;
+}
+
+.factor-row.factor-negative .factor-icon {
+  color: #ef4444;
+}
+
+.factor-row.factor-neutral .factor-icon {
+  color: #888;
+}
+
+.factor-row.factor-warning .factor-icon {
+  color: #eab308;
+}
+
+.factor-description {
+  color: #aaa;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.factor-impact {
+  font-weight: 500;
+  font-family: monospace;
+  flex-shrink: 0;
+  min-width: 40px;
+  text-align: right;
+}
+
+.factor-row.factor-positive .factor-impact {
+  color: #22c55e;
+}
+
+.factor-row.factor-negative .factor-impact {
+  color: #ef4444;
+}
+
+.factor-row.factor-neutral .factor-impact {
+  color: #666;
+}
+
+.factor-row.factor-warning .factor-impact {
+  color: #eab308;
+}
+
+/* Category Links */
+.category-links {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #888;
+}
+
+.category-links .links-label {
+  margin-right: 8px;
+}
+
+.category-links a {
+  color: #646cff;
+  text-decoration: none;
+}
+
+.category-links a:hover {
+  text-decoration: underline;
 }

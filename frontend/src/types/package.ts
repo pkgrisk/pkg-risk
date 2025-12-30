@@ -84,6 +84,27 @@ export interface Releases {
   prerelease_ratio: number;
 }
 
+export type CVESeverity = 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW' | 'UNKNOWN';
+
+export interface CVEDetail {
+  id: string;
+  summary: string;
+  severity: CVESeverity;
+  cvss_score: number | null;
+  published_date: string;
+  fixed_version: string | null;
+  patch_release_date: string | null;
+  days_to_patch: number | null;
+  references: string[];
+}
+
+export interface CVEHistory {
+  total_cves: number;
+  cves: CVEDetail[];
+  avg_days_to_patch: number | null;
+  has_unpatched: boolean;
+}
+
 export interface Security {
   has_security_md: boolean;
   has_security_policy: boolean;
@@ -93,6 +114,7 @@ export interface Security {
   has_security_ci: boolean;
   known_cves: number;
   vulnerable_deps: number;
+  cve_history: CVEHistory | null;
 }
 
 export interface Files {
@@ -206,4 +228,11 @@ export interface PackageSummary {
   analysis_summary: AnalysisSummary | null;
   repository: Repository | null;
   analyzed_at: string | null;
+  // Risk indicators for dashboard
+  last_commit_date: string | null;
+  cve_count: number;
+  has_unpatched_cves: boolean;
+  top_contributor_pct: number | null;
+  has_security_policy: boolean;
+  has_security_tools: boolean;
 }
