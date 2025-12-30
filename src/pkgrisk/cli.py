@@ -18,6 +18,7 @@ from pkgrisk.adapters.base import BaseAdapter
 from pkgrisk.adapters.homebrew import HomebrewAdapter
 from pkgrisk.adapters.npm import NpmAdapter
 from pkgrisk.analyzers.github import GitHubFetcher
+from pkgrisk.monitoring import MetricsCollector
 
 app = typer.Typer(help="Package health and risk scoring tool.")
 
@@ -481,21 +482,40 @@ async def _analyze_batch(
     from rich.progress import BarColumn, MofNCompleteColumn, TaskProgressColumn, TimeElapsedColumn
 
     from pkgrisk.analyzers.pipeline import AnalysisPipeline
+    from pkgrisk.models.schemas import DataAvailability
 
     try:
         adapter = get_adapter(ecosystem)
     except ValueError as e:
         console.print(f"[red]{e}[/red]")
         raise typer.Exit(1)
+
+    # Initialize metrics collector for monitoring
+    metrics = MetricsCollector(data_dir / ".metrics.json")
+
     pipeline = AnalysisPipeline(
         adapter=adapter,
         data_dir=data_dir,
         github_token=os.environ.get("GITHUB_TOKEN"),
         skip_llm=skip_llm,
+        metrics=metrics,
     )
 
     console.print(f"[bold]Analyzing top {limit} {ecosystem} packages...[/bold]")
     console.print()
+
+    # Get packages first
+    packages = await adapter.list_packages(limit=limit)
+
+    # Start batch tracking
+    metrics.start_batch(len(packages), ecosystem)
+
+    # Check LLM availability
+    if pipeline.llm:
+        llm_available = await pipeline.llm.is_available()
+        metrics.update_llm_status(llm_available, pipeline.llm.model if llm_available else "")
+    else:
+        metrics.update_llm_status(False, "")
 
     with Progress(
         SpinnerColumn(),
@@ -505,23 +525,41 @@ async def _analyze_batch(
         TimeElapsedColumn(),
         console=console,
     ) as progress:
-        task = progress.add_task("Analyzing...", total=limit)
+        task = progress.add_task("Analyzing...", total=len(packages))
         results = []
         errors = []
 
-        packages = await adapter.list_packages(limit=limit)
-
         for i, package_name in enumerate(packages):
             progress.update(task, description=f"Analyzing {package_name}...", completed=i)
+            metrics.start_package(package_name)
+
             try:
                 analysis = await pipeline.analyze_package(package_name, save=True)
                 results.append(analysis)
+
+                # Record completion in metrics
+                if analysis.data_availability == DataAvailability.AVAILABLE and analysis.scores:
+                    metrics.complete_package(
+                        package_name,
+                        status="scored",
+                        score=analysis.scores.overall,
+                        grade=analysis.scores.grade,
+                    )
+                else:
+                    metrics.complete_package(
+                        package_name,
+                        status="unavailable",
+                        message=analysis.unavailable_reason,
+                    )
             except Exception as e:
                 errors.append((package_name, str(e)))
+                metrics.record_error(package_name, type(e).__name__, str(e))
+                metrics.complete_package(package_name, status="error", message=str(e))
 
-        progress.update(task, completed=limit)
+        progress.update(task, completed=len(packages))
 
-    from pkgrisk.models.schemas import DataAvailability
+    # Finish batch
+    metrics.finish_batch()
 
     # Separate available and unavailable packages
     available = [r for r in results if r.data_availability == DataAvailability.AVAILABLE]
@@ -564,6 +602,27 @@ async def _analyze_batch(
 
     console.print()
     console.print(f"[dim]Results saved to {data_dir}[/dim]")
+
+
+@app.command()
+def monitor(
+    data_dir: Path = typer.Option(Path("data"), "--data-dir", "-d", help="Data directory"),
+    interval: float = typer.Option(10.0, "--interval", "-i", help="Refresh interval in seconds"),
+) -> None:
+    """Launch the pipeline monitoring dashboard.
+
+    Opens an interactive TUI dashboard that displays real-time metrics
+    from the analysis pipeline. Use this to monitor a running analysis
+    in another terminal.
+
+    Controls:
+      q - quit
+      r - manual refresh
+    """
+    from pkgrisk.monitoring import run_dashboard
+
+    metrics_file = data_dir / ".metrics.json"
+    run_dashboard(metrics_file=metrics_file, refresh_interval=interval)
 
 
 @app.command()

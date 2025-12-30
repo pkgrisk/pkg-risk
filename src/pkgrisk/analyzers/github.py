@@ -43,6 +43,11 @@ class GitHubFetcher:
         self._token = token or os.environ.get("GITHUB_TOKEN")
         self._client = client
 
+        # Rate limit tracking
+        self.rate_limit_remaining: int = 5000
+        self.rate_limit_total: int = 5000
+        self.rate_limit_reset: datetime | None = None
+
     def _headers(self) -> dict[str, str]:
         """Get headers for GitHub API requests."""
         headers = {
@@ -59,6 +64,19 @@ class GitHubFetcher:
             return self._client
         return httpx.AsyncClient(timeout=30.0, headers=self._headers())
 
+    def _update_rate_limits(self, response: httpx.Response) -> None:
+        """Extract and store rate limit info from response headers."""
+        remaining = response.headers.get("X-RateLimit-Remaining")
+        limit = response.headers.get("X-RateLimit-Limit")
+        reset = response.headers.get("X-RateLimit-Reset")
+
+        if remaining is not None:
+            self.rate_limit_remaining = int(remaining)
+        if limit is not None:
+            self.rate_limit_total = int(limit)
+        if reset is not None:
+            self.rate_limit_reset = datetime.fromtimestamp(int(reset), tz=timezone.utc)
+
     async def _fetch(self, path: str, params: dict | None = None) -> dict | list | None:
         """Fetch from GitHub API.
 
@@ -69,6 +87,7 @@ class GitHubFetcher:
 
         try:
             response = await client.get(url, params=params, headers=self._headers())
+            self._update_rate_limits(response)
             if response.status_code == 404:
                 return None
             response.raise_for_status()
@@ -96,6 +115,7 @@ class GitHubFetcher:
             while page <= max_pages:
                 params["page"] = page
                 response = await client.get(url, params=params, headers=self._headers())
+                self._update_rate_limits(response)
                 if response.status_code == 404:
                     break
                 response.raise_for_status()

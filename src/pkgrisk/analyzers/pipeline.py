@@ -1,8 +1,12 @@
 """End-to-end analysis pipeline for packages."""
 
+from __future__ import annotations
+
 import json
+import time
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import httpx
 
@@ -18,6 +22,9 @@ from pkgrisk.models.schemas import (
     PackageAnalysis,
     Platform,
 )
+
+if TYPE_CHECKING:
+    from pkgrisk.monitoring import MetricsCollector
 
 
 class AnalysisPipeline:
@@ -38,6 +45,7 @@ class AnalysisPipeline:
         github_token: str | None = None,
         llm_model: str = "llama3.1:70b",
         skip_llm: bool = False,
+        metrics: MetricsCollector | None = None,
     ) -> None:
         """Initialize the pipeline.
 
@@ -47,6 +55,7 @@ class AnalysisPipeline:
             github_token: GitHub personal access token.
             llm_model: Ollama model for LLM analysis.
             skip_llm: Skip LLM analysis entirely.
+            metrics: Optional metrics collector for monitoring.
         """
         self.adapter = adapter
         self.data_dir = data_dir or Path("data")
@@ -54,6 +63,7 @@ class AnalysisPipeline:
         self.osv = OSVFetcher()
         self.llm = LLMAnalyzer(model=llm_model) if not skip_llm else None
         self.scorer = Scorer()
+        self.metrics = metrics
         self._http_client: httpx.AsyncClient | None = None
 
     async def __aenter__(self) -> "AnalysisPipeline":
@@ -65,6 +75,11 @@ class AnalysisPipeline:
         """Clean up HTTP client."""
         if self._http_client:
             await self._http_client.aclose()
+
+    def _record_timing(self, stage: str, duration: float) -> None:
+        """Record stage timing if metrics collector is available."""
+        if self.metrics:
+            self.metrics.record_stage_timing(stage, duration)
 
     async def analyze_package(
         self,
@@ -83,10 +98,12 @@ class AnalysisPipeline:
         ecosystem = self.adapter.ecosystem
 
         # Stage 1: Fetch package metadata
+        t0 = time.perf_counter()
         metadata = await self.adapter.get_package_metadata(package_name)
         install_stats = await self.adapter.get_install_stats(package_name)
         repo_ref = self.adapter.get_source_repo(metadata)
         install_count = install_stats.downloads_last_30d if install_stats else None
+        self._record_timing("metadata", time.perf_counter() - t0)
 
         # Stage 2: Determine data availability and fetch GitHub data
         data_availability = DataAvailability.AVAILABLE
@@ -103,7 +120,18 @@ class AnalysisPipeline:
             unavailable_reason = f"Repository is on {repo_ref.platform.value}, not GitHub. Limited analysis available."
         else:
             # Try to fetch GitHub data
+            t0 = time.perf_counter()
             github_data = await self.github.fetch_repo_data(repo_ref)
+            self._record_timing("github", time.perf_counter() - t0)
+
+            # Update rate limits from GitHub fetcher
+            if self.metrics and hasattr(self.github, 'rate_limit_remaining'):
+                self.metrics.update_github_rate_limit(
+                    self.github.rate_limit_remaining,
+                    self.github.rate_limit_total,
+                    self.github.rate_limit_reset,
+                )
+
             if github_data is None:
                 # Repo URL exists but couldn't fetch (404, private, etc.)
                 data_availability = DataAvailability.REPO_NOT_FOUND
@@ -112,6 +140,7 @@ class AnalysisPipeline:
         # Stage 2.5: Fetch CVE history from OSV
         if github_data and repo_ref:
             try:
+                t0 = time.perf_counter()
                 # Fetch release dates for time-to-patch calculation
                 release_dates = await self.github.fetch_release_dates(
                     repo_ref.owner, repo_ref.repo
@@ -126,11 +155,18 @@ class AnalysisPipeline:
                     repo=repo_ref.repo,
                     release_dates=release_dates,
                 )
+                self._record_timing("cve", time.perf_counter() - t0)
 
                 # Attach to security data and update known_cves count
                 github_data.security.cve_history = cve_history
                 github_data.security.known_cves = cve_history.total_cves
+
+                # Update OSV status
+                if self.metrics:
+                    self.metrics.update_osv_status("OK")
             except Exception:
+                if self.metrics:
+                    self.metrics.update_osv_status("error")
                 pass  # CVE fetching failures shouldn't break pipeline
 
         # Stage 3: Run LLM assessments (only if we have GitHub data)
@@ -138,6 +174,7 @@ class AnalysisPipeline:
         if self.llm and github_data:
             llm_available = await self.llm.is_available()
             if llm_available:
+                t0 = time.perf_counter()
                 llm_assessments = await self._run_llm_assessments(
                     package_name,
                     ecosystem.value,
@@ -145,11 +182,13 @@ class AnalysisPipeline:
                     repo_ref.repo if repo_ref else "",
                     github_data,
                 )
+                self._record_timing("llm", time.perf_counter() - t0)
 
         # Stage 4: Calculate scores (only if data is available)
         scores = None
         analysis_summary = None
 
+        t0 = time.perf_counter()
         if data_availability == DataAvailability.AVAILABLE and github_data:
             scores = self.scorer.calculate_scores(
                 github_data,
@@ -165,6 +204,7 @@ class AnalysisPipeline:
                 "data_availability": data_availability.value,
                 "unavailable_reason": unavailable_reason,
             }
+        self._record_timing("scoring", time.perf_counter() - t0)
 
         # Stage 5: Create result
         analysis = PackageAnalysis(
@@ -187,7 +227,9 @@ class AnalysisPipeline:
 
         # Save if requested
         if save:
+            t0 = time.perf_counter()
             self._save_analysis(analysis)
+            self._record_timing("save", time.perf_counter() - t0)
 
         return analysis
 
