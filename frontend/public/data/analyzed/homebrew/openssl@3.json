@@ -10,26 +10,24 @@
     "repo": "openssl",
     "subpath": null
   },
-  "install_count_30d": 352997,
+  "install_count_30d": 353214,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.6,
-    "grade": "A",
+    "overall": 85.7,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 95.0,
+      "score": 90.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 88.85030967674703,
+      "score": 74.19521677372292,
       "weight": 25
     },
     "community": {
@@ -41,11 +39,11 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 65.5,
       "weight": 10
     },
     "stability": {
-      "score": 81.0,
+      "score": 86.0,
       "weight": 10
     }
   },
@@ -54,12 +52,12 @@
       "owner": "openssl",
       "name": "openssl",
       "description": "TLS/SSL and crypto library",
-      "stars": 29284,
-      "forks": 10971,
-      "open_issues": 1686,
-      "watchers": 29284,
+      "stars": 29285,
+      "forks": 10972,
+      "open_issues": 1687,
+      "watchers": 29285,
       "created_at": "2013-01-15T22:34:48Z",
-      "updated_at": "2025-12-30T18:48:05Z",
+      "updated_at": "2025-12-31T00:18:13Z",
       "pushed_at": "2025-12-30T13:28:20Z",
       "default_branch": "master",
       "license": "Apache-2.0",
@@ -93,17 +91,17 @@
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 133,
+      "open_issues": 132,
       "closed_issues_6mo": 36,
       "avg_response_time_hours": 6.6,
       "avg_close_time_hours": 73.1,
-      "good_first_issue_count": 5,
+      "good_first_issue_count": 4,
       "regression_issue_count": 3
     },
     "prs": {
       "open_prs": 300,
       "merged_prs_6mo": 0,
-      "stale_prs": 167,
+      "stale_prs": 166,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -158,7 +156,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 86.0,
+      "recent_runs_pass_rate": 72.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -166,17 +164,124 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The README provides a comprehensive overview of the OpenSSL project, but lacks a clear quick start guide and troubleshooting section.",
+      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "demos/sslecho/main.c",
+          "line": 246,
+          "severity": "low",
+          "description": "The use of strcmp() with user-controlled input 'rxbuf' could potentially lead to a timing attack, but it's not a significant risk in this context."
+        },
+        {
+          "file": "demos/sslecho/main.c",
+          "line": 123,
+          "severity": "low",
+          "description": "The use of system calls like perror() and printf() with user-controlled input could potentially lead to information disclosure, but it's not a significant risk in this context."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [
+        {
+          "file": "demos/sslecho/main.c",
+          "line": 173,
+          "type": "Certificate file path"
+        },
+        {
+          "file": "demos/sslecho/main.c",
+          "line": 179,
+          "type": "Private key file path"
+        }
+      ],
+      "critical_findings": [],
+      "summary": "The code has some minor security concerns related to input validation and error handling, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "regressions",
+        "bugs"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The OpenSSL community is actively reporting and discussing issues, with maintainers responding moderately, indicating a relatively healthy but imperfect project ecosystem."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer's responses are generally helpful, clear, and technically sound, but could improve in terms of patience and welcomingness towards new contributors."
+    },
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "no merged PRs in the past 6 months",
+        "high number of open issues and PRs"
+      ],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "large number of active contributors"
+      ],
+      "summary": "The package appears to be stale due to a lack of merged PRs and a high number of open issues, despite recent commit activity and a large contributor base."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks explicit migration guides for users to upgrade smoothly."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The OpenSSL project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "stale",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a comprehensive overview of the OpenSSL project, but lacks a clear quick start guide and troubleshooting section.",
+    "concerns": [
+      "no merged PRs in the past 6 months",
+      "high number of open issues and PRs",
+      "Docs: Lack of a concise quick start example to help new users get started with the package.",
+      "Community: regressions",
+      "Community: bugs"
+    ],
     "highlights": [
+      "frequent commits in the past 6 months",
+      "large number of active contributors",
+      "Breaking changes clearly marked in changelog",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-30T21:24:28.514153Z",
-  "data_fetched_at": "2025-12-30T21:24:28.514154Z"
+  "analyzed_at": "2025-12-31T01:26:03.657842Z",
+  "data_fetched_at": "2025-12-31T01:26:03.657843Z"
 }
