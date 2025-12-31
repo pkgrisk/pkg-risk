@@ -1,0 +1,268 @@
+{
+  "ecosystem": "homebrew",
+  "name": "lima",
+  "description": "Linux virtual machines",
+  "version": "2.0.3",
+  "homepage": "https://lima-vm.io/",
+  "repository": {
+    "platform": "github",
+    "owner": "lima-vm",
+    "repo": "lima",
+    "subpath": null
+  },
+  "install_count_30d": 15240,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 87.6,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 82.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 93.23102123738798,
+      "weight": 25
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 96.44,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 62.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 88.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "lima-vm",
+      "name": "lima",
+      "description": "Linux virtual machines, with a focus on running containers",
+      "stars": 19857,
+      "forks": 794,
+      "open_issues": 442,
+      "watchers": 19857,
+      "created_at": "2021-05-14T07:30:56Z",
+      "updated_at": "2025-12-31T16:22:08Z",
+      "pushed_at": "2025-12-25T08:49:24Z",
+      "default_branch": "master",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [
+        "containerd",
+        "macos",
+        "qemu",
+        "vm"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 169,
+      "active_contributors_6mo": 35,
+      "top_contributor_pct": 48.7,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 3,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 32,
+      "contributor_entropy": 2.68
+    },
+    "commits": {
+      "last_commit_date": "2025-12-24T13:50:58Z",
+      "commits_last_6mo": 990,
+      "commits_last_year": 1000
+    },
+    "issues": {
+      "open_issues": 247,
+      "closed_issues_6mo": 51,
+      "avg_response_time_hours": 18.3,
+      "avg_close_time_hours": 139.2,
+      "good_first_issue_count": 9,
+      "regression_issue_count": 8
+    },
+    "prs": {
+      "open_prs": 59,
+      "merged_prs_6mo": 270,
+      "closed_prs_6mo": 300,
+      "stale_prs": 30,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 87,
+      "releases_last_year": 24,
+      "last_release_date": "2025-12-25T09:18:01Z",
+      "latest_version": "v2.0.3",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.2
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 83.0,
+      "has_dependabot": true,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 4235,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 11,
+      "recent_runs_pass_rate": 88.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides a clear introduction to the package and its usage, but lacks comprehensive troubleshooting documentation.",
+      "top_issue": "Insufficient troubleshooting information"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/limactl-mcp/main.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The `mcpServeAction` function uses the `args[0]` value directly without validation, which could lead to potential command injection vulnerabilities."
+        },
+        {
+          "file": "cmd/limactl-mcp/main.go",
+          "line": 156,
+          "severity": "low",
+          "description": "The `mcpGenDocAction` function uses the `args[0]` value directly without validation, which could lead to potential path traversal vulnerabilities."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerabilities in `mcpServeAction` function",
+        "Lack of input validation for command-line arguments"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "nested virtualization issues",
+        "container management problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The lima community is actively reporting and discussing various technical issues, but the overall sentiment remains neutral with moderate maintainer responsiveness."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional sarcasm",
+        "brief responses without explanation"
+      ],
+      "summary": "The maintainer's responses are generally helpful, clear, and patient, but could improve in terms of technical depth and welcomingness for new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (990)",
+        "Recent last commit and release dates",
+        "Large number of merged PRs in the past 6 months (270)",
+        "Many contributors active in the past 6 months (35)"
+      ],
+      "summary": "The lima package appears to be actively maintained with frequent updates, a large contributor base, and a high volume of pull requests being addressed."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides a clear introduction to the package and its usage, but lacks comprehensive troubleshooting documentation.",
+    "concerns": [
+      "Docs: Insufficient troubleshooting information",
+      "Community: nested virtualization issues",
+      "Community: container management problems",
+      "Communication: occasional sarcasm",
+      "Communication: brief responses without explanation",
+      "Security: Potential command injection vulnerabilities in `mcpServeAction` function",
+      "Security: Lack of input validation for command-line arguments"
+    ],
+    "highlights": [
+      "High number of commits in the past 6 months (990)",
+      "Recent last commit and release dates",
+      "Large number of merged PRs in the past 6 months (270)",
+      "Many contributors active in the past 6 months (35)",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2025-12-31T17:31:25.312907Z",
+  "data_fetched_at": "2025-12-31T17:31:25.312907Z"
+}

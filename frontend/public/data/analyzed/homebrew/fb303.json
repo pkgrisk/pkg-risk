@@ -1,0 +1,266 @@
+{
+  "ecosystem": "homebrew",
+  "name": "fb303",
+  "description": "Thrift functions for querying information from a service",
+  "version": "2025.12.29.00",
+  "homepage": "https://github.com/facebook/fb303",
+  "repository": {
+    "platform": "github",
+    "owner": "facebook",
+    "repo": "fb303",
+    "subpath": null
+  },
+  "install_count_30d": 15144,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 68.2,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 74.82853255223993,
+      "weight": 25
+    },
+    "community": {
+      "score": 93.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 80.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 31.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 70.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "facebook",
+      "name": "fb303",
+      "description": "fb303 is a core set of thrift functions that provide a common mechanism for querying stats and other information from a service.",
+      "stars": 86,
+      "forks": 59,
+      "open_issues": 18,
+      "watchers": 86,
+      "created_at": "2016-08-05T20:18:48Z",
+      "updated_at": "2025-12-30T17:33:25Z",
+      "pushed_at": "2025-12-30T17:33:21Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "C++",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 213,
+      "active_contributors_6mo": 26,
+      "top_contributor_pct": 11.0,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 31,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 20,
+      "contributor_entropy": 6.01
+    },
+    "commits": {
+      "last_commit_date": "2025-12-30T17:31:11Z",
+      "commits_last_6mo": 300,
+      "commits_last_year": 584
+    },
+    "issues": {
+      "open_issues": 6,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 12,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 3,
+      "stale_prs": 12,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2565,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 1,
+      "recent_runs_pass_rate": 94.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 4,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README provides a good overview of the package's functionality, but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Installation instructions are incomplete and unclear."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "fb303/detail/QuantileStatWrappers-inl.h",
+          "line": 24,
+          "severity": "low",
+          "description": "Potential for format string injection in keyFormat, but it's not directly user-controlled."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for format string injection in keyFormat.",
+        "Lack of input validation on function arguments."
+      ],
+      "summary": "The code has some security concerns, including potential format string injection and lack of input validation, but no critical issues were found related to secrets handling or error exposure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "build issues",
+        "dependency problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health of the fb303 project appears to be neutral, with a single open issue indicating some maintenance activity but slow responsiveness from maintainers."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 6,
+      "technical_depth": 5,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "brief or dismissive responses",
+        "lack of detailed explanations"
+      ],
+      "summary": "The maintainer's responses are generally helpful and clear, but sometimes brief and lacking in technical depth, which may not be welcoming to new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "no recent closed issues",
+        "low merged PRs compared to open PRs"
+      ],
+      "positive_signals": [
+        "high commit activity past 6 months",
+        "many active contributors past 6 months"
+      ],
+      "summary": "The package appears to be maintained with regular commits and multiple active contributors, but may benefit from improved issue and PR management."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for fb303 lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good overview of the package's functionality, but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "no recent closed issues",
+      "low merged PRs compared to open PRs",
+      "Docs: Installation instructions are incomplete and unclear.",
+      "Community: build issues",
+      "Community: dependency problems",
+      "Communication: brief or dismissive responses",
+      "Communication: lack of detailed explanations",
+      "Governance: High bus factor risk identified",
+      "Security: Potential for format string injection in keyFormat.",
+      "Security: Lack of input validation on function arguments."
+    ],
+    "highlights": [
+      "high commit activity past 6 months",
+      "many active contributors past 6 months",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2025-12-31T17:33:54.621532Z",
+  "data_fetched_at": "2025-12-31T17:33:54.621533Z"
+}
