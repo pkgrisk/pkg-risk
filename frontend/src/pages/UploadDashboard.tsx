@@ -1,10 +1,12 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useMemo } from 'react';
 import { FileUploader } from '../components/FileUploader';
 import { DependencyResults, type QuickFilter } from '../components/DependencyResults';
 import { ProjectSummary } from '../components/ProjectSummary';
 import { ExecutiveVerdict } from '../components/ExecutiveVerdict';
 import { ActionItems } from '../components/ActionItems';
+import { ComparisonView } from '../components/ComparisonView';
 import { useUploadedProject } from '../hooks/useUploadedProject';
+import { usePackageNotes } from '../hooks/usePackageNotes';
 import { fetchRegistryMetadataBatch } from '../lib/registryFetcher';
 import { exportToCSV, exportToJSON } from '../lib/exportUtils';
 import type {
@@ -24,13 +26,16 @@ type AnalysisState = 'idle' | 'parsing' | 'matching' | 'fetching' | 'complete' |
 
 export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
   const [analysisState, setAnalysisState] = useState<AnalysisState>('idle');
-  const [analysis, setAnalysis] = useState<ProjectAnalysis | null>(null);
+  const [analyses, setAnalyses] = useState<ProjectAnalysis[]>([]);
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState({ current: 0, total: 0 });
   const [showActionItems, setShowActionItems] = useState(true);
   const [exportMenuOpen, setExportMenuOpen] = useState(false);
   const [searchFilter, setSearchFilter] = useState('');
   const [quickFilter, setQuickFilter] = useState<QuickFilter>('all');
+  const [showComparison, setShowComparison] = useState(true);
+  const [reviewFilter, setReviewFilter] = useState<'all' | 'reviewed' | 'not_reviewed' | 'flagged'>('all');
   const exportButtonRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -42,13 +47,63 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
     clearAllProjects,
   } = useUploadedProject();
 
+  const { getNote, isReviewed } = usePackageNotes();
+
+  // Current active analysis
+  const analysis = analyses[activeTabIndex] || null;
+
+  // Find previous analysis of the same file for comparison
+  const previousAnalysis = useMemo(() => {
+    if (!analysis) return null;
+    // Look for a saved project with the same filename
+    const prev = savedProjects.find(
+      (p) => p.name === analysis.filename && p.id !== analysis.id
+    );
+    if (!prev) return null;
+
+    // Convert saved project to a comparable format
+    // Note: This is a simplified comparison - we'd need the full analysis for detailed comparison
+    // For now, we'll just create a stub that can be used for basic diff
+    return null; // We'll implement full comparison when we store full analyses
+  }, [analysis, savedProjects]);
+
+  // Combined analysis for multi-file view
+  const combinedAnalysis = useMemo(() => {
+    if (analyses.length <= 1) return null;
+
+    const allDeps: MatchedDependency[] = [];
+    const seenNames = new Set<string>();
+
+    for (const a of analyses) {
+      for (const dep of a.dependencies) {
+        const key = `${dep.parsed.ecosystem}:${dep.parsed.name.toLowerCase()}`;
+        if (!seenNames.has(key)) {
+          seenNames.add(key);
+          allDeps.push(dep);
+        }
+      }
+    }
+
+    const summary = calculateSummary(allDeps);
+
+    return {
+      id: 'combined',
+      filename: `Combined (${analyses.length} files)`,
+      ecosystem: analyses[0].ecosystem,
+      uploadedAt: new Date().toISOString(),
+      dependencies: allDeps,
+      summary,
+    } as ProjectAnalysis;
+  }, [analyses]);
+
   const handleFilesParsed = useCallback(
     async (results: ParserResult[]) => {
       try {
-        // For now, handle single file (could extend to multiple)
-        const result = results[0];
-        if (!result || result.dependencies.length === 0) {
-          setError(result?.errors.join(', ') || 'No dependencies found');
+        // Filter out results with no dependencies
+        const validResults = results.filter((r) => r.dependencies.length > 0);
+        if (validResults.length === 0) {
+          const errors = results.flatMap((r) => r.errors);
+          setError(errors.length > 0 ? errors.join(', ') : 'No dependencies found');
           setAnalysisState('error');
           return;
         }
@@ -56,75 +111,83 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
         setError(null);
         setAnalysisState('matching');
 
-        // Get ecosystem data for matching
-        const scoredData = ecosystemData[result.ecosystem] || [];
-        const scoredMap = new Map(scoredData.map((pkg) => [pkg.name.toLowerCase(), pkg]));
+        const newAnalyses: ProjectAnalysis[] = [];
 
-        // Match dependencies against scored data
-        const matchedDeps: MatchedDependency[] = result.dependencies.map((dep) => {
-          const normalizedName = dep.name.toLowerCase();
-          const scored = scoredMap.get(normalizedName);
+        // Process each file
+        for (const result of validResults) {
+          // Get ecosystem data for matching
+          const scoredData = ecosystemData[result.ecosystem] || [];
+          const scoredMap = new Map(scoredData.map((pkg) => [pkg.name.toLowerCase(), pkg]));
 
-          return {
-            parsed: dep,
-            scored,
-            status: scored ? 'scored' : 'loading',
+          // Match dependencies against scored data
+          const matchedDeps: MatchedDependency[] = result.dependencies.map((dep) => {
+            const normalizedName = dep.name.toLowerCase();
+            const scored = scoredMap.get(normalizedName);
+
+            return {
+              parsed: dep,
+              scored,
+              status: scored ? 'scored' : 'loading',
+            };
+          });
+
+          // Identify unscored packages that need registry lookup
+          const unscoredPackages = matchedDeps
+            .filter((d) => d.status === 'loading')
+            .map((d) => ({ name: d.parsed.name, ecosystem: d.parsed.ecosystem }));
+
+          // Fetch registry metadata for unscored packages
+          if (unscoredPackages.length > 0) {
+            setAnalysisState('fetching');
+            setProgress({ current: 0, total: unscoredPackages.length });
+
+            const registryData = await fetchRegistryMetadataBatch(
+              unscoredPackages,
+              5,
+              (completed, total) => setProgress({ current: completed, total })
+            );
+
+            // Update matched deps with registry data
+            for (const dep of matchedDeps) {
+              if (dep.status === 'loading') {
+                const key = `${dep.parsed.ecosystem}:${dep.parsed.name}`;
+                const registry = registryData.get(key);
+                dep.registry = registry ?? undefined;
+                dep.status = registry ? 'unscored' : 'not_found';
+              }
+            }
+          } else {
+            // No unscored packages, mark all loading as not_found
+            for (const dep of matchedDeps) {
+              if (dep.status === 'loading') {
+                dep.status = 'not_found';
+              }
+            }
+          }
+
+          // Calculate summary
+          const summary = calculateSummary(matchedDeps);
+
+          const projectAnalysis: ProjectAnalysis = {
+            id: crypto.randomUUID(),
+            filename: result.filename,
+            ecosystem: result.ecosystem,
+            uploadedAt: new Date().toISOString(),
+            dependencies: matchedDeps,
+            summary,
           };
-        });
 
-        // Identify unscored packages that need registry lookup
-        const unscoredPackages = matchedDeps
-          .filter((d) => d.status === 'loading')
-          .map((d) => ({ name: d.parsed.name, ecosystem: d.parsed.ecosystem }));
+          newAnalyses.push(projectAnalysis);
 
-        // Fetch registry metadata for unscored packages
-        if (unscoredPackages.length > 0) {
-          setAnalysisState('fetching');
-          setProgress({ current: 0, total: unscoredPackages.length });
-
-          const registryData = await fetchRegistryMetadataBatch(
-            unscoredPackages,
-            5,
-            (completed, total) => setProgress({ current: completed, total })
-          );
-
-          // Update matched deps with registry data
-          for (const dep of matchedDeps) {
-            if (dep.status === 'loading') {
-              const key = `${dep.parsed.ecosystem}:${dep.parsed.name}`;
-              const registry = registryData.get(key);
-              dep.registry = registry ?? undefined;
-              dep.status = registry ? 'unscored' : 'not_found';
-            }
-          }
-        } else {
-          // No unscored packages, mark all loading as not_found
-          for (const dep of matchedDeps) {
-            if (dep.status === 'loading') {
-              dep.status = 'not_found';
-            }
+          // Auto-save if persistence is enabled
+          if (persistenceEnabled) {
+            saveProject(result.filename, result.ecosystem, result.dependencies);
           }
         }
 
-        // Calculate summary
-        const summary = calculateSummary(matchedDeps);
-
-        const projectAnalysis: ProjectAnalysis = {
-          id: crypto.randomUUID(),
-          filename: result.filename,
-          ecosystem: result.ecosystem,
-          uploadedAt: new Date().toISOString(),
-          dependencies: matchedDeps,
-          summary,
-        };
-
-        setAnalysis(projectAnalysis);
+        setAnalyses(newAnalyses);
+        setActiveTabIndex(0);
         setAnalysisState('complete');
-
-        // Auto-save if persistence is enabled
-        if (persistenceEnabled) {
-          saveProject(result.filename, result.ecosystem, result.dependencies);
-        }
       } catch (err) {
         console.error('Analysis error:', err);
         setError(err instanceof Error ? err.message : 'An unexpected error occurred');
@@ -135,7 +198,8 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
   );
 
   const handleReset = useCallback(() => {
-    setAnalysis(null);
+    setAnalyses([]);
+    setActiveTabIndex(0);
     setAnalysisState('idle');
     setError(null);
     setProgress({ current: 0, total: 0 });
@@ -143,6 +207,8 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
     setExportMenuOpen(false);
     setSearchFilter('');
     setQuickFilter('all');
+    setShowComparison(true);
+    setReviewFilter('all');
   }, []);
 
   const handleExport = useCallback(
@@ -325,8 +391,41 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
             </div>
           </div>
 
+          {/* File tabs for multi-file uploads */}
+          {analyses.length > 1 && (
+            <div className="file-tabs">
+              {combinedAnalysis && (
+                <button
+                  className={`file-tab combined ${activeTabIndex === -1 ? 'active' : ''}`}
+                  onClick={() => setActiveTabIndex(-1)}
+                >
+                  Combined ({combinedAnalysis.dependencies.length})
+                </button>
+              )}
+              {analyses.map((a, index) => (
+                <button
+                  key={a.id}
+                  className={`file-tab ${activeTabIndex === index ? 'active' : ''}`}
+                  onClick={() => setActiveTabIndex(index)}
+                >
+                  {a.filename}
+                  <span className="tab-count">{a.dependencies.length}</span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Comparison view for repeat uploads */}
+          {previousAnalysis && showComparison && (
+            <ComparisonView
+              current={analysis}
+              previous={previousAnalysis}
+              onDismiss={() => setShowComparison(false)}
+            />
+          )}
+
           <ExecutiveVerdict
-            analysis={analysis}
+            analysis={activeTabIndex === -1 && combinedAnalysis ? combinedAnalysis : analysis}
             onViewActionItems={() => {
               setShowActionItems(true);
               document.querySelector('.action-items')?.scrollIntoView({ behavior: 'smooth' });
@@ -336,22 +435,44 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
 
           {showActionItems && (
             <ActionItems
-              analysis={analysis}
+              analysis={activeTabIndex === -1 && combinedAnalysis ? combinedAnalysis : analysis}
               onPackageClick={handlePackageClick}
             />
           )}
 
           <ProjectSummary
-            analysis={analysis}
+            analysis={activeTabIndex === -1 && combinedAnalysis ? combinedAnalysis : analysis}
             onQuickFilterClick={handleQuickFilterClick}
             onPackageClick={handlePackageClick}
           />
 
           <div className="results-section">
-            <h3>All Dependencies</h3>
+            <div className="results-section-header">
+              <h3>All Dependencies</h3>
+              <div className="review-filter">
+                <label>Review Status:</label>
+                <select
+                  value={reviewFilter}
+                  onChange={(e) => setReviewFilter(e.target.value as typeof reviewFilter)}
+                >
+                  <option value="all">All</option>
+                  <option value="reviewed">Reviewed</option>
+                  <option value="not_reviewed">Not Reviewed</option>
+                  <option value="flagged">Flagged</option>
+                </select>
+              </div>
+            </div>
             <DependencyResults
-              dependencies={analysis.dependencies}
-              ecosystem={analysis.ecosystem}
+              dependencies={(activeTabIndex === -1 && combinedAnalysis ? combinedAnalysis : analysis).dependencies.filter((dep) => {
+                if (reviewFilter === 'all') return true;
+                const reviewed = isReviewed(dep.parsed.ecosystem, dep.parsed.name);
+                const note = getNote(dep.parsed.ecosystem, dep.parsed.name);
+                if (reviewFilter === 'reviewed') return reviewed;
+                if (reviewFilter === 'not_reviewed') return !reviewed;
+                if (reviewFilter === 'flagged') return note?.reviewStatus === 'flagged';
+                return true;
+              })}
+              ecosystem={(activeTabIndex === -1 && combinedAnalysis ? combinedAnalysis : analysis).ecosystem}
               initialSearchQuery={searchFilter}
               initialQuickFilter={quickFilter}
             />

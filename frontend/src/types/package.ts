@@ -336,3 +336,22 @@ export interface ProjectAnalysis {
     criticalIssues: number;
   };
 }
+
+// Package notes and review workflow types
+export type ReviewStatus = 'not_reviewed' | 'reviewed' | 'approved' | 'flagged';
+
+export interface PackageNote {
+  packageName: string;
+  ecosystem: Ecosystem;
+  note: string;
+  reviewStatus: ReviewStatus;
+  reviewedBy?: string;
+  reviewedAt?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface PackageNotesStore {
+  notes: Record<string, PackageNote>; // key is `${ecosystem}:${packageName}`
+  version: number;
+}

@@ -4139,3 +4139,646 @@ tr.selected .row-actions {
     width: 100%;
   }
 }
+
+/* ==================== */
+/* Phase 3: Comparison View */
+/* ==================== */
+
+.comparison-view {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.comparison-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.comparison-title h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: var(--text-primary);
+}
+
+.comparison-time {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.comparison-dismiss {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.comparison-dismiss:hover {
+  color: var(--text-primary);
+}
+
+.comparison-no-changes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--success);
+  font-size: 14px;
+}
+
+.comparison-no-changes .check-icon {
+  font-size: 18px;
+}
+
+.comparison-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.comparison-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.comparison-stat.added {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.comparison-stat.removed {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.comparison-stat.changed {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.comparison-stat .stat-icon {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.comparison-stat .stat-value {
+  font-weight: 700;
+}
+
+.comparison-issues {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.comparison-issues.new-issues {
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.comparison-issues.resolved-issues {
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.issues-header {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.issues-header.danger {
+  color: #ef4444;
+}
+
+.issues-header.success {
+  color: #22c55e;
+}
+
+.issues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.issue-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.issue-item .issue-icon {
+  font-size: 14px;
+}
+
+.issue-item .issue-name {
+  font-weight: 500;
+  flex: 1;
+}
+
+.issue-item .issue-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.issue-item.cve .issue-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.issue-item.prohibited .issue-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.issue-item.restricted .issue-badge {
+  background: rgba(234, 179, 8, 0.2);
+  color: #eab308;
+}
+
+.issue-item.resolved .issue-badge {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.comparison-details {
+  margin-top: 16px;
+}
+
+.comparison-details summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 8px 0;
+}
+
+.comparison-details summary:hover {
+  color: var(--text-primary);
+}
+
+.changes-content {
+  padding: 16px 0;
+}
+
+.changes-section {
+  margin-bottom: 16px;
+}
+
+.changes-section h5 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.changes-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.change-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.change-item .change-icon {
+  font-weight: 700;
+  width: 16px;
+}
+
+.change-item.added .change-icon {
+  color: #22c55e;
+}
+
+.change-item.removed .change-icon {
+  color: #ef4444;
+}
+
+.change-item.updated .change-icon {
+  color: #3b82f6;
+}
+
+.change-item .version {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.change-item .version-change {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-left: auto;
+}
+
+/* ==================== */
+/* Phase 3: File Tabs */
+/* ==================== */
+
+.file-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  padding: 4px;
+  background: var(--card-background);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+
+.file-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.file-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.file-tab.active {
+  background: var(--primary);
+  color: white;
+}
+
+.file-tab.combined {
+  font-weight: 600;
+}
+
+.file-tab .tab-count {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.file-tab.active .tab-count {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ==================== */
+/* Phase 3: Package Notes */
+/* ==================== */
+
+.package-notes {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.package-notes .notes-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.package-notes .notes-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.package-notes .ecosystem-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--primary);
+  color: white;
+  text-transform: uppercase;
+}
+
+.review-status-section {
+  margin-bottom: 16px;
+}
+
+.review-status-section .status-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.status-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-btn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.status-btn.active {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+}
+
+.status-btn.reviewed.active {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.status-btn.approved.active {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.status-btn.flagged.active {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.status-btn .status-icon {
+  font-size: 12px;
+}
+
+.notes-content {
+  margin-top: 16px;
+}
+
+.notes-editor textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.notes-editor textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.editor-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-save {
+  padding: 8px 16px;
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  opacity: 0.9;
+}
+
+.btn-cancel {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  border-color: var(--text-secondary);
+}
+
+.notes-display .note-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  white-space: pre-wrap;
+}
+
+.notes-display .note-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.notes-display .no-notes {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0 0 12px 0;
+}
+
+.btn-edit {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.notes-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-delete {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  color: #ef4444;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+/* Review Badge (inline in table) */
+.review-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.review-badge:hover {
+  border-color: var(--primary);
+}
+
+.review-badge.not-reviewed {
+  color: var(--text-secondary);
+}
+
+.review-badge.has-note {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.review-badge.reviewed {
+  color: #3b82f6;
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.review-badge.approved {
+  color: #22c55e;
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.review-badge.flagged {
+  color: #ef4444;
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Review Filter in Results Section */
+.results-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.results-section-header h3 {
+  margin: 0;
+}
+
+.review-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-filter label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.review-filter select {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--card-background);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.review-filter select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Responsive styles for Phase 3 */
+@media (max-width: 768px) {
+  .file-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-summary {
+    flex-wrap: wrap;
+  }
+
+  .comparison-stat {
+    flex: 1;
+    min-width: calc(50% - 8px);
+  }
+
+  .status-buttons {
+    flex-direction: column;
+  }
+
+  .status-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .results-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .review-filter {
+    width: 100%;
+  }
+
+  .review-filter select {
+    flex: 1;
+  }
+}
