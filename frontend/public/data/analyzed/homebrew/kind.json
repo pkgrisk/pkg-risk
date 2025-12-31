@@ -1,0 +1,274 @@
+{
+  "ecosystem": "homebrew",
+  "name": "kind",
+  "description": "Run local Kubernetes cluster in Docker",
+  "version": "0.31.0",
+  "homepage": "https://kind.sigs.k8s.io/",
+  "repository": {
+    "platform": "github",
+    "owner": "kubernetes-sigs",
+    "repo": "kind",
+    "subpath": null
+  },
+  "install_count_30d": 7232,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 79.3,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 74.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 98.68588257296102,
+      "weight": 25
+    },
+    "community": {
+      "score": 95.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 69.08,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 48.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 65.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "kubernetes-sigs",
+      "name": "kind",
+      "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
+      "stars": 14867,
+      "forks": 1696,
+      "open_issues": 219,
+      "watchers": 14867,
+      "created_at": "2018-09-12T21:45:05Z",
+      "updated_at": "2025-12-31T20:28:24Z",
+      "pushed_at": "2025-12-18T15:39:18Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [
+        "docker",
+        "golang",
+        "k8s-sig-testing",
+        "kubeadm",
+        "kubernetes",
+        "podman"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 334,
+      "active_contributors_6mo": 17,
+      "top_contributor_pct": 50.6,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 17,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 10,
+      "contributor_entropy": 3.01
+    },
+    "commits": {
+      "last_commit_date": "2025-12-18T15:39:17Z",
+      "commits_last_6mo": 118,
+      "commits_last_year": 265
+    },
+    "issues": {
+      "open_issues": 201,
+      "closed_issues_6mo": 59,
+      "avg_response_time_hours": 23.7,
+      "avg_close_time_hours": 108.0,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 18,
+      "merged_prs_6mo": 47,
+      "closed_prs_6mo": 62,
+      "stale_prs": 9,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 37,
+      "releases_last_year": 5,
+      "last_release_date": "2025-12-18T00:56:59Z",
+      "latest_version": "v0.31.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.22
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 56.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 6867,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 6,
+      "recent_runs_pass_rate": 90.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is generally clear and provides good installation instructions, but could benefit from more examples and troubleshooting guidance.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/kind/app/main.go",
+          "line": 45,
+          "severity": "low",
+          "description": "The use of `os.Args[1:]` in the `Run` function could potentially lead to command injection if not properly sanitized."
+        },
+        {
+          "file": "images/kindnetd/cmd/kindnetd/main.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The use of `os.Getenv` to retrieve environment variables and then using them in the `config.Host` assignment could potentially lead to command injection if not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for command injection due to unsanitized user input",
+        "Lack of input validation for environment variables"
+      ],
+      "summary": "The code has some security concerns, including potential command injection and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "DNS resolution issues",
+        "cluster creation failures"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The kind community is experiencing a mix of frustration and engagement, with maintainers responding moderately to issues, but some long-standing problems persisting."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful, clear, and welcoming, but could improve in terms of technical depth and patience when handling repeated or basic questions."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "active contributors"
+      ],
+      "summary": "The kind package appears to be actively maintained with regular updates, a strong contributor base, and a recent release."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for the homebrew package 'kind' lacks a clear succession plan, decision-making process, and indication of multiple maintainers, posing a high bus factor risk."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is generally clear and provides good installation instructions, but could benefit from more examples and troubleshooting guidance.",
+    "concerns": [
+      "high number of open issues",
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: DNS resolution issues",
+      "Community: cluster creation failures",
+      "Governance: High bus factor risk identified",
+      "Security: Potential for command injection due to unsanitized user input",
+      "Security: Lack of input validation for environment variables"
+    ],
+    "highlights": [
+      "frequent commits",
+      "recent release",
+      "active contributors",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2025-12-31T21:48:30.363486Z",
+  "data_fetched_at": "2025-12-31T21:48:30.363487Z"
+}

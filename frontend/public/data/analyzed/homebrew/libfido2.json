@@ -1,0 +1,254 @@
+{
+  "ecosystem": "homebrew",
+  "name": "libfido2",
+  "description": "Provides library functionality for FIDO U2F & FIDO 2.0, including USB",
+  "version": "1.16.0",
+  "homepage": "https://developers.yubico.com/libfido2/",
+  "repository": {
+    "platform": "github",
+    "owner": "Yubico",
+    "repo": "libfido2",
+    "subpath": null
+  },
+  "install_count_30d": 7335,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 76.9,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 82.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 99.68588257296102,
+      "weight": 25
+    },
+    "community": {
+      "score": 85.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 56.6,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 10.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 80.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "Yubico",
+      "name": "libfido2",
+      "description": "Provides library functionality for FIDO2, including communication with a device over USB or NFC.",
+      "stars": 679,
+      "forks": 169,
+      "open_issues": 14,
+      "watchers": 679,
+      "created_at": "2018-04-19T06:32:10Z",
+      "updated_at": "2025-12-27T09:28:50Z",
+      "pushed_at": "2025-12-19T07:46:53Z",
+      "default_branch": "main",
+      "license": "NOASSERTION",
+      "language": "C",
+      "topics": [
+        "fido2",
+        "libfido2",
+        "webauthn",
+        "yubikey"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 60,
+      "active_contributors_6mo": 3,
+      "top_contributor_pct": 75.6,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 3,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 1.45
+    },
+    "commits": {
+      "last_commit_date": "2025-12-18T21:08:27Z",
+      "commits_last_6mo": 43,
+      "commits_last_year": 62
+    },
+    "issues": {
+      "open_issues": 8,
+      "closed_issues_6mo": 5,
+      "avg_response_time_hours": 138.7,
+      "avg_close_time_hours": 283.8,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 6,
+      "merged_prs_6mo": 26,
+      "closed_prs_6mo": 32,
+      "stale_prs": 5,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 35.0,
+      "has_dependabot": false,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": true,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": true,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 11,
+      "recent_runs_pass_rate": 80.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/config.c",
+          "line": 123,
+          "severity": "low",
+          "description": "The function cbor_build_uint8() does not seem to have any direct user input, but it's worth noting that the subcmd parameter is used directly in the cbor serialization process."
+        },
+        {
+          "file": "tools/config.c",
+          "line": 55,
+          "severity": "medium",
+          "description": "The function base10() does not seem to have any input validation, which could potentially lead to integer overflow or other issues if the input is not a valid number."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Lack of input validation in certain functions",
+        "Potential for integer overflow or other issues due to lack of input validation"
+      ],
+      "summary": "The code has some potential security concerns, including lack of input validation and potential for integer overflow, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "U2F device timeouts",
+        "Resident Credential deletion issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The libfido2 community is actively reporting and resolving issues, with maintainers responding promptly to bug reports, indicating a healthy and engaged community."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "unknown last release",
+        "relatively low number of contributors"
+      ],
+      "positive_signals": [
+        "recent commit activity",
+        "active issue and PR management"
+      ],
+      "summary": "The libfido2 package appears to be maintained with regular commits and active issue management, but lacks information on its last release."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "has SECURITY.md",
+    "doc_summary": "",
+    "concerns": [
+      "unknown last release",
+      "relatively low number of contributors",
+      "Community: U2F device timeouts",
+      "Community: Resident Credential deletion issues",
+      "Security: Lack of input validation in certain functions",
+      "Security: Potential for integer overflow or other issues due to lack of input validation"
+    ],
+    "highlights": [
+      "recent commit activity",
+      "active issue and PR management",
+      "Excellent maintainer communication",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2025-12-31T21:41:58.656817Z",
+  "data_fetched_at": "2025-12-31T21:41:58.656819Z"
+}

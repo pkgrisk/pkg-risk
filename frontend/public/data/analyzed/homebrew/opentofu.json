@@ -1,0 +1,275 @@
+{
+  "ecosystem": "homebrew",
+  "name": "opentofu",
+  "description": "Drop-in replacement for Terraform. Infrastructure as Code Tool",
+  "version": "1.11.2",
+  "homepage": "https://opentofu.org/",
+  "repository": {
+    "platform": "github",
+    "owner": "opentofu",
+    "repo": "opentofu",
+    "subpath": null
+  },
+  "install_count_30d": 7552,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 83.9,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "established",
+    "security": {
+      "score": 78.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 91.93984226654928,
+      "weight": 25
+    },
+    "community": {
+      "score": 96.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 95.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 45.5,
+      "weight": 10
+    },
+    "stability": {
+      "score": 91.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "opentofu",
+      "name": "opentofu",
+      "description": "OpenTofu lets you declaratively manage your cloud infrastructure.",
+      "stars": 27448,
+      "forks": 1136,
+      "open_issues": 344,
+      "watchers": 27448,
+      "created_at": "2023-08-16T20:01:36Z",
+      "updated_at": "2025-12-31T09:24:16Z",
+      "pushed_at": "2025-12-23T15:45:43Z",
+      "default_branch": "main",
+      "license": "MPL-2.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 353,
+      "active_contributors_6mo": 25,
+      "top_contributor_pct": 14.2,
+      "contributors_over_5pct": 5,
+      "contributors_prev_6mo": 36,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 16,
+      "contributor_entropy": 5.24
+    },
+    "commits": {
+      "last_commit_date": "2025-12-19T18:47:01Z",
+      "commits_last_6mo": 437,
+      "commits_last_year": 814
+    },
+    "issues": {
+      "open_issues": 247,
+      "closed_issues_6mo": 72,
+      "avg_response_time_hours": 2.5,
+      "avg_close_time_hours": 21.5,
+      "good_first_issue_count": 2,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 53,
+      "merged_prs_6mo": 276,
+      "closed_prs_6mo": 300,
+      "stale_prs": 28,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 78,
+      "releases_last_year": 33,
+      "last_release_date": "2025-12-19T19:20:24Z",
+      "latest_version": "v1.11.2",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.29
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 41.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": true,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3969,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": true,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 16,
+      "recent_runs_pass_rate": 62.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 2,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README provides a good overview of the package's features, but lacks clear installation instructions and examples.",
+      "top_issue": "Lack of clear installation instructions and quick start guide"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/tofu/main.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The os.Chdir function is called with user-controlled input, which could potentially lead to a directory traversal vulnerability."
+        },
+        {
+          "file": "cmd/tofu/main.go",
+          "line": 156,
+          "severity": "low",
+          "description": "The log.Printf function is used with user-controlled input, but it does not seem to be vulnerable to injection attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential directory traversal vulnerability in the os.Chdir function call.",
+        "Lack of validation for the -chdir option and TF_REATTACH_PROVIDERS environment variable."
+      ],
+      "summary": "The OpenTofu code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "performance issues",
+        "compatibility problems with other tools"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The OpenTofu community is actively reporting and discussing various issues, but the maintainers' responsiveness is moderate, indicating a relatively healthy project with room for improvement."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (437)",
+        "Recent last commit and release dates (2025-12-19)",
+        "Large number of merged PRs in the past 6 months (276)",
+        "Multiple active contributors in the past 6 months (25)"
+      ],
+      "summary": "The opentofu package is actively maintained with frequent commits, releases, and a large number of contributors."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks explicit migration guides for breaking changes."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "OpenTofu has a documented decision process and a path for contributors to become maintainers, but lacks a clear succession plan."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "has SECURITY.md",
+    "doc_summary": "The README provides a good overview of the package's features, but lacks clear installation instructions and examples.",
+    "concerns": [
+      "Docs: Lack of clear installation instructions and quick start guide",
+      "Community: performance issues",
+      "Community: compatibility problems with other tools",
+      "Security: Potential directory traversal vulnerability in the os.Chdir function call.",
+      "Security: Lack of validation for the -chdir option and TF_REATTACH_PROVIDERS environment variable."
+    ],
+    "highlights": [
+      "High number of commits in the past 6 months (437)",
+      "Recent last commit and release dates (2025-12-19)",
+      "Large number of merged PRs in the past 6 months (276)",
+      "Multiple active contributors in the past 6 months (25)",
+      "Excellent maintainer communication",
+      "Breaking changes clearly marked in changelog",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2025-12-31T21:25:14.678686Z",
+  "data_fetched_at": "2025-12-31T21:25:14.678688Z"
+}
