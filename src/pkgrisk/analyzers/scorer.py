@@ -10,6 +10,7 @@ from pkgrisk.models.schemas import (
     RiskTier,
     ScoreComponent,
     Scores,
+    SupplyChainData,
     UpdateUrgency,
 )
 
@@ -69,6 +70,7 @@ class Scorer:
         install_count: int | None = None,
         ecosystem: str = "homebrew",
         metadata: PackageMetadata | None = None,
+        supply_chain: SupplyChainData | None = None,
     ) -> Scores:
         """Calculate all score components.
 
@@ -78,6 +80,7 @@ class Scorer:
             install_count: Package install/download count.
             ecosystem: Package ecosystem (homebrew, npm, etc.) for threshold tuning.
             metadata: Package metadata with ecosystem-specific fields.
+            supply_chain: Supply chain security analysis data.
 
         Returns:
             Scores object with all components and overall score.
@@ -85,7 +88,7 @@ class Scorer:
         # Get ecosystem-specific thresholds (fallback to homebrew)
         thresholds = ECOSYSTEM_THRESHOLDS.get(ecosystem.lower(), ECOSYSTEM_THRESHOLDS["homebrew"])
 
-        security = self._calculate_security_score(github_data, llm_assessments)
+        security = self._calculate_security_score(github_data, llm_assessments, supply_chain)
         maintenance = self._calculate_maintenance_score(github_data, llm_assessments, thresholds)
         community = self._calculate_community_score(github_data, llm_assessments, install_count, thresholds)
         bus_factor = self._calculate_bus_factor_score(github_data, llm_assessments, metadata)
@@ -106,8 +109,8 @@ class Scorer:
         grade = self._score_to_grade(overall)
 
         # Calculate enterprise risk indicators
-        risk_tier = self._calculate_risk_tier(overall, security.score, github_data)
-        update_urgency = self._calculate_update_urgency(github_data)
+        risk_tier = self._calculate_risk_tier(overall, security.score, github_data, supply_chain)
+        update_urgency = self._calculate_update_urgency(github_data, supply_chain)
 
         # Calculate confidence based on data completeness
         confidence, confidence_factors = self._calculate_confidence(
@@ -135,15 +138,37 @@ class Scorer:
         )
 
     def _calculate_risk_tier(
-        self, overall: float, security_score: float, github_data: GitHubData | None
+        self,
+        overall: float,
+        security_score: float,
+        github_data: GitHubData | None,
+        supply_chain: SupplyChainData | None = None,
     ) -> RiskTier:
         """Calculate enterprise risk tier classification.
 
-        Tier 1 (Approved): Score ≥80, no unpatched CVEs, active maintenance
+        Tier 1 (Approved): Score ≥80, no unpatched CVEs, active maintenance, low supply chain risk
         Tier 2 (Conditional): Score 60-79, or minor concerns
         Tier 3 (Restricted): Score <60, or critical issues
-        Tier 4 (Prohibited): Unpatched critical CVEs, abandoned, known malicious
+        Tier 4 (Prohibited): Unpatched critical CVEs, abandoned, known malicious, high supply chain risk
         """
+        # Check for supply chain prohibition conditions first
+        if supply_chain:
+            # Critical supply chain risks = prohibited
+            if supply_chain.risk_level == "critical":
+                return RiskTier.PROHIBITED
+            # Shai Hulud indicators = prohibited
+            if supply_chain.lifecycle_scripts.installs_runtime:
+                return RiskTier.PROHIBITED
+            if supply_chain.lifecycle_scripts.has_credential_access and supply_chain.lifecycle_scripts.has_network_calls:
+                return RiskTier.PROHIBITED  # Credential exfiltration pattern
+            # Suspicious files in tarball = prohibited
+            if supply_chain.tarball and supply_chain.tarball.suspicious_files:
+                return RiskTier.PROHIBITED
+
+            # High supply chain risk = restricted
+            if supply_chain.risk_level == "high":
+                return RiskTier.RESTRICTED
+
         # Check for prohibition conditions
         if github_data:
             security = github_data.security
@@ -161,22 +186,43 @@ class Scorer:
             if security_score < 40:
                 return RiskTier.RESTRICTED
 
-        # Score-based tiers
+        # Score-based tiers with supply chain consideration
         if overall >= 80 and security_score >= 70:
+            # Additional check: no medium+ supply chain risk for APPROVED
+            if supply_chain and supply_chain.risk_level in ("medium", "high", "critical"):
+                return RiskTier.CONDITIONAL
             return RiskTier.APPROVED
         elif overall >= 60:
             return RiskTier.CONDITIONAL
         else:
             return RiskTier.RESTRICTED
 
-    def _calculate_update_urgency(self, github_data: GitHubData | None) -> UpdateUrgency:
+    def _calculate_update_urgency(
+        self,
+        github_data: GitHubData | None,
+        supply_chain: SupplyChainData | None = None,
+    ) -> UpdateUrgency:
         """Calculate update urgency indicator.
 
-        Critical: Unpatched CVE, update immediately
-        High: Patched CVE in newer version, update soon
+        Critical: Unpatched CVE, supply chain attack indicators, update immediately
+        High: Patched CVE in newer version, medium supply chain risk, update soon
         Medium: Maintenance concerns, plan update
         Low: Current version acceptable, update opportunistically
         """
+        # Critical: Supply chain attack indicators
+        if supply_chain:
+            if supply_chain.risk_level == "critical":
+                return UpdateUrgency.CRITICAL
+            if supply_chain.lifecycle_scripts.installs_runtime:
+                return UpdateUrgency.CRITICAL
+            if supply_chain.lifecycle_scripts.has_credential_access:
+                return UpdateUrgency.CRITICAL
+            if supply_chain.tarball and supply_chain.tarball.suspicious_files:
+                return UpdateUrgency.CRITICAL
+            # High: Medium supply chain risk
+            if supply_chain.risk_level in ("high", "medium"):
+                return UpdateUrgency.HIGH
+
         if not github_data:
             return UpdateUrgency.LOW
 
@@ -285,6 +331,7 @@ class Scorer:
         self,
         github_data: GitHubData | None,
         llm_assessments: LLMAssessments | None,
+        supply_chain: SupplyChainData | None = None,
     ) -> ScoreComponent:
         """Calculate security score (30% weight).
 
@@ -294,7 +341,8 @@ class Scorer:
         - SECURITY.md presence
         - Security CI tools (Dependabot, CodeQL, Snyk, etc.)
         - Signed commits/releases
-        - Supply chain security signals
+        - Supply chain security signals (from GitHub security data)
+        - Supply chain risk analysis (lifecycle scripts, tarball, version diff)
         - LLM security assessment
         """
         if not github_data:
@@ -342,9 +390,14 @@ class Scorer:
         elif security.signed_commits_pct >= 50:
             score += 5
 
-        # Supply chain security signals
+        # Supply chain security signals (from GitHub security metadata)
         supply_chain_bonus = self._calculate_supply_chain_score(security)
         score += supply_chain_bonus
+
+        # Supply chain risk analysis penalties (from dedicated analyzer)
+        if supply_chain:
+            sc_penalty = self._calculate_supply_chain_risk_penalty(supply_chain)
+            score += sc_penalty  # This is a negative value (penalty)
 
         # LLM security assessment
         if llm_assessments and llm_assessments.security:
@@ -443,6 +496,89 @@ class Scorer:
             bonus += 5
 
         return bonus
+
+    def _calculate_supply_chain_risk_penalty(self, supply_chain: SupplyChainData) -> float:
+        """Calculate supply chain risk penalties.
+
+        Severe penalties for malicious indicators (Shai Hulud-style attacks):
+        - Lifecycle scripts with credential access: -40
+        - Installs alternative runtime (Bun, Deno): -50
+        - Obfuscated code in scripts: -30
+        - Suspicious files in tarball: -40
+        - Network calls from install scripts: -20
+        - Version jump anomalies: -15
+        - Publisher not in maintainers: -10
+
+        Positive signals:
+        - Has npm provenance: +5
+        - No lifecycle scripts: +5
+        """
+        penalty = 0.0
+
+        # Lifecycle script risks
+        ls = supply_chain.lifecycle_scripts
+        if ls.installs_runtime:
+            penalty -= 50  # Critical: Shai Hulud signature
+        if ls.has_credential_access:
+            penalty -= 40  # Critical: Credential theft attempt
+        if ls.has_obfuscation:
+            penalty -= 30  # High: Hiding malicious code
+        if ls.has_network_calls and ls.has_preinstall:
+            penalty -= 25  # High: Network during install
+        elif ls.has_network_calls:
+            penalty -= 15  # Medium: Network calls
+        if ls.has_process_spawn and ls.has_preinstall:
+            penalty -= 20  # High: Process spawning during install
+        if ls.has_preinstall:
+            penalty -= 10  # Medium: Any preinstall script is a risk
+        elif ls.has_postinstall:
+            penalty -= 5   # Low: Postinstall is more common but still notable
+
+        # Critical pattern combinations (compound risks)
+        if ls.has_credential_access and ls.has_network_calls:
+            penalty -= 20  # Additional penalty for exfiltration pattern
+
+        # Tarball risks
+        if supply_chain.tarball:
+            tarball = supply_chain.tarball
+            if tarball.suspicious_files:
+                # Number of suspicious files matters
+                penalty -= min(40, len(tarball.suspicious_files) * 20)
+            if tarball.files_not_in_repo:
+                # Many files not in repo = potential injection
+                if len(tarball.files_not_in_repo) > 10:
+                    penalty -= 15
+
+        # Version diff risks
+        if supply_chain.version_diff:
+            vd = supply_chain.version_diff
+            if vd.version_jump_suspicious:
+                penalty -= 15
+            if vd.scripts_added:
+                # Penalty based on which scripts were added
+                for script in vd.scripts_added:
+                    if script in ("preinstall", "install"):
+                        penalty -= 20
+                    elif script == "postinstall":
+                        penalty -= 10
+
+        # Publishing risks
+        pub = supply_chain.publishing
+        if not pub.publisher_is_listed_maintainer:
+            penalty -= 15  # Publisher not in official maintainers
+
+        # Positive signals (bonuses)
+        if pub.has_provenance and pub.provenance_verified:
+            penalty += 10  # Verified provenance is a good sign
+        elif pub.has_provenance:
+            penalty += 5
+
+        # No lifecycle scripts at all is a positive signal
+        if not (ls.has_preinstall or ls.has_postinstall or ls.has_install):
+            penalty += 5
+
+        # Cap the penalty at -80 (leave room for other factors)
+        return max(-80, penalty)
 
     def _calculate_maintenance_score(
         self,

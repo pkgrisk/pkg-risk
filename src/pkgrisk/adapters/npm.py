@@ -333,3 +333,167 @@ class NpmAdapter(BaseAdapter):
 
         # Fall back to base implementation
         return parse_repo_url(url)
+
+    async def get_full_package_data(self, name: str) -> dict | None:
+        """Fetch full npm registry data for a package.
+
+        This returns the complete registry response including all versions,
+        maintainers, tarball URLs, etc. Used for supply chain analysis.
+
+        Args:
+            name: Package name.
+
+        Returns:
+            Full package data dict, or None if not found.
+        """
+        encoded_name = name.replace("/", "%2F")
+        url = f"{self.REGISTRY_URL}/{encoded_name}"
+
+        try:
+            return await self._fetch_json(url)
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 404:
+                return None
+            raise
+
+    async def get_version_data(self, name: str, version: str) -> dict | None:
+        """Fetch data for a specific version of a package.
+
+        Args:
+            name: Package name.
+            version: Version string.
+
+        Returns:
+            Version-specific data dict, or None if not found.
+        """
+        full_data = await self.get_full_package_data(name)
+        if not full_data:
+            return None
+
+        versions = full_data.get("versions", {})
+        return versions.get(version)
+
+    async def get_tarball_url(self, name: str, version: str | None = None) -> str | None:
+        """Get the tarball URL for a package version.
+
+        Args:
+            name: Package name.
+            version: Version string (uses latest if not specified).
+
+        Returns:
+            Tarball URL, or None if not found.
+        """
+        full_data = await self.get_full_package_data(name)
+        if not full_data:
+            return None
+
+        if version is None:
+            version = full_data.get("dist-tags", {}).get("latest")
+
+        if not version:
+            return None
+
+        version_data = full_data.get("versions", {}).get(version, {})
+        dist = version_data.get("dist", {})
+        return dist.get("tarball")
+
+    async def get_previous_version(self, name: str, current_version: str) -> tuple[str | None, dict | None]:
+        """Get the previous version's data for comparison.
+
+        Args:
+            name: Package name.
+            current_version: Current version string.
+
+        Returns:
+            Tuple of (previous_version_string, previous_version_data) or (None, None).
+        """
+        full_data = await self.get_full_package_data(name)
+        if not full_data:
+            return None, None
+
+        versions = full_data.get("versions", {})
+        version_list = list(versions.keys())
+
+        if current_version not in version_list:
+            return None, None
+
+        idx = version_list.index(current_version)
+        if idx == 0:
+            # This is the first version
+            return None, None
+
+        prev_version = version_list[idx - 1]
+        return prev_version, versions.get(prev_version)
+
+    async def get_package_json_from_version(self, name: str, version: str | None = None) -> dict | None:
+        """Get the package.json content for a specific version.
+
+        This extracts the package.json data from the registry, which includes
+        scripts, dependencies, and other metadata needed for supply chain analysis.
+
+        Args:
+            name: Package name.
+            version: Version string (uses latest if not specified).
+
+        Returns:
+            Package.json dict, or None if not found.
+        """
+        full_data = await self.get_full_package_data(name)
+        if not full_data:
+            return None
+
+        if version is None:
+            version = full_data.get("dist-tags", {}).get("latest")
+
+        if not version:
+            return None
+
+        # The version data in the registry IS effectively the package.json
+        # with some additional npm metadata
+        return full_data.get("versions", {}).get(version)
+
+    async def get_supply_chain_data(self, name: str) -> dict:
+        """Fetch all data needed for supply chain analysis.
+
+        This is a convenience method that fetches all the data needed
+        for the SupplyChainAnalyzer in one call.
+
+        Args:
+            name: Package name.
+
+        Returns:
+            Dict with keys: package_json, tarball_url, previous_version_data,
+            npm_package_data, current_version.
+        """
+        full_data = await self.get_full_package_data(name)
+        if not full_data:
+            return {}
+
+        current_version = full_data.get("dist-tags", {}).get("latest")
+        if not current_version:
+            return {}
+
+        versions = full_data.get("versions", {})
+        package_json = versions.get(current_version, {})
+
+        # Get tarball URL
+        tarball_url = package_json.get("dist", {}).get("tarball")
+
+        # Get previous version for comparison
+        version_list = list(versions.keys())
+        prev_version = None
+        prev_data = None
+        if current_version in version_list:
+            idx = version_list.index(current_version)
+            if idx > 0:
+                prev_version = version_list[idx - 1]
+                prev_data = versions.get(prev_version)
+
+        return {
+            "package_json": package_json,
+            "tarball_url": tarball_url,
+            "previous_version": prev_version,
+            "previous_version_data": prev_data,
+            "npm_package_data": full_data,
+            "current_version": current_version,
+        }

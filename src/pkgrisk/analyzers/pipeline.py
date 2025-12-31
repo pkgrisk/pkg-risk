@@ -15,12 +15,14 @@ from pkgrisk.analyzers.github import GitHubFetcher
 from pkgrisk.analyzers.llm import LLMAnalyzer
 from pkgrisk.analyzers.osv import OSVFetcher
 from pkgrisk.analyzers.scorer import Scorer
+from pkgrisk.analyzers.supply_chain import SupplyChainAnalyzer
 from pkgrisk.models.schemas import (
     DataAvailability,
     Ecosystem,
     LLMAssessments,
     PackageAnalysis,
     Platform,
+    SupplyChainData,
 )
 
 if TYPE_CHECKING:
@@ -45,6 +47,7 @@ class AnalysisPipeline:
         github_token: str | None = None,
         llm_model: str = "llama3.1:70b",
         skip_llm: bool = False,
+        skip_supply_chain: bool = False,
         metrics: MetricsCollector | None = None,
     ) -> None:
         """Initialize the pipeline.
@@ -55,6 +58,7 @@ class AnalysisPipeline:
             github_token: GitHub personal access token.
             llm_model: Ollama model for LLM analysis.
             skip_llm: Skip LLM analysis entirely.
+            skip_supply_chain: Skip supply chain analysis (tarball inspection).
             metrics: Optional metrics collector for monitoring.
         """
         self.adapter = adapter
@@ -62,6 +66,7 @@ class AnalysisPipeline:
         self.github = GitHubFetcher(token=github_token)
         self.osv = OSVFetcher()
         self.llm = LLMAnalyzer(model=llm_model) if not skip_llm else None
+        self.supply_chain = SupplyChainAnalyzer() if not skip_supply_chain else None
         self.scorer = Scorer()
         self.metrics = metrics
         self._http_client: httpx.AsyncClient | None = None
@@ -169,6 +174,22 @@ class AnalysisPipeline:
                     self.metrics.update_osv_status("error")
                 pass  # CVE fetching failures shouldn't break pipeline
 
+        # Stage 2.6: Supply chain analysis (NPM only for now)
+        supply_chain_data = None
+        if self.supply_chain and ecosystem == Ecosystem.NPM:
+            try:
+                t0 = time.perf_counter()
+                supply_chain_data = await self._run_supply_chain_analysis(
+                    package_name, repo_ref
+                )
+                self._record_timing("supply_chain", time.perf_counter() - t0)
+            except Exception as e:
+                # Supply chain analysis failures shouldn't break pipeline
+                import logging
+                logging.getLogger(__name__).debug(
+                    f"Supply chain analysis failed for {package_name}: {e}"
+                )
+
         # Stage 3: Run LLM assessments (only if we have GitHub data)
         llm_assessments = None
         if self.llm and github_data:
@@ -196,8 +217,11 @@ class AnalysisPipeline:
                 install_count,
                 ecosystem=ecosystem.value,
                 metadata=metadata,
+                supply_chain=supply_chain_data,
             )
-            analysis_summary = self._build_summary(github_data, llm_assessments, scores)
+            analysis_summary = self._build_summary(
+                github_data, llm_assessments, scores, supply_chain_data
+            )
         else:
             # No scores for unavailable packages
             analysis_summary = {
@@ -220,6 +244,7 @@ class AnalysisPipeline:
             scores=scores,
             github_data=github_data,
             llm_assessments=llm_assessments,
+            supply_chain=supply_chain_data,
             analysis_summary=analysis_summary,
             analyzed_at=datetime.now(timezone.utc),
             data_fetched_at=datetime.now(timezone.utc),
@@ -355,11 +380,58 @@ class AnalysisPipeline:
 
         return assessments
 
+    async def _run_supply_chain_analysis(
+        self,
+        package_name: str,
+        repo_ref,
+    ) -> SupplyChainData | None:
+        """Run supply chain security analysis for a package.
+
+        Args:
+            package_name: Package name.
+            repo_ref: Repository reference (for comparing tarball to repo).
+
+        Returns:
+            SupplyChainData with analysis results, or None if analysis fails.
+        """
+        # Import here to avoid circular imports
+        from pkgrisk.adapters.npm import NpmAdapter
+
+        # Only works with NPM adapter
+        if not isinstance(self.adapter, NpmAdapter):
+            return None
+
+        # Fetch supply chain data from npm
+        sc_data = await self.adapter.get_supply_chain_data(package_name)
+        if not sc_data or not sc_data.get("package_json"):
+            return None
+
+        # Get repository file list for comparison (if available)
+        repo_files = None
+        if repo_ref:
+            try:
+                # We could fetch the repo tree here, but for now skip
+                # to avoid additional API calls. The tarball analyzer
+                # will still detect suspicious files.
+                pass
+            except Exception:
+                pass
+
+        # Run the analysis
+        return await self.supply_chain.analyze_package(
+            package_json=sc_data["package_json"],
+            tarball_url=sc_data.get("tarball_url"),
+            repo_files=repo_files,
+            previous_version_data=sc_data.get("previous_version_data"),
+            npm_package_data=sc_data.get("npm_package_data"),
+        )
+
     def _build_summary(
         self,
         github_data,
         llm_assessments: LLMAssessments | None,
         scores,
+        supply_chain: SupplyChainData | None = None,
     ) -> dict:
         """Build human-readable analysis summary."""
         summary = {
@@ -454,6 +526,49 @@ class AnalysisPipeline:
 
             if github_data.ci.has_github_actions:
                 summary["highlights"].append("CI/CD configured")
+
+        # Supply chain security findings
+        if supply_chain:
+            summary["supply_chain_risk"] = supply_chain.risk_level
+
+            # Critical findings get top priority
+            for finding in supply_chain.critical_findings[:3]:
+                summary["concerns"].insert(0, f"SUPPLY CHAIN: {finding}")
+
+            # Lifecycle script warnings
+            if supply_chain.lifecycle_scripts.has_preinstall:
+                summary["concerns"].append("Supply Chain: Has preinstall script")
+            if supply_chain.lifecycle_scripts.has_postinstall:
+                summary["concerns"].append("Supply Chain: Has postinstall script")
+            if supply_chain.lifecycle_scripts.installs_runtime:
+                summary["concerns"].insert(0, "SUPPLY CHAIN: Installs alternative runtime (Shai Hulud indicator)")
+            if supply_chain.lifecycle_scripts.has_credential_access:
+                summary["concerns"].insert(0, "SUPPLY CHAIN: Accesses credential files")
+            if supply_chain.lifecycle_scripts.has_obfuscation:
+                summary["concerns"].append("Supply Chain: Contains obfuscated code")
+
+            # Version diff warnings
+            if supply_chain.version_diff:
+                if supply_chain.version_diff.version_jump_suspicious:
+                    summary["concerns"].append("Supply Chain: Suspicious version jump detected")
+                if supply_chain.version_diff.scripts_added:
+                    added = ", ".join(supply_chain.version_diff.scripts_added[:3])
+                    summary["concerns"].append(f"Supply Chain: New scripts added: {added}")
+
+            # Tarball warnings
+            if supply_chain.tarball and supply_chain.tarball.suspicious_files:
+                files = ", ".join(supply_chain.tarball.suspicious_files[:3])
+                summary["concerns"].insert(0, f"SUPPLY CHAIN: Suspicious files in package: {files}")
+
+            # Publishing warnings
+            if not supply_chain.publishing.publisher_is_listed_maintainer:
+                summary["concerns"].append("Supply Chain: Publisher not in maintainers list")
+
+            # Positive signals
+            if supply_chain.publishing.has_provenance:
+                summary["highlights"].append("Has npm provenance attestation")
+            if supply_chain.overall_risk_score == 0:
+                summary["highlights"].append("No supply chain risks detected")
 
         return summary
 

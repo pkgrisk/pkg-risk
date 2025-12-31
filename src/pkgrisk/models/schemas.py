@@ -413,6 +413,169 @@ class LLMAssessments(BaseModel):
     governance: GovernanceAssessment | None = None
 
 
+# --- Supply Chain Security Models ---
+
+
+class SuspiciousPattern(BaseModel):
+    """A detected suspicious pattern in package code."""
+
+    pattern_type: str  # obfuscation, network_call, credential_access, process_spawn, etc.
+    severity: str  # critical, high, medium, low
+    location: str  # file:line or script name
+    matched_content: str  # The actual content that matched
+    description: str  # Human-readable explanation
+
+
+class LifecycleScriptRisk(BaseModel):
+    """Analysis of package.json lifecycle scripts (preinstall, postinstall, etc.)."""
+
+    has_preinstall: bool = False
+    has_postinstall: bool = False
+    has_prepare: bool = False
+    has_prepublish: bool = False
+    has_install: bool = False
+
+    # Script contents (name -> command)
+    scripts: dict[str, str] = Field(default_factory=dict)
+
+    # Detected suspicious patterns
+    suspicious_patterns: list[SuspiciousPattern] = Field(default_factory=list)
+
+    # Risk assessment
+    risk_score: int = Field(ge=0, le=100, default=0)  # 0 = safe, 100 = extremely risky
+    risk_factors: list[str] = Field(default_factory=list)
+
+    # Specific detections
+    has_obfuscation: bool = False
+    has_network_calls: bool = False
+    has_file_system_access: bool = False
+    has_process_spawn: bool = False
+    has_credential_access: bool = False
+    has_env_access: bool = False
+    installs_runtime: bool = False  # Bun, Deno, etc.
+
+
+class TarballFile(BaseModel):
+    """A file found in the published tarball."""
+
+    path: str
+    size_bytes: int
+    is_executable: bool = False
+    is_binary: bool = False
+
+
+class TarballAnalysis(BaseModel):
+    """Analysis of the published npm tarball vs repository source."""
+
+    tarball_url: str | None = None
+    tarball_size_bytes: int = 0
+    file_count: int = 0
+
+    # Files analysis
+    files: list[TarballFile] = Field(default_factory=list)
+
+    # Discrepancy detection
+    files_not_in_repo: list[str] = Field(default_factory=list)  # Files in tarball but not in repo
+    suspicious_files: list[str] = Field(default_factory=list)  # e.g., setup_bun.js
+
+    # Content analysis
+    has_native_code: bool = False  # .node, .so, .dll files
+    has_minified_js: bool = False
+    minified_files: list[str] = Field(default_factory=list)
+
+    # Suspicious patterns found in tarball files
+    suspicious_patterns: list[SuspiciousPattern] = Field(default_factory=list)
+
+    # Risk score for tarball-specific issues
+    risk_score: int = Field(ge=0, le=100, default=0)
+
+
+class VersionDiff(BaseModel):
+    """Comparison between current and previous version."""
+
+    current_version: str
+    previous_version: str | None = None
+    comparison_available: bool = False
+
+    # Changes detected
+    files_added: list[str] = Field(default_factory=list)
+    files_removed: list[str] = Field(default_factory=list)
+    files_modified: list[str] = Field(default_factory=list)
+
+    # Specific change types
+    scripts_changed: bool = False
+    scripts_added: list[str] = Field(default_factory=list)  # New lifecycle scripts
+    dependencies_added: list[str] = Field(default_factory=list)
+    dependencies_removed: list[str] = Field(default_factory=list)
+
+    # Size changes
+    size_change_bytes: int = 0
+    size_change_percent: float = 0.0
+
+    # Version jump analysis
+    is_major_bump: bool = False
+    is_minor_bump: bool = False
+    is_patch_bump: bool = False
+    version_jump_suspicious: bool = False  # e.g., 1.0.0 -> 10.0.0
+
+    # Time-based anomalies
+    days_since_previous: int | None = None
+    published_without_repo_commits: bool = False  # Version bumped without corresponding commits
+
+    # Risk assessment
+    risk_score: int = Field(ge=0, le=100, default=0)
+    risk_factors: list[str] = Field(default_factory=list)
+
+
+class PublishingInfo(BaseModel):
+    """Information about package publishing and maintainer security."""
+
+    # npm provenance (sigstore attestation)
+    has_provenance: bool = False
+    provenance_verified: bool = False
+
+    # Publisher information
+    publisher_username: str | None = None
+    publisher_is_listed_maintainer: bool = True
+
+    # Maintainer analysis
+    maintainer_count: int = 0
+    maintainers: list[str] = Field(default_factory=list)
+
+    # Account changes
+    recent_maintainer_change: bool = False  # New maintainer added recently
+    new_maintainers: list[str] = Field(default_factory=list)
+
+    # Publishing patterns
+    first_publish_by_user: bool = False  # Publisher's first time publishing this package
+    publish_frequency_anomaly: bool = False  # Unusual publishing pattern
+
+    # Risk assessment
+    risk_score: int = Field(ge=0, le=100, default=0)
+    risk_factors: list[str] = Field(default_factory=list)
+
+
+class SupplyChainData(BaseModel):
+    """Aggregated supply chain security analysis."""
+
+    # Component analyses
+    lifecycle_scripts: LifecycleScriptRisk = Field(default_factory=LifecycleScriptRisk)
+    tarball: TarballAnalysis | None = None
+    version_diff: VersionDiff | None = None
+    publishing: PublishingInfo = Field(default_factory=PublishingInfo)
+
+    # Overall supply chain risk
+    overall_risk_score: int = Field(ge=0, le=100, default=0)
+    risk_level: str = "low"  # low, medium, high, critical
+
+    # Summary of all detected issues
+    all_suspicious_patterns: list[SuspiciousPattern] = Field(default_factory=list)
+    critical_findings: list[str] = Field(default_factory=list)
+
+    # Behavioral heuristics results
+    behavioral_flags: list[str] = Field(default_factory=list)
+
+
 # --- Final Package Analysis ---
 
 
@@ -440,6 +603,9 @@ class PackageAnalysis(BaseModel):
 
     # LLM assessments
     llm_assessments: LLMAssessments | None = None
+
+    # Supply chain security analysis
+    supply_chain: SupplyChainData | None = None
 
     # Summary analysis
     analysis_summary: dict | None = None
