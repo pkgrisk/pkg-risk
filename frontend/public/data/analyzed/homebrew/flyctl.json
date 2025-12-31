@@ -1,0 +1,289 @@
+{
+  "ecosystem": "homebrew",
+  "name": "flyctl",
+  "description": "Command-line tools for fly.io services",
+  "version": "0.4.0",
+  "homepage": "https://fly.io",
+  "repository": {
+    "platform": "github",
+    "owner": "superfly",
+    "repo": "flyctl",
+    "subpath": null
+  },
+  "install_count_30d": 14237,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 82.8,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 78.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 75.99358892361829,
+      "weight": 25
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 100.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 56.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 98.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "superfly",
+      "name": "flyctl",
+      "description": "Command line tools for fly.io services",
+      "stars": 1593,
+      "forks": 289,
+      "open_issues": 371,
+      "watchers": 1593,
+      "created_at": "2019-07-26T18:03:45Z",
+      "updated_at": "2025-12-29T06:15:50Z",
+      "pushed_at": "2025-12-30T21:05:45Z",
+      "default_branch": "master",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [
+        "flyio-tools"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 203,
+      "active_contributors_6mo": 29,
+      "top_contributor_pct": 14.6,
+      "contributors_over_5pct": 6,
+      "contributors_prev_6mo": 24,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 18,
+      "contributor_entropy": 4.92
+    },
+    "commits": {
+      "last_commit_date": "2025-12-25T16:00:57Z",
+      "commits_last_6mo": 182,
+      "commits_last_year": 403
+    },
+    "issues": {
+      "open_issues": 185,
+      "closed_issues_6mo": 11,
+      "avg_response_time_hours": 793.7,
+      "avg_close_time_hours": 1327.6,
+      "good_first_issue_count": 6,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 115,
+      "merged_prs_6mo": 189,
+      "closed_prs_6mo": 217,
+      "stale_prs": 95,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 500,
+      "releases_last_year": 169,
+      "last_release_date": "2025-12-25T19:09:26Z",
+      "latest_version": "v0.4.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.06
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2112,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 15,
+      "recent_runs_pass_rate": 100.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides clear installation instructions and basic usage examples, but lacks comprehensive documentation on configuration options and troubleshooting.",
+      "top_issue": "Lack of troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "scripts/clean-up-preflight-apps/main.go",
+          "line": 34,
+          "severity": "high",
+          "description": "Potential command injection vulnerability in the 'cmdStr' variable, which is constructed using user input from 'app.Id'. An attacker could potentially inject malicious commands."
+        },
+        {
+          "file": "scripts/clean-up-preflight-apps/main.go",
+          "line": 41,
+          "severity": "medium",
+          "description": "Use of 'os/exec' package with user-controlled input in the 'cmdParts' variable. Although 'shlex.Split' is used to split the command string, it's still possible for an attacker to inject malicious commands."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [
+        {
+          "file": "scripts/clean-up-preflight-apps/main.go",
+          "line": 24,
+          "type": "API token"
+        },
+        {
+          "file": "scripts/clean-up-preflight-apps/main.go",
+          "line": 25,
+          "type": "Organization slug"
+        }
+      ],
+      "critical_findings": [
+        "Potential command injection vulnerability in scripts/clean-up-preflight-apps/main.go",
+        "Hardcoded API token and organization slug in scripts/clean-up-preflight-apps/main.go"
+      ],
+      "summary": "The code has several security concerns, including potential command injection vulnerabilities, lack of input validation, and hardcoded secrets."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bug fixes",
+        "user experience issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The flyctl community is experiencing some technical issues and user experience problems, but maintainers are moderately responsive to reported bugs."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [
+        "some responses seem automated or generic",
+        "occasional lack of detailed explanations"
+      ],
+      "summary": "The maintainer's responses are generally helpful, clear, and welcoming, but could improve in terms of technical depth and handling repeated questions."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "many active contributors",
+        "high number of merged PRs"
+      ],
+      "summary": "The flyctl package appears to be actively maintained with frequent updates, a recent release, and many active contributors, despite having a large number of open issues and PRs."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The governance documentation for flyctl lacks a clear succession plan, decision-making process, and contributor ladder, but indicates multiple maintainers with merge rights."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides clear installation instructions and basic usage examples, but lacks comprehensive documentation on configuration options and troubleshooting.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Lack of troubleshooting documentation",
+      "Community: bug fixes",
+      "Community: user experience issues",
+      "Communication: some responses seem automated or generic",
+      "Communication: occasional lack of detailed explanations",
+      "Security: Potential command injection vulnerability in scripts/clean-up-preflight-apps/main.go",
+      "Security: Hardcoded API token and organization slug in scripts/clean-up-preflight-apps/main.go",
+      "Security: Potential command injection vulnerability in the 'cmdStr' variable, which is constructed using user input from 'app.Id'. An attacker could potentially inject malicious commands."
+    ],
+    "highlights": [
+      "frequent commits",
+      "recent release",
+      "many active contributors",
+      "high number of merged PRs",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2025-12-31T17:55:09.813076Z",
+  "data_fetched_at": "2025-12-31T17:55:09.813077Z"
+}
