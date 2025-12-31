@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { PackageList } from './pages/PackageList';
 import { PackageDetail } from './pages/PackageDetail';
+import { UploadDashboard } from './pages/UploadDashboard';
 import { About } from './pages/About';
+import { Methodology } from './pages/Methodology';
 import type { PackageSummary, PackageAnalysis, EcosystemStats } from './types/package';
 import './App.css';
 
@@ -18,9 +20,32 @@ function App() {
   const [packages, setPackages] = useState<PackageSummary[]>([]);
   const [packageDetails, setPackageDetails] = useState<Map<string, PackageAnalysis>>(new Map());
   const [ecosystemStats, setEcosystemStats] = useState<EcosystemStats | null>(null);
+  const [allEcosystemData, setAllEcosystemData] = useState<Record<string, PackageSummary[]>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [ecosystem, setEcosystem] = useState<Ecosystem>('homebrew');
+
+  // Load all ecosystem data for the upload feature
+  useEffect(() => {
+    async function loadAllEcosystems() {
+      const ecosystems: Ecosystem[] = ['homebrew', 'npm', 'pypi'];
+      const data: Record<string, PackageSummary[]> = {};
+
+      for (const eco of ecosystems) {
+        try {
+          const res = await fetch(`${import.meta.env.BASE_URL}data/${eco}.json`);
+          if (res.ok) {
+            data[eco] = await res.json();
+          }
+        } catch {
+          // Skip failed ecosystems
+        }
+      }
+
+      setAllEcosystemData(data);
+    }
+    loadAllEcosystems();
+  }, []);
 
   useEffect(() => {
     // Reset state when switching ecosystems
@@ -109,6 +134,8 @@ function App() {
               <option value="pypi">{ECOSYSTEM_LABELS.pypi}</option>
             </select>
             <span className="stat">{packages.length} packages</span>
+            <Link to="/upload" className="nav-link upload-link">Analyze</Link>
+            <Link to="/methodology" className="nav-link">Methodology</Link>
             <Link to="/about" className="nav-link">About</Link>
           </div>
         </nav>
@@ -120,12 +147,20 @@ function App() {
               element={<PackageList packages={packages} ecosystem={ecosystem} stats={ecosystemStats} />}
             />
             <Route
+              path="/upload"
+              element={<UploadDashboard ecosystemData={allEcosystemData} />}
+            />
+            <Route
               path="/:ecosystem/:name"
               element={<PackageDetail packages={packageDetails} cacheDetail={cacheDetail} />}
             />
             <Route
               path="/about"
               element={<About />}
+            />
+            <Route
+              path="/methodology"
+              element={<Methodology />}
             />
           </Routes>
         </main>

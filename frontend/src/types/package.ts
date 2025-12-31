@@ -279,3 +279,60 @@ export interface EcosystemStats {
   grade_distribution: GradeDistribution;
   risk_tier_distribution: Record<RiskTier, number>;
 }
+
+// Upload feature types
+export interface ParsedDependency {
+  name: string;
+  version?: string;
+  isDev?: boolean;
+  ecosystem: Ecosystem;
+}
+
+export interface ParserResult {
+  dependencies: ParsedDependency[];
+  ecosystem: Ecosystem;
+  filename: string;
+  errors: string[];
+}
+
+export interface RegistryMetadata {
+  name: string;
+  version: string;
+  description: string;
+  homepage?: string;
+  repository?: string;
+  license?: string;
+}
+
+export interface MatchedDependency {
+  parsed: ParsedDependency;
+  scored?: PackageSummary;
+  registry?: RegistryMetadata;
+  status: 'scored' | 'unscored' | 'not_found' | 'loading';
+}
+
+export interface SavedProject {
+  id: string;
+  name: string;
+  uploadedAt: string;
+  ecosystem: Ecosystem;
+  dependencies: ParsedDependency[];
+}
+
+export interface ProjectAnalysis {
+  id: string;
+  filename: string;
+  ecosystem: Ecosystem;
+  uploadedAt: string;
+  dependencies: MatchedDependency[];
+  summary: {
+    total: number;
+    scored: number;
+    unscored: number;
+    notFound: number;
+    avgScore: number | null;
+    gradeDistribution: GradeDistribution;
+    riskTierDistribution: Record<RiskTier, number>;
+    criticalIssues: number;
+  };
+}
