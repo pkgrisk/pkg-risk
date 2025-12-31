@@ -11,6 +11,7 @@ from pathlib import Path
 
 from pkgrisk.adapters.homebrew import HomebrewAdapter
 from pkgrisk.adapters.npm import NpmAdapter
+from pkgrisk.adapters.pypi import PyPiAdapter
 from pkgrisk.analyzers.pipeline import AnalysisPipeline
 from pkgrisk.daemon.publisher import GitHubPublisher
 from pkgrisk.daemon.work_queue import QueuedPackage, WorkQueue
@@ -136,6 +137,7 @@ class ContinuousPipeline:
             adapter = {
                 Ecosystem.HOMEBREW: HomebrewAdapter,
                 Ecosystem.NPM: NpmAdapter,
+                Ecosystem.PYPI: PyPiAdapter,
             }[ecosystem]()
 
             self._pipelines[ecosystem] = AnalysisPipeline(

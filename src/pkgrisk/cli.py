@@ -17,6 +17,7 @@ from rich.table import Table
 from pkgrisk.adapters.base import BaseAdapter
 from pkgrisk.adapters.homebrew import HomebrewAdapter
 from pkgrisk.adapters.npm import NpmAdapter
+from pkgrisk.adapters.pypi import PyPiAdapter
 from pkgrisk.analyzers.github import GitHubFetcher
 from pkgrisk.monitoring import MetricsCollector
 
@@ -26,6 +27,7 @@ app = typer.Typer(help="Package health and risk scoring tool.")
 ECOSYSTEM_ADAPTERS: dict[str, type[BaseAdapter]] = {
     "homebrew": HomebrewAdapter,
     "npm": NpmAdapter,
+    "pypi": PyPiAdapter,
 }
 
 

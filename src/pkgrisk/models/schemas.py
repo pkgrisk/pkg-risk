@@ -71,6 +71,10 @@ class PackageMetadata(BaseModel):
     npm_maintainer_count: int | None = None
     has_types: bool | None = None  # TypeScript types in package.json
     is_scoped: bool | None = None  # @org/package format
+    # PyPI-specific fields
+    pypi_author: str | None = None
+    pypi_author_email: str | None = None
+    pypi_requires_python: str | None = None
 
 
 class InstallStats(BaseModel):

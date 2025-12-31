@@ -12,6 +12,7 @@ from pathlib import Path
 from pkgrisk.adapters.base import BaseAdapter
 from pkgrisk.adapters.homebrew import HomebrewAdapter
 from pkgrisk.adapters.npm import NpmAdapter
+from pkgrisk.adapters.pypi import PyPiAdapter
 from pkgrisk.models.schemas import Ecosystem
 
 logger = logging.getLogger(__name__)
@@ -86,6 +87,7 @@ class WorkQueue:
         self._adapters: dict[Ecosystem, BaseAdapter] = {
             Ecosystem.HOMEBREW: HomebrewAdapter(),
             Ecosystem.NPM: NpmAdapter(),
+            Ecosystem.PYPI: PyPiAdapter(),
         }
 
         # Queues by source type

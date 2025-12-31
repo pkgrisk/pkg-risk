@@ -6,11 +6,12 @@ import { About } from './pages/About';
 import type { PackageSummary, PackageAnalysis, EcosystemStats } from './types/package';
 import './App.css';
 
-type Ecosystem = 'homebrew' | 'npm';
+type Ecosystem = 'homebrew' | 'npm' | 'pypi';
 
 const ECOSYSTEM_LABELS: Record<Ecosystem, string> = {
   homebrew: 'Homebrew',
   npm: 'NPM',
+  pypi: 'PyPI',
 };
 
 function App() {
@@ -105,6 +106,7 @@ function App() {
             >
               <option value="homebrew">{ECOSYSTEM_LABELS.homebrew}</option>
               <option value="npm">{ECOSYSTEM_LABELS.npm}</option>
+              <option value="pypi">{ECOSYSTEM_LABELS.pypi}</option>
             </select>
             <span className="stat">{packages.length} packages</span>
             <Link to="/about" className="nav-link">About</Link>
