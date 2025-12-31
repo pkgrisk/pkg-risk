@@ -180,23 +180,23 @@
       "injection_risks": [
         {
           "file": "cli/main.rs",
-          "line": 246,
+          "line": 245,
           "severity": "medium",
-          "description": "The `tools::run::eval_command` function is called with user input, which may pose a risk of code injection."
+          "description": "The `tools::run::eval_command` function is called with user input, which could potentially lead to code injection if not properly sanitized."
         },
         {
           "file": "cli/main.rs",
-          "line": 281,
+          "line": 334,
           "severity": "low",
-          "description": "The `tools::run::run_script` function is called with user input, but it appears to be properly sanitized and validated."
+          "description": "The `tools::run::run_script` function takes a script path as an argument, which could be user-controlled. However, the path is likely validated and sanitized before being used."
         }
       ],
       "input_validation_score": 8,
       "secrets_found": [],
       "critical_findings": [
-        "Potential code injection risk in the `tools::run::eval_command` function"
+        "Potential code injection vulnerability in `tools::run::eval_command` function"
       ],
-      "summary": "The Deno CLI appears to have some potential security risks, including a possible code injection vulnerability and some input validation issues, but overall it seems to be well-designed and secure."
+      "summary": "The Deno CLI has some potential security concerns, including a possible code injection vulnerability and lack of explicit input validation, but overall appears to be well-structured and secure."
     },
     "sentiment": {
       "sentiment": "negative",
@@ -219,7 +219,7 @@
       "communication_style": "adequate",
       "red_flags": [
         "repeated 'We'll fix it after New Year' responses without further explanation",
-        "some brief or dismissive answers"
+        "some brief or dismissive responses"
       ],
       "summary": "The maintainers provide generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive community."
     },
@@ -248,8 +248,8 @@
       "Community: crashes and panics",
       "Community: performance issues",
       "Communication: repeated 'We'll fix it after New Year' responses without further explanation",
-      "Communication: some brief or dismissive answers",
-      "Security: Potential code injection risk in the `tools::run::eval_command` function"
+      "Communication: some brief or dismissive responses",
+      "Security: Potential code injection vulnerability in `tools::run::eval_command` function"
     ],
     "highlights": [
       "High number of commits in the past 6 months (699)",
@@ -264,6 +264,6 @@
     "community_sentiment": "negative",
     "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-31T14:36:22.509422Z",
-  "data_fetched_at": "2025-12-31T14:36:22.509422Z"
+  "analyzed_at": "2025-12-31T14:36:52.655657Z",
+  "data_fetched_at": "2025-12-31T14:36:52.655658Z"
 }
