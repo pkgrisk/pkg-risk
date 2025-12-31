@@ -197,6 +197,20 @@ class ContinuousPipeline:
         self.metrics._metrics.ecosystem = "all"
         self.metrics._save()
 
+        # Check and update LLM availability
+        if not self.skip_llm:
+            # Get a pipeline to check LLM
+            pipeline = self._get_pipeline(Ecosystem.HOMEBREW)
+            if pipeline.llm:
+                llm_available = await pipeline.llm.is_available()
+                self.metrics.update_llm_status(llm_available, pipeline.llm.model if llm_available else "")
+                if llm_available:
+                    logger.info(f"LLM connected: {pipeline.llm.model}")
+                else:
+                    logger.warning(f"LLM not available: {pipeline.llm.model}")
+        else:
+            self.metrics.update_llm_status(False, "")
+
         try:
             await self._main_loop()
         finally:

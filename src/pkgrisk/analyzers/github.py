@@ -761,9 +761,11 @@ class GitHubFetcher:
                 if "sbom" in name or "cyclonedx" in name or "spdx" in name:
                     has_sbom = True
 
-                # For more accurate detection, fetch workflow content
+                # For more accurate detection, fetch workflow content (skip directories)
+                if wf.get("type") != "file":
+                    continue
                 wf_content = await self._fetch(f"/repos/{owner}/{repo}/contents/.github/workflows/{wf.get('name')}")
-                if wf_content and wf_content.get("content"):
+                if wf_content and isinstance(wf_content, dict) and wf_content.get("content"):
                     try:
                         content = base64.b64decode(wf_content["content"]).decode("utf-8").lower()
                         if "github/codeql-action" in content:
