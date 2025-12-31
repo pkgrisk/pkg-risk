@@ -10,22 +10,20 @@
     "repo": "ccache",
     "subpath": null
   },
-  "install_count_30d": 21516,
+  "install_count_30d": 21017,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 91.6,
-    "grade": "A",
+    "overall": 85.3,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 88.0,
       "weight": 30
     },
     "maintenance": {
@@ -37,11 +35,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 63.36,
+      "score": 48.36,
       "weight": 10
     },
     "documentation": {
-      "score": 53.0,
+      "score": 41.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "ccache",
       "name": "ccache",
       "description": "ccache \u2013 a fast compiler cache",
-      "stars": 2712,
+      "stars": 2711,
       "forks": 541,
       "open_issues": 57,
-      "watchers": 2712,
+      "watchers": 2711,
       "created_at": "2010-01-06T19:13:34Z",
-      "updated_at": "2025-12-28T15:13:40Z",
+      "updated_at": "2025-12-31T12:47:15Z",
       "pushed_at": "2025-12-28T15:13:36Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -107,6 +105,7 @@
     "prs": {
       "open_prs": 7,
       "merged_prs_6mo": 21,
+      "closed_prs_6mo": 32,
       "stale_prs": 3,
       "avg_merge_time_hours": null
     },
@@ -162,7 +161,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 2,
-      "recent_runs_pass_rate": 80.0,
+      "recent_runs_pass_rate": 82.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -170,19 +169,111 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README provides a good introduction to the package, but lacks concrete examples and troubleshooting information.",
+      "top_issue": "Lack of quick start example and insufficient documentation for common use cases"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/ccache/core/mainoptions.cpp",
+          "line": 123,
+          "severity": "medium",
+          "description": "The read_from_path_or_stdin function reads from a file path or stdin without validating the input, potentially allowing for arbitrary file access."
+        },
+        {
+          "file": "src/ccache/core/mainoptions.cpp",
+          "line": 156,
+          "severity": "low",
+          "description": "The inspect_path function uses the util::DirEntry class to refresh the directory entry of a given path without validating the input, potentially allowing for information disclosure."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for arbitrary file access through unvalidated input"
+      ],
+      "summary": "The ccache package has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "cache misses",
+        "compatibility issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The ccache community is actively engaged, with maintainers responding to issues and users reporting a mix of bugs, feature requests, and compatibility problems."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (202)",
+        "Recent last commit (2025-12-28)",
+        "Multiple merged PRs in the past 6 months (21)",
+        "Recent last release (2025-11-26)",
+        "Active contributors (12) in the past 6 months"
+      ],
+      "summary": "The ccache package appears to be actively maintained with frequent commits, releases, and a responsive community."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The ccache project lacks a clear succession plan and decision-making process, but provides a path for contributors to become maintainers."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
+    "doc_summary": "The README provides a good introduction to the package, but lacks concrete examples and troubleshooting information.",
     "concerns": [
+      "Docs: Lack of quick start example and insufficient documentation for common use cases",
+      "Community: cache misses",
+      "Community: compatibility issues",
+      "Governance: High bus factor risk identified",
+      "Security: Potential for arbitrary file access through unvalidated input",
       "High bus factor risk (82% from top contributor)"
     ],
     "highlights": [
+      "High number of commits in the past 6 months (202)",
+      "Recent last commit (2025-12-28)",
+      "Multiple merged PRs in the past 6 months (21)",
+      "Recent last release (2025-11-26)",
+      "Active contributors (12) in the past 6 months",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-31T00:46:08.960786Z",
-  "data_fetched_at": "2025-12-31T00:46:08.960787Z"
+  "analyzed_at": "2025-12-31T16:15:12.612725Z",
+  "data_fetched_at": "2025-12-31T16:15:12.612726Z"
 }
