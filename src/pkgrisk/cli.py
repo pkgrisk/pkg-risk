@@ -258,6 +258,7 @@ async def _github_info(owner: str, repo: str, output: Path | None) -> None:
     activity_table.add_row("Commits (6mo)", str(data.commits.commits_last_6mo))
     activity_table.add_row("Commits (1yr)", str(data.commits.commits_last_year))
     activity_table.add_row("Merged PRs (6mo)", str(data.prs.merged_prs_6mo))
+    activity_table.add_row("Closed PRs (6mo)", str(data.prs.closed_prs_6mo))
     activity_table.add_row("Open PRs", str(data.prs.open_prs))
     activity_table.add_row("Stale PRs", str(data.prs.stale_prs))
 

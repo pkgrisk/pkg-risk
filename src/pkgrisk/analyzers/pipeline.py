@@ -293,13 +293,19 @@ class AnalysisPipeline:
             last_release = github_data.releases.last_release_date
             last_release_str = last_release.isoformat() if last_release else None
 
+            # Use merged_prs if available, otherwise fall back to closed_prs
+            # (some projects merge via CLI, so merged_at is never populated)
+            pr_activity = github_data.prs.merged_prs_6mo
+            if pr_activity == 0:
+                pr_activity = github_data.prs.closed_prs_6mo
+
             assessments.maintenance = await self.llm.assess_maintenance(
                 last_commit_date=last_commit_str,
                 commit_count=github_data.commits.commits_last_6mo,
                 open_issues=github_data.issues.open_issues,
                 closed_issues=github_data.issues.closed_issues_6mo,
                 open_prs=github_data.prs.open_prs,
-                merged_prs=github_data.prs.merged_prs_6mo,
+                merged_prs=pr_activity,
                 last_release_date=last_release_str,
                 active_contributors=github_data.contributors.active_contributors_6mo,
                 package_name=package_name,

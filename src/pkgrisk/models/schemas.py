@@ -151,6 +151,7 @@ class PRStats(BaseModel):
 
     open_prs: int = 0
     merged_prs_6mo: int = 0
+    closed_prs_6mo: int = 0  # For projects that merge via CLI (merged_at not populated)
     stale_prs: int = 0  # Open > 90 days
     avg_merge_time_hours: float | None = None
 

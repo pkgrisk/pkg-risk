@@ -546,7 +546,7 @@ class GitHubFetcher:
             max_pages=3,
         )
 
-        # Get recently merged PRs
+        # Get recently closed PRs
         closed_prs = await self._fetch_all_pages(
             f"/repos/{owner}/{repo}/pulls",
             params={"state": "closed", "per_page": 100},
@@ -557,13 +557,20 @@ class GitHubFetcher:
         six_months_ago = now - timedelta(days=180)
         ninety_days_ago = now - timedelta(days=90)
 
-        # Count merged PRs in last 6 months
+        # Count merged and closed PRs in last 6 months
+        # Some projects (like OpenSSL) merge via CLI, so merged_at is never populated
+        # We track both merged_prs (GitHub merge button) and closed_prs (includes CLI merges)
         merged_6mo = 0
+        closed_6mo = 0
         for pr in closed_prs:
-            if pr.get("merged_at"):
-                merged_at = datetime.fromisoformat(pr["merged_at"].replace("Z", "+00:00"))
-                if merged_at >= six_months_ago:
-                    merged_6mo += 1
+            closed_str = pr.get("closed_at")
+            if closed_str:
+                closed_at = datetime.fromisoformat(closed_str.replace("Z", "+00:00"))
+                if closed_at >= six_months_ago:
+                    closed_6mo += 1
+                    # Also track if merged via GitHub merge button
+                    if pr.get("merged_at"):
+                        merged_6mo += 1
 
         # Count stale PRs (open > 90 days)
         stale_count = 0
@@ -577,6 +584,7 @@ class GitHubFetcher:
         return PRStats(
             open_prs=len(open_prs),
             merged_prs_6mo=merged_6mo,
+            closed_prs_6mo=closed_6mo,
             stale_prs=stale_count,
         )
 

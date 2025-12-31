@@ -125,12 +125,18 @@ class HomebrewAdapter(BaseAdapter):
         homepage = data.get("homepage")
         urls = data.get("urls", {})
         stable_url = urls.get("stable", {}).get("url", "")
+        head_url = urls.get("head", {}).get("url", "")
 
         # Try to find repository URL
         repository_url = None
         # Check if homepage is a GitHub URL
         if homepage and "github.com" in homepage:
             repository_url = homepage
+        # Check head URL for GitHub (many packages have repo here)
+        elif head_url and "github.com" in head_url:
+            # Head URL is usually the git clone URL
+            # e.g., https://github.com/git/git.git
+            repository_url = head_url.rstrip(".git")
         # Check stable URL for GitHub
         elif stable_url and "github.com" in stable_url:
             # Extract repo URL from tarball URL
