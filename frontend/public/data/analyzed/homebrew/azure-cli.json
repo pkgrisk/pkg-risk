@@ -10,26 +10,24 @@
     "repo": "azure-cli",
     "subpath": null
   },
-  "install_count_30d": 33104,
+  "install_count_30d": 33099,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.5,
-    "grade": "A",
+    "overall": 82.7,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 72.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 90.70512703374041,
+      "score": 93.23102123738798,
       "weight": 25
     },
     "community": {
@@ -155,7 +153,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 13,
-      "recent_runs_pass_rate": 28.6,
+      "recent_runs_pass_rate": 22.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -163,17 +161,98 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 5,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 8,
+      "overall": 7,
+      "summary": "The README provides a comprehensive overview of the Azure CLI, but installation instructions and quick start guides could be more prominent and easily accessible.",
+      "top_issue": "Installation instructions are not directly provided in the README, instead redirecting to an external link."
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "src/azure-cli/azure/cli/__main__.py",
+          "line": 123,
+          "severity": "high",
+          "description": "The subprocess.call function is used with shell=True, which can lead to command injection vulnerabilities if user input is not properly sanitized."
+        },
+        {
+          "file": "src/azure-cli/azure/cli/__main__.py",
+          "line": 134,
+          "severity": "high",
+          "description": "The subprocess.call function is used with shell=True, which can lead to command injection vulnerabilities if user input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Command injection vulnerabilities in the subprocess.call function.",
+        "Lack of input validation for user-provided arguments."
+      ],
+      "summary": "The code has several security concerns, including command injection vulnerabilities and lack of input validation, which can be exploited by attackers to gain unauthorized access or execute malicious commands."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bug reports",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The azure-cli community is actively reporting issues and feature requests, with maintainers showing moderate responsiveness to user concerns."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "large number of active contributors",
+        "high number of merged PRs"
+      ],
+      "summary": "The azure-cli package appears to be actively maintained with a high volume of recent activity, despite having a significant number of open issues and PRs."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a comprehensive overview of the Azure CLI, but installation instructions and quick start guides could be more prominent and easily accessible.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Installation instructions are not directly provided in the README, instead redirecting to an external link.",
+      "Community: bug reports",
+      "Community: feature requests",
+      "Security: Command injection vulnerabilities in the subprocess.call function.",
+      "Security: Lack of input validation for user-provided arguments.",
+      "Security: The subprocess.call function is used with shell=True, which can lead to command injection vulnerabilities if user input is not properly sanitized.",
+      "Security: The subprocess.call function is used with shell=True, which can lead to command injection vulnerabilities if user input is not properly sanitized."
+    ],
     "highlights": [
+      "frequent commits",
+      "recent release",
+      "large number of active contributors",
+      "high number of merged PRs",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral"
   },
-  "analyzed_at": "2025-12-31T00:28:35.763920Z",
-  "data_fetched_at": "2025-12-31T00:28:35.763921Z"
+  "analyzed_at": "2025-12-31T05:15:00.459386Z",
+  "data_fetched_at": "2025-12-31T05:15:00.459386Z"
 }
