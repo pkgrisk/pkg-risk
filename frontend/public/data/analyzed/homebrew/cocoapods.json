@@ -10,38 +10,36 @@
     "repo": "CocoaPods",
     "subpath": null
   },
-  "install_count_30d": 30690,
+  "install_count_30d": 30738,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 75.0,
-    "grade": "C",
+    "overall": 64.2,
+    "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 58.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 49.760971265398666,
+      "score": 46.832679885779065,
       "weight": 25
     },
     "community": {
-      "score": 100.0,
+      "score": 83.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 75.0,
+      "score": 80.0,
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 53.0,
       "weight": 10
     },
     "stability": {
@@ -167,16 +165,111 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The documentation is informative but lacks clear and concise instructions for new users, particularly in the areas of quick start and troubleshooting.",
+      "top_issue": "Lack of a clear and simple 'Getting Started' section with step-by-step instructions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "lib/cocoapods/generator/app_target_helper.rb",
+          "line": 123,
+          "severity": "low",
+          "description": "Potential for file path injection in `create_app_import_source_file` method"
+        },
+        {
+          "file": "lib/cocoapods/generator/app_target_helper.rb",
+          "line": 143,
+          "severity": "low",
+          "description": "Potential for file path injection in `create_launchscreen_storyboard_file` method"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Lack of input validation and sanitization for user-provided parameters",
+        "Potential for file path injection vulnerabilities"
+      ],
+      "summary": "The code has some security concerns, including potential file path injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "pod install errors",
+        "compatibility issues with React Native and Flutter"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The CocoaPods community is experiencing frustration and disappointment due to frequent installation errors, compatibility issues, and slow maintainer responsiveness."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "low commit activity",
+        "unmerged PRs",
+        "infrequent releases",
+        "single active contributor"
+      ],
+      "positive_signals": [
+        "recent commit within the last year",
+        "some issue closure activity"
+      ],
+      "summary": "The cocoapods package appears to be stale, with minimal maintenance and a lack of recent releases or merged PRs."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The CocoaPods project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
+    }
   },
-  "analyzed_at": "2025-12-31T00:34:31.583396Z",
-  "data_fetched_at": "2025-12-31T00:34:31.583397Z"
+  "analysis_summary": {
+    "maintenance_status": "stale",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is informative but lacks clear and concise instructions for new users, particularly in the areas of quick start and troubleshooting.",
+    "concerns": [
+      "low commit activity",
+      "unmerged PRs",
+      "infrequent releases",
+      "single active contributor",
+      "Docs: Lack of a clear and simple 'Getting Started' section with step-by-step instructions",
+      "Possible abandonment signals detected",
+      "Community: pod install errors",
+      "Community: compatibility issues with React Native and Flutter",
+      "Security: Lack of input validation and sanitization for user-provided parameters",
+      "Security: Potential for file path injection vulnerabilities"
+    ],
+    "highlights": [
+      "recent commit within the last year",
+      "some issue closure activity",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative"
+  },
+  "analyzed_at": "2025-12-31T05:46:26.623040Z",
+  "data_fetched_at": "2025-12-31T05:46:26.623041Z"
 }
