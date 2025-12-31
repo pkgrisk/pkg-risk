@@ -10,22 +10,20 @@
     "repo": "lazygit",
     "subpath": null
   },
-  "install_count_30d": 19096,
+  "install_count_30d": 19091,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 92.7,
-    "grade": "A",
+    "overall": 82.8,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 74.0,
       "weight": 30
     },
     "maintenance": {
@@ -33,15 +31,15 @@
       "weight": 25
     },
     "community": {
-      "score": 100.0,
+      "score": 91.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 93.6,
+      "score": 98.6,
       "weight": 10
     },
     "documentation": {
-      "score": 55.0,
+      "score": 43.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "jesseduffield",
       "name": "lazygit",
       "description": "simple terminal UI for git commands",
-      "stars": 69969,
+      "stars": 69987,
       "forks": 2407,
       "open_issues": 840,
-      "watchers": 69969,
+      "watchers": 69987,
       "created_at": "2018-05-19T00:53:06Z",
-      "updated_at": "2025-12-31T00:28:40Z",
+      "updated_at": "2025-12-31T15:17:24Z",
       "pushed_at": "2025-12-23T16:21:13Z",
       "default_branch": "master",
       "license": "MIT",
@@ -86,12 +84,12 @@
     },
     "commits": {
       "last_commit_date": "2025-12-23T15:55:47Z",
-      "commits_last_6mo": 513,
+      "commits_last_6mo": 504,
       "commits_last_year": 1000
     },
     "issues": {
       "open_issues": 230,
-      "closed_issues_6mo": 113,
+      "closed_issues_6mo": 115,
       "avg_response_time_hours": 38.8,
       "avg_close_time_hours": 76.1,
       "good_first_issue_count": 0,
@@ -99,7 +97,8 @@
     },
     "prs": {
       "open_prs": 99,
-      "merged_prs_6mo": 157,
+      "merged_prs_6mo": 154,
+      "closed_prs_6mo": 180,
       "stale_prs": 73,
       "avg_merge_time_hours": null
     },
@@ -163,17 +162,115 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 4,
+      "examples": 6,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README is visually appealing but lacks essential information on installation, configuration, and troubleshooting.",
+      "top_issue": "Insufficient documentation for installation, configuration, and troubleshooting"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "pkg/commands/git_commands/main_branches.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "Potential command injection vulnerability in the `determineMainBranches` function, where user-controlled input (`branchName`) is used to construct a Git command without proper sanitization."
+        },
+        {
+          "file": "pkg/gui/main_panels.go",
+          "line": 55,
+          "severity": "low",
+          "description": "Potential template injection vulnerability in the `runTaskForView` function, where user-controlled input (`v.Str`) is used to render a string without proper sanitization."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the `determineMainBranches` function",
+        "Lack of validation for user-controlled input in the `determineMainBranches` function"
+      ],
+      "summary": "The code has some security concerns, including potential command injection and template injection vulnerabilities, as well as insufficient input validation and error handling."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "bugs",
+        "lack of features"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The lazygit community is experiencing frustration due to unresolved bugs and missing features, with a slow response from maintainers."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 7,
+      "technical_depth": 9,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional blunt responses",
+        "some dismissive comments"
+      ],
+      "summary": "The maintainer provides detailed and helpful responses, but can be occasionally blunt or dismissive, which may deter some new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (504)",
+        "Recent last commit (2025-12-23)",
+        "Frequent releases (last release on 2025-12-06)",
+        "Large number of merged PRs in the past 6 months (154)",
+        "Many active contributors in the past 6 months (35)"
+      ],
+      "summary": "The lazygit package is actively maintained with a high volume of commits, releases, and contributor activity."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The lazygit project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README is visually appealing but lacks essential information on installation, configuration, and troubleshooting.",
+    "concerns": [
+      "Docs: Insufficient documentation for installation, configuration, and troubleshooting",
+      "Community: bugs",
+      "Community: lack of features",
+      "Communication: occasional blunt responses",
+      "Communication: some dismissive comments",
+      "Security: Potential command injection vulnerability in the `determineMainBranches` function",
+      "Security: Lack of validation for user-controlled input in the `determineMainBranches` function"
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (504)",
+      "Recent last commit (2025-12-23)",
+      "Frequent releases (last release on 2025-12-06)",
+      "Large number of merged PRs in the past 6 months (154)",
+      "Many active contributors in the past 6 months (35)",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-31T00:48:09.303510Z",
-  "data_fetched_at": "2025-12-31T00:48:09.303510Z"
+  "analyzed_at": "2025-12-31T16:23:13.396005Z",
+  "data_fetched_at": "2025-12-31T16:23:13.396006Z"
 }

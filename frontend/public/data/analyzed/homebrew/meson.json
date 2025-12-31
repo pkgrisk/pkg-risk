@@ -10,22 +10,20 @@
     "repo": "meson",
     "subpath": null
   },
-  "install_count_30d": 17857,
+  "install_count_30d": 17877,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 87.1,
+    "overall": 80.8,
     "grade": "B",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 58.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 53.0,
+      "score": 56.0,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "mesonbuild",
       "name": "meson",
       "description": "The Meson Build System",
-      "stars": 6365,
+      "stars": 6362,
       "forks": 1818,
-      "open_issues": 2621,
-      "watchers": 6365,
+      "open_issues": 2619,
+      "watchers": 6362,
       "created_at": "2014-05-14T15:08:16Z",
-      "updated_at": "2025-12-30T20:19:18Z",
-      "pushed_at": "2025-12-30T20:19:13Z",
+      "updated_at": "2025-12-31T04:36:01Z",
+      "pushed_at": "2025-12-31T01:22:33Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "Python",
@@ -72,31 +70,32 @@
     },
     "contributors": {
       "total_contributors": 421,
-      "active_contributors_6mo": 78,
-      "top_contributor_pct": 26.0,
+      "active_contributors_6mo": 77,
+      "top_contributor_pct": 25.9,
       "contributors_over_5pct": 5,
       "contributors_prev_6mo": 50,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 52,
+      "first_time_contributors_6mo": 51,
       "contributor_entropy": 4.79
     },
     "commits": {
-      "last_commit_date": "2025-12-30T18:20:33Z",
+      "last_commit_date": "2025-12-24T13:23:16Z",
       "commits_last_6mo": 593,
       "commits_last_year": 1000
     },
     "issues": {
       "open_issues": 169,
       "closed_issues_6mo": 78,
-      "avg_response_time_hours": 61.2,
-      "avg_close_time_hours": 111.9,
+      "avg_response_time_hours": 98.2,
+      "avg_close_time_hours": 145.4,
       "good_first_issue_count": 1,
-      "regression_issue_count": 30
+      "regression_issue_count": 29
     },
     "prs": {
       "open_prs": 300,
-      "merged_prs_6mo": 258,
-      "stale_prs": 231,
+      "merged_prs_6mo": 259,
+      "closed_prs_6mo": 292,
+      "stale_prs": 232,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -151,7 +150,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 13,
-      "recent_runs_pass_rate": 82.0,
+      "recent_runs_pass_rate": 88.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -159,17 +158,111 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides a good introduction to Meson and its installation, but lacks comprehensive examples and troubleshooting information.",
+      "top_issue": "Lack of detailed troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "run_mypy.py",
+          "line": 123,
+          "severity": "medium",
+          "description": "Subprocess call with user-controlled input"
+        },
+        {
+          "file": "packaging/create_zipapp.py",
+          "line": 15,
+          "severity": "low",
+          "description": "Path manipulation using user-provided source directory"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for code injection via subprocess calls in run_mypy.py",
+        "Lack of input validation in create_zipapp.py and run_mypy.py"
+      ],
+      "summary": "The Meson package has some security concerns, including potential code injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "compiler issues",
+        "build failures"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is experiencing frustration with various build and compiler issues, but maintainers are moderately responsive to reported problems."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional sarcasm",
+        "some technical jargon"
+      ],
+      "summary": "The maintainer responses are generally helpful, clear, and patient, but may benefit from more welcoming language and explanations for users of varying skill levels."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "large number of active contributors",
+        "steady merge of PRs"
+      ],
+      "summary": "The meson package appears to be actively maintained with a high volume of recent activity, despite having a significant number of open issues and PRs."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a good introduction to Meson and its installation, but lacks comprehensive examples and troubleshooting information.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Lack of detailed troubleshooting section",
+      "Community: compiler issues",
+      "Community: build failures",
+      "Communication: occasional sarcasm",
+      "Communication: some technical jargon",
+      "Security: Potential for code injection via subprocess calls in run_mypy.py",
+      "Security: Lack of input validation in create_zipapp.py and run_mypy.py"
+    ],
     "highlights": [
+      "frequent commits",
+      "recent release",
+      "large number of active contributors",
+      "steady merge of PRs",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-31T00:50:19.524795Z",
-  "data_fetched_at": "2025-12-31T00:50:19.524795Z"
+  "analyzed_at": "2025-12-31T16:33:46.918441Z",
+  "data_fetched_at": "2025-12-31T16:33:46.918442Z"
 }

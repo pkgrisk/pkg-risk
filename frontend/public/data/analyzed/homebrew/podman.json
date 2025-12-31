@@ -10,26 +10,24 @@
     "repo": "podman",
     "subpath": null
   },
-  "install_count_30d": 17059,
+  "install_count_30d": 16875,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 91.8,
-    "grade": "A",
+    "overall": 85.9,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 82.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 89.95701173721206,
+      "score": 92.96990821604844,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 55.0,
+      "score": 43.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "containers",
       "name": "podman",
       "description": "Podman: A tool for managing OCI containers and pods.",
-      "stars": 30193,
+      "stars": 30197,
       "forks": 2923,
-      "open_issues": 1045,
-      "watchers": 30193,
+      "open_issues": 1046,
+      "watchers": 30197,
       "created_at": "2017-11-01T15:01:27Z",
-      "updated_at": "2025-12-30T21:23:31Z",
+      "updated_at": "2025-12-31T12:42:18Z",
       "pushed_at": "2025-12-22T19:43:56Z",
       "default_branch": "main",
       "license": "Apache-2.0",
@@ -88,11 +86,11 @@
     },
     "commits": {
       "last_commit_date": "2025-12-22T19:43:56Z",
-      "commits_last_6mo": 929,
+      "commits_last_6mo": 923,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 215,
+      "open_issues": 216,
       "closed_issues_6mo": 72,
       "avg_response_time_hours": 37.6,
       "avg_close_time_hours": 51.7,
@@ -100,9 +98,10 @@
       "regression_issue_count": 2
     },
     "prs": {
-      "open_prs": 146,
-      "merged_prs_6mo": 248,
-      "stale_prs": 79,
+      "open_prs": 145,
+      "merged_prs_6mo": 247,
+      "closed_prs_6mo": 300,
+      "stale_prs": 80,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -157,7 +156,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 18,
-      "recent_runs_pass_rate": 56.0,
+      "recent_runs_pass_rate": 54.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -165,17 +164,115 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The Podman README provides a good overview of the package's features and scope, but lacks clear installation instructions and examples for common use cases.",
+      "top_issue": "Lack of clear and concise installation instructions and quick start guide"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/podman-mac-helper/main.go",
+          "line": 123,
+          "severity": "high",
+          "description": "The `runDetectErr` function uses `exec.Command` with user input, which can lead to command injection attacks."
+        },
+        {
+          "file": "cmd/podman-mac-helper/main.go",
+          "line": 93,
+          "severity": "medium",
+          "description": "The `getUserInfo` function uses `exec.Command` to execute the `id` command, which can potentially lead to command injection attacks if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection attacks in the `runDetectErr` function",
+        "Lack of validation for user input in the `getUserInfo` function"
+      ],
+      "summary": "The code has some security concerns, including potential command injection attacks and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "bugs",
+        "compatibility issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The podman community is experiencing frustration due to numerous open bugs and compatibility issues, with slow maintainer responsiveness."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "sometimes dismissive or brief responses",
+        "lack of explicit guidance for new contributors"
+      ],
+      "summary": "The maintainer's responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to make the community more inclusive."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (923)",
+        "Large number of contributors active in the past 6 months (96)",
+        "Recent last commit and release dates",
+        "Significant number of merged PRs in the past 6 months (247)"
+      ],
+      "summary": "The podman package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": true,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "low",
+      "summary": "The Podman project has a well-documented governance structure with a clear contributor ladder, decision-making process, and succession plan in place."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The Podman README provides a good overview of the package's features and scope, but lacks clear installation instructions and examples for common use cases.",
+    "concerns": [
+      "Docs: Lack of clear and concise installation instructions and quick start guide",
+      "Community: bugs",
+      "Community: compatibility issues",
+      "Communication: sometimes dismissive or brief responses",
+      "Communication: lack of explicit guidance for new contributors",
+      "Security: Potential command injection attacks in the `runDetectErr` function",
+      "Security: Lack of validation for user input in the `getUserInfo` function",
+      "Security: The `runDetectErr` function uses `exec.Command` with user input, which can lead to command injection attacks."
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (923)",
+      "Large number of contributors active in the past 6 months (96)",
+      "Recent last commit and release dates",
+      "Significant number of merged PRs in the past 6 months (247)",
+      "Has succession plan for maintainers",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-31T00:52:02.599403Z",
-  "data_fetched_at": "2025-12-31T00:52:02.599404Z"
+  "analyzed_at": "2025-12-31T16:49:28.292456Z",
+  "data_fetched_at": "2025-12-31T16:49:28.292458Z"
 }

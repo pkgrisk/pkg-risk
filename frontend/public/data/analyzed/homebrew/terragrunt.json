@@ -10,26 +10,24 @@
     "repo": "terragrunt",
     "subpath": null
   },
-  "install_count_30d": 16814,
+  "install_count_30d": 16500,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 91.1,
-    "grade": "A",
+    "overall": 86.6,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 86.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 92.61218936034277,
+      "score": 94.55856907540218,
       "weight": 25
     },
     "community": {
@@ -41,11 +39,11 @@
       "weight": 10
     },
     "documentation": {
-      "score": 43.0,
+      "score": 31.0,
       "weight": 10
     },
     "stability": {
-      "score": 91.0,
+      "score": 96.0,
       "weight": 10
     }
   },
@@ -79,17 +77,17 @@
     },
     "contributors": {
       "total_contributors": 285,
-      "active_contributors_6mo": 26,
+      "active_contributors_6mo": 25,
       "top_contributor_pct": 23.5,
       "contributors_over_5pct": 4,
-      "contributors_prev_6mo": 26,
+      "contributors_prev_6mo": 27,
       "contributor_trend": "stable",
-      "first_time_contributors_6mo": 22,
+      "first_time_contributors_6mo": 21,
       "contributor_entropy": 4.64
     },
     "commits": {
       "last_commit_date": "2025-12-29T15:28:59Z",
-      "commits_last_6mo": 356,
+      "commits_last_6mo": 354,
       "commits_last_year": 752
     },
     "issues": {
@@ -103,6 +101,7 @@
     "prs": {
       "open_prs": 56,
       "merged_prs_6mo": 238,
+      "closed_prs_6mo": 300,
       "stale_prs": 29,
       "avg_merge_time_hours": null
     },
@@ -158,7 +157,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 24,
-      "recent_runs_pass_rate": 84.0,
+      "recent_runs_pass_rate": 96.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -166,17 +165,109 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 6,
+      "installation": 4,
+      "quick_start": 5,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README provides some basic information, but lacks detailed documentation and examples for effective usage.",
+      "top_issue": "Lack of clear installation instructions and comprehensive documentation within the README itself, relying heavily on external links."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "main.go",
+          "line": 34,
+          "severity": "low",
+          "description": "The use of os.Args in the global.NewLogLevelFlag function could potentially lead to injection risks if not properly sanitized."
+        },
+        {
+          "file": "cli/app.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The removeNoColorFlagDuplicates function does not validate its input, which could lead to potential injection risks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risks in main.go and cli/app.go",
+        "Lack of validation for os.Args"
+      ],
+      "summary": "The Terragrunt codebase has some potential security concerns, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bugs",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The terragrunt community is actively reporting issues and requesting features, with maintainers responding moderately to the open issues."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "occasional abrupt responses",
+        "some technical jargon without explanation"
+      ],
+      "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "many merged PRs",
+        "multiple active contributors"
+      ],
+      "summary": "The terragrunt package appears to be actively maintained with a high volume of recent activity, despite having a notable number of open issues."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides some basic information, but lacks detailed documentation and examples for effective usage.",
+    "concerns": [
+      "high number of open issues",
+      "Docs: Lack of clear installation instructions and comprehensive documentation within the README itself, relying heavily on external links.",
+      "Community: bugs",
+      "Community: feature requests",
+      "Communication: occasional abrupt responses",
+      "Communication: some technical jargon without explanation",
+      "Security: Potential injection risks in main.go and cli/app.go",
+      "Security: Lack of validation for os.Args"
+    ],
     "highlights": [
+      "frequent commits",
+      "recent release",
+      "many merged PRs",
+      "multiple active contributors",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-31T00:53:39.751311Z",
-  "data_fetched_at": "2025-12-31T00:53:39.751312Z"
+  "analyzed_at": "2025-12-31T16:59:17.951095Z",
+  "data_fetched_at": "2025-12-31T16:59:17.951095Z"
 }

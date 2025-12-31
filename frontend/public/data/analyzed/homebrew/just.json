@@ -10,38 +10,36 @@
     "repo": "just",
     "subpath": null
   },
-  "install_count_30d": 19808,
+  "install_count_30d": 19779,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 85.9,
+    "overall": 83.3,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
+      "score": 76.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 93.0,
+      "score": 95.1,
       "weight": 25
     },
     "community": {
-      "score": 90.0,
+      "score": 100.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 58.480000000000004,
+      "score": 53.56,
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 68.0,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "casey",
       "name": "just",
       "description": "\ud83e\udd16 Just a command runner",
-      "stars": 29532,
-      "forks": 637,
+      "stars": 29542,
+      "forks": 638,
       "open_issues": 379,
-      "watchers": 29532,
+      "watchers": 29542,
       "created_at": "2016-06-17T06:08:08Z",
-      "updated_at": "2025-12-30T20:16:06Z",
-      "pushed_at": "2025-12-30T11:48:16Z",
+      "updated_at": "2025-12-31T14:39:23Z",
+      "pushed_at": "2025-12-31T06:12:49Z",
       "default_branch": "master",
       "license": "CC0-1.0",
       "language": "Rust",
@@ -71,31 +69,32 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 194,
-      "active_contributors_6mo": 12,
+      "total_contributors": 195,
+      "active_contributors_6mo": 13,
       "top_contributor_pct": 77.1,
       "contributors_over_5pct": 1,
       "contributors_prev_6mo": 18,
-      "contributor_trend": "declining",
-      "first_time_contributors_6mo": 9,
-      "contributor_entropy": 2.31
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 10,
+      "contributor_entropy": 2.32
     },
     "commits": {
-      "last_commit_date": "2025-12-30T04:34:34Z",
-      "commits_last_6mo": 73,
-      "commits_last_year": 134
+      "last_commit_date": "2025-12-31T06:12:48Z",
+      "commits_last_6mo": 77,
+      "commits_last_year": 138
     },
     "issues": {
-      "open_issues": 253,
-      "closed_issues_6mo": 64,
+      "open_issues": 254,
+      "closed_issues_6mo": 66,
       "avg_response_time_hours": 5.5,
-      "avg_close_time_hours": 115.5,
+      "avg_close_time_hours": 77.4,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 47,
-      "merged_prs_6mo": 74,
+      "open_prs": 46,
+      "merged_prs_6mo": 78,
+      "closed_prs_6mo": 97,
       "stale_prs": 26,
       "avg_merge_time_hours": null
     },
@@ -133,7 +132,7 @@
     },
     "files": {
       "has_readme": true,
-      "readme_size_bytes": 130214,
+      "readme_size_bytes": 130480,
       "has_license": true,
       "has_changelog": true,
       "has_contributing": true,
@@ -151,7 +150,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 5,
-      "recent_runs_pass_rate": 54.0,
+      "recent_runs_pass_rate": 58.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -159,17 +158,122 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The documentation is generally well-structured and easy to follow, but could benefit from more examples and troubleshooting guidance.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "crates/update-contributors/src/main.rs",
+          "line": 14,
+          "severity": "high",
+          "description": "Command injection vulnerability in the `author` function, where user input is used to construct a shell command without proper sanitization."
+        },
+        {
+          "file": "src/run.rs",
+          "line": 23,
+          "severity": "medium",
+          "description": "Potential for command injection if the `args` iterator contains malicious input, although this seems unlikely given the context of the code."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Command injection vulnerability in the `author` function"
+      ],
+      "summary": "The code has some security concerns, including a command injection vulnerability and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "leaked file descriptors",
+        "expression evaluation issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting and discussing various technical issues, but the maintainers are responsive and addressing them in a timely manner."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 7,
+      "technical_depth": 9,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional abrupt closures of issues without thorough review"
+      ],
+      "summary": "The maintainer provides detailed and technically sound responses, but could improve in terms of patience and welcomingness towards new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "active contributors",
+        "merged PRs"
+      ],
+      "summary": "The package appears to be actively maintained with regular updates, fixes, and contributions from multiple developers."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for the 'just' homebrew package lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The documentation is generally well-structured and easy to follow, but could benefit from more examples and troubleshooting guidance.",
+    "concerns": [
+      "high number of open issues",
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: leaked file descriptors",
+      "Community: expression evaluation issues",
+      "Communication: occasional abrupt closures of issues without thorough review",
+      "Governance: High bus factor risk identified",
+      "Security: Command injection vulnerability in the `author` function",
+      "Security: Command injection vulnerability in the `author` function, where user input is used to construct a shell command without proper sanitization."
+    ],
     "highlights": [
+      "frequent commits",
+      "recent release",
+      "active contributors",
+      "merged PRs",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-31T00:47:22.557356Z",
-  "data_fetched_at": "2025-12-31T00:47:22.557357Z"
+  "analyzed_at": "2025-12-31T16:19:10.495497Z",
+  "data_fetched_at": "2025-12-31T16:19:10.495499Z"
 }
