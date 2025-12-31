@@ -10,22 +10,20 @@
     "repo": "pkgconf",
     "subpath": null
   },
-  "install_count_30d": 137428,
+  "install_count_30d": 137398,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 79.5,
+    "overall": 73.5,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 58.0,
       "weight": 30
     },
     "maintenance": {
@@ -37,15 +35,15 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 52.4,
+      "score": 52.32,
       "weight": 10
     },
     "documentation": {
-      "score": 55.0,
+      "score": 50.5,
       "weight": 10
     },
     "stability": {
-      "score": 78.0,
+      "score": 88.0,
       "weight": 10
     }
   },
@@ -59,8 +57,8 @@
       "open_issues": 6,
       "watchers": 598,
       "created_at": "2012-04-30T05:28:36Z",
-      "updated_at": "2025-12-30T21:13:39Z",
-      "pushed_at": "2025-12-30T21:13:35Z",
+      "updated_at": "2025-12-31T00:26:22Z",
+      "pushed_at": "2025-12-31T00:26:18Z",
       "default_branch": "master",
       "license": "NOASSERTION",
       "language": "C",
@@ -73,17 +71,17 @@
     "contributors": {
       "total_contributors": 80,
       "active_contributors_6mo": 5,
-      "top_contributor_pct": 82.0,
+      "top_contributor_pct": 82.1,
       "contributors_over_5pct": 1,
       "contributors_prev_6mo": 8,
       "contributor_trend": "declining",
       "first_time_contributors_6mo": 2,
-      "contributor_entropy": 1.55
+      "contributor_entropy": 1.54
     },
     "commits": {
-      "last_commit_date": "2025-12-30T21:13:20Z",
-      "commits_last_6mo": 187,
-      "commits_last_year": 336
+      "last_commit_date": "2025-12-31T00:26:15Z",
+      "commits_last_6mo": 191,
+      "commits_last_year": 340
     },
     "issues": {
       "open_issues": 6,
@@ -151,7 +149,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 2,
-      "recent_runs_pass_rate": 68.0,
+      "recent_runs_pass_rate": 72.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -159,19 +157,107 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 6,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The documentation is detailed and informative, but could benefit from a clearer quick start guide and more examples.",
+      "top_issue": "Lack of a clear and concise quick start section to help new users get started with the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cli/main.c",
+          "line": 34,
+          "severity": "low",
+          "description": "The environ_lookup_handler function uses getenv() which can potentially lead to environment variable injection, but it's not directly user-input controlled."
+        },
+        {
+          "file": "cli/main.c",
+          "line": 74,
+          "severity": "medium",
+          "description": "The relocate_path function uses pkgconf_strlcpy and printf without any validation or sanitization of the input path, which could lead to potential buffer overflow issues if the input is not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow issue in relocate_path function",
+        "Lack of validation for command-line arguments"
+      ],
+      "summary": "The pkgconf codebase has some potential security concerns, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "Windows support issues",
+        "outdated documentation"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The pkgconf community is actively addressing various technical issues, with maintainers responding to user concerns and resolving problems in a timely manner."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "occasional abrupt responses",
+        "some technical jargon without explanation"
+      ],
+      "summary": "The maintainer provides generally helpful and technically detailed responses, but could improve in terms of clarity, patience, and welcomingness towards new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (191)",
+        "Recent last commit date (2025-12-31)",
+        "Active contributors (5) and merged PRs (7) in the past 6 months",
+        "Low number of open issues (6) compared to closed issues (20) in the past 6 months"
+      ],
+      "summary": "The pkgconf package appears to be actively maintained with frequent commits, active contributors, and a high issue closure rate."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
+    "doc_summary": "The documentation is detailed and informative, but could benefit from a clearer quick start guide and more examples.",
     "concerns": [
+      "Docs: Lack of a clear and concise quick start section to help new users get started with the package.",
+      "Community: Windows support issues",
+      "Community: outdated documentation",
+      "Communication: occasional abrupt responses",
+      "Communication: some technical jargon without explanation",
+      "Security: Potential buffer overflow issue in relocate_path function",
+      "Security: Lack of validation for command-line arguments",
       "High bus factor risk (82% from top contributor)"
     ],
     "highlights": [
+      "High number of commits in the past 6 months (191)",
+      "Recent last commit date (2025-12-31)",
+      "Active contributors (5) and merged PRs (7) in the past 6 months",
+      "Low number of open issues (6) compared to closed issues (20) in the past 6 months",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-30T21:29:21.709910Z",
-  "data_fetched_at": "2025-12-30T21:29:21.709911Z"
+  "analyzed_at": "2025-12-31T01:58:40.783682Z",
+  "data_fetched_at": "2025-12-31T01:58:40.783683Z"
 }

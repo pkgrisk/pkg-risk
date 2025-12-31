@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "awscli",
   "description": "Official Amazon AWS command-line interface",
-  "version": "2.32.25",
+  "version": "2.32.26",
   "homepage": "https://aws.amazon.com/cli/",
   "repository": {
     "platform": "github",
@@ -10,26 +10,24 @@
     "repo": "aws-cli",
     "subpath": null
   },
-  "install_count_30d": 199121,
+  "install_count_30d": 199619,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 88.1,
+    "overall": 81.2,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 95.0,
+      "score": 80.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 83.0,
+      "score": 70.1,
       "weight": 25
     },
     "community": {
@@ -37,11 +35,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 85.0,
+      "score": 90.0,
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 70.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "aws",
       "name": "aws-cli",
       "description": "Universal Command Line Interface for Amazon Web Services",
-      "stars": 16638,
+      "stars": 16639,
       "forks": 4432,
       "open_issues": 602,
-      "watchers": 16638,
+      "watchers": 16639,
       "created_at": "2012-11-20T16:07:36Z",
-      "updated_at": "2025-12-30T20:24:50Z",
+      "updated_at": "2025-12-30T23:32:13Z",
       "pushed_at": "2025-12-30T20:24:47Z",
       "default_branch": "develop",
       "license": "NOASSERTION",
@@ -156,7 +154,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 20,
-      "recent_runs_pass_rate": 93.3,
+      "recent_runs_pass_rate": 90.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -164,17 +162,97 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 9,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The documentation is generally well-structured and informative, but could benefit from more concise quick start examples and better troubleshooting guidance.",
+      "top_issue": "Lack of clear and concise troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "awscli/customizations/emr/applicationutils.py",
+          "line": 123,
+          "severity": "medium",
+          "description": "Potential command injection risk in _build_impala_install_bootstrap_action function due to concatenation of user input (args) into a command string."
+        },
+        {
+          "file": "awscli/customizations/emr/applicationutils.py",
+          "line": 143,
+          "severity": "medium",
+          "description": "Potential command injection risk in _build_hbase_install_step function due to concatenation of user input (jar) into a command string."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection risks in applicationutils.py"
+      ],
+      "summary": "The awscli package has some security concerns, including potential command injection risks and lack of input validation, but no hardcoded secrets or critical error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "documentation inconsistencies",
+        "permission issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The awscli community is actively reporting and discussing issues, but maintainers' responsiveness could be improved to address the existing bugs and feature requests."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "last release was in 2018",
+        "high number of open issues and PRs compared to closed ones"
+      ],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "multiple active contributors"
+      ],
+      "summary": "The awscli package appears to be stale due to its outdated last release, despite showing some signs of recent activity."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The awscli project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "stale",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The documentation is generally well-structured and informative, but could benefit from more concise quick start examples and better troubleshooting guidance.",
+    "concerns": [
+      "last release was in 2018",
+      "high number of open issues and PRs compared to closed ones",
+      "Docs: Lack of clear and concise troubleshooting section",
+      "Community: documentation inconsistencies",
+      "Community: permission issues",
+      "Security: Potential command injection risks in applicationutils.py"
+    ],
     "highlights": [
+      "frequent commits in the past 6 months",
+      "multiple active contributors",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral"
   },
-  "analyzed_at": "2025-12-30T21:25:41.711488Z",
-  "data_fetched_at": "2025-12-30T21:25:41.711488Z"
+  "analyzed_at": "2025-12-31T01:36:48.036365Z",
+  "data_fetched_at": "2025-12-31T01:36:48.036366Z"
 }

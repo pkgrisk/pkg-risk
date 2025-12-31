@@ -10,22 +10,20 @@
     "repo": "uv",
     "subpath": null
   },
-  "install_count_30d": 90910,
+  "install_count_30d": 91139,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 95.8,
+    "overall": 93.0,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "established",
     "security": {
-      "score": 100.0,
+      "score": 90.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 69.5,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "astral-sh",
       "name": "uv",
       "description": "An extremely fast Python package and project manager, written in Rust.",
-      "stars": 75994,
+      "stars": 76000,
       "forks": 2393,
       "open_issues": 2507,
-      "watchers": 75994,
+      "watchers": 76000,
       "created_at": "2023-10-02T20:24:11Z",
-      "updated_at": "2025-12-30T23:06:41Z",
-      "pushed_at": "2025-12-30T17:57:47Z",
+      "updated_at": "2025-12-31T01:58:47Z",
+      "pushed_at": "2025-12-31T00:30:51Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "Rust",
@@ -164,17 +162,117 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The README provides a clear and comprehensive overview of the uv package, but could benefit from more concise quick start instructions and troubleshooting guidance.",
+      "top_issue": "Lack of dedicated troubleshooting section or common issues FAQ"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "crates/uv-dev/src/generate_sysconfig_mappings.rs",
+          "line": 43,
+          "severity": "medium",
+          "description": "The `reqwest::get` function is used to download a YAML file from a URL, but the URL is hardcoded and not validated. This could potentially lead to a SSRF (Server-Side Request Forgery) vulnerability if the URL is tampered with."
+        },
+        {
+          "file": "crates/uv-globfilter/src/main.rs",
+          "line": 15,
+          "severity": "low",
+          "description": "The `PortableGlobParser::Pep639.parse` function is used to parse glob patterns, but the input is not validated. This could potentially lead to a denial-of-service attack if a malicious glob pattern is provided."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential SSRF vulnerability in the `reqwest::get` function call.",
+        "Lack of input validation for environment variables and command-line arguments."
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or sensitive information are exposed."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "dependency issues",
+        "installation problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The uv community is experiencing some frustration with dependency and installation issues, but maintainers are moderately responsive to user concerns."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for effective communication in open-source projects."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (1000)",
+        "Recent last commit and release dates (2025-12-30)",
+        "Large number of contributors active in the past 6 months (122)",
+        "High rate of issue closure (101 closed issues) and PR merges (275 merged PRs)"
+      ],
+      "summary": "The uv package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The uv project has a documented decision process, a clear contributor ladder, and multiple maintainers, but lacks a succession plan."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a clear and comprehensive overview of the uv package, but could benefit from more concise quick start instructions and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of dedicated troubleshooting section or common issues FAQ",
+      "Community: dependency issues",
+      "Community: installation problems",
+      "Security: Potential SSRF vulnerability in the `reqwest::get` function call.",
+      "Security: Lack of input validation for environment variables and command-line arguments."
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (1000)",
+      "Recent last commit and release dates (2025-12-30)",
+      "Large number of contributors active in the past 6 months (122)",
+      "High rate of issue closure (101 closed issues) and PR merges (275 merged PRs)",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-31T00:05:08.234526Z",
-  "data_fetched_at": "2025-12-31T00:05:08.234527Z"
+  "analyzed_at": "2025-12-31T02:27:41.934324Z",
+  "data_fetched_at": "2025-12-31T02:27:41.934326Z"
 }

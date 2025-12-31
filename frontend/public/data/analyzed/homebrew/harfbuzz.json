@@ -10,22 +10,20 @@
     "repo": "harfbuzz",
     "subpath": null
   },
-  "install_count_30d": 143448,
+  "install_count_30d": 144171,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 93.7,
+    "overall": 90.1,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 92.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 55.0,
+      "score": 43.0,
       "weight": 10
     },
     "stability": {
@@ -171,17 +169,99 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The HarfBuzz README provides a good overview of the project, but lacks clear installation instructions and a quick start guide.",
+      "top_issue": "Lack of clear installation instructions and a quick start example to help new users get started with the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.cc",
+          "line": 55,
+          "severity": "low",
+          "description": "Use of snprintf with user-controlled data"
+        },
+        {
+          "file": "src/main.cc",
+          "line": 123,
+          "severity": "low",
+          "description": "Use of fprintf with user-controlled data"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal vulnerability in output file naming"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "compilation errors",
+        "outdated links"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The harfbuzz community appears to be moderately active with responsive maintainers, but users encounter occasional technical issues and outdated information."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer provides helpful and clear responses, demonstrating patience and technical depth, although could improve in welcoming new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (602)",
+        "Recent last commit and release dates",
+        "Large number of merged PRs in the past 6 months (227)",
+        "Multiple active contributors in the past 6 months (25)"
+      ],
+      "summary": "The harfbuzz package appears to be actively maintained with frequent updates, a large number of contributors, and a high volume of pull requests being addressed."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The HarfBuzz README provides a good overview of the project, but lacks clear installation instructions and a quick start guide.",
+    "concerns": [
+      "Docs: Lack of clear installation instructions and a quick start example to help new users get started with the package.",
+      "Community: compilation errors",
+      "Community: outdated links",
+      "Security: Potential path traversal vulnerability in output file naming"
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (602)",
+      "Recent last commit and release dates",
+      "Large number of merged PRs in the past 6 months (227)",
+      "Multiple active contributors in the past 6 months (25)",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-30T21:27:52.883524Z",
-  "data_fetched_at": "2025-12-30T21:27:52.883525Z"
+  "analyzed_at": "2025-12-31T01:49:32.830376Z",
+  "data_fetched_at": "2025-12-31T01:49:32.830377Z"
 }

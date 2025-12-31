@@ -10,22 +10,20 @@
     "repo": "xz",
     "subpath": null
   },
-  "install_count_30d": 238373,
+  "install_count_30d": 239443,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.1,
-    "grade": "A",
+    "overall": 81.6,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 95.0,
+      "score": 70.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 57.5,
       "weight": 10
     },
     "stability": {
@@ -164,19 +162,114 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 7,
+      "configuration": 4,
+      "troubleshooting": 9,
+      "overall": 6,
+      "summary": "The documentation is thorough but lacks a clear and concise introduction to get new users started quickly.",
+      "top_issue": "Lack of a quick start guide or example usage in the README"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/lzmainfo/lzmainfo.c",
+          "line": 123,
+          "severity": "low",
+          "description": "The use of system functions like printf and fprintf could potentially lead to format string vulnerabilities if user-controlled input is used as the format string. However, in this case, the format strings are hardcoded."
+        },
+        {
+          "file": "src/xz/main.c",
+          "line": 104,
+          "severity": "low",
+          "description": "The use of fgetc and xmalloc could potentially lead to buffer overflow vulnerabilities if not handled properly. However, in this case, the code seems to handle memory allocation correctly."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential format string vulnerabilities",
+        "Lack of input validation for file names and command line arguments"
+      ],
+      "summary": "The code has some potential security issues, including format string vulnerabilities and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "memory allocation issues",
+        "compatibility problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The xz community is moderately active, with some open issues and a mix of feature requests and bug reports, but no clear signs of abandonment or extreme frustration."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "no merged PRs in the past 6 months",
+        "relatively low number of contributors"
+      ],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "recent release",
+        "active issue closure"
+      ],
+      "summary": "The xz package appears to be maintained with regular updates and issue closure, but lacks recent PR merges and has a limited number of active contributors."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks explicit breaking change markers and migration guides."
+    },
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
+    "doc_summary": "The documentation is thorough but lacks a clear and concise introduction to get new users started quickly.",
     "concerns": [
+      "no merged PRs in the past 6 months",
+      "relatively low number of contributors",
+      "Docs: Lack of a quick start guide or example usage in the README",
+      "Community: memory allocation issues",
+      "Community: compatibility problems",
+      "Security: Potential format string vulnerabilities",
+      "Security: Lack of input validation for file names and command line arguments",
       "High bus factor risk (81% from top contributor)"
     ],
     "highlights": [
+      "frequent commits in the past 6 months",
+      "recent release",
+      "active issue closure",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-30T21:24:54.768523Z",
-  "data_fetched_at": "2025-12-30T21:24:54.768524Z"
+  "analyzed_at": "2025-12-31T01:33:34.234028Z",
+  "data_fetched_at": "2025-12-31T01:33:34.234029Z"
 }
