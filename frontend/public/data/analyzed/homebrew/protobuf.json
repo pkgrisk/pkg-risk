@@ -10,26 +10,24 @@
     "repo": "protobuf",
     "subpath": null
   },
-  "install_count_30d": 74749,
+  "install_count_30d": 74768,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 94.8,
+    "overall": 95.6,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
       "score": 100.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 93.0,
+      "score": 95.1,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 65.0,
+      "score": 68.0,
       "weight": 10
     },
     "stability": {
@@ -59,7 +57,7 @@
       "open_issues": 213,
       "watchers": 69976,
       "created_at": "2014-08-26T15:52:15Z",
-      "updated_at": "2025-12-30T23:04:46Z",
+      "updated_at": "2025-12-31T02:23:49Z",
       "pushed_at": "2025-12-30T23:04:40Z",
       "default_branch": "main",
       "license": "NOASSERTION",
@@ -168,17 +166,113 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides clear installation instructions and links to additional resources, but lacks concise quick start examples and troubleshooting guidance.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "upb_generator/minitable/main.cc",
+          "line": 123,
+          "severity": "low",
+          "description": "The `absl::Substitute` function is used with user-controlled input, but it does not seem to be vulnerable to injection attacks in this context."
+        },
+        {
+          "file": "src/google/protobuf/compiler/main.cc",
+          "line": 141,
+          "severity": "low",
+          "description": "The `CommandLineInterface::RegisterGenerator` function is used with user-controlled input, but it does not seem to be vulnerable to injection attacks in this context."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The codebase appears to have some minor security concerns related to input validation and error handling, but no critical vulnerabilities were found."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "recursion limit issues",
+        "JSON serialization problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The protobuf community is actively reporting and discussing various issues, with maintainers responding moderately, indicating a relatively healthy but imperfect ecosystem."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "dismissiveness of niche feature",
+        "lack of documentation for upb"
+      ],
+      "summary": "The maintainer responses are generally helpful and clear, but could improve in terms of patience and welcomingness towards new contributors and users with specific needs."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "relatively high number of open issues",
+        "low ratio of closed issues to open issues"
+      ],
+      "positive_signals": [
+        "high number of commits in the past 6 months",
+        "frequent releases",
+        "large number of active contributors",
+        "significant number of merged PRs"
+      ],
+      "summary": "The protobuf package appears to be actively maintained with a high volume of recent commits, merges, and releases, despite some concerns regarding open issues."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The protobuf project has a well-documented decision process and multiple maintainers, but lacks a clear succession plan and contributor ladder."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides clear installation instructions and links to additional resources, but lacks concise quick start examples and troubleshooting guidance.",
+    "concerns": [
+      "relatively high number of open issues",
+      "low ratio of closed issues to open issues",
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: recursion limit issues",
+      "Community: JSON serialization problems",
+      "Communication: dismissiveness of niche feature",
+      "Communication: lack of documentation for upb"
+    ],
     "highlights": [
+      "high number of commits in the past 6 months",
+      "frequent releases",
+      "large number of active contributors",
+      "significant number of merged PRs",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-30T23:59:00.813830Z",
-  "data_fetched_at": "2025-12-30T23:59:00.813831Z"
+  "analyzed_at": "2025-12-31T02:47:55.747257Z",
+  "data_fetched_at": "2025-12-31T02:47:55.747258Z"
 }

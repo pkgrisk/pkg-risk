@@ -10,22 +10,20 @@
     "repo": "yt-dlp",
     "subpath": null
   },
-  "install_count_30d": 54593,
+  "install_count_30d": 54617,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 95.2,
-    "grade": "A",
+    "overall": 86.7,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 100.0,
+      "score": 78.0,
       "weight": 30
     },
     "maintenance": {
@@ -37,11 +35,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 95.0,
+      "score": 80.0,
       "weight": 10
     },
     "documentation": {
-      "score": 57.5,
+      "score": 53.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "yt-dlp",
       "name": "yt-dlp",
       "description": "A feature-rich command-line audio/video downloader",
-      "stars": 140043,
-      "forks": 11331,
-      "open_issues": 2222,
-      "watchers": 140043,
+      "stars": 140057,
+      "forks": 11330,
+      "open_issues": 2220,
+      "watchers": 140057,
       "created_at": "2020-10-26T04:22:55Z",
-      "updated_at": "2025-12-31T00:05:36Z",
+      "updated_at": "2025-12-31T03:14:56Z",
       "pushed_at": "2025-12-30T21:05:10Z",
       "default_branch": "master",
       "license": "Unlicense",
@@ -96,8 +94,8 @@
     "issues": {
       "open_issues": 193,
       "closed_issues_6mo": 199,
-      "avg_response_time_hours": 0.4,
-      "avg_close_time_hours": 17.5,
+      "avg_response_time_hours": 0.3,
+      "avg_close_time_hours": 11.7,
       "good_first_issue_count": 0,
       "regression_issue_count": 2
     },
@@ -167,17 +165,102 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 6,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The documentation is comprehensive but lacks a clear quick start guide, making it difficult for new users to get started quickly.",
+      "top_issue": "Lack of a concise and prominent quick start section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "yt_dlp/extractor/mainstreaming.py",
+          "line": 123,
+          "severity": "medium",
+          "description": "Potential JSON injection risk in _parse_json function"
+        },
+        {
+          "file": "yt_dlp/extractor/mainstreaming.py",
+          "line": 141,
+          "severity": "low",
+          "description": "Use of re.DOTALL flag may lead to potential regex injection risks"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential JSON injection risk",
+        "Lack of input validation for user-provided URLs"
+      ],
+      "summary": "The code has some security concerns, including potential JSON injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "site-specific issues",
+        "format sorting"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The yt-dlp community is active and responsive, with users reporting site-specific issues and seeking assistance, but overall sentiment remains neutral."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "large number of active contributors"
+      ],
+      "summary": "The package yt-dlp appears to be actively maintained with a high volume of recent activity, despite having a significant number of open issues and pull requests."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for yt-dlp lacks a clear succession plan and decision-making process, posing a high bus factor risk."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The documentation is comprehensive but lacks a clear quick start guide, making it difficult for new users to get started quickly.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Lack of a concise and prominent quick start section",
+      "Community: site-specific issues",
+      "Community: format sorting",
+      "Governance: High bus factor risk identified",
+      "Security: Potential JSON injection risk",
+      "Security: Lack of input validation for user-provided URLs"
+    ],
     "highlights": [
+      "frequent commits",
+      "recent release",
+      "large number of active contributors",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral"
   },
-  "analyzed_at": "2025-12-31T00:09:47.511231Z",
-  "data_fetched_at": "2025-12-31T00:09:47.511232Z"
+  "analyzed_at": "2025-12-31T03:21:23.545388Z",
+  "data_fetched_at": "2025-12-31T03:21:23.545389Z"
 }

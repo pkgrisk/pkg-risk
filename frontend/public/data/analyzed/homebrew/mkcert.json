@@ -10,22 +10,20 @@
     "repo": "mkcert",
     "subpath": null
   },
-  "install_count_30d": 57396,
+  "install_count_30d": 57467,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 69.8,
+    "overall": 64.5,
     "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "medium",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 60.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 52.5,
       "weight": 10
     },
     "stability": {
@@ -172,16 +170,109 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "The README is well-structured and provides clear instructions for installation and basic usage, but could benefit from more examples and troubleshooting guidance.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 8,
+      "injection_risks": [
+        {
+          "file": "main.go",
+          "line": 234,
+          "severity": "medium",
+          "description": "The `os/exec` package is used to execute shell commands, but the input is validated and sanitized before use."
+        },
+        {
+          "file": "main.go",
+          "line": 246,
+          "severity": "low",
+          "description": "The `idna.ToASCII` function is used to convert domain names to ASCII, which may potentially lead to injection risks if not properly validated."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risks due to shell command execution",
+        "Insufficient input validation for certain inputs"
+      ],
+      "summary": "The mkcert codebase has some potential security concerns, including injection risks and insufficient input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "compatibility issues",
+        "certificate expiration"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The mkcert community is moderately active with some open issues and a mix of questions, feature requests, and compatibility problems, but no clear signs of abandonment or extreme frustration."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 6,
+      "technical_depth": 8,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "somewhat dismissive tone",
+        "defensiveness"
+      ],
+      "summary": "The maintainer provides clear and technically sound responses, but can come across as somewhat defensive and not particularly welcoming to new contributors."
+    },
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "no commits in the past 6 months",
+        "large number of open issues and PRs with little recent activity",
+        "last release over a year ago"
+      ],
+      "positive_signals": [
+        "recently active contributors (10 in the past 6 months)",
+        "existing user base (as evidenced by Homebrew package)"
+      ],
+      "summary": "The mkcert package appears to be stale, with little recent maintenance activity despite having active contributors and a user base."
+    },
+    "changelog": null,
+    "governance": null
   },
-  "analyzed_at": "2025-12-31T00:01:57.848726Z",
-  "data_fetched_at": "2025-12-31T00:01:57.848726Z"
+  "analysis_summary": {
+    "maintenance_status": "stale",
+    "security_summary": "No issues",
+    "doc_summary": "The README is well-structured and provides clear instructions for installation and basic usage, but could benefit from more examples and troubleshooting guidance.",
+    "concerns": [
+      "no commits in the past 6 months",
+      "large number of open issues and PRs with little recent activity",
+      "last release over a year ago",
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: compatibility issues",
+      "Community: certificate expiration",
+      "Communication: somewhat dismissive tone",
+      "Communication: defensiveness",
+      "Security: Potential injection risks due to shell command execution",
+      "Security: Insufficient input validation for certain inputs"
+    ],
+    "highlights": [
+      "recently active contributors (10 in the past 6 months)",
+      "existing user base (as evidenced by Homebrew package)",
+      "Code follows security best practices",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2025-12-31T03:08:06.985012Z",
+  "data_fetched_at": "2025-12-31T03:08:06.985013Z"
 }

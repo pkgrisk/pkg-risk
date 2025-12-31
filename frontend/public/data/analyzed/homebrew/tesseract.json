@@ -10,38 +10,36 @@
     "repo": "tesseract",
     "subpath": null
   },
-  "install_count_30d": 83356,
+  "install_count_30d": 83478,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 93.5,
-    "grade": "A",
+    "overall": 85.3,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 74.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 91.46160107392204,
+      "score": 88.02312075174542,
       "weight": 25
     },
     "community": {
-      "score": 100.0,
+      "score": 98.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 93.68,
+      "score": 98.68,
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 70.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "tesseract-ocr",
       "name": "tesseract",
       "description": "Tesseract Open Source OCR Engine (main repository)",
-      "stars": 71638,
-      "forks": 10443,
+      "stars": 71639,
+      "forks": 10444,
       "open_issues": 461,
-      "watchers": 71638,
+      "watchers": 71639,
       "created_at": "2014-08-12T18:04:59Z",
-      "updated_at": "2025-12-30T22:38:21Z",
+      "updated_at": "2025-12-31T01:16:00Z",
       "pushed_at": "2025-12-26T17:31:11Z",
       "default_branch": "main",
       "license": "Apache-2.0",
@@ -159,7 +157,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 16,
-      "recent_runs_pass_rate": 97.9,
+      "recent_runs_pass_rate": 98.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -167,17 +165,114 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The README provides a good overview of the Tesseract OCR package, but could benefit from more concise and easily accessible information for new users.",
+      "top_issue": "Lack of clear and prominent examples and configuration documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/ccmain/applybox.cpp",
+          "line": 123,
+          "severity": "medium",
+          "description": "The function ReadAllBoxes() reads data from a file and stores it in the 'boxes', 'texts', and 'full_texts' vectors. If an attacker can manipulate this file, they may be able to inject malicious data into the program."
+        },
+        {
+          "file": "src/ccmain/applybox.cpp",
+          "line": 143,
+          "severity": "low",
+          "description": "The function ResegmentCharBox() and ResegmentWordBox() use the 'full_texts' and 'texts' vectors which are populated from a file. Although this is not directly user input, it could still pose an injection risk if an attacker can manipulate the file."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk through file manipulation",
+        "Lack of input validation"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but does not appear to have any critical vulnerabilities."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "performance issues",
+        "compatibility problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Tesseract community is moderately active, with some users experiencing frustration due to performance and compatibility issues, but maintainers are responsive to a degree."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 6,
+      "technical_depth": 8,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness towards new contributors",
+        "occasional blunt rejections"
+      ],
+      "summary": "The maintainer provides clear and technically sound responses, but can be abrupt and unwelcoming to new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "open PRs outnumber merged PRs"
+      ],
+      "positive_signals": [
+        "recent commits and release",
+        "active contributors"
+      ],
+      "summary": "The tesseract package appears to be maintained, with recent activity and a notable number of contributors, but may benefit from addressing its open issues and pull requests."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The Tesseract project has a clear path for contributors to become maintainers, but lacks a documented succession plan and decision-making process."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a good overview of the Tesseract OCR package, but could benefit from more concise and easily accessible information for new users.",
+    "concerns": [
+      "high number of open issues",
+      "open PRs outnumber merged PRs",
+      "Docs: Lack of clear and prominent examples and configuration documentation",
+      "Community: performance issues",
+      "Community: compatibility problems",
+      "Communication: dismissiveness towards new contributors",
+      "Communication: occasional blunt rejections",
+      "Security: Potential injection risk through file manipulation",
+      "Security: Lack of input validation"
+    ],
     "highlights": [
+      "recent commits and release",
+      "active contributors",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-31T00:05:40.754618Z",
-  "data_fetched_at": "2025-12-31T00:05:40.754618Z"
+  "analyzed_at": "2025-12-31T03:37:29.413187Z",
+  "data_fetched_at": "2025-12-31T03:37:29.413188Z"
 }

@@ -10,22 +10,20 @@
     "repo": "tmux",
     "subpath": null
   },
-  "install_count_30d": 55025,
+  "install_count_30d": 54899,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 82.1,
-    "grade": "B",
+    "overall": 77.8,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 68.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 43.0,
+      "score": 35.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "tmux",
       "name": "tmux",
       "description": "tmux source code",
-      "stars": 40451,
+      "stars": 40455,
       "forks": 2347,
       "open_issues": 28,
-      "watchers": 40451,
+      "watchers": 40455,
       "created_at": "2015-06-03T23:32:55Z",
-      "updated_at": "2025-12-30T23:07:18Z",
+      "updated_at": "2025-12-31T01:11:47Z",
       "pushed_at": "2025-12-25T20:04:58Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -159,19 +157,106 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and comprehensive troubleshooting documentation.",
+      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd-server-access.c",
+          "line": 73,
+          "severity": "medium",
+          "description": "The getpwnam function is used with user input, which could potentially lead to a denial-of-service attack if the input is not validated."
+        },
+        {
+          "file": "server-acl.c",
+          "line": 34,
+          "severity": "low",
+          "description": "The server_acl_user_find function uses a uid_t type, which is an integer and does not seem to be vulnerable to injection attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential denial-of-service attack through getpwnam in cmd-server-access.c"
+      ],
+      "summary": "The code has some potential security risks, including injection vulnerabilities and lack of input validation, but overall it seems to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "crashes",
+        "formatting issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The tmux community is actively reporting and addressing various technical issues, indicating a healthy and engaged user base."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 7,
+      "technical_depth": 9,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional brevity may confuse new users",
+        "some responses assume prior knowledge"
+      ],
+      "summary": "The maintainer provides detailed and helpful responses, but could improve in terms of clarity and welcomingness for new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low number of contributors",
+        "no merged PRs in the past 6 months"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release"
+      ],
+      "summary": "The tmux package appears to be minimally maintained with some recent activity, but concerns about contributor count and lack of merged PRs indicate potential issues."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "minimal-maintenance",
     "security_summary": "No issues",
-    "doc_summary": "",
+    "doc_summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and comprehensive troubleshooting documentation.",
     "concerns": [
+      "low number of contributors",
+      "no merged PRs in the past 6 months",
+      "Docs: Lack of a concise quick start example to help new users get started with the package.",
+      "Community: crashes",
+      "Community: formatting issues",
+      "Communication: occasional brevity may confuse new users",
+      "Communication: some responses assume prior knowledge",
+      "Security: Potential denial-of-service attack through getpwnam in cmd-server-access.c",
       "High bus factor risk (80% from top contributor)"
     ],
     "highlights": [
+      "frequent commits",
+      "recent release",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-31T00:02:48.595532Z",
-  "data_fetched_at": "2025-12-31T00:02:48.595533Z"
+  "analyzed_at": "2025-12-31T03:13:50.358243Z",
+  "data_fetched_at": "2025-12-31T03:13:50.358244Z"
 }

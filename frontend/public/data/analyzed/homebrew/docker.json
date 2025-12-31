@@ -10,26 +10,24 @@
     "repo": "cli",
     "subpath": null
   },
-  "install_count_30d": 63821,
+  "install_count_30d": 63703,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.1,
-    "grade": "A",
+    "overall": 86.4,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 90.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 85.3300303391257,
+      "score": 89.73102123738798,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 53.0,
+      "score": 35.0,
       "weight": 10
     },
     "stability": {
@@ -162,17 +160,114 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 2,
+      "installation": 4,
+      "quick_start": 1,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README is overly technical and lacks clear instructions for new users, making it difficult to understand and use the package.",
+      "top_issue": "Lack of clear and concise introduction to the package's purpose and basic usage"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/docker-trust/main.go",
+          "line": 23,
+          "severity": "low",
+          "description": "The use of os.Args[0] could potentially lead to an injection risk if the executable name is not properly sanitized."
+        },
+        {
+          "file": "e2e/cli-plugins/plugins/presocket/main.go",
+          "line": 43,
+          "severity": "medium",
+          "description": "The use of fmt.Fprintln with user-controlled input (dockerCli.Out()) could potentially lead to an injection risk if the output is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk in cmd/docker-trust/main.go",
+        "Lack of validation for user input in e2e/cli-plugins/plugins/presocket/main.go"
+      ],
+      "summary": "The code has some potential security issues, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "inconsistent output formats",
+        "breaking changes"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Docker community is actively reporting issues and engaging with maintainers, but frustration levels are moderate due to inconsistent output formats and breaking changes."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for effective communication in a GitHub issue tracker."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "recent last commit",
+        "significant number of merged PRs",
+        "multiple active contributors"
+      ],
+      "summary": "The docker package appears to be actively maintained with a high volume of recent commits, merges, and active contributors, despite having a large number of open issues and PRs."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The Docker project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README is overly technical and lacks clear instructions for new users, making it difficult to understand and use the package.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Lack of clear and concise introduction to the package's purpose and basic usage",
+      "Community: inconsistent output formats",
+      "Community: breaking changes",
+      "Security: Potential injection risk in cmd/docker-trust/main.go",
+      "Security: Lack of validation for user input in e2e/cli-plugins/plugins/presocket/main.go"
+    ],
     "highlights": [
+      "frequent commits in the past 6 months",
+      "recent last commit",
+      "significant number of merged PRs",
+      "multiple active contributors",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-31T00:00:42.876822Z",
-  "data_fetched_at": "2025-12-31T00:00:42.876822Z"
+  "analyzed_at": "2025-12-31T02:56:24.498919Z",
+  "data_fetched_at": "2025-12-31T02:56:24.498919Z"
 }

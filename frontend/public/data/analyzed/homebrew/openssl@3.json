@@ -14,7 +14,7 @@
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 85.7,
+    "overall": 84.6,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -27,7 +27,7 @@
       "weight": 30
     },
     "maintenance": {
-      "score": 74.19521677372292,
+      "score": 73.93984226654928,
       "weight": 25
     },
     "community": {
@@ -43,7 +43,7 @@
       "weight": 10
     },
     "stability": {
-      "score": 86.0,
+      "score": 76.0,
       "weight": 10
     }
   },
@@ -54,7 +54,7 @@
       "description": "TLS/SSL and crypto library",
       "stars": 29285,
       "forks": 10972,
-      "open_issues": 1687,
+      "open_issues": 1688,
       "watchers": 29285,
       "created_at": "2013-01-15T22:34:48Z",
       "updated_at": "2025-12-31T00:18:13Z",
@@ -95,7 +95,7 @@
       "closed_issues_6mo": 36,
       "avg_response_time_hours": 6.6,
       "avg_close_time_hours": 73.1,
-      "good_first_issue_count": 4,
+      "good_first_issue_count": 3,
       "regression_issue_count": 3
     },
     "prs": {
@@ -156,7 +156,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 72.0,
+      "recent_runs_pass_rate": 47.8,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -171,10 +171,10 @@
       "quick_start": 2,
       "examples": 6,
       "configuration": 5,
-      "troubleshooting": 4,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The README provides a good overview of the OpenSSL project, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to get new users started with the package."
+      "summary": "The OpenSSL README provides detailed information on the package, its features, and installation instructions, but lacks a clear quick start guide and troubleshooting section.",
+      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
     },
     "security": {
       "overall_score": 7,
@@ -183,30 +183,24 @@
           "file": "demos/sslecho/main.c",
           "line": 246,
           "severity": "low",
-          "description": "The use of strcmp() with user-controlled input 'rxbuf' could potentially lead to a timing attack, but it's not directly exploitable for code injection."
-        },
-        {
-          "file": "demos/sslecho/main.c",
-          "line": 123,
-          "severity": "low",
-          "description": "The use of system calls like perror() and printf() with user-controlled input could potentially lead to information disclosure, but it's not directly exploitable for code injection."
+          "description": "The use of strcmp() with user input from SSL_read() could potentially lead to issues if the input is not properly sanitized, but in this case, it's used for a simple 'kill' command."
         }
       ],
-      "input_validation_score": 6,
+      "input_validation_score": 8,
       "secrets_found": [
         {
           "file": "demos/sslecho/main.c",
-          "line": 154,
+          "line": 123,
           "type": "Certificate file path"
         },
         {
           "file": "demos/sslecho/main.c",
-          "line": 158,
+          "line": 129,
           "type": "Private key file path"
         }
       ],
       "critical_findings": [],
-      "summary": "The code has some security concerns related to input validation and error handling, but no critical vulnerabilities were found."
+      "summary": "The provided OpenSSL demo code has some minor security concerns related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
       "sentiment": "neutral",
@@ -218,7 +212,7 @@
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The OpenSSL community is actively reporting and discussing issues, but the project's maintainers are moderately responsive, indicating a relatively healthy but imperfect community."
+      "summary": "The OpenSSL community is actively reporting and discussing issues, with maintainers responding moderately, indicating a relatively healthy but imperfect open-source project."
     },
     "communication": {
       "helpfulness": 8,
@@ -264,11 +258,11 @@
   "analysis_summary": {
     "maintenance_status": "stale",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "The README provides a good overview of the OpenSSL project, but lacks a clear quick start guide and troubleshooting section.",
+    "doc_summary": "The OpenSSL README provides detailed information on the package, its features, and installation instructions, but lacks a clear quick start guide and troubleshooting section.",
     "concerns": [
       "no merged PRs in the past 6 months",
       "high number of open issues and PRs",
-      "Docs: Lack of a concise quick start example to get new users started with the package.",
+      "Docs: Lack of a concise quick start example to help new users get started with the package.",
       "Community: regressions",
       "Community: bugs"
     ],
@@ -282,6 +276,6 @@
     "community_sentiment": "neutral",
     "communication_style": "good"
   },
-  "analyzed_at": "2025-12-31T01:29:54.685985Z",
-  "data_fetched_at": "2025-12-31T01:29:54.685986Z"
+  "analyzed_at": "2025-12-31T03:33:32.704696Z",
+  "data_fetched_at": "2025-12-31T03:33:32.704697Z"
 }
