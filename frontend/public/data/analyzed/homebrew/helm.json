@@ -10,26 +10,24 @@
     "repo": "helm",
     "subpath": null
   },
-  "install_count_30d": 46006,
+  "install_count_30d": 45973,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 92.0,
-    "grade": "A",
+    "overall": 89.8,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 90.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 92.22652725057455,
+      "score": 94.29010123725925,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 43.0,
+      "score": 46.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "helm",
       "name": "helm",
       "description": "The Kubernetes Package Manager",
-      "stars": 29240,
+      "stars": 29241,
       "forks": 7457,
-      "open_issues": 450,
-      "watchers": 29240,
+      "open_issues": 448,
+      "watchers": 29241,
       "created_at": "2015-10-06T01:07:32Z",
-      "updated_at": "2025-12-30T19:12:59Z",
+      "updated_at": "2025-12-31T02:48:44Z",
       "pushed_at": "2025-12-28T02:21:04Z",
       "default_branch": "main",
       "license": "Apache-2.0",
@@ -92,7 +90,7 @@
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 185,
+      "open_issues": 184,
       "closed_issues_6mo": 65,
       "avg_response_time_hours": 8.8,
       "avg_close_time_hours": 43.0,
@@ -165,17 +163,110 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The Helm README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting documentation.",
+      "top_issue": "Insufficient examples for common use cases"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "pkg/cmd/repo_index.go",
+          "line": 93,
+          "severity": "medium",
+          "description": "The 'os.Stat' function is used with user-controlled input, which could potentially lead to a path traversal vulnerability."
+        },
+        {
+          "file": "pkg/repo/v1/index.go",
+          "line": 155,
+          "severity": "low",
+          "description": "The 'urlutil.URLJoin' function is used with user-controlled input, but it's not directly executing any commands or accessing sensitive data."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal vulnerability in 'os.Stat' function",
+        "Insufficient input validation for directory path and URL"
+      ],
+      "summary": "The provided code has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bugs and inconsistencies",
+        "compatibility issues with other tools"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Helm community is actively reporting and discussing various issues, but maintainers are moderately responsive, indicating a relatively healthy but imperfect ecosystem."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful, clear, and welcoming, but could improve in terms of technical depth and patience when handling repeated or basic questions."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (624)",
+        "Recent last commit (2025-12-28)",
+        "Frequent releases (last release on 2025-12-13)",
+        "Large number of merged PRs in the past 6 months (246)",
+        "Many active contributors in the past 6 months (66)"
+      ],
+      "summary": "The helm package appears to be actively maintained with a high volume of commits, releases, and contributor activity."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The Helm project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The Helm README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting documentation.",
+    "concerns": [
+      "Docs: Insufficient examples for common use cases",
+      "Community: bugs and inconsistencies",
+      "Community: compatibility issues with other tools",
+      "Security: Potential path traversal vulnerability in 'os.Stat' function",
+      "Security: Insufficient input validation for directory path and URL"
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (624)",
+      "Recent last commit (2025-12-28)",
+      "Frequent releases (last release on 2025-12-13)",
+      "Large number of merged PRs in the past 6 months (246)",
+      "Many active contributors in the past 6 months (66)",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-31T00:18:09.955470Z",
-  "data_fetched_at": "2025-12-31T00:18:09.955471Z"
+  "analyzed_at": "2025-12-31T04:12:56.441578Z",
+  "data_fetched_at": "2025-12-31T04:12:56.441579Z"
 }

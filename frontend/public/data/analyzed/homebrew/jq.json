@@ -10,26 +10,24 @@
     "repo": "jq",
     "subpath": null
   },
-  "install_count_30d": 44254,
+  "install_count_30d": 44234,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.8,
-    "grade": "A",
+    "overall": 86.6,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 86.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 93.12268938994433,
+      "score": 88.93332985467589,
       "weight": 25
     },
     "community": {
@@ -41,11 +39,11 @@
       "weight": 10
     },
     "documentation": {
-      "score": 65.5,
+      "score": 71.0,
       "weight": 10
     },
     "stability": {
-      "score": 93.0,
+      "score": 98.0,
       "weight": 10
     }
   },
@@ -59,7 +57,7 @@
       "open_issues": 441,
       "watchers": 33253,
       "created_at": "2012-07-18T19:57:25Z",
-      "updated_at": "2025-12-30T23:48:44Z",
+      "updated_at": "2025-12-31T03:22:36Z",
       "pushed_at": "2025-12-17T02:24:41Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -161,17 +159,116 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting guidance.",
+      "top_issue": "Lack of detailed configuration documentation and troubleshooting resources"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.c",
+          "line": 246,
+          "severity": "low",
+          "description": "The `priv_fwrite` function is used to write user-controlled data to the standard output, but it does not seem to be vulnerable to injection attacks as it only writes strings and does not execute any commands."
+        },
+        {
+          "file": "src/main.c",
+          "line": 334,
+          "severity": "low",
+          "description": "The `fprintf` function is used to write user-controlled data to the standard error, but it does not seem to be vulnerable to injection attacks as it only writes strings and does not execute any commands."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "No validation of user-provided JSON input",
+        "Potential for error exposure through unhandled exceptions"
+      ],
+      "summary": "The code has some potential security concerns, including lack of input validation and potential for error exposure, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bug reports",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The jq community is active with a mix of open and closed issues, but maintainers could improve responsiveness to address user frustrations and feature requests."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness of feature requests",
+        "lack of encouragement for new contributors"
+      ],
+      "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to create a more inclusive community."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "recent commits and releases",
+        "active contributors"
+      ],
+      "summary": "The jq package appears to be maintained with regular updates and active contributors, but has a notable backlog of open issues and pull requests."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks explicit migration guides for breaking changes."
+    },
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting guidance.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Lack of detailed configuration documentation and troubleshooting resources",
+      "Community: bug reports",
+      "Community: feature requests",
+      "Communication: dismissiveness of feature requests",
+      "Communication: lack of encouragement for new contributors",
+      "Security: No validation of user-provided JSON input",
+      "Security: Potential for error exposure through unhandled exceptions"
+    ],
     "highlights": [
+      "recent commits and releases",
+      "active contributors",
+      "Breaking changes clearly marked in changelog",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-31T00:20:12.878979Z",
-  "data_fetched_at": "2025-12-31T00:20:12.878980Z"
+  "analyzed_at": "2025-12-31T04:25:43.839734Z",
+  "data_fetched_at": "2025-12-31T04:25:43.839736Z"
 }

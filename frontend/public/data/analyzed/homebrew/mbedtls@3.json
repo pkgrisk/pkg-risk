@@ -10,22 +10,20 @@
     "repo": "mbedtls",
     "subpath": null
   },
-  "install_count_30d": 46363,
+  "install_count_30d": 46330,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 89.8,
+    "overall": 85.3,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
+      "score": 76.0,
       "weight": 30
     },
     "maintenance": {
@@ -37,11 +35,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 95.0,
+      "score": 100.0,
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 60.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "Mbed-TLS",
       "name": "mbedtls",
       "description": "An open source, portable, easy to use, readable and flexible TLS library, and reference implementation of the PSA Cryptography API. Releases are on a varying cadence, typically around 3 - 6 months between releases.",
-      "stars": 6365,
-      "forks": 2823,
+      "stars": 6366,
+      "forks": 2824,
       "open_issues": 1574,
-      "watchers": 6365,
+      "watchers": 6366,
       "created_at": "2012-11-14T13:13:13Z",
-      "updated_at": "2025-12-30T13:39:54Z",
+      "updated_at": "2025-12-31T02:02:43Z",
       "pushed_at": "2025-12-18T16:43:20Z",
       "default_branch": "development",
       "license": "NOASSERTION",
@@ -165,16 +163,109 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "has SECURITY.md",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "Actively maintained"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README provides detailed information on building and configuring the Mbed TLS library, but lacks a clear quick start guide and troubleshooting section.",
+      "top_issue": "Lack of a concise quick start example to help new users get started with the library"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "programs/x509/cert_app.c",
+          "line": 246,
+          "severity": "medium",
+          "description": "User input is used to construct a file path without proper validation, potentially leading to directory traversal attacks."
+        },
+        {
+          "file": "programs/x509/cert_app.c",
+          "line": 258,
+          "severity": "low",
+          "description": "The use of atoi() for converting user input to integers may lead to potential issues if the input is not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential directory traversal attacks due to insufficient file path validation"
+      ],
+      "summary": "The code has some security concerns related to input validation and error handling, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "code style and documentation issues",
+        "submodule initialization problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting and discussing various issues, with maintainers responding moderately, indicating a relatively healthy project ecosystem."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainers' responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "multiple active contributors"
+      ],
+      "summary": "The package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity, despite having a significant number of open issues and pull requests."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The project has a well-documented decision process and contributor ladder, but lacks a clear succession plan, indicating a medium bus factor risk."
+    }
   },
-  "analyzed_at": "2025-12-31T00:17:20.865675Z",
-  "data_fetched_at": "2025-12-31T00:17:20.865676Z"
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "has SECURITY.md",
+    "doc_summary": "The README provides detailed information on building and configuring the Mbed TLS library, but lacks a clear quick start guide and troubleshooting section.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Lack of a concise quick start example to help new users get started with the library",
+      "Community: code style and documentation issues",
+      "Community: submodule initialization problems",
+      "Security: Potential directory traversal attacks due to insufficient file path validation"
+    ],
+    "highlights": [
+      "frequent commits",
+      "recent release",
+      "multiple active contributors",
+      "Excellent maintainer communication",
+      "Actively maintained"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2025-12-31T04:09:09.631774Z",
+  "data_fetched_at": "2025-12-31T04:09:09.631775Z"
 }

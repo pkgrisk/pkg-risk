@@ -10,22 +10,20 @@
     "repo": "highway",
     "subpath": null
   },
-  "install_count_30d": 45305,
+  "install_count_30d": 45334,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.5,
-    "grade": "A",
+    "overall": 85.9,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 95.0,
+      "score": 80.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 55.0,
+      "score": 53.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "google",
       "name": "highway",
       "description": "Performance-portable, length-agnostic SIMD with runtime dispatch",
-      "stars": 5229,
+      "stars": 5231,
       "forks": 398,
       "open_issues": 57,
-      "watchers": 5229,
+      "watchers": 5231,
       "created_at": "2019-09-06T12:41:23Z",
-      "updated_at": "2025-12-30T16:32:19Z",
+      "updated_at": "2025-12-31T03:35:44Z",
       "pushed_at": "2025-12-18T16:59:36Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -175,17 +173,100 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 4,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The Highway README provides a comprehensive overview of the package, its features, and examples, but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of clear installation instructions for Homebrew"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "hwy/abort.cc",
+          "line": 73,
+          "severity": "low",
+          "description": "Use of vsnprintf with user-controlled format string, but the input is validated and sanitized before use."
+        },
+        {
+          "file": "hwy/abort.cc",
+          "line": 104,
+          "severity": "low",
+          "description": "Use of fprintf with user-controlled format string, but the input is validated and sanitized before use."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow in vsnprintf"
+      ],
+      "summary": "The provided code has some potential security issues, such as lack of input validation and error exposure, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "compilation issues",
+        "platform-specific problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The highway project community is actively engaged, with maintainers responding to issues and users reporting a mix of compilation problems and platform-specific concerns."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (235)",
+        "Recent last commit (2025-12-18)",
+        "Active issue and PR management (77 closed issues, 140 merged PRs)",
+        "Large number of contributors active in the past 6 months (22)"
+      ],
+      "summary": "The highway package appears to be actively maintained with frequent commits, recent updates, and a strong community of contributors."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The Highway README provides a comprehensive overview of the package, its features, and examples, but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of clear installation instructions for Homebrew",
+      "Community: compilation issues",
+      "Community: platform-specific problems",
+      "Security: Potential buffer overflow in vsnprintf"
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (235)",
+      "Recent last commit (2025-12-18)",
+      "Active issue and PR management (77 closed issues, 140 merged PRs)",
+      "Large number of contributors active in the past 6 months (22)",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-31T00:18:41.138693Z",
-  "data_fetched_at": "2025-12-31T00:18:41.138693Z"
+  "analyzed_at": "2025-12-31T04:16:07.226864Z",
+  "data_fetched_at": "2025-12-31T04:16:07.226865Z"
 }

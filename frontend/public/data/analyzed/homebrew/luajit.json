@@ -10,27 +10,26 @@
     "repo": "LuaJIT",
     "subpath": null
   },
-  "install_count_30d": 50182,
+  "install_count_30d": 49869,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 78.2,
-    "grade": "C",
+    "overall": 63.6,
+    "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "low",
     "confidence": "medium",
     "confidence_factors": [
-      "No LLM assessment available",
       "Limited contributor data"
     ],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 58.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 94.94661835033548,
+      "score": 72.46263284523484,
       "weight": 25
     },
     "community": {
@@ -42,7 +41,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 50.0,
+      "score": 26.0,
       "weight": 10
     },
     "stability": {
@@ -160,16 +159,93 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "Actively maintained"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README provides basic information about LuaJIT but lacks essential details on installation, usage, and troubleshooting.",
+      "top_issue": "Missing installation instructions and lack of examples or quick start guide"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/lj_clib.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "Potential path traversal vulnerability in clib_resolve_lds function"
+        },
+        {
+          "file": "src/lj_clib.c",
+          "line": 156,
+          "severity": "low",
+          "description": "Use of user-controlled input in clib_extname function without proper validation"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal vulnerability in clib_resolve_lds function",
+        "Lack of validation for library names and paths"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "FFI and GC anchors",
+        "Duality of 0 in DUALNUM build"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The LuaJIT community is actively reporting issues, with a moderate response rate from maintainers, indicating a relatively healthy but imperfect project ecosystem."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "no contributors active in the past 6 months",
+        "no merged PRs in the past 6 months",
+        "unknown last release"
+      ],
+      "positive_signals": [
+        "recent commits in the past 6 months",
+        "closed issues in the past 6 months"
+      ],
+      "summary": "The luajit package appears to be abandoned due to a lack of active contributors and merged PRs, despite some recent commit activity."
+    },
+    "changelog": null,
+    "governance": null
   },
-  "analyzed_at": "2025-12-31T00:13:20.198242Z",
-  "data_fetched_at": "2025-12-31T00:13:20.198243Z"
+  "analysis_summary": {
+    "maintenance_status": "abandoned",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides basic information about LuaJIT but lacks essential details on installation, usage, and troubleshooting.",
+    "concerns": [
+      "no contributors active in the past 6 months",
+      "no merged PRs in the past 6 months",
+      "unknown last release",
+      "Docs: Missing installation instructions and lack of examples or quick start guide",
+      "Community: FFI and GC anchors",
+      "Community: Duality of 0 in DUALNUM build",
+      "Security: Potential path traversal vulnerability in clib_resolve_lds function",
+      "Security: Lack of validation for library names and paths"
+    ],
+    "highlights": [
+      "recent commits in the past 6 months",
+      "closed issues in the past 6 months",
+      "Actively maintained"
+    ],
+    "community_sentiment": "neutral"
+  },
+  "analyzed_at": "2025-12-31T03:55:24.451257Z",
+  "data_fetched_at": "2025-12-31T03:55:24.451257Z"
 }

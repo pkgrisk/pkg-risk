@@ -10,23 +10,22 @@
     "repo": "mise",
     "subpath": null
   },
-  "install_count_30d": 49217,
+  "install_count_30d": 49205,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 95.2,
+    "overall": 90.9,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
     "confidence": "medium",
     "confidence_factors": [
-      "No LLM assessment available",
       "Limited issue history"
     ],
     "project_age_band": "established",
     "security": {
-      "score": 100.0,
+      "score": 86.0,
       "weight": 30
     },
     "maintenance": {
@@ -38,15 +37,15 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 88.76,
+      "score": 73.84,
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 77.0,
       "weight": 10
     },
     "stability": {
-      "score": 96.0,
+      "score": 100.0,
       "weight": 10
     }
   },
@@ -55,13 +54,13 @@
       "owner": "jdx",
       "name": "mise",
       "description": "dev tools, env vars, task runner",
-      "stars": 22592,
+      "stars": 22600,
       "forks": 780,
-      "open_issues": 37,
-      "watchers": 22592,
+      "open_issues": 36,
+      "watchers": 22600,
       "created_at": "2023-01-09T14:44:21Z",
-      "updated_at": "2025-12-31T00:03:52Z",
-      "pushed_at": "2025-12-31T00:12:09Z",
+      "updated_at": "2025-12-31T03:50:46Z",
+      "pushed_at": "2025-12-31T02:25:33Z",
       "default_branch": "main",
       "license": "MIT",
       "language": "Rust",
@@ -79,10 +78,10 @@
       "contributors_prev_6mo": 0,
       "contributor_trend": "growing",
       "first_time_contributors_6mo": 139,
-      "contributor_entropy": 2.97
+      "contributor_entropy": 2.98
     },
     "commits": {
-      "last_commit_date": "2025-12-31T00:03:47Z",
+      "last_commit_date": "2025-12-31T02:13:56Z",
       "commits_last_6mo": 1000,
       "commits_last_year": 1000
     },
@@ -95,14 +94,14 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 11,
+      "open_prs": 10,
       "merged_prs_6mo": 280,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
     "releases": {
       "total_releases": 472,
-      "releases_last_year": 194,
+      "releases_last_year": 193,
       "last_release_date": "2025-12-30T19:04:59Z",
       "latest_version": "v2025.12.13",
       "has_signed_releases": true,
@@ -152,7 +151,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 28,
-      "recent_runs_pass_rate": 60.5,
+      "recent_runs_pass_rate": 72.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -160,17 +159,109 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 10,
+      "configuration": 9,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "The documentation is well-structured and provides a clear overview of the package's functionality, but troubleshooting information could be more comprehensive.",
+      "top_issue": "Lack of detailed troubleshooting guides and solutions for common problems."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 34,
+          "severity": "medium",
+          "description": "The use of `std::env::args().collect_vec()` could potentially lead to command injection if not properly sanitized."
+        },
+        {
+          "file": "src/aqua/aqua_registry_wrapper.rs",
+          "line": 64,
+          "severity": "high",
+          "description": "The `fetch_latest_repo` function uses `repo.update(None)?;` which could lead to code execution if the repository is compromised."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the `fetch_latest_repo` function",
+        "Lack of input validation for environment variables"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": null,
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "brief responses",
+        "lack of explanations for some comments"
+      ],
+      "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to make the community more inclusive."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (1000)",
+        "Large number of merged PRs in the past 6 months (280)",
+        "Recent last commit and release dates",
+        "Many active contributors in the past 6 months (139)"
+      ],
+      "summary": "The package is actively maintained with a high volume of commits, merges, and releases, indicating a healthy and vibrant development community."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for the homebrew package 'mise' lacks a succession plan and indicates a single maintainer, posing a high bus factor risk."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The documentation is well-structured and provides a clear overview of the package's functionality, but troubleshooting information could be more comprehensive.",
+    "concerns": [
+      "Docs: Lack of detailed troubleshooting guides and solutions for common problems.",
+      "Communication: brief responses",
+      "Communication: lack of explanations for some comments",
+      "Governance: High bus factor risk identified",
+      "Security: Potential command injection vulnerability in the `fetch_latest_repo` function",
+      "Security: Lack of input validation for environment variables",
+      "Security: The `fetch_latest_repo` function uses `repo.update(None)?;` which could lead to code execution if the repository is compromised."
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (1000)",
+      "Large number of merged PRs in the past 6 months (280)",
+      "Recent last commit and release dates",
+      "Many active contributors in the past 6 months (139)",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-31T00:15:21.643960Z",
-  "data_fetched_at": "2025-12-31T00:15:21.643961Z"
+  "analyzed_at": "2025-12-31T04:01:13.064041Z",
+  "data_fetched_at": "2025-12-31T04:01:13.064042Z"
 }

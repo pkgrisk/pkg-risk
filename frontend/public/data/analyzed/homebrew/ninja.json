@@ -10,38 +10,36 @@
     "repo": "ninja",
     "subpath": null
   },
-  "install_count_30d": 40379,
+  "install_count_30d": 40370,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 86.4,
-    "grade": "B",
+    "overall": 77.5,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 84.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 89.21716282347357,
+      "score": 86.45201397643149,
       "weight": 25
     },
     "community": {
-      "score": 82.0,
+      "score": 72.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 85.0,
+      "score": 70.0,
       "weight": 10
     },
     "documentation": {
-      "score": 53.0,
+      "score": 48.5,
       "weight": 10
     },
     "stability": {
@@ -159,17 +157,114 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 4,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "The README provides a good overview of the package, but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of clear and concise troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/msvc_helper_main-win32.cc",
+          "line": 123,
+          "severity": "medium",
+          "description": "The command line argument is not properly sanitized before being passed to the CLWrapper::Run function, which could lead to a command injection vulnerability."
+        },
+        {
+          "file": "src/jobserver-posix.cc",
+          "line": 55,
+          "severity": "low",
+          "description": "The fifo_path variable is not validated for null bytes or other malicious input before being used in the open function."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the CLWrapper::Run function"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but does not appear to expose sensitive information or have critical flaws."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "recompilation issues",
+        "error handling and reporting"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The ninja community is experiencing a mix of resolved and ongoing issues, with maintainers showing moderate responsiveness to user concerns."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness",
+        "bluntness",
+        "occasional condescension"
+      ],
+      "summary": "The maintainer provides technically sound responses, but their communication style can be abrupt and unwelcoming at times."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "low ratio of closed issues to open issues"
+      ],
+      "positive_signals": [
+        "recent commits and releases",
+        "active contributors"
+      ],
+      "summary": "The ninja package appears to be maintained, with recent activity and a decent number of active contributors, but may benefit from addressing the large number of open issues."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for the homebrew package 'ninja' lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a good overview of the package, but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "high number of open issues",
+      "low ratio of closed issues to open issues",
+      "Docs: Lack of clear and concise troubleshooting documentation",
+      "Community: recompilation issues",
+      "Community: error handling and reporting",
+      "Communication: dismissiveness",
+      "Communication: bluntness",
+      "Governance: High bus factor risk identified",
+      "Security: Potential command injection vulnerability in the CLWrapper::Run function"
+    ],
     "highlights": [
+      "recent commits and releases",
+      "active contributors",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-31T00:25:15.220128Z",
-  "data_fetched_at": "2025-12-31T00:25:15.220129Z"
+  "analyzed_at": "2025-12-31T04:56:52.489207Z",
+  "data_fetched_at": "2025-12-31T04:56:52.489208Z"
 }

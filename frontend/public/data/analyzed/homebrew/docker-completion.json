@@ -10,26 +10,24 @@
     "repo": "cli",
     "subpath": null
   },
-  "install_count_30d": 40480,
+  "install_count_30d": 40409,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.1,
-    "grade": "A",
+    "overall": 85.7,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 90.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 85.3300303391257,
+      "score": 89.73102123738798,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 53.0,
+      "score": 27.5,
       "weight": 10
     },
     "stability": {
@@ -162,17 +160,112 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 2,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 1,
+      "summary": "The README is unclear and lacks essential information for users to understand and use the docker-completion package.",
+      "top_issue": "The README does not provide clear instructions on how to install, configure, or use the docker-completion package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/docker-trust/main.go",
+          "line": 23,
+          "severity": "low",
+          "description": "The use of os.Args[0] could potentially lead to an injection risk if the executable name is not properly sanitized."
+        },
+        {
+          "file": "e2e/cli-plugins/plugins/presocket/main.go",
+          "line": 43,
+          "severity": "medium",
+          "description": "The use of fmt.Fprintln with user-controlled input (dockerCli.Out()) could potentially lead to an injection risk if the output is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk in cmd/docker-trust/main.go",
+        "Lack of input validation in e2e/cli-plugins/plugins/presocket/main.go"
+      ],
+      "summary": "The code has some potential security risks, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "inconsistent output formats",
+        "breaking changes"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting issues and engaging with maintainers, but frustration levels are moderate due to unresolved bugs and breaking changes."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for effective communication in a GitHub issue tracker."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "recent last commit",
+        "many merged PRs and active contributors"
+      ],
+      "summary": "The docker-completion package appears to be actively maintained with a high volume of recent activity, despite having a large number of open issues and PRs."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The Docker project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README is unclear and lacks essential information for users to understand and use the docker-completion package.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: The README does not provide clear instructions on how to install, configure, or use the docker-completion package.",
+      "Community: inconsistent output formats",
+      "Community: breaking changes",
+      "Security: Potential injection risk in cmd/docker-trust/main.go",
+      "Security: Lack of input validation in e2e/cli-plugins/plugins/presocket/main.go"
+    ],
     "highlights": [
+      "frequent commits in the past 6 months",
+      "recent last commit",
+      "many merged PRs and active contributors",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-31T00:24:44.560046Z",
-  "data_fetched_at": "2025-12-31T00:24:44.560046Z"
+  "analyzed_at": "2025-12-31T04:53:50.588219Z",
+  "data_fetched_at": "2025-12-31T04:53:50.588221Z"
 }

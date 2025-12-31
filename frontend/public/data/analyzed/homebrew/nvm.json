@@ -10,38 +10,36 @@
     "repo": "nvm",
     "subpath": null
   },
-  "install_count_30d": 35949,
+  "install_count_30d": 35944,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 86.9,
-    "grade": "B",
+    "overall": 76.4,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 78.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 85.24955834975404,
+      "score": 77.67469084482782,
       "weight": 25
     },
     "community": {
-      "score": 93.0,
+      "score": 88.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 75.0,
+      "score": 60.0,
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 48.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "nvm-sh",
       "name": "nvm",
       "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
-      "stars": 90611,
-      "forks": 9722,
+      "stars": 90612,
+      "forks": 9723,
       "open_issues": 378,
-      "watchers": 90611,
+      "watchers": 90612,
       "created_at": "2010-04-15T17:47:47Z",
-      "updated_at": "2025-12-30T22:59:00Z",
+      "updated_at": "2025-12-31T04:50:13Z",
       "pushed_at": "2025-12-03T20:06:59Z",
       "default_branch": "master",
       "license": "MIT",
@@ -173,16 +171,115 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 8,
+      "overall": 7,
+      "summary": "The README provides clear installation instructions and some usage examples, but could benefit from more detailed configuration documentation and additional troubleshooting guidance.",
+      "top_issue": "Lack of comprehensive configuration documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "install.sh",
+          "line": 123,
+          "severity": "high",
+          "description": "The eval() function is used with user-controlled input, which can lead to code injection attacks."
+        },
+        {
+          "file": "install.sh",
+          "line": 141,
+          "severity": "medium",
+          "description": "The wget command is executed with user-controlled arguments, which can lead to command injection attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Code injection vulnerability in eval() function",
+        "Potential command injection attack through wget command"
+      ],
+      "summary": "The install.sh script has some security concerns, including code injection vulnerabilities and potential command injection attacks, but overall it appears to be well-structured and follows good security practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "installation issues",
+        "compatibility problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The nvm community is experiencing some frustration with installation and compatibility issues, but maintainers are still active, albeit slow to respond."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness towards some contributors",
+        "unclear expectations for contributions"
+      ],
+      "summary": "The maintainer provides technically sound and helpful responses, but can be abrupt or dismissive at times, which may deter new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low number of merged PRs past 6 months",
+        "high number of open issues and PRs relative to closed and merged ones"
+      ],
+      "positive_signals": [
+        "recent commits within the past 6 months",
+        "active contributors within the past 6 months"
+      ],
+      "summary": "The nvm package appears to be receiving minimal maintenance with some recent activity, but concerns arise from the low merge rate of PRs and high number of open issues."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The nvm project governance documentation lacks a clear succession plan, decision-making process, and contributor ladder, posing a high bus factor risk."
+    }
   },
-  "analyzed_at": "2025-12-31T00:26:30.811154Z",
-  "data_fetched_at": "2025-12-31T00:26:30.811154Z"
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides clear installation instructions and some usage examples, but could benefit from more detailed configuration documentation and additional troubleshooting guidance.",
+    "concerns": [
+      "low number of merged PRs past 6 months",
+      "high number of open issues and PRs relative to closed and merged ones",
+      "Docs: Lack of comprehensive configuration documentation",
+      "Community: installation issues",
+      "Community: compatibility problems",
+      "Communication: dismissiveness towards some contributors",
+      "Communication: unclear expectations for contributions",
+      "Governance: High bus factor risk identified",
+      "Security: Code injection vulnerability in eval() function",
+      "Security: Potential command injection attack through wget command",
+      "Security: The eval() function is used with user-controlled input, which can lead to code injection attacks."
+    ],
+    "highlights": [
+      "recent commits within the past 6 months",
+      "active contributors within the past 6 months",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2025-12-31T05:05:42.300191Z",
+  "data_fetched_at": "2025-12-31T05:05:42.300193Z"
 }
