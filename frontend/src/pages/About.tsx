@@ -1,205 +1,170 @@
+import { Link } from 'react-router-dom';
+
 export function About() {
   return (
     <div className="about-page">
-      <h1>About pkg-risk Scoring</h1>
+      <h1>About pkg-risk</h1>
 
       <section className="about-section">
-        <h2>Scoring Philosophy</h2>
+        <h2>The Problem</h2>
         <p>
-          pkg-risk evaluates open source packages across six dimensions of health and risk.
-          Our scoring methodology combines automated analysis of GitHub repository data with
-          AI-powered assessments to provide a comprehensive view of package health.
+          Modern software depends on hundreds of open source packages. But how do you know
+          which ones are safe to use? Vulnerability databases tell you about known CVEs,
+          but not whether a project is likely to <em>fix</em> them quickly. Package registries
+          show download counts, but popularity doesn't equal quality. And raw repository
+          data requires you to interpret dozens of signals yourself.
         </p>
         <p>
-          The overall score (0-100) represents a weighted aggregate of these dimensions,
-          translated into a letter grade (A-F) for quick assessment.
+          Most tools either give you a firehose of unweighted data, or focus narrowly on
+          just security practices. Neither approach answers the real question: <strong>is
+          this package healthy enough to depend on?</strong>
         </p>
       </section>
 
       <section className="about-section">
-        <h2>Scoring Categories</h2>
-
-        <div className="category-card">
-          <h3>Security (30% weight)</h3>
-          <p>The most heavily weighted category, evaluating vulnerability history and security practices.</p>
-          <ul>
-            <li><strong>CVE severity-weighted penalties:</strong> CRITICAL (-20), HIGH (-15), MEDIUM (-8), LOW (-3)</li>
-            <li><strong>Time-to-patch responsiveness:</strong> Bonus for quick patching (&lt;7 days), penalty for slow response (&gt;90 days)</li>
-            <li><strong>Security policy:</strong> Presence of SECURITY.md or security policy</li>
-            <li><strong>Security tools:</strong> Dependabot, CodeQL, Snyk, Renovate, Trivy, Semgrep detection</li>
-            <li><strong>Signed commits:</strong> Percentage of cryptographically signed commits</li>
-            <li><strong>Supply chain:</strong> SLSA compliance, Sigstore signing, SBOM publication</li>
-          </ul>
-        </div>
-
-        <div className="category-card">
-          <h3>Maintenance (25% weight)</h3>
-          <p>Evaluates ongoing development activity and responsiveness.</p>
-          <ul>
-            <li><strong>Commit recency:</strong> Exponential decay based on time since last commit</li>
-            <li><strong>Activity presence:</strong> Rewards consistent activity over raw commit volume</li>
-            <li><strong>Issue response time:</strong> How quickly maintainers respond to issues</li>
-            <li><strong>Release cadence:</strong> Sweet spot of 4-12 releases/year</li>
-            <li><strong>Deprecation signals:</strong> Detects deprecated or archived repositories</li>
-          </ul>
-        </div>
-
-        <div className="category-card">
-          <h3>Community (15% weight)</h3>
-          <p>Measures community health and engagement.</p>
-          <ul>
-            <li><strong>Stars/Forks:</strong> Age-normalized popularity metrics</li>
-            <li><strong>Contributor growth:</strong> Trajectory analysis (growing/stable/declining)</li>
-            <li><strong>First-time contributors:</strong> Welcoming community signal</li>
-            <li><strong>Community health:</strong> Issue templates, PR templates, Code of Conduct</li>
-            <li><strong>Discussions:</strong> Active Q&A community</li>
-          </ul>
-        </div>
-
-        <div className="category-card">
-          <h3>Bus Factor (10% weight)</h3>
-          <p>Assesses project sustainability and single-point-of-failure risk.</p>
-          <ul>
-            <li><strong>Shannon entropy:</strong> Mathematical measure of contribution distribution</li>
-            <li><strong>Top contributor concentration:</strong> Penalty for &gt;90% single contributor</li>
-            <li><strong>Active contributors:</strong> Number of recent contributors</li>
-            <li><strong>Governance:</strong> CODEOWNERS, GOVERNANCE.md presence</li>
-            <li><strong>Succession planning:</strong> AI assessment of maintainer structure</li>
-          </ul>
-        </div>
-
-        <div className="category-card">
-          <h3>Documentation (10% weight)</h3>
-          <p>Evaluates documentation quality and completeness.</p>
-          <ul>
-            <li><strong>Presence signals (40%):</strong> README, docs directory, examples, changelog</li>
-            <li><strong>Quality signals (60%):</strong> AI assessment of installation docs, quick start, API examples</li>
-            <li><strong>Changelog quality:</strong> Breaking changes marked, migration guides</li>
-          </ul>
-        </div>
-
-        <div className="category-card">
-          <h3>Stability (10% weight)</h3>
-          <p>Measures release stability and CI/CD maturity.</p>
-          <ul>
-            <li><strong>Version maturity:</strong> Bonus for stable (&gt;=1.0) releases</li>
-            <li><strong>Pre-release ratio:</strong> Penalty for too many pre-releases</li>
-            <li><strong>CI/CD depth:</strong> Tests, linting, security scanning, multi-platform testing</li>
-            <li><strong>Regression issues:</strong> Penalty for known regressions</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="about-section">
-        <h2>Enterprise Risk Indicators</h2>
-
-        <h3>Risk Tiers</h3>
-        <ul>
-          <li><strong>Approved (Tier 1):</strong> Score &gt;=80, no unpatched CVEs, active maintenance</li>
-          <li><strong>Conditional (Tier 2):</strong> Score 60-79, or minor concerns requiring review</li>
-          <li><strong>Restricted (Tier 3):</strong> Score &lt;60, or critical issues requiring exception</li>
-          <li><strong>Prohibited (Tier 4):</strong> Unpatched critical CVEs, abandoned, or known malicious</li>
-        </ul>
-
-        <h3>Update Urgency</h3>
-        <ul>
-          <li><strong>Critical:</strong> Unpatched CVE - update immediately</li>
-          <li><strong>High:</strong> Patched CVE available - update soon</li>
-          <li><strong>Medium:</strong> Maintenance concerns - plan update</li>
-          <li><strong>Low:</strong> Current version acceptable - update opportunistically</li>
-        </ul>
-
-        <h3>Project Age Bands</h3>
-        <p>Context for interpreting scores based on project maturity:</p>
-        <ul>
-          <li><strong>New:</strong> &lt;1 year - expectations adjusted for early-stage projects</li>
-          <li><strong>Established:</strong> 1-3 years - standard expectations</li>
-          <li><strong>Mature:</strong> 3-7 years - higher expectations across categories</li>
-          <li><strong>Legacy:</strong> 7+ years - focus on maintenance and security</li>
-        </ul>
-      </section>
-
-      <section className="about-section">
-        <h2>What We Intentionally Don't Score</h2>
+        <h2>What pkg-risk Does</h2>
         <p>
-          Some metrics were deliberately excluded from our scoring methodology due to
-          reliability concerns, gaming potential, or lack of consistent meaning across ecosystems:
+          pkg-risk provides an opinionated, weighted health score (0-100) for open source
+          packages across npm, PyPI, and Homebrew. Instead of just surfacing raw data,
+          it applies explicit weights that reflect real-world priorities: security issues
+          matter more than documentation gaps, and a single maintainer is a bigger risk
+          than low star counts.
         </p>
-        <ul>
-          <li><strong>Code coverage percentage:</strong> Not reliably available across ecosystems</li>
-          <li><strong>Test count/quality:</strong> Presence is scored, not depth (unreliable metrics)</li>
-          <li><strong>Language-specific linting scores:</strong> Too ecosystem-specific</li>
-          <li><strong>Dependency count:</strong> High count isn't inherently bad (utility packages)</li>
-          <li><strong>Download velocity/trends:</strong> Popularity does not equal quality</li>
-          <li><strong>GitHub star manipulation:</strong> Stars can be gamed</li>
-          <li><strong>Contributor company affiliations:</strong> Privacy concerns, not reliable indicator</li>
-          <li><strong>Code complexity metrics:</strong> Highly subjective, ecosystem-dependent</li>
-          <li><strong>Performance benchmarks:</strong> Out of scope, not health-related</li>
-          <li><strong>Package size:</strong> Context-dependent, not a quality signal</li>
-        </ul>
-      </section>
-
-      <section className="about-section">
-        <h2>Limitations & Caveats</h2>
-        <ul>
-          <li><strong>GitHub-only:</strong> Full analysis requires GitHub hosting (GitLab, Bitbucket have limited support)</li>
-          <li><strong>AI variability:</strong> LLM assessments may vary slightly between runs</li>
-          <li><strong>New package bias:</strong> Very new packages may score lower due to limited history</li>
-          <li><strong>Point-in-time:</strong> Scores are snapshots and may not reflect recent changes</li>
-          <li><strong>Private repos:</strong> Cannot analyze private or internal packages</li>
-        </ul>
-      </section>
-
-      <section className="about-section">
-        <h2>Score Confidence</h2>
         <p>
-          Each score includes a confidence indicator (high/medium/low) based on data completeness:
+          The scoring combines quantitative metrics from GitHub and vulnerability databases
+          with AI-powered qualitative assessments of documentation quality, governance
+          maturity, and succession planning—factors that are hard to measure but critical
+          for long-term reliability.
         </p>
+      </section>
+
+      <section className="about-section">
+        <h2>Why Use pkg-risk?</h2>
         <ul>
-          <li><strong>High confidence:</strong> Full GitHub data and AI assessment available</li>
-          <li><strong>Medium confidence:</strong> Some data sources missing (e.g., no AI assessment)</li>
-          <li><strong>Low confidence:</strong> Limited data (very new package, minimal history, no GitHub data)</li>
+          <li><strong>Holistic assessment:</strong> Evaluates six dimensions—Security, Maintenance, Community, Bus Factor, Documentation, and Stability—not just vulnerabilities</li>
+          <li><strong>Weighted scoring:</strong> Security (30%) and Maintenance (25%) are weighted higher than Community (15%) because they matter more for production use</li>
+          <li><strong>AI-powered insights:</strong> LLM assessments evaluate documentation quality and governance—things automated tools typically miss</li>
+          <li><strong>Enterprise-ready framing:</strong> Risk tiers (Approved/Conditional/Restricted/Prohibited) and update urgency levels map to real approval workflows</li>
+          <li><strong>Bus factor analysis:</strong> Shannon entropy calculations identify single-maintainer risk before it becomes your problem</li>
+          <li><strong>Transparent methodology:</strong> Every weight and calculation is documented and the entire project is open source</li>
+        </ul>
+        <p>
+          For detailed information about how scores are calculated, see
+          the <Link to="/methodology">Methodology</Link> page.
+        </p>
+      </section>
+
+      <section className="about-section disclaimer-section">
+        <h2>Important Disclaimers</h2>
+
+        <div className="disclaimer-card">
+          <h3>Not a Definitive Assessment</h3>
+          <p>
+            pkg-risk scores are heuristic in nature and are <strong>not intended to be a
+            one-size-fits-all solution</strong>. Every aspect of the scoring is opinionated:
+            which checks are included, their relative importance, and how scores are calculated.
+            A low score is not a definitive indication that a package is unsafe, and a high
+            score does not guarantee security.
+          </p>
+        </div>
+
+        <div className="disclaimer-card">
+          <h3>False Positives and Negatives</h3>
+          <p>
+            Like all automated security and health assessment tools, pkg-risk has inherent
+            limitations. There will be <strong>false positives</strong> (packages flagged as
+            risky that are actually fine) and <strong>false negatives</strong> (packages that
+            appear healthy but have undiscovered issues). Scores should be one input among
+            many in your decision-making process.
+          </p>
+        </div>
+
+        <div className="disclaimer-card">
+          <h3>Data Sources</h3>
+          <p>
+            pkg-risk aggregates data from GitHub, package registries, and vulnerability
+            databases. This project <strong>uses these APIs but is not endorsed or certified
+            by</strong> GitHub, npm, PyPI, Homebrew, OSV, or any other data source.
+            Data accuracy depends on what is publicly available and may not reflect the
+            most recent changes.
+          </p>
+        </div>
+
+        <div className="disclaimer-card">
+          <h3>Not Legal or Security Advice</h3>
+          <p>
+            Information provided by pkg-risk is <strong>not intended to be legal, security,
+            or compliance advice</strong>. You should independently verify any information
+            and conduct your own security reviews for your specific needs. This tool does
+            not replace professional security audits or legal counsel.
+          </p>
+        </div>
+
+        <div className="disclaimer-card">
+          <h3>Point-in-Time Snapshots</h3>
+          <p>
+            Scores represent a <strong>snapshot at the time of analysis</strong> and may not
+            reflect recent changes to packages. Packages can be updated, vulnerabilities can
+            be discovered or patched, and maintainer situations can change at any time.
+          </p>
+        </div>
+
+        <div className="disclaimer-card">
+          <h3>AI-Generated Assessments</h3>
+          <p>
+            Some qualitative assessments are generated using AI/LLM models. These assessments
+            <strong> may vary between analysis runs</strong> and should be treated as
+            supplementary signals rather than definitive evaluations.
+          </p>
+        </div>
+      </section>
+
+      <section className="about-section">
+        <h2>Limitations</h2>
+        <ul>
+          <li><strong>GitHub-centric:</strong> Full analysis requires GitHub hosting. Packages hosted on GitLab, Bitbucket, or other platforms have limited scoring capability.</li>
+          <li><strong>Known vulnerabilities only:</strong> Security scoring is based on publicly disclosed vulnerabilities. Zero-day or undisclosed issues cannot be detected.</li>
+          <li><strong>Public repositories only:</strong> Private or internal packages cannot be analyzed.</li>
+          <li><strong>New package bias:</strong> Very new packages may score lower due to limited history, which is not necessarily indicative of quality.</li>
+          <li><strong>Ecosystem variations:</strong> Different package ecosystems have varying levels of metadata available, which may affect score completeness.</li>
         </ul>
       </section>
 
       <section className="about-section">
-        <h2>Grade Thresholds</h2>
-        <table className="grade-table">
-          <thead>
-            <tr>
-              <th>Grade</th>
-              <th>Score Range</th>
-              <th>Interpretation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span className="grade grade-a">A</span></td>
-              <td>90-100</td>
-              <td>Excellent health across all dimensions</td>
-            </tr>
-            <tr>
-              <td><span className="grade grade-b">B</span></td>
-              <td>80-89</td>
-              <td>Good health with minor areas for improvement</td>
-            </tr>
-            <tr>
-              <td><span className="grade grade-c">C</span></td>
-              <td>70-79</td>
-              <td>Acceptable but with notable concerns</td>
-            </tr>
-            <tr>
-              <td><span className="grade grade-d">D</span></td>
-              <td>60-69</td>
-              <td>Significant concerns, use with caution</td>
-            </tr>
-            <tr>
-              <td><span className="grade grade-f">F</span></td>
-              <td>&lt;60</td>
-              <td>Major issues, recommend alternatives</td>
-            </tr>
-          </tbody>
-        </table>
+        <h2>Use Responsibly</h2>
+        <p>
+          pkg-risk is provided "as is" without warranty of any kind. Use it as one tool
+          among many when evaluating open source dependencies. We encourage you to:
+        </p>
+        <ul>
+          <li>Review the <Link to="/methodology">scoring methodology</Link> to understand what factors into each score</li>
+          <li>Look at individual category scores, not just the aggregate</li>
+          <li>Consider your specific use case and risk tolerance</li>
+          <li>Conduct additional due diligence for critical dependencies</li>
+        </ul>
+      </section>
+
+      <section className="about-section">
+        <h2>Open Source</h2>
+        <p>
+          pkg-risk is fully open source under the MIT license. The scoring methodology,
+          data collection pipelines, and this dashboard are all available for inspection,
+          contribution, and self-hosting.
+        </p>
+        <p>
+          Found a bug? Have a suggestion for improving the scoring? Want to add support
+          for another package ecosystem? Contributions are welcome.
+        </p>
+        <p>
+          <a
+            href="https://github.com/pkgrisk/pkg-risk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="github-link"
+          >
+            View on GitHub
+          </a>
+        </p>
       </section>
     </div>
   );
