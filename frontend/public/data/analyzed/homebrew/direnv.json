@@ -1,0 +1,303 @@
+{
+  "ecosystem": "homebrew",
+  "name": "direnv",
+  "description": "Load/unload environment variables based on $PWD",
+  "version": "2.37.1",
+  "homepage": "https://direnv.net/",
+  "repository": {
+    "platform": "github",
+    "owner": "direnv",
+    "repo": "direnv",
+    "subpath": null
+  },
+  "install_count_30d": 9617,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 76.0,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 76.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 65.99554815288035,
+      "weight": 25
+    },
+    "community": {
+      "score": 70.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 90.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 72.5,
+      "weight": 10
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "direnv",
+      "name": "direnv",
+      "description": "unclutter your .profile",
+      "stars": 14495,
+      "forks": 746,
+      "open_issues": 416,
+      "watchers": 14495,
+      "created_at": "2011-01-04T12:46:15Z",
+      "updated_at": "2025-12-31T18:26:09Z",
+      "pushed_at": "2025-12-22T07:02:09Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "bash",
+        "buildbot-numtide",
+        "direnv",
+        "environment",
+        "fish",
+        "shell",
+        "shell-extension",
+        "tcsh",
+        "zsh"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 231,
+      "active_contributors_6mo": 8,
+      "top_contributor_pct": 47.3,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 23,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 4,
+      "contributor_entropy": 4.2
+    },
+    "commits": {
+      "last_commit_date": "2025-11-24T15:41:59Z",
+      "commits_last_6mo": 33,
+      "commits_last_year": 132
+    },
+    "issues": {
+      "open_issues": 236,
+      "closed_issues_6mo": 12,
+      "avg_response_time_hours": 10159.3,
+      "avg_close_time_hours": 13608.2,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 67,
+      "merged_prs_6mo": 17,
+      "closed_prs_6mo": 24,
+      "stale_prs": 47,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 64,
+      "releases_last_year": 3,
+      "last_release_date": "2025-07-20T10:35:29Z",
+      "latest_version": "v2.37.1",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 56.0,
+      "has_dependabot": true,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 7841,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 7,
+      "recent_runs_pass_rate": 82.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 5,
+      "overall": 7,
+      "summary": "The documentation is clear and well-structured, but could benefit from more examples and troubleshooting information.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "internal/cmd/config.go",
+          "line": 246,
+          "severity": "medium",
+          "description": "The `expandTildePath` function uses the `os.UserHomeDir()` function to expand the tilde (~) in a path. This could potentially lead to an injection risk if the user's home directory is not properly sanitized."
+        },
+        {
+          "file": "internal/cmd/config.go",
+          "line": 272,
+          "severity": "medium",
+          "description": "The `LoadConfig` function uses the `toml.DecodeFile` function to parse a TOML file. This could potentially lead to an injection risk if the TOML file contains malicious data."
+        },
+        {
+          "file": "internal/cmd/config.go",
+          "line": 301,
+          "severity": "medium",
+          "description": "The `LoadConfig` function uses the `regexp.Compile` function to compile a regular expression. This could potentially lead to an injection risk if the regular expression pattern is not properly sanitized."
+        },
+        {
+          "file": "internal/cmd/cmd_prune.go",
+          "line": 44,
+          "severity": "medium",
+          "description": "The `cmdPruneAction` function uses the `os.Remove` function to remove files. This could potentially lead to an injection risk if the file path is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk in the `expandTildePath` function.",
+        "Potential injection risk in the `LoadConfig` function when parsing the TOML file.",
+        "Potential injection risk in the `cmdPruneAction` function when removing files."
+      ],
+      "summary": "The direnv package has some potential security risks, including injection risks and lack of input validation, but overall it appears to be a well-structured and secure codebase."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "loading issues",
+        "platform compatibility"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The direnv community is active, but maintainers are slow to respond, and users experience frustration with loading issues and platform compatibility problems."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional lack of immediate attention to issues",
+        "hint at commercial priorities"
+      ],
+      "summary": "The maintainer provides generally helpful, clear, and patient responses with good technical depth, while also being welcoming to new contributors, but may not always be immediately attentive to all issues."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "low ratio of closed issues to open issues"
+      ],
+      "positive_signals": [
+        "recent commits and releases",
+        "active contributors and merged PRs"
+      ],
+      "summary": "The direnv package appears to be maintained, with recent activity and a decent number of contributors, but may benefit from addressing the large backlog of open issues."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks explicit breaking change markers and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The governance documentation for direnv lacks a clear succession plan, decision-making process, and contributor ladder, but suggests multiple maintainers have merge rights."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is clear and well-structured, but could benefit from more examples and troubleshooting information.",
+    "concerns": [
+      "high number of open issues",
+      "low ratio of closed issues to open issues",
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: loading issues",
+      "Community: platform compatibility",
+      "Communication: occasional lack of immediate attention to issues",
+      "Communication: hint at commercial priorities",
+      "Security: Potential injection risk in the `expandTildePath` function.",
+      "Security: Potential injection risk in the `LoadConfig` function when parsing the TOML file.",
+      "Security: Potential injection risk in the `cmdPruneAction` function when removing files."
+    ],
+    "highlights": [
+      "recent commits and releases",
+      "active contributors and merged PRs",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2025-12-31T20:17:39.651081Z",
+  "data_fetched_at": "2025-12-31T20:17:39.651082Z"
+}

@@ -1,0 +1,283 @@
+{
+  "ecosystem": "homebrew",
+  "name": "tfenv",
+  "description": "Terraform version manager inspired by rbenv",
+  "version": "3.0.0",
+  "homepage": "https://github.com/tfutils/tfenv",
+  "repository": {
+    "platform": "github",
+    "owner": "tfutils",
+    "repo": "tfenv",
+    "subpath": null
+  },
+  "install_count_30d": 8438,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 61.8,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 74.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 34.24091659936168,
+      "weight": 25
+    },
+    "community": {
+      "score": 55.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 65.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 63.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "tfutils",
+      "name": "tfenv",
+      "description": "Terraform version manager",
+      "stars": 4857,
+      "forks": 469,
+      "open_issues": 65,
+      "watchers": 4857,
+      "created_at": "2016-08-03T15:33:29Z",
+      "updated_at": "2025-12-31T07:53:35Z",
+      "pushed_at": "2025-12-01T19:49:09Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Shell",
+      "topics": [
+        "bash",
+        "terraform"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 76,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 40.5,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 3.31
+    },
+    "commits": {
+      "last_commit_date": "2025-07-11T12:42:52Z",
+      "commits_last_6mo": 1,
+      "commits_last_year": 20
+    },
+    "issues": {
+      "open_issues": 59,
+      "closed_issues_6mo": 1,
+      "avg_response_time_hours": 4700.4,
+      "avg_close_time_hours": 18356.4,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 6,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 1,
+      "stale_prs": 5,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 27,
+      "releases_last_year": 0,
+      "last_release_date": "2022-07-15T13:52:20Z",
+      "latest_version": "v3.0.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.19
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 54.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 13418,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 82.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The README provides clear and detailed information on installation, usage, and configuration, but lacks concise troubleshooting guidance.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "lib/tfenv-exec.sh",
+          "line": 23,
+          "severity": "medium",
+          "description": "The use of `eval` is not present, but the script executes a command with user input using `exec`. The input seems to be validated and sanitized before execution."
+        },
+        {
+          "file": "lib/tfenv-exec.sh",
+          "line": 43,
+          "severity": "low",
+          "description": "The use of `readlink` and `realpath-relative-to` functions may pose a risk if the input is not properly validated. However, in this case, the input seems to be coming from trusted sources."
+        },
+        {
+          "file": "lib/tfenv-version-name.sh",
+          "line": 123,
+          "severity": "medium",
+          "description": "The use of `grep` and `head` commands with user input may pose a risk if the input is not properly validated. However, in this case, the input seems to be coming from trusted sources."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Lack of input validation for certain environment variables",
+        "Potential injection risks due to the use of `exec` and other commands with user input"
+      ],
+      "summary": "The tfenv package has some security concerns, including potential injection risks and lack of input validation, but overall it seems to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "installation issues",
+        "version management problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The tfenv community is experiencing mixed sentiment with moderate frustration levels due to ongoing installation and version management issues, but the project shows no signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional abrupt closures of issues",
+        "some responses seem dismissive of user concerns"
+      ],
+      "summary": "The maintainer provides generally helpful and clear responses, but could improve in terms of welcoming new contributors and providing more detailed explanations for technical decisions."
+    },
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "low commit activity over the past 6 months",
+        "large number of open issues with minimal closure rate",
+        "infrequent releases with last release over 3 years ago"
+      ],
+      "positive_signals": [
+        "presence of at least one active contributor in the past 6 months",
+        "some recent commit activity, albeit very limited"
+      ],
+      "summary": "The tfenv package appears to be stale due to low maintenance activity and a significant backlog of open issues."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog for tfenv is well-structured and easy to follow, but lacks migration guides and could benefit from additional clarity in some areas."
+    },
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "stale",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides clear and detailed information on installation, usage, and configuration, but lacks concise troubleshooting guidance.",
+    "concerns": [
+      "low commit activity over the past 6 months",
+      "large number of open issues with minimal closure rate",
+      "infrequent releases with last release over 3 years ago",
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: installation issues",
+      "Community: version management problems",
+      "Communication: occasional abrupt closures of issues",
+      "Communication: some responses seem dismissive of user concerns",
+      "Security: Lack of input validation for certain environment variables",
+      "Security: Potential injection risks due to the use of `exec` and other commands with user input"
+    ],
+    "highlights": [
+      "presence of at least one active contributor in the past 6 months",
+      "some recent commit activity, albeit very limited",
+      "Breaking changes clearly marked in changelog",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2025-12-31T20:59:12.391694Z",
+  "data_fetched_at": "2025-12-31T20:59:12.391695Z"
+}
