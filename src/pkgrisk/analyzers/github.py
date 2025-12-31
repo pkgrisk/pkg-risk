@@ -699,7 +699,7 @@ class GitHubFetcher:
         # Check for security policy via community profile
         community = await self._fetch(f"/repos/{owner}/{repo}/community/profile")
         has_security_policy = False
-        if community:
+        if community and isinstance(community, dict):
             files = community.get("files", {})
             has_security_policy = files.get("security_policy") is not None
 
@@ -978,7 +978,7 @@ class GitHubFetcher:
 
         workflows = await self._fetch(f"/repos/{owner}/{repo}/actions/workflows")
 
-        if not workflows:
+        if not workflows or not isinstance(workflows, dict):
             return CIStatus()
 
         workflow_list = workflows.get("workflows", [])
@@ -1008,7 +1008,7 @@ class GitHubFetcher:
 
             # Fetch workflow content to detect matrix/multi-platform
             wf_content_data = await self._fetch(f"/repos/{owner}/{repo}/contents/{wf.get('path')}")
-            if wf_content_data and wf_content_data.get("content"):
+            if wf_content_data and isinstance(wf_content_data, dict) and wf_content_data.get("content"):
                 try:
                     wf_content = base64.b64decode(wf_content_data["content"]).decode("utf-8").lower()
 
@@ -1040,7 +1040,7 @@ class GitHubFetcher:
         )
 
         pass_rate = None
-        if runs:
+        if runs and isinstance(runs, dict):
             run_list = runs.get("workflow_runs", [])
             if run_list:
                 completed = [r for r in run_list if r.get("status") == "completed"]
@@ -1064,7 +1064,7 @@ class GitHubFetcher:
     async def fetch_readme_content(self, owner: str, repo: str) -> str | None:
         """Fetch the README content for LLM analysis."""
         readme = await self._fetch(f"/repos/{owner}/{repo}/readme")
-        if not readme:
+        if not readme or not isinstance(readme, dict):
             return None
 
         # README content is base64 encoded
@@ -1081,7 +1081,7 @@ class GitHubFetcher:
     async def fetch_security_md_content(self, owner: str, repo: str) -> str | None:
         """Fetch SECURITY.md content for LLM analysis."""
         security = await self._fetch(f"/repos/{owner}/{repo}/contents/SECURITY.md")
-        if not security:
+        if not security or not isinstance(security, dict):
             return None
 
         import base64
@@ -1143,7 +1143,7 @@ class GitHubFetcher:
 
         for name in changelog_names:
             content_data = await self._fetch(f"/repos/{owner}/{repo}/contents/{name}")
-            if content_data and content_data.get("content"):
+            if content_data and isinstance(content_data, dict) and content_data.get("content"):
                 try:
                     return base64.b64decode(content_data["content"]).decode("utf-8")
                 except Exception:
@@ -1171,7 +1171,7 @@ class GitHubFetcher:
 
         for filename in gov_files:
             content_data = await self._fetch(f"/repos/{owner}/{repo}/contents/{filename}")
-            if content_data and content_data.get("content"):
+            if content_data and isinstance(content_data, dict) and content_data.get("content"):
                 try:
                     content = base64.b64decode(content_data["content"]).decode("utf-8")
                     docs.append(f"# {filename}\n\n{content}")
