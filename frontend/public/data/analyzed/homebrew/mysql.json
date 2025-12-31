@@ -10,27 +10,26 @@
     "repo": "mysql-server",
     "subpath": null
   },
-  "install_count_30d": 23787,
+  "install_count_30d": 23722,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 80.8,
-    "grade": "B",
+    "overall": 73.7,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
     "confidence": "medium",
     "confidence_factors": [
-      "No LLM assessment available",
       "Limited issue history"
     ],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
+      "score": 66.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 73.38648672663406,
+      "score": 81.2139176161342,
       "weight": 25
     },
     "community": {
@@ -38,11 +37,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 95.0,
+      "score": 100.0,
       "weight": 10
     },
     "documentation": {
-      "score": 50.0,
+      "score": 26.0,
       "weight": 10
     },
     "stability": {
@@ -55,12 +54,12 @@
       "owner": "mysql",
       "name": "mysql-server",
       "description": "MySQL Server, the world's most popular open source database, and MySQL Cluster, a real-time, open source transactional database.",
-      "stars": 11927,
-      "forks": 4191,
+      "stars": 11932,
+      "forks": 4190,
       "open_issues": 2,
-      "watchers": 11927,
+      "watchers": 11932,
       "created_at": "2014-09-26T09:31:03Z",
-      "updated_at": "2025-12-30T14:27:43Z",
+      "updated_at": "2025-12-31T13:34:54Z",
       "pushed_at": "2025-10-23T14:24:05Z",
       "default_branch": "trunk",
       "license": "NOASSERTION",
@@ -83,7 +82,7 @@
     },
     "commits": {
       "last_commit_date": "2025-09-22T14:04:15Z",
-      "commits_last_6mo": 487,
+      "commits_last_6mo": 483,
       "commits_last_year": 1000
     },
     "issues": {
@@ -97,6 +96,7 @@
     "prs": {
       "open_prs": 2,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 21,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -160,16 +160,86 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README provides basic information about the package, but lacks essential details on installation, usage, and troubleshooting.",
+      "top_issue": "Lack of installation instructions and examples"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "client/json_client_library_main.cc",
+          "line": 54,
+          "severity": "medium",
+          "description": "Potential SQL injection risk through json_binary::parse_binary function"
+        },
+        {
+          "file": "client/json_client_library_main.cc",
+          "line": 123,
+          "severity": "low",
+          "description": "Use of assert(false) in error handling, which may not be suitable for production environments"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential SQL injection risk through json_binary::parse_binary function",
+        "Lack of input validation on user-provided JSON data"
+      ],
+      "summary": "The code has some security concerns, including potential SQL injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": null,
+    "communication": null,
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "unknown last release",
+        "open PRs without recent issue activity"
+      ],
+      "positive_signals": [
+        "recent commits",
+        "high number of contributors active in the past 6 months",
+        "merged PRs in the past 6 months"
+      ],
+      "summary": "The mysql homebrew package appears to be actively maintained with frequent commits, a large number of active contributors, and recent merged pull requests."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The governance documentation for the homebrew package 'mysql' lacks a clear succession plan, decision-making process, and contributor ladder, but indicates multiple maintainers with merge rights."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides basic information about the package, but lacks essential details on installation, usage, and troubleshooting.",
+    "concerns": [
+      "unknown last release",
+      "open PRs without recent issue activity",
+      "Docs: Lack of installation instructions and examples",
+      "Security: Potential SQL injection risk through json_binary::parse_binary function",
+      "Security: Lack of input validation on user-provided JSON data"
+    ],
     "highlights": [
+      "recent commits",
+      "high number of contributors active in the past 6 months",
+      "merged PRs in the past 6 months",
       "Actively maintained"
     ]
   },
-  "analyzed_at": "2025-12-31T00:42:29.229976Z",
-  "data_fetched_at": "2025-12-31T00:42:29.229977Z"
+  "analyzed_at": "2025-12-31T15:43:17.180069Z",
+  "data_fetched_at": "2025-12-31T15:43:17.180069Z"
 }

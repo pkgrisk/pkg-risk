@@ -10,31 +10,30 @@
     "repo": "tree",
     "subpath": null
   },
-  "install_count_30d": 26289,
+  "install_count_30d": 26056,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 64.0,
-    "grade": "D",
+    "overall": 52.4,
+    "grade": "F",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "restricted",
     "update_urgency": "medium",
     "confidence": "medium",
     "confidence_factors": [
-      "No LLM assessment available",
       "Limited contributor data"
     ],
     "project_age_band": "mature",
     "security": {
-      "score": 80.0,
+      "score": 58.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 55.0,
+      "score": 44.5,
       "weight": 25
     },
     "community": {
-      "score": 85.0,
+      "score": 80.0,
       "weight": 15
     },
     "bus_factor": {
@@ -42,7 +41,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 55.0,
+      "score": 38.5,
       "weight": 10
     },
     "stability": {
@@ -97,6 +96,7 @@
     "prs": {
       "open_prs": 4,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
       "stale_prs": 4,
       "avg_merge_time_hours": null
     },
@@ -160,16 +160,106 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 6,
+      "installation": 4,
+      "quick_start": 2,
+      "examples": 3,
+      "configuration": 5,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The documentation is lacking in clarity, installation instructions, and troubleshooting information, making it difficult for new users to get started with the package.",
+      "top_issue": "Lack of clear and concise installation instructions and quick start examples"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "hash.c",
+          "line": 34,
+          "severity": "low",
+          "description": "Use of snprintf with user-controlled input"
+        },
+        {
+          "file": "color.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "Use of sprintf with user-controlled input"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in split function",
+        "Use of user-controlled input without proper validation"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "pattern matching inconsistencies",
+        "bug reports without responses"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The tree package community is experiencing some frustration due to unresolved issues and slow maintainer responsiveness, but there are no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness of feature requests",
+        "lack of enthusiasm for new contributors"
+      ],
+      "summary": "The maintainer provides technically sound explanations, but can come across as somewhat dismissive and unenthusiastic about feature requests and new contributors."
+    },
+    "maintenance": {
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "no commits in the past 6 months",
+        "unmerged open PRs and unresolved issues",
+        "unknown last commit and release"
+      ],
+      "positive_signals": [
+        "1 contributor active in the past 6 months"
+      ],
+      "summary": "The tree package appears to be abandoned due to a lack of recent activity, despite having some contributors still active."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "abandoned",
     "security_summary": "No issues",
-    "doc_summary": "",
+    "doc_summary": "The documentation is lacking in clarity, installation instructions, and troubleshooting information, making it difficult for new users to get started with the package.",
     "concerns": [
+      "no commits in the past 6 months",
+      "unmerged open PRs and unresolved issues",
+      "unknown last commit and release",
+      "Docs: Lack of clear and concise installation instructions and quick start examples",
+      "Community: pattern matching inconsistencies",
+      "Community: bug reports without responses",
+      "Communication: dismissiveness of feature requests",
+      "Communication: lack of enthusiasm for new contributors",
+      "Security: Potential buffer overflow vulnerability in split function",
+      "Security: Use of user-controlled input without proper validation",
       "High bus factor risk (100% from top contributor)"
     ],
-    "highlights": []
+    "highlights": [
+      "1 contributor active in the past 6 months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-31T00:38:01.909451Z",
-  "data_fetched_at": "2025-12-31T00:38:01.909452Z"
+  "analyzed_at": "2025-12-31T15:12:50.146823Z",
+  "data_fetched_at": "2025-12-31T15:12:50.146824Z"
 }

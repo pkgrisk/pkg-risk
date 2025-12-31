@@ -10,26 +10,24 @@
     "repo": "fzf",
     "subpath": null
   },
-  "install_count_30d": 24269,
+  "install_count_30d": 23826,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 87.8,
+    "overall": 85.6,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 90.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 86.84300176751321,
+      "score": 90.79010123725925,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 65.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "junegunn",
       "name": "fzf",
       "description": ":cherry_blossom: A command-line fuzzy finder",
-      "stars": 76389,
-      "forks": 2646,
+      "stars": 76415,
+      "forks": 2651,
       "open_issues": 323,
-      "watchers": 76389,
+      "watchers": 76415,
       "created_at": "2013-10-23T16:04:23Z",
-      "updated_at": "2025-12-30T22:33:07Z",
+      "updated_at": "2025-12-31T15:17:30Z",
       "pushed_at": "2025-12-28T00:02:17Z",
       "default_branch": "master",
       "license": "MIT",
@@ -94,7 +92,7 @@
     "commits": {
       "last_commit_date": "2025-12-28T00:02:17Z",
       "commits_last_6mo": 142,
-      "commits_last_year": 438
+      "commits_last_year": 436
     },
     "issues": {
       "open_issues": 240,
@@ -107,6 +105,7 @@
     "prs": {
       "open_prs": 67,
       "merged_prs_6mo": 40,
+      "closed_prs_6mo": 64,
       "stale_prs": 56,
       "avg_merge_time_hours": null
     },
@@ -170,19 +169,120 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 4,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides detailed installation instructions and examples, but lacks a clear quick start guide and troubleshooting section.",
+      "top_issue": "Lack of a concise quick start guide to help new users get started with the package quickly."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "main.go",
+          "line": 83,
+          "severity": "medium",
+          "description": "The 'man' command is executed with user input, which could potentially lead to a command injection vulnerability if the input is not properly sanitized."
+        },
+        {
+          "file": "src/server.go",
+          "line": 246,
+          "severity": "low",
+          "description": "The 'parseGetParams' function does not validate or sanitize its input, but it only parses query parameters and does not execute any commands with the input."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [
+        {
+          "file": "src/server.go",
+          "line": 123,
+          "type": "API key"
+        }
+      ],
+      "critical_findings": [
+        "Potential command injection vulnerability in main.go",
+        "Unvalidated input in src/server.go"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and unvalidated user input, but it also has some good practices such as using environment variables for sensitive data."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bugs and feature requests",
+        "integration issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The fzf community is active with a moderate level of maintainer responsiveness, but users are experiencing some frustration with bugs, feature requests, and integration issues."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open issues",
+        "large number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "many active contributors"
+      ],
+      "summary": "The fzf package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and easy to follow, but lacks explicit breaking change markers and migration guides."
+    },
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
+    "doc_summary": "The README provides detailed installation instructions and examples, but lacks a clear quick start guide and troubleshooting section.",
     "concerns": [
+      "high number of open issues",
+      "large number of open PRs",
+      "Docs: Lack of a concise quick start guide to help new users get started with the package quickly.",
+      "Community: bugs and feature requests",
+      "Community: integration issues",
+      "Security: Potential command injection vulnerability in main.go",
+      "Security: Unvalidated input in src/server.go",
       "High bus factor risk (82% from top contributor)"
     ],
     "highlights": [
+      "frequent commits",
+      "recent release",
+      "many active contributors",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-31T00:41:59.594440Z",
-  "data_fetched_at": "2025-12-31T00:41:59.594440Z"
+  "analyzed_at": "2025-12-31T15:41:06.254130Z",
+  "data_fetched_at": "2025-12-31T15:41:06.254131Z"
 }

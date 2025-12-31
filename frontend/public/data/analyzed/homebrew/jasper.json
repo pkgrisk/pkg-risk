@@ -10,30 +10,28 @@
     "repo": "jasper",
     "subpath": null
   },
-  "install_count_30d": 22038,
+  "install_count_30d": 21890,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 82.4,
-    "grade": "B",
+    "overall": 68.5,
+    "grade": "D",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 54.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 94.95150410867602,
+      "score": 90.32275101162638,
       "weight": 25
     },
     "community": {
-      "score": 97.0,
+      "score": 72.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 53.0,
+      "score": 41.0,
       "weight": 10
     },
     "stability": {
@@ -109,6 +107,7 @@
     "prs": {
       "open_prs": 2,
       "merged_prs_6mo": 1,
+      "closed_prs_6mo": 1,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -172,16 +171,107 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 5,
+      "troubleshooting": 7,
+      "overall": 5,
+      "summary": "The README provides a good overview of the package, but lacks clear installation instructions and examples for basic usage.",
+      "top_issue": "Lack of quick start example and incomplete installation instructions"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "src/app/fuzz.c",
+          "line": 34,
+          "severity": "low",
+          "description": "Potential null pointer dereference in jas_stream_memopen"
+        },
+        {
+          "file": "src/app/imgcmp.c",
+          "line": 0,
+          "severity": "none",
+          "description": "No injection risks found"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential null pointer dereference in jas_stream_memopen",
+        "Incomplete error handling and potential crashes"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks, incomplete input validation, and error exposure issues, but no critical secrets or dangerous defaults were found."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "security vulnerabilities",
+        "build failures",
+        "crashes"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Jasper community is struggling with a high volume of security vulnerabilities, build issues, and crashes, indicating a need for more active maintenance and engagement from the project maintainers."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "occasional dismissiveness",
+        "lack of empathy"
+      ],
+      "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "low number of merged PRs",
+        "small number of active contributors"
+      ],
+      "positive_signals": [
+        "recent commits and releases",
+        "active issue closure"
+      ],
+      "summary": "The jasper package appears to be maintained with regular updates and issue resolution, despite some concerns about community engagement."
+    },
+    "changelog": null,
+    "governance": null
   },
-  "analyzed_at": "2025-12-31T00:45:07.691391Z",
-  "data_fetched_at": "2025-12-31T00:45:07.691392Z"
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good overview of the package, but lacks clear installation instructions and examples for basic usage.",
+    "concerns": [
+      "low number of merged PRs",
+      "small number of active contributors",
+      "Docs: Lack of quick start example and incomplete installation instructions",
+      "Community: security vulnerabilities",
+      "Community: build failures",
+      "Communication: occasional dismissiveness",
+      "Communication: lack of empathy",
+      "Security: Potential null pointer dereference in jas_stream_memopen",
+      "Security: Incomplete error handling and potential crashes"
+    ],
+    "highlights": [
+      "recent commits and releases",
+      "active issue closure",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2025-12-31T15:59:16.930107Z",
+  "data_fetched_at": "2025-12-31T15:59:16.930108Z"
 }
