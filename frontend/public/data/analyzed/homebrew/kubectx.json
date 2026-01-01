@@ -10,22 +10,20 @@
     "repo": "kubectx",
     "subpath": null
   },
-  "install_count_30d": 2677,
+  "install_count_30d": 2629,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 59.5,
+    "overall": 54.0,
     "grade": "F",
     "percentile": null,
     "risk_tier": "restricted",
     "update_urgency": "medium",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 95.0,
+      "score": 80.0,
       "weight": 30
     },
     "maintenance": {
@@ -37,11 +35,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 72.08,
+      "score": 57.08,
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 49.5,
       "weight": 10
     },
     "stability": {
@@ -59,7 +57,7 @@
       "open_issues": 71,
       "watchers": 19340,
       "created_at": "2017-03-30T18:06:53Z",
-      "updated_at": "2025-12-30T14:06:15Z",
+      "updated_at": "2026-01-01T04:39:02Z",
       "pushed_at": "2025-01-22T17:07:57Z",
       "default_branch": "master",
       "license": "Apache-2.0",
@@ -101,6 +99,7 @@
     "prs": {
       "open_prs": 23,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 2,
       "stale_prs": 20,
       "avg_merge_time_hours": null
     },
@@ -164,16 +163,114 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 8,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally well-structured and easy to follow, but lacks a clear quick start section and troubleshooting guide.",
+      "top_issue": "Lack of a dedicated troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "internal/kubeconfig/contextmodify.go",
+          "line": 24,
+          "severity": "low",
+          "description": "User input is used to modify the current context, but it's validated and sanitized before use."
+        },
+        {
+          "file": "internal/kubeconfig/contexts.go",
+          "line": 34,
+          "severity": "low",
+          "description": "User input is used to find a context node, but it's validated and sanitized before use."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for information disclosure through error messages in debug mode"
+      ],
+      "summary": "The code has some minor security concerns, such as potential injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "kubeconfig issues",
+        "compatibility problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The kubectx community is active with a moderate level of maintainer responsiveness, but users are experiencing some frustration with compatibility and configuration issues."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "sometimes dismissive",
+        "lacking empathy"
+      ],
+      "summary": "The maintainer provides technically sound responses, but can come across as somewhat abrupt and unwelcoming to new contributors or those with basic questions."
+    },
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "no commits in the past 6 months",
+        "unaddressed open issues and PRs",
+        "lack of recent releases"
+      ],
+      "positive_signals": [
+        "recently active contributors (10 in the past 6 months)",
+        "some merged PRs in the recent past (2 in the past 6 months)"
+      ],
+      "summary": "The kubectx package appears to be stale due to a lack of recent commits, unaddressed issues, and infrequent releases, despite some recently active contributors."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for kubectx lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
   },
-  "analyzed_at": "2025-12-30T22:20:42.898085Z",
-  "data_fetched_at": "2025-12-30T22:20:42.898085Z"
+  "analysis_summary": {
+    "maintenance_status": "stale",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally well-structured and easy to follow, but lacks a clear quick start section and troubleshooting guide.",
+    "concerns": [
+      "no commits in the past 6 months",
+      "unaddressed open issues and PRs",
+      "lack of recent releases",
+      "Docs: Lack of a dedicated troubleshooting section",
+      "Community: kubeconfig issues",
+      "Community: compatibility problems",
+      "Communication: sometimes dismissive",
+      "Communication: lacking empathy",
+      "Governance: High bus factor risk identified",
+      "Security: Potential for information disclosure through error messages in debug mode"
+    ],
+    "highlights": [
+      "recently active contributors (10 in the past 6 months)",
+      "some merged PRs in the recent past (2 in the past 6 months)",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T08:08:16.684607Z",
+  "data_fetched_at": "2026-01-01T08:08:16.684608Z"
 }

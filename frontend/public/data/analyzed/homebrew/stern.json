@@ -10,38 +10,36 @@
     "repo": "stern",
     "subpath": null
   },
-  "install_count_30d": 2623,
+  "install_count_30d": 2621,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 88.9,
-    "grade": "B",
+    "overall": 77.2,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 95.0,
+      "score": 70.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 86.2842727417451,
+      "score": 78.20010505305825,
       "weight": 25
     },
     "community": {
-      "score": 95.0,
+      "score": 90.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 95.0,
+      "score": 80.0,
       "weight": 10
     },
     "documentation": {
-      "score": 57.5,
+      "score": 58.0,
       "weight": 10
     },
     "stability": {
@@ -55,11 +53,11 @@
       "name": "stern",
       "description": "\u2388 Multi pod and container log tailing for Kubernetes -- Friendly fork of https://github.com/wercker/stern",
       "stars": 4425,
-      "forks": 155,
+      "forks": 156,
       "open_issues": 38,
       "watchers": 4425,
       "created_at": "2020-10-21T12:14:48Z",
-      "updated_at": "2025-12-30T07:14:14Z",
+      "updated_at": "2025-12-31T11:53:54Z",
       "pushed_at": "2025-11-04T11:16:33Z",
       "default_branch": "master",
       "license": "Apache-2.0",
@@ -103,6 +101,7 @@
     "prs": {
       "open_prs": 4,
       "merged_prs_6mo": 6,
+      "closed_prs_6mo": 7,
       "stale_prs": 2,
       "avg_merge_time_hours": null
     },
@@ -166,16 +165,122 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally clear and comprehensive, but lacks a concise quick start example and troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/cmd.go",
+          "line": 246,
+          "severity": "medium",
+          "description": "The 'condition' field is parsed using the stern.NewCondition function, which may be vulnerable to injection attacks if not properly sanitized."
+        },
+        {
+          "file": "stern/config.go",
+          "line": 34,
+          "severity": "low",
+          "description": "The 'Template' field uses the text/template package, which can be vulnerable to template injection attacks if not properly sanitized."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risks in the 'condition' and 'Template' fields.",
+        "Lack of input validation for certain fields."
+      ],
+      "summary": "The stern package has some potential security risks, including injection vulnerabilities and lack of input validation, but overall it appears to be a well-structured and secure codebase."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "log tailing issues",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The stern community is experiencing some frustration with log tailing issues and feature requests, but the project does not show signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "occasional dismissiveness of feature requests",
+        "lack of clear explanations for some technical decisions"
+      ],
+      "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low issue closure rate",
+        "relatively low commit frequency"
+      ],
+      "positive_signals": [
+        "recent commits and release",
+        "active contributors"
+      ],
+      "summary": "The stern package appears to have some maintenance activity, but the low issue closure rate and relatively low commit frequency suggest that it may not be actively maintained."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and easy to follow, but lacks clear markings for breaking changes and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for the homebrew package 'stern' lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
   },
-  "analyzed_at": "2025-12-30T22:24:35.050899Z",
-  "data_fetched_at": "2025-12-30T22:24:35.050899Z"
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and comprehensive, but lacks a concise quick start example and troubleshooting information.",
+    "concerns": [
+      "low issue closure rate",
+      "relatively low commit frequency",
+      "Docs: Lack of troubleshooting section",
+      "Community: log tailing issues",
+      "Community: feature requests",
+      "Communication: occasional dismissiveness of feature requests",
+      "Communication: lack of clear explanations for some technical decisions",
+      "Governance: High bus factor risk identified",
+      "Security: Potential injection risks in the 'condition' and 'Template' fields.",
+      "Security: Lack of input validation for certain fields."
+    ],
+    "highlights": [
+      "recent commits and release",
+      "active contributors",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T08:13:58.631184Z",
+  "data_fetched_at": "2026-01-01T08:13:58.631185Z"
 }
