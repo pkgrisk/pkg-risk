@@ -10,26 +10,24 @@
     "repo": "rabbitmq-server",
     "subpath": null
   },
-  "install_count_30d": 2238,
+  "install_count_30d": 2226,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 92.3,
-    "grade": "A",
+    "overall": 84.6,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 74.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 92.61218936034277,
+      "score": 95.1,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 43.0,
+      "score": 38.5,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "rabbitmq",
       "name": "rabbitmq-server",
       "description": "Open source RabbitMQ: core server and tier 1 (built-in) plugins",
-      "stars": 13367,
+      "stars": 13372,
       "forks": 3987,
-      "open_issues": 269,
-      "watchers": 13367,
+      "open_issues": 266,
+      "watchers": 13372,
       "created_at": "2010-09-20T10:29:16Z",
-      "updated_at": "2025-12-30T20:40:24Z",
-      "pushed_at": "2025-12-30T15:35:30Z",
+      "updated_at": "2026-01-01T08:38:42Z",
+      "pushed_at": "2025-12-31T21:29:55Z",
       "default_branch": "main",
       "license": "NOASSERTION",
       "language": "JavaScript",
@@ -82,32 +80,33 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 282,
-      "active_contributors_6mo": 26,
+      "total_contributors": 283,
+      "active_contributors_6mo": 27,
       "top_contributor_pct": 37.5,
       "contributors_over_5pct": 3,
-      "contributors_prev_6mo": 3,
+      "contributors_prev_6mo": 4,
       "contributor_trend": "growing",
       "first_time_contributors_6mo": 24,
       "contributor_entropy": 3.59
     },
     "commits": {
-      "last_commit_date": "2025-12-29T20:04:00Z",
-      "commits_last_6mo": 986,
+      "last_commit_date": "2025-12-31T21:29:53Z",
+      "commits_last_6mo": 984,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 216,
-      "closed_issues_6mo": 8,
-      "avg_response_time_hours": 1.5,
-      "avg_close_time_hours": 45.9,
+      "open_issues": 215,
+      "closed_issues_6mo": 9,
+      "avg_response_time_hours": 1.7,
+      "avg_close_time_hours": 42.9,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 53,
+      "open_prs": 51,
       "merged_prs_6mo": 261,
-      "stale_prs": 36,
+      "closed_prs_6mo": 300,
+      "stale_prs": 37,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -121,7 +120,7 @@
     "security": {
       "has_security_md": false,
       "has_security_policy": false,
-      "signed_commits_pct": 93.0,
+      "signed_commits_pct": 94.0,
       "has_dependabot": true,
       "has_codeql": false,
       "has_security_ci": true,
@@ -162,7 +161,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 24,
-      "recent_runs_pass_rate": 76.0,
+      "recent_runs_pass_rate": 84.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -170,17 +169,130 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 6,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The README provides a comprehensive overview of RabbitMQ, but lacks a clear quick start guide and concise troubleshooting section.",
+      "top_issue": "Lack of a simple, step-by-step quick start example to get new users up and running with the package."
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "selenium/fakeportal/app.js",
+          "line": 34,
+          "severity": "high",
+          "description": "Potential SQL injection risk due to string concatenation in the 'params' variable"
+        },
+        {
+          "file": "deps/rabbitmq_management/priv/www/js/oidc-oauth/helper.js",
+          "line": 123,
+          "severity": "medium",
+          "description": "Potential for client-side injection attacks through user-controlled input in the 'resource_server.oauth_authorization_endpoint_params' and 'resource_server.oauth_token_endpoint_params' variables"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [
+        {
+          "file": "selenium/fakeportal/app.js",
+          "line": 10,
+          "type": "API key/secret"
+        },
+        {
+          "file": "deps/rabbitmq_management/priv/www/js/oidc-oauth/helper.js",
+          "line": 145,
+          "type": "Client secret"
+        }
+      ],
+      "critical_findings": [
+        "Potential SQL injection risk",
+        "Lack of validation on user-inputted 'client_id' and 'client_secret' parameters"
+      ],
+      "summary": "The code has several security concerns, including potential injection risks, insufficient input validation, and exposure of sensitive information, which need to be addressed to ensure the security and integrity of the application."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "configuration issues",
+        "plugin compatibility"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting and resolving issues, indicating a healthy and maintained project."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "occasional blunt responses",
+        "some comments seem dismissive"
+      ],
+      "summary": "The maintainer's responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "relatively high number of open issues",
+        "low ratio of closed to open issues"
+      ],
+      "positive_signals": [
+        "high commit activity",
+        "frequent releases",
+        "many active contributors",
+        "significant merged PRs"
+      ],
+      "summary": "The rabbitmq package appears to be actively maintained with a high volume of commits, releases, and contributor activity, despite some concerns regarding issue management."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The RabbitMQ project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a comprehensive overview of RabbitMQ, but lacks a clear quick start guide and concise troubleshooting section.",
+    "concerns": [
+      "relatively high number of open issues",
+      "low ratio of closed to open issues",
+      "Docs: Lack of a simple, step-by-step quick start example to get new users up and running with the package.",
+      "Community: configuration issues",
+      "Community: plugin compatibility",
+      "Communication: occasional blunt responses",
+      "Communication: some comments seem dismissive",
+      "Security: Potential SQL injection risk",
+      "Security: Lack of validation on user-inputted 'client_id' and 'client_secret' parameters",
+      "Security: Potential SQL injection risk due to string concatenation in the 'params' variable"
+    ],
     "highlights": [
+      "high commit activity",
+      "frequent releases",
+      "many active contributors",
+      "significant merged PRs",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-30T22:37:52.941491Z",
-  "data_fetched_at": "2025-12-30T22:37:52.941492Z"
+  "analyzed_at": "2026-01-01T09:50:13.900307Z",
+  "data_fetched_at": "2026-01-01T09:50:13.900308Z"
 }
