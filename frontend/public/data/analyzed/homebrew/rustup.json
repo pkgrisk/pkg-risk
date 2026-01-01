@@ -1,0 +1,275 @@
+{
+  "ecosystem": "homebrew",
+  "name": "rustup",
+  "description": "Rust toolchain installer",
+  "version": "1.28.2",
+  "homepage": "https://rust-lang.github.io/rustup/",
+  "repository": {
+    "platform": "github",
+    "owner": "rust-lang",
+    "repo": "rustup",
+    "subpath": null
+  },
+  "install_count_30d": 4557,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 79.4,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 70.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 87.82853255223993,
+      "weight": 25
+    },
+    "community": {
+      "score": 93.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 95.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 39.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 91.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "rust-lang",
+      "name": "rustup",
+      "description": "The Rust toolchain installer",
+      "stars": 6724,
+      "forks": 1002,
+      "open_issues": 448,
+      "watchers": 6724,
+      "created_at": "2015-09-26T04:54:49Z",
+      "updated_at": "2025-12-31T03:04:22Z",
+      "pushed_at": "2025-12-31T00:46:41Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Rust",
+      "topics": [
+        "hacktoberfest",
+        "rust",
+        "rustlang",
+        "toolchain"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 406,
+      "active_contributors_6mo": 23,
+      "top_contributor_pct": 15.6,
+      "contributors_over_5pct": 6,
+      "contributors_prev_6mo": 26,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 14,
+      "contributor_entropy": 4.93
+    },
+    "commits": {
+      "last_commit_date": "2025-12-30T17:27:15Z",
+      "commits_last_6mo": 378,
+      "commits_last_year": 639
+    },
+    "issues": {
+      "open_issues": 275,
+      "closed_issues_6mo": 67,
+      "avg_response_time_hours": 70.9,
+      "avg_close_time_hours": 62.5,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 25,
+      "merged_prs_6mo": 154,
+      "closed_prs_6mo": 177,
+      "stale_prs": 15,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": true,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1433,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 88.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README provides a clear introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
+      "top_issue": "Lack of direct installation instructions and examples in the README, requiring users to navigate to external documentation."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/cli/common.rs",
+          "line": 123,
+          "severity": "low",
+          "description": "The `read_line` function reads input from stdin, but it does not perform any validation on the input. This could potentially lead to issues if the input is not properly sanitized."
+        },
+        {
+          "file": "src/cli/common.rs",
+          "line": 246,
+          "severity": "low",
+          "description": "The `show_channel_updates` function uses string formatting to construct output, but it does not perform any validation on the input. This could potentially lead to issues if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Input validation issues could lead to security vulnerabilities",
+        "Error handling could potentially expose sensitive information"
+      ],
+      "summary": "The code has some potential security concerns, including input validation issues and error handling that could expose sensitive information, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "redundant downloads",
+        "installation issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The rustup community is actively reporting and discussing various issues, with maintainers responding moderately, indicating a relatively healthy but imperfect project ecosystem."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "unknown last release",
+        "high number of open issues"
+      ],
+      "positive_signals": [
+        "recent commit activity",
+        "high number of merged PRs",
+        "many active contributors"
+      ],
+      "summary": "The rustup package appears to be actively maintained with frequent commits, a high volume of merged pull requests, and many active contributors."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks explicit breaking change markers and migration guides."
+    },
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a clear introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
+    "concerns": [
+      "unknown last release",
+      "high number of open issues",
+      "Docs: Lack of direct installation instructions and examples in the README, requiring users to navigate to external documentation.",
+      "Community: redundant downloads",
+      "Community: installation issues",
+      "Security: Input validation issues could lead to security vulnerabilities",
+      "Security: Error handling could potentially expose sensitive information"
+    ],
+    "highlights": [
+      "recent commit activity",
+      "high number of merged PRs",
+      "many active contributors",
+      "Excellent maintainer communication",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2026-01-01T02:16:26.810671Z",
+  "data_fetched_at": "2026-01-01T02:16:26.810671Z"
+}
