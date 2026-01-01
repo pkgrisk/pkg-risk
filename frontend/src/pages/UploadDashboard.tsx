@@ -1,4 +1,5 @@
-import { useState, useCallback, useRef, useMemo } from 'react';
+import { useState, useCallback, useRef, useMemo, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { FileUploader } from '../components/FileUploader';
 import { DependencyResults, type QuickFilter } from '../components/DependencyResults';
 import { ProjectSummary } from '../components/ProjectSummary';
@@ -26,6 +27,9 @@ interface UploadDashboardProps {
 type AnalysisState = 'idle' | 'parsing' | 'matching' | 'fetching' | 'complete' | 'error';
 
 export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
+  const { analysisId: urlAnalysisId } = useParams<{ analysisId?: string }>();
+  const navigate = useNavigate();
+
   const [analysisState, setAnalysisState] = useState<AnalysisState>('idle');
   const [analyses, setAnalyses] = useState<ProjectAnalysis[]>([]);
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -49,7 +53,18 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
   } = useUploadedProject();
 
   const { getNote, isReviewed } = usePackageNotes();
-  const { saveAnalysis } = useAnalysisStorage();
+  const { saveAnalysis, getAnalysis } = useAnalysisStorage();
+
+  // Load analysis from URL parameter if present
+  useEffect(() => {
+    if (urlAnalysisId && analysisState === 'idle' && analyses.length === 0) {
+      const storedAnalysis = getAnalysis(urlAnalysisId);
+      if (storedAnalysis) {
+        setAnalyses([storedAnalysis]);
+        setAnalysisState('complete');
+      }
+    }
+  }, [urlAnalysisId, analysisState, analyses.length, getAnalysis]);
 
   // Current active analysis
   const analysis = analyses[activeTabIndex] || null;
@@ -193,13 +208,18 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
         setAnalyses(newAnalyses);
         setActiveTabIndex(0);
         setAnalysisState('complete');
+
+        // Navigate to analysis URL so back button works correctly
+        if (newAnalyses.length > 0) {
+          navigate(`/upload/analysis/${newAnalyses[0].id}`, { replace: true });
+        }
       } catch (err) {
         console.error('Analysis error:', err);
         setError(err instanceof Error ? err.message : 'An unexpected error occurred');
         setAnalysisState('error');
       }
     },
-    [ecosystemData, persistenceEnabled, saveProject, saveAnalysis]
+    [ecosystemData, persistenceEnabled, saveProject, saveAnalysis, navigate]
   );
 
   const handleReset = useCallback(() => {
@@ -214,7 +234,9 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
     setQuickFilter('all');
     setShowComparison(true);
     setReviewFilter('all');
-  }, []);
+    // Navigate back to /upload when resetting
+    navigate('/upload', { replace: true });
+  }, [navigate]);
 
   const handleExport = useCallback(
     (format: 'csv' | 'json') => {

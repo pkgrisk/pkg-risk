@@ -152,6 +152,10 @@ function App() {
               element={<UploadDashboard ecosystemData={allEcosystemData} />}
             />
             <Route
+              path="/upload/analysis/:analysisId"
+              element={<UploadDashboard ecosystemData={allEcosystemData} />}
+            />
+            <Route
               path="/upload/analysis/:analysisId/package/:packageName"
               element={<UploadPackageDetail />}
             />

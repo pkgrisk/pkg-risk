@@ -1,8 +1,9 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getStoredAnalysis, getStoredPackage } from '../hooks/useAnalysisStorage';
 import { GradeBadge } from '../components/GradeBadge';
 import { RiskBadges } from '../components/RiskBadges';
+import { ScoreBar } from '../components/ScoreBar';
 import type { MatchedDependency, ProjectAnalysis } from '../types/package';
 
 export function UploadPackageDetail() {
@@ -40,7 +41,9 @@ export function UploadPackageDetail() {
         <div className="not-found">
           <h2>Analysis Not Found</h2>
           <p>This analysis may have expired or been deleted.</p>
-          <Link to="/upload" className="back-link">← Back to Upload</Link>
+          <button onClick={() => navigate('/upload')} className="back-link">
+            ← Back to Upload
+          </button>
         </div>
       </div>
     );
@@ -52,7 +55,9 @@ export function UploadPackageDetail() {
         <div className="not-found">
           <h2>Package Not Found</h2>
           <p>This package was not found in the analysis.</p>
-          <button onClick={() => navigate(-1)} className="back-link">← Back to Analysis</button>
+          <button onClick={() => navigate(`/upload/analysis/${analysisId}`)} className="back-link">
+            ← Back to Analysis
+          </button>
         </div>
       </div>
     );
@@ -74,9 +79,32 @@ export function UploadPackageDetail() {
   })();
   const hasHighBusFactor = (scored?.top_contributor_pct ?? 0) > 80;
 
+  const formatDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+  };
+
+  const formatRelativeTime = (dateStr: string) => {
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return 'today';
+    if (diffDays === 1) return 'yesterday';
+    if (diffDays < 7) return `${diffDays} days ago`;
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    return `${Math.floor(diffDays / 365)} years ago`;
+  };
+
   return (
     <div className="upload-package-detail">
-      <button onClick={() => navigate(-1)} className="back-link">
+      <button onClick={() => navigate(`/upload/analysis/${analysisId}`)} className="back-link">
         ← Back to {analysis.filename}
       </button>
 
@@ -95,10 +123,65 @@ export function UploadPackageDetail() {
             <div className="overall-score">
               <div className="score-value">{scored.scores.overall?.toFixed(1) ?? '-'}</div>
               <div className="score-label">Overall Score</div>
+              {scored.scores.percentile && (
+                <div className="score-percentile">
+                  Top {(100 - scored.scores.percentile).toFixed(0)}% in ecosystem
+                </div>
+              )}
             </div>
+            {scored.analyzed_at && (
+              <div className="last-reviewed">
+                <span className="review-label">Analyzed</span>
+                <span className="review-time" title={formatDate(scored.analyzed_at)}>
+                  {formatRelativeTime(scored.analyzed_at)}
+                </span>
+              </div>
+            )}
           </div>
         )}
       </header>
+
+      {/* Description */}
+      {scored?.description && (
+        <p className="description">{scored.description}</p>
+      )}
+
+      {/* Enterprise Indicators */}
+      {scored?.scores && (scored.scores.risk_tier || scored.scores.update_urgency || scored.scores.confidence) && (
+        <div className="enterprise-indicators">
+          {scored.scores.risk_tier && (
+            <div className={`indicator risk-tier tier-${scored.scores.risk_tier}`}>
+              <span className="indicator-label">Risk Tier</span>
+              <span className="indicator-value">{scored.scores.risk_tier}</span>
+            </div>
+          )}
+          {scored.scores.update_urgency && (
+            <div className={`indicator update-urgency urgency-${scored.scores.update_urgency}`}>
+              <span className="indicator-label">Update Urgency</span>
+              <span className="indicator-value">{scored.scores.update_urgency}</span>
+            </div>
+          )}
+          {scored.scores.confidence && (
+            <div className={`indicator confidence confidence-${scored.scores.confidence}`}>
+              <span className="indicator-label">Confidence</span>
+              <span className="indicator-value">{scored.scores.confidence}</span>
+            </div>
+          )}
+          {scored.scores.project_age_band && (
+            <div className="indicator age-band">
+              <span className="indicator-label">Project Age</span>
+              <span className="indicator-value">{scored.scores.project_age_band}</span>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Data Availability Notice */}
+      {scored?.data_availability !== 'available' && scored?.unavailable_reason && (
+        <div className="unavailable-notice">
+          <strong>Limited Data:</strong> {scored.unavailable_reason}
+        </div>
+      )}
 
       {/* Status Banner */}
       {status !== 'scored' && (
@@ -127,14 +210,14 @@ export function UploadPackageDetail() {
               <div className="alert-item danger">
                 <span className="alert-icon">!</span>
                 <div className="alert-content">
-                  <strong>Unpatched CVEs</strong>
+                  <strong>Unpatched CVEs ({scored?.cve_count || 0} known)</strong>
                   <p>This package has known vulnerabilities that haven't been patched.</p>
                 </div>
               </div>
             )}
             {isProhibited && (
               <div className="alert-item danger">
-                <span className="alert-icon">⛔</span>
+                <span className="alert-icon">X</span>
                 <div className="alert-content">
                   <strong>Prohibited Package</strong>
                   <p>This package is classified as prohibited and should not be used.</p>
@@ -143,7 +226,7 @@ export function UploadPackageDetail() {
             )}
             {isRestricted && (
               <div className="alert-item warning">
-                <span className="alert-icon">⚠</span>
+                <span className="alert-icon">!</span>
                 <div className="alert-content">
                   <strong>Restricted Package</strong>
                   <p>This package requires review before use in production.</p>
@@ -152,13 +235,13 @@ export function UploadPackageDetail() {
             )}
             {isAbandoned && (
               <div className="alert-item warning">
-                <span className="alert-icon">⏰</span>
+                <span className="alert-icon">...</span>
                 <div className="alert-content">
                   <strong>Potentially Abandoned</strong>
                   <p>
                     Last commit was{' '}
                     {scored?.last_commit_date
-                      ? new Date(scored.last_commit_date).toLocaleDateString()
+                      ? formatDate(scored.last_commit_date)
                       : 'unknown'}
                     . Consider alternatives.
                   </p>
@@ -167,7 +250,7 @@ export function UploadPackageDetail() {
             )}
             {hasHighBusFactor && (
               <div className="alert-item info">
-                <span className="alert-icon">👤</span>
+                <span className="alert-icon">i</span>
                 <div className="alert-content">
                   <strong>High Bus Factor Risk</strong>
                   <p>
@@ -186,28 +269,73 @@ export function UploadPackageDetail() {
         <div className="detail-grid">
           <section className="card scores-card">
             <h2>Score Breakdown</h2>
-            <div className="score-bars">
-              <ScoreBarSimple label="Security" value={scored.scores.security?.score} />
-              <ScoreBarSimple label="Maintenance" value={scored.scores.maintenance?.score} />
-              <ScoreBarSimple label="Community" value={scored.scores.community?.score} />
-              <ScoreBarSimple label="Bus Factor" value={scored.scores.bus_factor?.score} />
-            </div>
+            <ScoreBar label="Security" score={scored.scores.security.score} weight={scored.scores.security.weight} />
+            <ScoreBar label="Maintenance" score={scored.scores.maintenance.score} weight={scored.scores.maintenance.weight} />
+            <ScoreBar label="Community" score={scored.scores.community.score} weight={scored.scores.community.weight} />
+            <ScoreBar label="Bus Factor" score={scored.scores.bus_factor.score} weight={scored.scores.bus_factor.weight} />
+            <ScoreBar label="Documentation" score={scored.scores.documentation.score} weight={scored.scores.documentation.weight} />
+            <ScoreBar label="Stability" score={scored.scores.stability.score} weight={scored.scores.stability.weight} />
           </section>
 
+          {/* Analysis Summary */}
+          {scored.analysis_summary && (
+            <section className="card summary-card">
+              <h2>Analysis Summary</h2>
+              {scored.analysis_summary.security_summary && (
+                <div className="summary-item">
+                  <strong>Security:</strong> {scored.analysis_summary.security_summary}
+                </div>
+              )}
+              {scored.analysis_summary.maintenance_status && (
+                <div className="summary-item">
+                  <strong>Maintenance:</strong> {scored.analysis_summary.maintenance_status}
+                </div>
+              )}
+              {scored.analysis_summary.doc_summary && (
+                <div className="summary-item">
+                  <strong>Documentation:</strong> {scored.analysis_summary.doc_summary}
+                </div>
+              )}
+              {scored.analysis_summary.highlights && scored.analysis_summary.highlights.length > 0 && (
+                <div className="highlights">
+                  <strong>Highlights:</strong>
+                  <ul>
+                    {scored.analysis_summary.highlights.map((h, i) => (
+                      <li key={i} className="highlight-item">{h}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {scored.analysis_summary.concerns && scored.analysis_summary.concerns.length > 0 && (
+                <div className="concerns">
+                  <strong>Concerns:</strong>
+                  <ul>
+                    {scored.analysis_summary.concerns.map((c, i) => (
+                      <li key={i} className="concern-item">{c}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* Package Info */}
           <section className="card info-card">
             <h2>Package Info</h2>
             <div className="info-grid">
-              <div className="info-item">
-                <span className="info-label">Risk Tier</span>
-                <span className={`info-value risk-tier ${scored.scores.risk_tier}`}>
-                  {scored.scores.risk_tier || '-'}
-                </span>
-              </div>
+              {scored.scores.risk_tier && (
+                <div className="info-item">
+                  <span className="info-label">Risk Tier</span>
+                  <span className={`info-value risk-tier ${scored.scores.risk_tier}`}>
+                    {scored.scores.risk_tier}
+                  </span>
+                </div>
+              )}
               <div className="info-item">
                 <span className="info-label">Last Commit</span>
                 <span className="info-value">
                   {scored.last_commit_date
-                    ? new Date(scored.last_commit_date).toLocaleDateString()
+                    ? formatDate(scored.last_commit_date)
                     : '-'}
                 </span>
               </div>
@@ -217,6 +345,31 @@ export function UploadPackageDetail() {
                   {scored.top_contributor_pct ? `${scored.top_contributor_pct.toFixed(0)}%` : '-'}
                 </span>
               </div>
+              <div className="info-item">
+                <span className="info-label">Known CVEs</span>
+                <span className="info-value">{scored.cve_count ?? 0}</span>
+              </div>
+              <div className="info-item">
+                <span className="info-label">Security Policy</span>
+                <span className="info-value">{scored.has_security_policy ? 'Yes' : 'No'}</span>
+              </div>
+              <div className="info-item">
+                <span className="info-label">Security Tools</span>
+                <span className="info-value">{scored.has_security_tools ? 'Yes' : 'No'}</span>
+              </div>
+              {scored.repository && (
+                <div className="info-item full-width">
+                  <span className="info-label">Repository</span>
+                  <a
+                    href={`https://github.com/${scored.repository.owner}/${scored.repository.repo}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="info-link"
+                  >
+                    {scored.repository.owner}/{scored.repository.repo} →
+                  </a>
+                </div>
+              )}
             </div>
           </section>
 
@@ -276,40 +429,6 @@ export function UploadPackageDetail() {
           Analysis data expires after 7 days
         </p>
       </footer>
-    </div>
-  );
-}
-
-interface ScoreBarSimpleProps {
-  label: string;
-  value?: number;
-}
-
-function ScoreBarSimple({ label, value }: ScoreBarSimpleProps) {
-  const percentage = value ?? 0;
-  const color =
-    percentage >= 80
-      ? '#22c55e'
-      : percentage >= 60
-        ? '#84cc16'
-        : percentage >= 40
-          ? '#eab308'
-          : percentage >= 20
-            ? '#f97316'
-            : '#ef4444';
-
-  return (
-    <div className="score-bar-simple">
-      <div className="score-bar-header">
-        <span className="score-bar-label">{label}</span>
-        <span className="score-bar-value">{value?.toFixed(0) ?? '-'}</span>
-      </div>
-      <div className="score-bar-track">
-        <div
-          className="score-bar-fill"
-          style={{ width: `${percentage}%`, backgroundColor: color }}
-        />
-      </div>
     </div>
   );
 }
