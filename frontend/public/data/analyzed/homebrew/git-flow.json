@@ -1,0 +1,262 @@
+{
+  "ecosystem": "homebrew",
+  "name": "git-flow",
+  "description": "Extensions to follow Vincent Driessen's branching model",
+  "version": "0.4.1",
+  "homepage": "https://github.com/nvie/gitflow",
+  "repository": {
+    "platform": "github",
+    "owner": "nvie",
+    "repo": "gitflow",
+    "subpath": null
+  },
+  "install_count_30d": 1784,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 53.5,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "prohibited",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 56.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 46.05572099533157,
+      "weight": 25
+    },
+    "community": {
+      "score": 97.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 46.6,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 0.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "nvie",
+      "name": "gitflow",
+      "description": "Git extensions to provide high-level repository operations for Vincent Driessen's branching model.",
+      "stars": 26873,
+      "forks": 2651,
+      "open_issues": 0,
+      "watchers": 26873,
+      "created_at": "2010-01-20T23:14:12Z",
+      "updated_at": "2025-12-31T09:00:42Z",
+      "pushed_at": "2025-10-14T09:12:50Z",
+      "default_branch": "develop",
+      "license": "NOASSERTION",
+      "language": "Shell",
+      "topics": [],
+      "is_archived": true,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 33,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 82.1,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 1.45
+    },
+    "commits": {
+      "last_commit_date": "2025-10-14T09:12:50Z",
+      "commits_last_6mo": 2,
+      "commits_last_year": 2
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 218,
+      "avg_response_time_hours": 8584.6,
+      "avg_close_time_hours": 19639.4,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 82,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 2.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "contrib/gitflow-installer.sh",
+          "line": 14,
+          "severity": "medium",
+          "description": "The INSTALL_PREFIX variable is used in a command without proper sanitization, potentially allowing for directory traversal attacks."
+        },
+        {
+          "file": "contrib/gitflow-installer.sh",
+          "line": 24,
+          "severity": "low",
+          "description": "The REPO_HOME variable is used to clone a repository from GitHub, but it does not seem to be user-controlled and the URL appears to be hardcoded."
+        },
+        {
+          "file": "contrib/gitflow-installer.sh",
+          "line": 43,
+          "severity": "medium",
+          "description": "The script uses the 'git' command with user-controlled input (REPO_HOME), which could potentially lead to a command injection vulnerability if an attacker can manipulate this variable."
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential directory traversal attack through INSTALL_PREFIX",
+        "Command injection vulnerability through git command with user-controlled input"
+      ],
+      "summary": "The script has some security concerns, including potential injection risks and lack of input validation, but it does not appear to handle sensitive information or expose critical errors."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "bugs",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The git-flow community is active and responsive, with a moderate level of frustration due to bugs and feature requests, but overall the project appears healthy."
+    },
+    "communication": {
+      "helpfulness": 2,
+      "clarity": 6,
+      "patience": 1,
+      "technical_depth": 1,
+      "welcomingness": 2,
+      "communication_style": "poor",
+      "red_flags": [
+        "lack of personalized responses",
+        "insufficient explanation for archiving the repository",
+        "no guidance on how to migrate to git-flow-next"
+      ],
+      "summary": "The maintainer's responses are unhelpful, lacking in technical depth, and unwelcoming, indicating a poor communication style."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low number of commits in the past 6 months",
+        "only one active contributor in the past 6 months",
+        "unknown last release"
+      ],
+      "positive_signals": [
+        "recent commit within the past 6 months",
+        "large number of closed issues and merged PRs in the past 6 months"
+      ],
+      "summary": "The git-flow package appears to be minimally maintained with some recent activity, but its overall maintenance status is uncertain due to low commit frequency and single active contributor."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "low number of commits in the past 6 months",
+      "only one active contributor in the past 6 months",
+      "unknown last release",
+      "Community: bugs",
+      "Community: feature requests",
+      "Communication: The maintainer's responses are unhelpful, lacking in technical depth, and unwelcoming, indicating a poor communication style.",
+      "Communication: lack of personalized responses",
+      "Communication: insufficient explanation for archiving the repository",
+      "Security: Potential directory traversal attack through INSTALL_PREFIX",
+      "Security: Command injection vulnerability through git command with user-controlled input",
+      "High bus factor risk (82% from top contributor)"
+    ],
+    "highlights": [
+      "recent commit within the past 6 months",
+      "large number of closed issues and merged PRs in the past 6 months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "poor"
+  },
+  "analyzed_at": "2026-01-01T13:10:05.731114Z",
+  "data_fetched_at": "2026-01-01T13:10:05.731115Z"
+}
