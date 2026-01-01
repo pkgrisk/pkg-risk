@@ -59,9 +59,35 @@ export function PackageDetailModal({ dependency, ecosystem, onClose }: PackageDe
   })();
   const hasHighBusFactor = (scored?.top_contributor_pct ?? 0) > 80;
 
+  const backdropStyle: React.CSSProperties = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'rgba(0, 0, 0, 0.7)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1000,
+    padding: 24,
+  };
+
+  const modalStyle: React.CSSProperties = {
+    background: '#1e1e2e',
+    borderRadius: 16,
+    border: '1px solid #333',
+    maxWidth: 600,
+    width: '100%',
+    maxHeight: 'calc(100vh - 48px)',
+    overflowY: 'auto',
+    position: 'relative',
+    padding: 24,
+  };
+
   const modalContent = (
-    <div className="modal-backdrop" onClick={handleBackdropClick}>
-      <div className="package-detail-modal" role="dialog" aria-modal="true">
+    <div className="modal-backdrop" style={backdropStyle} onClick={handleBackdropClick}>
+      <div className="package-detail-modal" style={modalStyle} role="dialog" aria-modal="true">
         <button className="modal-close" onClick={onClose} aria-label="Close">
           ×
         </button>

@@ -44,6 +44,9 @@ class ProgressPanel(Static):
         total = metrics.total_packages
         pct = metrics.progress_percent
 
+        # Total analyzed across all runs
+        total_analyzed = metrics.scored_count + metrics.unavailable_count + metrics.error_count
+
         # Build progress bar
         bar_width = 30
         filled = int(pct / 100 * bar_width)
@@ -61,7 +64,7 @@ class ProgressPanel(Static):
 
         content = f"""[bold]PROGRESS[/bold]  {status}
 [cyan]{bar}[/cyan] {pct:.0f}%
-{completed} / {total} packages
+{completed}/{total} this batch | {total_analyzed} total
 
 [bold]Current:[/bold] {current}
 [bold]Elapsed:[/bold] {elapsed_str}
@@ -121,6 +124,7 @@ class ResultsPanel(Static):
         scored = metrics.scored_count
         unavailable = metrics.unavailable_count
         errors = metrics.error_count
+        total = scored + unavailable + errors
 
         # Average score
         avg_str = f"{metrics.average_score:.1f}" if metrics.average_score is not None else "-"
@@ -129,7 +133,7 @@ class ResultsPanel(Static):
         grades = metrics.grade_distribution
         grade_line = "  ".join(f"{g}:{grades.get(g, 0)}" for g in ["A", "B", "C", "D", "F"])
 
-        content = f"""[bold]RESULTS[/bold]
+        content = f"""[bold]RESULTS[/bold] ({total} total)
 
 [green]✓ Scored:[/green]     {scored}
 [yellow]⚠ Unavailable:[/yellow] {unavailable}

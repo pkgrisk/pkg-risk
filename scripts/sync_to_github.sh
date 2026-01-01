@@ -16,6 +16,9 @@ cd "$PROJECT_DIR"
 
 log "Starting sync..."
 
+# Set PATH for cron environment (uv and git may not be in default PATH)
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
 # Run the build script to update frontend data
 uv run python scripts/build_frontend_data.py >> "$LOG_FILE" 2>&1
 

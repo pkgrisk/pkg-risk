@@ -11,12 +11,14 @@ from typing import TYPE_CHECKING
 import httpx
 
 from pkgrisk.adapters.base import BaseAdapter
+from pkgrisk.analyzers.deps_dev import DepsDevFetcher
 from pkgrisk.analyzers.github import GitHubFetcher
 from pkgrisk.analyzers.llm import LLMAnalyzer
 from pkgrisk.analyzers.osv import OSVFetcher
 from pkgrisk.analyzers.scorer import Scorer
 from pkgrisk.analyzers.supply_chain import SupplyChainAnalyzer
 from pkgrisk.models.schemas import (
+    AggregatorData,
     DataAvailability,
     Ecosystem,
     LLMAssessments,
@@ -65,6 +67,7 @@ class AnalysisPipeline:
         self.data_dir = data_dir or Path("data")
         self.github = GitHubFetcher(token=github_token)
         self.osv = OSVFetcher()
+        self.deps_dev = DepsDevFetcher()
         self.llm = LLMAnalyzer(model=llm_model) if not skip_llm else None
         self.supply_chain = SupplyChainAnalyzer() if not skip_supply_chain else None
         self.scorer = Scorer()
@@ -190,6 +193,37 @@ class AnalysisPipeline:
                     f"Supply chain analysis failed for {package_name}: {e}"
                 )
 
+        # Stage 2.7: Fetch deps.dev aggregator data (cross-forge intelligence)
+        aggregator_data = None
+        try:
+            t0 = time.perf_counter()
+            aggregator_data = await self.deps_dev.fetch_all_intelligence(
+                package_name=package_name,
+                version=metadata.version,
+                ecosystem=ecosystem.value,
+                repo_ref=repo_ref,
+            )
+            self._record_timing("deps_dev", time.perf_counter() - t0)
+
+            # If we have project data for a non-GitHub repo, upgrade status
+            # This includes Scorecard (GitHub) or basic metrics (GitLab/Bitbucket)
+            if (
+                data_availability == DataAvailability.NOT_GITHUB
+                and aggregator_data
+                and aggregator_data.has_project_data
+            ):
+                data_availability = DataAvailability.PARTIAL_FORGE
+                unavailable_reason = (
+                    f"Repository is on {repo_ref.platform.value}. "
+                    f"Using deps.dev for cross-forge analysis."
+                )
+        except Exception as e:
+            # deps.dev failures shouldn't break pipeline
+            import logging
+            logging.getLogger(__name__).debug(
+                f"deps.dev fetch failed for {package_name}: {e}"
+            )
+
         # Stage 3: Run LLM assessments (only if we have GitHub data)
         llm_assessments = None
         if self.llm and github_data:
@@ -210,7 +244,13 @@ class AnalysisPipeline:
         analysis_summary = None
 
         t0 = time.perf_counter()
-        if data_availability == DataAvailability.AVAILABLE and github_data:
+        # Score if we have full GitHub data OR partial forge data from deps.dev
+        can_score = (
+            (data_availability == DataAvailability.AVAILABLE and github_data)
+            or (data_availability == DataAvailability.PARTIAL_FORGE and aggregator_data)
+        )
+
+        if can_score:
             scores = self.scorer.calculate_scores(
                 github_data,
                 llm_assessments,
@@ -218,9 +258,10 @@ class AnalysisPipeline:
                 ecosystem=ecosystem.value,
                 metadata=metadata,
                 supply_chain=supply_chain_data,
+                aggregator_data=aggregator_data,
             )
             analysis_summary = self._build_summary(
-                github_data, llm_assessments, scores, supply_chain_data
+                github_data, llm_assessments, scores, supply_chain_data, aggregator_data
             )
         else:
             # No scores for unavailable packages
@@ -245,6 +286,7 @@ class AnalysisPipeline:
             github_data=github_data,
             llm_assessments=llm_assessments,
             supply_chain=supply_chain_data,
+            aggregator_data=aggregator_data,
             analysis_summary=analysis_summary,
             analyzed_at=datetime.now(timezone.utc),
             data_fetched_at=datetime.now(timezone.utc),
@@ -432,6 +474,7 @@ class AnalysisPipeline:
         llm_assessments: LLMAssessments | None,
         scores,
         supply_chain: SupplyChainData | None = None,
+        aggregator_data: AggregatorData | None = None,
     ) -> dict:
         """Build human-readable analysis summary."""
         summary = {
@@ -569,6 +612,70 @@ class AnalysisPipeline:
                 summary["highlights"].append("Has npm provenance attestation")
             if supply_chain.overall_risk_score == 0:
                 summary["highlights"].append("No supply chain risks detected")
+
+        # Aggregator data (deps.dev, OpenSSF Scorecard)
+        if aggregator_data:
+            # Basic project metrics (for GitLab/Bitbucket when Scorecard unavailable)
+            if aggregator_data.project_metrics and not aggregator_data.scorecard:
+                pm = aggregator_data.project_metrics
+                summary["forge_metrics"] = {
+                    "stars": pm.stars,
+                    "forks": pm.forks,
+                    "open_issues": pm.open_issues,
+                }
+                if pm.oss_fuzz_line_count:
+                    coverage = (pm.oss_fuzz_line_cover_count or 0) / pm.oss_fuzz_line_count * 100
+                    summary["highlights"].append(f"OSS-Fuzz coverage: {coverage:.0f}%")
+
+            # Scorecard insights
+            if aggregator_data.scorecard:
+                sc = aggregator_data.scorecard
+                summary["scorecard_score"] = sc.overall_score
+
+                # Highlight good security practices
+                if sc.overall_score >= 7:
+                    summary["highlights"].append(
+                        f"OpenSSF Scorecard: {sc.overall_score:.1f}/10"
+                    )
+                elif sc.overall_score < 4:
+                    summary["concerns"].append(
+                        f"Low OpenSSF Scorecard: {sc.overall_score:.1f}/10"
+                    )
+
+                # Specific check highlights
+                if sc.cii_badge:
+                    summary["highlights"].append("Has CII Best Practices badge")
+                if sc.fuzzing_enabled:
+                    summary["highlights"].append("Fuzzing enabled")
+                if sc.sast_enabled:
+                    summary["highlights"].append("SAST enabled")
+
+                # Specific check concerns
+                if sc.dangerous_workflow_score is not None and sc.dangerous_workflow_score < 5:
+                    summary["concerns"].append("Dangerous CI/CD workflow patterns detected")
+                if sc.branch_protection_score is not None and sc.branch_protection_score < 3:
+                    summary["concerns"].append("Weak branch protection settings")
+
+            # SLSA provenance
+            if aggregator_data.slsa_attestation:
+                level = aggregator_data.slsa_level
+                if level:
+                    summary["highlights"].append(f"SLSA Level {level} provenance")
+                else:
+                    summary["highlights"].append("Has SLSA provenance attestation")
+
+            # Dependency graph concerns
+            if aggregator_data.dependency_graph:
+                dg = aggregator_data.dependency_graph
+                summary["dependency_count"] = dg.total_count
+                if dg.vulnerable_transitive > 0:
+                    summary["concerns"].append(
+                        f"Transitive deps with vulnerabilities: {dg.vulnerable_transitive}"
+                    )
+                if dg.max_depth > 10:
+                    summary["concerns"].append(
+                        f"Deep dependency tree (depth: {dg.max_depth})"
+                    )
 
         return summary
 

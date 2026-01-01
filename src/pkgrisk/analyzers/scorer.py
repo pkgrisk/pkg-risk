@@ -4,6 +4,7 @@ import math
 from datetime import datetime, timezone
 
 from pkgrisk.models.schemas import (
+    AggregatorData,
     GitHubData,
     LLMAssessments,
     PackageMetadata,
@@ -71,6 +72,7 @@ class Scorer:
         ecosystem: str = "homebrew",
         metadata: PackageMetadata | None = None,
         supply_chain: SupplyChainData | None = None,
+        aggregator_data: AggregatorData | None = None,
     ) -> Scores:
         """Calculate all score components.
 
@@ -81,6 +83,7 @@ class Scorer:
             ecosystem: Package ecosystem (homebrew, npm, etc.) for threshold tuning.
             metadata: Package metadata with ecosystem-specific fields.
             supply_chain: Supply chain security analysis data.
+            aggregator_data: Third-party aggregator data (deps.dev, OpenSSF Scorecard).
 
         Returns:
             Scores object with all components and overall score.
@@ -88,12 +91,24 @@ class Scorer:
         # Get ecosystem-specific thresholds (fallback to homebrew)
         thresholds = ECOSYSTEM_THRESHOLDS.get(ecosystem.lower(), ECOSYSTEM_THRESHOLDS["homebrew"])
 
+        # Check if we only have aggregator data (PARTIAL_FORGE case)
+        if github_data is None and aggregator_data is not None:
+            return self._calculate_partial_forge_scores(
+                aggregator_data, install_count, ecosystem, metadata, supply_chain
+            )
+
         security = self._calculate_security_score(github_data, llm_assessments, supply_chain)
         maintenance = self._calculate_maintenance_score(github_data, llm_assessments, thresholds)
         community = self._calculate_community_score(github_data, llm_assessments, install_count, thresholds)
         bus_factor = self._calculate_bus_factor_score(github_data, llm_assessments, metadata)
         documentation = self._calculate_documentation_score(github_data, llm_assessments, metadata)
         stability = self._calculate_stability_score(github_data, llm_assessments)
+
+        # Apply Scorecard adjustments from aggregator data
+        if aggregator_data and aggregator_data.scorecard:
+            security = self._apply_scorecard_security_adjustments(security, aggregator_data)
+            stability = self._apply_scorecard_stability_adjustments(stability, aggregator_data)
+            bus_factor = self._apply_scorecard_bus_factor_adjustments(bus_factor, aggregator_data)
 
         # Calculate weighted overall score
         overall = (
@@ -114,7 +129,7 @@ class Scorer:
 
         # Calculate confidence based on data completeness
         confidence, confidence_factors = self._calculate_confidence(
-            github_data, llm_assessments
+            github_data, llm_assessments, aggregator_data
         )
 
         # Determine project age band
@@ -250,7 +265,10 @@ class Scorer:
         return UpdateUrgency.LOW
 
     def _calculate_confidence(
-        self, github_data: GitHubData | None, llm_assessments: LLMAssessments | None
+        self,
+        github_data: GitHubData | None,
+        llm_assessments: LLMAssessments | None,
+        aggregator_data: AggregatorData | None = None,
     ) -> tuple[str, list[str]]:
         """Calculate score confidence based on data completeness.
 
@@ -259,7 +277,16 @@ class Scorer:
         """
         factors = []
 
+        # Check for missing primary data source
         if not github_data:
+            # Can still have medium confidence with Scorecard data
+            if aggregator_data and aggregator_data.scorecard:
+                factors.append("No native repository data (using deps.dev)")
+                # With Scorecard, we can have medium confidence
+                if aggregator_data.scorecard.overall_score >= 5:
+                    return "medium", factors
+                else:
+                    return "low", factors
             return "low", ["No GitHub data available"]
 
         # Check for missing data sources
@@ -282,12 +309,19 @@ class Scorer:
         if github_data.issues.open_issues + github_data.issues.closed_issues_6mo < 5:
             factors.append("Limited issue history")
 
+        # Boost confidence if we also have Scorecard data (cross-validation)
+        has_scorecard = aggregator_data and aggregator_data.scorecard
+
         # Determine confidence level
         if len(factors) == 0:
             return "high", []
         elif len(factors) <= 2:
-            return "medium", factors
+            # Scorecard provides cross-validation, can maintain medium confidence
+            return "medium" if not has_scorecard else "medium", factors
         else:
+            # With Scorecard data, upgrade from low to medium
+            if has_scorecard:
+                return "medium", factors
             return "low", factors
 
     def _get_project_age_band(self, github_data: GitHubData | None) -> str | None:
@@ -1166,6 +1200,345 @@ class Scorer:
                 score -= 10
 
         return score
+
+    def _calculate_partial_forge_scores(
+        self,
+        aggregator_data: AggregatorData,
+        install_count: int | None,
+        ecosystem: str,
+        metadata: PackageMetadata | None,
+        supply_chain: SupplyChainData | None,
+    ) -> Scores:
+        """Calculate scores for PARTIAL_FORGE packages (GitLab/Bitbucket).
+
+        This uses aggregator data (Scorecard, basic metrics, dependency graph)
+        when native forge data is not available.
+
+        Args:
+            aggregator_data: Aggregator data with Scorecard or basic metrics.
+            install_count: Package install/download count.
+            ecosystem: Package ecosystem.
+            metadata: Package metadata.
+            supply_chain: Supply chain analysis data.
+
+        Returns:
+            Scores object with partial confidence.
+        """
+        # Start with baseline scores (50 = unknown/neutral)
+        base_score = 50.0
+
+        # Initialize score components with baseline
+        security = ScoreComponent(score=base_score, weight=self.WEIGHTS["security"], key_factors=["Limited data (non-GitHub forge)"])
+        maintenance = ScoreComponent(score=base_score, weight=self.WEIGHTS["maintenance"], key_factors=["Limited data (non-GitHub forge)"])
+        community = ScoreComponent(score=base_score, weight=self.WEIGHTS["community"], key_factors=["Limited data (non-GitHub forge)"])
+        bus_factor = ScoreComponent(score=base_score, weight=self.WEIGHTS["bus_factor"], key_factors=["Limited data (non-GitHub forge)"])
+        documentation = ScoreComponent(score=base_score, weight=self.WEIGHTS["documentation"], key_factors=["Limited data (non-GitHub forge)"])
+        stability = ScoreComponent(score=base_score, weight=self.WEIGHTS["stability"], key_factors=["Limited data (non-GitHub forge)"])
+
+        # If we have Scorecard data (GitHub projects via deps.dev), use it
+        if aggregator_data.scorecard:
+            sc = aggregator_data.scorecard
+
+            # Security from Scorecard
+            security_score = base_score + (sc.overall_score - 5) * 8  # Scale 0-10 to adjustments
+            security_factors = [f"OpenSSF Scorecard: {sc.overall_score:.1f}/10"]
+            if sc.code_review_score is not None and sc.code_review_score >= 7:
+                security_factors.append("Code review practices")
+            if sc.sast_enabled:
+                security_factors.append("SAST enabled")
+            security = ScoreComponent(
+                score=max(0, min(100, security_score)),
+                weight=self.WEIGHTS["security"],
+                key_factors=security_factors,
+            )
+
+            # Maintenance from Scorecard
+            if sc.maintained_score is not None:
+                maint_score = base_score + (sc.maintained_score - 5) * 8
+                maintenance = ScoreComponent(
+                    score=max(0, min(100, maint_score)),
+                    weight=self.WEIGHTS["maintenance"],
+                    key_factors=[f"Maintained score: {sc.maintained_score:.1f}/10"],
+                )
+
+            # Bus factor from Scorecard Contributors check
+            contributors_score = sc.checks.get("Contributors", 5)
+            bf_score = base_score + (contributors_score - 5) * 6
+            bus_factor = ScoreComponent(
+                score=max(0, min(100, bf_score)),
+                weight=self.WEIGHTS["bus_factor"],
+                key_factors=[f"Contributors score: {contributors_score:.1f}/10"],
+            )
+
+        # If we have basic project metrics (GitLab/Bitbucket), use them
+        elif aggregator_data.project_metrics:
+            pm = aggregator_data.project_metrics
+            factors = []
+
+            # Community score from stars/forks
+            if pm.stars is not None:
+                if pm.stars >= 1000:
+                    community_score = 80
+                    factors.append(f"{pm.stars:,} stars")
+                elif pm.stars >= 100:
+                    community_score = 60
+                    factors.append(f"{pm.stars:,} stars")
+                else:
+                    community_score = 40
+                    factors.append(f"{pm.stars:,} stars")
+                community = ScoreComponent(
+                    score=community_score,
+                    weight=self.WEIGHTS["community"],
+                    key_factors=factors,
+                )
+
+            # OSS-Fuzz coverage is a strong signal
+            if pm.oss_fuzz_line_count and pm.oss_fuzz_line_cover_count:
+                coverage = pm.oss_fuzz_line_cover_count / pm.oss_fuzz_line_count
+                stability_score = base_score + coverage * 30  # Up to +30 for good coverage
+                stability = ScoreComponent(
+                    score=max(0, min(100, stability_score)),
+                    weight=self.WEIGHTS["stability"],
+                    key_factors=[f"OSS-Fuzz coverage: {coverage*100:.0f}%"],
+                )
+
+        # Apply supply chain adjustments if available
+        if supply_chain and supply_chain.overall_risk_score > 0:
+            security_penalty = min(30, supply_chain.overall_risk_score / 3)
+            security = ScoreComponent(
+                score=max(0, security.score - security_penalty),
+                weight=security.weight,
+                key_factors=security.key_factors + [f"Supply chain risk: {supply_chain.risk_level}"],
+            )
+
+        # Apply dependency graph adjustments
+        if aggregator_data.dependency_graph:
+            dg = aggregator_data.dependency_graph
+            if dg.vulnerable_transitive > 0:
+                vuln_penalty = min(20, dg.vulnerable_transitive * 2)
+                security = ScoreComponent(
+                    score=max(0, security.score - vuln_penalty),
+                    weight=security.weight,
+                    key_factors=security.key_factors + [f"Vulnerable deps: {dg.vulnerable_transitive}"],
+                )
+
+        # Calculate weighted overall score
+        overall = (
+            security.score * security.weight
+            + maintenance.score * maintenance.weight
+            + community.score * community.weight
+            + bus_factor.score * bus_factor.weight
+            + documentation.score * documentation.weight
+            + stability.score * stability.weight
+        ) / 100
+
+        grade = self._score_to_grade(overall)
+        risk_tier = self._calculate_risk_tier(overall, security.score, None, supply_chain)
+
+        return Scores(
+            overall=round(overall, 1),
+            grade=grade,
+            percentile=None,
+            risk_tier=risk_tier,
+            update_urgency=UpdateUrgency.LOW,  # Can't determine without release history
+            confidence="medium",  # PARTIAL_FORGE always has medium confidence at best
+            confidence_factors=["Limited data from non-GitHub forge"],
+            project_age_band=None,  # Unknown without repo data
+            security=security,
+            maintenance=maintenance,
+            community=community,
+            bus_factor=bus_factor,
+            documentation=documentation,
+            stability=stability,
+        )
+
+    def _apply_scorecard_security_adjustments(
+        self,
+        security: ScoreComponent,
+        aggregator_data: AggregatorData,
+    ) -> ScoreComponent:
+        """Apply OpenSSF Scorecard adjustments to security score.
+
+        Scorecard provides insights into security practices we may not detect directly.
+        Max adjustment: +/- 15 points.
+
+        Args:
+            security: Base security score component.
+            aggregator_data: Aggregator data with Scorecard.
+
+        Returns:
+            Adjusted security score component.
+        """
+        sc = aggregator_data.scorecard
+        if not sc:
+            return security
+
+        adjustment = 0.0
+        factors = list(security.key_factors) if security.key_factors else []
+
+        # Code review is a strong security signal
+        if sc.code_review_score is not None and sc.code_review_score >= 7:
+            adjustment += 5
+            factors.append("Code review practices")
+        elif sc.code_review_score is not None and sc.code_review_score < 3:
+            adjustment -= 5
+            factors.append("Weak code review")
+
+        # Dangerous workflows are a red flag
+        if sc.dangerous_workflow_score is not None and sc.dangerous_workflow_score < 5:
+            adjustment -= 10
+            factors.append("Dangerous CI/CD workflows detected")
+
+        # Token permissions (least privilege)
+        if sc.token_permissions_score is not None and sc.token_permissions_score >= 7:
+            adjustment += 5
+            factors.append("Proper token permissions")
+
+        # SAST enabled
+        if sc.sast_enabled:
+            adjustment += 5
+            factors.append("SAST enabled (Scorecard)")
+
+        # CII Best Practices badge is a significant signal
+        if sc.cii_badge:
+            adjustment += 10
+            factors.append("CII Best Practices badge")
+
+        # Branch protection
+        if sc.branch_protection_score is not None and sc.branch_protection_score >= 7:
+            adjustment += 3
+            factors.append("Strong branch protection")
+        elif sc.branch_protection_score is not None and sc.branch_protection_score < 3:
+            adjustment -= 5
+            factors.append("Weak branch protection")
+
+        # SLSA provenance from deps.dev
+        if aggregator_data.slsa_attestation:
+            level = aggregator_data.slsa_level or 0
+            if level >= 3:
+                adjustment += 10
+                factors.append(f"SLSA Level {level} provenance")
+            elif level >= 1:
+                adjustment += 5
+                factors.append(f"SLSA Level {level} provenance")
+            else:
+                adjustment += 3
+                factors.append("SLSA provenance")
+
+        # Cap adjustment to +/- 15 points
+        adjustment = max(-15, min(15, adjustment))
+
+        new_score = max(0, min(100, security.score + adjustment))
+        return ScoreComponent(
+            score=round(new_score, 1),
+            weight=security.weight,
+            key_factors=factors[:10],  # Limit factors
+        )
+
+    def _apply_scorecard_stability_adjustments(
+        self,
+        stability: ScoreComponent,
+        aggregator_data: AggregatorData,
+    ) -> ScoreComponent:
+        """Apply OpenSSF Scorecard adjustments to stability score.
+
+        Args:
+            stability: Base stability score component.
+            aggregator_data: Aggregator data with Scorecard.
+
+        Returns:
+            Adjusted stability score component.
+        """
+        sc = aggregator_data.scorecard
+        if not sc:
+            return stability
+
+        adjustment = 0.0
+        factors = list(stability.key_factors) if stability.key_factors else []
+
+        # Fuzzing is a strong stability/reliability signal
+        if sc.fuzzing_enabled:
+            adjustment += 5
+            factors.append("Fuzzing enabled")
+
+        # Pinned dependencies
+        pinned_score = sc.checks.get("Pinned-Dependencies", 0)
+        if pinned_score >= 7:
+            adjustment += 3
+            factors.append("Pinned dependencies")
+
+        # Dependency graph depth concerns
+        if aggregator_data.dependency_graph:
+            dg = aggregator_data.dependency_graph
+            if dg.max_depth > 15:
+                adjustment -= 5
+                factors.append(f"Very deep dependency tree ({dg.max_depth})")
+            elif dg.max_depth > 10:
+                adjustment -= 3
+                factors.append(f"Deep dependency tree ({dg.max_depth})")
+
+            # Transitive vulnerabilities are a stability concern
+            if dg.vulnerable_transitive > 10:
+                adjustment -= 10
+                factors.append(f"Many vulnerable transitive deps ({dg.vulnerable_transitive})")
+            elif dg.vulnerable_transitive > 0:
+                adjustment -= 5
+                factors.append(f"Vulnerable transitive deps ({dg.vulnerable_transitive})")
+
+        # Cap adjustment to +/- 10 points
+        adjustment = max(-10, min(10, adjustment))
+
+        new_score = max(0, min(100, stability.score + adjustment))
+        return ScoreComponent(
+            score=round(new_score, 1),
+            weight=stability.weight,
+            key_factors=factors[:10],
+        )
+
+    def _apply_scorecard_bus_factor_adjustments(
+        self,
+        bus_factor: ScoreComponent,
+        aggregator_data: AggregatorData,
+    ) -> ScoreComponent:
+        """Apply OpenSSF Scorecard adjustments to bus factor score.
+
+        Args:
+            bus_factor: Base bus factor score component.
+            aggregator_data: Aggregator data with Scorecard.
+
+        Returns:
+            Adjusted bus factor score component.
+        """
+        sc = aggregator_data.scorecard
+        if not sc:
+            return bus_factor
+
+        adjustment = 0.0
+        factors = list(bus_factor.key_factors) if bus_factor.key_factors else []
+
+        # Contributors check from Scorecard
+        contributors_score = sc.checks.get("Contributors", 0)
+        if contributors_score >= 7:
+            adjustment += 5
+            factors.append("Healthy contributor base (Scorecard)")
+        elif contributors_score < 3:
+            adjustment -= 5
+            factors.append("Low contributor diversity (Scorecard)")
+
+        # Maintained score validates our maintenance assessment
+        if sc.maintained_score is not None and sc.maintained_score < 3:
+            adjustment -= 5
+            factors.append("Project may be unmaintained (Scorecard)")
+
+        # Cap adjustment to +/- 10 points
+        adjustment = max(-10, min(10, adjustment))
+
+        new_score = max(0, min(100, bus_factor.score + adjustment))
+        return ScoreComponent(
+            score=round(new_score, 1),
+            weight=bus_factor.weight,
+            key_factors=factors[:10],
+        )
 
 
 def calculate_percentiles(packages: list[dict]) -> list[dict]:

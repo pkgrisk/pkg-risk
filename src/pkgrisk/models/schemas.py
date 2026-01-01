@@ -32,6 +32,7 @@ class DataAvailability(str, Enum):
     REPO_NOT_FOUND = "repo_not_found"  # Repo URL exists but repo not accessible
     PRIVATE_REPO = "private_repo"  # Repository is private
     NOT_GITHUB = "not_github"  # Repo exists but not on GitHub (GitLab, etc.) - limited data
+    PARTIAL_FORGE = "partial_forge"  # Non-GitHub with partial data via deps.dev/aggregators
 
 
 class RepoRef(BaseModel):
@@ -576,6 +577,99 @@ class SupplyChainData(BaseModel):
     behavioral_flags: list[str] = Field(default_factory=list)
 
 
+# --- Aggregator Data (deps.dev, OpenSSF Scorecard) ---
+
+
+class ScorecardData(BaseModel):
+    """OpenSSF Scorecard results from deps.dev.
+
+    Scorecard analyzes open source projects for security best practices.
+    See: https://securityscorecards.dev/
+    """
+
+    overall_score: float = Field(ge=0, le=10)  # 0-10 scale
+    score_date: datetime | None = None
+    checks: dict[str, float] = Field(default_factory=dict)  # check_name -> score
+
+    # Key security practice scores (convenience fields)
+    code_review_score: float | None = None
+    maintained_score: float | None = None
+    branch_protection_score: float | None = None
+    dangerous_workflow_score: float | None = None
+    token_permissions_score: float | None = None
+
+    # Boolean flags for important practices
+    fuzzing_enabled: bool = False
+    sast_enabled: bool = False
+    cii_badge: bool = False  # CII Best Practices badge
+
+
+class DependencyGraphSummary(BaseModel):
+    """Summary of dependency graph analysis from deps.dev."""
+
+    direct_count: int = 0
+    transitive_count: int = 0
+    vulnerable_direct: int = 0
+    vulnerable_transitive: int = 0
+    max_depth: int = 0
+
+    @property
+    def total_count(self) -> int:
+        """Total number of dependencies (direct + transitive)."""
+        return self.direct_count + self.transitive_count
+
+    @property
+    def total_vulnerable(self) -> int:
+        """Total number of vulnerable dependencies."""
+        return self.vulnerable_direct + self.vulnerable_transitive
+
+
+class BasicProjectMetrics(BaseModel):
+    """Basic project metrics from deps.dev for non-GitHub forges.
+
+    deps.dev provides these metrics for GitLab/Bitbucket projects
+    even when Scorecard data is not available.
+    """
+
+    stars: int | None = None
+    forks: int | None = None
+    open_issues: int | None = None
+    license: str | None = None
+    description: str | None = None
+    # OSS-Fuzz coverage (if available)
+    oss_fuzz_line_count: int | None = None
+    oss_fuzz_line_cover_count: int | None = None
+
+
+class AggregatorData(BaseModel):
+    """Data from third-party aggregator services (deps.dev, etc.).
+
+    This provides cross-forge intelligence for packages on any platform.
+    """
+
+    # OpenSSF Scorecard data (GitHub only)
+    scorecard: ScorecardData | None = None
+
+    # Basic project metrics (for GitLab/Bitbucket when Scorecard unavailable)
+    project_metrics: BasicProjectMetrics | None = None
+
+    # Dependency graph analysis
+    dependency_graph: DependencyGraphSummary | None = None
+
+    # SLSA provenance attestations
+    slsa_attestation: bool = False
+    slsa_level: int | None = None  # 1-4
+
+    # Metadata
+    fetched_at: datetime | None = None
+    sources_available: list[str] = Field(default_factory=list)
+
+    @property
+    def has_project_data(self) -> bool:
+        """Check if we have any project-level data (Scorecard or basic metrics)."""
+        return self.scorecard is not None or self.project_metrics is not None
+
+
 # --- Final Package Analysis ---
 
 
@@ -606,6 +700,9 @@ class PackageAnalysis(BaseModel):
 
     # Supply chain security analysis
     supply_chain: SupplyChainData | None = None
+
+    # Aggregator data (deps.dev, OpenSSF Scorecard)
+    aggregator_data: AggregatorData | None = None
 
     # Summary analysis
     analysis_summary: dict | None = None

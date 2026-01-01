@@ -237,22 +237,71 @@ class MetricsCollector:
     """
 
     def __init__(self, metrics_file: Path | None = None):
-        self._metrics = PipelineMetrics()
         self._lock = threading.Lock()
         self._metrics_file = metrics_file or Path("data/.metrics.json")
         self._save_counter = 0
         self._save_interval = 1  # Save after every N package completions
 
+        # Load existing metrics to preserve historical data across restarts
+        self._metrics = self._load_existing_metrics()
+
+    def _load_existing_metrics(self) -> PipelineMetrics:
+        """Load existing metrics from file to preserve historical data.
+
+        Returns:
+            PipelineMetrics loaded from file, or empty metrics if file doesn't exist
+        """
+        try:
+            if self._metrics_file.exists():
+                with open(self._metrics_file) as f:
+                    data = json.load(f)
+                return PipelineMetrics.from_dict(data)
+        except Exception:
+            pass
+        return PipelineMetrics()
+
     def start_batch(self, total: int, ecosystem: str) -> None:
-        """Mark the start of a batch analysis."""
+        """Mark the start of a batch analysis.
+
+        Preserves historical data (cumulative counts, stage timings, activity log)
+        while resetting session-specific fields for this batch.
+        """
         with self._lock:
+            # Load existing metrics to preserve historical data
+            existing = self.load()
+
+            # Create new metrics with historical data preserved
             self._metrics = PipelineMetrics(
+                # Session-specific fields (reset for this batch)
                 ecosystem=ecosystem,
                 total_packages=total,
+                completed_packages=0,
+                current_package="",
                 start_time=datetime.now(),
                 is_running=True,
                 last_updated=datetime.now(),
+                # Cumulative statistics (preserved from history)
+                scored_count=existing.scored_count,
+                unavailable_count=existing.unavailable_count,
+                error_count=existing.error_count,
+                grade_distribution=existing.grade_distribution.copy(),
+                total_score=existing.total_score,
+                # Stage timings (preserved - running averages)
+                stage_timings=existing.stage_timings.copy(),
+                stage_counts=existing.stage_counts.copy(),
+                # API status (will be updated during run)
+                github_rate_limit_remaining=existing.github_rate_limit_remaining,
+                github_rate_limit_total=existing.github_rate_limit_total,
+                github_rate_limit_reset=existing.github_rate_limit_reset,
+                llm_available=existing.llm_available,
+                llm_model=existing.llm_model,
+                osv_status=existing.osv_status,
             )
+
+            # Restore deques (activity log and errors are preserved)
+            self._metrics.recent_errors = existing.recent_errors
+            self._metrics.activity_log = existing.activity_log
+
             self._save()
 
     def start_package(self, name: str) -> None:
