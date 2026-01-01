@@ -10,27 +10,26 @@
     "repo": "libnsl",
     "subpath": null
   },
-  "install_count_30d": 3182,
+  "install_count_30d": 3170,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 61.8,
-    "grade": "D",
+    "overall": 57.1,
+    "grade": "F",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "restricted",
     "update_urgency": "low",
     "confidence": "medium",
     "confidence_factors": [
-      "No LLM assessment available",
       "Limited issue history"
     ],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 68.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 42.68020299263639,
+      "score": 47.76879532256132,
       "weight": 25
     },
     "community": {
@@ -42,7 +41,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 40.0,
+      "score": 16.0,
       "weight": 10
     },
     "stability": {
@@ -97,6 +96,7 @@
     "prs": {
       "open_prs": 2,
       "merged_prs_6mo": 1,
+      "closed_prs_6mo": 1,
       "stale_prs": 2,
       "avg_merge_time_hours": null
     },
@@ -160,18 +160,107 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The documentation is lacking in most areas, making it difficult for new users to get started.",
+      "top_issue": "No installation instructions or usage examples are provided."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/do_ypcall.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "Use of snprintf with user-controlled input in yp_bind_file function"
+        },
+        {
+          "file": "src/do_ypcall.c",
+          "line": 173,
+          "severity": "low",
+          "description": "Use of strdup with user-controlled input in yp_bind_client_create_v3 and yp_bind_client_create_v2 functions"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in yp_bind_file function due to lack of input validation"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "build issues",
+        "versioning problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The libnsl community is generally healthy, with an active maintainer and a moderate level of user engagement, but users experience some frustration with build issues and versioning problems."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 4,
+      "technical_depth": 9,
+      "welcomingness": 3,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness",
+        "confrontational tone"
+      ],
+      "summary": "The maintainer provides detailed technical explanations, but often comes across as dismissive and impatient with users, which may deter new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low commit activity",
+        "outdated last release",
+        "only one active contributor"
+      ],
+      "positive_signals": [
+        "recent commit within the past 6 months",
+        "active pull requests"
+      ],
+      "summary": "The libnsl package appears to be receiving minimal maintenance with infrequent updates and a single active contributor."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "minimal-maintenance",
     "security_summary": "No issues",
-    "doc_summary": "",
+    "doc_summary": "The documentation is lacking in most areas, making it difficult for new users to get started.",
     "concerns": [
+      "low commit activity",
+      "outdated last release",
+      "only one active contributor",
+      "Docs: No installation instructions or usage examples are provided.",
+      "Community: build issues",
+      "Community: versioning problems",
+      "Communication: dismissiveness",
+      "Communication: confrontational tone",
+      "Security: Potential buffer overflow vulnerability in yp_bind_file function due to lack of input validation",
       "High bus factor risk (90% from top contributor)"
     ],
     "highlights": [
+      "recent commit within the past 6 months",
+      "active pull requests",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-30T22:02:48.163277Z",
-  "data_fetched_at": "2025-12-30T22:02:48.163278Z"
+  "analyzed_at": "2026-01-01T05:53:28.970628Z",
+  "data_fetched_at": "2026-01-01T05:53:28.970629Z"
 }

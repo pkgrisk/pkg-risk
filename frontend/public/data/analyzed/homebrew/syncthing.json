@@ -1,0 +1,293 @@
+{
+  "ecosystem": "homebrew",
+  "name": "syncthing",
+  "description": "Open source continuous file synchronization application",
+  "version": "2.0.12",
+  "homepage": "https://syncthing.net/",
+  "repository": {
+    "platform": "github",
+    "owner": "syncthing",
+    "repo": "syncthing",
+    "subpath": null
+  },
+  "install_count_30d": 3230,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 79.5,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 74.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 94.55856907540218,
+      "weight": 25
+    },
+    "community": {
+      "score": 86.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 77.72,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 38.5,
+      "weight": 10
+    },
+    "stability": {
+      "score": 91.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "syncthing",
+      "name": "syncthing",
+      "description": "Open Source Continuous File Synchronization",
+      "stars": 78635,
+      "forks": 4864,
+      "open_issues": 384,
+      "watchers": 78635,
+      "created_at": "2013-11-26T09:48:21Z",
+      "updated_at": "2026-01-01T05:08:20Z",
+      "pushed_at": "2025-12-30T01:30:57Z",
+      "default_branch": "main",
+      "license": "MPL-2.0",
+      "language": "Go",
+      "topics": [
+        "go",
+        "p2p",
+        "peer-to-peer",
+        "synchronization"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 334,
+      "active_contributors_6mo": 15,
+      "top_contributor_pct": 57.0,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 25,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 5,
+      "contributor_entropy": 2.84
+    },
+    "commits": {
+      "last_commit_date": "2025-12-29T09:49:21Z",
+      "commits_last_6mo": 152,
+      "commits_last_year": 406
+    },
+    "issues": {
+      "open_issues": 276,
+      "closed_issues_6mo": 118,
+      "avg_response_time_hours": 32.3,
+      "avg_close_time_hours": 34.3,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 24,
+      "merged_prs_6mo": 99,
+      "closed_prs_6mo": 142,
+      "stale_prs": 16,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 455,
+      "releases_last_year": 63,
+      "last_release_date": "2025-12-23T08:40:59Z",
+      "latest_version": "v2.0.13-rc.1",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.62
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 74.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3999,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": true
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 13,
+      "recent_runs_pass_rate": 90.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 4,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "The documentation is comprehensive but could be improved with more concise and easily accessible information for new users.",
+      "top_issue": "Lack of clear, step-by-step installation instructions and a quick start example directly in the README."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/stdiscosrv/main.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The use of `os/exec` is not present, but the code uses `tls.LoadX509KeyPair` and `tlsutil.NewCertificate`, which could potentially be vulnerable to injection attacks if the input files are not properly validated."
+        },
+        {
+          "file": "cmd/strelaysrv/main.go",
+          "line": 145,
+          "severity": "low",
+          "description": "The use of `flag.StringVar` and `flag.IntVar` could potentially lead to injection vulnerabilities if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [
+        {
+          "file": "cmd/stdiscosrv/main.go",
+          "line": 95,
+          "type": "S3 access key ID"
+        },
+        {
+          "file": "cmd/stdiscosrv/main.go",
+          "line": 96,
+          "type": "S3 secret key"
+        },
+        {
+          "file": "cmd/strelaysrv/main.go",
+          "line": 123,
+          "type": "Token to restrict access to the relay"
+        }
+      ],
+      "critical_findings": [
+        "Potential injection vulnerabilities due to lack of input validation",
+        "Sensitive information (S3 access key ID and secret key) is stored in plain text"
+      ],
+      "summary": "The code has some security concerns, including potential injection vulnerabilities and sensitive information exposure, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "file synchronization issues",
+        "configuration complexities"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Syncthing community is actively reporting and discussing various issues, with maintainers responding moderately, indicating a relatively healthy but imperfect project ecosystem."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 4,
+      "technical_depth": 9,
+      "welcomingness": 3,
+      "communication_style": "adequate",
+      "red_flags": [
+        "aggressive tone in some responses",
+        "dismissiveness of certain questions"
+      ],
+      "summary": "The maintainer provides mostly helpful and technically deep responses, but sometimes struggles with patience and clarity, which can make the interaction feel unwelcoming."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Frequent commits (152 in the last 6 months)",
+        "Recent release (2025-12-23)",
+        "Active issue closure (118 closed in the last 6 months)",
+        "High number of merged PRs (99 in the last 6 months)",
+        "Multiple active contributors (15 in the last 6 months)"
+      ],
+      "summary": "The syncthing package appears to be actively maintained with frequent updates, releases, and a high level of community engagement."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The Syncthing project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is comprehensive but could be improved with more concise and easily accessible information for new users.",
+    "concerns": [
+      "Docs: Lack of clear, step-by-step installation instructions and a quick start example directly in the README.",
+      "Community: file synchronization issues",
+      "Community: configuration complexities",
+      "Communication: aggressive tone in some responses",
+      "Communication: dismissiveness of certain questions",
+      "Security: Potential injection vulnerabilities due to lack of input validation",
+      "Security: Sensitive information (S3 access key ID and secret key) is stored in plain text"
+    ],
+    "highlights": [
+      "Frequent commits (152 in the last 6 months)",
+      "Recent release (2025-12-23)",
+      "Active issue closure (118 closed in the last 6 months)",
+      "High number of merged PRs (99 in the last 6 months)",
+      "Multiple active contributors (15 in the last 6 months)",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T05:41:57.849532Z",
+  "data_fetched_at": "2026-01-01T05:41:57.849533Z"
+}
