@@ -10,22 +10,20 @@
     "repo": "pytorch",
     "subpath": null
   },
-  "install_count_30d": 2638,
+  "install_count_30d": 2635,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 94.6,
+    "overall": 91.5,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 92.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,11 +39,11 @@
       "weight": 10
     },
     "documentation": {
-      "score": 55.0,
+      "score": 50.5,
       "weight": 10
     },
     "stability": {
-      "score": 91.0,
+      "score": 88.0,
       "weight": 10
     }
   },
@@ -54,13 +52,13 @@
       "owner": "pytorch",
       "name": "pytorch",
       "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
-      "stars": 96246,
-      "forks": 26392,
-      "open_issues": 17936,
-      "watchers": 96246,
+      "stars": 96266,
+      "forks": 26405,
+      "open_issues": 17913,
+      "watchers": 96266,
       "created_at": "2016-08-13T05:26:41Z",
-      "updated_at": "2025-12-30T22:20:35Z",
-      "pushed_at": "2025-12-30T22:16:18Z",
+      "updated_at": "2026-01-01T13:18:47Z",
+      "pushed_at": "2026-01-01T09:03:53Z",
       "default_branch": "main",
       "license": "NOASSERTION",
       "language": "Python",
@@ -80,7 +78,7 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 319,
+      "total_contributors": 320,
       "active_contributors_6mo": 240,
       "top_contributor_pct": 6.1,
       "contributors_over_5pct": 1,
@@ -90,21 +88,22 @@
       "contributor_entropy": 7.3
     },
     "commits": {
-      "last_commit_date": "2025-12-30T21:53:31Z",
+      "last_commit_date": "2025-12-29T00:05:11Z",
       "commits_last_6mo": 1000,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 78,
-      "closed_issues_6mo": 29,
-      "avg_response_time_hours": 12.1,
-      "avg_close_time_hours": 46.0,
+      "open_issues": 84,
+      "closed_issues_6mo": 30,
+      "avg_response_time_hours": 3.1,
+      "avg_close_time_hours": 27.6,
       "good_first_issue_count": 1,
       "regression_issue_count": 0
     },
     "prs": {
       "open_prs": 300,
-      "merged_prs_6mo": 13,
+      "merged_prs_6mo": 9,
+      "closed_prs_6mo": 300,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -160,25 +159,122 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 47.1,
+      "recent_runs_pass_rate": 64.1,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
-      "has_security_workflow": false,
-      "has_release_workflow": true,
-      "has_multi_platform": true
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The PyTorch README provides a good overview of the package's features and installation instructions, but lacks clear quick start examples and troubleshooting guidance.",
+      "top_issue": "Lack of a clear quick start example to help new users get started with the package"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "torch/_inductor/compile_worker/__main__.py",
+          "line": 23,
+          "severity": "medium",
+          "description": "The importlib.import_module function can be used to execute arbitrary code if the input is not validated."
+        },
+        {
+          "file": "third_party/generate-cpuinfo-wrappers.py",
+          "line": 34,
+          "severity": "low",
+          "description": "The print function is used with user-controlled data, but it's unlikely to cause any harm in this context."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential code injection vulnerability in the importlib.import_module function."
+      ],
+      "summary": "The PyTorch package has some security concerns, including potential code injection vulnerabilities and lack of input validation, but no critical issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bugs",
+        "documentation"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The pytorch community is actively seeking help and reporting issues, but the maintainers' responsiveness is moderate, indicating a relatively healthy but potentially improving community."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 6,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "repeated use of force merge flag without explanation",
+        "lack of personal interaction"
+      ],
+      "summary": "The maintainer responses are clear and helpful, but lack personal touch and technical depth, with some potential issues with repeated force merges."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "low ratio of merged PRs to open PRs",
+        "relatively low number of closed issues"
+      ],
+      "positive_signals": [
+        "high number of commits in the past 6 months",
+        "large number of active contributors",
+        "recent last commit and release"
+      ],
+      "summary": "The pytorch package appears to be maintained, with a high volume of recent commits and active contributors, but may benefit from improved issue and PR management."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The PyTorch project has a clear path for contributors to become maintainers, but lacks a documented succession plan and decision-making process."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The PyTorch README provides a good overview of the package's features and installation instructions, but lacks clear quick start examples and troubleshooting guidance.",
+    "concerns": [
+      "low ratio of merged PRs to open PRs",
+      "relatively low number of closed issues",
+      "Docs: Lack of a clear quick start example to help new users get started with the package",
+      "Community: bugs",
+      "Community: documentation",
+      "Communication: repeated use of force merge flag without explanation",
+      "Communication: lack of personal interaction",
+      "Security: Potential code injection vulnerability in the importlib.import_module function."
+    ],
     "highlights": [
+      "high number of commits in the past 6 months",
+      "large number of active contributors",
+      "recent last commit and release",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-30T22:23:42.239618Z",
-  "data_fetched_at": "2025-12-30T22:23:42.239619Z"
+  "analyzed_at": "2026-01-01T13:38:01.934935Z",
+  "data_fetched_at": "2026-01-01T13:38:01.934936Z"
 }
