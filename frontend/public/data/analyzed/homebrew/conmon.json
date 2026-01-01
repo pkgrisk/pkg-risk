@@ -1,0 +1,259 @@
+{
+  "ecosystem": "homebrew",
+  "name": "conmon",
+  "description": "OCI container runtime monitor",
+  "version": "2.1.13",
+  "homepage": "https://github.com/containers/conmon",
+  "repository": {
+    "platform": "github",
+    "owner": "containers",
+    "repo": "conmon",
+    "subpath": null
+  },
+  "install_count_30d": 1891,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 86.0,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 82.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25
+    },
+    "community": {
+      "score": 87.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 95.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 58.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 80.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "containers",
+      "name": "conmon",
+      "description": "An OCI container runtime monitor.",
+      "stars": 469,
+      "forks": 139,
+      "open_issues": 27,
+      "watchers": 469,
+      "created_at": "2018-08-10T13:21:43Z",
+      "updated_at": "2025-12-27T23:04:44Z",
+      "pushed_at": "2025-12-12T18:14:21Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 64,
+      "active_contributors_6mo": 6,
+      "top_contributor_pct": 27.2,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 7,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 3.68
+    },
+    "commits": {
+      "last_commit_date": "2025-12-02T10:41:19Z",
+      "commits_last_6mo": 85,
+      "commits_last_year": 124
+    },
+    "issues": {
+      "open_issues": 17,
+      "closed_issues_6mo": 28,
+      "avg_response_time_hours": 4.7,
+      "avg_close_time_hours": 487.3,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 10,
+      "merged_prs_6mo": 40,
+      "closed_prs_6mo": 53,
+      "stale_prs": 6,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 50,
+      "releases_last_year": 1,
+      "last_release_date": "2025-02-25T18:56:34Z",
+      "latest_version": "v2.1.13",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.04
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 46.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": true,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3808,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 60.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 6,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The documentation is detailed but lacks a clear quick start guide and troubleshooting section.",
+      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/cli.c",
+          "line": 246,
+          "severity": "medium",
+          "description": "The opt_seccomp_notify_plugins variable is set to the value of the CONMON_SECCOMP_NOTIFY_PLUGINS environment variable without any validation or sanitization, which could potentially lead to command injection vulnerabilities."
+        },
+        {
+          "file": "src/cli.c",
+          "line": 253,
+          "severity": "medium",
+          "description": "The opt_runtime_path variable is used in the access() function without any validation or sanitization, which could potentially lead to path traversal vulnerabilities."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability through the CONMON_SECCOMP_NOTIFY_PLUGINS environment variable",
+        "Lack of input validation for some command-line options"
+      ],
+      "summary": "The conmon package has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be a relatively secure piece of software."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "dependency updates",
+        "error handling issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The conmon community appears to be moderately active with some open issues and recent closures, but lacks explicit user praise or severe frustration indicators."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, creating a welcoming environment for contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "recent release within the last year",
+        "active issue and PR management",
+        "multiple contributors active in the past 6 months"
+      ],
+      "summary": "The conmon package appears to be actively maintained with regular updates, releases, and engagement from multiple contributors."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "has SECURITY.md",
+    "doc_summary": "The documentation is detailed but lacks a clear quick start guide and troubleshooting section.",
+    "concerns": [
+      "Docs: Lack of a concise quick start example to help new users get started with the package.",
+      "Community: dependency updates",
+      "Community: error handling issues",
+      "Security: Potential command injection vulnerability through the CONMON_SECCOMP_NOTIFY_PLUGINS environment variable",
+      "Security: Lack of input validation for some command-line options"
+    ],
+    "highlights": [
+      "frequent commits in the past 6 months",
+      "recent release within the last year",
+      "active issue and PR management",
+      "multiple contributors active in the past 6 months",
+      "Excellent maintainer communication",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2026-01-01T12:18:27.959326Z",
+  "data_fetched_at": "2026-01-01T12:18:27.959327Z"
+}
