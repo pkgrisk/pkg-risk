@@ -1,0 +1,269 @@
+{
+  "ecosystem": "homebrew",
+  "name": "bazelisk",
+  "description": "User-friendly launcher for Bazel",
+  "version": "1.27.0",
+  "homepage": "https://github.com/bazelbuild/bazelisk/",
+  "repository": {
+    "platform": "github",
+    "owner": "bazelbuild",
+    "repo": "bazelisk",
+    "subpath": null
+  },
+  "install_count_30d": 3676,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 85.3,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 88.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 78.43332985467589,
+      "weight": 25
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 100.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 48.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 95.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "bazelbuild",
+      "name": "bazelisk",
+      "description": "A user-friendly launcher for Bazel.",
+      "stars": 2497,
+      "forks": 390,
+      "open_issues": 118,
+      "watchers": 2497,
+      "created_at": "2018-09-20T19:42:08Z",
+      "updated_at": "2025-12-31T13:47:32Z",
+      "pushed_at": "2025-12-17T15:25:32Z",
+      "default_branch": "master",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 85,
+      "active_contributors_6mo": 13,
+      "top_contributor_pct": 22.8,
+      "contributors_over_5pct": 5,
+      "contributors_prev_6mo": 10,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 10,
+      "contributor_entropy": 4.51
+    },
+    "commits": {
+      "last_commit_date": "2025-12-17T15:25:32Z",
+      "commits_last_6mo": 22,
+      "commits_last_year": 49
+    },
+    "issues": {
+      "open_issues": 98,
+      "closed_issues_6mo": 13,
+      "avg_response_time_hours": 529.3,
+      "avg_close_time_hours": 1268.9,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 20,
+      "merged_prs_6mo": 22,
+      "closed_prs_6mo": 25,
+      "stale_prs": 17,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 51,
+      "releases_last_year": 2,
+      "last_release_date": "2025-08-12T16:32:55Z",
+      "latest_version": "v1.27.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 16095,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 100.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 9,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The documentation is comprehensive and detailed, but could benefit from a clearer quick start section and more troubleshooting information.",
+      "top_issue": "Lack of explicit troubleshooting guide or FAQ section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "core/wrapper_helpers.go",
+          "line": 15,
+          "severity": "medium",
+          "description": "The use of `os.Getenv` and `syscall.EscapeArg` may lead to potential command injection vulnerabilities if the environment variables or arguments are not properly sanitized."
+        },
+        {
+          "file": "core/wrapper_helpers.go",
+          "line": 30,
+          "severity": "medium",
+          "description": "The use of `exec.Command` with user-provided input (`args`) may lead to potential command injection vulnerabilities if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerabilities in core/wrapper_helpers.go"
+      ],
+      "summary": "The code has some potential security concerns, including command injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "wrapper issues",
+        "platform compatibility"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The bazelisk community is actively addressing various technical issues, with maintainers responding to user concerns and resolving problems in a timely manner."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional brief or dismissive responses",
+        "some technical jargon without explanation"
+      ],
+      "summary": "The maintainer's responses are generally helpful, clear, and technically sound, but could improve in terms of patience and welcomingness towards new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "open PRs nearly equal to merged PRs"
+      ],
+      "positive_signals": [
+        "recent commits and releases",
+        "active contributors"
+      ],
+      "summary": "The bazelisk package appears to be maintained, with regular updates and active contributors, but may benefit from addressing the backlog of open issues and PRs."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The governance documentation for bazelisk lacks a clear succession plan, decision-making process, and contributor ladder, but suggests multiple maintainers have merge rights."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is comprehensive and detailed, but could benefit from a clearer quick start section and more troubleshooting information.",
+    "concerns": [
+      "high number of open issues",
+      "open PRs nearly equal to merged PRs",
+      "Docs: Lack of explicit troubleshooting guide or FAQ section",
+      "Community: wrapper issues",
+      "Community: platform compatibility",
+      "Communication: occasional brief or dismissive responses",
+      "Communication: some technical jargon without explanation",
+      "Security: Potential command injection vulnerabilities in core/wrapper_helpers.go"
+    ],
+    "highlights": [
+      "recent commits and releases",
+      "active contributors",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-01T04:26:51.812354Z",
+  "data_fetched_at": "2026-01-01T04:26:51.812355Z"
+}
