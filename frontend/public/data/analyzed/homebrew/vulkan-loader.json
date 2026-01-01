@@ -1,0 +1,270 @@
+{
+  "ecosystem": "homebrew",
+  "name": "vulkan-loader",
+  "description": "Vulkan ICD Loader",
+  "version": "1.4.335.0",
+  "homepage": "https://github.com/KhronosGroup/Vulkan-Loader",
+  "repository": {
+    "platform": "github",
+    "owner": "KhronosGroup",
+    "repo": "Vulkan-Loader",
+    "subpath": null
+  },
+  "install_count_30d": 4221,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 79.7,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 82.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 84.31024180053498,
+      "weight": 25
+    },
+    "community": {
+      "score": 71.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 100.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 41.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 93.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "KhronosGroup",
+      "name": "Vulkan-Loader",
+      "description": "Vulkan Loader",
+      "stars": 614,
+      "forks": 315,
+      "open_issues": 53,
+      "watchers": 614,
+      "created_at": "2018-05-03T19:59:26Z",
+      "updated_at": "2025-12-30T13:55:53Z",
+      "pushed_at": "2025-12-22T17:47:43Z",
+      "default_branch": "main",
+      "license": "NOASSERTION",
+      "language": "C",
+      "topics": [
+        "vulkan"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 221,
+      "active_contributors_6mo": 14,
+      "top_contributor_pct": 18.5,
+      "contributors_over_5pct": 7,
+      "contributors_prev_6mo": 12,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 9,
+      "contributor_entropy": 4.76
+    },
+    "commits": {
+      "last_commit_date": "2025-12-22T17:06:17Z",
+      "commits_last_6mo": 98,
+      "commits_last_year": 192
+    },
+    "issues": {
+      "open_issues": 46,
+      "closed_issues_6mo": 10,
+      "avg_response_time_hours": 318.5,
+      "avg_close_time_hours": 697.1,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 7,
+      "merged_prs_6mo": 78,
+      "closed_prs_6mo": 79,
+      "stale_prs": 6,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": true,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2647,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": true,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 84.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 5,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The documentation provides a good introduction to the Vulkan Loader, but lacks clear installation instructions and examples for common use cases.",
+      "top_issue": "Lack of quick start guide and troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "loader/loader_environment.c",
+          "line": 43,
+          "severity": "medium",
+          "description": "The loader_getenv function does not validate its input, which could lead to potential security issues if the environment variable name is user-controlled."
+        },
+        {
+          "file": "scripts/qnx/loader_cmake_config.h",
+          "line": 1,
+          "severity": "low",
+          "description": "The HAVE_SECURE_GETENV and HAVE___SECURE_GETENV macros are undefined, which could lead to the use of insecure getenv functions in certain environments."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential security issues with environment variable handling",
+        "Insecure defaults for file searching"
+      ],
+      "summary": "The Vulkan loader code has some potential security concerns related to environment variable handling and insecure defaults, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "layer interaction issues",
+        "log message clarity"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The vulkan-loader community is experiencing frustration with layer interactions and log messages, with a slow response from maintainers."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 7,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer's responses are generally helpful, clear, and patient, providing detailed technical explanations, but may benefit from a more welcoming tone towards new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "unknown last release",
+        "relatively high number of open issues"
+      ],
+      "positive_signals": [
+        "high number of commits in the past 6 months",
+        "many merged PRs in the past 6 months",
+        "multiple active contributors"
+      ],
+      "summary": "The vulkan-loader package appears to be actively maintained with frequent updates and a sizable team of contributors, despite some concerns about issue backlog and release history."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The Vulkan Loader repository has a well-documented decision process and multiple maintainers, but lacks a clear succession plan."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "has SECURITY.md, Dependabot enabled",
+    "doc_summary": "The documentation provides a good introduction to the Vulkan Loader, but lacks clear installation instructions and examples for common use cases.",
+    "concerns": [
+      "unknown last release",
+      "relatively high number of open issues",
+      "Docs: Lack of quick start guide and troubleshooting section",
+      "Community: layer interaction issues",
+      "Community: log message clarity",
+      "Security: Potential security issues with environment variable handling",
+      "Security: Insecure defaults for file searching"
+    ],
+    "highlights": [
+      "high number of commits in the past 6 months",
+      "many merged PRs in the past 6 months",
+      "multiple active contributors",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-01T03:07:42.712953Z",
+  "data_fetched_at": "2026-01-01T03:07:42.712954Z"
+}
