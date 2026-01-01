@@ -10,26 +10,24 @@
     "repo": "delta",
     "subpath": null
   },
-  "install_count_30d": 3133,
+  "install_count_30d": 3101,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 80.7,
-    "grade": "B",
+    "overall": 71.9,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 95.0,
+      "score": 70.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 65.98771368464284,
+      "score": 63.94712652390412,
       "weight": 25
     },
     "community": {
@@ -37,11 +35,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 65.84,
+      "score": 50.84,
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 52.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "dandavison",
       "name": "delta",
       "description": "A syntax-highlighting pager for git, diff, grep, and blame output",
-      "stars": 28511,
-      "forks": 465,
+      "stars": 28522,
+      "forks": 464,
       "open_issues": 350,
-      "watchers": 28511,
+      "watchers": 28522,
       "created_at": "2019-06-24T15:00:13Z",
-      "updated_at": "2025-12-30T20:09:10Z",
+      "updated_at": "2026-01-01T04:28:24Z",
       "pushed_at": "2025-12-11T09:12:13Z",
       "default_branch": "main",
       "license": "MIT",
@@ -105,7 +103,8 @@
     "prs": {
       "open_prs": 71,
       "merged_prs_6mo": 16,
-      "stale_prs": 59,
+      "closed_prs_6mo": 18,
+      "stale_prs": 60,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -160,7 +159,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 5,
-      "recent_runs_pass_rate": 78.0,
+      "recent_runs_pass_rate": 80.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -168,16 +167,114 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally well-structured and provides a good overview of the package's features, but lacks troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 234,
+          "severity": "medium",
+          "description": "The `subcmd_bin` variable is used to construct a command without proper validation, potentially leading to command injection vulnerabilities."
+        },
+        {
+          "file": "src/main.rs",
+          "line": 245,
+          "severity": "low",
+          "description": "The `shell_words::join` function is used to join arguments for the subcommand, which may lead to issues if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the subcommand execution",
+        "Insufficient input validation and error handling for user-provided input"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "compatibility issues",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The git-delta community is active with ongoing discussions and feature requests, but users are experiencing some frustration due to compatibility issues and unaddressed concerns."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "high number of open issues",
+        "low ratio of closed issues to open issues",
+        "old last release"
+      ],
+      "positive_signals": [
+        "recent commits",
+        "active contributors",
+        "merged PRs in the past 6 months"
+      ],
+      "summary": "The git-delta package appears to be receiving some maintenance, but the high number of open issues and old last release suggest that it may not be keeping up with demand."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for git-delta lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
   },
-  "analyzed_at": "2025-12-30T22:04:22.342688Z",
-  "data_fetched_at": "2025-12-30T22:04:22.342689Z"
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is generally well-structured and provides a good overview of the package's features, but lacks troubleshooting information.",
+    "concerns": [
+      "high number of open issues",
+      "low ratio of closed issues to open issues",
+      "old last release",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Community: compatibility issues",
+      "Community: feature requests",
+      "Governance: High bus factor risk identified",
+      "Security: Potential command injection vulnerability in the subcommand execution",
+      "Security: Insufficient input validation and error handling for user-provided input"
+    ],
+    "highlights": [
+      "recent commits",
+      "active contributors",
+      "merged PRs in the past 6 months",
+      "Excellent maintainer communication",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2026-01-01T06:08:11.272753Z",
+  "data_fetched_at": "2026-01-01T06:08:11.272755Z"
 }
