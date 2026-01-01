@@ -1,4 +1,5 @@
 import { useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import type { MatchedDependency } from '../types/package';
 import { GradeBadge } from './GradeBadge';
@@ -23,6 +24,14 @@ export function PackageDetailModal({ dependency, ecosystem, onClose }: PackageDe
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [onClose]);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   // Close on backdrop click
   const handleBackdropClick = useCallback(
@@ -50,9 +59,9 @@ export function PackageDetailModal({ dependency, ecosystem, onClose }: PackageDe
   })();
   const hasHighBusFactor = (scored?.top_contributor_pct ?? 0) > 80;
 
-  return (
+  const modalContent = (
     <div className="modal-backdrop" onClick={handleBackdropClick}>
-      <div className="package-detail-modal">
+      <div className="package-detail-modal" role="dialog" aria-modal="true">
         <button className="modal-close" onClick={onClose} aria-label="Close">
           ×
         </button>
@@ -245,6 +254,8 @@ export function PackageDetailModal({ dependency, ecosystem, onClose }: PackageDe
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
 
 interface ScoreBarProps {
