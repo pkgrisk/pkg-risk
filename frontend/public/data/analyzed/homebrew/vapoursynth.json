@@ -10,22 +10,20 @@
     "repo": "vapoursynth",
     "subpath": null
   },
-  "install_count_30d": 2795,
+  "install_count_30d": 2732,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 82.9,
-    "grade": "B",
+    "overall": 75.1,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 64.0,
       "weight": 30
     },
     "maintenance": {
@@ -33,7 +31,7 @@
       "weight": 25
     },
     "community": {
-      "score": 87.0,
+      "score": 77.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 65.5,
+      "score": 50.5,
       "weight": 10
     },
     "stability": {
@@ -96,6 +94,7 @@
     "prs": {
       "open_prs": 2,
       "merged_prs_6mo": 5,
+      "closed_prs_6mo": 8,
       "stale_prs": 2,
       "avg_merge_time_hours": null
     },
@@ -159,17 +158,101 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README provides a brief introduction and links to external documentation, but lacks concrete examples and troubleshooting information.",
+      "top_issue": "Lack of quick start guide, examples, and troubleshooting information in the README itself"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "src/core/expr/main.cpp",
+          "line": 34,
+          "severity": "medium",
+          "description": "User input from argv[1] is used directly in the compile function without validation, potentially allowing for injection attacks."
+        },
+        {
+          "file": "src/core/settings.cpp",
+          "line": 123,
+          "severity": "low",
+          "description": "The readSettings function reads a file and parses its contents without proper input validation, which could lead to potential issues if the file contains malicious data."
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk in main.cpp"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or dangerous defaults were found."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "installation issues",
+        "compatibility problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Vapoursynth community is experiencing a mix of resolved and ongoing issues, with maintainers showing moderate responsiveness to user concerns."
+    },
+    "communication": {
+      "helpfulness": 6,
+      "clarity": 7,
+      "patience": 4,
+      "technical_depth": 8,
+      "welcomingness": 3,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness",
+        "sarcasm",
+        "lack of empathy"
+      ],
+      "summary": "The maintainer's responses are technically informative but often come across as abrupt and unwelcoming, which may deter new contributors and users from seeking help."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits and releases",
+        "Active contributors and issue resolution"
+      ],
+      "summary": "The vapoursynth package appears to be actively maintained with regular updates, active contributors, and a reasonable issue resolution rate."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a brief introduction and links to external documentation, but lacks concrete examples and troubleshooting information.",
+    "concerns": [
+      "Docs: Lack of quick start guide, examples, and troubleshooting information in the README itself",
+      "Community: installation issues",
+      "Community: compatibility problems",
+      "Communication: dismissiveness",
+      "Communication: sarcasm",
+      "Security: Potential injection risk in main.cpp"
+    ],
     "highlights": [
+      "Recent commits and releases",
+      "Active contributors and issue resolution",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-30T22:17:22.330254Z",
-  "data_fetched_at": "2025-12-30T22:17:22.330255Z"
+  "analyzed_at": "2026-01-01T07:39:09.951182Z",
+  "data_fetched_at": "2026-01-01T07:39:09.951182Z"
 }

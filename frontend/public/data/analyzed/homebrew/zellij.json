@@ -10,30 +10,28 @@
     "repo": "zellij",
     "subpath": null
   },
-  "install_count_30d": 2841,
+  "install_count_30d": 2776,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 95.0,
-    "grade": "A",
+    "overall": 86.4,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 100.0,
+      "score": 78.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 100.0,
+      "score": 93.96990821604844,
       "weight": 25
     },
     "community": {
-      "score": 100.0,
+      "score": 96.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 77.5,
+      "score": 78.0,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "zellij-org",
       "name": "zellij",
       "description": "A terminal workspace with batteries included",
-      "stars": 27840,
+      "stars": 27858,
       "forks": 893,
-      "open_issues": 1414,
-      "watchers": 27840,
+      "open_issues": 1418,
+      "watchers": 27858,
       "created_at": "2020-09-01T14:04:28Z",
-      "updated_at": "2025-12-30T21:49:42Z",
-      "pushed_at": "2025-12-23T12:41:56Z",
+      "updated_at": "2026-01-01T07:03:03Z",
+      "pushed_at": "2026-01-01T07:02:19Z",
       "default_branch": "main",
       "license": "MIT",
       "language": "Rust",
@@ -86,20 +84,21 @@
     },
     "commits": {
       "last_commit_date": "2025-12-23T12:41:56Z",
-      "commits_last_6mo": 68,
-      "commits_last_year": 174
+      "commits_last_6mo": 67,
+      "commits_last_year": 172
     },
     "issues": {
-      "open_issues": 239,
-      "closed_issues_6mo": 66,
-      "avg_response_time_hours": 5.3,
-      "avg_close_time_hours": 154.1,
+      "open_issues": 237,
+      "closed_issues_6mo": 68,
+      "avg_response_time_hours": 5.9,
+      "avg_close_time_hours": 108.4,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 153,
-      "merged_prs_6mo": 55,
+      "open_prs": 156,
+      "merged_prs_6mo": 54,
+      "closed_prs_6mo": 64,
       "stale_prs": 134,
       "avg_merge_time_hours": null
     },
@@ -155,7 +154,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 4,
-      "recent_runs_pass_rate": 54.0,
+      "recent_runs_pass_rate": 58.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -163,17 +162,120 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The README provides a good introduction to the package and its features, but could benefit from more concise language and additional troubleshooting information.",
+      "top_issue": "Lack of clear troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 123,
+          "severity": "medium",
+          "description": "The 'command' variable is used to construct a CliAction::NewPane without proper validation or sanitization, potentially allowing for command injection attacks."
+        },
+        {
+          "file": "src/main.rs",
+          "line": 156,
+          "severity": "low",
+          "description": "The 'url' variable is used to construct a CliAction::NewPane without proper validation or sanitization, potentially allowing for URL-based attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection attacks through the 'command' variable",
+        "Insufficient input validation and error handling"
+      ],
+      "summary": "The code has some security concerns, including potential command injection attacks and insufficient input validation, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bug fixes",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The zellij community is active with a mix of open issues, feature requests, and some frustration, but maintainers are moderately responsive."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are extremely helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintainers."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "recent release",
+        "active contributors"
+      ],
+      "summary": "The zellij package appears to be maintained, with regular updates and active contributors, but may benefit from addressing its large backlog of open issues and PRs."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The project has a documented decision-making process and multiple maintainers, but lacks a clear succession plan and contributor ladder."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a good introduction to the package and its features, but could benefit from more concise language and additional troubleshooting information.",
+    "concerns": [
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Lack of clear troubleshooting section or common problem solutions",
+      "Community: bug fixes",
+      "Community: feature requests",
+      "Security: Potential command injection attacks through the 'command' variable",
+      "Security: Insufficient input validation and error handling"
+    ],
     "highlights": [
+      "frequent commits in the past 6 months",
+      "recent release",
+      "active contributors",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-30T22:15:07.175801Z",
-  "data_fetched_at": "2025-12-30T22:15:07.175802Z"
+  "analyzed_at": "2026-01-01T07:31:43.405276Z",
+  "data_fetched_at": "2026-01-01T07:31:43.405277Z"
 }

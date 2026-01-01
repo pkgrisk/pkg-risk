@@ -10,22 +10,20 @@
     "repo": "eksctl",
     "subpath": null
   },
-  "install_count_30d": 3040,
+  "install_count_30d": 2849,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 92.7,
-    "grade": "A",
+    "overall": 89.4,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 86.0,
       "weight": 30
     },
     "maintenance": {
@@ -33,15 +31,15 @@
       "weight": 25
     },
     "community": {
-      "score": 99.0,
+      "score": 100.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 85.0,
+      "score": 90.0,
       "weight": 10
     },
     "documentation": {
-      "score": 65.0,
+      "score": 68.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "eksctl-io",
       "name": "eksctl",
       "description": "The official CLI for Amazon EKS",
-      "stars": 5155,
+      "stars": 5154,
       "forks": 1472,
       "open_issues": 111,
-      "watchers": 5155,
+      "watchers": 5154,
       "created_at": "2018-05-23T08:41:03Z",
-      "updated_at": "2025-12-30T09:02:38Z",
+      "updated_at": "2025-12-31T12:46:31Z",
       "pushed_at": "2025-12-25T05:07:36Z",
       "default_branch": "main",
       "license": "NOASSERTION",
@@ -106,6 +104,7 @@
     "prs": {
       "open_prs": 19,
       "merged_prs_6mo": 110,
+      "closed_prs_6mo": 155,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -161,7 +160,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 18,
-      "recent_runs_pass_rate": 80.0,
+      "recent_runs_pass_rate": 72.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -169,17 +168,99 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides clear and detailed installation instructions, but lacks comprehensive examples and troubleshooting guidance.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "integration/main.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The use of `os.Args[1:]` in the `runGinkgo` function could potentially lead to command injection if not properly sanitized."
+        },
+        {
+          "file": "cmd/ec2geninfo/main.go",
+          "line": 64,
+          "severity": "low",
+          "description": "The use of `template.Parse` with a string literal is generally safe, but it's worth noting that user-controlled input should never be used in this context."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the `runGinkgo` function.",
+        "Lack of input validation and sanitization for environment variables."
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "positive",
+      "frustration_level": 2,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "region support",
+        "bug fixes"
+      ],
+      "praise_themes": [
+        "contributor engagement",
+        "responsive maintainers"
+      ],
+      "abandonment_signals": false,
+      "summary": "The eksctl community appears to be healthy, with active maintainers and engaged contributors, despite some minor issues with region support and bug fixes."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent last commit and release",
+        "High number of commits and merged PRs in the past 6 months",
+        "Multiple active contributors"
+      ],
+      "summary": "The eksctl package appears to be actively maintained with frequent updates, a high volume of contributions, and a responsive community."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The eksctl project has a well-documented decision process and contributor ladder, but lacks a clear succession plan."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides clear and detailed installation instructions, but lacks comprehensive examples and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: region support",
+      "Community: bug fixes",
+      "Security: Potential command injection vulnerability in the `runGinkgo` function.",
+      "Security: Lack of input validation and sanitization for environment variables."
+    ],
     "highlights": [
+      "Recent last commit and release",
+      "High number of commits and merged PRs in the past 6 months",
+      "Multiple active contributors",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "positive"
   },
-  "analyzed_at": "2025-12-30T22:06:55.030525Z",
-  "data_fetched_at": "2025-12-30T22:06:55.030526Z"
+  "analyzed_at": "2026-01-01T07:13:32.558689Z",
+  "data_fetched_at": "2026-01-01T07:13:32.558690Z"
 }

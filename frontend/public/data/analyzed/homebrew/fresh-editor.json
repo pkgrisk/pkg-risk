@@ -10,22 +10,20 @@
     "repo": "fresh",
     "subpath": null
   },
-  "install_count_30d": 2772,
+  "install_count_30d": 2872,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.5,
-    "grade": "A",
+    "overall": 80.8,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "established",
     "security": {
-      "score": 95.0,
+      "score": 70.0,
       "weight": 30
     },
     "maintenance": {
@@ -33,15 +31,15 @@
       "weight": 25
     },
     "community": {
-      "score": 100.0,
+      "score": 85.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 61.64,
+      "score": 61.96,
       "weight": 10
     },
     "documentation": {
-      "score": 77.5,
+      "score": 78.0,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "sinelaw",
       "name": "fresh",
       "description": "Text editor for your terminal: easy, powerful and fast",
-      "stars": 4307,
-      "forks": 141,
-      "open_issues": 78,
-      "watchers": 4307,
+      "stars": 4479,
+      "forks": 147,
+      "open_issues": 86,
+      "watchers": 4479,
       "created_at": "2024-12-24T19:50:15Z",
-      "updated_at": "2025-12-30T22:09:18Z",
-      "pushed_at": "2025-12-30T22:15:28Z",
+      "updated_at": "2026-01-01T06:53:00Z",
+      "pushed_at": "2026-01-01T06:54:21Z",
       "default_branch": "master",
       "license": "GPL-2.0",
       "language": "Rust",
@@ -71,31 +69,32 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 18,
-      "active_contributors_6mo": 18,
-      "top_contributor_pct": 81.4,
+      "total_contributors": 19,
+      "active_contributors_6mo": 19,
+      "top_contributor_pct": 79.8,
       "contributors_over_5pct": 2,
       "contributors_prev_6mo": 0,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 18,
-      "contributor_entropy": 0.83
+      "first_time_contributors_6mo": 19,
+      "contributor_entropy": 0.87
     },
     "commits": {
-      "last_commit_date": "2025-12-30T21:56:58Z",
+      "last_commit_date": "2025-12-31T21:30:58Z",
       "commits_last_6mo": 1000,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 66,
+      "open_issues": 72,
       "closed_issues_6mo": 138,
-      "avg_response_time_hours": 10.2,
-      "avg_close_time_hours": 7.9,
+      "avg_response_time_hours": 9.0,
+      "avg_close_time_hours": 12.9,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 12,
-      "merged_prs_6mo": 278,
+      "open_prs": 14,
+      "merged_prs_6mo": 275,
+      "closed_prs_6mo": 300,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -151,7 +150,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 13,
-      "recent_runs_pass_rate": 2.1,
+      "recent_runs_pass_rate": 2.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -159,19 +158,112 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The README provides a clear overview of the package's features and installation instructions, but lacks concise quick start examples and troubleshooting guidance.",
+      "top_issue": "Lack of concise quick start examples and troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 246,
+          "severity": "medium",
+          "description": "The `reopen_stdin_from_tty` function uses the `libc::dup2` function which can potentially lead to file descriptor leaks if not handled properly."
+        },
+        {
+          "file": "src/main.rs",
+          "line": 266,
+          "severity": "low",
+          "description": "The `start_stdin_streaming` function creates a temporary file and writes to it, but does not check for potential path traversal vulnerabilities."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential file descriptor leaks in the `reopen_stdin_from_tty` function",
+        "Lack of input validation for user-provided file paths"
+      ],
+      "summary": "The code has some security concerns, including potential file descriptor leaks and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "bugs",
+        "platform-specific issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The fresh-editor community is experiencing frustration due to a growing number of unresolved bugs and platform-specific issues, with slow maintainer responsiveness."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are consistently helpful, clear, patient, and welcoming, making them an exemplary communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (1000)",
+        "Recent last commit (2025-12-31)",
+        "Frequent releases (last release on 2025-12-30)",
+        "Large number of merged PRs in the past 6 months (275)",
+        "Multiple active contributors in the past 6 months (19)"
+      ],
+      "summary": "The fresh-editor package appears to be actively maintained with a high volume of commits, releases, and contributor activity."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
+    },
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
+    "doc_summary": "The README provides a clear overview of the package's features and installation instructions, but lacks concise quick start examples and troubleshooting guidance.",
     "concerns": [
-      "High bus factor risk (81% from top contributor)"
+      "Docs: Lack of concise quick start examples and troubleshooting section",
+      "Community: bugs",
+      "Community: platform-specific issues",
+      "Security: Potential file descriptor leaks in the `reopen_stdin_from_tty` function",
+      "Security: Lack of input validation for user-provided file paths"
     ],
     "highlights": [
+      "High number of commits in the past 6 months (1000)",
+      "Recent last commit (2025-12-31)",
+      "Frequent releases (last release on 2025-12-30)",
+      "Large number of merged PRs in the past 6 months (275)",
+      "Multiple active contributors in the past 6 months (19)",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-30T22:17:56.908461Z",
-  "data_fetched_at": "2025-12-30T22:17:56.908462Z"
+  "analyzed_at": "2026-01-01T07:01:46.921688Z",
+  "data_fetched_at": "2026-01-01T07:01:46.921689Z"
 }

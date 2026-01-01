@@ -10,22 +10,20 @@
     "repo": "helmfile",
     "subpath": null
   },
-  "install_count_30d": 2943,
+  "install_count_30d": 2833,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 93.2,
-    "grade": "A",
+    "overall": 85.7,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 100.0,
+      "score": 90.0,
       "weight": 30
     },
     "maintenance": {
@@ -33,15 +31,15 @@
       "weight": 25
     },
     "community": {
-      "score": 88.0,
+      "score": 63.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 85.0,
+      "score": 70.0,
       "weight": 10
     },
     "documentation": {
-      "score": 65.0,
+      "score": 72.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "helmfile",
       "name": "helmfile",
       "description": "Declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases. Generate all-in-one manifests for use with ArgoCD.",
-      "stars": 4904,
-      "forks": 321,
+      "stars": 4905,
+      "forks": 320,
       "open_issues": 59,
-      "watchers": 4904,
+      "watchers": 4905,
       "created_at": "2022-03-27T03:07:09Z",
-      "updated_at": "2025-12-30T08:53:42Z",
+      "updated_at": "2025-12-31T04:37:43Z",
       "pushed_at": "2025-12-30T08:53:39Z",
       "default_branch": "main",
       "license": "MIT",
@@ -91,7 +89,7 @@
     },
     "issues": {
       "open_issues": 46,
-      "closed_issues_6mo": 55,
+      "closed_issues_6mo": 54,
       "avg_response_time_hours": 85.6,
       "avg_close_time_hours": 52.4,
       "good_first_issue_count": 0,
@@ -100,6 +98,7 @@
     "prs": {
       "open_prs": 13,
       "merged_prs_6mo": 143,
+      "closed_prs_6mo": 185,
       "stale_prs": 11,
       "avg_merge_time_hours": null
     },
@@ -163,17 +162,109 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides a clear introduction and installation instructions, but lacks comprehensive troubleshooting guidance and detailed configuration documentation.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/apply.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The `DiffArgs` and `SyncArgs` flags allow passing arbitrary arguments to helm-diff and helm upgrade, which could potentially lead to command injection if not properly sanitized."
+        },
+        {
+          "file": "cmd/apply.go",
+          "line": 145,
+          "severity": "medium",
+          "description": "The `PostRenderer` flag allows specifying a custom post-renderer script, which could potentially lead to code injection if not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerabilities in cmd/apply.go",
+        "Lack of input validation for some flags"
+      ],
+      "summary": "The helmfile package has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "helmfile not updating repository indexes",
+        "issues with templating and kustomize"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The helmfile community is experiencing frustration due to unresolved issues and slow maintainer responsiveness, indicating a decline in overall community health."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful, clear, and patient, with a good balance of technical depth and welcomingness."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (143)",
+        "Recent last commit (2025-12-30) and last release (2025-12-20)",
+        "Multiple merged PRs in the past 6 months (143)",
+        "Active contributors (16) in the past 6 months"
+      ],
+      "summary": "The helmfile package appears to be actively maintained with frequent updates, a high volume of commits and merged PRs, and active contributors."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for helmfile lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a clear introduction and installation instructions, but lacks comprehensive troubleshooting guidance and detailed configuration documentation.",
+    "concerns": [
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: helmfile not updating repository indexes",
+      "Community: issues with templating and kustomize",
+      "Governance: High bus factor risk identified",
+      "Security: Potential command injection vulnerabilities in cmd/apply.go",
+      "Security: Lack of input validation for some flags"
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (143)",
+      "Recent last commit (2025-12-30) and last release (2025-12-20)",
+      "Multiple merged PRs in the past 6 months (143)",
+      "Active contributors (16) in the past 6 months",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-30T22:12:39.457865Z",
-  "data_fetched_at": "2025-12-30T22:12:39.457866Z"
+  "analyzed_at": "2026-01-01T07:18:39.420744Z",
+  "data_fetched_at": "2026-01-01T07:18:39.420745Z"
 }

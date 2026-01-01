@@ -14,22 +14,20 @@
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 92.8,
+    "overall": 94.3,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
       "score": 100.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 88.0,
+      "score": 91.32853255223993,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 74.0,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "pulumi",
       "name": "pulumi",
       "description": "Pulumi - Infrastructure as Code in any programming language \ud83d\ude80",
-      "stars": 24433,
+      "stars": 24438,
       "forks": 1274,
-      "open_issues": 2448,
-      "watchers": 24433,
+      "open_issues": 2450,
+      "watchers": 24438,
       "created_at": "2016-10-31T21:02:47Z",
-      "updated_at": "2025-12-30T21:46:47Z",
-      "pushed_at": "2025-12-30T20:56:53Z",
+      "updated_at": "2025-12-31T18:46:52Z",
+      "pushed_at": "2025-12-31T01:04:18Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "Go",
@@ -100,12 +98,12 @@
       "contributor_entropy": 4.96
     },
     "commits": {
-      "last_commit_date": "2025-12-30T20:06:38Z",
-      "commits_last_6mo": 700,
+      "last_commit_date": "2025-12-31T00:13:49Z",
+      "commits_last_6mo": 701,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 231,
+      "open_issues": 230,
       "closed_issues_6mo": 66,
       "avg_response_time_hours": 51.5,
       "avg_close_time_hours": 54.0,
@@ -113,8 +111,9 @@
       "regression_issue_count": 3
     },
     "prs": {
-      "open_prs": 147,
+      "open_prs": 148,
       "merged_prs_6mo": 247,
+      "closed_prs_6mo": 300,
       "stale_prs": 106,
       "avg_merge_time_hours": null
     },
@@ -170,7 +169,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 56.0,
+      "recent_runs_pass_rate": 46.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -178,17 +177,117 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The README provides a clear introduction to Pulumi and its capabilities, with good installation and quick start instructions, but lacks comprehensive configuration and troubleshooting documentation.",
+      "top_issue": "Insufficient troubleshooting guidance"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "pkg/util/generate/main.go",
+          "line": 43,
+          "severity": "medium",
+          "description": "The use of 'os/exec' with user-controlled input (e.g., repository names) may pose a risk if not properly sanitized."
+        },
+        {
+          "file": "pkg/util/generate/main.go",
+          "line": 63,
+          "severity": "low",
+          "description": "The use of 'template.Execute' with user-controlled data may pose a risk if the template is not properly designed to prevent code injection."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential code injection risk in pkg/util/generate/main.go"
+      ],
+      "summary": "The Pulumi package has some security concerns, including potential code injection risks and insufficient input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "workflow failures",
+        "dependency issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Pulumi community is active and responsive, with maintainers addressing issues in a timely manner, but some users are experiencing frustrations with workflow failures and dependency issues."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional abrupt closures of issues without explanation"
+      ],
+      "summary": "The maintainers provide generally helpful and clear responses, but could improve in terms of welcoming new contributors and providing detailed explanations for issue closures."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (701)",
+        "Recent last commit and release dates",
+        "Large number of merged PRs in the past 6 months (247)",
+        "Many active contributors in the past 6 months (50)"
+      ],
+      "summary": "The pulumi package appears to be actively maintained with frequent updates, a large contributor base, and a high volume of pull requests being addressed."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The Pulumi project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides a clear introduction to Pulumi and its capabilities, with good installation and quick start instructions, but lacks comprehensive configuration and troubleshooting documentation.",
+    "concerns": [
+      "Docs: Insufficient troubleshooting guidance",
+      "Community: workflow failures",
+      "Community: dependency issues",
+      "Communication: occasional abrupt closures of issues without explanation",
+      "Security: Potential code injection risk in pkg/util/generate/main.go"
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (701)",
+      "Recent last commit and release dates",
+      "Large number of merged PRs in the past 6 months (247)",
+      "Many active contributors in the past 6 months (50)",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-30T22:16:58.932364Z",
-  "data_fetched_at": "2025-12-30T22:16:58.932365Z"
+  "analyzed_at": "2026-01-01T07:27:53.862619Z",
+  "data_fetched_at": "2026-01-01T07:27:53.862620Z"
 }
