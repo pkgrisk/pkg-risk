@@ -4,7 +4,349 @@ import { getStoredAnalysis, getStoredPackage } from '../hooks/useAnalysisStorage
 import { GradeBadge } from '../components/GradeBadge';
 import { RiskBadges } from '../components/RiskBadges';
 import { ScoreBar } from '../components/ScoreBar';
-import type { MatchedDependency, ProjectAnalysis } from '../types/package';
+import type { MatchedDependency, ProjectAnalysis, PackageSummary } from '../types/package';
+
+// Helper function
+function getDaysSinceCommit(lastCommitDate: string | null | undefined): number | null {
+  if (!lastCommitDate) return null;
+  const lastCommit = new Date(lastCommitDate);
+  const now = new Date();
+  return Math.floor((now.getTime() - lastCommit.getTime()) / (1000 * 60 * 60 * 24));
+}
+
+// Critical Issues Banner - adapted for PackageSummary
+interface CriticalIssue {
+  severity: 'critical' | 'high';
+  icon: string;
+  title: string;
+  description: string;
+}
+
+function SummaryCriticalIssuesBanner({ pkg }: { pkg: PackageSummary }) {
+  const issues: CriticalIssue[] = [];
+
+  // Check for unpatched CVEs
+  if (pkg.has_unpatched_cves) {
+    issues.push({
+      severity: 'critical',
+      icon: '!',
+      title: `${pkg.cve_count || 'Known'} Unpatched Vulnerabilit${pkg.cve_count === 1 ? 'y' : 'ies'}`,
+      description: 'This package has known security vulnerabilities without fixes.',
+    });
+  }
+
+  // Check for abandoned package
+  const daysSinceCommit = getDaysSinceCommit(pkg.last_commit_date);
+  if (daysSinceCommit !== null && daysSinceCommit > 365) {
+    const years = Math.floor(daysSinceCommit / 365);
+    issues.push({
+      severity: 'critical',
+      icon: '!',
+      title: 'Abandoned Project',
+      description: `No commits in ${years > 1 ? `${years} years` : 'over a year'}. This project may be unmaintained.`,
+    });
+  }
+
+  // Check for single maintainer risk
+  const topContributorPct = pkg.top_contributor_pct;
+  if (topContributorPct !== null && topContributorPct !== undefined && topContributorPct > 90) {
+    issues.push({
+      severity: 'high',
+      icon: 'i',
+      title: 'Single Maintainer',
+      description: `${topContributorPct.toFixed(0)}% of commits from one person. High bus factor risk.`,
+    });
+  }
+
+  // Check for stale package (6-12 months)
+  if (daysSinceCommit !== null && daysSinceCommit > 180 && daysSinceCommit <= 365) {
+    issues.push({
+      severity: 'high',
+      icon: '...',
+      title: 'Limited Recent Activity',
+      description: `Last commit was ${Math.floor(daysSinceCommit / 30)} months ago.`,
+    });
+  }
+
+  if (issues.length === 0) {
+    return null;
+  }
+
+  const hasCritical = issues.some(i => i.severity === 'critical');
+
+  return (
+    <div className={`critical-issues-banner ${hasCritical ? 'severity-critical' : 'severity-high'}`}>
+      <div className="banner-header">
+        <span className="banner-icon">{hasCritical ? '!' : '!'}</span>
+        <span className="banner-title">
+          {hasCritical ? 'Critical Issues Found' : 'Issues Detected'}
+        </span>
+      </div>
+      <ul className="issue-list">
+        {issues.map((issue, i) => (
+          <li key={i} className={`issue-item issue-${issue.severity}`}>
+            <span className="issue-icon">{issue.icon}</span>
+            <div className="issue-content">
+              <strong>{issue.title}</strong>
+              <span>{issue.description}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// Quick Verdict - adapted for PackageSummary
+type VerdictLevel = 'safe' | 'caution' | 'risk';
+
+interface Verdict {
+  level: VerdictLevel;
+  icon: string;
+  title: string;
+  summary: string;
+  action: string;
+}
+
+function getVerdictFromSummary(pkg: PackageSummary): Verdict {
+  const daysSinceCommit = getDaysSinceCommit(pkg.last_commit_date);
+  const topContributorPct = pkg.top_contributor_pct;
+  const overallScore = pkg.scores?.overall;
+
+  // Critical issues = High risk
+  if (pkg.has_unpatched_cves) {
+    return {
+      level: 'risk',
+      icon: 'X',
+      title: 'High Risk',
+      summary: 'This package has unpatched security vulnerabilities.',
+      action: 'Avoid use or find a patched version immediately.',
+    };
+  }
+
+  if (daysSinceCommit !== null && daysSinceCommit > 365) {
+    return {
+      level: 'risk',
+      icon: 'X',
+      title: 'High Risk',
+      summary: 'This project appears to be abandoned with no recent maintenance.',
+      action: 'Consider alternatives with active maintenance.',
+    };
+  }
+
+  // Warning issues = Use with caution
+  if (pkg.cve_count && pkg.cve_count > 0 && !pkg.has_unpatched_cves) {
+    return {
+      level: 'caution',
+      icon: '!',
+      title: 'Use with Caution',
+      summary: 'This package has a history of security vulnerabilities (all patched).',
+      action: 'Keep updated to the latest version and monitor for new CVEs.',
+    };
+  }
+
+  if (daysSinceCommit !== null && daysSinceCommit > 180) {
+    return {
+      level: 'caution',
+      icon: '!',
+      title: 'Use with Caution',
+      summary: 'Limited recent activity may indicate declining maintenance.',
+      action: 'Monitor for updates and have a backup plan.',
+    };
+  }
+
+  if (topContributorPct !== null && topContributorPct !== undefined && topContributorPct > 80) {
+    return {
+      level: 'caution',
+      icon: '!',
+      title: 'Use with Caution',
+      summary: 'High bus factor risk with most commits from a single contributor.',
+      action: 'Be aware of maintainer availability and consider alternatives.',
+    };
+  }
+
+  if (overallScore !== null && overallScore !== undefined && overallScore < 50) {
+    return {
+      level: 'caution',
+      icon: '!',
+      title: 'Use with Caution',
+      summary: 'Low overall score indicates potential quality or maintenance concerns.',
+      action: 'Review specific score components before adopting.',
+    };
+  }
+
+  // No issues = Safe to use
+  if (overallScore !== null && overallScore !== undefined && overallScore >= 80) {
+    return {
+      level: 'safe',
+      icon: 'OK',
+      title: 'Safe to Use',
+      summary: 'No blocking issues detected. Strong security and maintenance practices.',
+      action: 'Proceed with confidence. Follow standard dependency management practices.',
+    };
+  }
+
+  return {
+    level: 'safe',
+    icon: 'OK',
+    title: 'Safe to Use',
+    summary: 'No major issues detected.',
+    action: 'Follow standard dependency management practices.',
+  };
+}
+
+function SummaryQuickVerdict({ pkg }: { pkg: PackageSummary }) {
+  if (!pkg.scores && pkg.data_availability !== 'available') {
+    return null;
+  }
+
+  const verdict = getVerdictFromSummary(pkg);
+
+  return (
+    <div className={`quick-verdict verdict-${verdict.level}`}>
+      <div className="verdict-header">
+        <span className="verdict-icon">{verdict.icon}</span>
+        <span className="verdict-title">{verdict.title}</span>
+      </div>
+      <p className="verdict-summary">{verdict.summary}</p>
+      <p className="verdict-action">
+        <strong>Recommended:</strong> {verdict.action}
+      </p>
+    </div>
+  );
+}
+
+// Recommendations Card - adapted for PackageSummary
+interface Recommendation {
+  priority: 'critical' | 'high' | 'medium' | 'low';
+  icon: string;
+  text: string;
+}
+
+function getRecommendationsFromSummary(pkg: PackageSummary): Recommendation[] {
+  const recommendations: Recommendation[] = [];
+  const daysSinceCommit = getDaysSinceCommit(pkg.last_commit_date);
+
+  // Critical: Unpatched CVEs
+  if (pkg.has_unpatched_cves) {
+    recommendations.push({
+      priority: 'critical',
+      icon: '!',
+      text: 'Immediate action required: Unpatched vulnerabilities present. Check if newer version exists or find an alternative.',
+    });
+  }
+
+  // Critical: Abandoned
+  if (daysSinceCommit !== null && daysSinceCommit > 730) {
+    recommendations.push({
+      priority: 'critical',
+      icon: 'X',
+      text: 'Project abandoned for 2+ years. Strongly recommend migrating to an actively maintained alternative.',
+    });
+  } else if (daysSinceCommit !== null && daysSinceCommit > 365) {
+    recommendations.push({
+      priority: 'high',
+      icon: '!',
+      text: 'Project inactive for 1+ year. Plan for potential migration to an alternative.',
+    });
+  }
+
+  // High: Has patched CVEs
+  if (pkg.cve_count && pkg.cve_count > 0 && !pkg.has_unpatched_cves) {
+    recommendations.push({
+      priority: 'high',
+      icon: '->',
+      text: `Update to latest version. This package has ${pkg.cve_count} known CVE(s) that have been patched.`,
+    });
+  }
+
+  // High: No security policy
+  if (!pkg.has_security_policy) {
+    recommendations.push({
+      priority: 'medium',
+      icon: 'i',
+      text: 'No security policy. Vulnerabilities may not have a clear reporting channel.',
+    });
+  }
+
+  // Medium: No security scanning
+  if (!pkg.has_security_tools) {
+    recommendations.push({
+      priority: 'medium',
+      icon: '?',
+      text: 'Enable Dependabot alerts in your project to track vulnerabilities in this dependency.',
+    });
+  }
+
+  // Medium: Stale
+  if (daysSinceCommit !== null && daysSinceCommit > 180 && daysSinceCommit <= 365) {
+    recommendations.push({
+      priority: 'medium',
+      icon: '...',
+      text: 'Limited recent activity. Pin to a stable version and monitor for updates.',
+    });
+  }
+
+  // Medium: Bus factor
+  const topPct = pkg.top_contributor_pct;
+  if (topPct !== null && topPct !== undefined && topPct > 80) {
+    recommendations.push({
+      priority: 'medium',
+      icon: 'i',
+      text: 'Single maintainer dependency. Identify alternatives in case of maintainer unavailability.',
+    });
+  }
+
+  // Low: Version pinning
+  if (pkg.version) {
+    recommendations.push({
+      priority: 'low',
+      icon: '#',
+      text: `Pin to version ${pkg.version} in lockfiles to ensure reproducible builds.`,
+    });
+  }
+
+  // Low: Good practices acknowledgment
+  if (pkg.has_security_policy && pkg.has_security_tools) {
+    recommendations.push({
+      priority: 'low',
+      icon: 'OK',
+      text: 'Good security practices detected. Continue monitoring for updates.',
+    });
+  }
+
+  return recommendations;
+}
+
+function SummaryRecommendationsCard({ pkg }: { pkg: PackageSummary }) {
+  const recommendations = getRecommendationsFromSummary(pkg);
+
+  if (recommendations.length === 0) {
+    return null;
+  }
+
+  const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
+  const sorted = [...recommendations].sort(
+    (a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]
+  );
+
+  return (
+    <section className="card recommendations-card">
+      <h2>Recommendations</h2>
+      <ul className="recommendations-list">
+        {sorted.map((rec, i) => (
+          <li key={i} className={`recommendation-item priority-${rec.priority}`}>
+            <span className="rec-icon">{rec.icon}</span>
+            <span className="rec-text">{rec.text}</span>
+            <span className={`rec-priority priority-${rec.priority}`}>
+              {rec.priority.toUpperCase()}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 
 export function UploadPackageDetail() {
   const { analysisId, packageName } = useParams<{ analysisId: string; packageName: string }>();
@@ -65,19 +407,6 @@ export function UploadPackageDetail() {
 
   const { parsed, scored, registry, status } = pkg;
   const displayVersion = parsed.version || scored?.version || registry?.version || '-';
-
-  // Calculate risk indicators
-  const hasUnpatchedCVEs = scored?.has_unpatched_cves;
-  const isProhibited = scored?.scores?.risk_tier === 'prohibited';
-  const isRestricted = scored?.scores?.risk_tier === 'restricted';
-  const isAbandoned = (() => {
-    if (!scored?.last_commit_date) return false;
-    const lastCommit = new Date(scored.last_commit_date);
-    const twoYearsAgo = new Date();
-    twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
-    return lastCommit < twoYearsAgo;
-  })();
-  const hasHighBusFactor = (scored?.top_contributor_pct ?? 0) > 80;
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
@@ -141,11 +470,6 @@ export function UploadPackageDetail() {
         )}
       </header>
 
-      {/* Description */}
-      {scored?.description && (
-        <p className="description">{scored.description}</p>
-      )}
-
       {/* Enterprise Indicators */}
       {scored?.scores && (scored.scores.risk_tier || scored.scores.update_urgency || scored.scores.confidence) && (
         <div className="enterprise-indicators">
@@ -176,6 +500,11 @@ export function UploadPackageDetail() {
         </div>
       )}
 
+      {/* Description */}
+      {scored?.description && (
+        <p className="description">{scored.description}</p>
+      )}
+
       {/* Data Availability Notice */}
       {scored?.data_availability !== 'available' && scored?.unavailable_reason && (
         <div className="unavailable-notice">
@@ -183,7 +512,7 @@ export function UploadPackageDetail() {
         </div>
       )}
 
-      {/* Status Banner */}
+      {/* Status Banner for unscored packages */}
       {status !== 'scored' && (
         <div className={`status-banner status-${status}`}>
           {status === 'unscored' && (
@@ -201,72 +530,19 @@ export function UploadPackageDetail() {
         </div>
       )}
 
-      {/* Risk Alerts */}
-      {(hasUnpatchedCVEs || isProhibited || isRestricted || isAbandoned || hasHighBusFactor) && (
-        <div className="risk-alerts">
-          <h2>Risk Indicators</h2>
-          <div className="alert-list">
-            {hasUnpatchedCVEs && (
-              <div className="alert-item danger">
-                <span className="alert-icon">!</span>
-                <div className="alert-content">
-                  <strong>Unpatched CVEs ({scored?.cve_count || 0} known)</strong>
-                  <p>This package has known vulnerabilities that haven't been patched.</p>
-                </div>
-              </div>
-            )}
-            {isProhibited && (
-              <div className="alert-item danger">
-                <span className="alert-icon">X</span>
-                <div className="alert-content">
-                  <strong>Prohibited Package</strong>
-                  <p>This package is classified as prohibited and should not be used.</p>
-                </div>
-              </div>
-            )}
-            {isRestricted && (
-              <div className="alert-item warning">
-                <span className="alert-icon">!</span>
-                <div className="alert-content">
-                  <strong>Restricted Package</strong>
-                  <p>This package requires review before use in production.</p>
-                </div>
-              </div>
-            )}
-            {isAbandoned && (
-              <div className="alert-item warning">
-                <span className="alert-icon">...</span>
-                <div className="alert-content">
-                  <strong>Potentially Abandoned</strong>
-                  <p>
-                    Last commit was{' '}
-                    {scored?.last_commit_date
-                      ? formatDate(scored.last_commit_date)
-                      : 'unknown'}
-                    . Consider alternatives.
-                  </p>
-                </div>
-              </div>
-            )}
-            {hasHighBusFactor && (
-              <div className="alert-item info">
-                <span className="alert-icon">i</span>
-                <div className="alert-content">
-                  <strong>High Bus Factor Risk</strong>
-                  <p>
-                    {scored?.top_contributor_pct?.toFixed(0)}% of contributions from a single
-                    maintainer.
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      {/* Critical Issues Banner */}
+      {scored && <SummaryCriticalIssuesBanner pkg={scored} />}
 
-      {/* Score Breakdown */}
+      {/* Quick Verdict */}
+      {scored && <SummaryQuickVerdict pkg={scored} />}
+
+      {/* Main content grid */}
       {scored?.scores && (
         <div className="detail-grid">
+          {/* Recommendations Card */}
+          <SummaryRecommendationsCard pkg={scored} />
+
+          {/* Score Breakdown */}
           <section className="card scores-card">
             <h2>Score Breakdown</h2>
             <ScoreBar label="Security" score={scored.scores.security.score} weight={scored.scores.security.weight} />
@@ -373,6 +649,7 @@ export function UploadPackageDetail() {
             </div>
           </section>
 
+          {/* Risk Badges */}
           <section className="card badges-card">
             <h2>Risk Badges</h2>
             <div className="badges-container">
