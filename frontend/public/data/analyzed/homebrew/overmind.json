@@ -1,0 +1,269 @@
+{
+  "ecosystem": "homebrew",
+  "name": "overmind",
+  "description": "Process manager for Procfile-based applications and tmux",
+  "version": "2.5.1",
+  "homepage": "https://github.com/DarthSim/overmind",
+  "repository": {
+    "platform": "github",
+    "owner": "DarthSim",
+    "repo": "overmind",
+    "subpath": null
+  },
+  "install_count_30d": 2031,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 48.9,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 66.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 5.312568278358241,
+      "weight": 25
+    },
+    "community": {
+      "score": 55.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 51.12,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 51.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 93.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "DarthSim",
+      "name": "overmind",
+      "description": "Process manager for Procfile-based applications and tmux",
+      "stars": 3398,
+      "forks": 92,
+      "open_issues": 54,
+      "watchers": 3398,
+      "created_at": "2016-12-24T16:47:07Z",
+      "updated_at": "2025-12-30T18:28:32Z",
+      "pushed_at": "2025-04-04T04:20:15Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "procfile"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 30,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 83.8,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.39
+    },
+    "commits": {
+      "last_commit_date": "2025-04-04T04:20:15Z",
+      "commits_last_6mo": 0,
+      "commits_last_year": 2
+    },
+    "issues": {
+      "open_issues": 48,
+      "closed_issues_6mo": 2,
+      "avg_response_time_hours": 6548.1,
+      "avg_close_time_hours": 8371.4,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 6,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 3,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 30,
+      "releases_last_year": 0,
+      "last_release_date": "2024-03-26T02:40:02Z",
+      "latest_version": "v2.5.1",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.03
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 32.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 15376,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 83.3,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides a good introduction to Overmind and its features, but lacks clear troubleshooting guidance.",
+      "top_issue": "Insufficient documentation of common problems and solutions"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "cmd_run.go",
+          "line": 24,
+          "severity": "high",
+          "description": "The command to be executed is directly taken from user input without any validation or sanitization, making it vulnerable to shell injection attacks."
+        },
+        {
+          "file": "start/handler.go",
+          "line": 34,
+          "severity": "medium",
+          "description": "Signal names are mapped to their corresponding syscall signals. Although the signal names are validated against a predefined map, an attacker could potentially exploit this by providing a malformed input that crashes the program or causes unexpected behavior."
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Shell injection vulnerability in cmd_run.go",
+        "Potential signal handling issues in start/handler.go"
+      ],
+      "summary": "The Overmind package has several security concerns, including a high-severity shell injection vulnerability and potential issues with input validation and error exposure."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "unexpected termination",
+        "environment variable issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Overmind community is moderately active with a mix of open and closed issues, indicating some frustration but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 9,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional sarcasm",
+        "dismissiveness of some issues"
+      ],
+      "summary": "The maintainer provides clear and technically sound responses, but can be occasionally dismissive or sarcastic, which may deter some contributors."
+    },
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "no commits in the past 6 months",
+        "unaddressed open issues and PRs",
+        "lack of recent releases"
+      ],
+      "positive_signals": [
+        "recently active contributors",
+        "existing open issues and PRs indicate some community engagement"
+      ],
+      "summary": "The overmind package appears to be stale due to a lack of recent commits, releases, and merged PRs, despite having recently active contributors."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "stale",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides a good introduction to Overmind and its features, but lacks clear troubleshooting guidance.",
+    "concerns": [
+      "no commits in the past 6 months",
+      "unaddressed open issues and PRs",
+      "lack of recent releases",
+      "Docs: Insufficient documentation of common problems and solutions",
+      "Community: unexpected termination",
+      "Community: environment variable issues",
+      "Communication: occasional sarcasm",
+      "Communication: dismissiveness of some issues",
+      "Security: Shell injection vulnerability in cmd_run.go",
+      "Security: Potential signal handling issues in start/handler.go",
+      "Security: The command to be executed is directly taken from user input without any validation or sanitization, making it vulnerable to shell injection attacks.",
+      "High bus factor risk (84% from top contributor)"
+    ],
+    "highlights": [
+      "recently active contributors",
+      "existing open issues and PRs indicate some community engagement",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-01T11:21:53.499413Z",
+  "data_fetched_at": "2026-01-01T11:21:53.499414Z"
+}

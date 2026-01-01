@@ -1,0 +1,278 @@
+{
+  "ecosystem": "homebrew",
+  "name": "ghr",
+  "description": "Upload multiple artifacts to GitHub Release in parallel",
+  "version": "0.17.0",
+  "homepage": "https://github.com/tcnksm/ghr",
+  "repository": {
+    "platform": "github",
+    "owner": "tcnksm",
+    "repo": "ghr",
+    "subpath": null
+  },
+  "install_count_30d": 1968,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 65.3,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 53.93852462665855,
+      "weight": 25
+    },
+    "community": {
+      "score": 67.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 89.68,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 76.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 78.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "tcnksm",
+      "name": "ghr",
+      "description": "Upload multiple artifacts to GitHub Release in parallel ",
+      "stars": 1260,
+      "forks": 82,
+      "open_issues": 11,
+      "watchers": 1260,
+      "created_at": "2014-07-24T13:29:22Z",
+      "updated_at": "2025-12-20T10:17:27Z",
+      "pushed_at": "2025-09-05T06:19:36Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "golang"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 39,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 47.0,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 2,
+      "contributor_entropy": 2.46
+    },
+    "commits": {
+      "last_commit_date": "2025-09-05T06:19:22Z",
+      "commits_last_6mo": 2,
+      "commits_last_year": 2
+    },
+    "issues": {
+      "open_issues": 9,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 2,
+      "merged_prs_6mo": 1,
+      "closed_prs_6mo": 1,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 26,
+      "releases_last_year": 0,
+      "last_release_date": "2024-10-14T14:12:39Z",
+      "latest_version": "v0.17.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 48.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 5545,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 66.7,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 8,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is clear and well-structured, but lacks troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cli.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The 'os.Setenv' function is used to set environment variables, but the input is not validated. This could potentially lead to unexpected behavior if an attacker can manipulate the input."
+        },
+        {
+          "file": "cli.go",
+          "line": 246,
+          "severity": "low",
+          "description": "The 'github.RepositoryRelease' struct is created with user-provided input, but it does not seem to be directly executed or used in a way that would lead to code injection."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [
+        {
+          "file": "cli.go",
+          "line": 145,
+          "type": "GitHub API token"
+        }
+      ],
+      "critical_findings": [
+        "Potential code injection risk through environment variables",
+        "Insufficient input validation for user-provided data"
+      ],
+      "summary": "The 'ghr' package has some security concerns, including potential code injection risks and insufficient input validation, but it does not seem to have any critical vulnerabilities that would allow for easy exploitation."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
+      "common_complaints": [
+        "errors during upload",
+        "invalid arguments"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The community is experiencing frustration with unresolved issues and a lack of maintainer responsiveness, indicating potential project abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer's responses are generally helpful, clear, and patient, making them a good communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low commit frequency",
+        "unaddressed open issues",
+        "infrequent releases"
+      ],
+      "positive_signals": [
+        "recent commits within the past 6 months",
+        "active contributors"
+      ],
+      "summary": "The package appears to be minimally maintained with some recent activity, but concerns around issue resolution and release frequency suggest potential stagnation."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": false,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is comprehensive and clear, but lacks categorization and migration guides."
+    },
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is clear and well-structured, but lacks troubleshooting information.",
+    "concerns": [
+      "low commit frequency",
+      "unaddressed open issues",
+      "infrequent releases",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Possible abandonment signals detected",
+      "Community: errors during upload",
+      "Community: invalid arguments",
+      "Security: Potential code injection risk through environment variables",
+      "Security: Insufficient input validation for user-provided data"
+    ],
+    "highlights": [
+      "recent commits within the past 6 months",
+      "active contributors",
+      "Breaking changes clearly marked in changelog",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-01T11:35:11.112573Z",
+  "data_fetched_at": "2026-01-01T11:35:11.112574Z"
+}
