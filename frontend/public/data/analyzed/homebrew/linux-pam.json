@@ -1,0 +1,268 @@
+{
+  "ecosystem": "homebrew",
+  "name": "linux-pam",
+  "description": "Pluggable Authentication Modules for Linux",
+  "version": "1.7.1",
+  "homepage": "https://github.com/linux-pam/linux-pam",
+  "repository": {
+    "platform": "github",
+    "owner": "linux-pam",
+    "repo": "linux-pam",
+    "subpath": null
+  },
+  "install_count_30d": 1492,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 82.8,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 78.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 78.07760451964009,
+      "weight": 25
+    },
+    "community": {
+      "score": 90.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 100.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 64.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "linux-pam",
+      "name": "linux-pam",
+      "description": "Linux PAM (Pluggable Authentication Modules for Linux) project",
+      "stars": 741,
+      "forks": 337,
+      "open_issues": 164,
+      "watchers": 741,
+      "created_at": "2016-12-12T14:38:01Z",
+      "updated_at": "2025-12-31T22:30:33Z",
+      "pushed_at": "2025-12-09T23:38:35Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 181,
+      "active_contributors_6mo": 16,
+      "top_contributor_pct": 24.9,
+      "contributors_over_5pct": 5,
+      "contributors_prev_6mo": 6,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 15,
+      "contributor_entropy": 3.81
+    },
+    "commits": {
+      "last_commit_date": "2025-12-02T10:55:43Z",
+      "commits_last_6mo": 23,
+      "commits_last_year": 58
+    },
+    "issues": {
+      "open_issues": 129,
+      "closed_issues_6mo": 13,
+      "avg_response_time_hours": 89.2,
+      "avg_close_time_hours": 1000.0,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 35,
+      "merged_prs_6mo": 15,
+      "closed_prs_6mo": 16,
+      "stale_prs": 34,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 10,
+      "releases_last_year": 1,
+      "last_release_date": "2025-06-17T10:08:32Z",
+      "latest_version": "v1.7.1",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 1.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1454,
+      "has_license": false,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": true,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 1,
+      "recent_runs_pass_rate": 96.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 6,
+      "installation": 8,
+      "quick_start": 4,
+      "examples": 2,
+      "configuration": 3,
+      "troubleshooting": 5,
+      "overall": 5,
+      "summary": "The documentation is somewhat clear but lacks concise examples and troubleshooting information.",
+      "top_issue": "Lack of clear, concise examples for common use cases"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "modules/pam_unix/bigcrypt_main.c",
+          "line": 11,
+          "severity": "low",
+          "description": "The password and salt are passed directly to the bigcrypt function without any validation or sanitization. However, this is a command-line utility and not a web application, so the risk of injection attacks is lower."
+        },
+        {
+          "file": "modules/pam_faillock/main.c",
+          "line": 134,
+          "severity": "low",
+          "description": "The user input from the command line is used to construct file paths. While this could potentially lead to path traversal vulnerabilities, the code checks for and handles errors properly."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The code has some minor security concerns related to input validation and error handling, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "security vulnerabilities",
+        "configuration issues",
+        "compatibility problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The linux-pam community is active, but maintainers are slow to respond to issues, and users are experiencing frustration with security vulnerabilities, configuration issues, and compatibility problems."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 4,
+      "technical_depth": 9,
+      "welcomingness": 3,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness",
+        "lack of empathy"
+      ],
+      "summary": "The maintainer provides technically sound responses, but often comes across as dismissive and unhelpful to users with basic questions or issues."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "open PRs outnumber merged PRs"
+      ],
+      "positive_signals": [
+        "recent commits and releases",
+        "active contributors"
+      ],
+      "summary": "The linux-pam package appears to be maintained, with regular updates and active contributors, but may benefit from addressing the backlog of open issues and PRs."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks explicit breaking change markers and migration guides."
+    },
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is somewhat clear but lacks concise examples and troubleshooting information.",
+    "concerns": [
+      "high number of open issues",
+      "open PRs outnumber merged PRs",
+      "Docs: Lack of clear, concise examples for common use cases",
+      "Community: security vulnerabilities",
+      "Community: configuration issues",
+      "Communication: dismissiveness",
+      "Communication: lack of empathy"
+    ],
+    "highlights": [
+      "recent commits and releases",
+      "active contributors",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T15:53:06.917959Z",
+  "data_fetched_at": "2026-01-01T15:53:06.917960Z"
+}
