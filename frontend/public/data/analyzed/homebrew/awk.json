@@ -1,0 +1,264 @@
+{
+  "ecosystem": "homebrew",
+  "name": "awk",
+  "description": "Text processing scripting language",
+  "version": "20251225",
+  "homepage": "https://www.cs.princeton.edu/~bwk/btl.mirror/",
+  "repository": {
+    "platform": "github",
+    "owner": "onetrueawk",
+    "repo": "awk",
+    "subpath": null
+  },
+  "install_count_30d": 1428,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 68.2,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 96.89358892361828,
+      "weight": 25
+    },
+    "community": {
+      "score": 65.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 62.400000000000006,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 45.5,
+      "weight": 10
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "onetrueawk",
+      "name": "awk",
+      "description": "One true awk",
+      "stars": 2153,
+      "forks": 180,
+      "open_issues": 6,
+      "watchers": 2153,
+      "created_at": "2012-12-22T15:24:19Z",
+      "updated_at": "2025-12-29T14:24:34Z",
+      "pushed_at": "2025-12-25T18:57:10Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 23,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 34.1,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 2.8
+    },
+    "commits": {
+      "last_commit_date": "2025-12-25T18:41:19Z",
+      "commits_last_6mo": 5,
+      "commits_last_year": 16
+    },
+    "issues": {
+      "open_issues": 4,
+      "closed_issues_6mo": 5,
+      "avg_response_time_hours": 1.6,
+      "avg_close_time_hours": 668.6,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 2,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 1.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 5737,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The documentation is detailed but lacks a clear and concise introduction, making it difficult for new users to quickly understand the package's purpose and usage.",
+      "top_issue": "Lack of a quick start or basic usage example"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "main.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "The getarg function does not validate its input, potentially allowing for command-line argument injection"
+        },
+        {
+          "file": "parse.c",
+          "line": 50,
+          "severity": "low",
+          "description": "The nodealloc function uses malloc without checking for NULL, but this is not directly related to user input"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command-line argument injection in getarg function",
+        "Lack of input validation and error handling"
+      ],
+      "summary": "The awk package has some security concerns related to input validation and potential command-line argument injection, but overall it appears to be a relatively secure implementation."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "bugs and errors",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The awk community is active, with maintainers responding to issues in a timely manner, but users are experiencing some frustration due to bugs and unimplemented features."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "sometimes dismissive of user concerns",
+        "lacking in encouragement for new contributors"
+      ],
+      "summary": "The maintainer provides technically sound and helpful responses, but could improve in terms of clarity, patience, and welcomingness to create a more positive experience for users and contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low number of merged PRs",
+        "only one active contributor",
+        "unknown last release"
+      ],
+      "positive_signals": [
+        "recent commits",
+        "active issue closure"
+      ],
+      "summary": "The package appears to be minimally maintained with some recent activity, but lacks significant community engagement and release updates."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is detailed but lacks a clear and concise introduction, making it difficult for new users to quickly understand the package's purpose and usage.",
+    "concerns": [
+      "low number of merged PRs",
+      "only one active contributor",
+      "unknown last release",
+      "Docs: Lack of a quick start or basic usage example",
+      "Community: bugs and errors",
+      "Community: feature requests",
+      "Communication: sometimes dismissive of user concerns",
+      "Communication: lacking in encouragement for new contributors",
+      "Security: Potential command-line argument injection in getarg function",
+      "Security: Lack of input validation and error handling"
+    ],
+    "highlights": [
+      "recent commits",
+      "active issue closure"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T16:38:47.007868Z",
+  "data_fetched_at": "2026-01-01T16:38:47.007869Z"
+}

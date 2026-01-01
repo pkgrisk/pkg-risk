@@ -1,0 +1,254 @@
+{
+  "ecosystem": "homebrew",
+  "name": "tig",
+  "description": "Text interface for Git repositories",
+  "version": "2.6.0",
+  "homepage": "https://jonas.github.io/tig/",
+  "repository": {
+    "platform": "github",
+    "owner": "jonas",
+    "repo": "tig",
+    "subpath": null
+  },
+  "install_count_30d": 1479,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 56.3,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 61.66604591607864,
+      "weight": 25
+    },
+    "community": {
+      "score": 65.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 47.120000000000005,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 10.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 80.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "jonas",
+      "name": "tig",
+      "description": "Text-mode interface for git",
+      "stars": 13021,
+      "forks": 639,
+      "open_issues": 207,
+      "watchers": 13021,
+      "created_at": "2009-03-01T20:39:25Z",
+      "updated_at": "2025-12-31T12:47:11Z",
+      "pushed_at": "2025-12-06T18:26:02Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [
+        "c",
+        "git",
+        "ncurses",
+        "tui"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 166,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 71.7,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 4,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 2.14
+    },
+    "commits": {
+      "last_commit_date": "2025-11-27T20:20:30Z",
+      "commits_last_6mo": 11,
+      "commits_last_year": 38
+    },
+    "issues": {
+      "open_issues": 180,
+      "closed_issues_6mo": 7,
+      "avg_response_time_hours": 563.6,
+      "avg_close_time_hours": 727.2,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 27,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 1,
+      "stale_prs": 26,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 33,
+      "releases_last_year": 3,
+      "last_release_date": "2025-09-16T20:06:42Z",
+      "latest_version": "tig-2.6.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 6.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 96.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.c",
+          "line": 123,
+          "severity": "low",
+          "description": "Potential command injection vulnerability in main_register_commit function due to use of string_copy_rev with user-controlled input"
+        },
+        {
+          "file": "src/main.c",
+          "line": 156,
+          "severity": "medium",
+          "description": "Use of system calls (e.g., time_now) without proper validation of input"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in main_register_commit function",
+        "Insufficient error handling in main_open function"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but no critical secrets or sensitive information exposure was found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "feature requests",
+        "bug reports"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The tig community is active with a mix of feature requests, bug reports, and support questions, indicating a moderately healthy project with room for improvement."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 7,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful, clear, and patient, providing detailed technical explanations and encouraging new contributors."
+    },
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "low number of closed issues",
+        "low number of merged PRs",
+        "high number of open issues and PRs"
+      ],
+      "positive_signals": [
+        "recent commits",
+        "recent release"
+      ],
+      "summary": "The package appears to be stale due to a low rate of issue resolution and PR merging despite recent commits and releases."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "analysis_summary": {
+    "maintenance_status": "stale",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "low number of closed issues",
+      "low number of merged PRs",
+      "high number of open issues and PRs",
+      "Community: feature requests",
+      "Community: bug reports",
+      "Security: Potential command injection vulnerability in main_register_commit function",
+      "Security: Insufficient error handling in main_open function"
+    ],
+    "highlights": [
+      "recent commits",
+      "recent release",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-01T16:09:32.944863Z",
+  "data_fetched_at": "2026-01-01T16:09:32.944864Z"
+}
