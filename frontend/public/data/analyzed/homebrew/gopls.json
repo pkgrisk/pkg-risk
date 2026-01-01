@@ -1,0 +1,247 @@
+{
+  "ecosystem": "homebrew",
+  "name": "gopls",
+  "description": "Language server for the Go language",
+  "version": "0.21.0",
+  "homepage": "https://github.com/golang/tools/tree/master/gopls",
+  "repository": {
+    "platform": "github",
+    "owner": "golang",
+    "repo": "tools",
+    "subpath": "gopls"
+  },
+  "install_count_30d": 1661,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 75.2,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25
+    },
+    "community": {
+      "score": 95.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 80.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 31.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 75.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "golang",
+      "name": "tools",
+      "description": "[mirror] Go Tools",
+      "stars": 7853,
+      "forks": 2353,
+      "open_issues": 105,
+      "watchers": 7853,
+      "created_at": "2014-11-25T21:07:26Z",
+      "updated_at": "2025-12-31T16:44:03Z",
+      "pushed_at": "2025-12-30T21:05:22Z",
+      "default_branch": "master",
+      "license": "BSD-3-Clause",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 411,
+      "active_contributors_6mo": 33,
+      "top_contributor_pct": 21.1,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 34,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 21,
+      "contributor_entropy": 4.94
+    },
+    "commits": {
+      "last_commit_date": "2025-12-28T09:24:57Z",
+      "commits_last_6mo": 399,
+      "commits_last_year": 1000
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 104,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 20,
+      "stale_prs": 97,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 86,
+      "releases_last_year": 6,
+      "last_release_date": "2025-12-17T14:51:31Z",
+      "latest_version": "gopls/v0.21.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.1
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3422,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 98.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The documentation provides a good overview of the package's functionality, but lacks clear installation instructions and examples for common use cases.",
+      "top_issue": "Lack of clear installation instructions and quick start guide"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/bisect/main.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The use of os/exec.Command with user-controlled input (b.Cmd and b.Args) may lead to command injection vulnerabilities if not properly sanitized."
+        },
+        {
+          "file": "cmd/bisect/main.go",
+          "line": 145,
+          "severity": "low",
+          "description": "The use of flag.Func for parsing environment variables and command-line flags may potentially lead to issues if the input is not validated correctly."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in os/exec.Command usage",
+        "Insufficient input validation for user-controlled data"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": null,
+    "communication": null,
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "high number of open PRs (104)"
+      ],
+      "positive_signals": [
+        "frequent commits (399 in the past 6 months)",
+        "recent release (2025-12-17)",
+        "many active contributors (33 in the past 6 months)",
+        "no open issues"
+      ],
+      "summary": "The gopls package appears to be actively maintained with frequent updates, a recent release, and many active contributors, despite having a high number of open PRs."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for gopls lacks a clear succession plan and decision-making process, posing a high bus factor risk."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation provides a good overview of the package's functionality, but lacks clear installation instructions and examples for common use cases.",
+    "concerns": [
+      "high number of open PRs (104)",
+      "Docs: Lack of clear installation instructions and quick start guide",
+      "Governance: High bus factor risk identified",
+      "Security: Potential command injection vulnerability in os/exec.Command usage",
+      "Security: Insufficient input validation for user-controlled data"
+    ],
+    "highlights": [
+      "frequent commits (399 in the past 6 months)",
+      "recent release (2025-12-17)",
+      "many active contributors (33 in the past 6 months)",
+      "no open issues",
+      "Actively maintained",
+      "CI/CD configured"
+    ]
+  },
+  "analyzed_at": "2026-01-01T14:18:08.474701Z",
+  "data_fetched_at": "2026-01-01T14:18:08.474702Z"
+}
