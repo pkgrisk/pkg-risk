@@ -1,0 +1,277 @@
+{
+  "ecosystem": "homebrew",
+  "name": "cosign",
+  "description": "Container Signing",
+  "version": "3.0.3",
+  "homepage": "https://github.com/sigstore/cosign",
+  "repository": {
+    "platform": "github",
+    "owner": "sigstore",
+    "repo": "cosign",
+    "subpath": null
+  },
+  "install_count_30d": 4722,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 94.7,
+    "grade": "A",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 100.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25
+    },
+    "community": {
+      "score": 93.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 80.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 77.5,
+      "weight": 10
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "sigstore",
+      "name": "cosign",
+      "description": "Code signing and transparency for containers and binaries",
+      "stars": 5535,
+      "forks": 675,
+      "open_issues": 283,
+      "watchers": 5535,
+      "created_at": "2021-02-04T12:49:39Z",
+      "updated_at": "2026-01-01T00:43:57Z",
+      "pushed_at": "2025-12-29T16:01:43Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 215,
+      "active_contributors_6mo": 18,
+      "top_contributor_pct": 45.0,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 18,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 11,
+      "contributor_entropy": 4.01
+    },
+    "commits": {
+      "last_commit_date": "2025-12-29T12:59:07Z",
+      "commits_last_6mo": 197,
+      "commits_last_year": 355
+    },
+    "issues": {
+      "open_issues": 264,
+      "closed_issues_6mo": 48,
+      "avg_response_time_hours": 31.0,
+      "avg_close_time_hours": 171.8,
+      "good_first_issue_count": 8,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 19,
+      "merged_prs_6mo": 194,
+      "closed_prs_6mo": 237,
+      "stale_prs": 7,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 65,
+      "releases_last_year": 11,
+      "last_release_date": "2025-12-10T00:26:47Z",
+      "latest_version": "v3.0.3",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.23
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 86.0,
+      "has_dependabot": true,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": true,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 33249,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 19,
+      "recent_runs_pass_rate": 96.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides a good introduction to the cosign package and its usage, but lacks detailed configuration and troubleshooting documentation.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "cmd/conformance/main.go",
+          "line": 123,
+          "severity": "high",
+          "description": "The `exec.Command` function is used with user-controlled input, which can lead to command injection attacks."
+        },
+        {
+          "file": "cmd/conformance/main.go",
+          "line": 104,
+          "severity": "medium",
+          "description": "The `os.Args` array is directly used to construct the command arguments without proper validation or sanitization."
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Command injection vulnerability in `cmd/conformance/main.go`"
+      ],
+      "summary": "The code has several security concerns, including command injection vulnerabilities and lack of input validation, which can be exploited by attackers to gain unauthorized access or execute malicious commands."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "issues with private signing and verification workflow",
+        "regression bugs in new versions"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is experiencing frustration with unresolved issues and regression bugs, indicating a need for more active maintainer engagement to address these concerns."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (197)",
+        "Recent last commit (2025-12-29)",
+        "Frequent releases (last release on 2025-12-10)",
+        "Many merged PRs in the past 6 months (194)",
+        "Multiple active contributors (18) in the past 6 months"
+      ],
+      "summary": "The cosign package appears to be actively maintained with frequent updates, releases, and a high level of community engagement."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog for the homebrew package 'cosign' is well-structured and comprehensive, but could benefit from more detailed migration guides to help users navigate breaking changes."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The Cosign project lacks a clear succession plan, decision-making process documentation, and indication of multiple maintainers, posing a high bus factor risk."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides a good introduction to the cosign package and its usage, but lacks detailed configuration and troubleshooting documentation.",
+    "concerns": [
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: issues with private signing and verification workflow",
+      "Community: regression bugs in new versions",
+      "Governance: High bus factor risk identified",
+      "Security: Command injection vulnerability in `cmd/conformance/main.go`",
+      "Security: The `exec.Command` function is used with user-controlled input, which can lead to command injection attacks."
+    ],
+    "highlights": [
+      "High number of commits in the past 6 months (197)",
+      "Recent last commit (2025-12-29)",
+      "Frequent releases (last release on 2025-12-10)",
+      "Many merged PRs in the past 6 months (194)",
+      "Multiple active contributors (18) in the past 6 months",
+      "Excellent maintainer communication",
+      "Breaking changes clearly marked in changelog",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2026-01-01T01:55:28.820169Z",
+  "data_fetched_at": "2026-01-01T01:55:28.820170Z"
+}

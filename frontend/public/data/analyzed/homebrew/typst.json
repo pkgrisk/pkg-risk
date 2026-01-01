@@ -1,0 +1,275 @@
+{
+  "ecosystem": "homebrew",
+  "name": "typst",
+  "description": "Markup-based typesetting system",
+  "version": "0.14.2",
+  "homepage": "https://typst.app/",
+  "repository": {
+    "platform": "github",
+    "owner": "typst",
+    "repo": "typst",
+    "subpath": null
+  },
+  "install_count_30d": 4929,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 80.5,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 66.0,
+      "weight": 30
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25
+    },
+    "community": {
+      "score": 95.0,
+      "weight": 15
+    },
+    "bus_factor": {
+      "score": 90.0,
+      "weight": 10
+    },
+    "documentation": {
+      "score": 58.0,
+      "weight": 10
+    },
+    "stability": {
+      "score": 66.0,
+      "weight": 10
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "typst",
+      "name": "typst",
+      "description": "A markup-based typesetting system that is powerful and easy to learn.",
+      "stars": 50043,
+      "forks": 1383,
+      "open_issues": 1108,
+      "watchers": 50043,
+      "created_at": "2019-09-24T21:41:56Z",
+      "updated_at": "2025-12-31T19:53:27Z",
+      "pushed_at": "2025-12-27T13:46:43Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Rust",
+      "topics": [
+        "compiler",
+        "markup",
+        "typesetting",
+        "typst"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 393,
+      "active_contributors_6mo": 79,
+      "top_contributor_pct": 55.5,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 67,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 57,
+      "contributor_entropy": 3.89
+    },
+    "commits": {
+      "last_commit_date": "2025-12-19T10:17:56Z",
+      "commits_last_6mo": 489,
+      "commits_last_year": 762
+    },
+    "issues": {
+      "open_issues": 248,
+      "closed_issues_6mo": 137,
+      "avg_response_time_hours": 1.9,
+      "avg_close_time_hours": 19.5,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 19
+    },
+    "prs": {
+      "open_prs": 57,
+      "merged_prs_6mo": 249,
+      "closed_prs_6mo": 300,
+      "stale_prs": 8,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 27,
+      "releases_last_year": 8,
+      "last_release_date": "2025-12-12T17:49:37Z",
+      "latest_version": "v0.14.2",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.33
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 94.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 11962,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": true
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 5,
+      "recent_runs_pass_rate": 50.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is generally well-structured and informative, but lacks clear troubleshooting guidance and could benefit from more concise quick start instructions.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "crates/typst-cli/src/main.rs",
+          "line": 123,
+          "severity": "low",
+          "description": "The serialize function uses serde_json::to_string_pretty and serde_yaml::to_string which can potentially lead to injection risks if the input data is not properly sanitized."
+        },
+        {
+          "file": "crates/typst-cli/src/server.rs",
+          "line": 141,
+          "severity": "medium",
+          "description": "The inject_live_reload_script function inserts a script into the HTML string, which can potentially lead to XSS attacks if the input data is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential XSS vulnerability in the inject_live_reload_script function",
+        "Missing input validation for user-provided data in the server module"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and missing input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "layout issues",
+        "bug fixes"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The Typst community is actively reporting and discussing various issues, with a moderate level of maintainer responsiveness, indicating a relatively healthy but imperfect project ecosystem."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 9,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional abruptness",
+        "nitpicking"
+      ],
+      "summary": "The maintainer provides clear and technically sound responses, but can be occasionally abrupt and may not always welcome new contributors with open arms."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (489)",
+        "Recent last commit (2025-12-19) and last release (2025-12-12)",
+        "Large number of merged PRs in the past 6 months (249)",
+        "Many contributors active in the past 6 months (79)"
+      ],
+      "summary": "The typst package is actively maintained with frequent updates, a high volume of contributions, and a strong release history."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The Typst project has a documented decision-making process and multiple maintainers, but lacks a clear succession plan and contributor ladder."
+    }
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally well-structured and informative, but lacks clear troubleshooting guidance and could benefit from more concise quick start instructions.",
+    "concerns": [
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: layout issues",
+      "Community: bug fixes",
+      "Communication: occasional abruptness",
+      "Communication: nitpicking",
+      "Security: Potential XSS vulnerability in the inject_live_reload_script function",
+      "Security: Missing input validation for user-provided data in the server module"
+    ],
+    "highlights": [
+      "High number of commits in the past 6 months (489)",
+      "Recent last commit (2025-12-19) and last release (2025-12-12)",
+      "Large number of merged PRs in the past 6 months (249)",
+      "Many contributors active in the past 6 months (79)",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-01T01:19:18.765990Z",
+  "data_fetched_at": "2026-01-01T01:19:18.765990Z"
+}
