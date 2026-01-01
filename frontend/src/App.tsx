@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { PackageList } from './pages/PackageList';
 import { PackageDetail } from './pages/PackageDetail';
 import { UploadDashboard } from './pages/UploadDashboard';
+import { UploadPackageDetail } from './pages/UploadPackageDetail';
 import { About } from './pages/About';
 import { Methodology } from './pages/Methodology';
 import type { PackageSummary, PackageAnalysis, EcosystemStats } from './types/package';
@@ -149,6 +150,10 @@ function App() {
             <Route
               path="/upload"
               element={<UploadDashboard ecosystemData={allEcosystemData} />}
+            />
+            <Route
+              path="/upload/analysis/:analysisId/package/:packageName"
+              element={<UploadPackageDetail />}
             />
             <Route
               path="/:ecosystem/:name"

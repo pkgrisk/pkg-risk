@@ -1,8 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { MatchedDependency, Grade, RiskTier } from '../types/package';
 import { GradeBadge } from './GradeBadge';
 import { RiskBadges } from './RiskBadges';
-import { PackageDetailModal } from './PackageDetailModal';
 
 type SortField = 'name' | 'score' | 'grade' | 'status';
 type SortDirection = 'asc' | 'desc';
@@ -14,12 +14,13 @@ export type QuickFilter = 'all' | 'needs_action' | 'has_cves' | 'prohibited' | '
 
 interface DependencyResultsProps {
   dependencies: MatchedDependency[];
-  ecosystem: string;
+  analysisId: string;
   initialSearchQuery?: string;
   initialQuickFilter?: QuickFilter;
 }
 
-export function DependencyResults({ dependencies, ecosystem, initialSearchQuery = '', initialQuickFilter = 'all' }: DependencyResultsProps) {
+export function DependencyResults({ dependencies, analysisId, initialSearchQuery = '', initialQuickFilter = 'all' }: DependencyResultsProps) {
+  const navigate = useNavigate();
   const [sortField, setSortField] = useState<SortField>('score');
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
   const [filterStatus, setFilterStatus] = useState<FilterStatus>('all');
@@ -28,7 +29,6 @@ export function DependencyResults({ dependencies, ecosystem, initialSearchQuery 
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
   const [showDevDeps, setShowDevDeps] = useState(true);
   const [quickFilter, setQuickFilter] = useState<QuickFilter>(initialQuickFilter);
-  const [selectedDep, setSelectedDep] = useState<MatchedDependency | null>(null);
 
   // Update search query when initialSearchQuery changes (from action items click)
   useEffect(() => {
@@ -340,19 +340,11 @@ export function DependencyResults({ dependencies, ecosystem, initialSearchQuery 
             <DependencyRow
               key={dep.parsed.name}
               dependency={dep}
-              onRowClick={() => setSelectedDep(dep)}
+              onRowClick={() => navigate(`/upload/analysis/${analysisId}/package/${encodeURIComponent(dep.parsed.name)}`)}
             />
           ))}
         </tbody>
       </table>
-
-      {selectedDep && (
-        <PackageDetailModal
-          dependency={selectedDep}
-          ecosystem={ecosystem}
-          onClose={() => setSelectedDep(null)}
-        />
-      )}
 
       {filteredAndSorted.length === 0 && (
         <div className="no-results">

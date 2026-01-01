@@ -7,6 +7,7 @@ import { ActionItems } from '../components/ActionItems';
 import { ComparisonView } from '../components/ComparisonView';
 import { useUploadedProject } from '../hooks/useUploadedProject';
 import { usePackageNotes } from '../hooks/usePackageNotes';
+import { useAnalysisStorage } from '../hooks/useAnalysisStorage';
 import { fetchRegistryMetadataBatch } from '../lib/registryFetcher';
 import { exportToCSV, exportToJSON } from '../lib/exportUtils';
 import type {
@@ -48,6 +49,7 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
   } = useUploadedProject();
 
   const { getNote, isReviewed } = usePackageNotes();
+  const { saveAnalysis } = useAnalysisStorage();
 
   // Current active analysis
   const analysis = analyses[activeTabIndex] || null;
@@ -183,6 +185,9 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
           if (persistenceEnabled) {
             saveProject(result.filename, result.ecosystem, result.dependencies);
           }
+
+          // Save analysis for package detail navigation
+          saveAnalysis(projectAnalysis);
         }
 
         setAnalyses(newAnalyses);
@@ -194,7 +199,7 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
         setAnalysisState('error');
       }
     },
-    [ecosystemData, persistenceEnabled, saveProject]
+    [ecosystemData, persistenceEnabled, saveProject, saveAnalysis]
   );
 
   const handleReset = useCallback(() => {
@@ -472,7 +477,7 @@ export function UploadDashboard({ ecosystemData }: UploadDashboardProps) {
                 if (reviewFilter === 'flagged') return note?.reviewStatus === 'flagged';
                 return true;
               })}
-              ecosystem={(activeTabIndex === -1 && combinedAnalysis ? combinedAnalysis : analysis).ecosystem}
+              analysisId={(activeTabIndex === -1 && combinedAnalysis ? combinedAnalysis : analysis).id}
               initialSearchQuery={searchFilter}
               initialQuickFilter={quickFilter}
             />
