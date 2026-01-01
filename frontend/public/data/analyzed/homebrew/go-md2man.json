@@ -10,31 +10,30 @@
     "repo": "go-md2man",
     "subpath": null
   },
-  "install_count_30d": 2223,
+  "install_count_30d": 2165,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 64.6,
-    "grade": "D",
+    "overall": 58.2,
+    "grade": "F",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "restricted",
     "update_urgency": "medium",
     "confidence": "medium",
     "confidence_factors": [
-      "No LLM assessment available",
       "Limited issue history"
     ],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 74.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 17.55189477929006,
+      "score": 30.15056722237741,
       "weight": 25
     },
     "community": {
-      "score": 65.0,
+      "score": 55.0,
       "weight": 15
     },
     "bus_factor": {
@@ -42,7 +41,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 40.0,
+      "score": 37.0,
       "weight": 10
     },
     "stability": {
@@ -97,6 +96,7 @@
     "prs": {
       "open_prs": 6,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 2,
       "stale_prs": 4,
       "avg_merge_time_hours": null
     },
@@ -160,16 +160,106 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 2,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The documentation is clear and concise but lacks examples, configuration details, and troubleshooting information.",
+      "top_issue": "Insufficient examples and lack of configuration and troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "md2man.go",
+          "line": 24,
+          "severity": "low",
+          "description": "The 'os.Open' function is used with user-controlled input, but it does not directly execute system commands."
+        },
+        {
+          "file": "md2man/roff.go",
+          "line": 246,
+          "severity": "medium",
+          "description": "The 'out(w, string(node.FirstChild.Literal))' line may potentially lead to code injection if the markdown input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential code injection vulnerability in the roff renderer",
+        "Lack of input validation for markdown files"
+      ],
+      "summary": "The go-md2man package has some security concerns, including potential code injection vulnerabilities and lack of input validation, but no critical secrets or sensitive information exposure was found."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "dependency updates",
+        "maintenance of markdown processor"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The go-md2man community is experiencing frustration with dependency updates and maintenance, but the maintainer is still responsive, albeit slowly."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "sometimes dismissive of suggestions",
+        "lack of clear explanations for some decisions"
+      ],
+      "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness towards new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "no commits in the past 6 months",
+        "open issues and PRs with slow resolution rate"
+      ],
+      "positive_signals": [
+        "recent release",
+        "active contributors in the recent past"
+      ],
+      "summary": "The package appears to have minimal maintenance with some signs of recent activity, but a lack of commits and slow issue resolution raises concerns about its long-term health."
+    },
+    "changelog": null,
+    "governance": null
   },
-  "analyzed_at": "2025-12-30T22:38:07.373660Z",
-  "data_fetched_at": "2025-12-30T22:38:07.373661Z"
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is clear and concise but lacks examples, configuration details, and troubleshooting information.",
+    "concerns": [
+      "no commits in the past 6 months",
+      "open issues and PRs with slow resolution rate",
+      "Docs: Insufficient examples and lack of configuration and troubleshooting documentation",
+      "Community: dependency updates",
+      "Community: maintenance of markdown processor",
+      "Communication: sometimes dismissive of suggestions",
+      "Communication: lack of clear explanations for some decisions",
+      "Security: Potential code injection vulnerability in the roff renderer",
+      "Security: Lack of input validation for markdown files"
+    ],
+    "highlights": [
+      "recent release",
+      "active contributors in the recent past",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T10:19:23.204110Z",
+  "data_fetched_at": "2026-01-01T10:19:23.204111Z"
 }

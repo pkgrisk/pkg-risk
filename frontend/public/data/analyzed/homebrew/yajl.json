@@ -10,22 +10,20 @@
     "repo": "yajl",
     "subpath": null
   },
-  "install_count_30d": 2214,
+  "install_count_30d": 2152,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 66.1,
-    "grade": "D",
+    "overall": 53.9,
+    "grade": "F",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "restricted",
     "update_urgency": "medium",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 58.0,
       "weight": 30
     },
     "maintenance": {
@@ -33,7 +31,7 @@
       "weight": 25
     },
     "community": {
-      "score": 85.0,
+      "score": 60.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 65.5,
+      "score": 47.5,
       "weight": 10
     },
     "stability": {
@@ -96,6 +94,7 @@
     "prs": {
       "open_prs": 75,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 1,
       "stale_prs": 75,
       "avg_merge_time_hours": null
     },
@@ -159,14 +158,102 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": []
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 6,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README provides a good introduction to the package's features and philosophy, but lacks clear installation instructions and practical examples.",
+      "top_issue": "Lack of clear installation instructions and quick start guide"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/yajl_parser.c",
+          "line": 123,
+          "severity": "low",
+          "description": "Use of strcat() function without checking buffer size, potential for buffer overflow"
+        },
+        {
+          "file": "src/yajl_parser.c",
+          "line": 145,
+          "severity": "medium",
+          "description": "Use of YA_MALLOC and YA_FREE without checking return values, potential for memory leaks or crashes"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow in yajl_render_error_string() function",
+        "No validation of user input in yajl_parse_integer() function"
+      ],
+      "summary": "The code has some security concerns, including potential buffer overflows and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
+      "common_complaints": [
+        "lack of updates",
+        "vulnerabilities",
+        "build issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The yajl community is struggling with an unresponsive maintainer, outdated code, and numerous unresolved issues, indicating a high risk of project abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 9,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer's responses are generally helpful, clear, and welcoming, with a good balance of technical depth and patience."
+    },
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "no commits in the past 6 months",
+        "large number of open issues and PRs with little recent activity"
+      ],
+      "positive_signals": [
+        "10 contributors active in the past 6 months",
+        "some recent issue and PR closure"
+      ],
+      "summary": "The yajl package appears to be stale due to a lack of recent commits and significant open issue and PR backlogs despite some contributor activity."
+    },
+    "changelog": null,
+    "governance": null
   },
-  "analyzed_at": "2025-12-30T22:38:22.036028Z",
-  "data_fetched_at": "2025-12-30T22:38:22.036029Z"
+  "analysis_summary": {
+    "maintenance_status": "stale",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good introduction to the package's features and philosophy, but lacks clear installation instructions and practical examples.",
+    "concerns": [
+      "no commits in the past 6 months",
+      "large number of open issues and PRs with little recent activity",
+      "Docs: Lack of clear installation instructions and quick start guide",
+      "Possible abandonment signals detected",
+      "Community: lack of updates",
+      "Community: vulnerabilities",
+      "Security: Potential buffer overflow in yajl_render_error_string() function",
+      "Security: No validation of user input in yajl_parse_integer() function"
+    ],
+    "highlights": [
+      "10 contributors active in the past 6 months",
+      "some recent issue and PR closure"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-01T10:27:45.504937Z",
+  "data_fetched_at": "2026-01-01T10:27:45.504938Z"
 }
