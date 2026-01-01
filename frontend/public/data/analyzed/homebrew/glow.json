@@ -10,30 +10,28 @@
     "repo": "glow",
     "subpath": null
   },
-  "install_count_30d": 3026,
+  "install_count_30d": 2968,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 83.2,
-    "grade": "B",
+    "overall": 80.0,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 100.0,
+      "score": 94.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 82.40310902405263,
+      "score": 75.4324142077715,
       "weight": 25
     },
     "community": {
-      "score": 80.0,
+      "score": 75.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 55.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "charmbracelet",
       "name": "glow",
       "description": "Render markdown on the CLI, with pizzazz! \ud83d\udc85\ud83c\udffb",
-      "stars": 22032,
-      "forks": 540,
+      "stars": 22040,
+      "forks": 541,
       "open_issues": 148,
-      "watchers": 22032,
+      "watchers": 22040,
       "created_at": "2019-11-04T23:34:55Z",
-      "updated_at": "2025-12-30T22:04:21Z",
+      "updated_at": "2026-01-01T05:09:09Z",
       "pushed_at": "2025-12-21T00:02:36Z",
       "default_branch": "master",
       "license": "MIT",
@@ -101,6 +99,7 @@
     "prs": {
       "open_prs": 22,
       "merged_prs_6mo": 24,
+      "closed_prs_6mo": 32,
       "stale_prs": 14,
       "avg_merge_time_hours": null
     },
@@ -164,17 +163,105 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 8,
+      "summary": "The README provides clear and comprehensive documentation, but lacks troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "main.go",
+          "line": 246,
+          "severity": "high",
+          "description": "The 'exec.Command' function is used with user-controlled input from the PAGER environment variable, which can lead to command injection attacks."
+        },
+        {
+          "file": "main.go",
+          "line": 173,
+          "severity": "medium",
+          "description": "The 'url.ParseRequestURI' function does not validate the URL scheme, which could potentially lead to SSRF (Server-Side Request Forgery) attacks if the URL is user-controlled."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Command injection vulnerability through the PAGER environment variable"
+      ],
+      "summary": "The Glow CLI application has several security concerns, including command injection and input validation issues, but does not appear to expose sensitive information or use insecure defaults."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "rendering issues",
+        "feature requests"
+      ],
+      "praise_themes": [
+        "usefulness of the tool",
+        "potential for improvement"
+      ],
+      "abandonment_signals": false,
+      "summary": "The glow community is moderately active with a mix of positive and negative sentiments, featuring both praise for the tool's usefulness and frustration with rendering issues and unimplemented features."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 9,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are exemplary, providing clear and patient explanations that help resolve issues while encouraging new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low issue closure rate",
+        "high number of open issues and PRs"
+      ],
+      "positive_signals": [
+        "recent commits",
+        "active contributors"
+      ],
+      "summary": "The glow package appears to have some maintenance activity, but the low issue closure rate and high number of open issues and PRs suggest that it may not be receiving adequate attention."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "minimal-maintenance",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides clear and comprehensive documentation, but lacks troubleshooting information.",
+    "concerns": [
+      "low issue closure rate",
+      "high number of open issues and PRs",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Community: rendering issues",
+      "Community: feature requests",
+      "Security: Command injection vulnerability through the PAGER environment variable",
+      "Security: The 'exec.Command' function is used with user-controlled input from the PAGER environment variable, which can lead to command injection attacks."
+    ],
     "highlights": [
+      "recent commits",
+      "active contributors",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-30T22:08:40.951505Z",
-  "data_fetched_at": "2025-12-30T22:08:40.951506Z"
+  "analyzed_at": "2026-01-01T06:41:40.029825Z",
+  "data_fetched_at": "2026-01-01T06:41:40.029826Z"
 }

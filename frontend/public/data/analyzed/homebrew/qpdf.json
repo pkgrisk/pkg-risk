@@ -10,30 +10,28 @@
     "repo": "qpdf",
     "subpath": null
   },
-  "install_count_30d": 3002,
+  "install_count_30d": 2977,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 80.6,
-    "grade": "B",
+    "overall": 70.7,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 58.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 96.46160107392204,
+      "score": 97.25761937870107,
       "weight": 25
     },
     "community": {
-      "score": 72.0,
+      "score": 52.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 63.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "qpdf",
       "name": "qpdf",
       "description": "qpdf: A content-preserving PDF document transformer",
-      "stars": 4600,
+      "stars": 4603,
       "forks": 351,
-      "open_issues": 159,
-      "watchers": 4600,
+      "open_issues": 160,
+      "watchers": 4603,
       "created_at": "2012-06-03T17:40:19Z",
-      "updated_at": "2025-12-30T20:45:46Z",
+      "updated_at": "2025-12-31T21:41:00Z",
       "pushed_at": "2025-12-26T19:24:34Z",
       "default_branch": "main",
       "license": "Apache-2.0",
@@ -85,7 +83,7 @@
     },
     "commits": {
       "last_commit_date": "2025-12-26T19:24:33Z",
-      "commits_last_6mo": 573,
+      "commits_last_6mo": 567,
       "commits_last_year": 922
     },
     "issues": {
@@ -97,9 +95,10 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 24,
+      "open_prs": 25,
       "merged_prs_6mo": 119,
-      "stale_prs": 16,
+      "closed_prs_6mo": 122,
+      "stale_prs": 17,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -162,17 +161,107 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 6,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The README provides detailed information about the qpdf package, but lacks a clear quick start guide and troubleshooting section.",
+      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "libqpdf/Pl_RunLength.cc",
+          "line": 123,
+          "severity": "low",
+          "description": "Potential buffer overflow in decode function due to lack of bounds checking on 'len' parameter"
+        },
+        {
+          "file": "fuzz/runlength_fuzzer.cc",
+          "line": 24,
+          "severity": "medium",
+          "description": "User-controlled data is passed directly to the write function without validation, potentially leading to a buffer overflow or other issues"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow in Pl_RunLength::decode",
+        "Lack of input validation in FuzzHelper::doChecks"
+      ],
+      "summary": "The code has some security concerns, including potential buffer overflows and lack of input validation, but no critical issues were found related to injection risks or secrets handling."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "unresponsive",
+      "common_complaints": [
+        "compatibility issues",
+        "lack of support for C++ 23/26 projects"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is experiencing frustration due to unresolved compatibility issues with the latest qpdf release, indicating a need for maintainer attention."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and welcoming, making them an exemplary model for open-source project maintainers."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "relatively high number of open issues",
+        "low ratio of closed to open issues"
+      ],
+      "positive_signals": [
+        "high number of commits in the past 6 months",
+        "recent last commit",
+        "frequent merged PRs",
+        "recent release"
+      ],
+      "summary": "The qpdf package appears to be actively maintained with a high volume of recent commits, merges, and releases, despite some concerns regarding open issues."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The README provides detailed information about the qpdf package, but lacks a clear quick start guide and troubleshooting section.",
+    "concerns": [
+      "relatively high number of open issues",
+      "low ratio of closed to open issues",
+      "Docs: Lack of a concise quick start example to help new users get started with the package.",
+      "Community: compatibility issues",
+      "Community: lack of support for C++ 23/26 projects",
+      "Security: Potential buffer overflow in Pl_RunLength::decode",
+      "Security: Lack of input validation in FuzzHelper::doChecks"
+    ],
     "highlights": [
+      "high number of commits in the past 6 months",
+      "recent last commit",
+      "frequent merged PRs",
+      "recent release",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-30T22:10:26.757738Z",
-  "data_fetched_at": "2025-12-30T22:10:26.757738Z"
+  "analyzed_at": "2026-01-01T06:35:29.239681Z",
+  "data_fetched_at": "2026-01-01T06:35:29.239682Z"
 }

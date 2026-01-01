@@ -10,26 +10,24 @@
     "repo": "ctlptl",
     "subpath": null
   },
-  "install_count_30d": 3003,
+  "install_count_30d": 2971,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 83.5,
-    "grade": "B",
+    "overall": 74.9,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 90.0,
+      "score": 66.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 100.0,
+      "score": 97.33332985467588,
       "weight": 25
     },
     "community": {
@@ -37,11 +35,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 60.36,
+      "score": 45.36,
       "weight": 10
     },
     "documentation": {
-      "score": 65.0,
+      "score": 72.5,
       "weight": 10
     },
     "stability": {
@@ -96,6 +94,7 @@
     "prs": {
       "open_prs": 0,
       "merged_prs_6mo": 3,
+      "closed_prs_6mo": 3,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -159,16 +158,110 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides clear and concise information about the package, its installation, and usage, but lacks comprehensive troubleshooting documentation.",
+      "top_issue": "Lack of troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "pkg/cmd/apply.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The 'visitor.FromStrings' function may be vulnerable to YAML injection attacks if the input is not properly sanitized."
+        },
+        {
+          "file": "internal/dctr/run.go",
+          "line": 154,
+          "severity": "low",
+          "description": "The 'reference.ParseNormalizedNamed' function may throw an error if the input image string is malformed, but it does not seem to be directly vulnerable to injection attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential YAML injection vulnerability in the 'visitor.FromStrings' function.",
+        "Lack of input validation for the 'ApplyOptions.Filenames' field."
+      ],
+      "summary": "The code has some security concerns, including potential injection vulnerabilities and lack of input validation, but it does not seem to expose sensitive information or use insecure defaults by default."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "registry issues",
+        "version compatibility"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The ctlptl community is active and maintained, with responsive maintainers addressing user issues, but users experience some frustration with registry and version compatibility problems."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "relatively low number of commits",
+        "outstanding open issues"
+      ],
+      "positive_signals": [
+        "recent commit and release activity",
+        "active contributors and merged PRs"
+      ],
+      "summary": "The package appears to be maintained with regular updates, but could benefit from addressing the outstanding open issues."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for ctlptl lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
   },
-  "analyzed_at": "2025-12-30T22:09:54.929386Z",
-  "data_fetched_at": "2025-12-30T22:09:54.929387Z"
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides clear and concise information about the package, its installation, and usage, but lacks comprehensive troubleshooting documentation.",
+    "concerns": [
+      "relatively low number of commits",
+      "outstanding open issues",
+      "Docs: Lack of troubleshooting documentation",
+      "Community: registry issues",
+      "Community: version compatibility",
+      "Governance: High bus factor risk identified",
+      "Security: Potential YAML injection vulnerability in the 'visitor.FromStrings' function.",
+      "Security: Lack of input validation for the 'ApplyOptions.Filenames' field."
+    ],
+    "highlights": [
+      "recent commit and release activity",
+      "active contributors and merged PRs",
+      "Excellent maintainer communication",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2026-01-01T06:38:41.090617Z",
+  "data_fetched_at": "2026-01-01T06:38:41.090618Z"
 }
