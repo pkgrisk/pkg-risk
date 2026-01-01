@@ -10,22 +10,20 @@
     "repo": "dust",
     "subpath": null
   },
-  "install_count_30d": 2271,
+  "install_count_30d": 2236,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 84.5,
-    "grade": "B",
+    "overall": 77.8,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 58.0,
       "weight": 30
     },
     "maintenance": {
@@ -33,7 +31,7 @@
       "weight": 25
     },
     "community": {
-      "score": 100.0,
+      "score": 97.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 48.0,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "bootandy",
       "name": "dust",
       "description": "A more intuitive version of du in rust",
-      "stars": 11010,
+      "stars": 11017,
       "forks": 246,
       "open_issues": 16,
-      "watchers": 11010,
+      "watchers": 11017,
       "created_at": "2018-03-16T19:49:52Z",
-      "updated_at": "2025-12-30T21:26:04Z",
+      "updated_at": "2026-01-01T09:33:26Z",
       "pushed_at": "2025-11-24T21:18:40Z",
       "default_branch": "master",
       "license": "Apache-2.0",
@@ -82,7 +80,7 @@
     },
     "commits": {
       "last_commit_date": "2025-11-20T23:40:02Z",
-      "commits_last_6mo": 18,
+      "commits_last_6mo": 16,
       "commits_last_year": 50
     },
     "issues": {
@@ -95,7 +93,8 @@
     },
     "prs": {
       "open_prs": 3,
-      "merged_prs_6mo": 16,
+      "merged_prs_6mo": 14,
+      "closed_prs_6mo": 16,
       "stale_prs": 1,
       "avg_merge_time_hours": null
     },
@@ -159,16 +158,108 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally well-structured and informative, but lacks a clear quick start example and troubleshooting section.",
+      "top_issue": "Lack of a dedicated troubleshooting section to help users resolve common issues."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 173,
+          "severity": "high",
+          "description": "The `read_to_string` function is used to read the contents of a file specified by the user, which could potentially lead to an injection attack if the file contains malicious data."
+        },
+        {
+          "file": "src/main.rs",
+          "line": 174,
+          "severity": "high",
+          "description": "The `Regex::new` function is used with user-provided input, which could potentially lead to a regex injection attack if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection attack through user-provided file contents",
+        "Potential regex injection attack through user-provided regular expressions"
+      ],
+      "summary": "The code has some security concerns, including potential injection attacks and lack of input validation, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "configuration issues",
+        "compatibility problems"
+      ],
+      "praise_themes": [
+        "usefulness of the tool",
+        "appreciation for the developer's effort"
+      ],
+      "abandonment_signals": false,
+      "summary": "The dust community is active, but users are experiencing various issues and the maintainer's responsiveness is slow, indicating a need for more attention to resolve open issues and improve overall community health."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 5,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "dismissiveness",
+        "lack of empathy"
+      ],
+      "summary": "The maintainer's responses are generally helpful but sometimes lack clarity, patience, and welcomingness, which may discourage new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits and releases",
+        "Active issue and PR management",
+        "Multiple contributors"
+      ],
+      "summary": "The dust package appears to be actively maintained with regular updates, issue resolution, and a team of active contributors."
+    },
+    "changelog": null,
+    "governance": null
   },
-  "analyzed_at": "2025-12-30T22:35:07.252483Z",
-  "data_fetched_at": "2025-12-30T22:35:07.252484Z"
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally well-structured and informative, but lacks a clear quick start example and troubleshooting section.",
+    "concerns": [
+      "Docs: Lack of a dedicated troubleshooting section to help users resolve common issues.",
+      "Community: configuration issues",
+      "Community: compatibility problems",
+      "Communication: dismissiveness",
+      "Communication: lack of empathy",
+      "Security: Potential injection attack through user-provided file contents",
+      "Security: Potential regex injection attack through user-provided regular expressions",
+      "Security: The `read_to_string` function is used to read the contents of a file specified by the user, which could potentially lead to an injection attack if the file contains malicious data.",
+      "Security: The `Regex::new` function is used with user-provided input, which could potentially lead to a regex injection attack if the input is not properly sanitized."
+    ],
+    "highlights": [
+      "Recent commits and releases",
+      "Active issue and PR management",
+      "Multiple contributors",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T09:46:18.012993Z",
+  "data_fetched_at": "2026-01-01T09:46:18.012994Z"
 }

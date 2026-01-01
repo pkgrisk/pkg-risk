@@ -10,30 +10,28 @@
     "repo": "sshuttle",
     "subpath": null
   },
-  "install_count_30d": 2335,
+  "install_count_30d": 2243,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 94.8,
-    "grade": "A",
+    "overall": 81.0,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 78.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 99.95701173721206,
+      "score": 93.71024180053497,
       "weight": 25
     },
     "community": {
-      "score": 92.0,
+      "score": 67.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 65.5,
+      "score": 46.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "sshuttle",
       "name": "sshuttle",
       "description": "Transparent proxy server that works as a poor man's VPN.  Forwards over ssh.  Doesn't require admin.  Works with Linux and MacOS.  Supports DNS tunneling.",
-      "stars": 12970,
+      "stars": 12972,
       "forks": 785,
       "open_issues": 211,
-      "watchers": 12970,
+      "watchers": 12972,
       "created_at": "2014-09-15T04:51:13Z",
-      "updated_at": "2025-12-30T20:16:45Z",
+      "updated_at": "2026-01-01T04:11:42Z",
       "pushed_at": "2025-12-22T20:45:31Z",
       "default_branch": "master",
       "license": "LGPL-2.1",
@@ -96,6 +94,7 @@
     "prs": {
       "open_prs": 4,
       "merged_prs_6mo": 54,
+      "closed_prs_6mo": 55,
       "stale_prs": 4,
       "avg_merge_time_hours": null
     },
@@ -159,17 +158,122 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 4,
+      "quick_start": 2,
+      "examples": 3,
+      "configuration": 6,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The documentation is clear about the package's purpose, but lacks concrete examples and installation instructions.",
+      "top_issue": "Lack of clear and complete installation instructions and quick start example"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "sshuttle/server.py",
+          "line": 123,
+          "severity": "medium",
+          "description": "Use of subprocess with user-controlled input in _list_routes function"
+        },
+        {
+          "file": "sshuttle/server.py",
+          "line": 145,
+          "severity": "low",
+          "description": "Use of eval-like functionality in _route_netstat and _route_iproute functions is not present but the use of regular expressions to parse IP addresses could potentially be exploited if user input is not properly sanitized"
+        },
+        {
+          "file": "sshuttle/server.py",
+          "line": 246,
+          "severity": "low",
+          "description": "Use of socket.getaddrinfo with user-controlled input in _addrinfo function"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for command injection attacks through subprocess",
+        "Lack of input validation for IP addresses and port numbers"
+      ],
+      "summary": "The sshuttle package has some security concerns, including potential command injection risks and lack of input validation, but overall it appears to be a well-structured and secure piece of software."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
+      "common_complaints": [
+        "crashing issues",
+        "compatibility problems with different versions and operating systems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The sshuttle community is experiencing significant frustration due to unresolved crashing issues, compatibility problems, and a lack of maintainer responsiveness."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "repeated Dependabot error messages without resolution",
+        "closing old issues without clear explanation"
+      ],
+      "summary": "The maintainer provides generally helpful and technically deep responses, but could improve in terms of clarity, patience, and welcomingness towards new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues",
+        "low number of closed issues in the past 6 months"
+      ],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "recent releases and active contributors"
+      ],
+      "summary": "The sshuttle package appears to be maintained, with regular commits and updates, but may benefit from addressing its large backlog of open issues."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
+    },
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The documentation is clear about the package's purpose, but lacks concrete examples and installation instructions.",
+    "concerns": [
+      "high number of open issues",
+      "low number of closed issues in the past 6 months",
+      "Docs: Lack of clear and complete installation instructions and quick start example",
+      "Possible abandonment signals detected",
+      "Community: crashing issues",
+      "Community: compatibility problems with different versions and operating systems",
+      "Communication: repeated Dependabot error messages without resolution",
+      "Communication: closing old issues without clear explanation",
+      "Security: Potential for command injection attacks through subprocess",
+      "Security: Lack of input validation for IP addresses and port numbers"
+    ],
     "highlights": [
+      "frequent commits in the past 6 months",
+      "recent releases and active contributors",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-30T22:34:00.725565Z",
-  "data_fetched_at": "2025-12-30T22:34:00.725565Z"
+  "analyzed_at": "2026-01-01T09:40:24.352384Z",
+  "data_fetched_at": "2026-01-01T09:40:24.352385Z"
 }

@@ -10,22 +10,20 @@
     "repo": "tealdeer",
     "subpath": null
   },
-  "install_count_30d": 2432,
+  "install_count_30d": 2426,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 88.6,
+    "overall": 80.0,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 78.0,
       "weight": 30
     },
     "maintenance": {
@@ -33,7 +31,7 @@
       "weight": 25
     },
     "community": {
-      "score": 69.0,
+      "score": 59.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 62.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "tealdeer-rs",
       "name": "tealdeer",
       "description": "A very fast implementation of tldr in Rust.",
-      "stars": 5783,
+      "stars": 5785,
       "forks": 142,
       "open_issues": 24,
-      "watchers": 5783,
+      "watchers": 5785,
       "created_at": "2015-12-29T09:23:05Z",
-      "updated_at": "2025-12-30T12:52:45Z",
+      "updated_at": "2025-12-31T09:51:17Z",
       "pushed_at": "2025-12-01T19:32:46Z",
       "default_branch": "main",
       "license": "Apache-2.0",
@@ -100,6 +98,7 @@
     "prs": {
       "open_prs": 3,
       "merged_prs_6mo": 15,
+      "closed_prs_6mo": 17,
       "stale_prs": 3,
       "avg_merge_time_hours": null
     },
@@ -163,17 +162,110 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 4,
+      "examples": 5,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "The documentation is informative but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of clear installation instructions for users who are not familiar with GitHub releases or Cargo"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 246,
+          "severity": "high",
+          "description": "The `spawn_editor` function uses the `EDITOR` environment variable to spawn an editor, which could lead to command injection if the variable is not properly sanitized."
+        },
+        {
+          "file": "src/main.rs",
+          "line": 184,
+          "severity": "medium",
+          "description": "The `update_cache` function uses the `archive_source` and `tls_backend` variables, which are user-configurable, to update the cache. This could potentially lead to command injection or other security issues if these variables are not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the `spawn_editor` function.",
+        "Lack of proper input validation for user-configurable variables."
+      ],
+      "summary": "The tealdeer package has some security concerns, including potential command injection vulnerabilities and lack of proper input validation, but overall it appears to be a relatively secure package with some room for improvement."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "TLS backend issues",
+        "update failures"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The tealdeer community is experiencing some frustration with technical issues, but the maintainers are actively responding to and resolving problems."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits and releases",
+        "Active issue and PR management",
+        "Multiple contributors in the past 6 months"
+      ],
+      "summary": "The tealdeer package appears to be actively maintained with regular updates, issue resolution, and contributor activity."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 8,
+      "summary": "The tealdeer changelog is well-structured and easy to follow, with clear categorization of changes, but lacks explicit migration guides for breaking changes."
+    },
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The documentation is informative but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of clear installation instructions for users who are not familiar with GitHub releases or Cargo",
+      "Community: TLS backend issues",
+      "Community: update failures",
+      "Security: Potential command injection vulnerability in the `spawn_editor` function.",
+      "Security: Lack of proper input validation for user-configurable variables.",
+      "Security: The `spawn_editor` function uses the `EDITOR` environment variable to spawn an editor, which could lead to command injection if the variable is not properly sanitized."
+    ],
     "highlights": [
+      "Recent commits and releases",
+      "Active issue and PR management",
+      "Multiple contributors in the past 6 months",
+      "Excellent maintainer communication",
+      "Breaking changes clearly marked in changelog",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-30T22:29:38.473167Z",
-  "data_fetched_at": "2025-12-30T22:29:38.473167Z"
+  "analyzed_at": "2026-01-01T09:09:17.036961Z",
+  "data_fetched_at": "2026-01-01T09:09:17.036962Z"
 }

@@ -10,38 +10,36 @@
     "repo": "grype",
     "subpath": null
   },
-  "install_count_30d": 2360,
+  "install_count_30d": 2342,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 89.8,
+    "overall": 89.3,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
       "score": 100.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 88.0,
+      "score": 91.32853255223993,
       "weight": 25
     },
     "community": {
-      "score": 100.0,
+      "score": 96.0,
       "weight": 15
     },
     "bus_factor": {
-      "score": 95.0,
+      "score": 80.0,
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 52.5,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "anchore",
       "name": "grype",
       "description": "A vulnerability scanner for container images and filesystems",
-      "stars": 11283,
+      "stars": 11288,
       "forks": 723,
       "open_issues": 353,
-      "watchers": 11283,
+      "watchers": 11288,
       "created_at": "2020-05-26T13:44:38Z",
-      "updated_at": "2025-12-30T20:44:57Z",
-      "pushed_at": "2025-12-30T16:10:19Z",
+      "updated_at": "2025-12-31T10:17:14Z",
+      "pushed_at": "2025-12-31T08:02:30Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "Go",
@@ -103,7 +101,7 @@
     },
     "issues": {
       "open_issues": 268,
-      "closed_issues_6mo": 43,
+      "closed_issues_6mo": 45,
       "avg_response_time_hours": 95.0,
       "avg_close_time_hours": 162.8,
       "good_first_issue_count": 13,
@@ -112,6 +110,7 @@
     "prs": {
       "open_prs": 32,
       "merged_prs_6mo": 228,
+      "closed_prs_6mo": 253,
       "stale_prs": 18,
       "avg_merge_time_hours": null
     },
@@ -167,7 +166,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 13,
-      "recent_runs_pass_rate": 87.8,
+      "recent_runs_pass_rate": 86.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -175,17 +174,105 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "The Grype README is well-structured and provides a clear overview of the package's features and usage, but lacks comprehensive troubleshooting documentation.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "grype/db/v6/schema/main.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The use of 'os/exec' package to execute system commands may pose a risk if not properly validated, but in this case, it's used with fixed strings and does not seem to be vulnerable to injection attacks."
+        },
+        {
+          "file": "grype/db/v6/schema/main.go",
+          "line": 145,
+          "severity": "low",
+          "description": "The 'query' string is constructed using a parameterized query which prevents SQL injection, but the comment above it mentions preventing SQL injection warnings."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The code appears to have some minor security concerns, but overall it seems well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "false positives",
+        "versioning issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The grype community is experiencing some frustration with false positives and versioning issues, but maintainers are moderately responsive to addressing these concerns."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for effective communication in a GitHub issue tracker."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (227)",
+        "Recent last commit (2025-12-30) and last release (2025-12-22)",
+        "Large number of merged PRs in the past 6 months (228)",
+        "Multiple active contributors in the past 6 months (25)"
+      ],
+      "summary": "The grype package appears to be actively maintained with frequent updates, a large number of contributors, and a high volume of pull requests being addressed."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for Grype lacks a clear succession plan and decision-making process, posing a high bus factor risk."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The Grype README is well-structured and provides a clear overview of the package's features and usage, but lacks comprehensive troubleshooting documentation.",
+    "concerns": [
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: false positives",
+      "Community: versioning issues",
+      "Governance: High bus factor risk identified"
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (227)",
+      "Recent last commit (2025-12-30) and last release (2025-12-22)",
+      "Large number of merged PRs in the past 6 months (228)",
+      "Multiple active contributors in the past 6 months (25)",
+      "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary"
   },
-  "analyzed_at": "2025-12-30T22:33:37.085634Z",
-  "data_fetched_at": "2025-12-30T22:33:37.085635Z"
+  "analyzed_at": "2026-01-01T09:26:22.940269Z",
+  "data_fetched_at": "2026-01-01T09:26:22.940269Z"
 }
