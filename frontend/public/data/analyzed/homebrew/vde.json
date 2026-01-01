@@ -10,26 +10,24 @@
     "repo": "vde-2",
     "subpath": null
   },
-  "install_count_30d": 2496,
+  "install_count_30d": 2470,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 74.1,
-    "grade": "C",
+    "overall": 70.0,
+    "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 68.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 54.28007780532427,
+      "score": 55.843722142732304,
       "weight": 25
     },
     "community": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 58.5,
       "weight": 10
     },
     "stability": {
@@ -96,6 +94,7 @@
     "prs": {
       "open_prs": 1,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 1,
       "stale_prs": 1,
       "avg_merge_time_hours": null
     },
@@ -159,16 +158,107 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 6,
+      "installation": 2,
+      "quick_start": 4,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The documentation is detailed but lacks clear installation instructions and troubleshooting guidance, making it challenging for new users to get started.",
+      "top_issue": "Lack of clear installation instructions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/vde_pcapplug.c",
+          "line": 246,
+          "severity": "medium",
+          "description": "Use of atoi() function without error checking for user input"
+        },
+        {
+          "file": "src/vde_pcapplug.c",
+          "line": 253,
+          "severity": "low",
+          "description": "Use of sscanf() function with user-controlled format string"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for denial-of-service attacks due to lack of input validation and error handling"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and insufficient input validation, but does not appear to expose sensitive information or have critical vulnerabilities."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "lack of updates",
+        "unresolved issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The vde community appears to be relatively inactive, with several open issues and a lack of recent updates, indicating potential abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "defensiveness about wolfSSL",
+        "dismissal of mbedTLS support"
+      ],
+      "summary": "The maintainer provides generally helpful and technically deep responses, but can be defensive and dismissive at times, which may deter new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "no closed issues in the past 6 months",
+        "only one contributor active in the past 6 months",
+        "last release is over 3 years old"
+      ],
+      "positive_signals": [
+        "9 commits in the past 6 months",
+        "1 merged PR in the past 6 months"
+      ],
+      "summary": "The package receives some maintenance with recent commits and a merged PR, but the lack of closed issues and infrequent releases suggest only minimal attention."
+    },
+    "changelog": null,
+    "governance": null
   },
-  "analyzed_at": "2025-12-30T22:27:35.078832Z",
-  "data_fetched_at": "2025-12-30T22:27:35.078833Z"
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is detailed but lacks clear installation instructions and troubleshooting guidance, making it challenging for new users to get started.",
+    "concerns": [
+      "no closed issues in the past 6 months",
+      "only one contributor active in the past 6 months",
+      "last release is over 3 years old",
+      "Docs: Lack of clear installation instructions",
+      "Possible abandonment signals detected",
+      "Community: lack of updates",
+      "Community: unresolved issues",
+      "Communication: defensiveness about wolfSSL",
+      "Communication: dismissal of mbedTLS support",
+      "Security: Potential for denial-of-service attacks due to lack of input validation and error handling"
+    ],
+    "highlights": [
+      "9 commits in the past 6 months",
+      "1 merged PR in the past 6 months",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T08:44:42.944132Z",
+  "data_fetched_at": "2026-01-01T08:44:42.944134Z"
 }

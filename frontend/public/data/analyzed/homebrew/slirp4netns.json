@@ -10,30 +10,28 @@
     "repo": "slirp4netns",
     "subpath": null
   },
-  "install_count_30d": 2633,
+  "install_count_30d": 2537,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 61.3,
-    "grade": "D",
+    "overall": 55.5,
+    "grade": "F",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "restricted",
     "update_urgency": "medium",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
+      "score": 66.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 21.677460190564197,
+      "score": 27.090154636368467,
       "weight": 25
     },
     "community": {
-      "score": 72.0,
+      "score": 67.0,
       "weight": 15
     },
     "bus_factor": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 52.5,
       "weight": 10
     },
     "stability": {
@@ -100,6 +98,7 @@
     "prs": {
       "open_prs": 1,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
       "stale_prs": 1,
       "avg_merge_time_hours": null
     },
@@ -163,18 +162,106 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The documentation is generally clear and provides a good quick start guide, but could benefit from more examples and troubleshooting information.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "main.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "Potential command injection vulnerability in the 'nsenter' function due to lack of input validation for 'netns' and 'userns' parameters."
+        },
+        {
+          "file": "main.c",
+          "line": 246,
+          "severity": "low",
+          "description": "Use of 'strncpy' with user-controlled data in the 'configure_network' function may lead to buffer overflow vulnerabilities if not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the 'nsenter' function",
+        "Insufficient input validation for user-controlled data"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "permission issues",
+        "networking problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The slirp4netns community is experiencing some frustration with ongoing issues, but maintainers are moderately responsive and there are no signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful, clear, and patient, providing technical depth and encouraging new contributors."
+    },
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "no commits in the past 6 months",
+        "unaddressed open issues",
+        "no merged PRs or closed issues in the past 6 months"
+      ],
+      "positive_signals": [
+        "recent release",
+        "last commit relatively recent",
+        "multiple contributors"
+      ],
+      "summary": "The package appears to be stale due to a lack of recent commits, unaddressed open issues, and no merged PRs, despite having a recent release and multiple contributors."
+    },
+    "changelog": null,
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "stale",
     "security_summary": "No issues",
-    "doc_summary": "",
+    "doc_summary": "The documentation is generally clear and provides a good quick start guide, but could benefit from more examples and troubleshooting information.",
     "concerns": [
+      "no commits in the past 6 months",
+      "unaddressed open issues",
+      "no merged PRs or closed issues in the past 6 months",
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: permission issues",
+      "Community: networking problems",
+      "Security: Potential command injection vulnerability in the 'nsenter' function",
+      "Security: Insufficient input validation for user-controlled data",
       "High bus factor risk (83% from top contributor)"
     ],
     "highlights": [
+      "recent release",
+      "last commit relatively recent",
+      "multiple contributors",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-30T22:23:57.855225Z",
-  "data_fetched_at": "2025-12-30T22:23:57.855225Z"
+  "analyzed_at": "2026-01-01T08:30:03.153412Z",
+  "data_fetched_at": "2026-01-01T08:30:03.153413Z"
 }

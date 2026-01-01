@@ -10,22 +10,20 @@
     "repo": "gallery-dl",
     "subpath": null
   },
-  "install_count_30d": 2579,
+  "install_count_30d": 2593,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 88.2,
+    "overall": 81.2,
     "grade": "B",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
+      "score": 66.0,
       "weight": 30
     },
     "maintenance": {
@@ -41,7 +39,7 @@
       "weight": 10
     },
     "documentation": {
-      "score": 67.5,
+      "score": 69.5,
       "weight": 10
     },
     "stability": {
@@ -54,13 +52,13 @@
       "owner": "mikf",
       "name": "gallery-dl",
       "description": "Command-line program to download image galleries and collections from several image hosting sites",
-      "stars": 16248,
-      "forks": 1274,
+      "stars": 16273,
+      "forks": 1277,
       "open_issues": 1086,
-      "watchers": 16248,
+      "watchers": 16273,
       "created_at": "2014-10-12T19:38:05Z",
-      "updated_at": "2025-12-30T22:10:53Z",
-      "pushed_at": "2025-12-30T16:17:57Z",
+      "updated_at": "2026-01-01T04:32:19Z",
+      "pushed_at": "2025-12-31T15:32:03Z",
       "default_branch": "master",
       "license": "GPL-2.0",
       "language": "Python",
@@ -81,31 +79,32 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 190,
-      "active_contributors_6mo": 36,
+      "total_contributors": 191,
+      "active_contributors_6mo": 37,
       "top_contributor_pct": 92.5,
       "contributors_over_5pct": 1,
       "contributors_prev_6mo": 11,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 30,
+      "first_time_contributors_6mo": 31,
       "contributor_entropy": 0.85
     },
     "commits": {
-      "last_commit_date": "2025-12-30T16:17:57Z",
-      "commits_last_6mo": 777,
+      "last_commit_date": "2025-12-31T15:32:03Z",
+      "commits_last_6mo": 780,
       "commits_last_year": 1000
     },
     "issues": {
       "open_issues": 281,
       "closed_issues_6mo": 270,
-      "avg_response_time_hours": 7.1,
-      "avg_close_time_hours": 14.4,
+      "avg_response_time_hours": 3.3,
+      "avg_close_time_hours": 10.7,
       "good_first_issue_count": 0,
       "regression_issue_count": 13
     },
     "prs": {
       "open_prs": 45,
       "merged_prs_6mo": 49,
+      "closed_prs_6mo": 69,
       "stale_prs": 38,
       "avg_merge_time_hours": null
     },
@@ -161,7 +160,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 4,
-      "recent_runs_pass_rate": 86.0,
+      "recent_runs_pass_rate": 92.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -169,19 +168,115 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 8,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides clear and detailed information on installation, usage, and configuration, but lacks troubleshooting guidance.",
+      "top_issue": "Lack of troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "gallery_dl/config.py",
+          "line": 123,
+          "severity": "low",
+          "description": "The use of `util.json_loads` to load configuration files could potentially lead to code injection if the input is not properly sanitized."
+        },
+        {
+          "file": "gallery_dl/config.py",
+          "line": 173,
+          "severity": "medium",
+          "description": "The `load` function does not validate user-provided file paths before attempting to open them, which could lead to path traversal attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential code injection vulnerability in the `load` function.",
+        "Path traversal attack vulnerability in the `load` function."
+      ],
+      "summary": "The gallery-dl package has some security concerns, including potential code injection and path traversal vulnerabilities, but overall it appears to be a relatively secure application."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "site-specific issues",
+        "authentication problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The gallery-dl community is active, with users reporting various site-specific issues and authentication problems, but maintainers are moderately responsive to these concerns."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "sometimes dismissive",
+        "lacking empathy"
+      ],
+      "summary": "The maintainer provides mostly helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to create a more positive experience for users and contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (780)",
+        "Recent last commit (2025-12-31) and last release (2025-12-20)",
+        "Large number of contributors active in the past 6 months (37)",
+        "Steady issue closure rate (270 closed issues in 6 months)"
+      ],
+      "summary": "The gallery-dl package appears to be actively maintained with a high volume of commits, releases, and contributor activity."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
+    },
+    "governance": null
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "",
+    "doc_summary": "The README provides clear and detailed information on installation, usage, and configuration, but lacks troubleshooting guidance.",
     "concerns": [
+      "Docs: Lack of troubleshooting documentation",
+      "Community: site-specific issues",
+      "Community: authentication problems",
+      "Communication: sometimes dismissive",
+      "Communication: lacking empathy",
+      "Security: Potential code injection vulnerability in the `load` function.",
+      "Security: Path traversal attack vulnerability in the `load` function.",
       "High bus factor risk (92% from top contributor)"
     ],
     "highlights": [
+      "High number of commits in the past 6 months (780)",
+      "Recent last commit (2025-12-31) and last release (2025-12-20)",
+      "Large number of contributors active in the past 6 months (37)",
+      "Steady issue closure rate (270 closed issues in 6 months)",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
   },
-  "analyzed_at": "2025-12-30T22:25:34.232559Z",
-  "data_fetched_at": "2025-12-30T22:25:34.232560Z"
+  "analyzed_at": "2026-01-01T08:18:08.762189Z",
+  "data_fetched_at": "2026-01-01T08:18:08.762190Z"
 }

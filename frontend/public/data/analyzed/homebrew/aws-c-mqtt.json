@@ -10,27 +10,26 @@
     "repo": "aws-c-mqtt",
     "subpath": null
   },
-  "install_count_30d": 2563,
+  "install_count_30d": 2544,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 79.5,
+    "overall": 75.2,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "low",
     "confidence": "medium",
     "confidence_factors": [
-      "No LLM assessment available",
       "Limited issue history"
     ],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
+      "score": 86.0,
       "weight": 30
     },
     "maintenance": {
-      "score": 81.0001500757975,
+      "score": 74.50232104482315,
       "weight": 25
     },
     "community": {
@@ -38,15 +37,15 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 80.0,
+      "score": 65.0,
       "weight": 10
     },
     "documentation": {
-      "score": 45.0,
+      "score": 36.0,
       "weight": 10
     },
     "stability": {
-      "score": 68.0,
+      "score": 78.0,
       "weight": 10
     }
   },
@@ -61,7 +60,7 @@
       "watchers": 104,
       "created_at": "2018-07-27T19:32:17Z",
       "updated_at": "2025-12-18T15:19:24Z",
-      "pushed_at": "2025-12-19T23:06:56Z",
+      "pushed_at": "2025-12-30T23:45:01Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "C",
@@ -100,6 +99,7 @@
     "prs": {
       "open_prs": 8,
       "merged_prs_6mo": 3,
+      "closed_prs_6mo": 4,
       "stale_prs": 3,
       "avg_merge_time_hours": null
     },
@@ -155,7 +155,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 8,
-      "recent_runs_pass_rate": 66.0,
+      "recent_runs_pass_rate": 70.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -163,16 +163,111 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": null,
-  "analysis_summary": {
-    "maintenance_status": "unknown",
-    "security_summary": "No issues",
-    "doc_summary": "",
-    "concerns": [],
-    "highlights": [
-      "CI/CD configured"
-    ]
+  "llm_assessments": {
+    "readme": {
+      "clarity": 6,
+      "installation": 8,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 7,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The documentation is detailed but lacks a clear and concise introduction, making it difficult for new users to quickly understand the package's purpose and usage.",
+      "top_issue": "Lack of a quick start or getting started section that provides a simple example of how to use the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "bin/elastipubsub/main.c",
+          "line": 246,
+          "severity": "low",
+          "description": "Use of atoi() function to convert user input to integer, potential for overflow or underflow"
+        },
+        {
+          "file": "bin/elastipubsub/main.c",
+          "line": 251,
+          "severity": "low",
+          "description": "Use of atoi() function to convert user input to integer, potential for overflow or underflow"
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The code has some minor security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "lack of control over message acknowledgement"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting issues and feature requests, but maintainer responsiveness appears to be slow, indicating a need for more engagement to ensure the project's health."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "occasional condescension",
+        "reluctance to add new features"
+      ],
+      "summary": "The maintainer provides detailed technical explanations, but can come across as somewhat reluctant and occasionally condescending, which may deter new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low number of commits past 6 months",
+        "no closed issues past 6 months",
+        "high number of open PRs"
+      ],
+      "positive_signals": [
+        "recent last commit",
+        "recent last release",
+        "multiple contributors active past 6 months"
+      ],
+      "summary": "The package appears to be minimally maintained with some recent activity, but concerns around issue closure and pull request management exist."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The aws-c-mqtt project lacks a clear succession plan and decision-making process, but provides a path for contributors to become maintainers."
+    }
   },
-  "analyzed_at": "2025-12-30T22:25:56.901556Z",
-  "data_fetched_at": "2025-12-30T22:25:56.901556Z"
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is detailed but lacks a clear and concise introduction, making it difficult for new users to quickly understand the package's purpose and usage.",
+    "concerns": [
+      "low number of commits past 6 months",
+      "no closed issues past 6 months",
+      "high number of open PRs",
+      "Docs: Lack of a quick start or getting started section that provides a simple example of how to use the package.",
+      "Community: lack of control over message acknowledgement",
+      "Communication: occasional condescension",
+      "Communication: reluctance to add new features",
+      "Governance: High bus factor risk identified"
+    ],
+    "highlights": [
+      "recent last commit",
+      "recent last release",
+      "multiple contributors active past 6 months",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-01T08:26:55.118940Z",
+  "data_fetched_at": "2026-01-01T08:26:55.118941Z"
 }

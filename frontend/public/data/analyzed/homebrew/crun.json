@@ -10,22 +10,20 @@
     "repo": "crun",
     "subpath": null
   },
-  "install_count_30d": 2476,
+  "install_count_30d": 2438,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 92.4,
-    "grade": "A",
+    "overall": 87.5,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "medium",
-    "confidence_factors": [
-      "No LLM assessment available"
-    ],
+    "confidence": "high",
+    "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
+      "score": 90.0,
       "weight": 30
     },
     "maintenance": {
@@ -37,11 +35,11 @@
       "weight": 15
     },
     "bus_factor": {
-      "score": 76.88,
+      "score": 61.879999999999995,
       "weight": 10
     },
     "documentation": {
-      "score": 55.0,
+      "score": 50.5,
       "weight": 10
     },
     "stability": {
@@ -54,12 +52,12 @@
       "owner": "containers",
       "name": "crun",
       "description": "A fast and lightweight fully featured OCI runtime and C library for running containers",
-      "stars": 3700,
+      "stars": 3701,
       "forks": 380,
       "open_issues": 53,
-      "watchers": 3700,
+      "watchers": 3701,
       "created_at": "2017-09-13T20:20:58Z",
-      "updated_at": "2025-12-30T14:03:50Z",
+      "updated_at": "2026-01-01T08:31:11Z",
       "pushed_at": "2025-12-22T15:42:44Z",
       "default_branch": "main",
       "license": "GPL-2.0",
@@ -92,12 +90,12 @@
     },
     "commits": {
       "last_commit_date": "2025-12-22T15:42:08Z",
-      "commits_last_6mo": 235,
+      "commits_last_6mo": 226,
       "commits_last_year": 610
     },
     "issues": {
       "open_issues": 44,
-      "closed_issues_6mo": 41,
+      "closed_issues_6mo": 40,
       "avg_response_time_hours": 56.8,
       "avg_close_time_hours": 166.5,
       "good_first_issue_count": 0,
@@ -105,7 +103,8 @@
     },
     "prs": {
       "open_prs": 9,
-      "merged_prs_6mo": 73,
+      "merged_prs_6mo": 71,
+      "closed_prs_6mo": 78,
       "stale_prs": 2,
       "avg_merge_time_hours": null
     },
@@ -169,17 +168,109 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The documentation is detailed and provides good installation instructions, but lacks a clear quick start guide and troubleshooting section.",
+      "top_issue": "Lack of a concise quick start guide to help new users get started with the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "contrib/notify-socket-server/notify-socket-server.c",
+          "line": 123,
+          "severity": "low",
+          "description": "Potential buffer overflow vulnerability in strcpy function call"
+        },
+        {
+          "file": "lua/lua_crun.c",
+          "line": 145,
+          "severity": "medium",
+          "description": "Use of luaL_error with user-controlled input may lead to information disclosure"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in strcpy function call",
+        "Insufficient validation for Lua table fields"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or sensitive information exposure was found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "bugs and errors",
+        "inconsistent behavior"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The crun community is experiencing some technical issues, but there are no clear signs of abandonment or extreme frustration."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful, clear, patient, and technically sound, creating a welcoming environment for contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (226)",
+        "Recent last commit and release dates (2025-12-22)",
+        "Large number of merged PRs in the past 6 months (71)",
+        "Multiple active contributors in the past 6 months (21)"
+      ],
+      "summary": "The crun package appears to be actively maintained with frequent updates, a large number of contributors, and a high volume of pull requests being addressed."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The crun project lacks a clear succession plan, decision-making process documentation, and contributor ladder, indicating a high bus factor risk."
+    }
+  },
   "analysis_summary": {
-    "maintenance_status": "unknown",
+    "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "",
-    "concerns": [],
+    "doc_summary": "The documentation is detailed and provides good installation instructions, but lacks a clear quick start guide and troubleshooting section.",
+    "concerns": [
+      "Docs: Lack of a concise quick start guide to help new users get started with the package.",
+      "Community: bugs and errors",
+      "Community: inconsistent behavior",
+      "Governance: High bus factor risk identified",
+      "Security: Potential buffer overflow vulnerability in strcpy function call",
+      "Security: Insufficient validation for Lua table fields"
+    ],
     "highlights": [
+      "High number of commits in the past 6 months (226)",
+      "Recent last commit and release dates (2025-12-22)",
+      "Large number of merged PRs in the past 6 months (71)",
+      "Multiple active contributors in the past 6 months (21)",
       "Actively maintained",
       "CI/CD configured"
-    ]
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
   },
-  "analyzed_at": "2025-12-30T22:28:06.320444Z",
-  "data_fetched_at": "2025-12-30T22:28:06.320445Z"
+  "analyzed_at": "2026-01-01T08:57:57.342538Z",
+  "data_fetched_at": "2026-01-01T08:57:57.342539Z"
 }
