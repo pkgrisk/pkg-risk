@@ -10,41 +10,57 @@
     "repo": "xz",
     "subpath": null
   },
-  "install_count_30d": 239443,
+  "install_count_30d": 243949,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 81.6,
+    "overall": 85.1,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
-    "confidence": "high",
-    "confidence_factors": [],
+    "confidence": "medium",
+    "confidence_factors": [
+      "No LLM assessment available"
+    ],
     "project_age_band": "mature",
     "security": {
-      "score": 70.0,
-      "weight": 30
+      "score": 80.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Dangerous CI/CD workflows detected",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 97.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 53.24,
-      "weight": 10
+      "score": 48.2,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
-      "score": 57.5,
-      "weight": 10
+      "score": 67.5,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,12 +68,12 @@
       "owner": "tukaani-project",
       "name": "xz",
       "description": "XZ Utils",
-      "stars": 884,
+      "stars": 886,
       "forks": 186,
       "open_issues": 19,
-      "watchers": 884,
+      "watchers": 886,
       "created_at": "2022-10-18T15:11:36Z",
-      "updated_at": "2025-12-28T16:42:24Z",
+      "updated_at": "2025-12-31T12:56:00Z",
       "pushed_at": "2025-12-17T14:13:32Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -86,7 +102,7 @@
     "commits": {
       "last_commit_date": "2025-12-17T12:49:12Z",
       "commits_last_6mo": 61,
-      "commits_last_year": 265
+      "commits_last_year": 255
     },
     "issues": {
       "open_issues": 12,
@@ -99,6 +115,7 @@
     "prs": {
       "open_prs": 7,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 6,
       "stale_prs": 5,
       "avg_merge_time_hours": null
     },
@@ -162,114 +179,71 @@
       "has_multi_platform": true
     }
   },
-  "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 9,
-      "overall": 6,
-      "summary": "The documentation is thorough but lacks a clear and concise introduction to get new users started quickly.",
-      "top_issue": "Lack of a quick start guide or example usage in the README"
+  "llm_assessments": null,
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.3,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Packaging": -1.0,
+        "Code-Review": 0.0,
+        "Maintained": 10.0,
+        "Token-Permissions": -1.0,
+        "Dangerous-Workflow": -1.0,
+        "SAST": 0.0,
+        "CII-Best-Practices": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Pinned-Dependencies": -1.0,
+        "Vulnerabilities": 10.0,
+        "Fuzzing": 10.0,
+        "License": 9.0,
+        "Signed-Releases": 8.0,
+        "Branch-Protection": 0.0,
+        "Security-Policy": 10.0
+      },
+      "code_review_score": 0.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": false
     },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "src/lzmainfo/lzmainfo.c",
-          "line": 123,
-          "severity": "low",
-          "description": "The use of system functions like printf and fprintf could potentially lead to format string vulnerabilities if user-controlled input is used as the format string. However, in this case, the format strings are hardcoded."
-        },
-        {
-          "file": "src/xz/main.c",
-          "line": 104,
-          "severity": "low",
-          "description": "The use of fgetc and xmalloc could potentially lead to buffer overflow vulnerabilities if not handled properly. However, in this case, the code seems to handle memory allocation correctly."
-        }
-      ],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential format string vulnerabilities",
-        "Lack of input validation for file names and command line arguments"
-      ],
-      "summary": "The code has some potential security issues, including format string vulnerabilities and lack of input validation, but overall it appears to be well-structured and secure."
+    "project_metrics": {
+      "stars": 161,
+      "forks": 50,
+      "open_issues": 6,
+      "license": "non-standard",
+      "description": "XZ Utils",
+      "oss_fuzz_line_count": 8579,
+      "oss_fuzz_line_cover_count": 6301
     },
-    "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
-      "common_complaints": [
-        "memory allocation issues",
-        "compatibility problems"
-      ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The xz community is moderately active, with some open issues and a mix of feature requests and bug reports, but no clear signs of abandonment or extreme frustration."
-    },
-    "communication": {
-      "helpfulness": 9,
-      "clarity": 8,
-      "patience": 9,
-      "technical_depth": 9,
-      "welcomingness": 8,
-      "communication_style": "exemplary",
-      "red_flags": [],
-      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
-    },
-    "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
-      "concerns": [
-        "no merged PRs in the past 6 months",
-        "relatively low number of contributors"
-      ],
-      "positive_signals": [
-        "frequent commits in the past 6 months",
-        "recent release",
-        "active issue closure"
-      ],
-      "summary": "The xz package appears to be maintained with regular updates and issue closure, but lacks recent PR merges and has a limited number of active contributors."
-    },
-    "changelog": {
-      "breaking_changes_marked": false,
-      "has_migration_guides": false,
-      "well_categorized": true,
-      "appears_complete": true,
-      "clarity_score": 8,
-      "overall_score": 7,
-      "summary": "The changelog is well-structured and comprehensive, but lacks explicit breaking change markers and migration guides."
-    },
-    "governance": null
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T20:51:53.785291Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
-    "maintenance_status": "maintained",
+    "maintenance_status": "unknown",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is thorough but lacks a clear and concise introduction to get new users started quickly.",
+    "doc_summary": "",
     "concerns": [
-      "no merged PRs in the past 6 months",
-      "relatively low number of contributors",
-      "Docs: Lack of a quick start guide or example usage in the README",
-      "Community: memory allocation issues",
-      "Community: compatibility problems",
-      "Security: Potential format string vulnerabilities",
-      "Security: Lack of input validation for file names and command line arguments",
-      "High bus factor risk (81% from top contributor)"
+      "High bus factor risk (81% from top contributor)",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "frequent commits in the past 6 months",
-      "recent release",
-      "active issue closure",
-      "Excellent maintainer communication",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "Fuzzing enabled"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "exemplary"
+    "scorecard_score": 6.3
   },
-  "analyzed_at": "2025-12-31T01:33:34.234028Z",
-  "data_fetched_at": "2025-12-31T01:33:34.234029Z"
+  "analyzed_at": "2026-01-02T20:51:53.785613Z",
+  "data_fetched_at": "2026-01-02T20:51:53.785613Z"
 }

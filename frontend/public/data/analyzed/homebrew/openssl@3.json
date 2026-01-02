@@ -10,11 +10,11 @@
     "repo": "openssl",
     "subpath": null
   },
-  "install_count_30d": 353214,
+  "install_count_30d": 340746,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 84.6,
+    "overall": 86.9,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,28 +23,43 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
-      "weight": 30
+      "score": 80.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Dangerous CI/CD workflows detected",
+        "CII Best Practices badge",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 73.93984226654928,
-      "weight": 25
+      "score": 94.82853255223993,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 100.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 65.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 76.0,
-      "weight": 10
+      "score": 81.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,13 +67,13 @@
       "owner": "openssl",
       "name": "openssl",
       "description": "TLS/SSL and crypto library",
-      "stars": 29285,
-      "forks": 10972,
+      "stars": 29299,
+      "forks": 10975,
       "open_issues": 1688,
-      "watchers": 29285,
+      "watchers": 29299,
       "created_at": "2013-01-15T22:34:48Z",
-      "updated_at": "2025-12-31T00:18:13Z",
-      "pushed_at": "2025-12-30T13:28:20Z",
+      "updated_at": "2026-01-02T19:15:42Z",
+      "pushed_at": "2026-01-02T14:45:20Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "C",
@@ -77,31 +92,32 @@
     },
     "contributors": {
       "total_contributors": 366,
-      "active_contributors_6mo": 107,
+      "active_contributors_6mo": 108,
       "top_contributor_pct": 20.7,
       "contributors_over_5pct": 5,
       "contributors_prev_6mo": 15,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 99,
+      "first_time_contributors_6mo": 100,
       "contributor_entropy": 4.47
     },
     "commits": {
-      "last_commit_date": "2025-12-19T03:00:59Z",
-      "commits_last_6mo": 944,
+      "last_commit_date": "2025-12-31T21:38:21Z",
+      "commits_last_6mo": 950,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 132,
-      "closed_issues_6mo": 36,
-      "avg_response_time_hours": 6.6,
-      "avg_close_time_hours": 73.1,
+      "open_issues": 134,
+      "closed_issues_6mo": 38,
+      "avg_response_time_hours": 5.5,
+      "avg_close_time_hours": 76.7,
       "good_first_issue_count": 3,
       "regression_issue_count": 3
     },
     "prs": {
       "open_prs": 300,
       "merged_prs_6mo": 0,
-      "stale_prs": 166,
+      "closed_prs_6mo": 300,
+      "stale_prs": 169,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -156,7 +172,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 47.8,
+      "recent_runs_pass_rate": 57.5,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -171,9 +187,9 @@
       "quick_start": 2,
       "examples": 6,
       "configuration": 5,
-      "troubleshooting": 3,
+      "troubleshooting": 4,
       "overall": 6,
-      "summary": "The OpenSSL README provides detailed information on the package, its features, and installation instructions, but lacks a clear quick start guide and troubleshooting section.",
+      "summary": "The OpenSSL README provides detailed information about the project, its components, and installation instructions, but lacks a clear quick start guide and troubleshooting section.",
       "top_issue": "Lack of a concise quick start example to help new users get started with the package."
     },
     "security": {
@@ -183,59 +199,58 @@
           "file": "demos/sslecho/main.c",
           "line": 246,
           "severity": "low",
-          "description": "The use of strcmp() with user input from SSL_read() could potentially lead to issues if the input is not properly sanitized, but in this case, it's used for a simple 'kill' command."
+          "description": "The use of strcmp() with user-controlled input 'rxbuf' could potentially lead to a timing attack, but it's not directly exploitable for code injection."
+        },
+        {
+          "file": "demos/sslecho/main.c",
+          "line": 128,
+          "severity": "low",
+          "description": "The use of system calls like perror() and printf() with user-controlled input could potentially lead to information disclosure, but it's not directly exploitable for code injection."
         }
       ],
-      "input_validation_score": 8,
+      "input_validation_score": 6,
       "secrets_found": [
         {
           "file": "demos/sslecho/main.c",
-          "line": 123,
+          "line": 154,
           "type": "Certificate file path"
         },
         {
           "file": "demos/sslecho/main.c",
-          "line": 129,
+          "line": 158,
           "type": "Private key file path"
         }
       ],
       "critical_findings": [],
-      "summary": "The provided OpenSSL demo code has some minor security concerns related to input validation and error handling, but no critical vulnerabilities were found."
+      "summary": "The code has some security concerns related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "regressions",
-        "bugs"
+        "bug reports",
+        "documentation issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The OpenSSL community is actively reporting and discussing issues, with maintainers responding moderately, indicating a relatively healthy but imperfect open-source project."
+      "summary": "The community is actively reporting issues and seeking help, but frustration levels are moderate due to unresolved bugs and unclear documentation."
     },
-    "communication": {
-      "helpfulness": 8,
-      "clarity": 9,
-      "patience": 7,
-      "technical_depth": 8,
-      "welcomingness": 6,
-      "communication_style": "good",
-      "red_flags": [],
-      "summary": "The maintainer's responses are generally helpful, clear, and technically sound, but could improve in terms of patience and welcomingness towards new contributors."
-    },
+    "communication": null,
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "actively-maintained",
+      "confidence": 9,
       "concerns": [
-        "no merged PRs in the past 6 months",
-        "high number of open issues and PRs"
+        "high number of open issues",
+        "high number of open PRs"
       ],
       "positive_signals": [
-        "frequent commits in the past 6 months",
-        "large number of active contributors"
+        "frequent commits",
+        "recent release",
+        "large number of active contributors",
+        "high rate of merged PRs"
       ],
-      "summary": "The package appears to be stale due to a lack of merged PRs and a high number of open issues, despite recent commit activity and a large contributor base."
+      "summary": "The openssl package appears to be actively maintained with a high volume of commits, releases, and contributor activity, despite some concerns around issue and PR backlog."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -255,27 +270,81 @@
       "summary": "The OpenSSL project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.8,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Dangerous-Workflow": -1.0,
+        "Packaging": -1.0,
+        "Code-Review": 0.0,
+        "Token-Permissions": -1.0,
+        "License": 10.0,
+        "CII-Best-Practices": 5.0,
+        "Branch-Protection": -1.0,
+        "Security-Policy": 10.0,
+        "Signed-Releases": 8.0,
+        "SAST": 0.0,
+        "Vulnerabilities": 10.0,
+        "Binary-Artifacts": 10.0,
+        "Fuzzing": 10.0,
+        "Pinned-Dependencies": 0.0
+      },
+      "code_review_score": 0.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": true
+    },
+    "project_metrics": {
+      "stars": 29295,
+      "forks": 10975,
+      "open_issues": 1685,
+      "license": "Apache-2.0",
+      "description": "TLS/SSL and crypto library",
+      "oss_fuzz_line_count": 1378753,
+      "oss_fuzz_line_cover_count": 599598
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T20:56:20.729771Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
-    "maintenance_status": "stale",
+    "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "The OpenSSL README provides detailed information on the package, its features, and installation instructions, but lacks a clear quick start guide and troubleshooting section.",
+    "doc_summary": "The OpenSSL README provides detailed information about the project, its components, and installation instructions, but lacks a clear quick start guide and troubleshooting section.",
     "concerns": [
-      "no merged PRs in the past 6 months",
-      "high number of open issues and PRs",
+      "high number of open issues",
+      "high number of open PRs",
       "Docs: Lack of a concise quick start example to help new users get started with the package.",
-      "Community: regressions",
-      "Community: bugs"
+      "Community: bug reports",
+      "Community: documentation issues",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "frequent commits in the past 6 months",
+      "frequent commits",
+      "recent release",
       "large number of active contributors",
+      "high rate of merged PRs",
       "Breaking changes clearly marked in changelog",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "Has CII Best Practices badge",
+      "Fuzzing enabled"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "good"
+    "community_sentiment": "mixed",
+    "scorecard_score": 6.8
   },
-  "analyzed_at": "2025-12-31T03:33:32.704696Z",
-  "data_fetched_at": "2025-12-31T03:33:32.704697Z"
+  "analyzed_at": "2026-01-02T20:59:20.501823Z",
+  "data_fetched_at": "2026-01-02T20:59:20.501824Z"
 }
