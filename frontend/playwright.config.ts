@@ -47,21 +47,38 @@ export default defineConfig({
     video: 'on-first-retry',
   },
 
-  // Configure projects for major browsers
+  // Configure projects for browsers and viewports
   projects: [
+    // Desktop Chrome (default)
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-    // Uncomment to test on more browsers:
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+
+    // Mobile Chrome
+    {
+      name: 'mobile-chrome',
+      use: { ...devices['Pixel 5'] },
+    },
+
+    // Mobile Safari
+    {
+      name: 'mobile-safari',
+      use: { ...devices['iPhone 12'] },
+    },
+
+    // Tablet
+    {
+      name: 'tablet',
+      use: { ...devices['iPad (gen 7)'] },
+    },
+
+    // Responsive tests - run on desktop Chrome but tests set their own viewports
+    {
+      name: 'responsive',
+      testMatch: '**/*.responsive.spec.ts',
+      use: { ...devices['Desktop Chrome'] },
+    },
   ],
 
   // Run local dev server before starting tests

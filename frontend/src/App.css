@@ -1,3 +1,39 @@
+/* ==================== */
+/* CSS Custom Properties */
+/* ==================== */
+:root {
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Touch target minimum (WCAG 2.5.5) */
+  --touch-target: 44px;
+
+  /* Responsive spacing (overridden in media queries) */
+  --content-padding: 24px;
+  --card-padding: 24px;
+  --grid-gap: 24px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --content-padding: 16px;
+    --card-padding: 16px;
+    --grid-gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --content-padding: 12px;
+    --card-padding: 12px;
+    --grid-gap: 12px;
+  }
+}
+
 /* Layout */
 .app {
   min-height: 100vh;
@@ -5279,5 +5315,462 @@ tr.selected .row-actions {
 
   .upload-package-detail .detail-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==================== */
+/* RESPONSIVE DESIGN    */
+/* ==================== */
+
+/* Navigation Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: var(--space-md);
+  }
+
+  .nav-stats {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 10px 12px;
+    min-height: var(--touch-target);
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .ecosystem-selector {
+    flex: 1;
+    min-width: 120px;
+    min-height: var(--touch-target);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .brand-text {
+    font-size: 16px;
+  }
+}
+
+/* ==================== */
+/* Package Table Mobile Cards */
+/* ==================== */
+@media (max-width: 768px) {
+  /* Hide table header on mobile (accessible) */
+  .package-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .package-table {
+    display: block;
+    background: transparent;
+  }
+
+  .package-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Each row becomes a card */
+  .package-table tbody tr {
+    display: block;
+    position: relative;
+    padding: 16px;
+    padding-right: 60px;
+    background: var(--bg-card, #1a1a2e);
+    border-radius: 12px;
+    border: 1px solid var(--border-color, #333);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .package-table tbody tr:hover {
+    background: var(--bg-secondary, #252535);
+    border-color: var(--border-color, #444);
+  }
+
+  .package-table tbody tr.selected {
+    border-color: #646cff;
+    background: rgba(100, 108, 255, 0.1);
+  }
+
+  .package-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid var(--border-color, #333);
+  }
+
+  .package-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Grade cell - inline with package name */
+  .package-table td:nth-child(1) {
+    display: inline-block;
+    float: left;
+    margin-right: 12px;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  /* Package name/description cell */
+  .package-table td:nth-child(2) {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color, #333);
+  }
+
+  /* Clear float after package cell */
+  .package-table td:nth-child(2)::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Actions positioned top-right */
+  .package-table td.actions-cell,
+  .package-table td:nth-child(7) {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 0;
+    border: none !important;
+  }
+
+  /* Metadata rows with labels */
+  .package-table td:nth-child(3),
+  .package-table td:nth-child(4),
+  .package-table td:nth-child(5),
+  .package-table td:nth-child(6) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .package-table td:nth-child(3)::before,
+  .package-table td:nth-child(4)::before,
+  .package-table td:nth-child(5)::before,
+  .package-table td:nth-child(6)::before {
+    content: attr(data-label);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary, #888);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    margin-right: 16px;
+  }
+
+  /* Actions always visible on mobile */
+  .package-table .row-actions {
+    opacity: 1;
+  }
+
+  /* Touch-friendly action buttons */
+  .package-table .row-action-btn {
+    width: var(--touch-target);
+    height: var(--touch-target);
+    font-size: 18px;
+  }
+
+  /* Description text wrapping */
+  .package-table .description {
+    max-width: 100%;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Package name styling in card view */
+  .package-table .package-name {
+    font-size: 16px;
+  }
+
+  /* Score display in card */
+  .package-table .score-with-percentile {
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+
+  /* Risk badges wrapping */
+  .package-table .risk-badges {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+}
+
+/* ==================== */
+/* Filters Responsive */
+/* ==================== */
+@media (max-width: 768px) {
+  .filters,
+  .filter-bar,
+  .package-filters {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .search-input,
+  .search-box input {
+    max-width: 100%;
+    width: 100%;
+    min-height: var(--touch-target);
+  }
+
+  .grade-filter,
+  .security-filter,
+  .maintenance-filter,
+  .risk-tier-filter,
+  .filter-select {
+    min-height: var(--touch-target);
+    width: 100%;
+  }
+
+  .filter-row {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .filter-row select {
+    flex: 1;
+    min-width: calc(50% - var(--space-sm));
+  }
+}
+
+/* ==================== */
+/* Card Grids Responsive */
+/* ==================== */
+
+/* Safer responsive grids using min() */
+.detail-grid,
+.skeleton-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+}
+
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+  }
+
+  .recommendations-card,
+  .alternatives-card,
+  .security-combined-card {
+    grid-column: span 1;
+  }
+
+  .repo-stats,
+  .activity-stats,
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-value {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+}
+
+/* ==================== */
+/* Page-Specific Responsive */
+/* ==================== */
+
+/* PackageDetail Header */
+@media (max-width: 768px) {
+  .package-header {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .overall-score {
+    text-align: left;
+  }
+
+  .header-right {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .overall-score .score-value {
+    font-size: 36px;
+  }
+
+  .enterprise-indicators {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .indicator {
+    text-align: center;
+  }
+}
+
+/* UploadDashboard */
+@media (max-width: 640px) {
+  .upload-zone {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .file-tags {
+    gap: var(--space-xs);
+  }
+
+  .file-tag {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .upload-primary {
+    font-size: 16px;
+  }
+}
+
+/* File tabs horizontal scroll */
+.file-tabs {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.file-tab {
+  flex-shrink: 0;
+  min-height: var(--touch-target);
+}
+
+/* Methodology & About Pages */
+.scoring-categories {
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+@media (max-width: 640px) {
+  .about-page h1 {
+    font-size: 20px;
+  }
+
+  .about-section h2,
+  .methodology-section h2 {
+    font-size: 16px;
+  }
+
+  .category-card {
+    padding: var(--card-padding);
+  }
+}
+
+/* ==================== */
+/* Touch Target & Interaction Fixes */
+/* ==================== */
+
+/* Ensure all interactive elements meet 44px minimum */
+button,
+.nav-link,
+.filter-toggle,
+select,
+.row-action-btn,
+.quick-filter-chip,
+.clickable {
+  min-height: var(--touch-target);
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 0;
+}
+
+.filter-toggle input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+/* Active states for touch feedback */
+button:active,
+.clickable:active,
+.nav-link:active,
+.quick-filter-chip:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Remove hover effects on touch devices */
+@media (hover: none) {
+  .row-action-btn:hover,
+  .quick-filter-chip:hover,
+  .risk-metric.clickable:hover {
+    transform: none;
+  }
+}
+
+/* Main content responsive padding */
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--content-padding);
+  }
+}
+
+/* Modal responsive */
+@media (max-width: 640px) {
+  .modal-backdrop {
+    padding: var(--space-sm);
+    align-items: flex-end;
+  }
+
+  .package-detail-modal {
+    max-width: 100%;
+    max-height: 90vh;
+    max-height: 90dvh;
+    border-radius: 16px 16px 0 0;
+    margin-bottom: 0;
   }
 }

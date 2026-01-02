@@ -336,7 +336,7 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
               className={index === selectedIndex ? 'selected' : ''}
               onClick={() => navigate(`/${ecosystem}/${pkg.name}`)}
             >
-              <td>
+              <td data-label="Grade">
                 {pkg.scores ? (
                   <GradeBadge grade={pkg.scores.grade} size="sm" />
                 ) : (
@@ -345,14 +345,14 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
                   </span>
                 )}
               </td>
-              <td>
+              <td data-label="Package">
                 <Link to={`/${ecosystem}/${pkg.name}`} className="package-link">
-                  <strong>{pkg.name}</strong>
+                  <strong className="package-name">{pkg.name}</strong>
                   <span className="version">v{pkg.version}</span>
                 </Link>
                 <div className="description">{pkg.description}</div>
               </td>
-              <td className="score-cell">
+              <td data-label="Score" className="score-cell">
                 {pkg.scores ? (
                   <div className="score-with-percentile">
                     <span className="score">{pkg.scores.overall.toFixed(1)}</span>
@@ -366,14 +366,14 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
                   <span className="unavailable">N/A</span>
                 )}
               </td>
-              <td className="issues-cell">
+              <td data-label="Issues" className="issues-cell">
                 <RiskBadges pkg={pkg} />
               </td>
-              <td className="commit-cell">
+              <td data-label="Last Commit" className="commit-cell">
                 {formatRelativeTime(pkg.last_commit_date)}
               </td>
-              <td>{formatInstalls(pkg.install_count_30d)}</td>
-              <td className="actions-cell">
+              <td data-label="Installs/30d">{formatInstalls(pkg.install_count_30d)}</td>
+              <td data-label="" className="actions-cell">
                 <RowActions pkg={pkg} />
               </td>
             </tr>
