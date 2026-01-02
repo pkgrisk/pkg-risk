@@ -1,10 +1,12 @@
-import { useState, useMemo, useRef, useCallback } from 'react';
+import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { GradeBadge } from '../components/GradeBadge';
 import { RiskBadges } from '../components/RiskBadges';
 import { RowActions } from '../components/RowActions';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 import type { PackageSummary, Grade, RiskTier, EcosystemStats } from '../types/package';
+
+type PageSize = 20 | 50 | 100;
 
 interface PackageListProps {
   packages: PackageSummary[];
@@ -47,6 +49,8 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
   const [riskTierFilter, setRiskTierFilter] = useState<RiskTierFilter>('all');
   const [showUnscored, setShowUnscored] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState<PageSize>(50);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   const filteredAndSorted = useMemo(() => {
@@ -136,6 +140,39 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
     return result;
   }, [packages, search, sortKey, sortAsc, gradeFilter, securityFilter, maintenanceFilter, riskTierFilter, showUnscored]);
 
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, gradeFilter, securityFilter, maintenanceFilter, riskTierFilter, showUnscored]);
+
+  // Pagination calculations
+  const totalPages = Math.ceil(filteredAndSorted.length / pageSize);
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  const paginatedResults = filteredAndSorted.slice(startIndex, endIndex);
+
+  // Generate page numbers to display
+  const getPageNumbers = () => {
+    const pages: (number | 'ellipsis')[] = [];
+    const maxVisible = 7;
+
+    if (totalPages <= maxVisible) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      if (currentPage > 3) pages.push('ellipsis');
+
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+
+      for (let i = start; i <= end; i++) pages.push(i);
+
+      if (currentPage < totalPages - 2) pages.push('ellipsis');
+      pages.push(totalPages);
+    }
+    return pages;
+  };
+
   const handleSort = (key: SortKey) => {
     if (sortKey === key) {
       setSortAsc(!sortAsc);
@@ -169,12 +206,12 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
 
   const handleNavigate = useCallback(
     (index: number) => {
-      const pkg = filteredAndSorted[index];
+      const pkg = paginatedResults[index];
       if (pkg) {
         navigate(`/${ecosystem}/${pkg.name}`);
       }
     },
-    [filteredAndSorted, ecosystem, navigate]
+    [paginatedResults, ecosystem, navigate]
   );
 
   const handleEscape = useCallback(() => {
@@ -183,7 +220,7 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
   }, []);
 
   useKeyboardNavigation({
-    itemCount: filteredAndSorted.length,
+    itemCount: paginatedResults.length,
     selectedIndex,
     onSelect: setSelectedIndex,
     onEnter: handleNavigate,
@@ -376,7 +413,7 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
           </tr>
         </thead>
         <tbody>
-          {filteredAndSorted.map((pkg, index) => (
+          {paginatedResults.map((pkg, index) => (
             <tr
               key={pkg.name}
               className={index === selectedIndex ? 'selected' : ''}
@@ -426,6 +463,87 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
           ))}
         </tbody>
       </table>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="pagination">
+          <div className="pagination-info">
+            Showing {startIndex + 1}–{Math.min(endIndex, filteredAndSorted.length)} of{' '}
+            {filteredAndSorted.length.toLocaleString()}
+          </div>
+
+          <div className="pagination-controls">
+            <button
+              className="pagination-btn"
+              onClick={() => setCurrentPage(1)}
+              disabled={currentPage === 1}
+              title="First page"
+            >
+              ««
+            </button>
+            <button
+              className="pagination-btn"
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              title="Previous page"
+            >
+              «
+            </button>
+
+            <div className="pagination-pages">
+              {getPageNumbers().map((page, i) =>
+                page === 'ellipsis' ? (
+                  <span key={`ellipsis-${i}`} className="pagination-ellipsis">
+                    …
+                  </span>
+                ) : (
+                  <button
+                    key={page}
+                    className={`pagination-page ${currentPage === page ? 'active' : ''}`}
+                    onClick={() => setCurrentPage(page)}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
+            </div>
+
+            <button
+              className="pagination-btn"
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              title="Next page"
+            >
+              »
+            </button>
+            <button
+              className="pagination-btn"
+              onClick={() => setCurrentPage(totalPages)}
+              disabled={currentPage === totalPages}
+              title="Last page"
+            >
+              »»
+            </button>
+          </div>
+
+          <div className="pagination-size">
+            <label>
+              Per page:
+              <select
+                value={pageSize}
+                onChange={(e) => {
+                  setPageSize(Number(e.target.value) as PageSize);
+                  setCurrentPage(1);
+                }}
+              >
+                <option value={20}>20</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
