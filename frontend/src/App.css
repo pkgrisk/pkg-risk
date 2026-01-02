@@ -757,8 +757,9 @@
 /* Enterprise Risk Indicators */
 .enterprise-indicators {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
+  align-items: flex-start;
   margin-bottom: 16px;
   padding: 12px 16px;
   background: #1a1a2e;
@@ -769,7 +770,8 @@
 .indicator {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
+  min-width: 80px;
 }
 
 .indicator-label {
@@ -777,12 +779,14 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #666;
+  line-height: 1;
 }
 
 .indicator-value {
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
+  line-height: 1;
 }
 
 /* Risk Tier Colors */
@@ -824,6 +828,7 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 24px;
   margin-bottom: 24px;
+  align-items: start;
 }
 
 .card {
@@ -841,14 +846,15 @@
 
 /* Repo Card */
 .repo-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
   margin-bottom: 20px;
 }
 
 .stat {
   text-align: center;
+  min-width: 70px;
 }
 
 .stat-value {
@@ -856,11 +862,15 @@
   font-size: 24px;
   font-weight: 700;
   color: #fff;
+  line-height: 1.2;
 }
 
 .stat-label {
+  display: block;
   font-size: 12px;
   color: #888;
+  margin-top: 4px;
+  white-space: nowrap;
 }
 
 .repo-meta p {
