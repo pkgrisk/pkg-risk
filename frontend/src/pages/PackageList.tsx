@@ -337,18 +337,24 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
         </label>
       </div>
 
-      <div className="stats-row">
-        <span>
-          {filteredAndSorted.length} packages
-          {!showUnscored && (
-            <span className="hidden-count">
-              {' '}({packages.filter((p) => p.scores === null).length} hidden)
-            </span>
-          )}
+      <div className="results-summary">
+        <span className="results-count">
+          Showing <strong>{filteredAndSorted.length.toLocaleString()}</strong> of{' '}
+          <strong>{packages.length.toLocaleString()}</strong> packages
         </span>
-        <span>
-          {filteredAndSorted.filter((p) => p.scores !== null).length} with scores
-        </span>
+        {!showUnscored && packages.filter((p) => p.scores === null).length > 0 && (
+          <span className="results-detail">
+            {packages.filter((p) => p.scores === null).length.toLocaleString()} unscored hidden
+          </span>
+        )}
+        {showUnscored && (
+          <span className="results-detail">
+            {filteredAndSorted.filter((p) => p.scores !== null).length.toLocaleString()} scored
+            {filteredAndSorted.filter((p) => p.scores === null).length > 0 && (
+              <>, {filteredAndSorted.filter((p) => p.scores === null).length.toLocaleString()} unscored</>
+            )}
+          </span>
+        )}
       </div>
 
       <table className="package-table">
