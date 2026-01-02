@@ -47,11 +47,12 @@ test.describe('Methodology Page Responsive', () => {
     await page.setViewportSize(VIEWPORTS.mobileM);
     await waitForLayoutStable(page);
 
-    // Main content container should fit within viewport
-    const content = page.locator('.about-page, .main-content');
-    const box = await content.first().boundingBox();
-    expect(box).toBeTruthy();
-    expect(box!.width).toBeLessThanOrEqual(VIEWPORTS.mobileM.width);
+    // Wait for page to settle
+    await page.waitForTimeout(500);
+
+    // Page should not have horizontal scroll
+    const hasScroll = await hasHorizontalScroll(page);
+    expect(hasScroll).toBe(false);
   });
 
   test('headings should be appropriately sized on mobile', async ({ page }) => {
@@ -148,8 +149,8 @@ test.describe('Cross-Page Navigation on Mobile', () => {
     await page.locator('.nav-link:has-text("About")').click();
     await expect(page).toHaveURL(/about/);
 
-    // Go to Upload
-    await page.locator('.nav-link:has-text("Upload")').click();
+    // Go to Analyze (Upload page)
+    await page.locator('.nav-link:has-text("Analyze")').click();
     await expect(page).toHaveURL(/upload/);
 
     // Go back home via brand link

@@ -86,12 +86,12 @@ test.describe('Navigation Responsive Behavior', () => {
       await page.setViewportSize(VIEWPORTS.tabletPortrait);
       await waitForLayoutStable(page);
 
-      // Check for nav links (Upload, Methodology, About)
-      const uploadLink = page.locator('.nav-link:has-text("Upload")');
+      // Check for nav links (Analyze, Methodology, About)
+      const analyzeLink = page.locator('.nav-link:has-text("Analyze")');
       const methodologyLink = page.locator('.nav-link:has-text("Methodology")');
       const aboutLink = page.locator('.nav-link:has-text("About")');
 
-      await expect(uploadLink).toBeVisible();
+      await expect(analyzeLink).toBeVisible();
       await expect(methodologyLink).toBeVisible();
       await expect(aboutLink).toBeVisible();
     });
