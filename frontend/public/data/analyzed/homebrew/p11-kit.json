@@ -10,41 +10,47 @@
     "repo": "p11-kit",
     "subpath": null
   },
-  "install_count_30d": 59677,
+  "install_count_30d": 57453,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 81.0,
-    "grade": "B",
+    "overall": 74.8,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
-      "weight": 30
+      "score": 80.0,
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
-      "score": 92.43332985467589,
-      "weight": 25
+      "score": 91.68403581875303,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 59.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 61.519999999999996,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
       "score": 55.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 73.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -73,7 +79,7 @@
       "active_contributors_6mo": 4,
       "top_contributor_pct": 41.6,
       "contributors_over_5pct": 3,
-      "contributors_prev_6mo": 8,
+      "contributors_prev_6mo": 7,
       "contributor_trend": "declining",
       "first_time_contributors_6mo": 2,
       "contributor_entropy": 2.69
@@ -94,6 +100,7 @@
     "prs": {
       "open_prs": 6,
       "merged_prs_6mo": 24,
+      "closed_prs_6mo": 25,
       "stale_prs": 5,
       "avg_merge_time_hours": null
     },
@@ -166,7 +173,7 @@
       "configuration": 6,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The README provides a good overview of the package's purpose and installation instructions, but lacks examples and troubleshooting information.",
+      "summary": "The README provides a good overview of the package's purpose and installation instructions, but lacks examples and troubleshooting guidance.",
       "top_issue": "Lack of quick start example and troubleshooting documentation"
     },
     "security": {
@@ -174,8 +181,11 @@
       "injection_risks": [],
       "input_validation_score": 8,
       "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The code appears to be generally secure, but lacks input validation and error handling in some areas."
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in fuzz/main.c due to lack of input validation",
+        "Use of reallocarray without checking for NULL pointer"
+      ],
+      "summary": "The code appears to be generally secure, but lacks input validation and has potential issues with memory management."
     },
     "sentiment": {
       "sentiment": "negative",
@@ -223,7 +233,7 @@
       "appears_complete": true,
       "clarity_score": 8,
       "overall_score": 7,
-      "summary": "The changelog is well-structured and comprehensive, but lacks clear markings for breaking changes and migration guides."
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
     "governance": {
       "has_succession_plan": false,
@@ -234,10 +244,30 @@
       "summary": "The p11-kit project lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 175,
+      "forks": 110,
+      "open_issues": 71,
+      "license": "non-standard",
+      "description": "Provides a way to load and enumerate PKCS#11 modules.",
+      "oss_fuzz_line_count": 19654,
+      "oss_fuzz_line_cover_count": 1839
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T22:52:51.471421Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "The README provides a good overview of the package's purpose and installation instructions, but lacks examples and troubleshooting information.",
+    "doc_summary": "The README provides a good overview of the package's purpose and installation instructions, but lacks examples and troubleshooting guidance.",
     "concerns": [
       "relatively high number of open issues",
       "low number of contributors",
@@ -246,18 +276,26 @@
       "Community: build failures",
       "Communication: occasional dismissiveness",
       "Communication: lack of detailed explanations for non-technical users",
-      "Governance: High bus factor risk identified"
+      "Governance: High bus factor risk identified",
+      "Security: Potential buffer overflow vulnerability in fuzz/main.c due to lack of input validation",
+      "Security: Use of reallocarray without checking for NULL pointer"
     ],
     "highlights": [
       "recent commits and releases",
       "active merging of PRs",
       "Code follows security best practices",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OSS-Fuzz coverage: 9%"
     ],
     "community_sentiment": "negative",
-    "communication_style": "adequate"
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 175,
+      "forks": 110,
+      "open_issues": 71
+    }
   },
-  "analyzed_at": "2025-12-31T03:02:35.130230Z",
-  "data_fetched_at": "2025-12-31T03:02:35.130230Z"
+  "analyzed_at": "2026-01-02T22:55:45.855276Z",
+  "data_fetched_at": "2026-01-02T22:55:45.855277Z"
 }

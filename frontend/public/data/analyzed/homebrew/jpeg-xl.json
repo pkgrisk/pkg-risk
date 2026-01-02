@@ -10,12 +10,12 @@
     "repo": "libjxl",
     "subpath": null
   },
-  "install_count_30d": 76988,
+  "install_count_30d": 75045,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 89.0,
-    "grade": "B",
+    "overall": 90.5,
+    "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
@@ -24,27 +24,44 @@
     "project_age_band": "mature",
     "security": {
       "score": 100.0,
-      "weight": 30
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Proper token permissions",
+        "SAST enabled (Scorecard)",
+        "CII Best Practices badge",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 79.2178069008211,
-      "weight": 25
+      "score": 78.55471787688546,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 91.0,
-      "weight": 15
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 80.0,
-      "weight": 10
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 87.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 88.0,
-      "weight": 10
+      "score": 96.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled",
+        "Pinned dependencies"
+      ]
     }
   },
   "github_data": {
@@ -52,13 +69,13 @@
       "owner": "libjxl",
       "name": "libjxl",
       "description": "JPEG XL image format reference implementation",
-      "stars": 3272,
+      "stars": 3275,
       "forks": 326,
-      "open_issues": 409,
-      "watchers": 3272,
+      "open_issues": 410,
+      "watchers": 3275,
       "created_at": "2021-02-19T00:56:12Z",
-      "updated_at": "2025-12-29T22:11:16Z",
-      "pushed_at": "2025-12-30T03:11:30Z",
+      "updated_at": "2026-01-02T21:25:25Z",
+      "pushed_at": "2026-01-02T03:12:08Z",
       "default_branch": "main",
       "license": "BSD-3-Clause",
       "language": "C++",
@@ -90,19 +107,19 @@
       "active_contributors_6mo": 21,
       "top_contributor_pct": 21.9,
       "contributors_over_5pct": 8,
-      "contributors_prev_6mo": 21,
+      "contributors_prev_6mo": 22,
       "contributor_trend": "stable",
-      "first_time_contributors_6mo": 11,
+      "first_time_contributors_6mo": 10,
       "contributor_entropy": 3.9
     },
     "commits": {
       "last_commit_date": "2025-11-24T11:07:51Z",
-      "commits_last_6mo": 142,
-      "commits_last_year": 341
+      "commits_last_6mo": 140,
+      "commits_last_year": 339
     },
     "issues": {
       "open_issues": 255,
-      "closed_issues_6mo": 42,
+      "closed_issues_6mo": 40,
       "avg_response_time_hours": 66.2,
       "avg_close_time_hours": 111.7,
       "good_first_issue_count": 2,
@@ -110,7 +127,8 @@
     },
     "prs": {
       "open_prs": 51,
-      "merged_prs_6mo": 137,
+      "merged_prs_6mo": 135,
+      "closed_prs_6mo": 144,
       "stale_prs": 32,
       "avg_merge_time_hours": null
     },
@@ -166,7 +184,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 17,
-      "recent_runs_pass_rate": 76.0,
+      "recent_runs_pass_rate": 82.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -183,7 +201,7 @@
       "configuration": 6,
       "troubleshooting": 4,
       "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the JPEG XL reference implementation, with good installation and quick start instructions, but could benefit from more examples and troubleshooting guidance.",
+      "summary": "The README provides a clear and concise introduction to the package, with good installation and quick start instructions, but could benefit from more examples and troubleshooting guidance.",
       "top_issue": "Lack of comprehensive troubleshooting documentation"
     },
     "security": {
@@ -192,35 +210,35 @@
         {
           "file": "tools/butteraugli_main.cc",
           "line": 123,
-          "severity": "medium",
-          "description": "The use of fprintf with user-controlled input (pathname) may lead to format string vulnerabilities."
+          "severity": "low",
+          "description": "The use of fprintf with user-controlled input may lead to potential format string vulnerabilities, but the risk is low due to the lack of direct user input."
         },
         {
           "file": "tools/cjxl_main.cc",
           "line": 145,
           "severity": "low",
-          "description": "The use of printf with user-controlled input (arg) may lead to minor issues, but it's not a significant risk in this context."
+          "description": "The use of printf with user-controlled input may lead to potential format string vulnerabilities, but the risk is low due to the lack of direct user input."
         }
       ],
-      "input_validation_score": 6,
+      "input_validation_score": 8,
       "secrets_found": [],
       "critical_findings": [
-        "Potential format string vulnerabilities in tools/butteraugli_main.cc"
+        "Potential format string vulnerabilities",
+        "Lack of input validation for file paths and names"
       ],
-      "summary": "The code has some security concerns, including potential injection risks and input validation issues, but no critical secrets or sensitive information exposure was found."
+      "summary": "The code has some security concerns, including potential format string vulnerabilities and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "neutral",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
         "crashes",
-        "compatibility issues",
-        "performance problems"
+        "build issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with various technical issues, but maintainers are moderately responsive to concerns."
+      "summary": "The community is actively reporting and discussing various technical issues, but the maintainers' responsiveness is moderate, indicating a relatively healthy project with room for improvement."
     },
     "communication": {
       "helpfulness": 9,
@@ -241,10 +259,10 @@
       "positive_signals": [
         "frequent commits",
         "recent release",
-        "many merged PRs",
-        "multiple active contributors"
+        "many active contributors",
+        "high merge rate of PRs"
       ],
-      "summary": "The jpeg-xl package appears to be actively maintained with regular updates, a strong contributor base, and a high volume of pull requests being addressed."
+      "summary": "The jpeg-xl package appears to be actively maintained with a high volume of recent commits, merges, and active contributors."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -264,31 +282,86 @@
       "summary": "The project lacks a clear succession plan, decision-making process documentation, and indication of multiple maintainers, posing a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 8.7,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 10.0,
+        "Maintained": 10.0,
+        "Security-Policy": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "CII-Best-Practices": 7.0,
+        "Packaging": -1.0,
+        "Binary-Artifacts": 10.0,
+        "License": 10.0,
+        "Token-Permissions": 10.0,
+        "Fuzzing": 10.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": -1.0,
+        "Pinned-Dependencies": 9.0,
+        "Vulnerabilities": 8.0,
+        "SAST": 9.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 10.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": true,
+      "cii_badge": true
+    },
+    "project_metrics": {
+      "stars": 3269,
+      "forks": 326,
+      "open_issues": 409,
+      "license": "BSD-3-Clause",
+      "description": "JPEG XL image format reference implementation",
+      "oss_fuzz_line_count": 83470,
+      "oss_fuzz_line_cover_count": 40489
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T22:31:55.755664Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "The README provides a clear and concise introduction to the JPEG XL reference implementation, with good installation and quick start instructions, but could benefit from more examples and troubleshooting guidance.",
+    "doc_summary": "The README provides a clear and concise introduction to the package, with good installation and quick start instructions, but could benefit from more examples and troubleshooting guidance.",
     "concerns": [
       "high number of open issues",
       "Docs: Lack of comprehensive troubleshooting documentation",
       "Community: crashes",
-      "Community: compatibility issues",
+      "Community: build issues",
       "Governance: High bus factor risk identified",
-      "Security: Potential format string vulnerabilities in tools/butteraugli_main.cc"
+      "Security: Potential format string vulnerabilities",
+      "Security: Lack of input validation for file paths and names",
+      "Weak branch protection settings"
     ],
     "highlights": [
       "frequent commits",
       "recent release",
-      "many merged PRs",
-      "multiple active contributors",
+      "many active contributors",
+      "high merge rate of PRs",
       "Excellent maintainer communication",
       "Breaking changes clearly marked in changelog",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OpenSSF Scorecard: 8.7/10",
+      "Has CII Best Practices badge",
+      "Fuzzing enabled",
+      "SAST enabled"
     ],
-    "community_sentiment": "negative",
-    "communication_style": "exemplary"
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "scorecard_score": 8.7
   },
-  "analyzed_at": "2025-12-31T02:44:03.571226Z",
-  "data_fetched_at": "2025-12-31T02:44:03.571227Z"
+  "analyzed_at": "2026-01-02T22:35:32.799062Z",
+  "data_fetched_at": "2026-01-02T22:35:32.799064Z"
 }

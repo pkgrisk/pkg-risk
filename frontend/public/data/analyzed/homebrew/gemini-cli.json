@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "gemini-cli",
   "description": "Interact with Google Gemini AI models from the command-line",
-  "version": "0.22.4",
+  "version": "0.22.5",
   "homepage": "https://github.com/google-gemini/gemini-cli",
   "repository": {
     "platform": "github",
@@ -10,11 +10,11 @@
     "repo": "gemini-cli",
     "subpath": null
   },
-  "install_count_30d": 78270,
+  "install_count_30d": 77560,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 93.7,
+    "overall": 90.7,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,28 +23,34 @@
     "confidence_factors": [],
     "project_age_band": "new",
     "security": {
-      "score": 100.0,
-      "weight": 30
+      "score": 90.0,
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
       "score": 61.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 76.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +58,13 @@
       "owner": "google-gemini",
       "name": "gemini-cli",
       "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
-      "stars": 89186,
-      "forks": 10270,
-      "open_issues": 2438,
-      "watchers": 89186,
+      "stars": 89460,
+      "forks": 10312,
+      "open_issues": 2488,
+      "watchers": 89460,
       "created_at": "2025-04-17T17:04:31Z",
-      "updated_at": "2025-12-31T02:29:21Z",
-      "pushed_at": "2025-12-31T01:35:14Z",
+      "updated_at": "2026-01-02T22:00:58Z",
+      "pushed_at": "2026-01-02T22:10:54Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "TypeScript",
@@ -78,30 +84,31 @@
     },
     "contributors": {
       "total_contributors": 406,
-      "active_contributors_6mo": 153,
+      "active_contributors_6mo": 154,
       "top_contributor_pct": 7.0,
       "contributors_over_5pct": 2,
       "contributors_prev_6mo": 0,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 153,
+      "first_time_contributors_6mo": 154,
       "contributor_entropy": 6.43
     },
     "commits": {
-      "last_commit_date": "2025-12-30T23:22:53Z",
+      "last_commit_date": "2026-01-02T21:47:46Z",
       "commits_last_6mo": 1000,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 225,
-      "closed_issues_6mo": 103,
-      "avg_response_time_hours": 7.5,
-      "avg_close_time_hours": 12.6,
+      "open_issues": 214,
+      "closed_issues_6mo": 108,
+      "avg_response_time_hours": 9.4,
+      "avg_close_time_hours": 27.2,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
       "open_prs": 300,
-      "merged_prs_6mo": 222,
+      "merged_prs_6mo": 213,
+      "closed_prs_6mo": 300,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -157,7 +164,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 44.0,
+      "recent_runs_pass_rate": 51.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -174,48 +181,46 @@
       "configuration": 6,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and easy to follow, but lacks sufficient troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "The documentation is generally well-structured and easy to follow, but could benefit from more detailed configuration options and troubleshooting guides.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
     },
     "security": {
       "overall_score": 7,
       "injection_risks": [
         {
           "file": "packages/a2a-server/src/http/app.ts",
-          "line": 123,
+          "line": 133,
           "severity": "medium",
-          "description": "Potential command injection risk in handleExecuteCommand function due to lack of input validation for 'command' and 'args' parameters."
+          "description": "Potential command injection risk in handleExecuteCommand function due to lack of input validation on 'command' and 'args' parameters."
+        },
+        {
+          "file": "packages/a2a-server/src/http/app.ts",
+          "line": 154,
+          "severity": "low",
+          "description": "Use of 'JSON.stringify' may lead to potential JSON injection risks if not properly sanitized."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential command injection risk in handleExecuteCommand function"
+        "Potential command injection risk in handleExecuteCommand function",
+        "Insufficient input validation and error handling"
       ],
-      "summary": "The code has some security concerns, including potential command injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+      "summary": "The code has some security concerns, including potential command injection risks and insufficient input validation, but overall it appears to be well-structured and follows good security practices."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "unintended code modifications",
-        "authentication issues"
+        "parsing issues",
+        "conflicts with other tools"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The gemini-cli community is experiencing significant frustration with the software, citing issues with unintended code modifications and authentication problems, with maintainers responding slowly to concerns."
+      "summary": "The gemini-cli community is actively addressing technical issues, but users are experiencing some frustration with parsing and compatibility problems."
     },
-    "communication": {
-      "helpfulness": 8,
-      "clarity": 9,
-      "patience": 8,
-      "technical_depth": 7,
-      "welcomingness": 9,
-      "communication_style": "exemplary",
-      "red_flags": [],
-      "summary": "The maintainer responses are highly helpful, clear, patient, and welcoming, providing a positive experience for users and contributors."
-    },
+    "communication": null,
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
@@ -226,9 +231,10 @@
       "positive_signals": [
         "frequent commits",
         "recent release",
-        "large number of active contributors"
+        "large number of active contributors",
+        "steady merge of PRs"
       ],
-      "summary": "The gemini-cli package is actively maintained with a high volume of recent activity, despite having a significant number of open issues and pull requests."
+      "summary": "The gemini-cli package is actively maintained with a high volume of commits, merges, and contributor activity, despite having a significant number of open issues and PRs."
     },
     "changelog": null,
     "governance": {
@@ -240,29 +246,54 @@
       "summary": "The project has a well-documented decision process and multiple maintainers, but lacks a clear succession plan and contributor ladder."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 89444,
+      "forks": 10309,
+      "open_issues": 2490,
+      "license": "Apache-2.0",
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T22:25:34.456520Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "The documentation is generally well-structured and easy to follow, but lacks sufficient troubleshooting information.",
+    "doc_summary": "The documentation is generally well-structured and easy to follow, but could benefit from more detailed configuration options and troubleshooting guides.",
     "concerns": [
       "high number of open issues",
       "high number of open PRs",
-      "Docs: Insufficient troubleshooting documentation",
-      "Community: unintended code modifications",
-      "Community: authentication issues",
-      "Security: Potential command injection risk in handleExecuteCommand function"
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: parsing issues",
+      "Community: conflicts with other tools",
+      "Security: Potential command injection risk in handleExecuteCommand function",
+      "Security: Insufficient input validation and error handling"
     ],
     "highlights": [
       "frequent commits",
       "recent release",
       "large number of active contributors",
-      "Excellent maintainer communication",
+      "steady merge of PRs",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "negative",
-    "communication_style": "exemplary"
+    "community_sentiment": "neutral",
+    "forge_metrics": {
+      "stars": 89444,
+      "forks": 10309,
+      "open_issues": 2490
+    }
   },
-  "analyzed_at": "2025-12-31T02:39:47.101052Z",
-  "data_fetched_at": "2025-12-31T02:39:47.101053Z"
+  "analyzed_at": "2026-01-02T22:28:03.909193Z",
+  "data_fetched_at": "2026-01-02T22:28:03.909194Z"
 }

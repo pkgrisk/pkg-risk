@@ -10,11 +10,11 @@
     "repo": "uv",
     "subpath": null
   },
-  "install_count_30d": 91139,
+  "install_count_30d": 86678,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 93.0,
+    "overall": 96.0,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,28 +23,34 @@
     "confidence_factors": [],
     "project_age_band": "established",
     "security": {
-      "score": 90.0,
-      "weight": 30
+      "score": 100.0,
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
       "score": 69.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 91.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +58,13 @@
       "owner": "astral-sh",
       "name": "uv",
       "description": "An extremely fast Python package and project manager, written in Rust.",
-      "stars": 76000,
-      "forks": 2393,
-      "open_issues": 2507,
-      "watchers": 76000,
+      "stars": 76139,
+      "forks": 2403,
+      "open_issues": 2512,
+      "watchers": 76139,
       "created_at": "2023-10-02T20:24:11Z",
-      "updated_at": "2025-12-31T01:58:47Z",
-      "pushed_at": "2025-12-31T00:30:51Z",
+      "updated_at": "2026-01-02T20:47:03Z",
+      "pushed_at": "2026-01-02T18:25:22Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "Rust",
@@ -75,36 +81,37 @@
     },
     "contributors": {
       "total_contributors": 471,
-      "active_contributors_6mo": 122,
-      "top_contributor_pct": 36.8,
+      "active_contributors_6mo": 123,
+      "top_contributor_pct": 36.7,
       "contributors_over_5pct": 4,
       "contributors_prev_6mo": 0,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 122,
+      "first_time_contributors_6mo": 123,
       "contributor_entropy": 3.62
     },
     "commits": {
-      "last_commit_date": "2025-12-30T15:56:31Z",
+      "last_commit_date": "2026-01-02T18:19:17Z",
       "commits_last_6mo": 1000,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 220,
+      "open_issues": 219,
       "closed_issues_6mo": 101,
-      "avg_response_time_hours": 6.8,
-      "avg_close_time_hours": 30.5,
+      "avg_response_time_hours": 14.6,
+      "avg_close_time_hours": 43.8,
       "good_first_issue_count": 4,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 277,
-      "merged_prs_6mo": 275,
-      "stale_prs": 178,
+      "open_prs": 280,
+      "merged_prs_6mo": 277,
+      "closed_prs_6mo": 300,
+      "stale_prs": 179,
       "avg_merge_time_hours": null
     },
     "releases": {
       "total_releases": 241,
-      "releases_last_year": 105,
+      "releases_last_year": 104,
       "last_release_date": "2025-12-30T16:14:58Z",
       "latest_version": "0.9.21",
       "has_signed_releases": false,
@@ -171,15 +178,15 @@
       "configuration": 7,
       "troubleshooting": 4,
       "overall": 7,
-      "summary": "The README provides a clear and comprehensive overview of the uv package, but could benefit from more concise quick start instructions and troubleshooting guidance.",
-      "top_issue": "Lack of dedicated troubleshooting section or common issues FAQ"
+      "summary": "The README provides a good overview of the package's features and installation, but could benefit from more concise quick start examples and better troubleshooting documentation.",
+      "top_issue": "Lack of clear and concise troubleshooting section"
     },
     "security": {
       "overall_score": 7,
       "injection_risks": [
         {
           "file": "crates/uv-dev/src/generate_sysconfig_mappings.rs",
-          "line": 43,
+          "line": 64,
           "severity": "medium",
           "description": "The `reqwest::get` function is used to download a YAML file from a URL, but the URL is hardcoded and not validated. This could potentially lead to a SSRF (Server-Side Request Forgery) vulnerability if the URL is tampered with."
         },
@@ -187,28 +194,25 @@
           "file": "crates/uv-globfilter/src/main.rs",
           "line": 15,
           "severity": "low",
-          "description": "The `PortableGlobParser::Pep639.parse` function is used to parse glob patterns, but the input is not validated. This could potentially lead to a denial-of-service attack if a malicious glob pattern is provided."
+          "description": "The `args().next()` function is used to get the first command-line argument, but it does not validate if the input is a valid directory path. This could potentially lead to an error if the input is not a valid directory."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
-      "critical_findings": [
-        "Potential SSRF vulnerability in the `reqwest::get` function call.",
-        "Lack of input validation for environment variables and command-line arguments."
-      ],
-      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or sensitive information are exposed."
+      "critical_findings": [],
+      "summary": "The code has some potential security issues related to input validation and error exposure, but no critical findings were discovered."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "neutral",
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "dependency issues",
-        "installation problems"
+        "conflicting Python requirements",
+        "parsing errors in pyproject.toml"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The uv community is experiencing some frustration with dependency and installation issues, but maintainers are moderately responsive to user concerns."
+      "summary": "The uv community is actively reporting issues and requesting enhancements, with maintainers responding moderately to address these concerns."
     },
     "communication": {
       "helpfulness": 9,
@@ -218,19 +222,22 @@
       "welcomingness": 8,
       "communication_style": "exemplary",
       "red_flags": [],
-      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for effective communication in open-source projects."
+      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (1000)",
-        "Recent last commit and release dates (2025-12-30)",
-        "Large number of contributors active in the past 6 months (122)",
-        "High rate of issue closure (101 closed issues) and PR merges (275 merged PRs)"
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
       ],
-      "summary": "The uv package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "large number of active contributors",
+        "high rate of merged PRs"
+      ],
+      "summary": "The uv package appears to be actively maintained with a high volume of recent activity, despite having a significant number of open issues and PRs."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -250,29 +257,54 @@
       "summary": "The uv project has a documented decision process, a clear contributor ladder, and multiple maintainers, but lacks a succession plan."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 76044,
+      "forks": 2397,
+      "open_issues": 2510,
+      "license": "Apache-2.0",
+      "description": "An extremely fast Python package and project manager, written in Rust.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T22:15:34.408879Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "The README provides a clear and comprehensive overview of the uv package, but could benefit from more concise quick start instructions and troubleshooting guidance.",
+    "doc_summary": "The README provides a good overview of the package's features and installation, but could benefit from more concise quick start examples and better troubleshooting documentation.",
     "concerns": [
-      "Docs: Lack of dedicated troubleshooting section or common issues FAQ",
-      "Community: dependency issues",
-      "Community: installation problems",
-      "Security: Potential SSRF vulnerability in the `reqwest::get` function call.",
-      "Security: Lack of input validation for environment variables and command-line arguments."
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Lack of clear and concise troubleshooting section",
+      "Community: conflicting Python requirements",
+      "Community: parsing errors in pyproject.toml"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (1000)",
-      "Recent last commit and release dates (2025-12-30)",
-      "Large number of contributors active in the past 6 months (122)",
-      "High rate of issue closure (101 closed issues) and PR merges (275 merged PRs)",
+      "frequent commits",
+      "recent release",
+      "large number of active contributors",
+      "high rate of merged PRs",
       "Excellent maintainer communication",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "mixed",
-    "communication_style": "exemplary"
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 76044,
+      "forks": 2397,
+      "open_issues": 2510
+    }
   },
-  "analyzed_at": "2025-12-31T02:27:41.934324Z",
-  "data_fetched_at": "2025-12-31T02:27:41.934326Z"
+  "analyzed_at": "2026-01-02T22:19:08.075074Z",
+  "data_fetched_at": "2026-01-02T22:19:08.075075Z"
 }
