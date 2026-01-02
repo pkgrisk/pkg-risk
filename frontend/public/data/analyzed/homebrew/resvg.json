@@ -1,0 +1,307 @@
+{
+  "ecosystem": "homebrew",
+  "name": "resvg",
+  "description": "SVG rendering tool and library",
+  "version": "0.45.1",
+  "homepage": "https://github.com/linebender/resvg",
+  "repository": {
+    "platform": "github",
+    "owner": "linebender",
+    "repo": "resvg",
+    "subpath": null
+  },
+  "install_count_30d": 544,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 68.7,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 62.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 86.19521677372292,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 63.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 49.6,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 58.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 83.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "linebender",
+      "name": "resvg",
+      "description": "An SVG rendering library.",
+      "stars": 3549,
+      "forks": 287,
+      "open_issues": 142,
+      "watchers": 3549,
+      "created_at": "2016-10-27T16:07:55Z",
+      "updated_at": "2026-01-02T09:00:20Z",
+      "pushed_at": "2025-12-21T22:20:28Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Rust",
+      "topics": [
+        "render",
+        "svg"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 73,
+      "active_contributors_6mo": 7,
+      "top_contributor_pct": 87.2,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 11,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 6,
+      "contributor_entropy": 1.2
+    },
+    "commits": {
+      "last_commit_date": "2025-12-21T22:20:28Z",
+      "commits_last_6mo": 16,
+      "commits_last_year": 36
+    },
+    "issues": {
+      "open_issues": 125,
+      "closed_issues_6mo": 18,
+      "avg_response_time_hours": 118.6,
+      "avg_close_time_hours": 318.9,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 17,
+      "merged_prs_6mo": 16,
+      "closed_prs_6mo": 18,
+      "stale_prs": 9,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 53,
+      "releases_last_year": 2,
+      "last_release_date": "2025-04-17T07:53:16Z",
+      "latest_version": "v0.45.1",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 71.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 7378,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 78.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 4,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README provides a good overview of the package's features and goals, but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of clear installation instructions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "crates/resvg/src/main.rs",
+          "line": 123,
+          "severity": "medium",
+          "description": "The `load_fonts` function is called with user-provided input (`args.raw_args`) which could potentially lead to a font file inclusion vulnerability if not properly sanitized."
+        },
+        {
+          "file": "crates/resvg/src/main.rs",
+          "line": 145,
+          "severity": "low",
+          "description": "The `std::fs::read` function is used to read the input SVG file, which could potentially lead to a path traversal vulnerability if not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential font file inclusion vulnerability",
+        "Potential path traversal vulnerability"
+      ],
+      "summary": "The resvg package has some security concerns, including potential injection risks and input validation issues, but overall it appears to be a relatively secure application."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "font rendering issues",
+        "SVG feature support"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The resvg community is moderately active with a mix of open and closed issues, indicating ongoing maintenance but also some frustration with font rendering and SVG feature support."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "sometimes dismissive",
+        "lacking empathy"
+      ],
+      "summary": "The maintainer provides technically sound responses, but can come across as somewhat abrupt and uninviting to new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "high number of open issues"
+      ],
+      "positive_signals": [
+        "recent commits",
+        "active contributors",
+        "regularly merged PRs"
+      ],
+      "summary": "The resvg package appears to be maintained with regular updates and active contributors, despite a notable backlog of open issues."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks explicit migration guides for breaking changes."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 3541,
+      "forks": 286,
+      "open_issues": 142,
+      "license": "Apache-2.0",
+      "description": "An SVG rendering library.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T10:53:37.143024Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good overview of the package's features and goals, but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "high number of open issues",
+      "Docs: Lack of clear installation instructions",
+      "Community: font rendering issues",
+      "Community: SVG feature support",
+      "Communication: sometimes dismissive",
+      "Communication: lacking empathy",
+      "Security: Potential font file inclusion vulnerability",
+      "Security: Potential path traversal vulnerability",
+      "High bus factor risk (87% from top contributor)"
+    ],
+    "highlights": [
+      "recent commits",
+      "active contributors",
+      "regularly merged PRs",
+      "Breaking changes clearly marked in changelog",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 3541,
+      "forks": 286,
+      "open_issues": 142
+    }
+  },
+  "analyzed_at": "2026-01-02T10:56:40.555182Z",
+  "data_fetched_at": "2026-01-02T10:56:40.555183Z"
+}

@@ -1,0 +1,289 @@
+{
+  "ecosystem": "homebrew",
+  "name": "switchaudio-osx",
+  "description": "Change macOS audio source from the command-line",
+  "version": "1.2.2",
+  "homepage": "https://github.com/deweller/switchaudio-osx/",
+  "repository": {
+    "platform": "github",
+    "owner": "deweller",
+    "repo": "switchaudio-osx",
+    "subpath": null
+  },
+  "install_count_30d": 561,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 60.6,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 68.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 44.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 70.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 79.84,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "deweller",
+      "name": "switchaudio-osx",
+      "description": "Change the audio source for Mac OS X from the command line.",
+      "stars": 1357,
+      "forks": 98,
+      "open_issues": 18,
+      "watchers": 1357,
+      "created_at": "2014-06-29T12:59:57Z",
+      "updated_at": "2026-01-02T03:14:15Z",
+      "pushed_at": "2024-07-07T17:06:56Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 11,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 53.3,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 2.48
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 14,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 27.8,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1856,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides a clear description of the package's purpose and basic usage, but lacks comprehensive examples and troubleshooting guidance.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "audio_switch.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "The use of strcpy() to copy user input into a fixed-size buffer may lead to buffer overflow vulnerabilities if the input is not properly validated."
+        },
+        {
+          "file": "audio_switch.c",
+          "line": 145,
+          "severity": "low",
+          "description": "The use of sprintf() to format user-controlled data may lead to potential format string vulnerabilities, although it appears to be used safely in this context."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow vulnerabilities due to lack of input validation"
+      ],
+      "summary": "The code has some security concerns, including potential buffer overflow vulnerabilities and limited input validation, but does not appear to expose sensitive information or have dangerous default configurations."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "AirPlay device detection issues",
+        "inconsistent audio source switching"
+      ],
+      "praise_themes": [
+        "usefulness of the utility",
+        "appreciation for maintenance efforts"
+      ],
+      "abandonment_signals": false,
+      "summary": "The switchaudio-osx community is moderately active with a mix of positive and negative sentiments, indicating some frustration with ongoing issues, but no signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer provides helpful and clear responses, is patient with users, and encourages new contributors, making the overall communication style good."
+    },
+    "maintenance": {
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "no commits in the past 6 months",
+        "unmerged open PRs and unresolved issues",
+        "unknown last commit and release"
+      ],
+      "positive_signals": [
+        "10 contributors active in the past 6 months"
+      ],
+      "summary": "The package appears to be abandoned due to a lack of recent commits, unaddressed issues, and unmerged pull requests despite having active contributors."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 1358,
+      "forks": 98,
+      "open_issues": 18,
+      "license": "non-standard",
+      "description": "Change the audio source for Mac OS X from the command line.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T10:36:29.787488Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "abandoned",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a clear description of the package's purpose and basic usage, but lacks comprehensive examples and troubleshooting guidance.",
+    "concerns": [
+      "no commits in the past 6 months",
+      "unmerged open PRs and unresolved issues",
+      "unknown last commit and release",
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: AirPlay device detection issues",
+      "Community: inconsistent audio source switching",
+      "Security: Potential buffer overflow vulnerabilities due to lack of input validation"
+    ],
+    "highlights": [
+      "10 contributors active in the past 6 months"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 1358,
+      "forks": 98,
+      "open_issues": 18
+    }
+  },
+  "analyzed_at": "2026-01-02T10:38:51.125967Z",
+  "data_fetched_at": "2026-01-02T10:38:51.125969Z"
+}
