@@ -824,11 +824,19 @@
 }
 
 .detail-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 24px;
+  /* CSS Columns layout for dynamic card packing without gaps */
+  column-count: 2;
+  column-gap: 24px;
   margin-bottom: 24px;
-  align-items: start;
+}
+
+/* Prevent cards from breaking across columns */
+.detail-grid > .card,
+.detail-grid > section {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  display: inline-block; /* Required for break-inside to work properly */
+  width: 100%;
 }
 
 .card {
@@ -5768,21 +5776,27 @@ tr.selected .row-actions {
 /* ==================== */
 
 /* Safer responsive grids using min() */
-.detail-grid,
 .skeleton-grid {
   grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
 }
 
+/* Detail grid responsive column count */
+@media (min-width: 1200px) {
+  .detail-grid {
+    column-count: 3;
+  }
+}
+
 @media (max-width: 768px) {
   .detail-grid {
-    grid-template-columns: 1fr;
-    gap: var(--grid-gap);
+    column-count: 1;
+    column-gap: var(--grid-gap);
   }
 
   .recommendations-card,
   .alternatives-card,
   .security-combined-card {
-    grid-column: span 1;
+    /* No longer using grid-column spans */
   }
 
   .repo-stats,
