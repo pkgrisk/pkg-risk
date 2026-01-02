@@ -312,11 +312,16 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 16px;
+  align-items: center;
 }
 
 .stat-card {
   text-align: center;
   padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .stat-card .stat-value {
@@ -355,10 +360,21 @@
   border-radius: 4px;
   min-width: 40px;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 .grade-bar:hover {
   transform: scaleY(1.1);
+  filter: brightness(1.1);
+}
+
+.grade-bar:active {
+  transform: scaleY(0.95);
+}
+
+.grade-bar.active {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 .grade-count {

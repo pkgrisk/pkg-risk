@@ -206,19 +206,59 @@ export function PackageList({ packages, ecosystem, stats }: PackageListProps) {
             </div>
             <div className="stat-card grade-dist">
               <div className="grade-bars">
-                <div className="grade-bar grade-a" style={{ width: `${(stats.grade_distribution.A / stats.scored_packages) * 100}%` }}>
+                <div
+                  className={`grade-bar grade-a${gradeFilter === 'A' ? ' active' : ''}`}
+                  style={{ width: `${(stats.grade_distribution.A / stats.scored_packages) * 100}%` }}
+                  onClick={() => setGradeFilter(gradeFilter === 'A' ? 'all' : 'A')}
+                  title="Click to filter by Grade A"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && setGradeFilter(gradeFilter === 'A' ? 'all' : 'A')}
+                >
                   <span className="grade-count">{stats.grade_distribution.A} A</span>
                 </div>
-                <div className="grade-bar grade-b" style={{ width: `${(stats.grade_distribution.B / stats.scored_packages) * 100}%` }}>
+                <div
+                  className={`grade-bar grade-b${gradeFilter === 'B' ? ' active' : ''}`}
+                  style={{ width: `${(stats.grade_distribution.B / stats.scored_packages) * 100}%` }}
+                  onClick={() => setGradeFilter(gradeFilter === 'B' ? 'all' : 'B')}
+                  title="Click to filter by Grade B"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && setGradeFilter(gradeFilter === 'B' ? 'all' : 'B')}
+                >
                   <span className="grade-count">{stats.grade_distribution.B} B</span>
                 </div>
-                <div className="grade-bar grade-c" style={{ width: `${(stats.grade_distribution.C / stats.scored_packages) * 100}%` }}>
+                <div
+                  className={`grade-bar grade-c${gradeFilter === 'C' ? ' active' : ''}`}
+                  style={{ width: `${(stats.grade_distribution.C / stats.scored_packages) * 100}%` }}
+                  onClick={() => setGradeFilter(gradeFilter === 'C' ? 'all' : 'C')}
+                  title="Click to filter by Grade C"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && setGradeFilter(gradeFilter === 'C' ? 'all' : 'C')}
+                >
                   <span className="grade-count">{stats.grade_distribution.C} C</span>
                 </div>
-                <div className="grade-bar grade-d" style={{ width: `${(stats.grade_distribution.D / stats.scored_packages) * 100}%` }}>
+                <div
+                  className={`grade-bar grade-d${gradeFilter === 'D' ? ' active' : ''}`}
+                  style={{ width: `${(stats.grade_distribution.D / stats.scored_packages) * 100}%` }}
+                  onClick={() => setGradeFilter(gradeFilter === 'D' ? 'all' : 'D')}
+                  title="Click to filter by Grade D"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && setGradeFilter(gradeFilter === 'D' ? 'all' : 'D')}
+                >
                   <span className="grade-count">{stats.grade_distribution.D} D</span>
                 </div>
-                <div className="grade-bar grade-f" style={{ width: `${(stats.grade_distribution.F / stats.scored_packages) * 100}%` }}>
+                <div
+                  className={`grade-bar grade-f${gradeFilter === 'F' ? ' active' : ''}`}
+                  style={{ width: `${(stats.grade_distribution.F / stats.scored_packages) * 100}%` }}
+                  onClick={() => setGradeFilter(gradeFilter === 'F' ? 'all' : 'F')}
+                  title="Click to filter by Grade F"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && setGradeFilter(gradeFilter === 'F' ? 'all' : 'F')}
+                >
                   <span className="grade-count">{stats.grade_distribution.F} F</span>
                 </div>
               </div>
