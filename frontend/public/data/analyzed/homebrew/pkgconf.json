@@ -10,12 +10,12 @@
     "repo": "pkgconf",
     "subpath": null
   },
-  "install_count_30d": 137398,
+  "install_count_30d": 132357,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 73.5,
-    "grade": "C",
+    "overall": 70.0,
+    "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "low",
@@ -23,28 +23,39 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 58.0,
-      "weight": 30
+      "score": 48.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 80.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 52.32,
-      "weight": 10
+      "score": 47.3,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 50.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 88.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -54,7 +65,7 @@
       "description": "package compiler and linker metadata toolkit",
       "stars": 598,
       "forks": 129,
-      "open_issues": 6,
+      "open_issues": 7,
       "watchers": 598,
       "created_at": "2012-04-30T05:28:36Z",
       "updated_at": "2025-12-31T00:26:22Z",
@@ -84,8 +95,8 @@
       "commits_last_year": 340
     },
     "issues": {
-      "open_issues": 6,
-      "closed_issues_6mo": 20,
+      "open_issues": 7,
+      "closed_issues_6mo": 19,
       "avg_response_time_hours": 459.1,
       "avg_close_time_hours": 965.8,
       "good_first_issue_count": 0,
@@ -94,6 +105,7 @@
     "prs": {
       "open_prs": 0,
       "merged_prs_6mo": 7,
+      "closed_prs_6mo": 7,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -163,11 +175,11 @@
       "installation": 9,
       "quick_start": 2,
       "examples": 6,
-      "configuration": 8,
+      "configuration": 7,
       "troubleshooting": 4,
       "overall": 6,
-      "summary": "The documentation is detailed and informative, but could benefit from a clearer quick start guide and more examples.",
-      "top_issue": "Lack of a clear and concise quick start section to help new users get started with the package."
+      "summary": "The documentation is detailed and informative, but lacks a clear quick start guide and concise troubleshooting section.",
+      "top_issue": "Lack of a concise quick start guide to help new users get started with the package quickly."
     },
     "security": {
       "overall_score": 7,
@@ -176,34 +188,34 @@
           "file": "cli/main.c",
           "line": 34,
           "severity": "low",
-          "description": "The environ_lookup_handler function uses getenv() which can potentially lead to environment variable injection, but it's not directly user-input controlled."
+          "description": "The environ_lookup_handler function uses getenv, which can potentially lead to environment variable injection if not properly sanitized."
         },
         {
           "file": "cli/main.c",
           "line": 74,
           "severity": "medium",
-          "description": "The relocate_path function uses pkgconf_strlcpy and printf without any validation or sanitization of the input path, which could lead to potential buffer overflow issues if the input is not properly validated."
+          "description": "The relocate_path function uses pkgconf_strlcpy and printf without proper validation of the input path, which could potentially lead to a buffer overflow or format string injection."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential buffer overflow issue in relocate_path function",
+        "Potential buffer overflow in relocate_path function",
         "Lack of validation for command-line arguments"
       ],
-      "summary": "The pkgconf codebase has some potential security concerns, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+      "summary": "The pkgconf code has some security concerns, including potential injection risks and insufficient input validation, but overall it appears to be a relatively secure package."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
         "Windows support issues",
-        "outdated documentation"
+        "conflict resolution problems"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The pkgconf community is actively addressing various technical issues, with maintainers responding to user concerns and resolving problems in a timely manner."
+      "summary": "The pkgconf community is moderately active, with some open issues and a mix of resolved and unresolved problems, indicating a neutral overall health."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,38 +238,88 @@
         "High number of commits in the past 6 months (191)",
         "Recent last commit date (2025-12-31)",
         "Active contributors (5) and merged PRs (7) in the past 6 months",
-        "Low number of open issues (6) compared to closed issues (20) in the past 6 months"
+        "Low number of open issues (7) compared to closed issues (19) in the past 6 months"
       ],
-      "summary": "The pkgconf package appears to be actively maintained with frequent commits, active contributors, and a high issue closure rate."
+      "summary": "The pkgconf package appears to be actively maintained with frequent commits, active contributors, and a low number of open issues."
     },
     "changelog": null,
     "governance": null
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.3,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Dangerous-Workflow": 10.0,
+        "Code-Review": 0.0,
+        "Maintained": 10.0,
+        "Token-Permissions": 0.0,
+        "Packaging": -1.0,
+        "SAST": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "CII-Best-Practices": 0.0,
+        "Vulnerabilities": 10.0,
+        "Security-Policy": 0.0,
+        "License": 9.0,
+        "Fuzzing": 0.0,
+        "Signed-Releases": -1.0,
+        "Branch-Protection": 0.0
+      },
+      "code_review_score": 0.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 598,
+      "forks": 129,
+      "open_issues": 6,
+      "license": "non-standard",
+      "description": "package compiler and linker metadata toolkit",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T21:31:46.884807Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is detailed and informative, but could benefit from a clearer quick start guide and more examples.",
+    "doc_summary": "The documentation is detailed and informative, but lacks a clear quick start guide and concise troubleshooting section.",
     "concerns": [
-      "Docs: Lack of a clear and concise quick start section to help new users get started with the package.",
+      "Docs: Lack of a concise quick start guide to help new users get started with the package quickly.",
       "Community: Windows support issues",
-      "Community: outdated documentation",
+      "Community: conflict resolution problems",
       "Communication: occasional abrupt responses",
       "Communication: some technical jargon without explanation",
-      "Security: Potential buffer overflow issue in relocate_path function",
+      "Security: Potential buffer overflow in relocate_path function",
       "Security: Lack of validation for command-line arguments",
-      "High bus factor risk (82% from top contributor)"
+      "High bus factor risk (82% from top contributor)",
+      "Weak branch protection settings"
     ],
     "highlights": [
       "High number of commits in the past 6 months (191)",
       "Recent last commit date (2025-12-31)",
       "Active contributors (5) and merged PRs (7) in the past 6 months",
-      "Low number of open issues (6) compared to closed issues (20) in the past 6 months",
+      "Low number of open issues (7) compared to closed issues (19) in the past 6 months",
       "Actively maintained",
       "CI/CD configured"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "adequate"
+    "communication_style": "adequate",
+    "scorecard_score": 4.3
   },
-  "analyzed_at": "2025-12-31T01:58:40.783682Z",
-  "data_fetched_at": "2025-12-31T01:58:40.783683Z"
+  "analyzed_at": "2026-01-02T21:34:15.605048Z",
+  "data_fetched_at": "2026-01-02T21:34:15.605049Z"
 }

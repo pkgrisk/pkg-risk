@@ -10,12 +10,12 @@
     "repo": "brotli",
     "subpath": null
   },
-  "install_count_30d": 129062,
+  "install_count_30d": 123403,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 92.5,
-    "grade": "A",
+    "overall": 88.8,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
@@ -23,28 +23,42 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
-      "weight": 30
+      "score": 90.0,
+      "weight": 30,
+      "key_factors": [
+        "Dangerous CI/CD workflows detected",
+        "SAST enabled (Scorecard)",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 86.2178069008211,
-      "weight": 25
+      "score": 85.55471787688546,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 98.92,
-      "weight": 10
+      "score": 93.9,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 60.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,12 +66,12 @@
       "owner": "google",
       "name": "brotli",
       "description": "Brotli compression format",
-      "stars": 14509,
+      "stars": 14512,
       "forks": 1318,
       "open_issues": 85,
-      "watchers": 14509,
+      "watchers": 14512,
       "created_at": "2014-10-09T14:35:14Z",
-      "updated_at": "2025-12-30T15:32:15Z",
+      "updated_at": "2026-01-01T18:44:56Z",
       "pushed_at": "2025-12-18T03:05:31Z",
       "default_branch": "master",
       "license": "MIT",
@@ -94,6 +108,7 @@
     "prs": {
       "open_prs": 20,
       "merged_prs_6mo": 75,
+      "closed_prs_6mo": 89,
       "stale_prs": 8,
       "avg_merge_time_hours": null
     },
@@ -166,7 +181,7 @@
       "configuration": 3,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and troubleshooting information.",
+      "summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and troubleshooting documentation.",
       "top_issue": "Lack of a quick start guide or basic usage example to help new users get started with the package."
     },
     "security": null,
@@ -213,7 +228,7 @@
       "appears_complete": true,
       "clarity_score": 8,
       "overall_score": 7,
-      "summary": "The changelog is well-structured and easy to follow, but lacks explicit migration guides for breaking changes."
+      "summary": "The changelog is well-structured and easy to follow, but lacks migration guides for users upgrading between versions."
     },
     "governance": {
       "has_succession_plan": false,
@@ -224,15 +239,65 @@
       "summary": "The governance documentation for the homebrew package 'brotli' lacks a clear succession plan, decision-making process, and contributor ladder, but indicates multiple maintainers with merge rights."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 7.5,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 5.0,
+        "Packaging": -1.0,
+        "Maintained": 10.0,
+        "Security-Policy": 10.0,
+        "Dangerous-Workflow": -1.0,
+        "Binary-Artifacts": 10.0,
+        "Pinned-Dependencies": -1.0,
+        "Token-Permissions": -1.0,
+        "CII-Best-Practices": 2.0,
+        "Fuzzing": 10.0,
+        "License": 10.0,
+        "Signed-Releases": 0.0,
+        "Vulnerabilities": 10.0,
+        "Branch-Protection": -1.0,
+        "SAST": 8.0
+      },
+      "code_review_score": 5.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": true,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 14512,
+      "forks": 1318,
+      "open_issues": 85,
+      "license": "MIT",
+      "description": "Brotli compression format",
+      "oss_fuzz_line_count": 1887,
+      "oss_fuzz_line_cover_count": 1187
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T21:39:19.161372Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and troubleshooting information.",
+    "doc_summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and troubleshooting documentation.",
     "concerns": [
       "relatively high number of open issues",
       "Docs: Lack of a quick start guide or basic usage example to help new users get started with the package.",
       "Community: compatibility issues",
-      "Community: build errors"
+      "Community: build errors",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
     ],
     "highlights": [
       "frequent commits",
@@ -241,11 +306,15 @@
       "multiple active contributors",
       "Breaking changes clearly marked in changelog",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OpenSSF Scorecard: 7.5/10",
+      "Fuzzing enabled",
+      "SAST enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "good"
+    "communication_style": "good",
+    "scorecard_score": 7.5
   },
-  "analyzed_at": "2025-12-31T02:01:06.429289Z",
-  "data_fetched_at": "2025-12-31T02:01:06.429290Z"
+  "analyzed_at": "2026-01-02T21:41:16.218119Z",
+  "data_fetched_at": "2026-01-02T21:41:16.218120Z"
 }

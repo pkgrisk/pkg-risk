@@ -10,41 +10,52 @@
     "repo": "aws-cli",
     "subpath": null
   },
-  "install_count_30d": 199619,
+  "install_count_30d": 192625,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 81.2,
-    "grade": "B",
+    "overall": 76.1,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
-      "weight": 30
+      "score": 70.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 70.1,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 100.0,
-      "weight": 15
+      "score": 86.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 90.0,
-      "weight": 10
+      "score": 85.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 70.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 86.0,
-      "weight": 10
+      "score": 91.0,
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +63,13 @@
       "owner": "aws",
       "name": "aws-cli",
       "description": "Universal Command Line Interface for Amazon Web Services",
-      "stars": 16639,
-      "forks": 4432,
-      "open_issues": 602,
-      "watchers": 16639,
+      "stars": 16643,
+      "forks": 4437,
+      "open_issues": 605,
+      "watchers": 16643,
       "created_at": "2012-11-20T16:07:36Z",
-      "updated_at": "2025-12-30T23:32:13Z",
-      "pushed_at": "2025-12-30T20:24:47Z",
+      "updated_at": "2026-01-02T20:30:57Z",
+      "pushed_at": "2026-01-02T20:24:16Z",
       "default_branch": "develop",
       "license": "NOASSERTION",
       "language": "Python",
@@ -84,12 +95,12 @@
       "contributor_entropy": 3.47
     },
     "commits": {
-      "last_commit_date": "2025-12-30T19:08:21Z",
-      "commits_last_6mo": 407,
+      "last_commit_date": "2026-01-02T19:11:08Z",
+      "commits_last_6mo": 410,
       "commits_last_year": 888
     },
     "issues": {
-      "open_issues": 185,
+      "open_issues": 184,
       "closed_issues_6mo": 65,
       "avg_response_time_hours": 61.9,
       "avg_close_time_hours": 112.9,
@@ -97,8 +108,9 @@
       "regression_issue_count": 8
     },
     "prs": {
-      "open_prs": 131,
+      "open_prs": 132,
       "merged_prs_6mo": 168,
+      "closed_prs_6mo": 241,
       "stale_prs": 106,
       "avg_merge_time_hours": null
     },
@@ -154,7 +166,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 20,
-      "recent_runs_pass_rate": 90.0,
+      "recent_runs_pass_rate": 100.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -171,8 +183,8 @@
       "configuration": 9,
       "troubleshooting": 4,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but could benefit from more concise quick start examples and better troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise troubleshooting section"
+      "summary": "The README provides clear and detailed information on installation, configuration, and usage of the AWS CLI, but lacks concise troubleshooting guidance.",
+      "top_issue": "Lack of dedicated troubleshooting section with common problems and solutions"
     },
     "security": {
       "overall_score": 7,
@@ -181,47 +193,47 @@
           "file": "awscli/customizations/emr/applicationutils.py",
           "line": 123,
           "severity": "medium",
-          "description": "Potential command injection risk in _build_impala_install_bootstrap_action function due to concatenation of user input (args) into a command string."
+          "description": "Potential command injection risk in _build_impala_install_bootstrap_action function due to concatenation of user input (args) into the args_list"
         },
         {
           "file": "awscli/customizations/emr/applicationutils.py",
-          "line": 143,
+          "line": 145,
           "severity": "medium",
-          "description": "Potential command injection risk in _build_hbase_install_step function due to concatenation of user input (jar) into a command string."
+          "description": "Potential command injection risk in _build_hbase_install_step function due to concatenation of user input (jar) into the step_args"
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential command injection risks in applicationutils.py"
+        "Potential command injection risks due to concatenation of user input into command arguments"
       ],
-      "summary": "The awscli package has some security concerns, including potential command injection risks and lack of input validation, but no hardcoded secrets or critical error exposure issues were found."
+      "summary": "The code has some potential security concerns, including command injection risks and lack of input validation, but no critical issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "documentation inconsistencies",
-        "permission issues"
+        "bugs",
+        "regressions"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The awscli community is actively reporting and discussing issues, but maintainers' responsiveness could be improved to address the existing bugs and feature requests."
+      "summary": "The community is experiencing frustration due to recent bugs and regressions, with maintainers showing slow responsiveness to open issues."
     },
     "communication": null,
     "maintenance": {
       "status": "stale",
       "confidence": 8,
       "concerns": [
-        "last release was in 2018",
+        "last release was in 2018, indicating a lack of recent version updates",
         "high number of open issues and PRs compared to closed ones"
       ],
       "positive_signals": [
-        "frequent commits in the past 6 months",
-        "multiple active contributors"
+        "recent commits and active contributors within the past 6 months",
+        "significant number of merged PRs in the last 6 months"
       ],
-      "summary": "The awscli package appears to be stale due to its outdated last release, despite showing some signs of recent activity."
+      "summary": "The awscli package appears to be stale due to its outdated last release, despite showing signs of recent activity and maintenance efforts."
     },
     "changelog": null,
     "governance": {
@@ -233,26 +245,76 @@
       "summary": "The awscli project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 5.1,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 2.0,
+        "Maintained": 10.0,
+        "CII-Best-Practices": 0.0,
+        "License": 9.0,
+        "Packaging": -1.0,
+        "Dangerous-Workflow": 10.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": -1.0,
+        "Security-Policy": 10.0,
+        "Token-Permissions": 0.0,
+        "Fuzzing": 0.0,
+        "Vulnerabilities": 7.0,
+        "SAST": 2.0,
+        "Binary-Artifacts": 10.0,
+        "Pinned-Dependencies": 1.0
+      },
+      "code_review_score": 2.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 16642,
+      "forks": 4432,
+      "open_issues": 603,
+      "license": "non-standard",
+      "description": "Universal Command Line Interface for Amazon Web Services",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T21:03:42.165545Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "stale",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "The documentation is generally well-structured and informative, but could benefit from more concise quick start examples and better troubleshooting guidance.",
+    "doc_summary": "The README provides clear and detailed information on installation, configuration, and usage of the AWS CLI, but lacks concise troubleshooting guidance.",
     "concerns": [
-      "last release was in 2018",
+      "last release was in 2018, indicating a lack of recent version updates",
       "high number of open issues and PRs compared to closed ones",
-      "Docs: Lack of clear and concise troubleshooting section",
-      "Community: documentation inconsistencies",
-      "Community: permission issues",
-      "Security: Potential command injection risks in applicationutils.py"
+      "Docs: Lack of dedicated troubleshooting section with common problems and solutions",
+      "Community: bugs",
+      "Community: regressions",
+      "Security: Potential command injection risks due to concatenation of user input into command arguments",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "frequent commits in the past 6 months",
-      "multiple active contributors",
+      "recent commits and active contributors within the past 6 months",
+      "significant number of merged PRs in the last 6 months",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "neutral"
+    "community_sentiment": "negative",
+    "scorecard_score": 5.1
   },
-  "analyzed_at": "2025-12-31T01:36:48.036365Z",
-  "data_fetched_at": "2025-12-31T01:36:48.036366Z"
+  "analyzed_at": "2026-01-02T21:06:09.503376Z",
+  "data_fetched_at": "2026-01-02T21:06:09.503378Z"
 }

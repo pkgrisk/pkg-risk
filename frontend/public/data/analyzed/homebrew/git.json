@@ -10,7 +10,7 @@
     "repo": "git",
     "subpath": null
   },
-  "install_count_30d": 141244,
+  "install_count_30d": 140560,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
@@ -67,12 +67,12 @@
       "owner": "git",
       "name": "git",
       "description": "Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.",
-      "stars": 58362,
-      "forks": 27267,
-      "open_issues": 323,
-      "watchers": 58362,
+      "stars": 58364,
+      "forks": 27268,
+      "open_issues": 324,
+      "watchers": 58364,
       "created_at": "2008-07-23T14:21:26Z",
-      "updated_at": "2026-01-02T16:30:09Z",
+      "updated_at": "2026-01-02T21:04:01Z",
       "pushed_at": "2026-01-01T15:49:56Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -169,7 +169,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 8,
-      "recent_runs_pass_rate": 51.0,
+      "recent_runs_pass_rate": 50.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -196,22 +196,22 @@
           "file": "merge-ort-wrappers.c",
           "line": 123,
           "severity": "medium",
-          "description": "The function get_ref() uses the deref_tag() function which can potentially lead to a path traversal vulnerability if not properly sanitized."
+          "description": "The function get_ref() uses deref_tag() which can potentially lead to a path traversal vulnerability if the input is not properly sanitized."
         },
         {
           "file": "apply.h",
-          "line": 234,
+          "line": 245,
           "severity": "low",
-          "description": "The apply_parse_options() function does not seem to validate its input parameters, but it's unclear without more context."
+          "description": "The function parse_git_diff_header() does not seem to have any obvious injection risks, but it's always good to validate user input when parsing headers."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential path traversal vulnerability in get_ref() function",
-        "Lack of input validation in apply_parse_options() function"
+        "Potential path traversal vulnerability in get_ref() function.",
+        "Missing input validation for 'prefix' parameter in init_apply_state()."
       ],
-      "summary": "The code has some potential security concerns, including a possible path traversal vulnerability and lack of input validation, but overall it appears to be well-structured and secure."
+      "summary": "The code has some potential security issues, including a possible path traversal vulnerability and missing input validation, but overall it seems to be well-structured and secure."
     },
     "sentiment": null,
     "communication": null,
@@ -264,9 +264,9 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 58290,
-      "forks": 27236,
-      "open_issues": 314,
+      "stars": 58362,
+      "forks": 27267,
+      "open_issues": 323,
       "license": "non-standard",
       "description": "Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.",
       "oss_fuzz_line_count": 124322,
@@ -275,7 +275,7 @@
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-02T16:46:40.908471Z",
+    "fetched_at": "2026-01-02T21:19:42.187712Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -288,8 +288,8 @@
       "high number of open PRs",
       "unknown last release",
       "Docs: Lack of a clear quick start guide or basic usage example",
-      "Security: Potential path traversal vulnerability in get_ref() function",
-      "Security: Lack of input validation in apply_parse_options() function",
+      "Security: Potential path traversal vulnerability in get_ref() function.",
+      "Security: Missing input validation for 'prefix' parameter in init_apply_state().",
       "Weak branch protection settings"
     ],
     "highlights": [
@@ -302,6 +302,6 @@
     ],
     "scorecard_score": 5.7
   },
-  "analyzed_at": "2026-01-02T16:48:17.778863Z",
-  "data_fetched_at": "2026-01-02T16:48:17.778864Z"
+  "analyzed_at": "2026-01-02T21:21:19.633702Z",
+  "data_fetched_at": "2026-01-02T21:21:19.633703Z"
 }

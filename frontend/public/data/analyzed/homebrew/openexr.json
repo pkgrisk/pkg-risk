@@ -10,11 +10,11 @@
     "repo": "openexr",
     "subpath": null
   },
-  "install_count_30d": 100059,
+  "install_count_30d": 99268,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 94.2,
+    "overall": 94.3,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
@@ -24,27 +24,43 @@
     "project_age_band": "legacy",
     "security": {
       "score": 100.0,
-      "weight": 30
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "SAST enabled (Scorecard)",
+        "CII Best Practices badge",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 95.43984226654926,
-      "weight": 25
+      "score": 94.93332985467589,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 100.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 60.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 93.0,
-      "weight": 10
+      "score": 100.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled",
+        "Pinned dependencies"
+      ]
     }
   },
   "github_data": {
@@ -52,12 +68,12 @@
       "owner": "AcademySoftwareFoundation",
       "name": "openexr",
       "description": "The OpenEXR project provides the specification and reference implementation of the EXR file format, the professional-grade image storage format of the motion picture industry.",
-      "stars": 1760,
+      "stars": 1761,
       "forks": 662,
       "open_issues": 233,
-      "watchers": 1760,
+      "watchers": 1761,
       "created_at": "2012-02-24T06:30:00Z",
-      "updated_at": "2025-12-26T07:31:37Z",
+      "updated_at": "2026-01-02T12:55:20Z",
       "pushed_at": "2025-12-29T04:23:16Z",
       "default_branch": "main",
       "license": "BSD-3-Clause",
@@ -88,7 +104,7 @@
     "commits": {
       "last_commit_date": "2025-12-19T01:03:35Z",
       "commits_last_6mo": 104,
-      "commits_last_year": 170
+      "commits_last_year": 162
     },
     "issues": {
       "open_issues": 213,
@@ -101,6 +117,7 @@
     "prs": {
       "open_prs": 20,
       "merged_prs_6mo": 106,
+      "closed_prs_6mo": 117,
       "stale_prs": 9,
       "avg_merge_time_hours": null
     },
@@ -173,8 +190,8 @@
       "configuration": 4,
       "troubleshooting": 3,
       "overall": 5,
-      "summary": "The OpenEXR README provides a clear overview of the package's purpose and usage, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are incomplete and unclear."
+      "summary": "The OpenEXR README provides a clear introduction to the package and its purpose, but lacks detailed installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of clear installation instructions"
     },
     "security": {
       "overall_score": 7,
@@ -183,19 +200,13 @@
           "file": "src/bin/exrinfo/main.c",
           "line": 123,
           "severity": "low",
-          "description": "The filename passed to exr_start_read() is not validated for malicious input, but it's a file path and not executed as code."
-        },
-        {
-          "file": "src/wrappers/python/PyOpenEXR.h",
-          "line": 145,
-          "severity": "low",
-          "description": "The filename passed to write() is not validated for malicious input, but it's a file path and not executed as code."
+          "description": "The filename passed to exr_start_read() is not validated, but it's a command-line argument and not user-controlled input in the classical sense."
         }
       ],
       "input_validation_score": 8,
       "secrets_found": [],
       "critical_findings": [],
-      "summary": "The OpenEXR codebase has some minor security concerns related to input validation and error handling, but no critical vulnerabilities were found."
+      "summary": "The OpenEXR codebase appears to be relatively secure, but some minor issues with input validation and error handling were found."
     },
     "sentiment": {
       "sentiment": "neutral",
@@ -207,7 +218,7 @@
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The openexr community is experiencing some technical issues, but maintainers are actively responding to and resolving problems."
+      "summary": "The openexr community is moderately active with some build and compression issues, but maintainers are responsive to user concerns."
     },
     "communication": {
       "helpfulness": 9,
@@ -228,10 +239,10 @@
       "positive_signals": [
         "frequent commits",
         "recent release",
-        "many merged PRs",
-        "multiple active contributors"
+        "active contributors",
+        "high number of merged PRs"
       ],
-      "summary": "The openexr package appears to be actively maintained with regular updates, a strong contributor base, and a recent release."
+      "summary": "The openexr package appears to be actively maintained with regular updates, a strong contributor base, and a high volume of pull requests being addressed."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,29 +262,83 @@
       "summary": "The OpenEXR project has a well-documented governance structure with clear roles, responsibilities, and succession plans, indicating a low bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 8.4,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Code-Review": 7.0,
+        "Security-Policy": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "CII-Best-Practices": 5.0,
+        "License": 10.0,
+        "Token-Permissions": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Fuzzing": 10.0,
+        "Pinned-Dependencies": 8.0,
+        "Branch-Protection": -1.0,
+        "Signed-Releases": 8.0,
+        "Packaging": 10.0,
+        "Vulnerabilities": 10.0,
+        "SAST": 10.0
+      },
+      "code_review_score": 7.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": true,
+      "cii_badge": true
+    },
+    "project_metrics": {
+      "stars": 1760,
+      "forks": 662,
+      "open_issues": 232,
+      "license": "BSD-3-Clause",
+      "description": "The OpenEXR project provides the specification and reference implementation of the EXR file format, the professional-grade image storage format of the motion picture industry.",
+      "oss_fuzz_line_count": 57493,
+      "oss_fuzz_line_cover_count": 16216
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T21:55:38.553445Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "The OpenEXR README provides a clear overview of the package's purpose and usage, but lacks detailed installation instructions and troubleshooting guidance.",
+    "doc_summary": "The OpenEXR README provides a clear introduction to the package and its purpose, but lacks detailed installation instructions and troubleshooting guidance.",
     "concerns": [
       "high number of open issues",
-      "Docs: Installation instructions are incomplete and unclear.",
+      "Docs: Lack of clear installation instructions",
       "Community: build issues",
-      "Community: compression problems"
+      "Community: compression problems",
+      "Weak branch protection settings"
     ],
     "highlights": [
       "frequent commits",
       "recent release",
-      "many merged PRs",
-      "multiple active contributors",
+      "active contributors",
+      "high number of merged PRs",
       "Excellent maintainer communication",
       "Has succession plan for maintainers",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OpenSSF Scorecard: 8.4/10",
+      "Has CII Best Practices badge",
+      "Fuzzing enabled",
+      "SAST enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "exemplary"
+    "communication_style": "exemplary",
+    "scorecard_score": 8.4
   },
-  "analyzed_at": "2025-12-31T02:18:52.556092Z",
-  "data_fetched_at": "2025-12-31T02:18:52.556093Z"
+  "analyzed_at": "2026-01-02T21:58:55.773804Z",
+  "data_fetched_at": "2026-01-02T21:58:55.773805Z"
 }

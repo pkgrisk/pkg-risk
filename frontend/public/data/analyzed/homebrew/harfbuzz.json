@@ -10,12 +10,12 @@
     "repo": "harfbuzz",
     "subpath": null
   },
-  "install_count_30d": 144171,
+  "install_count_30d": 147647,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.1,
-    "grade": "A",
+    "overall": 88.1,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
@@ -23,28 +23,41 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 92.0,
-      "weight": 30
+      "score": 87.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 81.96000000000001,
-      "weight": 10
+      "score": 77.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 43.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled",
+        "Pinned dependencies"
+      ]
     }
   },
   "github_data": {
@@ -52,13 +65,13 @@
       "owner": "harfbuzz",
       "name": "harfbuzz",
       "description": "HarfBuzz text shaping engine",
-      "stars": 5224,
+      "stars": 5247,
       "forks": 706,
       "open_issues": 85,
-      "watchers": 5224,
+      "watchers": 5247,
       "created_at": "2012-07-14T19:50:26Z",
-      "updated_at": "2025-12-30T19:15:20Z",
-      "pushed_at": "2025-12-30T19:15:16Z",
+      "updated_at": "2026-01-02T18:30:35Z",
+      "pushed_at": "2026-01-02T18:30:32Z",
       "default_branch": "main",
       "license": "NOASSERTION",
       "language": "C++",
@@ -91,13 +104,13 @@
       "contributor_entropy": 2.12
     },
     "commits": {
-      "last_commit_date": "2025-12-30T19:14:36Z",
-      "commits_last_6mo": 602,
+      "last_commit_date": "2026-01-02T18:30:30Z",
+      "commits_last_6mo": 607,
       "commits_last_year": 1000
     },
     "issues": {
       "open_issues": 79,
-      "closed_issues_6mo": 54,
+      "closed_issues_6mo": 53,
       "avg_response_time_hours": 30.2,
       "avg_close_time_hours": 92.9,
       "good_first_issue_count": 0,
@@ -105,7 +118,8 @@
     },
     "prs": {
       "open_prs": 6,
-      "merged_prs_6mo": 227,
+      "merged_prs_6mo": 229,
+      "closed_prs_6mo": 247,
       "stale_prs": 5,
       "avg_merge_time_hours": null
     },
@@ -120,7 +134,7 @@
     "security": {
       "has_security_md": true,
       "has_security_policy": false,
-      "signed_commits_pct": 23.0,
+      "signed_commits_pct": 24.0,
       "has_dependabot": true,
       "has_codeql": true,
       "has_security_ci": true,
@@ -161,7 +175,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 15,
-      "recent_runs_pass_rate": 94.0,
+      "recent_runs_pass_rate": 98.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -186,13 +200,13 @@
       "injection_risks": [
         {
           "file": "src/main.cc",
-          "line": 55,
+          "line": 123,
           "severity": "low",
           "description": "Use of snprintf with user-controlled data"
         },
         {
           "file": "src/main.cc",
-          "line": 123,
+          "line": 173,
           "severity": "low",
           "description": "Use of fprintf with user-controlled data"
         }
@@ -200,7 +214,7 @@
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential path traversal vulnerability in output file naming"
+        "Potential buffer overflow vulnerability due to lack of input validation"
       ],
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
@@ -231,15 +245,64 @@
       "confidence": 9,
       "concerns": [],
       "positive_signals": [
-        "High number of commits in the past 6 months (602)",
-        "Recent last commit and release dates",
-        "Large number of merged PRs in the past 6 months (227)",
-        "Multiple active contributors in the past 6 months (25)"
+        "High number of commits in the past 6 months (607)",
+        "Recent last commit (2026-01-02)",
+        "Frequent releases (last release 2025-12-27, within the past year)",
+        "Large number of merged PRs in the past 6 months (229)",
+        "Many active contributors in the past 6 months (25)"
       ],
-      "summary": "The harfbuzz package appears to be actively maintained with frequent updates, a large number of contributors, and a high volume of pull requests being addressed."
+      "summary": "The harfbuzz package appears to be actively maintained with frequent updates, releases, and a large contributor base."
     },
     "changelog": null,
     "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.3,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Security-Policy": 10.0,
+        "Code-Review": 3.0,
+        "CII-Best-Practices": 0.0,
+        "Packaging": -1.0,
+        "Dangerous-Workflow": 10.0,
+        "License": 9.0,
+        "Token-Permissions": 0.0,
+        "Branch-Protection": -1.0,
+        "Signed-Releases": 0.0,
+        "Vulnerabilities": 9.0,
+        "Fuzzing": 10.0,
+        "Binary-Artifacts": 10.0,
+        "SAST": 0.0,
+        "Pinned-Dependencies": 8.0
+      },
+      "code_review_score": 3.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 5247,
+      "forks": 706,
+      "open_issues": 85,
+      "license": "non-standard",
+      "description": "HarfBuzz text shaping engine",
+      "oss_fuzz_line_count": 61258,
+      "oss_fuzz_line_cover_count": 43129
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T21:13:16.625772Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
@@ -249,19 +312,23 @@
       "Docs: Lack of clear installation instructions and a quick start example to help new users get started with the package.",
       "Community: compilation errors",
       "Community: outdated links",
-      "Security: Potential path traversal vulnerability in output file naming"
+      "Security: Potential buffer overflow vulnerability due to lack of input validation",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (602)",
-      "Recent last commit and release dates",
-      "Large number of merged PRs in the past 6 months (227)",
-      "Multiple active contributors in the past 6 months (25)",
+      "High number of commits in the past 6 months (607)",
+      "Recent last commit (2026-01-02)",
+      "Frequent releases (last release 2025-12-27, within the past year)",
+      "Large number of merged PRs in the past 6 months (229)",
+      "Many active contributors in the past 6 months (25)",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "Fuzzing enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "good"
+    "communication_style": "good",
+    "scorecard_score": 6.3
   },
-  "analyzed_at": "2025-12-31T01:49:32.830376Z",
-  "data_fetched_at": "2025-12-31T01:49:32.830377Z"
+  "analyzed_at": "2026-01-02T21:16:05.014932Z",
+  "data_fetched_at": "2026-01-02T21:16:05.014933Z"
 }
