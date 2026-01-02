@@ -1,0 +1,336 @@
+{
+  "ecosystem": "homebrew",
+  "name": "rpm",
+  "description": "Standard unix software packaging tool",
+  "version": "4.20.1",
+  "homepage": "https://rpm.org/",
+  "repository": {
+    "platform": "github",
+    "owner": "rpm-software-management",
+    "repo": "rpm",
+    "subpath": null
+  },
+  "install_count_30d": 627,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 70.9,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 54.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 97.37469084482782,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 88.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 69.4,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 26.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 76.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "rpm-software-management",
+      "name": "rpm",
+      "description": "The RPM package manager",
+      "stars": 570,
+      "forks": 418,
+      "open_issues": 317,
+      "watchers": 570,
+      "created_at": "2015-02-24T12:00:53Z",
+      "updated_at": "2025-12-30T05:12:52Z",
+      "pushed_at": "2025-12-16T07:52:59Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "C++",
+      "topics": [
+        "build-tool",
+        "package-manager",
+        "packages"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 271,
+      "active_contributors_6mo": 18,
+      "top_contributor_pct": 78.7,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 24,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 12,
+      "contributor_entropy": 1.8
+    },
+    "commits": {
+      "last_commit_date": "2025-12-05T13:05:54Z",
+      "commits_last_6mo": 197,
+      "commits_last_year": 489
+    },
+    "issues": {
+      "open_issues": 290,
+      "closed_issues_6mo": 91,
+      "avg_response_time_hours": 39.1,
+      "avg_close_time_hours": 206.0,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 14
+    },
+    "prs": {
+      "open_prs": 10,
+      "merged_prs_6mo": 106,
+      "closed_prs_6mo": 116,
+      "stale_prs": 6,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 7,
+      "releases_last_year": 6,
+      "last_release_date": "2025-12-10T13:56:57Z",
+      "latest_version": "rpm-6.0.1-release",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.43
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 606,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": true,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 5,
+      "recent_runs_pass_rate": 96.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README provides basic information about the package, but lacks essential documentation for installation, usage, and troubleshooting.",
+      "top_issue": "Lack of installation instructions and usage examples"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "tools/cliutils.cc",
+          "line": 73,
+          "severity": "high",
+          "description": "The execl function is used with a string argument that could potentially be manipulated by an attacker, leading to command injection vulnerabilities."
+        },
+        {
+          "file": "tools/cliutils.cc",
+          "line": 74,
+          "severity": "medium",
+          "description": "The rpmcliPipeOutput variable is used as an argument to the execl function without proper validation or sanitization."
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Command injection vulnerability in the execl function call",
+        "Insufficient input validation and error handling"
+      ],
+      "summary": "The code has several security concerns, including command injection vulnerabilities, insufficient input validation, and potential error exposure, which could be exploited by an attacker to compromise the system."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "compatibility issues",
+        "build failures"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The rpm community is experiencing a mix of frustration and engagement, with some users reporting compatibility issues and build failures, but maintainers are moderately responsive to these concerns."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "sometimes dismissive or sarcastic tone",
+        "lack of clear explanations for beginners"
+      ],
+      "summary": "The maintainer's responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Frequent commits (197 in the last 6 months)",
+        "Recent release (2025-12-10)",
+        "Active contributors (18 in the last 6 months)",
+        "Merged PRs (106 in the last 6 months)"
+      ],
+      "summary": "The rpm package appears to be actively maintained with frequent updates, recent releases, and a significant number of active contributors."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The RPM project lacks a clear succession plan and decision-making process, but indicates the presence of multiple maintainers, posing a medium bus factor risk."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.2,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Packaging": -1.0,
+        "Token-Permissions": 0.0,
+        "Code-Review": 8.0,
+        "Maintained": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Binary-Artifacts": 0.0,
+        "Security-Policy": 0.0,
+        "Vulnerabilities": 10.0,
+        "License": 9.0,
+        "Fuzzing": 0.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": -1.0,
+        "Pinned-Dependencies": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 8.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 569,
+      "forks": 418,
+      "open_issues": 316,
+      "license": "non-standard",
+      "description": "The RPM package manager",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T07:28:56.665059Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides basic information about the package, but lacks essential documentation for installation, usage, and troubleshooting.",
+    "concerns": [
+      "Docs: Lack of installation instructions and usage examples",
+      "Community: compatibility issues",
+      "Community: build failures",
+      "Communication: sometimes dismissive or sarcastic tone",
+      "Communication: lack of clear explanations for beginners",
+      "Security: Command injection vulnerability in the execl function call",
+      "Security: Insufficient input validation and error handling",
+      "Security: The execl function is used with a string argument that could potentially be manipulated by an attacker, leading to command injection vulnerabilities.",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Frequent commits (197 in the last 6 months)",
+      "Recent release (2025-12-10)",
+      "Active contributors (18 in the last 6 months)",
+      "Merged PRs (106 in the last 6 months)",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "adequate",
+    "scorecard_score": 4.2
+  },
+  "analyzed_at": "2026-01-02T07:31:36.569857Z",
+  "data_fetched_at": "2026-01-02T07:31:36.569858Z"
+}
