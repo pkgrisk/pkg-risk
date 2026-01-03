@@ -10,11 +10,11 @@
     "repo": "cli",
     "subpath": null
   },
-  "install_count_30d": 40409,
+  "install_count_30d": 34497,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 85.7,
+    "overall": 88.0,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,28 +23,41 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
-      "weight": 30
+      "score": 100.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Proper token permissions",
+        "SAST enabled (Scorecard)",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 89.73102123738798,
-      "weight": 25
+      "score": 88.95201397643149,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 100.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 27.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 85.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -53,11 +66,11 @@
       "name": "cli",
       "description": "The Docker CLI",
       "stars": 5625,
-      "forks": 2072,
-      "open_issues": 833,
+      "forks": 2073,
+      "open_issues": 834,
       "watchers": 5625,
       "created_at": "2017-04-12T05:27:42Z",
-      "updated_at": "2025-12-30T08:20:07Z",
+      "updated_at": "2026-01-02T19:23:10Z",
       "pushed_at": "2025-12-23T17:42:00Z",
       "default_branch": "master",
       "license": "Apache-2.0",
@@ -83,11 +96,11 @@
     },
     "commits": {
       "last_commit_date": "2025-12-23T17:42:00Z",
-      "commits_last_6mo": 917,
+      "commits_last_6mo": 915,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 192,
+      "open_issues": 191,
       "closed_issues_6mo": 28,
       "avg_response_time_hours": 10.8,
       "avg_close_time_hours": 51.1,
@@ -95,8 +108,9 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 256,
+      "open_prs": 257,
       "merged_prs_6mo": 286,
+      "closed_prs_6mo": 300,
       "stale_prs": 245,
       "avg_merge_time_hours": null
     },
@@ -152,7 +166,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 7,
-      "recent_runs_pass_rate": 84.0,
+      "recent_runs_pass_rate": 72.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -169,15 +183,15 @@
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 1,
-      "summary": "The README is unclear and lacks essential information for users to understand and use the docker-completion package.",
-      "top_issue": "The README does not provide clear instructions on how to install, configure, or use the docker-completion package."
+      "summary": "The README is unclear and lacks essential information for users, focusing more on development and licensing details.",
+      "top_issue": "Lack of clear installation instructions and usage examples for the docker-completion package"
     },
     "security": {
       "overall_score": 7,
       "injection_risks": [
         {
           "file": "cmd/docker-trust/main.go",
-          "line": 23,
+          "line": 15,
           "severity": "low",
           "description": "The use of os.Args[0] could potentially lead to an injection risk if the executable name is not properly sanitized."
         },
@@ -192,9 +206,9 @@
       "secrets_found": [],
       "critical_findings": [
         "Potential injection risk in cmd/docker-trust/main.go",
-        "Lack of input validation in e2e/cli-plugins/plugins/presocket/main.go"
+        "Lack of validation for user input in e2e/cli-plugins/plugins/presocket/main.go"
       ],
-      "summary": "The code has some potential security risks, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+      "summary": "The code has some potential security issues, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
       "sentiment": "mixed",
@@ -206,7 +220,7 @@
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues and engaging with maintainers, but frustration levels are moderate due to unresolved bugs and breaking changes."
+      "summary": "The community is actively reporting issues and engaging with maintainers, but frustration levels are moderate due to unresolved problems and breaking changes."
     },
     "communication": {
       "helpfulness": 9,
@@ -230,30 +244,79 @@
         "recent last commit",
         "many merged PRs and active contributors"
       ],
-      "summary": "The docker-completion package appears to be actively maintained with a high volume of recent activity, despite having a large number of open issues and PRs."
+      "summary": "The docker-completion package appears to be actively maintained with frequent updates, despite having a large number of open issues and PRs."
     },
     "changelog": null,
     "governance": {
       "has_succession_plan": false,
-      "decision_process_documented": false,
+      "decision_process_documented": true,
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
-      "summary": "The Docker project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
+      "summary": "The Docker project has a well-documented decision process and contributor ladder, but lacks a clear succession plan."
     }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 8.2,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Packaging": -1.0,
+        "Security-Policy": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Code-Review": 10.0,
+        "Token-Permissions": 10.0,
+        "Fuzzing": 0.0,
+        "Binary-Artifacts": 10.0,
+        "License": 10.0,
+        "Signed-Releases": -1.0,
+        "Branch-Protection": -1.0,
+        "Vulnerabilities": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "SAST": 9.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 10.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": true,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 5626,
+      "forks": 2072,
+      "open_issues": 833,
+      "license": "Apache-2.0",
+      "description": "The Docker CLI",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T01:01:45.320219Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "The README is unclear and lacks essential information for users to understand and use the docker-completion package.",
+    "doc_summary": "The README is unclear and lacks essential information for users, focusing more on development and licensing details.",
     "concerns": [
       "high number of open issues",
       "high number of open PRs",
-      "Docs: The README does not provide clear instructions on how to install, configure, or use the docker-completion package.",
+      "Docs: Lack of clear installation instructions and usage examples for the docker-completion package",
       "Community: inconsistent output formats",
       "Community: breaking changes",
       "Security: Potential injection risk in cmd/docker-trust/main.go",
-      "Security: Lack of input validation in e2e/cli-plugins/plugins/presocket/main.go"
+      "Security: Lack of validation for user input in e2e/cli-plugins/plugins/presocket/main.go",
+      "Weak branch protection settings"
     ],
     "highlights": [
       "frequent commits in the past 6 months",
@@ -261,11 +324,14 @@
       "many merged PRs and active contributors",
       "Excellent maintainer communication",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OpenSSF Scorecard: 8.2/10",
+      "SAST enabled"
     ],
     "community_sentiment": "mixed",
-    "communication_style": "exemplary"
+    "communication_style": "exemplary",
+    "scorecard_score": 8.2
   },
-  "analyzed_at": "2025-12-31T04:53:50.588219Z",
-  "data_fetched_at": "2025-12-31T04:53:50.588221Z"
+  "analyzed_at": "2026-01-03T01:04:39.552092Z",
+  "data_fetched_at": "2026-01-03T01:04:39.552093Z"
 }

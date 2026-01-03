@@ -10,11 +10,11 @@
     "repo": "CocoaPods",
     "subpath": null
   },
-  "install_count_30d": 30738,
+  "install_count_30d": 32125,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 64.2,
+    "overall": 61.6,
     "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,28 +23,39 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 58.0,
-      "weight": 30
+      "score": 53.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review"
+      ]
     },
     "maintenance": {
-      "score": 46.832679885779065,
-      "weight": 25
+      "score": 46.43049606264316,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 83.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 80.0,
-      "weight": 10
+      "score": 70.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 53.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 93.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,12 +63,12 @@
       "owner": "CocoaPods",
       "name": "CocoaPods",
       "description": "The Cocoa Dependency Manager.",
-      "stars": 14780,
-      "forks": 2681,
+      "stars": 14781,
+      "forks": 2680,
       "open_issues": 835,
-      "watchers": 14780,
+      "watchers": 14781,
       "created_at": "2011-08-14T00:10:53Z",
-      "updated_at": "2025-12-30T07:05:16Z",
+      "updated_at": "2026-01-01T21:59:27Z",
       "pushed_at": "2025-08-26T17:12:38Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -102,7 +113,8 @@
     "prs": {
       "open_prs": 65,
       "merged_prs_6mo": 0,
-      "stale_prs": 64,
+      "closed_prs_6mo": 5,
+      "stale_prs": 65,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -174,7 +186,7 @@
       "configuration": 5,
       "troubleshooting": 3,
       "overall": 5,
-      "summary": "The documentation is informative but lacks clear and concise instructions for new users, particularly in the areas of quick start and troubleshooting.",
+      "summary": "The documentation is comprehensive but lacks clear and concise instructions for new users, particularly in the areas of quick start and troubleshooting.",
       "top_issue": "Lack of a clear and simple 'Getting Started' section with step-by-step instructions"
     },
     "security": {
@@ -184,22 +196,22 @@
           "file": "lib/cocoapods/generator/app_target_helper.rb",
           "line": 123,
           "severity": "low",
-          "description": "Potential for file path injection in `create_app_import_source_file` method"
+          "description": "Potential path traversal vulnerability in file creation"
         },
         {
           "file": "lib/cocoapods/generator/app_target_helper.rb",
-          "line": 143,
-          "severity": "low",
-          "description": "Potential for file path injection in `create_launchscreen_storyboard_file` method"
+          "line": 145,
+          "severity": "medium",
+          "description": "User-controlled input used to create directory paths"
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Lack of input validation and sanitization for user-provided parameters",
-        "Potential for file path injection vulnerabilities"
+        "Potential path traversal vulnerability in file creation",
+        "Lack of validation for user-provided input parameters"
       ],
-      "summary": "The code has some security concerns, including potential file path injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
       "sentiment": "negative",
@@ -211,23 +223,23 @@
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The CocoaPods community is experiencing frustration and disappointment due to frequent installation errors, compatibility issues, and slow maintainer responsiveness."
+      "summary": "The CocoaPods community is experiencing frustration and abandonment due to slow maintainer responsiveness and recurring compatibility issues."
     },
     "communication": null,
     "maintenance": {
       "status": "stale",
       "confidence": 8,
       "concerns": [
-        "low commit activity",
-        "unmerged PRs",
-        "infrequent releases",
-        "single active contributor"
+        "low number of commits in the past 6 months",
+        "large number of open issues and PRs",
+        "only one contributor active in the past 6 months",
+        "last release is over 10 months old"
       ],
       "positive_signals": [
-        "recent commit within the last year",
-        "some issue closure activity"
+        "there has been at least some recent activity with one commit in the past 6 months",
+        "some issues and PRs have been closed and merged recently"
       ],
-      "summary": "The cocoapods package appears to be stale, with minimal maintenance and a lack of recent releases or merged PRs."
+      "summary": "The cocoapods package appears to be stale, with minimal maintenance activity and a large backlog of open issues and PRs."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -247,29 +259,79 @@
       "summary": "The CocoaPods project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 2.8,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Packaging": -1.0,
+        "Code-Review": 1.0,
+        "Maintained": 0.0,
+        "CII-Best-Practices": 0.0,
+        "Token-Permissions": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "Security-Policy": 0.0,
+        "License": 9.0,
+        "Fuzzing": 0.0,
+        "Branch-Protection": 3.0,
+        "Signed-Releases": -1.0,
+        "Binary-Artifacts": 0.0,
+        "SAST": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Vulnerabilities": 9.0
+      },
+      "code_review_score": 1.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": 3.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 14780,
+      "forks": 2680,
+      "open_issues": 835,
+      "license": "non-standard",
+      "description": "The Cocoa Dependency Manager.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T01:23:56.683021Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "stale",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is informative but lacks clear and concise instructions for new users, particularly in the areas of quick start and troubleshooting.",
+    "doc_summary": "The documentation is comprehensive but lacks clear and concise instructions for new users, particularly in the areas of quick start and troubleshooting.",
     "concerns": [
-      "low commit activity",
-      "unmerged PRs",
-      "infrequent releases",
-      "single active contributor",
+      "low number of commits in the past 6 months",
+      "large number of open issues and PRs",
+      "only one contributor active in the past 6 months",
+      "last release is over 10 months old",
       "Docs: Lack of a clear and simple 'Getting Started' section with step-by-step instructions",
       "Possible abandonment signals detected",
       "Community: pod install errors",
       "Community: compatibility issues with React Native and Flutter",
-      "Security: Lack of input validation and sanitization for user-provided parameters",
-      "Security: Potential for file path injection vulnerabilities"
+      "Security: Potential path traversal vulnerability in file creation",
+      "Security: Lack of validation for user-provided input parameters",
+      "Low OpenSSF Scorecard: 2.8/10"
     ],
     "highlights": [
-      "recent commit within the last year",
-      "some issue closure activity",
+      "there has been at least some recent activity with one commit in the past 6 months",
+      "some issues and PRs have been closed and merged recently",
       "CI/CD configured"
     ],
-    "community_sentiment": "negative"
+    "community_sentiment": "negative",
+    "scorecard_score": 2.8
   },
-  "analyzed_at": "2025-12-31T05:46:26.623040Z",
-  "data_fetched_at": "2025-12-31T05:46:26.623041Z"
+  "analyzed_at": "2026-01-03T01:27:07.362630Z",
+  "data_fetched_at": "2026-01-03T01:27:07.362632Z"
 }

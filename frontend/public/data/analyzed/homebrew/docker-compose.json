@@ -10,12 +10,12 @@
     "repo": "compose",
     "subpath": null
   },
-  "install_count_30d": 31374,
+  "install_count_30d": 28510,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 91.1,
-    "grade": "A",
+    "overall": 87.0,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
@@ -23,28 +23,40 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 88.0,
-      "weight": 30
+      "score": 83.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Proper token permissions",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 100.0,
-      "weight": 15
+      "score": 86.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 100.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 59.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 88.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,12 +64,12 @@
       "owner": "docker",
       "name": "compose",
       "description": "Define and run multi-container applications with Docker",
-      "stars": 36722,
-      "forks": 5678,
-      "open_issues": 65,
-      "watchers": 36722,
+      "stars": 36738,
+      "forks": 5679,
+      "open_issues": 71,
+      "watchers": 36738,
       "created_at": "2013-12-09T11:40:58Z",
-      "updated_at": "2025-12-31T03:10:18Z",
+      "updated_at": "2026-01-02T22:02:44Z",
       "pushed_at": "2025-12-24T09:02:57Z",
       "default_branch": "main",
       "license": "Apache-2.0",
@@ -79,18 +91,18 @@
       "active_contributors_6mo": 33,
       "top_contributor_pct": 27.8,
       "contributors_over_5pct": 4,
-      "contributors_prev_6mo": 30,
+      "contributors_prev_6mo": 31,
       "contributor_trend": "stable",
-      "first_time_contributors_6mo": 27,
+      "first_time_contributors_6mo": 26,
       "contributor_entropy": 3.84
     },
     "commits": {
       "last_commit_date": "2025-12-18T14:00:38Z",
-      "commits_last_6mo": 279,
+      "commits_last_6mo": 278,
       "commits_last_year": 603
     },
     "issues": {
-      "open_issues": 49,
+      "open_issues": 53,
       "closed_issues_6mo": 100,
       "avg_response_time_hours": 2.5,
       "avg_close_time_hours": 13.8,
@@ -98,8 +110,9 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 16,
-      "merged_prs_6mo": 224,
+      "open_prs": 18,
+      "merged_prs_6mo": 222,
+      "closed_prs_6mo": 281,
       "stale_prs": 2,
       "avg_merge_time_hours": null
     },
@@ -155,7 +168,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 9,
-      "recent_runs_pass_rate": 46.0,
+      "recent_runs_pass_rate": 48.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -182,33 +195,34 @@
           "file": "internal/desktop/client.go",
           "line": 123,
           "severity": "medium",
-          "description": "The 'backendURL' function generates a URL for the given API path. However, it does not validate or sanitize the input 'path'. This could potentially lead to an injection attack if user-controlled data is used as part of the path."
+          "description": "The 'backendURL' function uses string concatenation to construct a URL, which may lead to potential injection risks if the input is not properly sanitized."
         },
         {
           "file": "pkg/dryrun/dryrunclient.go",
           "line": 234,
           "severity": "low",
-          "description": "The 'NewDryRunClient' function uses the 'builder.New' method which may execute a command with user-controlled input. However, this is not directly exploitable as it's used for building an image."
+          "description": "The 'NewDryRunClient' function uses a sync.Map, which may lead to potential concurrency issues if not handled correctly."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential injection risk in the 'backendURL' function"
+        "Potential injection risks in the 'backendURL' function",
+        "Lack of input validation in the 'newRequest' function"
       ],
-      "summary": "The code has some potential security issues, including a medium-severity injection risk and lack of input validation, but overall it appears to be well-structured and secure."
+      "summary": "The code has some potential security issues, including injection risks and lack of input validation, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and regressions",
-        "lack of documentation or unclear use cases"
+        "bugs and errors",
+        "missing features"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The docker-compose community is actively reporting issues and feature requests, but maintainers' responsiveness is moderate, indicating a need for improvement in addressing user concerns."
+      "summary": "The docker-compose community is experiencing frustration due to numerous bugs, errors, and missing features, but maintainers are moderately responsive to issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -221,19 +235,19 @@
         "dismissiveness",
         "lack of empathy"
       ],
-      "summary": "The maintainer's responses are generally informative and technically sound, but can come across as abrupt or dismissive at times."
+      "summary": "The maintainer's responses are generally informative and technically sound, but sometimes come across as abrupt or dismissive, which may deter new contributors."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [],
       "positive_signals": [
-        "Frequent commits (279 in the last 6 months)",
-        "Recent release (2025-12-18)",
-        "High number of merged PRs (224 in the last 6 months)",
-        "Many active contributors (33 in the last 6 months)"
+        "High number of commits in the past 6 months (278)",
+        "Recent last commit and release dates (2025-12-18)",
+        "Large number of merged PRs in the past 6 months (222)",
+        "Many active contributors in the past 6 months (33)"
       ],
-      "summary": "The docker-compose package appears to be actively maintained with frequent updates, a strong contributor base, and a recent release."
+      "summary": "The docker-compose package appears to be actively maintained with frequent updates, a high volume of pull requests, and a large team of active contributors."
     },
     "changelog": null,
     "governance": {
@@ -242,8 +256,56 @@
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
-      "summary": "The Docker Compose project has a clear path for contributors to become maintainers, but lacks documentation on succession planning and decision-making processes."
+      "summary": "The Docker Compose project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
     }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.8,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Code-Review": 10.0,
+        "Packaging": -1.0,
+        "Token-Permissions": 9.0,
+        "Security-Policy": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "Binary-Artifacts": 10.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Branch-Protection": -1.0,
+        "Vulnerabilities": 10.0,
+        "Signed-Releases": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "SAST": 1.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 9.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 36729,
+      "forks": 5678,
+      "open_issues": 69,
+      "license": "Apache-2.0",
+      "description": "Define and run multi-container applications with Docker",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T01:56:49.730568Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
@@ -251,23 +313,26 @@
     "doc_summary": "The documentation is clear and provides a good introduction to Docker Compose, but lacks comprehensive examples and troubleshooting guidance.",
     "concerns": [
       "Docs: Insufficient troubleshooting information",
-      "Community: bugs and regressions",
-      "Community: lack of documentation or unclear use cases",
+      "Community: bugs and errors",
+      "Community: missing features",
       "Communication: dismissiveness",
       "Communication: lack of empathy",
-      "Security: Potential injection risk in the 'backendURL' function"
+      "Security: Potential injection risks in the 'backendURL' function",
+      "Security: Lack of input validation in the 'newRequest' function",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "Frequent commits (279 in the last 6 months)",
-      "Recent release (2025-12-18)",
-      "High number of merged PRs (224 in the last 6 months)",
-      "Many active contributors (33 in the last 6 months)",
+      "High number of commits in the past 6 months (278)",
+      "Recent last commit and release dates (2025-12-18)",
+      "Large number of merged PRs in the past 6 months (222)",
+      "Many active contributors in the past 6 months (33)",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "mixed",
-    "communication_style": "adequate"
+    "community_sentiment": "negative",
+    "communication_style": "adequate",
+    "scorecard_score": 6.8
   },
-  "analyzed_at": "2025-12-31T05:42:38.917524Z",
-  "data_fetched_at": "2025-12-31T05:42:38.917525Z"
+  "analyzed_at": "2026-01-03T01:59:57.297655Z",
+  "data_fetched_at": "2026-01-03T01:59:57.297656Z"
 }
