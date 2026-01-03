@@ -1,0 +1,319 @@
+{
+  "ecosystem": "homebrew",
+  "name": "zk",
+  "description": "Plain text note-taking assistant",
+  "version": "0.15.2",
+  "homepage": "https://zk-org.github.io/zk/",
+  "repository": {
+    "platform": "github",
+    "owner": "zk-org",
+    "repo": "zk",
+    "subpath": null
+  },
+  "install_count_30d": 255,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 85.6,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 70.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 85.32,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 73.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 88.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "zk-org",
+      "name": "zk",
+      "description": "A plain text note-taking assistant",
+      "stars": 2374,
+      "forks": 166,
+      "open_issues": 13,
+      "watchers": 2374,
+      "created_at": "2020-12-23T15:07:51Z",
+      "updated_at": "2026-01-02T20:31:50Z",
+      "pushed_at": "2025-12-19T19:57:11Z",
+      "default_branch": "dev",
+      "license": "GPL-3.0",
+      "language": "Go",
+      "topics": [
+        "cli",
+        "notes",
+        "second-brain",
+        "wiki",
+        "zettelkasten"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 57,
+      "active_contributors_6mo": 9,
+      "top_contributor_pct": 51.1,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 10,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 6,
+      "contributor_entropy": 2.54
+    },
+    "commits": {
+      "last_commit_date": "2025-12-19T19:32:32Z",
+      "commits_last_6mo": 59,
+      "commits_last_year": 140
+    },
+    "issues": {
+      "open_issues": 9,
+      "closed_issues_6mo": 27,
+      "avg_response_time_hours": 56.3,
+      "avg_close_time_hours": 261.0,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 33,
+      "closed_prs_6mo": 41,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 22,
+      "releases_last_year": 4,
+      "last_release_date": "2025-12-19T19:41:42Z",
+      "latest_version": "v0.15.2",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 38.0,
+      "has_dependabot": true,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 5102,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 7,
+      "recent_runs_pass_rate": 64.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides a clear overview of the package's purpose and features, but lacks concise troubleshooting information.",
+      "top_issue": "Lack of dedicated troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "main.go",
+          "line": 246,
+          "severity": "high",
+          "description": "The `runAlias` function executes a command string using `executil.CommandFromString`, which can lead to shell injection attacks if the input is not properly sanitized."
+        },
+        {
+          "file": "main.go",
+          "line": 251,
+          "severity": "medium",
+          "description": "The `cmdStr` variable is constructed by concatenating user-input data, which may lead to command injection vulnerabilities."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "High-severity injection risk in the `runAlias` function",
+        "Potential command injection vulnerabilities due to insufficient input sanitization"
+      ],
+      "summary": "The code has several security concerns, including high-severity injection risks and potential command injection vulnerabilities, which require immediate attention to prevent attacks."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "bug reports",
+        "configuration issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting bugs and configuration issues, but the maintainer's responsiveness is moderate, indicating a relatively healthy project with room for improvement."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "occasional dismissiveness",
+        "lack of clear next steps"
+      ],
+      "summary": "The maintainer's responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Frequent commits (59 in the last 6 months)",
+        "Recent release (2025-12-19)",
+        "Active issue closure (27 closed in the last 6 months)",
+        "Multiple merged PRs (33 in the last 6 months)",
+        "Several active contributors (9 in the last 6 months)"
+      ],
+      "summary": "The zk package appears to be actively maintained with frequent updates, releases, and a responsive community."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and easy to follow, but lacks explicit migration guides for breaking changes."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The project lacks a clear succession plan, decision-making process documentation, and contributor ladder, but indicates multiple maintainers with merge rights."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 2370,
+      "forks": 166,
+      "open_issues": 13,
+      "license": "GPL-3.0",
+      "description": "A plain text note-taking assistant",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T13:20:19.599417Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides a clear overview of the package's purpose and features, but lacks concise troubleshooting information.",
+    "concerns": [
+      "Docs: Lack of dedicated troubleshooting section or common problem solutions",
+      "Community: bug reports",
+      "Community: configuration issues",
+      "Communication: occasional dismissiveness",
+      "Communication: lack of clear next steps",
+      "Security: High-severity injection risk in the `runAlias` function",
+      "Security: Potential command injection vulnerabilities due to insufficient input sanitization",
+      "Security: The `runAlias` function executes a command string using `executil.CommandFromString`, which can lead to shell injection attacks if the input is not properly sanitized."
+    ],
+    "highlights": [
+      "Frequent commits (59 in the last 6 months)",
+      "Recent release (2025-12-19)",
+      "Active issue closure (27 closed in the last 6 months)",
+      "Multiple merged PRs (33 in the last 6 months)",
+      "Several active contributors (9 in the last 6 months)",
+      "Breaking changes clearly marked in changelog",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 2370,
+      "forks": 166,
+      "open_issues": 13
+    }
+  },
+  "analyzed_at": "2026-01-03T13:23:46.091232Z",
+  "data_fetched_at": "2026-01-03T13:23:46.091234Z"
+}
