@@ -1,0 +1,329 @@
+{
+  "ecosystem": "homebrew",
+  "name": "kafkactl",
+  "description": "CLI for managing Apache Kafka",
+  "version": "5.16.0",
+  "homepage": "https://deviceinsight.github.io/kafkactl/",
+  "repository": {
+    "platform": "github",
+    "owner": "deviceinsight",
+    "repo": "kafkactl",
+    "subpath": null
+  },
+  "install_count_30d": 241,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 72.7,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 52.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 64.9,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 10.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 96.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "deviceinsight",
+      "name": "kafkactl",
+      "description": "Command Line Tool for managing Apache Kafka",
+      "stars": 1006,
+      "forks": 99,
+      "open_issues": 15,
+      "watchers": 1006,
+      "created_at": "2018-12-10T08:43:54Z",
+      "updated_at": "2026-01-02T09:39:06Z",
+      "pushed_at": "2026-01-02T09:39:06Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [
+        "apache-kafka",
+        "avro",
+        "cli",
+        "fish",
+        "golang",
+        "kafka",
+        "kubernetes",
+        "protobuf",
+        "zsh"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 49,
+      "active_contributors_6mo": 8,
+      "top_contributor_pct": 77.0,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 6,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 5,
+      "contributor_entropy": 1.86
+    },
+    "commits": {
+      "last_commit_date": "2026-01-02T09:39:02Z",
+      "commits_last_6mo": 78,
+      "commits_last_year": 198
+    },
+    "issues": {
+      "open_issues": 14,
+      "closed_issues_6mo": 13,
+      "avg_response_time_hours": 89.3,
+      "avg_close_time_hours": 329.4,
+      "good_first_issue_count": 4,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 18,
+      "closed_prs_6mo": 23,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 80,
+      "releases_last_year": 16,
+      "last_release_date": "2025-12-03T08:02:27Z",
+      "latest_version": "v5.16.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.01
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 32.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 5,
+      "recent_runs_pass_rate": 92.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "internal/k8s/runner.go",
+          "line": 34,
+          "severity": "high",
+          "description": "The ExecuteAndReturn function uses exec.Command which can lead to command injection if the input is not properly sanitized."
+        },
+        {
+          "file": "internal/k8s/runner.go",
+          "line": 64,
+          "severity": "high",
+          "description": "The Execute function also uses exec.Command and has the same risk as above."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Command injection risk in runner.go",
+        "Lack of input validation for user input"
+      ],
+      "summary": "The code has some security concerns, including command injection risks and lack of input validation, but no hardcoded secrets or critical error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "authorization errors",
+        "configuration issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The kafkactl community is moderately active with some open issues and a mix of enhancement requests and bug reports, indicating a neutral sentiment and moderate maintainer responsiveness."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are consistently helpful, clear, patient, and welcoming, making them an exemplary communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits (78 in the last 6 months)",
+        "Active issue resolution (13 closed issues in the last 6 months)",
+        "Regular releases (last release within the last year)",
+        "Multiple active contributors (8 in the last 6 months)"
+      ],
+      "summary": "The kafkactl package appears to be actively maintained with frequent commits, issue resolutions, and releases, indicating a healthy and vibrant project."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks clear markings of breaking changes and migration guides."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.8,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 1.0,
+        "Maintained": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Token-Permissions": 0.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Branch-Protection": -1.0,
+        "Signed-Releases": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Packaging": 10.0,
+        "Vulnerabilities": 10.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 1.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 1006,
+      "forks": 99,
+      "open_issues": 17,
+      "license": "Apache-2.0",
+      "description": "Command Line Tool for managing Apache Kafka",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T15:00:26.237825Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "Community: authorization errors",
+      "Community: configuration issues",
+      "Security: Command injection risk in runner.go",
+      "Security: Lack of input validation for user input",
+      "Security: The ExecuteAndReturn function uses exec.Command which can lead to command injection if the input is not properly sanitized.",
+      "Security: The Execute function also uses exec.Command and has the same risk as above.",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Recent commits (78 in the last 6 months)",
+      "Active issue resolution (13 closed issues in the last 6 months)",
+      "Regular releases (last release within the last year)",
+      "Multiple active contributors (8 in the last 6 months)",
+      "Excellent maintainer communication",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "scorecard_score": 4.8
+  },
+  "analyzed_at": "2026-01-03T15:02:57.066206Z",
+  "data_fetched_at": "2026-01-03T15:02:57.066207Z"
+}
