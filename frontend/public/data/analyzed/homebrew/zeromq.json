@@ -10,11 +10,11 @@
     "repo": "libzmq",
     "subpath": null
   },
-  "install_count_30d": 27314,
+  "install_count_30d": 26830,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 60.5,
+    "overall": 62.9,
     "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,28 +23,42 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 76.0,
-      "weight": 30
+      "score": 86.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 31.300766306496993,
-      "weight": 25
+      "score": 31.010153077538686,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 55.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 80.0,
-      "weight": 10
+      "score": 70.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 43.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 93.0,
-      "weight": 10
+      "score": 98.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,12 +66,12 @@
       "owner": "zeromq",
       "name": "libzmq",
       "description": "ZeroMQ core engine in C++, implements ZMTP/3.1",
-      "stars": 10693,
-      "forks": 2455,
-      "open_issues": 368,
-      "watchers": 10693,
+      "stars": 10694,
+      "forks": 2456,
+      "open_issues": 369,
+      "watchers": 10694,
       "created_at": "2009-07-29T09:56:41Z",
-      "updated_at": "2025-12-31T09:06:47Z",
+      "updated_at": "2026-01-01T13:23:28Z",
       "pushed_at": "2025-09-10T13:30:02Z",
       "default_branch": "master",
       "license": "MPL-2.0",
@@ -179,7 +193,7 @@
       "configuration": 7,
       "troubleshooting": 3,
       "overall": 5,
-      "summary": "The ZeroMQ README provides detailed technical information, but lacks clear installation instructions and examples for new users.",
+      "summary": "The documentation provides detailed information about the package, but lacks clear installation instructions and examples for new users.",
       "top_issue": "Lack of a quick start guide or basic usage example"
     },
     "security": {
@@ -189,27 +203,30 @@
       "secrets_found": [
         {
           "file": "src/curve_server.cpp",
-          "line": 23,
+          "line": 24,
           "type": "secret key"
+        },
+        {
+          "file": "src/curve_server.cpp",
+          "line": 93,
+          "type": "cookie key"
         }
       ],
-      "critical_findings": [
-        "Potential information disclosure through error messages in the 'process_hello' and 'produce_welcome' functions."
-      ],
-      "summary": "The code has some security concerns, including potential input validation issues and error exposure, but overall it appears to be well-structured and secure."
+      "critical_findings": [],
+      "summary": "The provided ZeroMQ Curve server implementation appears to follow secure coding practices, but lacks comprehensive input validation and may expose some internal details through error handling."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
+        "crashes",
         "memory leaks",
-        "assertion failures",
-        "multicast issues"
+        "disconnect issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The zeromq community is experiencing frustration with unresolved issues, including memory leaks and assertion failures, indicating a need for more active maintenance."
+      "summary": "The zeromq community is experiencing frustration with unresolved issues, including crashes and memory leaks, indicating a need for more active maintenance."
     },
     "communication": {
       "helpfulness": 6,
@@ -222,7 +239,7 @@
         "repeatedly directing users to other resources without providing clear guidance",
         "lack of detailed explanations for technical decisions"
       ],
-      "summary": "The maintainer's responses are technically sound but often brief and lacking in patience, clarity, and welcomingness, which may hinder effective issue resolution and contributor engagement."
+      "summary": "The maintainer responses are technically sound but often brief and lacking in patience, clarity, and welcomingness, which may hinder effective issue resolution and contributor engagement."
     },
     "maintenance": {
       "status": "stale",
@@ -242,30 +259,80 @@
     "changelog": null,
     "governance": null
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 5.1,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 9.0,
+        "Maintained": 0.0,
+        "Packaging": -1.0,
+        "Dangerous-Workflow": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Security-Policy": 10.0,
+        "Token-Permissions": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Fuzzing": 10.0,
+        "License": 10.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Vulnerabilities": 10.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 9.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 10692,
+      "forks": 2454,
+      "open_issues": 368,
+      "license": "non-standard",
+      "description": "ZeroMQ core engine in C++, implements ZMTP/3.1",
+      "oss_fuzz_line_count": 28811,
+      "oss_fuzz_line_cover_count": 4831
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T02:05:27.857179Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "stale",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "The ZeroMQ README provides detailed technical information, but lacks clear installation instructions and examples for new users.",
+    "doc_summary": "The documentation provides detailed information about the package, but lacks clear installation instructions and examples for new users.",
     "concerns": [
       "low number of commits in the past 6 months",
       "large number of open issues",
       "infrequent release updates",
       "limited number of active contributors",
       "Docs: Lack of a quick start guide or basic usage example",
+      "Community: crashes",
       "Community: memory leaks",
-      "Community: assertion failures",
       "Communication: repeatedly directing users to other resources without providing clear guidance",
       "Communication: lack of detailed explanations for technical decisions",
-      "Security: Potential information disclosure through error messages in the 'process_hello' and 'produce_welcome' functions."
+      "Weak branch protection settings"
     ],
     "highlights": [
       "some recent commit activity",
       "presence of merged PRs in the past 6 months",
-      "CI/CD configured"
+      "CI/CD configured",
+      "Fuzzing enabled"
     ],
     "community_sentiment": "negative",
-    "communication_style": "adequate"
+    "communication_style": "adequate",
+    "scorecard_score": 5.1
   },
-  "analyzed_at": "2025-12-31T15:02:10.649602Z",
-  "data_fetched_at": "2025-12-31T15:02:10.649603Z"
+  "analyzed_at": "2026-01-03T02:07:48.475559Z",
+  "data_fetched_at": "2026-01-03T02:07:48.475559Z"
 }

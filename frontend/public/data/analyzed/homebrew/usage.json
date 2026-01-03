@@ -10,7 +10,7 @@
     "repo": "usage",
     "subpath": null
   },
-  "install_count_30d": 25690,
+  "install_count_30d": 25142,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
@@ -24,27 +24,33 @@
     "project_age_band": "established",
     "security": {
       "score": 74.0,
-      "weight": 30
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
       "score": 95.1,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 95.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 73.2,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
       "score": 50.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +58,13 @@
       "owner": "jdx",
       "name": "usage",
       "description": "A specification for CLIs",
-      "stars": 468,
+      "stars": 469,
       "forks": 24,
-      "open_issues": 21,
-      "watchers": 468,
+      "open_issues": 22,
+      "watchers": 469,
       "created_at": "2023-08-12T05:20:17Z",
-      "updated_at": "2025-12-31T01:14:11Z",
-      "pushed_at": "2025-12-31T01:16:31Z",
+      "updated_at": "2026-01-02T09:42:22Z",
+      "pushed_at": "2026-01-02T09:46:49Z",
       "default_branch": "main",
       "license": "MIT",
       "language": "Rust",
@@ -71,7 +77,7 @@
     "contributors": {
       "total_contributors": 17,
       "active_contributors_6mo": 10,
-      "top_contributor_pct": 62.2,
+      "top_contributor_pct": 62.0,
       "contributors_over_5pct": 3,
       "contributors_prev_6mo": 9,
       "contributor_trend": "stable",
@@ -79,9 +85,9 @@
       "contributor_entropy": 1.65
     },
     "commits": {
-      "last_commit_date": "2025-12-31T01:14:06Z",
-      "commits_last_6mo": 102,
-      "commits_last_year": 155
+      "last_commit_date": "2026-01-02T09:42:18Z",
+      "commits_last_6mo": 104,
+      "commits_last_year": 156
     },
     "issues": {
       "open_issues": 20,
@@ -92,9 +98,9 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 1,
-      "merged_prs_6mo": 101,
-      "closed_prs_6mo": 111,
+      "open_prs": 2,
+      "merged_prs_6mo": 103,
+      "closed_prs_6mo": 113,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -150,7 +156,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 8,
-      "recent_runs_pass_rate": 88.0,
+      "recent_runs_pass_rate": 84.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -177,34 +183,34 @@
           "file": "cli/src/shebang.rs",
           "line": 34,
           "severity": "high",
-          "description": "The `create_script` function writes user-controlled data to a file, which is then executed. This could lead to arbitrary code execution if an attacker can control the input."
+          "description": "The create_script function writes user-controlled data to a file without proper validation, potentially leading to code injection attacks."
         },
         {
           "file": "cli/src/shebang.rs",
-          "line": 51,
-          "severity": "high",
-          "description": "The `exec::Command` and `std::process::Command` are used with user-controlled data, which could lead to command injection attacks if an attacker can control the input."
+          "line": 56,
+          "severity": "medium",
+          "description": "The execute function uses the exec::Command::new function with user-controlled input, which may lead to command injection vulnerabilities if not properly sanitized."
         }
       ],
       "input_validation_score": 4,
       "secrets_found": [],
       "critical_findings": [
-        "Arbitrary code execution vulnerability in the `create_script` function",
-        "Command injection vulnerability in the `exec::Command` and `std::process::Command`"
+        "Potential code injection vulnerability in the create_script function",
+        "Command injection vulnerability in the execute function"
       ],
-      "summary": "The code has several security concerns, including arbitrary code execution and command injection vulnerabilities, which could be exploited by an attacker to gain unauthorized access or execute malicious code."
+      "summary": "The provided code has several security concerns, including potential code and command injection vulnerabilities, lack of input validation, and insufficient error handling, which may lead to unauthorized access or data breaches."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "help printing issues",
-        "dependency updates"
+        "dependency issues",
+        "script compatibility problems"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health of the usage package appears to be stable, with maintainers actively closing issues and users reporting specific problems that are being addressed."
+      "summary": "The community health of the usage package appears to be stable, with some open issues and moderate maintainer responsiveness."
     },
     "communication": {
       "helpfulness": 8,
@@ -214,7 +220,8 @@
       "welcomingness": 6,
       "communication_style": "good",
       "red_flags": [
-        "occasional brevity, lack of explicit encouragement for new contributors"
+        "occasional brevity may confuse new contributors",
+        "some responses assume prior knowledge"
       ],
       "summary": "The maintainer provides clear and technically sound responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
@@ -222,15 +229,15 @@
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [
-        "relatively low number of closed issues"
+        "low issue closure rate"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "high number of merged PRs",
-        "multiple active contributors"
+        "high commit frequency",
+        "recent releases",
+        "multiple active contributors",
+        "high PR merge rate"
       ],
-      "summary": "The package is actively maintained with frequent updates, a recent release, and a high level of community engagement."
+      "summary": "The package is actively maintained with frequent commits, recent releases, and a high rate of pull request merges, despite some concerns about the low issue closure rate."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -243,32 +250,57 @@
     },
     "governance": null
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 468,
+      "forks": 24,
+      "open_issues": 24,
+      "license": "MIT",
+      "description": "A specification for CLIs",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T02:32:01.009943Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
     "doc_summary": "The documentation is clear about the package's purpose, but lacks essential information on installation, usage, and troubleshooting.",
     "concerns": [
-      "relatively low number of closed issues",
+      "low issue closure rate",
       "Docs: Missing installation instructions",
-      "Community: help printing issues",
-      "Community: dependency updates",
-      "Communication: occasional brevity, lack of explicit encouragement for new contributors",
-      "Security: Arbitrary code execution vulnerability in the `create_script` function",
-      "Security: Command injection vulnerability in the `exec::Command` and `std::process::Command`",
-      "Security: The `create_script` function writes user-controlled data to a file, which is then executed. This could lead to arbitrary code execution if an attacker can control the input.",
-      "Security: The `exec::Command` and `std::process::Command` are used with user-controlled data, which could lead to command injection attacks if an attacker can control the input."
+      "Community: dependency issues",
+      "Community: script compatibility problems",
+      "Communication: occasional brevity may confuse new contributors",
+      "Communication: some responses assume prior knowledge",
+      "Security: Potential code injection vulnerability in the create_script function",
+      "Security: Command injection vulnerability in the execute function",
+      "Security: The create_script function writes user-controlled data to a file without proper validation, potentially leading to code injection attacks."
     ],
     "highlights": [
-      "frequent commits",
-      "recent release",
-      "high number of merged PRs",
+      "high commit frequency",
+      "recent releases",
       "multiple active contributors",
+      "high PR merge rate",
       "Actively maintained",
       "CI/CD configured"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "good"
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 468,
+      "forks": 24,
+      "open_issues": 24
+    }
   },
-  "analyzed_at": "2025-12-31T15:19:24.409298Z",
-  "data_fetched_at": "2025-12-31T15:19:24.409299Z"
+  "analyzed_at": "2026-01-03T02:34:39.647870Z",
+  "data_fetched_at": "2026-01-03T02:34:39.647871Z"
 }

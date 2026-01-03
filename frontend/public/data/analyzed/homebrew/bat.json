@@ -10,12 +10,12 @@
     "repo": "bat",
     "subpath": null
   },
-  "install_count_30d": 31982,
+  "install_count_30d": 26358,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 94.5,
-    "grade": "A",
+    "overall": 87.0,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
@@ -23,28 +23,38 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
-      "weight": 30
+      "score": 77.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 85.0,
-      "weight": 10
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 76.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 83.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +62,13 @@
       "owner": "sharkdp",
       "name": "bat",
       "description": "A cat(1) clone with wings.",
-      "stars": 56415,
-      "forks": 1431,
-      "open_issues": 334,
-      "watchers": 56415,
+      "stars": 56455,
+      "forks": 1432,
+      "open_issues": 338,
+      "watchers": 56455,
       "created_at": "2018-04-21T10:52:23Z",
-      "updated_at": "2025-12-31T04:00:43Z",
-      "pushed_at": "2025-12-28T06:02:57Z",
+      "updated_at": "2026-01-02T21:07:50Z",
+      "pushed_at": "2026-01-01T04:36:46Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "Rust",
@@ -79,8 +89,8 @@
     },
     "contributors": {
       "total_contributors": 399,
-      "active_contributors_6mo": 44,
-      "top_contributor_pct": 29.2,
+      "active_contributors_6mo": 43,
+      "top_contributor_pct": 29.1,
       "contributors_over_5pct": 5,
       "contributors_prev_6mo": 27,
       "contributor_trend": "growing",
@@ -88,12 +98,12 @@
       "contributor_entropy": 5.22
     },
     "commits": {
-      "last_commit_date": "2025-12-28T06:02:56Z",
-      "commits_last_6mo": 272,
-      "commits_last_year": 462
+      "last_commit_date": "2026-01-01T04:33:25Z",
+      "commits_last_6mo": 277,
+      "commits_last_year": 465
     },
     "issues": {
-      "open_issues": 283,
+      "open_issues": 279,
       "closed_issues_6mo": 75,
       "avg_response_time_hours": 53.6,
       "avg_close_time_hours": 224.4,
@@ -101,8 +111,9 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 17,
-      "merged_prs_6mo": 119,
+      "open_prs": 21,
+      "merged_prs_6mo": 123,
+      "closed_prs_6mo": 163,
       "stale_prs": 3,
       "avg_merge_time_hours": null
     },
@@ -158,7 +169,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 4,
-      "recent_runs_pass_rate": 68.0,
+      "recent_runs_pass_rate": 56.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -172,44 +183,47 @@
       "installation": 2,
       "quick_start": 9,
       "examples": 10,
-      "configuration": 7,
+      "configuration": 6,
       "troubleshooting": 4,
-      "overall": 6,
+      "overall": 7,
       "summary": "The README provides excellent examples and usage information, but lacks clear installation instructions and troubleshooting guidance.",
       "top_issue": "Installation instructions are not provided in the README."
     },
     "security": {
-      "overall_score": 8,
+      "overall_score": 7,
       "injection_risks": [
         {
           "file": "src/bin/bat/main.rs",
-          "line": 234,
+          "line": 123,
           "severity": "low",
-          "description": "The use of `writeln!` macro with user-controlled input may lead to potential format string vulnerabilities, although it's unlikely in this context."
+          "description": "The use of `writeln!` macro with user-controlled input may lead to potential format string vulnerabilities, but it's not directly exploitable in this context."
         },
         {
           "file": "src/bin/bat/main.rs",
           "line": 246,
           "severity": "low",
-          "description": "The use of `write!` macro with user-controlled input may lead to potential format string vulnerabilities, although it's unlikely in this context."
+          "description": "The use of `write!` macro with user-controlled input may lead to potential format string vulnerabilities, but it's not directly exploitable in this context."
         }
       ],
       "input_validation_score": 8,
       "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The code appears to be generally secure, but there are some minor concerns regarding input validation and potential format string vulnerabilities."
+      "critical_findings": [
+        "Potential for path traversal attacks",
+        "Lack of validation for file paths and extensions"
+      ],
+      "summary": "The code has some potential security issues related to input validation and error handling, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
         "syntax highlighting issues",
-        "compatibility problems"
+        "compilation problems on Windows"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The bat community is moderately active with some users experiencing frustration due to syntax highlighting and compatibility issues, but maintainers are responsive to reported problems."
+      "summary": "The bat community appears to be moderately active with some open issues, but maintainers are responsive and addressing user concerns in a timely manner."
     },
     "communication": {
       "helpfulness": 9,
@@ -219,20 +233,18 @@
       "welcomingness": 9,
       "communication_style": "exemplary",
       "red_flags": [],
-      "summary": "The maintainer's responses are extremely helpful, clear, patient, and technically sound, making them an exemplary model for open-source communication."
+      "summary": "The maintainer's responses are extremely helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [],
       "positive_signals": [
-        "High number of commits in the past 6 months (272)",
-        "Recent last commit (2025-12-28)",
-        "Frequent releases (last release on 2025-12-02)",
-        "Large number of merged PRs in the past 6 months (119)",
-        "Many active contributors in the past 6 months (44)"
+        "High number of commits in the past 6 months (277)",
+        "Large number of merged PRs in the past 6 months (123)",
+        "Many contributors active in the past 6 months (43)"
       ],
-      "summary": "The bat package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+      "summary": "The bat package appears to be actively maintained with frequent updates, a large contributor base, and a high volume of pull requests being addressed."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -241,7 +253,7 @@
       "appears_complete": true,
       "clarity_score": 8,
       "overall_score": 7,
-      "summary": "The changelog is well-organized and comprehensive, but lacks explicit breaking change markers and migration guides."
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
     "governance": {
       "has_succession_plan": false,
@@ -252,6 +264,54 @@
       "summary": "The governance documentation for the homebrew package 'bat' lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.3,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Security-Policy": 10.0,
+        "Packaging": -1.0,
+        "Token-Permissions": 0.0,
+        "Code-Review": 3.0,
+        "CII-Best-Practices": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "Fuzzing": 0.0,
+        "Binary-Artifacts": 10.0,
+        "License": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "Branch-Protection": -1.0,
+        "Signed-Releases": 0.0,
+        "Vulnerabilities": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 3.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 56394,
+      "forks": 1430,
+      "open_issues": 333,
+      "license": "Apache-2.0",
+      "description": "A cat(1) clone with wings.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T02:16:20.076353Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
@@ -259,23 +319,24 @@
     "concerns": [
       "Docs: Installation instructions are not provided in the README.",
       "Community: syntax highlighting issues",
-      "Community: compatibility problems",
-      "Governance: High bus factor risk identified"
+      "Community: compilation problems on Windows",
+      "Governance: High bus factor risk identified",
+      "Security: Potential for path traversal attacks",
+      "Security: Lack of validation for file paths and extensions",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (272)",
-      "Recent last commit (2025-12-28)",
-      "Frequent releases (last release on 2025-12-02)",
-      "Large number of merged PRs in the past 6 months (119)",
-      "Many active contributors in the past 6 months (44)",
+      "High number of commits in the past 6 months (277)",
+      "Large number of merged PRs in the past 6 months (123)",
+      "Many contributors active in the past 6 months (43)",
       "Excellent maintainer communication",
-      "Code follows security best practices",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "mixed",
-    "communication_style": "exemplary"
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "scorecard_score": 4.3
   },
-  "analyzed_at": "2025-12-31T05:29:43.808637Z",
-  "data_fetched_at": "2025-12-31T05:29:43.808637Z"
+  "analyzed_at": "2026-01-03T02:19:38.221081Z",
+  "data_fetched_at": "2026-01-03T02:19:38.221082Z"
 }

@@ -10,11 +10,11 @@
     "repo": "tree-sitter",
     "subpath": null
   },
-  "install_count_30d": 25045,
+  "install_count_30d": 26370,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 82.7,
+    "overall": 80.7,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,28 +23,38 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
-      "weight": 30
+      "score": 75.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 98.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 58.760000000000005,
-      "weight": 10
+      "score": 53.8,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 35.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 96.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +62,13 @@
       "owner": "tree-sitter",
       "name": "tree-sitter",
       "description": "An incremental parsing system for programming tools",
-      "stars": 23177,
-      "forks": 2303,
-      "open_issues": 117,
-      "watchers": 23177,
+      "stars": 23206,
+      "forks": 2312,
+      "open_issues": 118,
+      "watchers": 23206,
       "created_at": "2013-11-06T06:16:00Z",
-      "updated_at": "2025-12-31T13:17:57Z",
-      "pushed_at": "2025-12-31T12:32:11Z",
+      "updated_at": "2026-01-03T00:33:02Z",
+      "pushed_at": "2025-12-31T19:37:17Z",
       "default_branch": "master",
       "license": "MIT",
       "language": "Rust",
@@ -87,15 +97,15 @@
       "contributor_entropy": 2.97
     },
     "commits": {
-      "last_commit_date": "2025-12-31T11:27:09Z",
-      "commits_last_6mo": 370,
-      "commits_last_year": 684
+      "last_commit_date": "2025-12-29T19:12:25Z",
+      "commits_last_6mo": 369,
+      "commits_last_year": 685
     },
     "issues": {
-      "open_issues": 102,
-      "closed_issues_6mo": 75,
+      "open_issues": 103,
+      "closed_issues_6mo": 76,
       "avg_response_time_hours": 29.3,
-      "avg_close_time_hours": 26.5,
+      "avg_close_time_hours": 26.6,
       "good_first_issue_count": 5,
       "regression_issue_count": 0
     },
@@ -158,7 +168,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 15,
-      "recent_runs_pass_rate": 82.0,
+      "recent_runs_pass_rate": 80.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -176,7 +186,7 @@
       "troubleshooting": 1,
       "overall": 3,
       "summary": "The README provides a good overview of the package's purpose and features, but lacks clear installation instructions, usage examples, and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions and quick start example"
+      "top_issue": "Lack of clear installation instructions and quick start guide"
     },
     "security": {
       "overall_score": 7,
@@ -185,33 +195,34 @@
           "file": "crates/xtask/src/main.rs",
           "line": 246,
           "severity": "medium",
-          "description": "The `Command::new(\"git\").args([\"commit\", \"-m\", msg])` line is vulnerable to command injection if the `msg` variable contains user input."
+          "description": "The `Command::new(\"git\").args([\"commit\", \"-m\", msg])` line is vulnerable to command injection if the `msg` variable contains user-controlled input."
         },
         {
           "file": "crates/xtask/src/main.rs",
           "line": 239,
           "severity": "medium",
-          "description": "The `Command::new(\"git\").args([\"add\", path])` line is vulnerable to command injection if the `path` variable contains user input."
+          "description": "The `Command::new(\"git\").args([\"add\", path])` line is vulnerable to command injection if the `path` variable contains user-controlled input."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential command injection vulnerability in the `create_commit` function"
+        "Potential command injection vulnerabilities in the `create_commit` function",
+        "Lack of input validation and sanitization"
       ],
-      "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
+      "summary": "The code has some potential security risks, including command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "error recovery",
-        "DLL export issues"
+        "export symbols missing on Windows",
+        "formatting issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively engaged with the project, with maintainers responding to and resolving issues in a timely manner, indicating overall good health."
+      "summary": "The community is actively reporting and discussing technical issues, but the maintainer's responsiveness is moderate, indicating a relatively healthy project with some areas for improvement."
     },
     "communication": null,
     "maintenance": {
@@ -219,13 +230,12 @@
       "confidence": 9,
       "concerns": [],
       "positive_signals": [
-        "High number of commits in the past 6 months (370)",
-        "Recent last commit (2025-12-31)",
-        "Frequent releases (last release on 2025-12-13)",
+        "High number of commits in the past 6 months (369)",
+        "Recent last commit (2025-12-29) and last release (2025-12-13)",
         "Large number of merged PRs in the past 6 months (237)",
-        "Many active contributors in the past 6 months (33)"
+        "Multiple active contributors in the past 6 months (33)"
       ],
-      "summary": "The tree-sitter package is actively maintained with a high volume of commits, releases, and contributor activity."
+      "summary": "The tree-sitter package is actively maintained with frequent commits, releases, and a large number of contributors."
     },
     "changelog": null,
     "governance": {
@@ -237,28 +247,77 @@
       "summary": "The governance documentation for tree-sitter@0.25 lacks clear plans for succession, decision making, contributor advancement, and multiple maintainers, posing a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 5.4,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 10.0,
+        "Maintained": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "License": 10.0,
+        "Binary-Artifacts": 10.0,
+        "Token-Permissions": 0.0,
+        "Fuzzing": 0.0,
+        "Security-Policy": 0.0,
+        "Packaging": 10.0,
+        "Branch-Protection": 5.0,
+        "Pinned-Dependencies": 1.0,
+        "Signed-Releases": 0.0,
+        "SAST": 0.0,
+        "Vulnerabilities": 8.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 5.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 23143,
+      "forks": 2297,
+      "open_issues": 120,
+      "license": "MIT",
+      "description": "An incremental parsing system for programming tools",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T02:13:42.176764Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
     "doc_summary": "The README provides a good overview of the package's purpose and features, but lacks clear installation instructions, usage examples, and troubleshooting guidance.",
     "concerns": [
-      "Docs: Lack of clear installation instructions and quick start example",
-      "Community: error recovery",
-      "Community: DLL export issues",
+      "Docs: Lack of clear installation instructions and quick start guide",
+      "Community: export symbols missing on Windows",
+      "Community: formatting issues",
       "Governance: High bus factor risk identified",
-      "Security: Potential command injection vulnerability in the `create_commit` function"
+      "Security: Potential command injection vulnerabilities in the `create_commit` function",
+      "Security: Lack of input validation and sanitization"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (370)",
-      "Recent last commit (2025-12-31)",
-      "Frequent releases (last release on 2025-12-13)",
+      "High number of commits in the past 6 months (369)",
+      "Recent last commit (2025-12-29) and last release (2025-12-13)",
       "Large number of merged PRs in the past 6 months (237)",
-      "Many active contributors in the past 6 months (33)",
+      "Multiple active contributors in the past 6 months (33)",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "neutral"
+    "community_sentiment": "neutral",
+    "scorecard_score": 5.4
   },
-  "analyzed_at": "2025-12-31T15:27:37.961278Z",
-  "data_fetched_at": "2025-12-31T15:27:37.961279Z"
+  "analyzed_at": "2026-01-03T02:15:46.012892Z",
+  "data_fetched_at": "2026-01-03T02:15:46.012893Z"
 }
