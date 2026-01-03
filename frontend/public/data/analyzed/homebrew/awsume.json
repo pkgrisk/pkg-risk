@@ -1,0 +1,324 @@
+{
+  "ecosystem": "homebrew",
+  "name": "awsume",
+  "description": "Utility for easily assuming AWS IAM roles from the command-line",
+  "version": "4.5.4",
+  "homepage": "https://awsu.me",
+  "repository": {
+    "platform": "github",
+    "owner": "trek10inc",
+    "repo": "awsume",
+    "subpath": null
+  },
+  "install_count_30d": 327,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 48.8,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 57.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 34.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 45.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 67.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 24.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 73.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "trek10inc",
+      "name": "awsume",
+      "description": "A utility for easily assuming AWS IAM roles from the command line.",
+      "stars": 16,
+      "forks": 1,
+      "open_issues": 38,
+      "watchers": 16,
+      "created_at": "2016-03-31T15:12:15Z",
+      "updated_at": "2025-12-10T00:16:39Z",
+      "pushed_at": "2025-11-21T21:47:28Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Python",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 45,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 69.6,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 2.12
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 23,
+      "closed_issues_6mo": 2,
+      "avg_response_time_hours": 190.7,
+      "avg_close_time_hours": 4081.8,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 15,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 14,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 53.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 94,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 52.1,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 2,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 1,
+      "summary": "The documentation is severely lacking, with only a link to external documentation provided.",
+      "top_issue": "No relevant information is included in the README, forcing users to leave the page to learn more."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "awsume/autoawsume/main.py",
+          "line": 123,
+          "severity": "medium",
+          "description": "The function refresh_profile uses the awsumepy.awsume function with user input from auto_profile.get('awsumepy_command').split(' '). This could potentially lead to command injection if the input is not properly sanitized."
+        },
+        {
+          "file": "awsume/configure/main.py",
+          "line": 71,
+          "severity": "low",
+          "description": "The function install uses subprocess.Popen with user input from shell, alias_file, and autocomplete_file. Although this seems to be used for installing aliases and autocompletion, it's still worth noting that using subprocess can potentially lead to command injection if the inputs are not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in refresh_profile function",
+        "Lack of input validation in refresh_profile and install functions"
+      ],
+      "summary": "The code has some potential security issues, including a possible command injection vulnerability and lack of input validation, but overall it seems to be well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "installation issues",
+        "credential errors"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The awsume community is experiencing frustration with ongoing technical issues and slow maintainer responsiveness, indicating potential project abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [
+        "occasional lack of technical detail",
+        "some responses seem brief"
+      ],
+      "summary": "The maintainer's responses are generally helpful, clear, and patient, but could benefit from more detailed explanations and a more consistent tone."
+    },
+    "maintenance": {
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "no commits in the past 6 months",
+        "large number of open issues and PRs with no recent closures or merges"
+      ],
+      "positive_signals": [
+        "10 contributors active in the past 6 months"
+      ],
+      "summary": "The awsume package appears to be abandoned due to a lack of recent commits, releases, and activity on open issues and PRs."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 3.0,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 5.0,
+        "Maintained": 0.0,
+        "Packaging": -1.0,
+        "Dangerous-Workflow": 10.0,
+        "Token-Permissions": 0.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Signed-Releases": -1.0,
+        "Branch-Protection": 0.0,
+        "SAST": 0.0,
+        "Vulnerabilities": 0.0
+      },
+      "code_review_score": 5.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 16,
+      "forks": 1,
+      "open_issues": 38,
+      "license": "MIT",
+      "description": "A utility for easily assuming AWS IAM roles from the command line.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T07:25:17.920200Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "abandoned",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is severely lacking, with only a link to external documentation provided.",
+    "concerns": [
+      "no commits in the past 6 months",
+      "large number of open issues and PRs with no recent closures or merges",
+      "Docs: No relevant information is included in the README, forcing users to leave the page to learn more.",
+      "Possible abandonment signals detected",
+      "Community: installation issues",
+      "Community: credential errors",
+      "Communication: occasional lack of technical detail",
+      "Communication: some responses seem brief",
+      "Security: Potential command injection vulnerability in refresh_profile function",
+      "Security: Lack of input validation in refresh_profile and install functions",
+      "Low OpenSSF Scorecard: 3.0/10",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "10 contributors active in the past 6 months",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good",
+    "scorecard_score": 3.0
+  },
+  "analyzed_at": "2026-01-03T07:27:31.140316Z",
+  "data_fetched_at": "2026-01-03T07:27:31.140317Z"
+}
