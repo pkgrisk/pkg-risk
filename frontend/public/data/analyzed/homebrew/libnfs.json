@@ -1,0 +1,321 @@
+{
+  "ecosystem": "homebrew",
+  "name": "libnfs",
+  "description": "C client library for NFS",
+  "version": "6.0.2",
+  "homepage": "https://github.com/sahlberg/libnfs",
+  "repository": {
+    "platform": "github",
+    "owner": "sahlberg",
+    "repo": "libnfs",
+    "subpath": null
+  },
+  "install_count_30d": 261,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 75.8,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 85.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "SAST enabled (Scorecard)",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 82.21003421811567,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 62.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 58.2,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 66.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "sahlberg",
+      "name": "libnfs",
+      "description": "NFS client library",
+      "stars": 590,
+      "forks": 231,
+      "open_issues": 16,
+      "watchers": 590,
+      "created_at": "2011-02-06T04:41:25Z",
+      "updated_at": "2025-12-25T23:43:30Z",
+      "pushed_at": "2025-11-04T10:13:07Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 87,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 72.7,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 14,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 2.28
+    },
+    "commits": {
+      "last_commit_date": "2025-11-04T10:12:43Z",
+      "commits_last_6mo": 49,
+      "commits_last_year": 132
+    },
+    "issues": {
+      "open_issues": 15,
+      "closed_issues_6mo": 8,
+      "avg_response_time_hours": 358.9,
+      "avg_close_time_hours": 1095.3,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 2,
+      "closed_prs_6mo": 2,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 24.0,
+      "has_dependabot": false,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 13406,
+      "has_license": false,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": true,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 66.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 6,
+      "installation": 2,
+      "quick_start": 4,
+      "examples": 8,
+      "configuration": 9,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The documentation is detailed but lacks clear installation instructions and a concise quick start guide.",
+      "top_issue": "Installation instructions are not provided, making it difficult for new users to get started with the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "lib/krb5-wrapper.c",
+          "line": 231,
+          "severity": "low",
+          "description": "Use of asprintf() with user-controlled input, but the input is validated and sanitized before use."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The code has some minor security concerns related to input validation and error handling, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "compilation issues",
+        "performance problems"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The libnfs community is moderately active, with some users experiencing frustration due to compilation and performance issues, but the maintainer is responsive to reported problems."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer provides clear, patient, and technically detailed responses that effectively help resolve issues and encourage new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "unknown last release",
+        "low number of contributors"
+      ],
+      "positive_signals": [
+        "recent commits",
+        "active issue closure",
+        "merged PRs"
+      ],
+      "summary": "The libnfs package appears to be maintained with regular commits and issue closures, but lacks visibility into its release history and has a limited number of active contributors."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is comprehensive and well-organized, but lacks clear markings for breaking changes and migration guides."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.5,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Dangerous-Workflow": 10.0,
+        "Packaging": -1.0,
+        "Maintained": 5.0,
+        "Code-Review": 0.0,
+        "SAST": 10.0,
+        "Binary-Artifacts": 10.0,
+        "Token-Permissions": 0.0,
+        "CII-Best-Practices": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Security-Policy": 0.0,
+        "Vulnerabilities": 10.0,
+        "Fuzzing": 0.0,
+        "License": 9.0,
+        "Signed-Releases": -1.0,
+        "Branch-Protection": 0.0
+      },
+      "code_review_score": 0.0,
+      "maintained_score": 5.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": true,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 590,
+      "forks": 230,
+      "open_issues": 16,
+      "license": "non-standard",
+      "description": "NFS client library",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T12:39:45.343699Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is detailed but lacks clear installation instructions and a concise quick start guide.",
+    "concerns": [
+      "unknown last release",
+      "low number of contributors",
+      "Docs: Installation instructions are not provided, making it difficult for new users to get started with the package.",
+      "Community: compilation issues",
+      "Community: performance problems",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "recent commits",
+      "active issue closure",
+      "merged PRs",
+      "Actively maintained",
+      "CI/CD configured",
+      "SAST enabled"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "scorecard_score": 4.5
+  },
+  "analyzed_at": "2026-01-03T12:42:41.307490Z",
+  "data_fetched_at": "2026-01-03T12:42:41.307491Z"
+}
