@@ -10,11 +10,11 @@
     "repo": "yt-dlp",
     "subpath": null
   },
-  "install_count_30d": 54617,
+  "install_count_30d": 55487,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 86.7,
+    "overall": 88.0,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,28 +23,41 @@
     "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 78.0,
-      "weight": 30
+      "score": 86.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Proper token permissions",
+        "SAST enabled (Scorecard)",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 100.0,
-      "weight": 15
+      "score": 96.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 80.0,
-      "weight": 10
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 53.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +65,13 @@
       "owner": "yt-dlp",
       "name": "yt-dlp",
       "description": "A feature-rich command-line audio/video downloader",
-      "stars": 140057,
-      "forks": 11330,
-      "open_issues": 2220,
-      "watchers": 140057,
+      "stars": 140390,
+      "forks": 11351,
+      "open_issues": 2230,
+      "watchers": 140390,
       "created_at": "2020-10-26T04:22:55Z",
-      "updated_at": "2025-12-31T03:14:56Z",
-      "pushed_at": "2025-12-30T21:05:10Z",
+      "updated_at": "2026-01-02T22:35:46Z",
+      "pushed_at": "2026-01-02T16:02:58Z",
       "default_branch": "master",
       "license": "Unlicense",
       "language": "Python",
@@ -78,31 +91,32 @@
     },
     "contributors": {
       "total_contributors": 380,
-      "active_contributors_6mo": 86,
+      "active_contributors_6mo": 88,
       "top_contributor_pct": 29.9,
       "contributors_over_5pct": 6,
       "contributors_prev_6mo": 99,
       "contributor_trend": "stable",
-      "first_time_contributors_6mo": 63,
+      "first_time_contributors_6mo": 64,
       "contributor_entropy": 4.06
     },
     "commits": {
-      "last_commit_date": "2025-12-30T21:05:10Z",
-      "commits_last_6mo": 383,
-      "commits_last_year": 743
+      "last_commit_date": "2026-01-02T16:02:58Z",
+      "commits_last_6mo": 381,
+      "commits_last_year": 747
     },
     "issues": {
-      "open_issues": 193,
-      "closed_issues_6mo": 199,
-      "avg_response_time_hours": 0.3,
-      "avg_close_time_hours": 11.7,
+      "open_issues": 194,
+      "closed_issues_6mo": 200,
+      "avg_response_time_hours": 1.5,
+      "avg_close_time_hours": 6.1,
       "good_first_issue_count": 0,
       "regression_issue_count": 2
     },
     "prs": {
       "open_prs": 300,
       "merged_prs_6mo": 224,
-      "stale_prs": 215,
+      "closed_prs_6mo": 300,
+      "stale_prs": 210,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -157,7 +171,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 12,
-      "recent_runs_pass_rate": 86.0,
+      "recent_runs_pass_rate": 80.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -174,11 +188,11 @@
       "configuration": 7,
       "troubleshooting": 4,
       "overall": 6,
-      "summary": "The documentation is comprehensive but lacks a clear quick start guide, making it difficult for new users to get started quickly.",
-      "top_issue": "Lack of a concise and prominent quick start section"
+      "summary": "The README provides detailed installation and configuration instructions, but lacks a clear quick start guide and troubleshooting section.",
+      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
     },
     "security": {
-      "overall_score": 7,
+      "overall_score": 6,
       "injection_risks": [
         {
           "file": "yt_dlp/extractor/mainstreaming.py",
@@ -188,30 +202,30 @@
         },
         {
           "file": "yt_dlp/extractor/mainstreaming.py",
-          "line": 141,
+          "line": 145,
           "severity": "low",
-          "description": "Use of re.DOTALL flag may lead to potential regex injection risks"
+          "description": "Use of urljoin with user-controlled input, potential for URL manipulation"
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
         "Potential JSON injection risk",
-        "Lack of input validation for user-provided URLs"
+        "Lack of validation on user-provided URLs"
       ],
-      "summary": "The code has some security concerns, including potential JSON injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "site-specific issues",
-        "format sorting"
+        "site-specific bugs",
+        "feature requests"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The yt-dlp community is active and responsive, with users reporting site-specific issues and seeking assistance, but overall sentiment remains neutral."
+      "summary": "The yt-dlp community is moderately active with a mix of open and closed issues, indicating a maintained but sometimes frustrating experience for users."
     },
     "communication": null,
     "maintenance": {
@@ -224,9 +238,10 @@
       "positive_signals": [
         "frequent commits",
         "recent release",
-        "large number of active contributors"
+        "large number of active contributors",
+        "steady issue and PR resolution rate"
       ],
-      "summary": "The package yt-dlp appears to be actively maintained with a high volume of recent activity, despite having a significant number of open issues and pull requests."
+      "summary": "The package yt-dlp appears to be actively maintained with a high volume of commits, releases, and contributor activity, despite having a significant number of open issues and PRs."
     },
     "changelog": null,
     "governance": {
@@ -238,29 +253,82 @@
       "summary": "The governance documentation for yt-dlp lacks a clear succession plan and decision-making process, posing a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 7.5,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Code-Review": 7.0,
+        "Token-Permissions": 10.0,
+        "Security-Policy": 0.0,
+        "CII-Best-Practices": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "License": 10.0,
+        "Binary-Artifacts": 10.0,
+        "Branch-Protection": -1.0,
+        "Pinned-Dependencies": 0.0,
+        "Fuzzing": 0.0,
+        "Vulnerabilities": 10.0,
+        "Signed-Releases": 8.0,
+        "Packaging": 10.0,
+        "SAST": 10.0
+      },
+      "code_review_score": 7.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 10.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": true,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 140009,
+      "forks": 11328,
+      "open_issues": 2225,
+      "license": "non-standard",
+      "description": "A feature-rich command-line audio/video downloader",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T22:59:21.128725Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is comprehensive but lacks a clear quick start guide, making it difficult for new users to get started quickly.",
+    "doc_summary": "The README provides detailed installation and configuration instructions, but lacks a clear quick start guide and troubleshooting section.",
     "concerns": [
       "high number of open issues",
       "high number of open PRs",
-      "Docs: Lack of a concise and prominent quick start section",
-      "Community: site-specific issues",
-      "Community: format sorting",
+      "Docs: Lack of a concise quick start example to help new users get started with the package.",
+      "Community: site-specific bugs",
+      "Community: feature requests",
       "Governance: High bus factor risk identified",
       "Security: Potential JSON injection risk",
-      "Security: Lack of input validation for user-provided URLs"
+      "Security: Lack of validation on user-provided URLs",
+      "Weak branch protection settings"
     ],
     "highlights": [
       "frequent commits",
       "recent release",
       "large number of active contributors",
+      "steady issue and PR resolution rate",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OpenSSF Scorecard: 7.5/10",
+      "SAST enabled"
     ],
-    "community_sentiment": "neutral"
+    "community_sentiment": "mixed",
+    "scorecard_score": 7.5
   },
-  "analyzed_at": "2025-12-31T03:21:23.545388Z",
-  "data_fetched_at": "2025-12-31T03:21:23.545389Z"
+  "analyzed_at": "2026-01-02T23:02:10.559098Z",
+  "data_fetched_at": "2026-01-02T23:02:10.559099Z"
 }

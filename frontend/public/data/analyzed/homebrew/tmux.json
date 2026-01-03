@@ -10,11 +10,11 @@
     "repo": "tmux",
     "subpath": null
   },
-  "install_count_30d": 54899,
+  "install_count_30d": 51444,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 77.8,
+    "overall": 73.3,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,28 +23,42 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 68.0,
-      "weight": 30
+      "score": 53.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Proper token permissions",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 98.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 51.08,
-      "weight": 10
+      "score": 46.1,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 35.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 90.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,12 +66,12 @@
       "owner": "tmux",
       "name": "tmux",
       "description": "tmux source code",
-      "stars": 40455,
-      "forks": 2347,
-      "open_issues": 28,
-      "watchers": 40455,
+      "stars": 40511,
+      "forks": 2350,
+      "open_issues": 34,
+      "watchers": 40511,
       "created_at": "2015-06-03T23:32:55Z",
-      "updated_at": "2025-12-31T01:11:47Z",
+      "updated_at": "2026-01-02T22:03:01Z",
       "pushed_at": "2025-12-25T20:04:58Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -81,10 +95,10 @@
     "commits": {
       "last_commit_date": "2025-12-25T20:01:08Z",
       "commits_last_6mo": 213,
-      "commits_last_year": 345
+      "commits_last_year": 341
     },
     "issues": {
-      "open_issues": 20,
+      "open_issues": 25,
       "closed_issues_6mo": 193,
       "avg_response_time_hours": 9.0,
       "avg_close_time_hours": 68.5,
@@ -92,8 +106,9 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 8,
+      "open_prs": 9,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 63,
       "stale_prs": 2,
       "avg_merge_time_hours": null
     },
@@ -166,43 +181,44 @@
       "configuration": 6,
       "troubleshooting": 3,
       "overall": 5,
-      "summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+      "summary": "The README provides clear installation instructions and some documentation, but lacks a quick start guide and sufficient examples for common use cases.",
+      "top_issue": "Lack of a concise quick start guide to help new users get started with the package"
     },
     "security": {
       "overall_score": 7,
       "injection_risks": [
         {
           "file": "cmd-server-access.c",
-          "line": 73,
+          "line": 63,
           "severity": "medium",
-          "description": "The getpwnam function is used with user input, which could potentially lead to a denial-of-service attack if the input is not validated."
+          "description": "The getpwnam function is used with user-controlled input, which could potentially lead to a denial-of-service attack if the system's password database is large."
         },
         {
-          "file": "server-acl.c",
-          "line": 34,
+          "file": "cmd-server-access.c",
+          "line": 74,
           "severity": "low",
-          "description": "The server_acl_user_find function uses a uid_t type, which is an integer and does not seem to be vulnerable to injection attacks."
+          "description": "The format_single function is used with user-controlled input, but it appears to be properly sanitized."
         }
       ],
-      "input_validation_score": 6,
+      "input_validation_score": 8,
       "secrets_found": [],
       "critical_findings": [
-        "Potential denial-of-service attack through getpwnam in cmd-server-access.c"
+        "Potential denial-of-service attack through getpwnam function",
+        "Lack of input validation for 'name' argument"
       ],
-      "summary": "The code has some potential security risks, including injection vulnerabilities and lack of input validation, but overall it seems to be well-structured and secure."
+      "summary": "The code has some potential security risks, including a possible denial-of-service attack and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "crashes",
-        "formatting issues"
+        "bugs and inconsistencies in new versions",
+        "feature requests not being addressed"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The tmux community is actively reporting and addressing various technical issues, indicating a healthy and engaged user base."
+      "summary": "The tmux community is actively reporting issues and feature requests, with maintainers responding moderately, indicating a relatively healthy but imperfect open-source project."
     },
     "communication": {
       "helpfulness": 9,
@@ -212,51 +228,103 @@
       "welcomingness": 6,
       "communication_style": "good",
       "red_flags": [
-        "occasional brevity may confuse new users",
-        "some responses assume prior knowledge"
+        "occasional abruptness",
+        "assumes some prior knowledge"
       ],
-      "summary": "The maintainer provides detailed and helpful responses, but could improve in terms of clarity and welcomingness for new contributors."
+      "summary": "The maintainer provides detailed and helpful responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "maintained",
+      "confidence": 8,
       "concerns": [
-        "low number of contributors",
-        "no merged PRs in the past 6 months"
+        "Low number of active contributors",
+        "Open issues and PRs exist"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release"
+        "Frequent commits and releases",
+        "Recent activity in issue and PR resolution"
       ],
-      "summary": "The tmux package appears to be minimally maintained with some recent activity, but concerns about contributor count and lack of merged PRs indicate potential issues."
+      "summary": "The tmux package appears to be maintained with regular updates and activity, despite a relatively low number of contributors."
     },
     "changelog": null,
     "governance": null
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 5.4,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Dangerous-Workflow": 10.0,
+        "Packaging": -1.0,
+        "Code-Review": 0.0,
+        "Maintained": 10.0,
+        "Token-Permissions": 10.0,
+        "CII-Best-Practices": 0.0,
+        "SAST": 0.0,
+        "Security-Policy": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Vulnerabilities": 10.0,
+        "License": 9.0,
+        "Fuzzing": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": 0.0
+      },
+      "code_review_score": 0.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 10.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 40426,
+      "forks": 2347,
+      "open_issues": 27,
+      "license": "non-standard",
+      "description": "tmux source code",
+      "oss_fuzz_line_count": 53240,
+      "oss_fuzz_line_cover_count": 7333
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T23:13:39.669683Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
-    "maintenance_status": "minimal-maintenance",
+    "maintenance_status": "maintained",
     "security_summary": "No issues",
-    "doc_summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and comprehensive troubleshooting documentation.",
+    "doc_summary": "The README provides clear installation instructions and some documentation, but lacks a quick start guide and sufficient examples for common use cases.",
     "concerns": [
-      "low number of contributors",
-      "no merged PRs in the past 6 months",
-      "Docs: Lack of a concise quick start example to help new users get started with the package.",
-      "Community: crashes",
-      "Community: formatting issues",
-      "Communication: occasional brevity may confuse new users",
-      "Communication: some responses assume prior knowledge",
-      "Security: Potential denial-of-service attack through getpwnam in cmd-server-access.c",
-      "High bus factor risk (80% from top contributor)"
+      "Low number of active contributors",
+      "Open issues and PRs exist",
+      "Docs: Lack of a concise quick start guide to help new users get started with the package",
+      "Community: bugs and inconsistencies in new versions",
+      "Community: feature requests not being addressed",
+      "Communication: occasional abruptness",
+      "Communication: assumes some prior knowledge",
+      "Security: Potential denial-of-service attack through getpwnam function",
+      "Security: Lack of input validation for 'name' argument",
+      "High bus factor risk (80% from top contributor)",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "frequent commits",
-      "recent release",
+      "Frequent commits and releases",
+      "Recent activity in issue and PR resolution",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "Fuzzing enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "good"
+    "communication_style": "good",
+    "scorecard_score": 5.4
   },
-  "analyzed_at": "2025-12-31T03:13:50.358243Z",
-  "data_fetched_at": "2025-12-31T03:13:50.358244Z"
+  "analyzed_at": "2026-01-02T23:16:12.108596Z",
+  "data_fetched_at": "2026-01-02T23:16:12.108597Z"
 }

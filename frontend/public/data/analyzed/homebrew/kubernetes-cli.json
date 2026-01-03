@@ -10,41 +10,56 @@
     "repo": "kubernetes",
     "subpath": null
   },
-  "install_count_30d": 54893,
+  "install_count_30d": 53392,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 81.2,
+    "overall": 87.2,
     "grade": "B",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "approved",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 62.0,
-      "weight": 30
+      "score": 82.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Dangerous CI/CD workflows detected",
+        "CII Best Practices badge",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 85.0,
-      "weight": 10
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 55.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 85.0,
-      "weight": 10
+      "score": 90.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,12 +67,12 @@
       "owner": "kubernetes",
       "name": "kubernetes",
       "description": "Production-Grade Container Scheduling and Management",
-      "stars": 119560,
-      "forks": 42074,
-      "open_issues": 2534,
-      "watchers": 119560,
+      "stars": 119608,
+      "forks": 42082,
+      "open_issues": 2551,
+      "watchers": 119608,
       "created_at": "2014-06-06T22:56:04Z",
-      "updated_at": "2025-12-31T02:56:37Z",
+      "updated_at": "2026-01-02T20:01:51Z",
       "pushed_at": "2025-12-31T01:48:34Z",
       "default_branch": "master",
       "license": "Apache-2.0",
@@ -85,20 +100,21 @@
     },
     "commits": {
       "last_commit_date": "2025-12-31T01:48:34Z",
-      "commits_last_6mo": 981,
+      "commits_last_6mo": 979,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 95,
+      "open_issues": 92,
       "closed_issues_6mo": 59,
       "avg_response_time_hours": 0.0,
       "avg_close_time_hours": 23.3,
-      "good_first_issue_count": 1,
+      "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
       "open_prs": 300,
       "merged_prs_6mo": 200,
+      "closed_prs_6mo": 300,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
@@ -172,7 +188,7 @@
       "troubleshooting": 7,
       "overall": 5,
       "summary": "The README provides a good introduction to Kubernetes, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and quick start guide for the kubernetes-cli package specifically"
+      "top_issue": "Lack of clear installation instructions and quick start guide"
     },
     "security": {
       "overall_score": 7,
@@ -185,53 +201,51 @@
         },
         {
           "file": "cmd/import-boss/main.go",
-          "line": 64,
+          "line": 63,
           "severity": "low",
-          "description": "The pflag.CommandLine.AddGoFlagSet(flag.CommandLine) line uses the flag package, which can potentially be used for command-line argument injection. However, in this context, it seems to be used safely."
+          "description": "The pflag.Parse() function is used to parse command-line flags. While this is a common and safe practice, it's essential to ensure that the parsed flags are properly validated and sanitized before use."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
-      "critical_findings": [
-        "Potential command injection vulnerability in the cloudConfig.CloudConfigFile variable.",
-        "Lack of input validation and sanitization for user-controlled data."
-      ],
-      "summary": "The code has some potential security issues, including command injection risks and lack of input validation, but overall it seems to follow good security practices."
+      "critical_findings": [],
+      "summary": "The code has some potential security concerns related to input validation and command injection risks, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bug reports",
-        "triage delays"
+        "permanent and transient errors",
+        "image pull failures"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but the maintainers' responsiveness is moderate, indicating a relatively healthy project with room for improvement."
+      "summary": "The community is actively engaged with maintainers, but some issues have been open for an extended period, indicating room for improvement in addressing user concerns."
     },
     "communication": {
-      "helpfulness": 6,
-      "clarity": 8,
-      "patience": 4,
-      "technical_depth": 2,
-      "welcomingness": 3,
-      "communication_style": "adequate",
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
       "red_flags": [
-        "lack of personal interaction",
+        "lack of human interaction",
         "over-reliance on automated responses"
       ],
-      "summary": "The maintainer responses are clear and provide some helpful information, but lack technical depth and a welcoming tone, relying heavily on automated bot responses."
+      "summary": "The maintainer responses are generally helpful and clear, but could benefit from more human interaction and technical depth to fully support contributors."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [],
       "positive_signals": [
-        "High number of commits in the past 6 months (981)",
+        "High number of commits in the past 6 months (979)",
         "Recent last commit (2025-12-31)",
         "Frequent releases (last release on 2025-12-17)",
-        "Large number of active contributors (141) and merged PRs (200)"
+        "Large number of contributors active in the past 6 months (141)",
+        "Steady issue and PR resolution rate"
       ],
       "summary": "The kubernetes-cli package appears to be actively maintained with a high volume of commits, releases, and contributor activity."
     },
@@ -242,7 +256,7 @@
       "appears_complete": true,
       "clarity_score": 2,
       "overall_score": 3,
-      "summary": "The changelog appears to be a comprehensive list of version changes, but lacks clear categorization, migration guides, and breaking change markings, making it difficult for users to understand the impact of updates."
+      "summary": "The changelog appears to be a list of links to individual changelogs, but lacks clear marking of breaking changes, migration guides, and categorization."
     },
     "governance": {
       "has_succession_plan": false,
@@ -253,31 +267,84 @@
       "summary": "The governance documentation for the kubernetes-cli package lacks a clear succession plan and decision-making process, posing a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 7.7,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 10.0,
+        "Maintained": 10.0,
+        "Packaging": -1.0,
+        "CII-Best-Practices": 5.0,
+        "License": 10.0,
+        "Dangerous-Workflow": -1.0,
+        "Token-Permissions": -1.0,
+        "Branch-Protection": -1.0,
+        "Signed-Releases": -1.0,
+        "Security-Policy": 10.0,
+        "SAST": 0.0,
+        "Fuzzing": 10.0,
+        "Binary-Artifacts": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "Vulnerabilities": 8.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": true
+    },
+    "project_metrics": {
+      "stars": 119537,
+      "forks": 42060,
+      "open_issues": 2548,
+      "license": "Apache-2.0",
+      "description": "Production-Grade Container Scheduling and Management",
+      "oss_fuzz_line_count": 106112,
+      "oss_fuzz_line_cover_count": 13830
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T23:06:42.710898Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
     "doc_summary": "The README provides a good introduction to Kubernetes, but lacks clear installation instructions and examples for common use cases.",
     "concerns": [
-      "Docs: Lack of clear installation instructions and quick start guide for the kubernetes-cli package specifically",
-      "Community: bug reports",
-      "Community: triage delays",
-      "Communication: lack of personal interaction",
+      "Docs: Lack of clear installation instructions and quick start guide",
+      "Community: permanent and transient errors",
+      "Community: image pull failures",
+      "Communication: lack of human interaction",
       "Communication: over-reliance on automated responses",
       "Governance: High bus factor risk identified",
-      "Security: Potential command injection vulnerability in the cloudConfig.CloudConfigFile variable.",
-      "Security: Lack of input validation and sanitization for user-controlled data."
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (981)",
+      "High number of commits in the past 6 months (979)",
       "Recent last commit (2025-12-31)",
       "Frequent releases (last release on 2025-12-17)",
-      "Large number of active contributors (141) and merged PRs (200)",
+      "Large number of contributors active in the past 6 months (141)",
+      "Steady issue and PR resolution rate",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OpenSSF Scorecard: 7.7/10",
+      "Has CII Best Practices badge",
+      "Fuzzing enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "adequate"
+    "communication_style": "good",
+    "scorecard_score": 7.7
   },
-  "analyzed_at": "2025-12-31T03:17:50.373934Z",
-  "data_fetched_at": "2025-12-31T03:17:50.373935Z"
+  "analyzed_at": "2026-01-02T23:10:00.775491Z",
+  "data_fetched_at": "2026-01-02T23:10:00.775492Z"
 }

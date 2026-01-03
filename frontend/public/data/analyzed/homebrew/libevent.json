@@ -10,11 +10,11 @@
     "repo": "libevent",
     "subpath": null
   },
-  "install_count_30d": 52331,
+  "install_count_30d": 50350,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 80.0,
+    "overall": 75.9,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,28 +23,42 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
-      "weight": 30
+      "score": 87.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Proper token permissions",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 52.77452075218544,
-      "weight": 25
+      "score": 52.11875860382775,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 85.0,
-      "weight": 10
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 58.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 75.0,
-      "weight": 10
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,13 +66,13 @@
       "owner": "libevent",
       "name": "libevent",
       "description": "Event notification library",
-      "stars": 11780,
-      "forks": 3464,
-      "open_issues": 132,
-      "watchers": 11780,
+      "stars": 11787,
+      "forks": 3462,
+      "open_issues": 133,
+      "watchers": 11787,
       "created_at": "2011-06-06T21:42:50Z",
-      "updated_at": "2025-12-29T11:18:36Z",
-      "pushed_at": "2025-11-22T18:15:57Z",
+      "updated_at": "2026-01-02T17:11:11Z",
+      "pushed_at": "2026-01-01T14:07:39Z",
       "default_branch": "master",
       "license": "NOASSERTION",
       "language": "C",
@@ -74,7 +88,7 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 260,
+      "total_contributors": 259,
       "active_contributors_6mo": 9,
       "top_contributor_pct": 44.4,
       "contributors_over_5pct": 3,
@@ -97,8 +111,9 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 18,
+      "open_prs": 19,
       "merged_prs_6mo": 14,
+      "closed_prs_6mo": 19,
       "stale_prs": 12,
       "avg_merge_time_hours": null
     },
@@ -154,7 +169,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 5,
-      "recent_runs_pass_rate": 50.0,
+      "recent_runs_pass_rate": 54.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -172,27 +187,30 @@
       "troubleshooting": 1,
       "overall": 5,
       "summary": "The README provides detailed installation instructions but lacks a clear introduction, quick start example, and troubleshooting guide.",
-      "top_issue": "Lack of clear introduction to the package's purpose and functionality"
+      "top_issue": "Lack of clear introduction to what the package does and how it can be used"
     },
     "security": {
-      "overall_score": 8,
+      "overall_score": 7,
       "injection_risks": [],
       "input_validation_score": 8,
       "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The provided code appears to be a part of the libevent library and does not contain any critical security vulnerabilities, but some improvements can be made in input validation and error handling."
+      "critical_findings": [
+        "Potential buffer overflow in evhttp_decode_uri_internal function",
+        "Lack of input validation for HTTP requests"
+      ],
+      "summary": "The libevent codebase has some security concerns, including potential buffer overflows and lack of input validation, but no critical injection risks or hardcoded secrets were found."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "outdated version",
-        "lack of updates"
+        "lack of updates",
+        "outdated team members"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The libevent community appears to be experiencing stagnation, with outdated versions and a lack of recent updates, leading to frustration among users and potential abandonment signals."
+      "summary": "The libevent community appears to be experiencing stagnation, with outdated team members and a lack of recent updates, leading to frustration among users."
     },
     "communication": {
       "helpfulness": 9,
@@ -215,7 +233,7 @@
         "recent commits",
         "active contributors"
       ],
-      "summary": "The libevent package appears to be receiving minimal maintenance, with some recent activity but a backlog of open issues and an outdated last release."
+      "summary": "The libevent package appears to be receiving some maintenance, but the low issue closure rate and outdated last release suggest that it may not be fully up-to-date or actively maintained."
     },
     "changelog": null,
     "governance": {
@@ -227,6 +245,54 @@
       "summary": "The governance documentation for libevent lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 8.1,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "Code-Review": 8.0,
+        "Security-Policy": 10.0,
+        "Packaging": -1.0,
+        "Token-Permissions": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Vulnerabilities": 10.0,
+        "License": 9.0,
+        "Binary-Artifacts": 10.0,
+        "Fuzzing": 10.0,
+        "Pinned-Dependencies": 1.0,
+        "Signed-Releases": 8.0,
+        "Branch-Protection": -1.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 8.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 10.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 11780,
+      "forks": 3464,
+      "open_issues": 132,
+      "license": "non-standard",
+      "description": "Event notification library",
+      "oss_fuzz_line_count": 18827,
+      "oss_fuzz_line_cover_count": 5363
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T23:30:48.878381Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",
     "security_summary": "has SECURITY.md, Dependabot enabled",
@@ -234,22 +300,27 @@
     "concerns": [
       "low rate of issue closure",
       "old last release",
-      "Docs: Lack of clear introduction to the package's purpose and functionality",
+      "Docs: Lack of clear introduction to what the package does and how it can be used",
       "Possible abandonment signals detected",
-      "Community: outdated version",
       "Community: lack of updates",
-      "Governance: High bus factor risk identified"
+      "Community: outdated team members",
+      "Governance: High bus factor risk identified",
+      "Security: Potential buffer overflow in evhttp_decode_uri_internal function",
+      "Security: Lack of input validation for HTTP requests",
+      "Weak branch protection settings"
     ],
     "highlights": [
       "recent commits",
       "active contributors",
       "Excellent maintainer communication",
-      "Code follows security best practices",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OpenSSF Scorecard: 8.1/10",
+      "Fuzzing enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "exemplary"
+    "communication_style": "exemplary",
+    "scorecard_score": 8.1
   },
-  "analyzed_at": "2025-12-31T03:29:24.228057Z",
-  "data_fetched_at": "2025-12-31T03:29:24.228059Z"
+  "analyzed_at": "2026-01-02T23:33:05.951611Z",
+  "data_fetched_at": "2026-01-02T23:33:05.951611Z"
 }

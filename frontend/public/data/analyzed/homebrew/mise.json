@@ -10,11 +10,11 @@
     "repo": "mise",
     "subpath": null
   },
-  "install_count_30d": 49205,
+  "install_count_30d": 46443,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.9,
+    "overall": 93.5,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
@@ -25,28 +25,34 @@
     ],
     "project_age_band": "established",
     "security": {
-      "score": 86.0,
-      "weight": 30
+      "score": 96.0,
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 73.84,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
       "score": 77.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 100.0,
-      "weight": 10
+      "score": 96.0,
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -54,13 +60,13 @@
       "owner": "jdx",
       "name": "mise",
       "description": "dev tools, env vars, task runner",
-      "stars": 22600,
-      "forks": 780,
-      "open_issues": 36,
-      "watchers": 22600,
+      "stars": 22668,
+      "forks": 785,
+      "open_issues": 49,
+      "watchers": 22668,
       "created_at": "2023-01-09T14:44:21Z",
-      "updated_at": "2025-12-31T03:50:46Z",
-      "pushed_at": "2025-12-31T02:25:33Z",
+      "updated_at": "2026-01-02T23:03:47Z",
+      "pushed_at": "2026-01-02T09:31:36Z",
       "default_branch": "main",
       "license": "MIT",
       "language": "Rust",
@@ -71,17 +77,17 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 394,
-      "active_contributors_6mo": 139,
-      "top_contributor_pct": 63.6,
+      "total_contributors": 395,
+      "active_contributors_6mo": 138,
+      "top_contributor_pct": 63.5,
       "contributors_over_5pct": 2,
       "contributors_prev_6mo": 0,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 139,
+      "first_time_contributors_6mo": 138,
       "contributor_entropy": 2.98
     },
     "commits": {
-      "last_commit_date": "2025-12-31T02:13:56Z",
+      "last_commit_date": "2026-01-02T09:23:38Z",
       "commits_last_6mo": 1000,
       "commits_last_year": 1000
     },
@@ -94,14 +100,15 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 10,
-      "merged_prs_6mo": 280,
+      "open_prs": 23,
+      "merged_prs_6mo": 281,
+      "closed_prs_6mo": 300,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
     "releases": {
       "total_releases": 472,
-      "releases_last_year": 193,
+      "releases_last_year": 192,
       "last_release_date": "2025-12-30T19:04:59Z",
       "latest_version": "v2025.12.13",
       "has_signed_releases": true,
@@ -151,7 +158,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 28,
-      "recent_runs_pass_rate": 72.0,
+      "recent_runs_pass_rate": 58.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -169,7 +176,7 @@
       "troubleshooting": 6,
       "overall": 8,
       "summary": "The documentation is well-structured and provides a clear overview of the package's functionality, but troubleshooting information could be more comprehensive.",
-      "top_issue": "Lack of detailed troubleshooting guides and solutions for common problems."
+      "top_issue": "Lack of detailed troubleshooting guides and solutions for common problems"
     },
     "security": {
       "overall_score": 7,
@@ -178,22 +185,21 @@
           "file": "src/main.rs",
           "line": 34,
           "severity": "medium",
-          "description": "The use of `std::env::args().collect_vec()` could potentially lead to command injection if not properly sanitized."
+          "description": "The use of `std::env::args()` and `Cli::run(&args)` could potentially lead to command injection if the input is not properly sanitized."
         },
         {
           "file": "src/aqua/aqua_registry_wrapper.rs",
-          "line": 64,
-          "severity": "high",
-          "description": "The `fetch_latest_repo` function uses `repo.update(None)?;` which could lead to code execution if the repository is compromised."
+          "line": 63,
+          "severity": "medium",
+          "description": "The use of `Git::clone()` with user-provided registry URL could potentially lead to command injection if the input is not properly sanitized."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential command injection vulnerability in the `fetch_latest_repo` function",
-        "Lack of input validation for environment variables"
+        "Potential command injection vulnerabilities in src/main.rs and src/aqua/aqua_registry_wrapper.rs"
       ],
-      "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
+      "summary": "The code has some potential security concerns, including command injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": null,
     "communication": {
@@ -201,25 +207,27 @@
       "clarity": 7,
       "patience": 6,
       "technical_depth": 9,
-      "welcomingness": 4,
+      "welcomingness": 5,
       "communication_style": "adequate",
       "red_flags": [
         "brief responses",
         "lack of explanations for some comments"
       ],
-      "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to make the community more inclusive."
+      "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive environment for contributors."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (1000)",
-        "Large number of merged PRs in the past 6 months (280)",
-        "Recent last commit and release dates",
-        "Many active contributors in the past 6 months (139)"
+      "concerns": [
+        "high number of open PRs"
       ],
-      "summary": "The package is actively maintained with a high volume of commits, merges, and releases, indicating a healthy and vibrant development community."
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "large number of active contributors",
+        "no open issues"
+      ],
+      "summary": "The mise package appears to be actively maintained with a high volume of recent commits, merges, and contributor activity."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -228,7 +236,7 @@
       "appears_complete": true,
       "clarity_score": 8,
       "overall_score": 7,
-      "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
     },
     "governance": {
       "has_succession_plan": false,
@@ -239,29 +247,53 @@
       "summary": "The governance documentation for the homebrew package 'mise' lacks a succession plan and indicates a single maintainer, posing a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 22518,
+      "forks": 780,
+      "open_issues": 42,
+      "license": "MIT",
+      "description": "dev tools, env vars, task runner",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T23:49:22.836915Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
     "doc_summary": "The documentation is well-structured and provides a clear overview of the package's functionality, but troubleshooting information could be more comprehensive.",
     "concerns": [
-      "Docs: Lack of detailed troubleshooting guides and solutions for common problems.",
+      "high number of open PRs",
+      "Docs: Lack of detailed troubleshooting guides and solutions for common problems",
       "Communication: brief responses",
       "Communication: lack of explanations for some comments",
       "Governance: High bus factor risk identified",
-      "Security: Potential command injection vulnerability in the `fetch_latest_repo` function",
-      "Security: Lack of input validation for environment variables",
-      "Security: The `fetch_latest_repo` function uses `repo.update(None)?;` which could lead to code execution if the repository is compromised."
+      "Security: Potential command injection vulnerabilities in src/main.rs and src/aqua/aqua_registry_wrapper.rs"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (1000)",
-      "Large number of merged PRs in the past 6 months (280)",
-      "Recent last commit and release dates",
-      "Many active contributors in the past 6 months (139)",
+      "frequent commits",
+      "recent release",
+      "large number of active contributors",
+      "no open issues",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "communication_style": "adequate"
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 22518,
+      "forks": 780,
+      "open_issues": 42
+    }
   },
-  "analyzed_at": "2025-12-31T04:01:13.064041Z",
-  "data_fetched_at": "2025-12-31T04:01:13.064042Z"
+  "analyzed_at": "2026-01-02T23:52:02.816035Z",
+  "data_fetched_at": "2026-01-02T23:52:02.816036Z"
 }

@@ -10,11 +10,11 @@
     "repo": "mkcert",
     "subpath": null
   },
-  "install_count_30d": 57467,
+  "install_count_30d": 50709,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 64.5,
+    "overall": 61.4,
     "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,28 +23,39 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 60.0,
-      "weight": 30
+      "score": 53.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 40.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 98.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 77.84,
-      "weight": 10
+      "score": 67.8,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 52.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 88.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,12 +63,12 @@
       "owner": "FiloSottile",
       "name": "mkcert",
       "description": "A simple zero-config tool to make locally trusted development certificates with any names you'd like.",
-      "stars": 57593,
-      "forks": 3028,
+      "stars": 57619,
+      "forks": 3029,
       "open_issues": 164,
-      "watchers": 57593,
+      "watchers": 57619,
       "created_at": "2018-06-25T05:33:03Z",
-      "updated_at": "2025-12-30T23:49:14Z",
+      "updated_at": "2026-01-02T21:25:52Z",
       "pushed_at": "2024-08-13T13:37:46Z",
       "default_branch": "master",
       "license": "BSD-3-Clause",
@@ -107,6 +118,7 @@
     "prs": {
       "open_prs": 55,
       "merged_prs_6mo": 0,
+      "closed_prs_6mo": 2,
       "stale_prs": 55,
       "avg_merge_time_hours": null
     },
@@ -183,28 +195,28 @@
       "top_issue": "Lack of comprehensive troubleshooting section"
     },
     "security": {
-      "overall_score": 8,
+      "overall_score": 7,
       "injection_risks": [
         {
           "file": "main.go",
-          "line": 234,
+          "line": 123,
           "severity": "medium",
-          "description": "The `os/exec` package is used to execute shell commands, but the input is validated and sanitized before use."
+          "description": "The use of os/exec.Command to execute shell commands with user input may pose a risk of command injection attacks."
         },
         {
           "file": "main.go",
-          "line": 246,
+          "line": 234,
           "severity": "low",
-          "description": "The `idna.ToASCII` function is used to convert domain names to ASCII, which may potentially lead to injection risks if not properly validated."
+          "description": "The use of fmt.Println with user-controlled data may lead to potential format string vulnerabilities, although the impact is likely low in this context."
         }
       ],
       "input_validation_score": 8,
       "secrets_found": [],
       "critical_findings": [
-        "Potential injection risks due to shell command execution",
-        "Insufficient input validation for certain inputs"
+        "Potential command injection vulnerability in os/exec.Command usage",
+        "Insufficient input validation for certain user-controlled inputs"
       ],
-      "summary": "The mkcert codebase has some potential security concerns, including injection risks and insufficient input validation, but overall it appears to be well-structured and secure."
+      "summary": "The mkcert codebase has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
       "sentiment": "neutral",
@@ -216,7 +228,7 @@
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The mkcert community is moderately active with some open issues and a mix of questions, feature requests, and compatibility problems, but no clear signs of abandonment or extreme frustration."
+      "summary": "The mkcert community is active, with users reporting various issues and feature requests, but the maintainer's responsiveness is moderate, indicating a relatively healthy project ecosystem."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,27 +238,75 @@
       "welcomingness": 4,
       "communication_style": "adequate",
       "red_flags": [
-        "somewhat dismissive tone",
-        "defensiveness"
+        "dismissiveness of some concerns",
+        "borderline condescension"
       ],
-      "summary": "The maintainer provides clear and technically sound responses, but can come across as somewhat defensive and not particularly welcoming to new contributors."
+      "summary": "The maintainer provides clear and technically sound responses, but can come across as somewhat dismissive and not particularly welcoming to new contributors."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 8,
       "concerns": [
         "no commits in the past 6 months",
-        "large number of open issues and PRs with little recent activity",
+        "large number of open issues and PRs",
         "last release over a year ago"
       ],
       "positive_signals": [
-        "recently active contributors (10 in the past 6 months)",
-        "existing user base (as evidenced by Homebrew package)"
+        "10 contributors active in the past 6 months",
+        "some issue and PR activity in the past 6 months"
       ],
-      "summary": "The mkcert package appears to be stale, with little recent maintenance activity despite having active contributors and a user base."
+      "summary": "The mkcert package appears to be stale, with no recent commits or releases, despite some ongoing issue and PR activity."
     },
     "changelog": null,
     "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 3.1,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 0.0,
+        "Packaging": -1.0,
+        "Code-Review": 3.0,
+        "Binary-Artifacts": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "Token-Permissions": 0.0,
+        "CII-Best-Practices": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": 0.0,
+        "Security-Policy": 9.0,
+        "Vulnerabilities": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 3.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 57617,
+      "forks": 3029,
+      "open_issues": 164,
+      "license": "BSD-3-Clause",
+      "description": "A simple zero-config tool to make locally trusted development certificates with any names you'd like.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-02T23:28:02.772855Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "stale",
@@ -254,25 +314,27 @@
     "doc_summary": "The README is well-structured and provides clear instructions for installation and basic usage, but could benefit from more examples and troubleshooting guidance.",
     "concerns": [
       "no commits in the past 6 months",
-      "large number of open issues and PRs with little recent activity",
+      "large number of open issues and PRs",
       "last release over a year ago",
       "Docs: Lack of comprehensive troubleshooting section",
       "Community: compatibility issues",
       "Community: certificate expiration",
-      "Communication: somewhat dismissive tone",
-      "Communication: defensiveness",
-      "Security: Potential injection risks due to shell command execution",
-      "Security: Insufficient input validation for certain inputs"
+      "Communication: dismissiveness of some concerns",
+      "Communication: borderline condescension",
+      "Security: Potential command injection vulnerability in os/exec.Command usage",
+      "Security: Insufficient input validation for certain user-controlled inputs",
+      "Low OpenSSF Scorecard: 3.1/10",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "recently active contributors (10 in the past 6 months)",
-      "existing user base (as evidenced by Homebrew package)",
-      "Code follows security best practices",
+      "10 contributors active in the past 6 months",
+      "some issue and PR activity in the past 6 months",
       "CI/CD configured"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "adequate"
+    "communication_style": "adequate",
+    "scorecard_score": 3.1
   },
-  "analyzed_at": "2025-12-31T03:08:06.985012Z",
-  "data_fetched_at": "2025-12-31T03:08:06.985013Z"
+  "analyzed_at": "2026-01-02T23:30:24.480335Z",
+  "data_fetched_at": "2026-01-02T23:30:24.480337Z"
 }
