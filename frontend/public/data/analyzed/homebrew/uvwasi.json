@@ -10,11 +10,11 @@
     "repo": "uvwasi",
     "subpath": null
   },
-  "install_count_30d": 43849,
+  "install_count_30d": 42241,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 77.2,
+    "overall": 70.6,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,28 +23,42 @@
     "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 84.0,
-      "weight": 30
+      "score": 64.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 67.98783975513516,
-      "weight": 25
+      "score": 67.48557294248111,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 65.4,
-      "weight": 10
+      "score": 55.4,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 45.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 90.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -169,41 +183,40 @@
       "configuration": 9,
       "troubleshooting": 2,
       "overall": 6,
-      "summary": "The documentation is detailed but dense, making it challenging for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of troubleshooting documentation and limited examples for common use cases"
+      "summary": "The documentation is detailed and provides a good understanding of the package's functionality, but lacks clear installation instructions for non-CMake users and has limited troubleshooting information.",
+      "top_issue": "Lack of troubleshooting information and limited examples"
     },
     "security": {
       "overall_score": 8,
       "injection_risks": [],
       "input_validation_score": 8,
       "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The code appears to be generally secure with no major injection risks or secrets exposure, but some input validation and error handling improvements are recommended."
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in fuzz_normalize_path.c",
+        "Lack of input validation in uvwasi__get_filetype_by_fd function"
+      ],
+      "summary": "The codebase appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 2,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "meeting announcements",
-        "technical issues with shared libraries"
+        "compilation errors"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The uvwasi community appears to be relatively inactive, with mostly meeting announcements and a single resolved technical issue, indicating a need for more engagement and maintenance activity."
+      "summary": "The uvwasi community appears to be relatively inactive, with few issues and no recent engagement from maintainers."
     },
     "communication": {
       "helpfulness": 8,
-      "clarity": 9,
-      "patience": 7,
-      "technical_depth": 8,
-      "welcomingness": 6,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
       "communication_style": "good",
-      "red_flags": [
-        "occasional brief responses",
-        "some questions left unanswered"
-      ],
-      "summary": "The maintainer provides generally helpful and clear responses, but could improve in terms of patience and welcomingness towards new contributors."
+      "red_flags": [],
+      "summary": "The maintainer's responses are generally helpful, clear, and patient, providing a good experience for contributors, but sometimes lack technical depth in their explanations."
     },
     "maintenance": {
       "status": "minimal-maintenance",
@@ -214,9 +227,9 @@
       ],
       "positive_signals": [
         "recent commits and releases",
-        "active pull request merging"
+        "active merge of PRs"
       ],
-      "summary": "The uvwasi package receives occasional updates and has some active contributors, but its maintenance is limited by a low issue closure rate and a small contributor base."
+      "summary": "The uvwasi package appears to be receiving minimal maintenance with some recent activity, but concerns around issue closure and contributor count exist."
     },
     "changelog": null,
     "governance": {
@@ -228,29 +241,79 @@
       "summary": "The governance documentation for uvwasi lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.2,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Packaging": -1.0,
+        "Code-Review": 10.0,
+        "Maintained": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Token-Permissions": 0.0,
+        "Vulnerabilities": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "License": 10.0,
+        "Fuzzing": 10.0,
+        "Signed-Releases": -1.0,
+        "Branch-Protection": -1.0,
+        "Security-Policy": 10.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 257,
+      "forks": 58,
+      "open_issues": 21,
+      "license": "MIT",
+      "description": "WASI syscall API built atop libuv",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T00:18:51.530433Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is detailed but dense, making it challenging for new users to quickly understand the package's purpose and usage.",
+    "doc_summary": "The documentation is detailed and provides a good understanding of the package's functionality, but lacks clear installation instructions for non-CMake users and has limited troubleshooting information.",
     "concerns": [
       "low issue closure rate",
       "small number of contributors",
-      "Docs: Lack of troubleshooting documentation and limited examples for common use cases",
-      "Community: meeting announcements",
-      "Community: technical issues with shared libraries",
-      "Communication: occasional brief responses",
-      "Communication: some questions left unanswered",
-      "Governance: High bus factor risk identified"
+      "Docs: Lack of troubleshooting information and limited examples",
+      "Community: compilation errors",
+      "Governance: High bus factor risk identified",
+      "Security: Potential buffer overflow vulnerability in fuzz_normalize_path.c",
+      "Security: Lack of input validation in uvwasi__get_filetype_by_fd function",
+      "Weak branch protection settings"
     ],
     "highlights": [
       "recent commits and releases",
-      "active pull request merging",
+      "active merge of PRs",
       "Code follows security best practices",
-      "CI/CD configured"
+      "CI/CD configured",
+      "Fuzzing enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "good"
+    "communication_style": "good",
+    "scorecard_score": 6.2
   },
-  "analyzed_at": "2025-12-31T14:39:50.350409Z",
-  "data_fetched_at": "2025-12-31T14:39:50.350410Z"
+  "analyzed_at": "2026-01-03T00:21:28.520628Z",
+  "data_fetched_at": "2026-01-03T00:21:28.520630Z"
 }

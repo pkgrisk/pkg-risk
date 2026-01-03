@@ -10,41 +10,55 @@
     "repo": "abseil-cpp",
     "subpath": null
   },
-  "install_count_30d": 42490,
+  "install_count_30d": 41023,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 86.6,
-    "grade": "B",
+    "overall": 77.5,
+    "grade": "C",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
-      "weight": 30
+      "score": 50.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Dangerous CI/CD workflows detected",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 96.1,
-      "weight": 25
+      "score": 95.82853255223993,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 100.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 40.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 95.0,
-      "weight": 10
+      "score": 100.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,13 +66,13 @@
       "owner": "abseil",
       "name": "abseil-cpp",
       "description": "Abseil Common Libraries (C++)",
-      "stars": 16840,
-      "forks": 2935,
+      "stars": 16848,
+      "forks": 2937,
       "open_issues": 209,
-      "watchers": 16840,
+      "watchers": 16848,
       "created_at": "2017-09-20T15:10:30Z",
-      "updated_at": "2025-12-30T23:54:00Z",
-      "pushed_at": "2025-12-30T18:05:38Z",
+      "updated_at": "2026-01-02T16:08:51Z",
+      "pushed_at": "2026-01-01T13:10:59Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "C++",
@@ -79,9 +93,9 @@
       "contributor_entropy": 5.32
     },
     "commits": {
-      "last_commit_date": "2025-12-30T18:04:07Z",
-      "commits_last_6mo": 259,
-      "commits_last_year": 638
+      "last_commit_date": "2026-01-01T13:08:09Z",
+      "commits_last_6mo": 261,
+      "commits_last_year": 640
     },
     "issues": {
       "open_issues": 187,
@@ -94,6 +108,7 @@
     "prs": {
       "open_prs": 22,
       "merged_prs_6mo": 2,
+      "closed_prs_6mo": 26,
       "stale_prs": 15,
       "avg_merge_time_hours": null
     },
@@ -166,16 +181,19 @@
       "configuration": 5,
       "troubleshooting": 2,
       "overall": 5,
-      "summary": "The Abseil README provides a good overview of the library and its components, but lacks detailed installation instructions, examples, and troubleshooting guidance.",
-      "top_issue": "Insufficient examples and code snippets to help new users understand how to use the library in practice."
+      "summary": "The Abseil README provides a good introduction to the library, but lacks concrete examples and troubleshooting guidance.",
+      "top_issue": "Insufficient examples and lack of troubleshooting documentation"
     },
     "security": {
       "overall_score": 8,
       "injection_risks": [],
       "input_validation_score": 8,
       "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The provided Abseil code appears to be generally secure, but lacks input validation for some functions and does not explicitly configure SSL verification."
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in `AppendTruncated` functions if user-provided input is not validated",
+        "Potential for undefined behavior if `append_n` parameter exceeds maximum allowed value in `StringAppendAndOverwrite` function"
+      ],
+      "summary": "The Abseil codebase appears to be well-structured and secure, but lacks input validation and error handling mechanisms that could potentially lead to security vulnerabilities."
     },
     "sentiment": {
       "sentiment": "neutral",
@@ -210,11 +228,10 @@
         "low rate of merged PRs"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
+        "high number of commits in the past 6 months",
         "large number of active contributors"
       ],
-      "summary": "The abseil package appears to be maintained, with a high volume of recent commits and a large number of active contributors, but may benefit from improved issue and PR resolution processes."
+      "summary": "The abseil package appears to be maintained, with a high volume of recent commits and active contributors, but may benefit from improved issue and PR resolution processes."
     },
     "changelog": null,
     "governance": {
@@ -226,30 +243,83 @@
       "summary": "The Abseil project has a well-documented decision process and multiple maintainers, but lacks a clear succession plan and contributor ladder."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.5,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Token-Permissions": -1.0,
+        "Code-Review": 10.0,
+        "Packaging": -1.0,
+        "Dangerous-Workflow": -1.0,
+        "CII-Best-Practices": 0.0,
+        "SAST": 0.0,
+        "Binary-Artifacts": 10.0,
+        "License": 10.0,
+        "Vulnerabilities": 10.0,
+        "Pinned-Dependencies": -1.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 10.0,
+        "Branch-Protection": -1.0,
+        "Signed-Releases": 0.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 16841,
+      "forks": 2935,
+      "open_issues": 209,
+      "license": "Apache-2.0",
+      "description": "Abseil Common Libraries (C++)",
+      "oss_fuzz_line_count": 7461,
+      "oss_fuzz_line_cover_count": 2021
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T00:23:20.697025Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "maintained",
     "security_summary": "No issues",
-    "doc_summary": "The Abseil README provides a good overview of the library and its components, but lacks detailed installation instructions, examples, and troubleshooting guidance.",
+    "doc_summary": "The Abseil README provides a good introduction to the library, but lacks concrete examples and troubleshooting guidance.",
     "concerns": [
       "low rate of closed issues",
       "low rate of merged PRs",
-      "Docs: Insufficient examples and code snippets to help new users understand how to use the library in practice.",
+      "Docs: Insufficient examples and lack of troubleshooting documentation",
       "Community: build failures",
       "Community: compatibility issues",
       "Communication: occasional brevity may confuse new contributors",
-      "Communication: some responses assume prior knowledge"
+      "Communication: some responses assume prior knowledge",
+      "Security: Potential buffer overflow vulnerability in `AppendTruncated` functions if user-provided input is not validated",
+      "Security: Potential for undefined behavior if `append_n` parameter exceeds maximum allowed value in `StringAppendAndOverwrite` function",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "frequent commits",
-      "recent release",
+      "high number of commits in the past 6 months",
       "large number of active contributors",
       "Code follows security best practices",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "Fuzzing enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "good"
+    "communication_style": "good",
+    "scorecard_score": 6.5
   },
-  "analyzed_at": "2025-12-31T04:41:47.006791Z",
-  "data_fetched_at": "2025-12-31T04:41:47.006792Z"
+  "analyzed_at": "2026-01-03T00:26:21.203665Z",
+  "data_fetched_at": "2026-01-03T00:26:21.203667Z"
 }

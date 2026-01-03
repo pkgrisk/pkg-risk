@@ -10,41 +10,47 @@
     "repo": "mbedtls",
     "subpath": null
   },
-  "install_count_30d": 46330,
+  "install_count_30d": 44627,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 85.3,
+    "overall": 82.3,
     "grade": "B",
     "percentile": null,
-    "risk_tier": "approved",
+    "risk_tier": "conditional",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 76.0,
-      "weight": 30
+      "score": 66.0,
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
       "score": 100.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
       "score": 60.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 65.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +58,13 @@
       "owner": "Mbed-TLS",
       "name": "mbedtls",
       "description": "An open source, portable, easy to use, readable and flexible TLS library, and reference implementation of the PSA Cryptography API. Releases are on a varying cadence, typically around 3 - 6 months between releases.",
-      "stars": 6366,
+      "stars": 6371,
       "forks": 2824,
-      "open_issues": 1574,
-      "watchers": 6366,
+      "open_issues": 1571,
+      "watchers": 6371,
       "created_at": "2012-11-14T13:13:13Z",
-      "updated_at": "2025-12-31T02:02:43Z",
-      "pushed_at": "2025-12-18T16:43:20Z",
+      "updated_at": "2026-01-02T21:44:46Z",
+      "pushed_at": "2026-01-02T21:44:42Z",
       "default_branch": "development",
       "license": "NOASSERTION",
       "language": "C",
@@ -77,29 +83,30 @@
     "contributors": {
       "total_contributors": 332,
       "active_contributors_6mo": 14,
-      "top_contributor_pct": 19.6,
+      "top_contributor_pct": 19.7,
       "contributors_over_5pct": 5,
       "contributors_prev_6mo": 13,
       "contributor_trend": "stable",
       "first_time_contributors_6mo": 4,
-      "contributor_entropy": 4.68
+      "contributor_entropy": 4.67
     },
     "commits": {
-      "last_commit_date": "2025-12-15T10:26:57Z",
-      "commits_last_6mo": 561,
+      "last_commit_date": "2026-01-02T20:14:58Z",
+      "commits_last_6mo": 559,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 218,
-      "closed_issues_6mo": 109,
-      "avg_response_time_hours": 5.1,
-      "avg_close_time_hours": 188.1,
+      "open_issues": 219,
+      "closed_issues_6mo": 110,
+      "avg_response_time_hours": 4.3,
+      "avg_close_time_hours": 119.5,
       "good_first_issue_count": 4,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 297,
-      "merged_prs_6mo": 130,
+      "open_prs": 296,
+      "merged_prs_6mo": 131,
+      "closed_prs_6mo": 167,
       "stale_prs": 274,
       "avg_merge_time_hours": null
     },
@@ -114,7 +121,7 @@
     "security": {
       "has_security_md": true,
       "has_security_policy": false,
-      "signed_commits_pct": 19.0,
+      "signed_commits_pct": 21.0,
       "has_dependabot": false,
       "has_codeql": false,
       "has_security_ci": false,
@@ -180,35 +187,42 @@
       "injection_risks": [
         {
           "file": "programs/x509/cert_app.c",
-          "line": 246,
+          "line": 234,
           "severity": "medium",
-          "description": "User input is used to construct a file path without proper validation, potentially leading to directory traversal attacks."
+          "description": "Potential command injection risk through 'server_port' parameter, which is converted to an integer using atoi(). However, the input is not validated for potential malicious characters."
         },
         {
           "file": "programs/x509/cert_app.c",
-          "line": 258,
-          "severity": "low",
-          "description": "The use of atoi() for converting user input to integers may lead to potential issues if the input is not properly validated."
+          "line": 245,
+          "severity": "medium",
+          "description": "Potential command injection risk through 'debug_level' parameter, which is converted to an integer using atoi(). However, the input is not validated for potential malicious characters."
+        },
+        {
+          "file": "programs/x509/cert_app.c",
+          "line": 256,
+          "severity": "medium",
+          "description": "Potential command injection risk through 'permissive' parameter, which is converted to an integer using atoi(). However, the input is not validated for potential malicious characters."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential directory traversal attacks due to insufficient file path validation"
+        "Potential command injection risks through various parameters",
+        "Lack of validation for certain input parameters"
       ],
-      "summary": "The code has some security concerns related to input validation and error handling, but overall it appears to be well-structured and follows good practices."
+      "summary": "The code has some security concerns, including potential command injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "code style and documentation issues",
-        "submodule initialization problems"
+        "errors in parsing encrypted keys",
+        "outdated code style"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting and discussing various issues, with maintainers responding moderately, indicating a relatively healthy project ecosystem."
+      "summary": "The mbedtls community appears to be moderately active with maintainers responding to issues, but users are experiencing some frustration with errors and outdated code."
     },
     "communication": {
       "helpfulness": 9,
@@ -218,7 +232,7 @@
       "welcomingness": 8,
       "communication_style": "exemplary",
       "red_flags": [],
-      "summary": "The maintainers' responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+      "summary": "The maintainers' responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source project maintenance."
     },
     "maintenance": {
       "status": "actively-maintained",
@@ -228,11 +242,11 @@
         "high number of open PRs"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "multiple active contributors"
+        "frequent commits in the past 6 months",
+        "recent contributors",
+        "regularly merged PRs"
       ],
-      "summary": "The package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity, despite having a significant number of open issues and pull requests."
+      "summary": "The package appears to be actively maintained with a high volume of recent activity, despite having a large number of open issues and PRs."
     },
     "changelog": null,
     "governance": {
@@ -241,8 +255,28 @@
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
-      "summary": "The project has a well-documented decision process and contributor ladder, but lacks a clear succession plan, indicating a medium bus factor risk."
+      "summary": "The project has a well-documented decision process and contributor ladder, but lacks a clear succession plan, indicating a moderate bus factor risk."
     }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 6361,
+      "forks": 2821,
+      "open_issues": 1574,
+      "license": "non-standard",
+      "description": "An open source, portable, easy to use, readable and flexible TLS library, and reference implementation of the PSA Cryptography API. Releases are on a varying cadence, typically around 3 - 6 months between releases.",
+      "oss_fuzz_line_count": 65421,
+      "oss_fuzz_line_cover_count": 20336
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T00:01:37.245604Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
@@ -252,20 +286,27 @@
       "high number of open issues",
       "high number of open PRs",
       "Docs: Lack of a concise quick start example to help new users get started with the library",
-      "Community: code style and documentation issues",
-      "Community: submodule initialization problems",
-      "Security: Potential directory traversal attacks due to insufficient file path validation"
+      "Community: errors in parsing encrypted keys",
+      "Community: outdated code style",
+      "Security: Potential command injection risks through various parameters",
+      "Security: Lack of validation for certain input parameters"
     ],
     "highlights": [
-      "frequent commits",
-      "recent release",
-      "multiple active contributors",
+      "frequent commits in the past 6 months",
+      "recent contributors",
+      "regularly merged PRs",
       "Excellent maintainer communication",
-      "Actively maintained"
+      "Actively maintained",
+      "OSS-Fuzz coverage: 31%"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "exemplary"
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 6361,
+      "forks": 2821,
+      "open_issues": 1574
+    }
   },
-  "analyzed_at": "2025-12-31T04:09:09.631774Z",
-  "data_fetched_at": "2025-12-31T04:09:09.631775Z"
+  "analyzed_at": "2026-01-03T00:04:51.162729Z",
+  "data_fetched_at": "2026-01-03T00:04:51.162730Z"
 }

@@ -10,41 +10,47 @@
     "repo": "util-linux",
     "subpath": null
   },
-  "install_count_30d": 44102,
+  "install_count_30d": 42645,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 77.3,
-    "grade": "C",
+    "overall": 80.1,
+    "grade": "B",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "approved",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 74.0,
-      "weight": 30
+      "score": 84.0,
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
-      "score": 84.68588257296102,
-      "weight": 25
+      "score": 83.9324142077715,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 80.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 84.4,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
       "score": 49.5,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 85.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +58,13 @@
       "owner": "util-linux",
       "name": "util-linux",
       "description": "",
-      "stars": 3046,
+      "stars": 3051,
       "forks": 1306,
-      "open_issues": 417,
-      "watchers": 3046,
+      "open_issues": 422,
+      "watchers": 3051,
       "created_at": "2011-09-07T05:08:38Z",
-      "updated_at": "2025-12-31T02:16:33Z",
-      "pushed_at": "2025-12-17T12:12:45Z",
+      "updated_at": "2026-01-02T08:57:10Z",
+      "pushed_at": "2026-01-01T18:05:09Z",
       "default_branch": "master",
       "license": "GPL-2.0",
       "language": "C",
@@ -84,16 +90,17 @@
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 265,
-      "closed_issues_6mo": 78,
-      "avg_response_time_hours": 107.6,
-      "avg_close_time_hours": 144.6,
+      "open_issues": 261,
+      "closed_issues_6mo": 79,
+      "avg_response_time_hours": 95.7,
+      "avg_close_time_hours": 141.4,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 36,
+      "open_prs": 41,
       "merged_prs_6mo": 150,
+      "closed_prs_6mo": 171,
       "stale_prs": 18,
       "avg_merge_time_hours": null
     },
@@ -149,7 +156,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 8,
-      "recent_runs_pass_rate": 86.0,
+      "recent_runs_pass_rate": 87.8,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -176,34 +183,33 @@
           "file": "lib/configs.c",
           "line": 123,
           "severity": "medium",
-          "description": "The use of vasprintf() with a format string and user-controlled input may lead to potential buffer overflow vulnerabilities."
+          "description": "The use of asprintf() with user-controlled input may lead to buffer overflow vulnerabilities."
         },
         {
           "file": "lib/configs.c",
-          "line": 173,
+          "line": 156,
           "severity": "low",
-          "description": "The use of asprintf() with a format string and user-controlled input may lead to potential buffer overflow vulnerabilities, but the impact is limited due to the lack of direct user input."
+          "description": "The use of strcoll() for sorting file names may be vulnerable to locale-specific attacks, but this is unlikely to be exploitable in practice."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
       "critical_findings": [
-        "Potential buffer overflow vulnerabilities in vasprintf() and asprintf() calls",
-        "Lack of validation for project name in ul_configs_file_list()"
+        "Potential buffer overflow vulnerability in asprintf() usage"
       ],
-      "summary": "The util-linux package has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be relatively secure."
+      "summary": "The code has some security concerns, including potential injection risks and input validation issues, but no critical secrets or error exposure vulnerabilities were found."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bugs",
-        "termination issues"
+        "partition issues",
+        "compatibility problems"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The util-linux community is experiencing frustration due to unresolved bugs and termination issues, with a slow response from maintainers."
+      "summary": "The util-linux community is experiencing frustration with unresolved partition and compatibility issues, indicating a need for more active maintainer engagement."
     },
     "communication": {
       "helpfulness": 9,
@@ -213,7 +219,7 @@
       "welcomingness": 8,
       "communication_style": "exemplary",
       "red_flags": [],
-      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
     },
     "maintenance": {
       "status": "actively-maintained",
@@ -223,22 +229,41 @@
         "high number of open issues"
       ],
       "positive_signals": [
-        "high commit frequency",
-        "many merged PRs",
-        "large number of active contributors"
+        "high commit activity past 6 months",
+        "many merged PRs and active contributors"
       ],
-      "summary": "The util-linux package appears to be actively maintained with frequent commits, a large number of active contributors, and many merged pull requests."
+      "summary": "The util-linux package appears to be actively maintained with frequent commits, merges, and a large number of active contributors, despite some concerns about the unknown last release and high number of open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
       "has_migration_guides": false,
       "well_categorized": true,
       "appears_complete": true,
-      "clarity_score": 7,
-      "overall_score": 6,
-      "summary": "The changelog is comprehensive and well-categorized, but lacks clear markings for breaking changes and migration guides, making it somewhat difficult to understand for users."
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and comprehensive, but lacks clear markings for breaking changes and migration guides."
     },
     "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 3046,
+      "forks": 1306,
+      "open_issues": 417,
+      "license": "GPL-2.0",
+      "description": "",
+      "oss_fuzz_line_count": 35724,
+      "oss_fuzz_line_cover_count": 9762
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T00:15:37.635175Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
@@ -248,22 +273,26 @@
       "unknown last release",
       "high number of open issues",
       "Docs: Lack of a clear and concise introduction to the package's purpose and basic usage.",
-      "Community: bugs",
-      "Community: termination issues",
-      "Security: Potential buffer overflow vulnerabilities in vasprintf() and asprintf() calls",
-      "Security: Lack of validation for project name in ul_configs_file_list()"
+      "Community: partition issues",
+      "Community: compatibility problems",
+      "Security: Potential buffer overflow vulnerability in asprintf() usage"
     ],
     "highlights": [
-      "high commit frequency",
-      "many merged PRs",
-      "large number of active contributors",
+      "high commit activity past 6 months",
+      "many merged PRs and active contributors",
       "Excellent maintainer communication",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OSS-Fuzz coverage: 27%"
     ],
     "community_sentiment": "negative",
-    "communication_style": "exemplary"
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 3046,
+      "forks": 1306,
+      "open_issues": 417
+    }
   },
-  "analyzed_at": "2025-12-31T04:29:40.793082Z",
-  "data_fetched_at": "2025-12-31T04:29:40.793083Z"
+  "analyzed_at": "2026-01-03T00:18:32.988400Z",
+  "data_fetched_at": "2026-01-03T00:18:32.988402Z"
 }

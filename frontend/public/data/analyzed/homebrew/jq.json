@@ -10,11 +10,11 @@
     "repo": "jq",
     "subpath": null
   },
-  "install_count_30d": 44234,
+  "install_count_30d": 40914,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 86.6,
+    "overall": 86.4,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -24,27 +24,33 @@
     "project_age_band": "legacy",
     "security": {
       "score": 86.0,
-      "weight": 30
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
-      "score": 88.93332985467589,
-      "weight": 25
+      "score": 88.43241420777152,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 88.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 85.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
-      "score": 71.0,
-      "weight": 10
+      "score": 69.5,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 98.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,12 +58,12 @@
       "owner": "jqlang",
       "name": "jq",
       "description": "Command-line JSON processor",
-      "stars": 33253,
-      "forks": 1687,
-      "open_issues": 441,
-      "watchers": 33253,
+      "stars": 33269,
+      "forks": 1688,
+      "open_issues": 442,
+      "watchers": 33269,
       "created_at": "2012-07-18T19:57:25Z",
-      "updated_at": "2025-12-31T03:22:36Z",
+      "updated_at": "2026-01-02T23:36:21Z",
       "pushed_at": "2025-12-17T02:24:41Z",
       "default_branch": "master",
       "license": "NOASSERTION",
@@ -72,22 +78,22 @@
     },
     "contributors": {
       "total_contributors": 212,
-      "active_contributors_6mo": 12,
+      "active_contributors_6mo": 11,
       "top_contributor_pct": 30.2,
       "contributors_over_5pct": 4,
-      "contributors_prev_6mo": 24,
+      "contributors_prev_6mo": 25,
       "contributor_trend": "declining",
-      "first_time_contributors_6mo": 9,
+      "first_time_contributors_6mo": 8,
       "contributor_entropy": 4.19
     },
     "commits": {
       "last_commit_date": "2025-12-17T02:24:39Z",
-      "commits_last_6mo": 28,
+      "commits_last_6mo": 27,
       "commits_last_year": 119
     },
     "issues": {
       "open_issues": 229,
-      "closed_issues_6mo": 49,
+      "closed_issues_6mo": 47,
       "avg_response_time_hours": 25.1,
       "avg_close_time_hours": 82.4,
       "good_first_issue_count": 0,
@@ -95,7 +101,8 @@
     },
     "prs": {
       "open_prs": 84,
-      "merged_prs_6mo": 27,
+      "merged_prs_6mo": 26,
+      "closed_prs_6mo": 33,
       "stale_prs": 80,
       "avg_merge_time_hours": null
     },
@@ -161,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 6,
       "examples": 7,
       "configuration": 4,
       "troubleshooting": 2,
       "overall": 6,
       "summary": "The README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Lack of detailed configuration documentation and troubleshooting resources"
+      "top_issue": "Lack of detailed troubleshooting documentation"
     },
     "security": {
       "overall_score": 7,
@@ -178,13 +185,13 @@
           "file": "src/main.c",
           "line": 246,
           "severity": "low",
-          "description": "The `priv_fwrite` function is used to write user-controlled data to the standard output, but it does not seem to be vulnerable to injection attacks as it only writes strings and does not execute any commands."
+          "description": "The `priv_fwrite` function is used to write user-controlled data to stdout, but it does not appear to be vulnerable to injection attacks as the data is properly escaped."
         },
         {
           "file": "src/main.c",
-          "line": 334,
+          "line": 281,
           "severity": "low",
-          "description": "The `fprintf` function is used to write user-controlled data to the standard error, but it does not seem to be vulnerable to injection attacks as it only writes strings and does not execute any commands."
+          "description": "The `fprintf` function is used to write user-controlled data to stderr, but it does not appear to be vulnerable to injection attacks as the data is properly escaped."
         }
       ],
       "input_validation_score": 8,
@@ -193,19 +200,19 @@
         "No validation of user-provided JSON input",
         "Potential for error exposure through unhandled exceptions"
       ],
-      "summary": "The code has some potential security concerns, including lack of input validation and potential for error exposure, but overall it appears to be well-structured and secure."
+      "summary": "The jq package appears to have some security concerns, including potential injection risks and lack of input validation, but overall it seems to be a relatively secure tool."
     },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug reports",
-        "feature requests"
+        "feature requests",
+        "bug reports"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The jq community is active with a mix of open and closed issues, but maintainers could improve responsiveness to address user frustrations and feature requests."
+      "summary": "The jq community is active with ongoing discussions and issue reporting, but maintainer responsiveness is moderate and some issues remain unresolved."
     },
     "communication": {
       "helpfulness": 8,
@@ -216,9 +223,9 @@
       "communication_style": "adequate",
       "red_flags": [
         "dismissiveness of feature requests",
-        "lack of encouragement for new contributors"
+        "lack of clear explanations for beginners"
       ],
-      "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to create a more inclusive community."
+      "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
     },
     "maintenance": {
       "status": "maintained",
@@ -231,7 +238,7 @@
         "recent commits and releases",
         "active contributors"
       ],
-      "summary": "The jq package appears to be maintained with regular updates and active contributors, but has a notable backlog of open issues and pull requests."
+      "summary": "The jq package appears to be maintained with regular updates and active contributors, but has a significant backlog of open issues and pull requests."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -244,6 +251,26 @@
     },
     "governance": null
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 33245,
+      "forks": 1687,
+      "open_issues": 441,
+      "license": "non-standard",
+      "description": "Command-line JSON processor",
+      "oss_fuzz_line_count": 40354,
+      "oss_fuzz_line_cover_count": 29533
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T00:26:52.900075Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
@@ -251,11 +278,11 @@
     "concerns": [
       "high number of open issues",
       "high number of open PRs",
-      "Docs: Lack of detailed configuration documentation and troubleshooting resources",
-      "Community: bug reports",
+      "Docs: Lack of detailed troubleshooting documentation",
       "Community: feature requests",
+      "Community: bug reports",
       "Communication: dismissiveness of feature requests",
-      "Communication: lack of encouragement for new contributors",
+      "Communication: lack of clear explanations for beginners",
       "Security: No validation of user-provided JSON input",
       "Security: Potential for error exposure through unhandled exceptions"
     ],
@@ -264,11 +291,17 @@
       "active contributors",
       "Breaking changes clearly marked in changelog",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OSS-Fuzz coverage: 73%"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "adequate"
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 33245,
+      "forks": 1687,
+      "open_issues": 441
+    }
   },
-  "analyzed_at": "2025-12-31T04:25:43.839734Z",
-  "data_fetched_at": "2025-12-31T04:25:43.839736Z"
+  "analyzed_at": "2026-01-03T00:29:49.016764Z",
+  "data_fetched_at": "2026-01-03T00:29:49.016766Z"
 }

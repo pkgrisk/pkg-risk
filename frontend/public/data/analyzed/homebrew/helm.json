@@ -10,12 +10,12 @@
     "repo": "helm",
     "subpath": null
   },
-  "install_count_30d": 45973,
+  "install_count_30d": 42731,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 89.8,
-    "grade": "B",
+    "overall": 92.9,
+    "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
@@ -23,28 +23,44 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
-      "weight": 30
+      "score": 100.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "SAST enabled (Scorecard)",
+        "CII Best Practices badge",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 94.29010123725925,
-      "weight": 25
+      "score": 95.1,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 100.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
       "score": 46.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 96.0,
-      "weight": 10
+      "score": 100.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled",
+        "Pinned dependencies"
+      ]
     }
   },
   "github_data": {
@@ -52,13 +68,13 @@
       "owner": "helm",
       "name": "helm",
       "description": "The Kubernetes Package Manager",
-      "stars": 29241,
-      "forks": 7457,
-      "open_issues": 448,
-      "watchers": 29241,
+      "stars": 29246,
+      "forks": 7459,
+      "open_issues": 445,
+      "watchers": 29246,
       "created_at": "2015-10-06T01:07:32Z",
-      "updated_at": "2025-12-31T02:48:44Z",
-      "pushed_at": "2025-12-28T02:21:04Z",
+      "updated_at": "2026-01-02T23:33:51Z",
+      "pushed_at": "2026-01-02T23:33:39Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "Go",
@@ -76,31 +92,32 @@
     },
     "contributors": {
       "total_contributors": 372,
-      "active_contributors_6mo": 66,
+      "active_contributors_6mo": 67,
       "top_contributor_pct": 16.6,
       "contributors_over_5pct": 3,
-      "contributors_prev_6mo": 47,
+      "contributors_prev_6mo": 46,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 54,
+      "first_time_contributors_6mo": 55,
       "contributor_entropy": 5.45
     },
     "commits": {
-      "last_commit_date": "2025-12-28T02:20:54Z",
-      "commits_last_6mo": 624,
+      "last_commit_date": "2026-01-02T23:33:39Z",
+      "commits_last_6mo": 627,
       "commits_last_year": 1000
     },
     "issues": {
-      "open_issues": 184,
-      "closed_issues_6mo": 65,
+      "open_issues": 186,
+      "closed_issues_6mo": 64,
       "avg_response_time_hours": 8.8,
       "avg_close_time_hours": 43.0,
       "good_first_issue_count": 9,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 160,
+      "open_prs": 155,
       "merged_prs_6mo": 246,
-      "stale_prs": 106,
+      "closed_prs_6mo": 300,
+      "stale_prs": 99,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -114,7 +131,7 @@
     "security": {
       "has_security_md": true,
       "has_security_policy": false,
-      "signed_commits_pct": 88.0,
+      "signed_commits_pct": 87.0,
       "has_dependabot": true,
       "has_codeql": true,
       "has_security_ci": true,
@@ -154,8 +171,8 @@
     },
     "ci": {
       "has_github_actions": true,
-      "workflow_count": 12,
-      "recent_runs_pass_rate": 74.0,
+      "workflow_count": 13,
+      "recent_runs_pass_rate": 82.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -172,67 +189,69 @@
       "configuration": 5,
       "troubleshooting": 4,
       "overall": 6,
-      "summary": "The Helm README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting documentation.",
-      "top_issue": "Insufficient examples for common use cases"
+      "summary": "The Helm README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting guidance.",
+      "top_issue": "Insufficient documentation of common use cases and troubleshooting scenarios"
     },
     "security": {
       "overall_score": 7,
       "injection_risks": [
         {
           "file": "pkg/cmd/repo_index.go",
-          "line": 93,
+          "line": 83,
           "severity": "medium",
-          "description": "The 'os.Stat' function is used with user-controlled input, which could potentially lead to a path traversal vulnerability."
+          "description": "The 'os.Stat' function is used with user-controlled input, which could potentially lead to a TOCTOU (Time-of-Check-to-Time-of-Use) vulnerability."
         },
         {
           "file": "pkg/repo/v1/index.go",
-          "line": 155,
+          "line": 143,
           "severity": "low",
-          "description": "The 'urlutil.URLJoin' function is used with user-controlled input, but it's not directly executing any commands or accessing sensitive data."
+          "description": "The 'urlutil.URLJoin' function is used with user-controlled input, which could potentially lead to a URL manipulation vulnerability."
         }
       ],
       "input_validation_score": 6,
       "secrets_found": [],
-      "critical_findings": [
-        "Potential path traversal vulnerability in 'os.Stat' function",
-        "Insufficient input validation for directory path and URL"
-      ],
-      "summary": "The provided code has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or error exposure issues were found."
+      "critical_findings": [],
+      "summary": "The code has some potential security issues related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bugs and inconsistencies",
-        "compatibility issues with other tools"
+        "technical issues",
+        "feature requests"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The Helm community is actively reporting and discussing various issues, but maintainers are moderately responsive, indicating a relatively healthy but imperfect ecosystem."
+      "summary": "The Helm community is actively reporting technical issues and feature requests, but maintainers appear to be slow in responding, indicating a need for improved communication and support."
     },
     "communication": {
       "helpfulness": 8,
       "clarity": 9,
       "patience": 7,
-      "technical_depth": 6,
-      "welcomingness": 8,
+      "technical_depth": 8,
+      "welcomingness": 6,
       "communication_style": "good",
-      "red_flags": [],
-      "summary": "The maintainer responses are generally helpful, clear, and welcoming, but could improve in terms of technical depth and patience when handling repeated or basic questions."
+      "red_flags": [
+        "repeated requests to fix DCO without explanation",
+        "some responses are brief and lack context"
+      ],
+      "summary": "The maintainer responses are generally helpful, clear, and technically sound, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (624)",
-        "Recent last commit (2025-12-28)",
-        "Frequent releases (last release on 2025-12-13)",
-        "Large number of merged PRs in the past 6 months (246)",
-        "Many active contributors in the past 6 months (66)"
+      "concerns": [
+        "high number of open issues",
+        "high number of open PRs"
       ],
-      "summary": "The helm package appears to be actively maintained with a high volume of commits, releases, and contributor activity."
+      "positive_signals": [
+        "frequent commits",
+        "recent release",
+        "large number of active contributors",
+        "steady merge of PRs"
+      ],
+      "summary": "The helm package appears to be actively maintained with a high volume of recent commits, merges, and contributor activity."
     },
     "changelog": null,
     "governance": {
@@ -244,29 +263,84 @@
       "summary": "The Helm project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
     }
   },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 7.9,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 10.0,
+        "Maintained": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "Packaging": -1.0,
+        "Security-Policy": 9.0,
+        "Token-Permissions": 0.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 5.0,
+        "Pinned-Dependencies": 9.0,
+        "License": 10.0,
+        "Fuzzing": 10.0,
+        "Signed-Releases": 8.0,
+        "Branch-Protection": 1.0,
+        "Vulnerabilities": 10.0,
+        "SAST": 10.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": true,
+      "cii_badge": true
+    },
+    "project_metrics": {
+      "stars": 29245,
+      "forks": 7460,
+      "open_issues": 444,
+      "license": "Apache-2.0",
+      "description": "The Kubernetes Package Manager",
+      "oss_fuzz_line_count": 10472,
+      "oss_fuzz_line_cover_count": 4986
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T00:08:58.639934Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "The Helm README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting documentation.",
+    "doc_summary": "The Helm README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting guidance.",
     "concerns": [
-      "Docs: Insufficient examples for common use cases",
-      "Community: bugs and inconsistencies",
-      "Community: compatibility issues with other tools",
-      "Security: Potential path traversal vulnerability in 'os.Stat' function",
-      "Security: Insufficient input validation for directory path and URL"
+      "high number of open issues",
+      "high number of open PRs",
+      "Docs: Insufficient documentation of common use cases and troubleshooting scenarios",
+      "Community: technical issues",
+      "Community: feature requests",
+      "Communication: repeated requests to fix DCO without explanation",
+      "Communication: some responses are brief and lack context",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (624)",
-      "Recent last commit (2025-12-28)",
-      "Frequent releases (last release on 2025-12-13)",
-      "Large number of merged PRs in the past 6 months (246)",
-      "Many active contributors in the past 6 months (66)",
+      "frequent commits",
+      "recent release",
+      "large number of active contributors",
+      "steady merge of PRs",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "OpenSSF Scorecard: 7.9/10",
+      "Has CII Best Practices badge",
+      "Fuzzing enabled",
+      "SAST enabled"
     ],
-    "community_sentiment": "mixed",
-    "communication_style": "good"
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "scorecard_score": 7.9
   },
-  "analyzed_at": "2025-12-31T04:12:56.441578Z",
-  "data_fetched_at": "2025-12-31T04:12:56.441579Z"
+  "analyzed_at": "2026-01-03T00:11:37.742434Z",
+  "data_fetched_at": "2026-01-03T00:11:37.742436Z"
 }
