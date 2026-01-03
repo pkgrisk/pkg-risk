@@ -1,0 +1,283 @@
+{
+  "ecosystem": "homebrew",
+  "name": "podman-tui",
+  "description": "Podman Terminal User Interface",
+  "version": "1.10.0",
+  "homepage": "https://github.com/containers/podman-tui",
+  "repository": {
+    "platform": "github",
+    "owner": "containers",
+    "repo": "podman-tui",
+    "subpath": null
+  },
+  "install_count_30d": 284,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 80.1,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 74.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 95.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 76.36,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 10.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "containers",
+      "name": "podman-tui",
+      "description": "Podman Terminal UI",
+      "stars": 998,
+      "forks": 44,
+      "open_issues": 3,
+      "watchers": 998,
+      "created_at": "2022-01-21T15:34:14Z",
+      "updated_at": "2026-01-01T06:59:10Z",
+      "pushed_at": "2025-12-24T04:49:53Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [
+        "containers",
+        "podman",
+        "terminal-ui"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 13,
+      "active_contributors_6mo": 5,
+      "top_contributor_pct": 63.0,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 3,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 1.42
+    },
+    "commits": {
+      "last_commit_date": "2025-12-24T04:49:53Z",
+      "commits_last_6mo": 110,
+      "commits_last_year": 231
+    },
+    "issues": {
+      "open_issues": 2,
+      "closed_issues_6mo": 3,
+      "avg_response_time_hours": 553.7,
+      "avg_close_time_hours": 1165.0,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 53,
+      "closed_prs_6mo": 81,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 31,
+      "releases_last_year": 10,
+      "last_release_date": "2025-12-22T00:14:14Z",
+      "latest_version": "v1.10.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 72.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 6,
+      "recent_runs_pass_rate": 98.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "app/app.go",
+          "line": 123,
+          "severity": "low",
+          "description": "Potential command injection risk in the `SetInputCapture` function, but it appears to be properly sanitized."
+        },
+        {
+          "file": "app/init.go",
+          "line": 20,
+          "severity": "medium",
+          "description": "The `initUI` function calls several methods that may potentially execute system commands or access external resources without proper validation."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection risk in the `SetInputCapture` function",
+        "Lack of input validation in several functions"
+      ],
+      "summary": "The code appears to have some potential security risks, including command injection and lack of input validation, but overall it seems to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 2,
+      "maintainer_responsiveness": "unresponsive",
+      "common_complaints": [
+        "difficulty with updates"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health of podman-tui appears to be neutral, with a single open issue indicating some user frustration, but no signs of abandonment or widespread dissatisfaction."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [
+        "repeated 'no longer needed' comments without explanation",
+        "some technical terms used without explanation"
+      ],
+      "summary": "The maintainer responses are generally helpful, clear, and patient, but could improve in providing more detailed explanations and technical depth."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits and releases",
+        "High number of merged PRs",
+        "Active contributors"
+      ],
+      "summary": "The package is actively maintained with recent updates, a high volume of pull requests, and multiple active contributors."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 998,
+      "forks": 44,
+      "open_issues": 3,
+      "license": "Apache-2.0",
+      "description": "Podman Terminal UI",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T11:11:44.547799Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "",
+    "concerns": [
+      "Community: difficulty with updates",
+      "Communication: repeated 'no longer needed' comments without explanation",
+      "Communication: some technical terms used without explanation",
+      "Security: Potential command injection risk in the `SetInputCapture` function",
+      "Security: Lack of input validation in several functions"
+    ],
+    "highlights": [
+      "Recent commits and releases",
+      "High number of merged PRs",
+      "Active contributors",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 998,
+      "forks": 44,
+      "open_issues": 3
+    }
+  },
+  "analyzed_at": "2026-01-03T11:13:28.845456Z",
+  "data_fetched_at": "2026-01-03T11:13:28.845457Z"
+}
