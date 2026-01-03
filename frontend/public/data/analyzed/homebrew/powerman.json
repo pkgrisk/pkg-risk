@@ -1,0 +1,294 @@
+{
+  "ecosystem": "homebrew",
+  "name": "powerman",
+  "description": "Control (remotely and in parallel) switched power distribution units",
+  "version": "2.4.4",
+  "homepage": "https://github.com/chaos/powerman",
+  "repository": {
+    "platform": "github",
+    "owner": "chaos",
+    "repo": "powerman",
+    "subpath": null
+  },
+  "install_count_30d": 209,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 63.8,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 58.44728830355701,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 87.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 73.28,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 29.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 85.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "chaos",
+      "name": "powerman",
+      "description": "cluster power control",
+      "stars": 47,
+      "forks": 21,
+      "open_issues": 17,
+      "watchers": 47,
+      "created_at": "2014-08-21T21:16:49Z",
+      "updated_at": "2025-11-16T07:06:50Z",
+      "pushed_at": "2025-09-14T01:44:09Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 10,
+      "active_contributors_6mo": 3,
+      "top_contributor_pct": 50.4,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 1.66
+    },
+    "commits": {
+      "last_commit_date": "2025-09-14T01:44:09Z",
+      "commits_last_6mo": 4,
+      "commits_last_year": 4
+    },
+    "issues": {
+      "open_issues": 14,
+      "closed_issues_6mo": 1,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": 52.3,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 3,
+      "merged_prs_6mo": 2,
+      "closed_prs_6mo": 2,
+      "stale_prs": 3,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 14,
+      "releases_last_year": 0,
+      "last_release_date": "2024-09-11T18:53:06Z",
+      "latest_version": "v2.4.4",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.14
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 33.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1104,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": true,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 1,
+      "recent_runs_pass_rate": 75.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README provides a good overview of the package's purpose and features, but lacks essential documentation for installation, usage, and troubleshooting.",
+      "top_issue": "Lack of installation instructions and quick start examples"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/powerman/client.c",
+          "line": 246,
+          "severity": "medium",
+          "description": "The function _client_printf uses a va_list and hvsprintf, which can lead to format string vulnerabilities if the input is not properly sanitized."
+        },
+        {
+          "file": "src/powerman/client.c",
+          "line": 341,
+          "severity": "low",
+          "description": "The function _xhostlist_ranged_string uses xmalloc and xrealloc, which can lead to memory leaks or buffer overflows if not properly handled."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential format string vulnerability in _client_printf",
+        "Lack of input validation in _hostlist_create_validated and _client_query_device_reply"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "build failures",
+        "deprecated dependencies"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The powerman community is actively addressing technical issues and maintaining the project, but faces some challenges with build failures and deprecated dependencies."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "occasional abruptness",
+        "lack of clear next steps"
+      ],
+      "summary": "The maintainer provides generally helpful and technically deep responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive environment for contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "low issue closure rate",
+        "infrequent releases"
+      ],
+      "positive_signals": [
+        "recent commits",
+        "active contributors"
+      ],
+      "summary": "The powerman package receives occasional updates and has active contributors, but its maintenance is limited by a low issue closure rate and infrequent releases."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 47,
+      "forks": 21,
+      "open_issues": 17,
+      "license": "GPL-2.0",
+      "description": "cluster power control",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T18:56:55.726598Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good overview of the package's purpose and features, but lacks essential documentation for installation, usage, and troubleshooting.",
+    "concerns": [
+      "low issue closure rate",
+      "infrequent releases",
+      "Docs: Lack of installation instructions and quick start examples",
+      "Community: build failures",
+      "Community: deprecated dependencies",
+      "Communication: occasional abruptness",
+      "Communication: lack of clear next steps",
+      "Security: Potential format string vulnerability in _client_printf",
+      "Security: Lack of input validation in _hostlist_create_validated and _client_query_device_reply"
+    ],
+    "highlights": [
+      "recent commits",
+      "active contributors",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 47,
+      "forks": 21,
+      "open_issues": 17
+    }
+  },
+  "analyzed_at": "2026-01-03T18:59:15.062428Z",
+  "data_fetched_at": "2026-01-03T18:59:15.062429Z"
+}
