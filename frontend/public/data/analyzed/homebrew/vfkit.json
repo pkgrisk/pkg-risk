@@ -1,0 +1,296 @@
+{
+  "ecosystem": "homebrew",
+  "name": "vfkit",
+  "description": "Command-line hypervisor using Apple's Virtualization Framework",
+  "version": "0.6.1",
+  "homepage": "https://github.com/crc-org/vfkit",
+  "repository": {
+    "platform": "github",
+    "owner": "crc-org",
+    "repo": "vfkit",
+    "subpath": null
+  },
+  "install_count_30d": 190,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 78.3,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 74.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 72.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 79.28,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 44.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "crc-org",
+      "name": "vfkit",
+      "description": "",
+      "stars": 295,
+      "forks": 43,
+      "open_issues": 25,
+      "watchers": 295,
+      "created_at": "2022-01-27T15:03:23Z",
+      "updated_at": "2025-12-26T01:14:33Z",
+      "pushed_at": "2026-01-01T12:09:25Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 23,
+      "active_contributors_6mo": 7,
+      "top_contributor_pct": 38.5,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 11,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 2.41
+    },
+    "commits": {
+      "last_commit_date": "2025-12-17T14:55:43Z",
+      "commits_last_6mo": 141,
+      "commits_last_year": 260
+    },
+    "issues": {
+      "open_issues": 23,
+      "closed_issues_6mo": 12,
+      "avg_response_time_hours": 272.8,
+      "avg_close_time_hours": 1674.2,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 2,
+      "merged_prs_6mo": 60,
+      "closed_prs_6mo": 78,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 10,
+      "releases_last_year": 1,
+      "last_release_date": "2025-03-17T13:55:32Z",
+      "latest_version": "v0.6.1",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 79.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1320,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 90.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 3,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README provides a clear introduction and installation instructions, but lacks examples, configuration documentation, and troubleshooting guidance.",
+      "top_issue": "Lack of quick start example and insufficient documentation for common use cases"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/vfkit/main.go",
+          "line": 246,
+          "severity": "medium",
+          "description": "The `startIgnitionProvisionerServerInternal` function uses `http.ServeContent` which can be vulnerable to path traversal attacks if the file path is not properly sanitized."
+        },
+        {
+          "file": "cmd/vfkit/main.go",
+          "line": 246,
+          "severity": "low",
+          "description": "The `startIgnitionProvisionerServerInternal` function uses `http.NewServeMux` which can be vulnerable to HTTP request smuggling attacks if not properly configured."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal vulnerability in the `startIgnitionProvisionerServerInternal` function.",
+        "Lack of input validation in the `generateCloudInitImage` function."
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good security practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "delayed releases",
+        "technical issues with multiple VMs"
+      ],
+      "praise_themes": [
+        "great project"
+      ],
+      "abandonment_signals": false,
+      "summary": "The vfkit community is relatively healthy, with users showing interest in new features and maintainers moderately responsive to issues."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 7,
+      "technical_depth": 6,
+      "welcomingness": 5,
+      "communication_style": "good",
+      "red_flags": [
+        "some responses seem brief or dismissive",
+        "lack of detailed explanations for technical decisions"
+      ],
+      "summary": "The maintainer's responses are generally helpful and clear, but could improve in terms of patience, technical depth, and welcomingness to new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months (141)",
+        "Recent last commit (2025-12-17)",
+        "Frequent merged PRs (60) in the past 6 months",
+        "Multiple active contributors (7) in the past 6 months"
+      ],
+      "summary": "The vfkit package is actively maintained with frequent updates, a high volume of commits, and multiple active contributors."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 295,
+      "forks": 43,
+      "open_issues": 24,
+      "license": "Apache-2.0",
+      "description": "",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-03T22:00:02.428211Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides a clear introduction and installation instructions, but lacks examples, configuration documentation, and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of quick start example and insufficient documentation for common use cases",
+      "Community: delayed releases",
+      "Community: technical issues with multiple VMs",
+      "Communication: some responses seem brief or dismissive",
+      "Communication: lack of detailed explanations for technical decisions",
+      "Security: Potential path traversal vulnerability in the `startIgnitionProvisionerServerInternal` function.",
+      "Security: Lack of input validation in the `generateCloudInitImage` function."
+    ],
+    "highlights": [
+      "High number of commits in the past 6 months (141)",
+      "Recent last commit (2025-12-17)",
+      "Frequent merged PRs (60) in the past 6 months",
+      "Multiple active contributors (7) in the past 6 months",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 295,
+      "forks": 43,
+      "open_issues": 24
+    }
+  },
+  "analyzed_at": "2026-01-03T22:02:19.517411Z",
+  "data_fetched_at": "2026-01-03T22:02:19.517412Z"
+}
