@@ -1,0 +1,294 @@
+{
+  "ecosystem": "homebrew",
+  "name": "medusa",
+  "description": "Solidity smart contract fuzzer powered by go-ethereum",
+  "version": "1.4.1",
+  "homepage": "https://github.com/crytic/medusa",
+  "repository": {
+    "platform": "github",
+    "owner": "crytic",
+    "repo": "medusa",
+    "subpath": null
+  },
+  "install_count_30d": 109,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 88.7,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 98.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 97.61929313667741,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 80.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 90.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 45.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 93.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "crytic",
+      "name": "medusa",
+      "description": "Parallelized, coverage-guided, mutational Solidity smart contract fuzzing, powered by go-ethereum",
+      "stars": 437,
+      "forks": 80,
+      "open_issues": 85,
+      "watchers": 437,
+      "created_at": "2021-08-31T19:03:08Z",
+      "updated_at": "2026-01-04T17:20:56Z",
+      "pushed_at": "2025-12-21T07:01:57Z",
+      "default_branch": "master",
+      "license": "AGPL-3.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 33,
+      "active_contributors_6mo": 9,
+      "top_contributor_pct": 33.0,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 19,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 3.25
+    },
+    "commits": {
+      "last_commit_date": "2025-12-02T19:28:42Z",
+      "commits_last_6mo": 60,
+      "commits_last_year": 130
+    },
+    "issues": {
+      "open_issues": 60,
+      "closed_issues_6mo": 48,
+      "avg_response_time_hours": 412.7,
+      "avg_close_time_hours": 477.2,
+      "good_first_issue_count": 3,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 25,
+      "merged_prs_6mo": 53,
+      "closed_prs_6mo": 91,
+      "stale_prs": 11,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 18,
+      "releases_last_year": 9,
+      "last_release_date": "2025-12-04T21:39:46Z",
+      "latest_version": "v1.4.1",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 99.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2194,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 7,
+      "recent_runs_pass_rate": 44.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 6,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The README provides a good introduction to the package, but lacks concrete examples and troubleshooting guidance.",
+      "top_issue": "Lack of quick start example and troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "chain/state/rpc/client_pool.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The launchRequest function uses the client.CallContext method, which may be vulnerable to JSON-RPC injection attacks if the input is not properly sanitized."
+        },
+        {
+          "file": "compilation/compilation_config.go",
+          "line": 55,
+          "severity": "low",
+          "description": "The Compile function deserializes a json.RawMessage, which may be vulnerable to JSON injection attacks if the input is not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The codebase has some potential security risks related to injection attacks and input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "bugs",
+        "feature requests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The medusa community is actively reporting and discussing issues, with maintainers responding promptly to resolve bugs and consider feature requests."
+    },
+    "communication": {
+      "helpfulness": 6,
+      "clarity": 7,
+      "patience": 5,
+      "technical_depth": 4,
+      "welcomingness": 3,
+      "communication_style": "adequate",
+      "red_flags": [
+        "repeated 'unlikely we implement' responses without explanation",
+        "lack of detailed explanations for technical decisions"
+      ],
+      "summary": "The maintainer's responses are generally adequate but lack depth and clarity, with some indications of impatience and a lack of welcomingness towards new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits and releases",
+        "High number of merged PRs",
+        "Active contributors"
+      ],
+      "summary": "The medusa package appears to be actively maintained with recent updates, a high volume of pull requests, and multiple active contributors."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 436,
+      "forks": 80,
+      "open_issues": 85,
+      "license": "AGPL-3.0",
+      "description": "Parallelized, coverage-guided, mutational Solidity smart contract fuzzing, powered by go-ethereum",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-04T19:12:16.814080Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides a good introduction to the package, but lacks concrete examples and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of quick start example and troubleshooting documentation",
+      "Community: bugs",
+      "Community: feature requests",
+      "Communication: repeated 'unlikely we implement' responses without explanation",
+      "Communication: lack of detailed explanations for technical decisions"
+    ],
+    "highlights": [
+      "Recent commits and releases",
+      "High number of merged PRs",
+      "Active contributors",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 436,
+      "forks": 80,
+      "open_issues": 85
+    }
+  },
+  "analyzed_at": "2026-01-04T19:14:50.432376Z",
+  "data_fetched_at": "2026-01-04T19:14:50.432378Z"
+}
