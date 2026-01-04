@@ -62,7 +62,7 @@ class GitHubFetcher:
         """Get or create an HTTP client."""
         if self._client is not None:
             return self._client
-        return httpx.AsyncClient(timeout=30.0, headers=self._headers())
+        return httpx.AsyncClient(timeout=30.0, headers=self._headers(), follow_redirects=True)
 
     def _update_rate_limits(self, response: httpx.Response) -> None:
         """Extract and store rate limit info from response headers."""

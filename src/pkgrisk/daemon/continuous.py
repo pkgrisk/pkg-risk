@@ -67,12 +67,13 @@ class ContinuousPipeline:
         data_dir: Path = Path("data"),
         github_token: str | None = None,
         skip_llm: bool = True,
-        llm_model: str = "llama3.1:70b",
+        llm_model: str = "llama3.3:70b",
         stale_threshold_days: int = 7,
         interleave_ratio: tuple[int, int] = (3, 1),
         rate_limit_threshold: int = 50,
         publish_interval: int = 50,
         no_publish: bool = False,
+        parallel_llm: bool = False,
     ) -> None:
         """Initialize the continuous pipeline.
 
@@ -86,6 +87,7 @@ class ContinuousPipeline:
             rate_limit_threshold: Preemptively sleep when remaining < this
             publish_interval: Packages between GitHub publishes
             no_publish: Disable auto-publishing to GitHub
+            parallel_llm: Run LLM calls in parallel for better GPU utilization
         """
         self.data_dir = data_dir
         self.github_token = github_token
@@ -93,6 +95,7 @@ class ContinuousPipeline:
         self.llm_model = llm_model
         self.rate_limit_threshold = rate_limit_threshold
         self.no_publish = no_publish
+        self.parallel_llm = parallel_llm
 
         # Work queue
         self.work_queue = WorkQueue(
@@ -140,7 +143,7 @@ class ContinuousPipeline:
                 Ecosystem.PYPI: PyPiAdapter,
             }[ecosystem]()
 
-            self._pipelines[ecosystem] = AnalysisPipeline(
+            pipeline = AnalysisPipeline(
                 adapter=adapter,
                 data_dir=self.data_dir,
                 github_token=self.github_token,
@@ -148,6 +151,8 @@ class ContinuousPipeline:
                 llm_model=self.llm_model,
                 metrics=self.metrics,
             )
+            pipeline.parallel_llm = self.parallel_llm
+            self._pipelines[ecosystem] = pipeline
 
         return self._pipelines[ecosystem]
 

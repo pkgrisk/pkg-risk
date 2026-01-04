@@ -28,7 +28,7 @@ class LLMAnalyzer:
 
     def __init__(
         self,
-        model: str = "llama3.1:70b",
+        model: str = "llama3.3:70b",
         fast_model: str | None = None,
         client: httpx.AsyncClient | None = None,
     ) -> None:

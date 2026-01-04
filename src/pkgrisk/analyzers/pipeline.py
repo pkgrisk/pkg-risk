@@ -47,7 +47,7 @@ class AnalysisPipeline:
         adapter: BaseAdapter,
         data_dir: Path | None = None,
         github_token: str | None = None,
-        llm_model: str = "llama3.1:70b",
+        llm_model: str = "llama3.3:70b",
         skip_llm: bool = False,
         skip_supply_chain: bool = False,
         metrics: MetricsCollector | None = None,
@@ -72,6 +72,7 @@ class AnalysisPipeline:
         self.supply_chain = SupplyChainAnalyzer() if not skip_supply_chain else None
         self.scorer = Scorer()
         self.metrics = metrics
+        self.parallel_llm = False  # Run LLM calls in parallel for better GPU utilization
         self._http_client: httpx.AsyncClient | None = None
 
     async def __aenter__(self) -> "AnalysisPipeline":
@@ -236,6 +237,7 @@ class AnalysisPipeline:
                     repo_ref.owner if repo_ref else "",
                     repo_ref.repo if repo_ref else "",
                     github_data,
+                    parallel=self.parallel_llm,
                 )
                 self._record_timing("llm", time.perf_counter() - t0)
 
@@ -307,6 +309,7 @@ class AnalysisPipeline:
         owner: str,
         repo: str,
         github_data,
+        parallel: bool = False,
     ) -> LLMAssessments:
         """Run all LLM assessments for a package.
 
@@ -316,10 +319,28 @@ class AnalysisPipeline:
             owner: GitHub owner.
             repo: GitHub repo name.
             github_data: GitHub data for the repo.
+            parallel: If True, run LLM calls concurrently for better GPU utilization.
 
         Returns:
             LLMAssessments with all completed assessments.
         """
+        if parallel:
+            return await self._run_llm_assessments_parallel(
+                package_name, ecosystem, owner, repo, github_data
+            )
+        return await self._run_llm_assessments_sequential(
+            package_name, ecosystem, owner, repo, github_data
+        )
+
+    async def _run_llm_assessments_sequential(
+        self,
+        package_name: str,
+        ecosystem: str,
+        owner: str,
+        repo: str,
+        github_data,
+    ) -> LLMAssessments:
+        """Run LLM assessments sequentially (original behavior)."""
         assessments = LLMAssessments()
 
         # 1. README assessment
@@ -419,6 +440,139 @@ class AnalysisPipeline:
                 )
         except Exception:
             pass
+
+        return assessments
+
+    async def _run_llm_assessments_parallel(
+        self,
+        package_name: str,
+        ecosystem: str,
+        owner: str,
+        repo: str,
+        github_data,
+    ) -> LLMAssessments:
+        """Run LLM assessments in parallel for better GPU utilization.
+
+        This fetches all content first, then runs all LLM calls concurrently.
+        Can improve GPU utilization from ~50% to ~80-90% by keeping the GPU busy.
+        """
+        import asyncio
+
+        assessments = LLMAssessments()
+
+        # Phase 1: Fetch all content in parallel (network I/O)
+        fetch_tasks = {}
+
+        if github_data.files.has_readme:
+            fetch_tasks["readme"] = self.github.fetch_readme_content(owner, repo)
+
+        fetch_tasks["issues"] = self.github.fetch_recent_issues(owner, repo, limit=15)
+        fetch_tasks["comments"] = self.github.fetch_maintainer_comments(owner, repo, limit=30)
+
+        if github_data.files.has_changelog:
+            fetch_tasks["changelog"] = self.github.fetch_changelog_content(owner, repo)
+
+        if github_data.files.has_contributing or github_data.files.has_governance:
+            fetch_tasks["governance"] = self.github.fetch_governance_docs(owner, repo)
+
+        fetch_tasks["code_samples"] = self.github.fetch_source_files_for_security(
+            owner,
+            repo,
+            language=github_data.repo.language,
+            default_branch=github_data.repo.default_branch,
+            max_bytes=15000,
+            max_files=10,
+        )
+
+        # Execute all fetches concurrently
+        fetch_results = {}
+        if fetch_tasks:
+            keys = list(fetch_tasks.keys())
+            results = await asyncio.gather(
+                *fetch_tasks.values(),
+                return_exceptions=True,
+            )
+            for key, result in zip(keys, results):
+                if not isinstance(result, Exception):
+                    fetch_results[key] = result
+
+        # Phase 2: Run all LLM assessments in parallel (GPU work)
+        llm_tasks = {}
+
+        # README assessment
+        readme_content = fetch_results.get("readme")
+        if readme_content:
+            llm_tasks["readme"] = self.llm.assess_readme(
+                readme_content, package_name, ecosystem
+            )
+
+        # Sentiment assessment
+        issues = fetch_results.get("issues")
+        if issues:
+            llm_tasks["sentiment"] = self.llm.assess_sentiment(
+                issues, package_name, ecosystem
+            )
+
+        # Communication assessment
+        comments = fetch_results.get("comments")
+        if comments and len(comments) >= 5:
+            llm_tasks["communication"] = self.llm.assess_communication(
+                comments, package_name, ecosystem
+            )
+
+        # Maintenance assessment (uses github_data, no fetch needed)
+        last_commit = github_data.commits.last_commit_date
+        last_commit_str = last_commit.isoformat() if last_commit else "unknown"
+        last_release = github_data.releases.last_release_date
+        last_release_str = last_release.isoformat() if last_release else None
+        pr_activity = github_data.prs.merged_prs_6mo
+        if pr_activity == 0:
+            pr_activity = github_data.prs.closed_prs_6mo
+
+        llm_tasks["maintenance"] = self.llm.assess_maintenance(
+            last_commit_date=last_commit_str,
+            commit_count=github_data.commits.commits_last_6mo,
+            open_issues=github_data.issues.open_issues,
+            closed_issues=github_data.issues.closed_issues_6mo,
+            open_prs=github_data.prs.open_prs,
+            merged_prs=pr_activity,
+            last_release_date=last_release_str,
+            active_contributors=github_data.contributors.active_contributors_6mo,
+            package_name=package_name,
+            ecosystem=ecosystem,
+        )
+
+        # Changelog assessment
+        changelog_content = fetch_results.get("changelog")
+        if changelog_content:
+            llm_tasks["changelog"] = self.llm.assess_changelog(
+                changelog_content, package_name, ecosystem
+            )
+
+        # Governance assessment
+        governance_docs = fetch_results.get("governance")
+        if governance_docs:
+            llm_tasks["governance"] = self.llm.assess_governance(
+                governance_docs, package_name, ecosystem
+            )
+
+        # Security assessment
+        code_samples = fetch_results.get("code_samples")
+        if code_samples:
+            llm_tasks["security"] = self.llm.assess_security(
+                code_samples, package_name, ecosystem
+            )
+
+        # Execute all LLM calls concurrently
+        if llm_tasks:
+            keys = list(llm_tasks.keys())
+            results = await asyncio.gather(
+                *llm_tasks.values(),
+                return_exceptions=True,
+            )
+            for key, result in zip(keys, results):
+                if not isinstance(result, Exception):
+                    setattr(assessments, key, result)
 
         return assessments
 
