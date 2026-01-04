@@ -1,0 +1,343 @@
+{
+  "ecosystem": "homebrew",
+  "name": "spotifyd",
+  "description": "Spotify daemon",
+  "version": "0.4.2",
+  "homepage": "https://spotifyd.rs/",
+  "repository": {
+    "platform": "github",
+    "owner": "Spotifyd",
+    "repo": "spotifyd",
+    "subpath": null
+  },
+  "install_count_30d": 174,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 79.8,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 66.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 44.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 76.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "Spotifyd",
+      "name": "spotifyd",
+      "description": "A spotify daemon",
+      "stars": 10491,
+      "forks": 489,
+      "open_issues": 45,
+      "watchers": 10491,
+      "created_at": "2014-12-10T21:05:13Z",
+      "updated_at": "2026-01-04T00:17:31Z",
+      "pushed_at": "2026-01-04T00:17:26Z",
+      "default_branch": "master",
+      "license": "GPL-3.0",
+      "language": "Rust",
+      "topics": [
+        "daemon",
+        "linux",
+        "rust",
+        "spotify",
+        "spotifyd"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 118,
+      "active_contributors_6mo": 7,
+      "top_contributor_pct": 29.0,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 3,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 6,
+      "contributor_entropy": 4.5
+    },
+    "commits": {
+      "last_commit_date": "2026-01-04T00:17:25Z",
+      "commits_last_6mo": 32,
+      "commits_last_year": 92
+    },
+    "issues": {
+      "open_issues": 42,
+      "closed_issues_6mo": 17,
+      "avg_response_time_hours": 19.6,
+      "avg_close_time_hours": 590.0,
+      "good_first_issue_count": 2,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 3,
+      "merged_prs_6mo": 10,
+      "closed_prs_6mo": 13,
+      "stale_prs": 3,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 86,
+      "releases_last_year": 3,
+      "last_release_date": "2025-11-19T02:12:27Z",
+      "latest_version": "v0.4.2",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 93.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1944,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 5,
+      "recent_runs_pass_rate": 62.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README provides a clear introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
+      "top_issue": "Lack of clear installation instructions and examples in the README"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 123,
+          "severity": "medium",
+          "description": "The `pledge` function is called with a string argument that could potentially be crafted to allow more privileges than intended."
+        },
+        {
+          "file": "src/main_loop.rs",
+          "line": 134,
+          "severity": "low",
+          "description": "The `spawn_program_on_event` function may execute a command with user-controlled input, but it is not clear if this input is properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk due to the use of the `pledge` function with a string argument.",
+        "Lack of thorough input validation in some parts of the code."
+      ],
+      "summary": "The code has some potential security issues, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "random disconnects",
+        "incompatibility issues with librespot"
+      ],
+      "praise_themes": [
+        "ease of setup",
+        "lightweight daemon"
+      ],
+      "abandonment_signals": false,
+      "summary": "The spotifyd community is active, but users are experiencing frustration with various technical issues, while also appreciating the project's ease of use and lightweight nature."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are consistently helpful, clear, patient, and technically sound, making them an exemplary communicator in the GitHub community."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "open issues outnumber closed issues in the past 6 months",
+        "relatively low number of contributors"
+      ],
+      "positive_signals": [
+        "frequent commits in the past 6 months",
+        "recent releases and merged PRs"
+      ],
+      "summary": "The spotifyd package appears to be maintained, with regular updates and a notable amount of community engagement, despite some concerns regarding open issues and contributor count."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-structured and easy to follow, but lacks explicit migration guides for breaking changes."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The governance documentation for the homebrew package 'spotifyd' lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.6,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 4.0,
+        "Maintained": 10.0,
+        "Packaging": -1.0,
+        "Binary-Artifacts": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "CII-Best-Practices": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "Token-Permissions": 0.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Branch-Protection": 5.0,
+        "Signed-Releases": 0.0,
+        "Vulnerabilities": 8.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 4.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 5.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 10487,
+      "forks": 488,
+      "open_issues": 46,
+      "license": "GPL-3.0",
+      "description": "A spotify daemon",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-04T00:44:32.789630Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a clear introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
+    "concerns": [
+      "open issues outnumber closed issues in the past 6 months",
+      "relatively low number of contributors",
+      "Docs: Lack of clear installation instructions and examples in the README",
+      "Community: random disconnects",
+      "Community: incompatibility issues with librespot",
+      "Governance: High bus factor risk identified",
+      "Security: Potential injection risk due to the use of the `pledge` function with a string argument.",
+      "Security: Lack of thorough input validation in some parts of the code."
+    ],
+    "highlights": [
+      "frequent commits in the past 6 months",
+      "recent releases and merged PRs",
+      "Excellent maintainer communication",
+      "Breaking changes clearly marked in changelog",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary",
+    "scorecard_score": 4.6
+  },
+  "analyzed_at": "2026-01-04T00:47:46.293583Z",
+  "data_fetched_at": "2026-01-04T00:47:46.293584Z"
+}
