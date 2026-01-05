@@ -1,0 +1,325 @@
+{
+  "ecosystem": "homebrew",
+  "name": "cadical",
+  "description": "Clean and efficient state-of-the-art SAT solver",
+  "version": "3.0.0",
+  "homepage": "https://fmv.jku.at/cadical/",
+  "repository": {
+    "platform": "github",
+    "owner": "arminbiere",
+    "repo": "cadical",
+    "subpath": null
+  },
+  "install_count_30d": 68,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 74.4,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 63.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Dangerous CI/CD workflows detected",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 97.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 59.1,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 35.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 65.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "arminbiere",
+      "name": "cadical",
+      "description": "CaDiCaL SAT Solver",
+      "stars": 509,
+      "forks": 162,
+      "open_issues": 18,
+      "watchers": 509,
+      "created_at": "2016-08-17T11:32:42Z",
+      "updated_at": "2026-01-03T19:03:02Z",
+      "pushed_at": "2026-01-04T10:26:24Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "C++",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 9,
+      "active_contributors_6mo": 6,
+      "top_contributor_pct": 50.9,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 4,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 2,
+      "contributor_entropy": 1.76
+    },
+    "commits": {
+      "last_commit_date": "2025-12-23T18:25:57Z",
+      "commits_last_6mo": 400,
+      "commits_last_year": 904
+    },
+    "issues": {
+      "open_issues": 16,
+      "closed_issues_6mo": 11,
+      "avg_response_time_hours": 3210.1,
+      "avg_close_time_hours": 4552.3,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 2,
+      "merged_prs_6mo": 1,
+      "closed_prs_6mo": 8,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 34,
+      "releases_last_year": 5,
+      "last_release_date": "2025-12-23T18:35:05Z",
+      "latest_version": "rel-3.0.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.03
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2938,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 4,
+      "examples": 5,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The documentation provides a good introduction to the package, but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of clear and concise troubleshooting information"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/parse.cpp",
+          "line": 141,
+          "severity": "medium",
+          "description": "The solver->set_long_option(o) call may be vulnerable to option injection if the input 'o' is not properly sanitized."
+        },
+        {
+          "file": "src/config.cpp",
+          "line": 63,
+          "severity": "low",
+          "description": "The use of strcmp and strcpy-like functions may lead to potential buffer overflow issues, but it appears that the code is using them safely in this context."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The code appears to have some potential security issues related to input validation and option injection, but overall it seems to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "performance issues",
+        "documentation inconsistencies",
+        "data race concerns"
+      ],
+      "praise_themes": [
+        "bug fixes are being addressed promptly",
+        "open to enhancement suggestions"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some ongoing issues, but the maintainers are actively addressing them."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful and clear, showing patience with repeated questions and providing technical depth in explanations."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past six months (400)",
+        "Recent release and last commit dates",
+        "Multiple contributors active in the past six months"
+      ],
+      "summary": "The package is actively maintained with frequent updates and contributions."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.0,
+      "score_date": "2025-12-22T00:00:00Z",
+      "checks": {
+        "Code-Review": 0.0,
+        "Dangerous-Workflow": -1.0,
+        "Packaging": -1.0,
+        "Token-Permissions": -1.0,
+        "Maintained": 10.0,
+        "SAST": 0.0,
+        "CII-Best-Practices": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Vulnerabilities": 10.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Signed-Releases": -1.0,
+        "Pinned-Dependencies": 0.0,
+        "Branch-Protection": 0.0
+      },
+      "code_review_score": 0.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 508,
+      "forks": 162,
+      "open_issues": 18,
+      "license": "MIT",
+      "description": "CaDiCaL SAT Solver",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-05T11:40:03.191418Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation provides a good introduction to the package, but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of clear and concise troubleshooting information",
+      "Community: performance issues",
+      "Community: documentation inconsistencies",
+      "Governance: High bus factor risk identified",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "High number of commits in the past six months (400)",
+      "Recent release and last commit dates",
+      "Multiple contributors active in the past six months",
+      "Actively maintained"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "scorecard_score": 4.0
+  },
+  "analyzed_at": "2026-01-05T11:41:28.815373Z",
+  "data_fetched_at": "2026-01-05T11:41:28.815374Z"
+}
