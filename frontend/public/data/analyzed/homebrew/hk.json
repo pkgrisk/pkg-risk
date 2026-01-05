@@ -1,0 +1,297 @@
+{
+  "ecosystem": "homebrew",
+  "name": "hk",
+  "description": "Git hook and pre-commit lint manager",
+  "version": "1.28.0",
+  "homepage": "https://hk.jdx.dev",
+  "repository": {
+    "platform": "github",
+    "owner": "jdx",
+    "repo": "hk",
+    "subpath": null
+  },
+  "install_count_30d": 56,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 82.4,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "new",
+    "security": {
+      "score": 78.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 50.8,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 43.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 96.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "jdx",
+      "name": "hk",
+      "description": "git hooks and project lints",
+      "stars": 566,
+      "forks": 37,
+      "open_issues": 7,
+      "watchers": 566,
+      "created_at": "2025-01-26T12:26:48Z",
+      "updated_at": "2026-01-05T13:38:51Z",
+      "pushed_at": "2026-01-05T13:41:39Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Rust",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 30,
+      "active_contributors_6mo": 23,
+      "top_contributor_pct": 79.3,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 10,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 21,
+      "contributor_entropy": 1.35
+    },
+    "commits": {
+      "last_commit_date": "2026-01-05T13:38:47Z",
+      "commits_last_6mo": 443,
+      "commits_last_year": 880
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 7,
+      "merged_prs_6mo": 286,
+      "closed_prs_6mo": 300,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 108,
+      "releases_last_year": 108,
+      "last_release_date": "2025-12-18T04:33:20Z",
+      "latest_version": "v1.28.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": true,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 358,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 8,
+      "recent_runs_pass_rate": 46.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The documentation is lacking in key areas, making it difficult for new users to get started with the package.",
+      "top_issue": "No clear installation instructions are provided in the README."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 53,
+          "severity": "high",
+          "description": "The handle_script_failed function uses the format! macro to construct a command string, which could potentially lead to command injection if user input is not properly sanitized."
+        },
+        {
+          "file": "src/cli/completion.rs",
+          "line": 15,
+          "severity": "medium",
+          "description": "The run method of the Completion struct uses the xx::process::cmd function, which executes a shell command. While it does not directly use user input, it could potentially be vulnerable to injection if the self.shell field is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in handle_script_failed function",
+        "Lack of input validation for ConfigGet and ConfigExplain structs"
+      ],
+      "summary": "The code has some potential security vulnerabilities, including a possible command injection risk and lack of input validation, but does not appear to expose sensitive information or use insecure defaults."
+    },
+    "sentiment": null,
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "Occasional use of informal language and emojis",
+        "Some frustration expressed in comments"
+      ],
+      "summary": "The maintainer provides useful information but could be more welcoming to new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past six months (443)",
+        "A large number of merged PRs in the past six months (286)",
+        "No open issues or PRs indicating unresolved problems"
+      ],
+      "summary": "The package is actively maintained with frequent updates and contributions."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The documentation lacks details on succession, decision-making, contributor path to maintainer, and indicates a single maintainer or no multiple maintainers."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 563,
+      "forks": 37,
+      "open_issues": 9,
+      "license": "MIT",
+      "description": "git hooks and project lints",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-05T17:23:20.286277Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is lacking in key areas, making it difficult for new users to get started with the package.",
+    "concerns": [
+      "Docs: No clear installation instructions are provided in the README.",
+      "Communication: Occasional use of informal language and emojis",
+      "Communication: Some frustration expressed in comments",
+      "Governance: High bus factor risk identified",
+      "Security: Potential command injection vulnerability in handle_script_failed function",
+      "Security: Lack of input validation for ConfigGet and ConfigExplain structs",
+      "Security: The handle_script_failed function uses the format! macro to construct a command string, which could potentially lead to command injection if user input is not properly sanitized."
+    ],
+    "highlights": [
+      "High number of commits in the past six months (443)",
+      "A large number of merged PRs in the past six months (286)",
+      "No open issues or PRs indicating unresolved problems",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 563,
+      "forks": 37,
+      "open_issues": 9
+    }
+  },
+  "analyzed_at": "2026-01-05T17:24:37.249091Z",
+  "data_fetched_at": "2026-01-05T17:24:37.249092Z"
+}
