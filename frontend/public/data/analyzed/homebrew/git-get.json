@@ -1,0 +1,293 @@
+{
+  "ecosystem": "homebrew",
+  "name": "git-get",
+  "description": "Better way to clone, organize and manage multiple git repositories",
+  "version": "0.6.1",
+  "homepage": "https://github.com/grdl/git-get",
+  "repository": {
+    "platform": "github",
+    "owner": "grdl",
+    "repo": "git-get",
+    "subpath": null
+  },
+  "install_count_30d": 84,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 72.9,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 62.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 99.19521677372292,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 87.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 41.36,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 35.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 88.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "grdl",
+      "name": "git-get",
+      "description": "A better way to clone, organize and manage multiple git repositories",
+      "stars": 132,
+      "forks": 6,
+      "open_issues": 7,
+      "watchers": 132,
+      "created_at": "2020-05-30T11:55:54Z",
+      "updated_at": "2026-01-02T17:07:59Z",
+      "pushed_at": "2025-12-24T13:54:29Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "cli",
+        "git",
+        "golang"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 4,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 97.9,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 2,
+      "contributor_entropy": 0.17
+    },
+    "commits": {
+      "last_commit_date": "2025-12-24T13:54:29Z",
+      "commits_last_6mo": 85,
+      "commits_last_year": 85
+    },
+    "issues": {
+      "open_issues": 5,
+      "closed_issues_6mo": 6,
+      "avg_response_time_hours": 7751.0,
+      "avg_close_time_hours": 13902.7,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 2,
+      "merged_prs_6mo": 12,
+      "closed_prs_6mo": 14,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 13,
+      "releases_last_year": 2,
+      "last_release_date": "2025-08-25T16:19:49Z",
+      "latest_version": "v0.6.1",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 19.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 11774,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 80.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "pkg/run/run.go",
+          "line": 34,
+          "severity": "high",
+          "description": "The 'Git' function uses the 'exec.CommandContext' function with user-provided arguments, which can lead to command injection attacks if not properly sanitized."
+        },
+        {
+          "file": "pkg/run/run.go",
+          "line": 64,
+          "severity": "medium",
+          "description": "The 'OnRepo' method modifies the command's arguments by inserting new values. This could potentially be exploited if the input is not validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the 'Git' function",
+        "Lack of validation for user-provided input"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but does not expose sensitive information or use insecure defaults."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "documentation issues",
+        "feature requests"
+      ],
+      "praise_themes": [
+        "community contribution"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community is actively contributing with feature suggestions and pull requests, but there are ongoing documentation issues that need attention."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are clear, helpful, and encouraging to new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits in the past six months",
+        "Multiple merged pull requests in the past six months",
+        "Regular issue closure"
+      ],
+      "summary": "The package is actively maintained with recent activity and contributions."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear indication of breaking changes or upgrade paths."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 132,
+      "forks": 6,
+      "open_issues": 7,
+      "license": "MIT",
+      "description": "A better way to clone, organize and manage multiple git repositories",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-05T05:59:02.964441Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "Community: documentation issues",
+      "Community: feature requests",
+      "Security: Potential command injection vulnerability in the 'Git' function",
+      "Security: Lack of validation for user-provided input",
+      "Security: The 'Git' function uses the 'exec.CommandContext' function with user-provided arguments, which can lead to command injection attacks if not properly sanitized.",
+      "High bus factor risk (98% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits in the past six months",
+      "Multiple merged pull requests in the past six months",
+      "Regular issue closure",
+      "Excellent maintainer communication",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 132,
+      "forks": 6,
+      "open_issues": 7
+    }
+  },
+  "analyzed_at": "2026-01-05T06:00:42.129883Z",
+  "data_fetched_at": "2026-01-05T06:00:42.129883Z"
+}
