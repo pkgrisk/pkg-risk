@@ -1,0 +1,299 @@
+{
+  "ecosystem": "homebrew",
+  "name": "yoke",
+  "description": "Helm-inspired infrastructure-as-code package deployer",
+  "version": "0.19.5",
+  "homepage": "https://yokecd.github.io/docs/",
+  "repository": {
+    "platform": "github",
+    "owner": "yokecd",
+    "repo": "yoke",
+    "subpath": null
+  },
+  "install_count_30d": 74,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 66.8,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "established",
+    "security": {
+      "score": 56.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 54.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 26.92,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 59.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 83.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "yokecd",
+      "name": "yoke",
+      "description": "Kubernetes Package Management as Code; infrastructure as code, but actually.",
+      "stars": 690,
+      "forks": 27,
+      "open_issues": 25,
+      "watchers": 690,
+      "created_at": "2024-02-14T18:32:16Z",
+      "updated_at": "2026-01-03T21:51:35Z",
+      "pushed_at": "2026-01-02T16:16:52Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 11,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 97.5,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 9,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 0.24
+    },
+    "commits": {
+      "last_commit_date": "2025-12-31T01:18:14Z",
+      "commits_last_6mo": 132,
+      "commits_last_year": 404
+    },
+    "issues": {
+      "open_issues": 21,
+      "closed_issues_6mo": 9,
+      "avg_response_time_hours": 357.8,
+      "avg_close_time_hours": 405.9,
+      "good_first_issue_count": 4,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 38,
+      "closed_prs_6mo": 42,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 223,
+      "releases_last_year": 192,
+      "last_release_date": "2026-01-02T16:07:02Z",
+      "latest_version": "v0.19.5",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 1.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2120,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": true,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 1,
+      "recent_runs_pass_rate": 74.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 3,
+      "configuration": 4,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The README provides a good introduction to the package, but lacks concrete examples and troubleshooting guidance.",
+      "top_issue": "Lack of quick start example and insufficient documentation for common use cases"
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "cmd/helm2go/main.go",
+          "line": 123,
+          "severity": "high",
+          "description": "The use of `os.WriteFile` with user-controlled data (`chart.Schema`) may lead to arbitrary file write vulnerabilities."
+        },
+        {
+          "file": "cmd/helm2go/main.go",
+          "line": 135,
+          "severity": "medium",
+          "description": "The use of `exec.CommandContext` with user-controlled data (`schemaFile`, `packageName`) may lead to command injection vulnerabilities."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential arbitrary file write vulnerability in cmd/helm2go/main.go",
+        "Lack of input validation for user-controlled data"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no secrets were found and error exposure is relatively low."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Cross-namespace resources are immediately deleted due to invalid OwnerReferences",
+        "Admission webhook dry-run validation fails for multi-stage releases with CRD dependencies"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is experiencing significant issues, particularly around cross-namespace and admission webhook functionalities, indicating a negative sentiment but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "Maintainer responses are clear, helpful, and encouraging to new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past six months (132)",
+        "A recent release date (2026-01-02)",
+        "Multiple merged PRs in the past six months (38)"
+      ],
+      "summary": "The package yoke appears to be actively maintained with a high level of community involvement."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": false,
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 5,
+      "summary": "The changelog marks breaking changes and provides some context, but lacks migration guides, clear categorization, and completeness."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 690,
+      "forks": 27,
+      "open_issues": 25,
+      "license": "MIT",
+      "description": "Kubernetes Package Management as Code; infrastructure as code, but actually.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-05T09:38:16.480596Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good introduction to the package, but lacks concrete examples and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of quick start example and insufficient documentation for common use cases",
+      "Community: Cross-namespace resources are immediately deleted due to invalid OwnerReferences",
+      "Community: Admission webhook dry-run validation fails for multi-stage releases with CRD dependencies",
+      "Security: Potential arbitrary file write vulnerability in cmd/helm2go/main.go",
+      "Security: Lack of input validation for user-controlled data",
+      "Security: The use of `os.WriteFile` with user-controlled data (`chart.Schema`) may lead to arbitrary file write vulnerabilities.",
+      "High bus factor risk (98% from top contributor)"
+    ],
+    "highlights": [
+      "High number of commits in the past six months (132)",
+      "A recent release date (2026-01-02)",
+      "Multiple merged PRs in the past six months (38)",
+      "Excellent maintainer communication",
+      "Breaking changes clearly marked in changelog",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 690,
+      "forks": 27,
+      "open_issues": 25
+    }
+  },
+  "analyzed_at": "2026-01-05T09:39:47.294292Z",
+  "data_fetched_at": "2026-01-05T09:39:47.294293Z"
+}
