@@ -1,0 +1,310 @@
+{
+  "ecosystem": "homebrew",
+  "name": "brpc",
+  "description": "Better RPC framework",
+  "version": "1.15.0",
+  "homepage": "https://brpc.apache.org/",
+  "repository": {
+    "platform": "github",
+    "owner": "apache",
+    "repo": "brpc",
+    "subpath": null
+  },
+  "install_count_30d": 47,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 86.0,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 74.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 67.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 90.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "apache",
+      "name": "brpc",
+      "description": "brpc is an Industrial-grade RPC framework using C++ Language, which is often used in high performance system such as Search, Storage, Machine learning, Advertisement, Recommendation etc. \"brpc\" means \"better RPC\".",
+      "stars": 17436,
+      "forks": 4089,
+      "open_issues": 437,
+      "watchers": 17436,
+      "created_at": "2017-09-04T09:28:47Z",
+      "updated_at": "2026-01-05T16:17:59Z",
+      "pushed_at": "2026-01-05T06:04:37Z",
+      "default_branch": "master",
+      "license": "Apache-2.0",
+      "language": "C++",
+      "topics": [
+        "rpc"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 222,
+      "active_contributors_6mo": 34,
+      "top_contributor_pct": 19.7,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 29,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 23,
+      "contributor_entropy": 4.8
+    },
+    "commits": {
+      "last_commit_date": "2026-01-05T06:04:37Z",
+      "commits_last_6mo": 97,
+      "commits_last_year": 186
+    },
+    "issues": {
+      "open_issues": 262,
+      "closed_issues_6mo": 90,
+      "avg_response_time_hours": 40.0,
+      "avg_close_time_hours": 123.6,
+      "good_first_issue_count": 5,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 67,
+      "merged_prs_6mo": 74,
+      "closed_prs_6mo": 84,
+      "stale_prs": 58,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 24,
+      "releases_last_year": 6,
+      "last_release_date": "2025-10-27T08:37:01Z",
+      "latest_version": "1.15.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.04
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 77.0,
+      "has_dependabot": false,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 6954,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": true,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 5,
+      "recent_runs_pass_rate": 66.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 4,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 6,
+      "summary": "The documentation is comprehensive but lacks clear installation instructions and a concise quick start guide.",
+      "top_issue": "Lack of clear installation instructions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/brpc/policy/domain_naming_service.cpp",
+          "line": 64,
+          "severity": "medium",
+          "description": "Potential buffer overflow vulnerability in the `buf` array when copying hostname from `dns_name`. The code checks for null termination, but it does not validate the length of the input string."
+        },
+        {
+          "file": "src/brpc/policy/domain_naming_service.cpp",
+          "line": 123,
+          "severity": "low",
+          "description": "Use of `snprintf` with a fixed-size buffer (`portBuf`) may lead to potential buffer overflow issues if the port number is very large."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in hostname copying",
+        "Lack of input validation for `dns_name` and `port` values"
+      ],
+      "summary": "The code has some security concerns, including potential buffer overflow vulnerabilities and lack of input validation, but it does not expose sensitive information or have critical secrets hardcoded."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "SO_BINDTODEVICE support",
+        "protobuf v6 support"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is generally neutral with some open issues and feature requests, indicating moderate maintainership but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "Maintainer responses are generally clear and helpful, showing patience with repeated questions and providing technical depth."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [
+        "High number of open issues",
+        "More open PRs than merged in the past six months"
+      ],
+      "positive_signals": [
+        "Recent commits and releases",
+        "Multiple contributors active in the past six months",
+        "A significant number of commits in the past six months"
+      ],
+      "summary": "The package is actively maintained with recent activity, but there are concerns about unresolved issues and PRs."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 6,
+      "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it less user-friendly."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 17436,
+      "forks": 4089,
+      "open_issues": 437,
+      "license": "Apache-2.0",
+      "description": "brpc is an Industrial-grade RPC framework using C++ Language, which is often used in high performance system such as Search, Storage, Machine learning, Advertisement, Recommendation etc. \"brpc\" means \"better RPC\".",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-05T22:45:56.867737Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is comprehensive but lacks clear installation instructions and a concise quick start guide.",
+    "concerns": [
+      "High number of open issues",
+      "More open PRs than merged in the past six months",
+      "Docs: Lack of clear installation instructions",
+      "Community: SO_BINDTODEVICE support",
+      "Community: protobuf v6 support",
+      "Governance: High bus factor risk identified",
+      "Security: Potential buffer overflow vulnerability in hostname copying",
+      "Security: Lack of input validation for `dns_name` and `port` values"
+    ],
+    "highlights": [
+      "Recent commits and releases",
+      "Multiple contributors active in the past six months",
+      "A significant number of commits in the past six months",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 17436,
+      "forks": 4089,
+      "open_issues": 437
+    }
+  },
+  "analyzed_at": "2026-01-05T22:47:37.763664Z",
+  "data_fetched_at": "2026-01-05T22:47:37.763665Z"
+}
