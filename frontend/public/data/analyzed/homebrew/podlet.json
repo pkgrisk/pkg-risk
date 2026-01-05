@@ -1,0 +1,312 @@
+{
+  "ecosystem": "homebrew",
+  "name": "podlet",
+  "description": "Generate podman quadlet files from a podman command or compose file",
+  "version": "0.3.0",
+  "homepage": "https://github.com/containers/podlet",
+  "repository": {
+    "platform": "github",
+    "owner": "containers",
+    "repo": "podlet",
+    "subpath": null
+  },
+  "install_count_30d": 95,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 70.0,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "established",
+    "security": {
+      "score": 90.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 65.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 46.76,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 63.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 81.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "containers",
+      "name": "podlet",
+      "description": "Generate Podman Quadlet files from a Podman command, compose file, or existing object",
+      "stars": 1257,
+      "forks": 33,
+      "open_issues": 42,
+      "watchers": 1257,
+      "created_at": "2023-03-03T11:09:35Z",
+      "updated_at": "2026-01-04T15:42:24Z",
+      "pushed_at": "2024-11-05T21:15:47Z",
+      "default_branch": "main",
+      "license": "MPL-2.0",
+      "language": "Rust",
+      "topics": [
+        "containers",
+        "podman",
+        "quadlet",
+        "rust"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 7,
+      "active_contributors_6mo": 7,
+      "top_contributor_pct": 97.7,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.22
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 37,
+      "closed_issues_6mo": 5,
+      "avg_response_time_hours": 255.7,
+      "avg_close_time_hours": 1581.1,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 5,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 8,
+      "releases_last_year": 0,
+      "last_release_date": "2024-05-21T19:32:02Z",
+      "latest_version": "v0.3.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 90.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": true,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 15146,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 37.5,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is generally clear and provides a good overview of the package's features, but could benefit from more examples and troubleshooting information.",
+      "top_issue": "Lack of troubleshooting information"
+    },
+    "security": {
+      "overall_score": 8,
+      "injection_risks": [
+        {
+          "file": "src/cli.rs",
+          "line": 246,
+          "severity": "medium",
+          "description": "The `absolute_host_paths` option allows user input to influence the directory used for resolving relative paths, which could potentially lead to path traversal attacks if not properly sanitized."
+        },
+        {
+          "file": "src/cli.rs",
+          "line": 264,
+          "severity": "low",
+          "description": "The `env::var` function is used to retrieve environment variables, which could potentially be tampered with by an attacker. However, this is a relatively low-risk issue since the variables are not directly used in a security-sensitive context."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal attack via the `absolute_host_paths` option"
+      ],
+      "summary": "The code has some security concerns related to input validation and potential path traversal attacks, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "lack of maintenance",
+        "outdated releases",
+        "conversion errors"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The community health is negative due to lack of maintainer responsiveness, outdated releases, and frequent conversion errors reported by users."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 7,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "Maintainer responses are generally clear and helpful, showing patience with new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Low number of merged PRs in the past six months"
+      ],
+      "positive_signals": [
+        "Recent release on 2024-05-21T19:32:02+00:00",
+        "7 contributors active in the past six months"
+      ],
+      "summary": "The package is minimally maintained with recent activity but lacks recent code commits and merged PRs."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 8,
+      "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks explicit upgrade paths."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "medium",
+      "summary": "The project documents decision-making processes but lacks a succession plan or contributor ladder, indicating potential single-point-of-failure risk."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 1251,
+      "forks": 32,
+      "open_issues": 41,
+      "license": "non-standard",
+      "description": "Generate Podman Quadlet files from a Podman command, compose file, or existing object",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-05T03:31:15.620574Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "has SECURITY.md",
+    "doc_summary": "The documentation is generally clear and provides a good overview of the package's features, but could benefit from more examples and troubleshooting information.",
+    "concerns": [
+      "No commits in the past six months",
+      "Low number of merged PRs in the past six months",
+      "Docs: Lack of troubleshooting information",
+      "Possible abandonment signals detected",
+      "Community: lack of maintenance",
+      "Community: outdated releases",
+      "Security: Potential path traversal attack via the `absolute_host_paths` option",
+      "High bus factor risk (98% from top contributor)"
+    ],
+    "highlights": [
+      "Recent release on 2024-05-21T19:32:02+00:00",
+      "7 contributors active in the past six months",
+      "Breaking changes clearly marked in changelog",
+      "Code follows security best practices",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 1251,
+      "forks": 32,
+      "open_issues": 41
+    }
+  },
+  "analyzed_at": "2026-01-05T03:33:21.753672Z",
+  "data_fetched_at": "2026-01-05T03:33:21.753672Z"
+}
