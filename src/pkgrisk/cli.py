@@ -300,10 +300,11 @@ def analyze(
     ecosystem: str = typer.Option("homebrew", "--ecosystem", "-e", help="Package ecosystem"),
     output: Path | None = typer.Option(None, "--output", "-o", help="Output JSON file"),
     skip_llm: bool = typer.Option(False, "--skip-llm", help="Skip LLM analysis"),
-    model: str = typer.Option("llama3.1:70b", "--model", "-m", help="Ollama model for LLM analysis"),
+    model: str = typer.Option("llama3.3:70b", "--model", "-m", help="Ollama model for LLM analysis"),
+    parallel_llm: bool = typer.Option(False, "--parallel-llm", help="Run LLM calls in parallel for better GPU utilization"),
 ) -> None:
     """Analyze a package and calculate health scores."""
-    asyncio.run(_analyze_package(package, ecosystem, output, skip_llm, model))
+    asyncio.run(_analyze_package(package, ecosystem, output, skip_llm, model, parallel_llm))
 
 
 async def _analyze_package(
@@ -312,6 +313,7 @@ async def _analyze_package(
     output: Path | None,
     skip_llm: bool,
     model: str,
+    parallel_llm: bool = False,
 ) -> None:
     """Async implementation of analyze."""
     import os
@@ -340,6 +342,7 @@ async def _analyze_package(
             skip_llm=skip_llm,
             llm_model=model,
         )
+        pipeline.parallel_llm = parallel_llm
 
         try:
             progress.update(task, description="Fetching package data...")
@@ -632,7 +635,9 @@ def monitor(
 def run_daemon(
     data_dir: Path = typer.Option(Path("data"), "--data-dir", "-d", help="Data directory"),
     skip_llm: bool = typer.Option(True, "--skip-llm/--with-llm", help="Skip LLM analysis"),
-    model: str = typer.Option("llama3.1:70b", "--model", "-m", help="Ollama model for LLM"),
+    model: str = typer.Option("llama3.3:70b", "--model", "-m", help="Primary Ollama model (README, security)"),
+    fast_model: str = typer.Option("qwen2.5:7b-instruct", "--fast-model", "-f", help="Fast model for simpler tasks"),
+    parallel_llm: bool = typer.Option(False, "--parallel-llm", help="Run LLM calls in parallel for better GPU utilization"),
     stale_days: int = typer.Option(7, "--stale-days", help="Days before package is stale"),
     new_ratio: int = typer.Option(3, "--new-ratio", help="New packages per interleave cycle"),
     stale_ratio: int = typer.Option(1, "--stale-ratio", help="Stale packages per interleave cycle"),
@@ -652,6 +657,7 @@ def run_daemon(
     Examples:
         pkgrisk run-daemon                      # Basic daemon
         pkgrisk run-daemon --with-llm           # With LLM analysis
+        pkgrisk run-daemon --with-llm --parallel-llm  # LLM with better GPU utilization
         pkgrisk run-daemon --publish-interval 20  # More frequent publishing
         pkgrisk run-daemon --no-publish         # Disable auto-publish (testing)
     """
@@ -659,6 +665,8 @@ def run_daemon(
         data_dir=data_dir,
         skip_llm=skip_llm,
         model=model,
+        fast_model=fast_model,
+        parallel_llm=parallel_llm,
         stale_days=stale_days,
         new_ratio=new_ratio,
         stale_ratio=stale_ratio,
@@ -672,6 +680,8 @@ async def _run_daemon(
     data_dir: Path,
     skip_llm: bool,
     model: str,
+    fast_model: str,
+    parallel_llm: bool,
     stale_days: int,
     new_ratio: int,
     stale_ratio: int,
@@ -694,7 +704,12 @@ async def _run_daemon(
 
     console.print("[bold]Starting continuous analysis daemon...[/bold]")
     console.print(f"Data directory: {data_dir}")
-    console.print(f"LLM: {'Disabled' if skip_llm else model}")
+    if skip_llm:
+        console.print("LLM: Disabled")
+    else:
+        console.print(f"LLM primary: {model}")
+        console.print(f"LLM fast: {fast_model}")
+        console.print(f"Parallel LLM: {'Enabled' if parallel_llm else 'Disabled'}")
     console.print(f"Interleave ratio: {new_ratio} new : {stale_ratio} stale")
     console.print(f"Stale threshold: {stale_days} days")
     console.print(f"Auto-publish: {'Disabled' if no_publish else f'every {publish_interval} packages'}")
@@ -707,16 +722,220 @@ async def _run_daemon(
         github_token=os.environ.get("GITHUB_TOKEN"),
         skip_llm=skip_llm,
         llm_model=model,
+        llm_fast_model=fast_model,
         stale_threshold_days=stale_days,
         interleave_ratio=(new_ratio, stale_ratio),
         rate_limit_threshold=rate_threshold,
         publish_interval=publish_interval,
         no_publish=no_publish,
+        parallel_llm=parallel_llm,
     )
 
     await pipeline.run()
 
     console.print("[bold green]Daemon stopped gracefully.[/bold green]")
+
+
+@app.command("gpu-benchmark")
+def gpu_benchmark(
+    packages: list[str] = typer.Argument(None, help="Package names to benchmark (default: 3 popular packages)"),
+    ecosystem: str = typer.Option("homebrew", "--ecosystem", "-e", help="Package ecosystem"),
+    model: str = typer.Option("llama3.3:70b", "--model", "-m", help="Ollama model for LLM analysis"),
+    compare: bool = typer.Option(True, "--compare/--no-compare", help="Compare sequential vs parallel"),
+) -> None:
+    """Benchmark GPU utilization and compare sequential vs parallel LLM execution."""
+    asyncio.run(_gpu_benchmark(packages, ecosystem, model, compare))
+
+
+async def _gpu_benchmark(
+    packages: list[str] | None,
+    ecosystem: str,
+    model: str,
+    compare: bool,
+) -> None:
+    """Async implementation of GPU benchmark."""
+    import os
+    import time
+
+    from rich.panel import Panel
+    from rich.table import Table
+
+    from pkgrisk.analyzers.pipeline import AnalysisPipeline
+
+    try:
+        adapter = get_adapter(ecosystem)
+    except ValueError as e:
+        console.print(f"[red]{e}[/red]")
+        raise typer.Exit(1)
+
+    # Default to 3 popular packages if none specified
+    if not packages:
+        all_packages = await adapter.list_packages(limit=20)
+        packages = all_packages[:3]
+        console.print(f"[dim]Using default packages: {', '.join(packages)}[/dim]\n")
+
+    console.print(Panel(
+        f"[bold]GPU Utilization Benchmark[/bold]\n\n"
+        f"Ecosystem: {ecosystem}\n"
+        f"Model: {model}\n"
+        f"Packages: {len(packages)}",
+        expand=False,
+    ))
+    console.print()
+
+    results = {}
+
+    # Run sequential benchmark
+    console.print("[bold yellow]Running sequential LLM benchmark...[/bold yellow]")
+    pipeline_seq = AnalysisPipeline(
+        adapter=adapter,
+        github_token=os.environ.get("GITHUB_TOKEN"),
+        skip_llm=False,
+        llm_model=model,
+    )
+    pipeline_seq.parallel_llm = False
+
+    seq_times = []
+    seq_llm_times = []
+    for pkg in packages:
+        console.print(f"  Analyzing {pkg}...")
+        start = time.perf_counter()
+        llm_start = None
+        llm_end = None
+
+        # Track LLM timing separately
+        original_record = pipeline_seq._record_timing
+        def track_llm(stage, duration):
+            nonlocal llm_start, llm_end
+            if stage == "llm":
+                seq_llm_times.append(duration)
+            original_record(stage, duration)
+        pipeline_seq._record_timing = track_llm
+
+        try:
+            await pipeline_seq.analyze_package(pkg, save=False)
+        except Exception as e:
+            console.print(f"    [red]Error: {e}[/red]")
+            continue
+        total = time.perf_counter() - start
+        seq_times.append(total)
+        console.print(f"    [green]Done in {total:.1f}s[/green]")
+
+    results["sequential"] = {
+        "total_time": sum(seq_times),
+        "avg_time": sum(seq_times) / len(seq_times) if seq_times else 0,
+        "llm_time": sum(seq_llm_times),
+        "packages": len(seq_times),
+    }
+
+    if compare:
+        console.print()
+        console.print("[bold cyan]Running parallel LLM benchmark...[/bold cyan]")
+        pipeline_par = AnalysisPipeline(
+            adapter=adapter,
+            github_token=os.environ.get("GITHUB_TOKEN"),
+            skip_llm=False,
+            llm_model=model,
+        )
+        pipeline_par.parallel_llm = True
+
+        par_times = []
+        par_llm_times = []
+        for pkg in packages:
+            console.print(f"  Analyzing {pkg}...")
+            start = time.perf_counter()
+
+            original_record = pipeline_par._record_timing
+            def track_llm_par(stage, duration):
+                if stage == "llm":
+                    par_llm_times.append(duration)
+                original_record(stage, duration)
+            pipeline_par._record_timing = track_llm_par
+
+            try:
+                await pipeline_par.analyze_package(pkg, save=False)
+            except Exception as e:
+                console.print(f"    [red]Error: {e}[/red]")
+                continue
+            total = time.perf_counter() - start
+            par_times.append(total)
+            console.print(f"    [green]Done in {total:.1f}s[/green]")
+
+        results["parallel"] = {
+            "total_time": sum(par_times),
+            "avg_time": sum(par_times) / len(par_times) if par_times else 0,
+            "llm_time": sum(par_llm_times),
+            "packages": len(par_times),
+        }
+
+    # Display results
+    console.print()
+    table = Table(title="Benchmark Results")
+    table.add_column("Metric", style="bold")
+    table.add_column("Sequential", justify="right")
+    if compare:
+        table.add_column("Parallel", justify="right")
+        table.add_column("Speedup", justify="right", style="green")
+
+    seq = results["sequential"]
+
+    if compare:
+        par = results["parallel"]
+
+        table.add_row(
+            "Total time",
+            f"{seq['total_time']:.1f}s",
+            f"{par['total_time']:.1f}s",
+            f"{seq['total_time'] / par['total_time']:.2f}x" if par['total_time'] > 0 else "-",
+        )
+        table.add_row(
+            "Avg per package",
+            f"{seq['avg_time']:.1f}s",
+            f"{par['avg_time']:.1f}s",
+            f"{seq['avg_time'] / par['avg_time']:.2f}x" if par['avg_time'] > 0 else "-",
+        )
+        table.add_row(
+            "LLM stage time",
+            f"{seq['llm_time']:.1f}s",
+            f"{par['llm_time']:.1f}s",
+            f"{seq['llm_time'] / par['llm_time']:.2f}x" if par['llm_time'] > 0 else "-",
+        )
+
+        # Estimate GPU utilization improvement
+        if seq['total_time'] > 0 and par['total_time'] > 0:
+            seq_gpu_pct = (seq['llm_time'] / seq['total_time']) * 100
+            par_gpu_pct = (par['llm_time'] / par['total_time']) * 100
+            table.add_row(
+                "Est. GPU utilization",
+                f"{seq_gpu_pct:.0f}%",
+                f"{par_gpu_pct:.0f}%",
+                f"+{par_gpu_pct - seq_gpu_pct:.0f}%" if par_gpu_pct > seq_gpu_pct else "-",
+            )
+    else:
+        table.add_row("Total time", f"{seq['total_time']:.1f}s")
+        table.add_row("Avg per package", f"{seq['avg_time']:.1f}s")
+        table.add_row("LLM stage time", f"{seq['llm_time']:.1f}s")
+        if seq['total_time'] > 0:
+            gpu_pct = (seq['llm_time'] / seq['total_time']) * 100
+            table.add_row("Est. GPU utilization", f"{gpu_pct:.0f}%")
+
+    console.print(table)
+
+    console.print()
+    console.print("[bold]Recommendations:[/bold]")
+    if compare and results.get("parallel"):
+        speedup = seq['total_time'] / par['total_time'] if par['total_time'] > 0 else 0
+        if speedup > 1.2:
+            console.print(f"  [green]✓[/green] Parallel LLM mode provides {speedup:.1f}x speedup")
+            console.print("  [green]✓[/green] Use --parallel-llm flag for better GPU utilization")
+        else:
+            console.print("  [yellow]![/yellow] Parallel mode shows minimal improvement")
+            console.print("  [yellow]![/yellow] Bottleneck may be network I/O or single-request GPU saturation")
+    else:
+        gpu_pct = (seq['llm_time'] / seq['total_time']) * 100 if seq['total_time'] > 0 else 0
+        if gpu_pct < 50:
+            console.print(f"  [yellow]![/yellow] GPU utilization is only {gpu_pct:.0f}%")
+            console.print("  [yellow]![/yellow] Consider running with --parallel-llm to improve")
 
 
 @app.command()

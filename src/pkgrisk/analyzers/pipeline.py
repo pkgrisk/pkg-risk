@@ -48,6 +48,7 @@ class AnalysisPipeline:
         data_dir: Path | None = None,
         github_token: str | None = None,
         llm_model: str = "llama3.3:70b",
+        llm_fast_model: str | None = "qwen2.5:7b-instruct",
         skip_llm: bool = False,
         skip_supply_chain: bool = False,
         metrics: MetricsCollector | None = None,
@@ -58,7 +59,8 @@ class AnalysisPipeline:
             adapter: Package manager adapter.
             data_dir: Directory to save results. Defaults to ./data.
             github_token: GitHub personal access token.
-            llm_model: Ollama model for LLM analysis.
+            llm_model: Primary Ollama model for complex analysis (README, security).
+            llm_fast_model: Faster model for simpler tasks (sentiment, maintenance, etc.).
             skip_llm: Skip LLM analysis entirely.
             skip_supply_chain: Skip supply chain analysis (tarball inspection).
             metrics: Optional metrics collector for monitoring.
@@ -68,7 +70,7 @@ class AnalysisPipeline:
         self.github = GitHubFetcher(token=github_token)
         self.osv = OSVFetcher()
         self.deps_dev = DepsDevFetcher()
-        self.llm = LLMAnalyzer(model=llm_model) if not skip_llm else None
+        self.llm = LLMAnalyzer(model=llm_model, fast_model=llm_fast_model) if not skip_llm else None
         self.supply_chain = SupplyChainAnalyzer() if not skip_supply_chain else None
         self.scorer = Scorer()
         self.metrics = metrics

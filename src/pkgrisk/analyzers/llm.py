@@ -26,22 +26,27 @@ class LLMAnalyzer:
 
     OLLAMA_URL = "http://localhost:11434"
 
+    # Default models
+    DEFAULT_MODEL = "llama3.3:70b"
+    DEFAULT_FAST_MODEL = "qwen2.5:7b-instruct"
+
     def __init__(
         self,
-        model: str = "llama3.3:70b",
-        fast_model: str | None = None,
+        model: str = DEFAULT_MODEL,
+        fast_model: str | None = DEFAULT_FAST_MODEL,
         client: httpx.AsyncClient | None = None,
     ) -> None:
         """Initialize the analyzer.
 
         Args:
-            model: Primary model for complex analysis.
-            fast_model: Faster model for simpler tasks. If None, uses primary model.
+            model: Primary model for complex analysis (README, security).
+            fast_model: Faster model for simpler tasks (sentiment, maintenance, etc.).
+                       Set to None to use primary model for all tasks.
             client: Optional httpx client.
         """
         self.model = model
-        # If no fast_model specified, use the main model
-        self.fast_model = fast_model if fast_model else model
+        # If fast_model is None, fall back to main model
+        self.fast_model = fast_model if fast_model is not None else model
         self._client = client
         self._fast_model_verified = False
 

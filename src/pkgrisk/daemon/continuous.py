@@ -68,6 +68,7 @@ class ContinuousPipeline:
         github_token: str | None = None,
         skip_llm: bool = True,
         llm_model: str = "llama3.3:70b",
+        llm_fast_model: str | None = "qwen2.5:7b-instruct",
         stale_threshold_days: int = 7,
         interleave_ratio: tuple[int, int] = (3, 1),
         rate_limit_threshold: int = 50,
@@ -81,7 +82,8 @@ class ContinuousPipeline:
             data_dir: Root data directory for analysis storage
             github_token: GitHub API token (uses GITHUB_TOKEN env if None)
             skip_llm: Whether to skip LLM analysis (default True for speed)
-            llm_model: Ollama model name if LLM is enabled
+            llm_model: Primary Ollama model for complex analysis (README, security)
+            llm_fast_model: Faster model for simpler tasks (sentiment, maintenance, etc.)
             stale_threshold_days: Days before a package is considered stale
             interleave_ratio: (new, stale) ratio for queue interleaving
             rate_limit_threshold: Preemptively sleep when remaining < this
@@ -93,6 +95,7 @@ class ContinuousPipeline:
         self.github_token = github_token
         self.skip_llm = skip_llm
         self.llm_model = llm_model
+        self.llm_fast_model = llm_fast_model
         self.rate_limit_threshold = rate_limit_threshold
         self.no_publish = no_publish
         self.parallel_llm = parallel_llm
@@ -149,6 +152,7 @@ class ContinuousPipeline:
                 github_token=self.github_token,
                 skip_llm=self.skip_llm,
                 llm_model=self.llm_model,
+                llm_fast_model=self.llm_fast_model,
                 metrics=self.metrics,
             )
             pipeline.parallel_llm = self.parallel_llm
@@ -191,7 +195,11 @@ class ContinuousPipeline:
 
         logger.info("Starting continuous analysis daemon...")
         logger.info(f"Data directory: {self.data_dir}")
-        logger.info(f"LLM analysis: {'disabled' if self.skip_llm else self.llm_model}")
+        if self.skip_llm:
+            logger.info("LLM analysis: disabled")
+        else:
+            logger.info(f"LLM primary: {self.llm_model}")
+            logger.info(f"LLM fast: {self.llm_fast_model}")
         logger.info(f"Auto-publish: {'disabled' if self.no_publish else f'every {self.publisher.publish_interval} packages'}")
 
         # Initial queue refresh
@@ -210,7 +218,7 @@ class ContinuousPipeline:
                 llm_available = await pipeline.llm.is_available()
                 self.metrics.update_llm_status(llm_available, pipeline.llm.model if llm_available else "")
                 if llm_available:
-                    logger.info(f"LLM connected: {pipeline.llm.model}")
+                    logger.info(f"LLM connected: primary={pipeline.llm.model}, fast={pipeline.llm.fast_model}")
                 else:
                     logger.warning(f"LLM not available: {pipeline.llm.model}")
         else:
