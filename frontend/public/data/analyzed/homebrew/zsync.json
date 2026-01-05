@@ -1,0 +1,272 @@
+{
+  "ecosystem": "homebrew",
+  "name": "zsync",
+  "description": "File transfer program",
+  "version": "0.6.3",
+  "homepage": "https://zsync.moria.org.uk/",
+  "repository": {
+    "platform": "github",
+    "owner": "cph6",
+    "repo": "zsync",
+    "subpath": null
+  },
+  "install_count_30d": 77,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 40.0,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 54.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 21.85419911037956,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 65.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 25.64,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 0.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "cph6",
+      "name": "zsync",
+      "description": "zsync - rsync over http",
+      "stars": 221,
+      "forks": 51,
+      "open_issues": 12,
+      "watchers": 221,
+      "created_at": "2017-04-25T20:54:33Z",
+      "updated_at": "2025-10-24T14:16:51Z",
+      "pushed_at": "2025-05-29T07:38:14Z",
+      "default_branch": "master",
+      "license": null,
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 99.0,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 1,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.08
+    },
+    "commits": {
+      "last_commit_date": "2025-05-29T07:33:11Z",
+      "commits_last_6mo": 0,
+      "commits_last_year": 23
+    },
+    "issues": {
+      "open_issues": 12,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 2.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "c/client.c",
+          "line": 43,
+          "severity": "high",
+          "description": "The use of popen() with a command string constructed from user input (filename) poses a risk of shell injection attacks."
+        },
+        {
+          "file": "c/client.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "The use of system calls like fopen(), fread(), and fwrite() with user-controlled filenames may lead to path traversal or file inclusion vulnerabilities."
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Shell injection vulnerability in open_zcat_pipe() function",
+        "Potential path traversal or file inclusion vulnerabilities due to lack of input validation"
+      ],
+      "summary": "The zsync client code has several security concerns, including shell injection and path traversal vulnerabilities, but does not appear to handle sensitive information like secrets or credentials."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Build error with GCC-14",
+        "Feature request: Support 'https' links"
+      ],
+      "praise_themes": [
+        "zsync is an amazing tool"
+      ],
+      "abandonment_signals": true,
+      "summary": "The community expresses some frustration and common issues, but also acknowledges the value of zsync. There are signs of potential abandonment due to lack of recent activity."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Open issues and PRs suggest potential problems"
+      ],
+      "positive_signals": [
+        "Contributors are still active, though infrequently",
+        "Recent commit indicates some level of activity"
+      ],
+      "summary": "The package is minimally maintained with occasional contributions but lacks recent updates."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 221,
+      "forks": 50,
+      "open_issues": 12,
+      "license": "",
+      "description": "zsync - rsync over http",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-05T08:30:56.814073Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "No commits in the past six months",
+      "Open issues and PRs suggest potential problems",
+      "Possible abandonment signals detected",
+      "Community: Build error with GCC-14",
+      "Community: Feature request: Support 'https' links",
+      "Security: Shell injection vulnerability in open_zcat_pipe() function",
+      "Security: Potential path traversal or file inclusion vulnerabilities due to lack of input validation",
+      "Security: The use of popen() with a command string constructed from user input (filename) poses a risk of shell injection attacks.",
+      "High bus factor risk (99% from top contributor)"
+    ],
+    "highlights": [
+      "Contributors are still active, though infrequently",
+      "Recent commit indicates some level of activity"
+    ],
+    "community_sentiment": "neutral",
+    "forge_metrics": {
+      "stars": 221,
+      "forks": 50,
+      "open_issues": 12
+    }
+  },
+  "analyzed_at": "2026-01-05T08:31:56.353098Z",
+  "data_fetched_at": "2026-01-05T08:31:56.353099Z"
+}
