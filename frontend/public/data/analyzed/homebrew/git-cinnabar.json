@@ -1,0 +1,294 @@
+{
+  "ecosystem": "homebrew",
+  "name": "git-cinnabar",
+  "description": "Git remote helper to interact with mercurial repositories",
+  "version": "0.7.3",
+  "homepage": "https://github.com/glandium/git-cinnabar",
+  "repository": {
+    "platform": "github",
+    "owner": "glandium",
+    "repo": "git-cinnabar",
+    "subpath": null
+  },
+  "install_count_30d": 44,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 67.0,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 68.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 90.61875860382774,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 65.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 10.96,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 48.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 83.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "glandium",
+      "name": "git-cinnabar",
+      "description": "git remote helper to interact with mercurial repositories",
+      "stars": 314,
+      "forks": 63,
+      "open_issues": 32,
+      "watchers": 314,
+      "created_at": "2014-12-05T18:02:56Z",
+      "updated_at": "2025-12-02T11:29:01Z",
+      "pushed_at": "2025-12-01T23:41:45Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "Rust",
+      "topics": [
+        "git",
+        "mercurial"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 22,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 99.0,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.12
+    },
+    "commits": {
+      "last_commit_date": "2025-11-25T05:54:15Z",
+      "commits_last_6mo": 22,
+      "commits_last_year": 141
+    },
+    "issues": {
+      "open_issues": 31,
+      "closed_issues_6mo": 1,
+      "avg_response_time_hours": 27.6,
+      "avg_close_time_hours": 27.6,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 42,
+      "releases_last_year": 4,
+      "last_release_date": "2025-07-16T07:28:03Z",
+      "latest_version": "0.7.3",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.31
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 11405,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 6,
+      "recent_runs_pass_rate": 92.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The documentation is generally clear and well-structured, but could benefit from more examples and troubleshooting information.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/hg_connect_http.rs",
+          "line": 123,
+          "severity": "medium",
+          "description": "The `curl_easy_setopt` function is used with user-controlled input (`url`) which could potentially lead to a command injection vulnerability if the input is not properly sanitized."
+        },
+        {
+          "file": "src/hg_connect_http.rs",
+          "line": 145,
+          "severity": "low",
+          "description": "The `CString::new` function is used with user-controlled input (`normalized_url.to_string()`) which could potentially lead to a buffer overflow vulnerability if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in `curl_easy_setopt`"
+      ],
+      "summary": "The code has some potential security vulnerabilities, including a possible command injection vulnerability and lack of input validation, but overall the security score is moderate."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "pre-epoch date handling",
+        "duplicated tags creation"
+      ],
+      "praise_themes": [
+        "thanks for providing git-cinnabar"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 9,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with the contributor."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "Low number of merged PRs in the past six months suggests limited community contribution or interest.",
+        "A single contributor for a significant period may indicate vulnerability to individual departure."
+      ],
+      "positive_signals": [
+        "Recent commits and issue activity suggest some level of ongoing engagement.",
+        "Regular issue reporting indicates awareness of user needs and potential bugs."
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but faces concerns due to low community contribution and reliance on a single contributor."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 314,
+      "forks": 63,
+      "open_issues": 30,
+      "license": "GPL-2.0",
+      "description": "git remote helper to interact with mercurial repositories",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T00:35:33.744215Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and well-structured, but could benefit from more examples and troubleshooting information.",
+    "concerns": [
+      "Low number of merged PRs in the past six months suggests limited community contribution or interest.",
+      "A single contributor for a significant period may indicate vulnerability to individual departure.",
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: pre-epoch date handling",
+      "Community: duplicated tags creation",
+      "Security: Potential command injection vulnerability in `curl_easy_setopt`",
+      "High bus factor risk (99% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits and issue activity suggest some level of ongoing engagement.",
+      "Regular issue reporting indicates awareness of user needs and potential bugs.",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 314,
+      "forks": 63,
+      "open_issues": 30
+    }
+  },
+  "analyzed_at": "2026-01-06T00:37:09.122258Z",
+  "data_fetched_at": "2026-01-06T00:37:09.122259Z"
+}
