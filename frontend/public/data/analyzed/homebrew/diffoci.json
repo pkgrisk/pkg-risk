@@ -1,0 +1,281 @@
+{
+  "ecosystem": "homebrew",
+  "name": "diffoci",
+  "description": "Diff for Docker and OCI container images",
+  "version": "0.1.7",
+  "homepage": "https://github.com/reproducible-containers/diffoci",
+  "repository": {
+    "platform": "github",
+    "owner": "reproducible-containers",
+    "repo": "diffoci",
+    "subpath": null
+  },
+  "install_count_30d": 42,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 80.5,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "established",
+    "security": {
+      "score": 88.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 80.44712652390412,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 92.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 69.68,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 54.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 78.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "reproducible-containers",
+      "name": "diffoci",
+      "description": "diff for Docker and OCI container images",
+      "stars": 534,
+      "forks": 12,
+      "open_issues": 13,
+      "watchers": 534,
+      "created_at": "2023-08-22T23:48:17Z",
+      "updated_at": "2026-01-04T20:01:57Z",
+      "pushed_at": "2025-12-22T18:04:25Z",
+      "default_branch": "master",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 5,
+      "active_contributors_6mo": 4,
+      "top_contributor_pct": 56.8,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 3,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 1.21
+    },
+    "commits": {
+      "last_commit_date": "2025-12-16T06:03:18Z",
+      "commits_last_6mo": 43,
+      "commits_last_year": 105
+    },
+    "issues": {
+      "open_issues": 9,
+      "closed_issues_6mo": 1,
+      "avg_response_time_hours": 1201.0,
+      "avg_close_time_hours": 3407.0,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 21,
+      "closed_prs_6mo": 43,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 8,
+      "releases_last_year": 2,
+      "last_release_date": "2025-06-26T08:19:17Z",
+      "latest_version": "v0.1.7",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 99.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 17791,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 92.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is clear and provides many examples, but lacks troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/diffoci/backend/containerdbackend/containerdbackend.go",
+          "line": 64,
+          "severity": "medium",
+          "description": "The 'containerd-address' flag is set using the envutil.String function, which does not validate or sanitize user input. This could potentially lead to a command injection vulnerability if an attacker can manipulate the CONTAINERD_ADDRESS environment variable."
+        },
+        {
+          "file": "pkg/envutil/envutil.go",
+          "line": 24,
+          "severity": "low",
+          "description": "The envutil.String function does not validate or sanitize user input. While this is unlikely to lead to a command injection vulnerability, it could still potentially cause issues if an attacker can manipulate environment variables."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the 'containerd-address' flag"
+      ],
+      "summary": "The code has some potential security issues, including a possible command injection vulnerability and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": null,
+    "communication": {
+      "helpfulness": 5,
+      "clarity": 8,
+      "patience": 7,
+      "technical_depth": 6,
+      "welcomingness": 7,
+      "communication_style": "adequate",
+      "red_flags": [
+        "repeated identical responses",
+        "lack of engagement in some PRs"
+      ],
+      "summary": "The maintainer's responses are adequate but could be more varied and engaging, especially for new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 7,
+      "concerns": [
+        "Few merged PRs in the past six months",
+        "Only one closed issue in the past six months"
+      ],
+      "positive_signals": [
+        "Regular commits in the past six months",
+        "Multiple contributors active in the past six months",
+        "Recent release"
+      ],
+      "summary": "The package is maintained with regular activity, but there are concerns about the recent engagement level."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 533,
+      "forks": 12,
+      "open_issues": 13,
+      "license": "Apache-2.0",
+      "description": "diff for Docker and OCI container images",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T01:32:39.400267Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is clear and provides many examples, but lacks troubleshooting information.",
+    "concerns": [
+      "Few merged PRs in the past six months",
+      "Only one closed issue in the past six months",
+      "Docs: Lack of troubleshooting section",
+      "Communication: repeated identical responses",
+      "Communication: lack of engagement in some PRs",
+      "Security: Potential command injection vulnerability in the 'containerd-address' flag"
+    ],
+    "highlights": [
+      "Regular commits in the past six months",
+      "Multiple contributors active in the past six months",
+      "Recent release",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 533,
+      "forks": 12,
+      "open_issues": 13
+    }
+  },
+  "analyzed_at": "2026-01-06T01:34:48.595190Z",
+  "data_fetched_at": "2026-01-06T01:34:48.595191Z"
+}
