@@ -1,0 +1,326 @@
+{
+  "ecosystem": "homebrew",
+  "name": "pg-schema-diff",
+  "description": "Diff Postgres schemas and generating SQL migrations",
+  "version": "1.0.3",
+  "homepage": "https://github.com/stripe/pg-schema-diff",
+  "repository": {
+    "platform": "github",
+    "owner": "stripe",
+    "repo": "pg-schema-diff",
+    "subpath": null
+  },
+  "install_count_30d": 39,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 76.7,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "established",
+    "security": {
+      "score": 64.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 95.75761937870107,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 49.75999999999999,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 52.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 83.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "stripe",
+      "name": "pg-schema-diff",
+      "description": "Go library for diffing Postgres schemas and generating SQL migrations",
+      "stars": 764,
+      "forks": 51,
+      "open_issues": 58,
+      "watchers": 764,
+      "created_at": "2023-04-11T15:28:16Z",
+      "updated_at": "2026-01-05T19:43:16Z",
+      "pushed_at": "2025-12-31T06:51:28Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "golang",
+        "postgres",
+        "postgres-schema",
+        "postgres-schema-diff"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 13,
+      "active_contributors_6mo": 6,
+      "top_contributor_pct": 83.3,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 4,
+      "contributor_entropy": 1.22
+    },
+    "commits": {
+      "last_commit_date": "2025-12-31T06:50:38Z",
+      "commits_last_6mo": 27,
+      "commits_last_year": 32
+    },
+    "issues": {
+      "open_issues": 53,
+      "closed_issues_6mo": 5,
+      "avg_response_time_hours": 24.4,
+      "avg_close_time_hours": 5869.7,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 5,
+      "merged_prs_6mo": 26,
+      "closed_prs_6mo": 35,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 16,
+      "releases_last_year": 8,
+      "last_release_date": "2025-12-31T06:51:28Z",
+      "latest_version": "v1.0.3",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.75
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 8933,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 6,
+      "recent_runs_pass_rate": 80.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally clear and provides good examples, but lacks comprehensive troubleshooting information.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "cmd/pg-schema-diff/apply_cmd.go",
+          "line": 123,
+          "severity": "high",
+          "description": "SQL string concatenation in the line `if _, err := conn.ExecContext(ctx, fmt.Sprintf(\"SET SESSION statement_timeout = %d\", stmt.Timeout.Milliseconds())); err != nil {` could lead to SQL injection attacks if user input is not properly sanitized."
+        },
+        {
+          "file": "cmd/pg-schema-diff/apply_cmd.go",
+          "line": 127,
+          "severity": "high",
+          "description": "SQL string concatenation in the line `if _, err := conn.ExecContext(ctx, fmt.Sprintf(\"SET SESSION lock_timeout = %d\", stmt.Timeout.Milliseconds())); err != nil {` could lead to SQL injection attacks if user input is not properly sanitized."
+        },
+        {
+          "file": "cmd/pg-schema-diff/apply_cmd.go",
+          "line": 131,
+          "severity": "high",
+          "description": "SQL string concatenation in the line `if _, err := conn.ExecContext(ctx, stmt.ToSQL()); err != nil {` could lead to SQL injection attacks if user input is not properly sanitized."
+        },
+        {
+          "file": "internal/pgengine/db.go",
+          "line": 43,
+          "severity": "high",
+          "description": "SQL string concatenation in the line `_, err = db.Exec(fmt.Sprintf(\"ALTER DATABASE \\\"%s\\\" CONNECTION LIMIT 0\", d.GetName()))` could lead to SQL injection attacks if user input is not properly sanitized."
+        },
+        {
+          "file": "internal/pgengine/db.go",
+          "line": 49,
+          "severity": "high",
+          "description": "SQL string concatenation in the line `_, err = db.Exec(fmt.Sprintf(\"DROP DATABASE \\\"%s\\\"\", d.GetName()))` could lead to SQL injection attacks if user input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "SQL injection risks due to string concatenation in SQL queries.",
+        "Lack of input validation for connection flags, schema source, and plan options."
+      ],
+      "summary": "The code has several security concerns, including SQL injection risks and lack of input validation, which could lead to potential attacks and data breaches."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "[BUG] Failing to handle indexes with expressions in",
+        "[FEATURE] Support deleting partitions without dropping parent table"
+      ],
+      "praise_themes": [
+        "Add support for Materialized Views"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral, with moderate responsiveness and some open issues indicating ongoing development needs."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful and clear, showing patience with new contributors. There is a good balance of technical depth and encouragement for contributions."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "High number of open issues (53)",
+        "Low number of merged PRs in the past six months compared to open PRs (26 vs. 5)"
+      ],
+      "positive_signals": [
+        "Recent commits and releases",
+        "Multiple contributors active in the past six months"
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but faces challenges with unresolved issues."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The project lacks formal governance structures, posing a high risk of losing progress if the primary maintainer leaves."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 762,
+      "forks": 51,
+      "open_issues": 58,
+      "license": "MIT",
+      "description": "Go library for diffing Postgres schemas and generating SQL migrations",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T04:10:42.749553Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and provides good examples, but lacks comprehensive troubleshooting information.",
+    "concerns": [
+      "High number of open issues (53)",
+      "Low number of merged PRs in the past six months compared to open PRs (26 vs. 5)",
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: [BUG] Failing to handle indexes with expressions in",
+      "Community: [FEATURE] Support deleting partitions without dropping parent table",
+      "Governance: High bus factor risk identified",
+      "Security: SQL injection risks due to string concatenation in SQL queries.",
+      "Security: Lack of input validation for connection flags, schema source, and plan options.",
+      "Security: SQL string concatenation in the line `if _, err := conn.ExecContext(ctx, fmt.Sprintf(\"SET SESSION statement_timeout = %d\", stmt.Timeout.Milliseconds())); err != nil {` could lead to SQL injection attacks if user input is not properly sanitized.",
+      "Security: SQL string concatenation in the line `if _, err := conn.ExecContext(ctx, fmt.Sprintf(\"SET SESSION lock_timeout = %d\", stmt.Timeout.Milliseconds())); err != nil {` could lead to SQL injection attacks if user input is not properly sanitized.",
+      "High bus factor risk (83% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits and releases",
+      "Multiple contributors active in the past six months",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 762,
+      "forks": 51,
+      "open_issues": 58
+    }
+  },
+  "analyzed_at": "2026-01-06T04:12:47.736669Z",
+  "data_fetched_at": "2026-01-06T04:12:47.736669Z"
+}
