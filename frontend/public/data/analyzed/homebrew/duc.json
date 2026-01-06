@@ -1,0 +1,326 @@
+{
+  "ecosystem": "homebrew",
+  "name": "duc",
+  "description": "Suite of tools for inspecting disk usage",
+  "version": "1.4.6",
+  "homepage": "https://github.com/zevv/duc",
+  "repository": {
+    "platform": "github",
+    "owner": "zevv",
+    "repo": "duc",
+    "subpath": null
+  },
+  "install_count_30d": 38,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 59.9,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 43.0,
+      "weight": 30,
+      "key_factors": [
+        "Dangerous CI/CD workflows detected",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 74.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 48.2,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 54.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 70.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "zevv",
+      "name": "duc",
+      "description": "Dude, where are my bytes: Duc, a library and suite of tools for inspecting disk usage",
+      "stars": 667,
+      "forks": 81,
+      "open_issues": 78,
+      "watchers": 667,
+      "created_at": "2014-05-11T17:58:55Z",
+      "updated_at": "2025-12-24T09:22:01Z",
+      "pushed_at": "2025-11-06T18:16:08Z",
+      "default_branch": "master",
+      "license": "LGPL-3.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 23,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 79.6,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.03
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 75,
+      "closed_issues_6mo": 3,
+      "avg_response_time_hours": 31.0,
+      "avg_close_time_hours": 10514.4,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 3,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 3,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 14,
+      "releases_last_year": 1,
+      "last_release_date": "2025-11-06T18:17:38Z",
+      "latest_version": "1.4.6",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.14
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 17.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 620,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": true,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The documentation is lacking in key areas, making it difficult for new users to get started with the package.",
+      "top_issue": "No clear installation instructions or quick start guide"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/duc/main.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "The use of getenv() to retrieve the HOME environment variable could potentially lead to issues if the variable is not set or is tampered with."
+        },
+        {
+          "file": "src/duc/cmd-index.c",
+          "line": 145,
+          "severity": "low",
+          "description": "The use of sprintf() to construct file paths could potentially lead to buffer overflow issues if the input strings are not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for command injection attacks through unvalidated command-line arguments",
+        "Insufficient error handling and logging mechanisms"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and insufficient input validation, but does not appear to have any critical vulnerabilities that would allow for immediate exploitation."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "gui crashes and segfaults",
+        "missing release artifacts",
+        "json output issues"
+      ],
+      "praise_themes": [
+        "useful for large NFS environments",
+        "active community discussion"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community is actively discussing various issues, with some frustration around GUI stability and missing artifacts, but the project seems to be in active development."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "A high number of open issues (75)",
+        "No merged PRs in the past six months"
+      ],
+      "positive_signals": [
+        "Contributors active in the past six months",
+        "Recent release on 2025-11-06"
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but a high issue count and lack of recent commits."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.0,
+      "score_date": "2025-12-29T00:00:00Z",
+      "checks": {
+        "Maintained": 2.0,
+        "Packaging": -1.0,
+        "Code-Review": 5.0,
+        "Token-Permissions": -1.0,
+        "Dangerous-Workflow": -1.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Security-Policy": 0.0,
+        "Pinned-Dependencies": -1.0,
+        "Vulnerabilities": 10.0,
+        "License": 10.0,
+        "Fuzzing": 0.0,
+        "Signed-Releases": 4.0,
+        "Branch-Protection": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 5.0,
+      "maintained_score": 2.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 667,
+      "forks": 80,
+      "open_issues": 78,
+      "license": "LGPL-3.0",
+      "description": "Dude, where are my bytes: Duc, a library and suite of tools for inspecting disk usage",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T04:42:00.467434Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is lacking in key areas, making it difficult for new users to get started with the package.",
+    "concerns": [
+      "No commits in the past six months",
+      "A high number of open issues (75)",
+      "No merged PRs in the past six months",
+      "Docs: No clear installation instructions or quick start guide",
+      "Community: gui crashes and segfaults",
+      "Community: missing release artifacts",
+      "Security: Potential for command injection attacks through unvalidated command-line arguments",
+      "Security: Insufficient error handling and logging mechanisms",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Contributors active in the past six months",
+      "Recent release on 2025-11-06"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "scorecard_score": 4.0
+  },
+  "analyzed_at": "2026-01-06T04:43:25.936880Z",
+  "data_fetched_at": "2026-01-06T04:43:25.936881Z"
+}
