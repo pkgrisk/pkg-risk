@@ -1,0 +1,286 @@
+{
+  "ecosystem": "homebrew",
+  "name": "ripmime",
+  "description": "Extract attachments out of MIME encoded email packages",
+  "version": "1.4.1.0",
+  "homepage": "https://pldaniels.com/ripmime/",
+  "repository": {
+    "platform": "github",
+    "owner": "inflex",
+    "repo": "ripMIME",
+    "subpath": null
+  },
+  "install_count_30d": 28,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 47.4,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 15.290705411288219,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 60.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 63.28,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 33.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "inflex",
+      "name": "ripMIME",
+      "description": "MIME/email package decoder",
+      "stars": 81,
+      "forks": 28,
+      "open_issues": 18,
+      "watchers": 81,
+      "created_at": "2016-06-30T14:29:11Z",
+      "updated_at": "2025-11-16T17:51:19Z",
+      "pushed_at": "2025-02-09T04:00:43Z",
+      "default_branch": "master",
+      "license": "BSD-3-Clause",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 8,
+      "active_contributors_6mo": 8,
+      "top_contributor_pct": 71.0,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 1,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.66
+    },
+    "commits": {
+      "last_commit_date": "2025-02-09T04:00:43Z",
+      "commits_last_6mo": 0,
+      "commits_last_year": 3
+    },
+    "issues": {
+      "open_issues": 16,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 2,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 1,
+      "releases_last_year": 0,
+      "last_release_date": "2022-09-20T11:49:09Z",
+      "latest_version": "1.4.1.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 41.9,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 504,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The documentation is lacking in several key areas, including usage examples and troubleshooting.",
+      "top_issue": "No clear usage instructions or examples are provided to help users understand how to use the package."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "ripmime-api.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "The mkdir function is used with user-controlled input (rm->outputdir), which could lead to a directory traversal vulnerability if the input is not properly sanitized."
+        },
+        {
+          "file": "ripmime-api.c",
+          "line": 145,
+          "severity": "low",
+          "description": "The MIME_unpack function is called with user-controlled input (rm->outputdir and rm->mailpack), which could potentially lead to issues if the input is not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential directory traversal vulnerability in mkdir function call.",
+        "Lack of thorough input validation for mailpack filename and output directory name."
+      ],
+      "summary": "The ripmime package has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Doesn't use STDIN",
+        "Content-Transfer-Encoding: binary is not decoded correctly"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health appears stable with moderate frustration and no clear signs of abandonment, but there are open issues that need attention."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 6,
+      "patience": 8,
+      "technical_depth": 7,
+      "welcomingness": 7,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Some responses are vague and lack detail",
+        "There's a mix of helpful and unhelpful comments"
+      ],
+      "summary": "The maintainer is generally responsive but could provide more detailed explanations and be clearer in some cases."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months, indicating a lack of recent development or updates.",
+        "Only two merged PRs in the past six months, suggesting limited community contribution and maintenance."
+      ],
+      "positive_signals": [
+        "Eight contributors active in the past six months, which shows some level of community involvement.",
+        "Regular issue reporting by users, indicating ongoing use and need for support."
+      ],
+      "summary": "The package is minimally maintained with occasional contributions but lacks recent development or updates."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": false,
+      "appears_complete": true,
+      "clarity_score": 6,
+      "overall_score": 5,
+      "summary": "The changelog lacks clear categorization, marked breaking changes, and migration guides, but it appears to be comprehensive with some clarity issues."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T21:12:15.510036Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is lacking in several key areas, including usage examples and troubleshooting.",
+    "concerns": [
+      "No commits in the past six months, indicating a lack of recent development or updates.",
+      "Only two merged PRs in the past six months, suggesting limited community contribution and maintenance.",
+      "Docs: No clear usage instructions or examples are provided to help users understand how to use the package.",
+      "Community: Doesn't use STDIN",
+      "Community: Content-Transfer-Encoding: binary is not decoded correctly",
+      "Communication: Some responses are vague and lack detail",
+      "Communication: There's a mix of helpful and unhelpful comments",
+      "Security: Potential directory traversal vulnerability in mkdir function call.",
+      "Security: Lack of thorough input validation for mailpack filename and output directory name."
+    ],
+    "highlights": [
+      "Eight contributors active in the past six months, which shows some level of community involvement.",
+      "Regular issue reporting by users, indicating ongoing use and need for support."
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-06T21:13:36.653807Z",
+  "data_fetched_at": "2026-01-06T21:13:36.653808Z"
+}
