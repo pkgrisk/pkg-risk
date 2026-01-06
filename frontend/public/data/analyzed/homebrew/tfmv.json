@@ -1,0 +1,306 @@
+{
+  "ecosystem": "homebrew",
+  "name": "tfmv",
+  "description": "CLI to rename Terraform resources and generate moved blocks",
+  "version": "1.0.0",
+  "homepage": "https://github.com/suzuki-shunsuke/tfmv",
+  "repository": {
+    "platform": "github",
+    "owner": "suzuki-shunsuke",
+    "repo": "tfmv",
+    "subpath": null
+  },
+  "install_count_30d": 31,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 83.0,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "established",
+    "security": {
+      "score": 82.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 88.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 34.72,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 71.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 96.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "suzuki-shunsuke",
+      "name": "tfmv",
+      "description": "CLI to rename Terraform resources and generate moved blocks",
+      "stars": 156,
+      "forks": 7,
+      "open_issues": 4,
+      "watchers": 156,
+      "created_at": "2024-12-20T14:00:29Z",
+      "updated_at": "2026-01-03T16:31:29Z",
+      "pushed_at": "2026-01-03T16:31:26Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "cli",
+        "oss",
+        "terraform"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 3,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 86.8,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.59
+    },
+    "commits": {
+      "last_commit_date": "2026-01-03T16:31:25Z",
+      "commits_last_6mo": 158,
+      "commits_last_year": 395
+    },
+    "issues": {
+      "open_issues": 2,
+      "closed_issues_6mo": 1,
+      "avg_response_time_hours": 1.1,
+      "avg_close_time_hours": 0.0,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 2,
+      "merged_prs_6mo": 158,
+      "closed_prs_6mo": 161,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 18,
+      "releases_last_year": 7,
+      "last_release_date": "2025-12-06T14:24:33Z",
+      "latest_version": "v1.0.0",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.17
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": true,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 7602,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": true,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": true
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 8,
+      "recent_runs_pass_rate": 76.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 9,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is clear and provides many examples, but installation instructions are incomplete and troubleshooting information is lacking.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "pkg/domain/block.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The Regstr function uses fmt.Sprintf to construct a regular expression, which could potentially lead to a denial-of-service attack if the input is not properly sanitized."
+        },
+        {
+          "file": "pkg/apply/apply.go",
+          "line": 104,
+          "severity": "low",
+          "description": "The applyFixes function uses a loop to replace resource references, which could potentially lead to performance issues if the input is large."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Lack of input validation for the Input and Dir structs.",
+        "Potential denial-of-service attack through the Regstr function."
+      ],
+      "summary": "The tfmv package has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "dependency updates"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The community is moderately engaged, but there are concerns about dependency maintenance."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 7,
+      "communication_style": "adequate",
+      "red_flags": [
+        "repeated notifications without new information",
+        "lack of clear instructions for new contributors"
+      ],
+      "summary": "The responses are generally adequate but could be more welcoming and less repetitive."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past six months (158)",
+        "Recent last commit and release dates",
+        "Multiple contributors active in the past six months"
+      ],
+      "summary": "The package is actively maintained with frequent updates and contributions."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The documentation lacks details on succession, decision-making, contributor paths, and multiple maintainers."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 156,
+      "forks": 7,
+      "open_issues": 4,
+      "license": "MIT",
+      "description": "CLI to rename Terraform resources and generate moved blocks",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T11:36:34.997639Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is clear and provides many examples, but installation instructions are incomplete and troubleshooting information is lacking.",
+    "concerns": [
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Possible abandonment signals detected",
+      "Community: dependency updates",
+      "Communication: repeated notifications without new information",
+      "Communication: lack of clear instructions for new contributors",
+      "Governance: High bus factor risk identified",
+      "Security: Lack of input validation for the Input and Dir structs.",
+      "Security: Potential denial-of-service attack through the Regstr function.",
+      "High bus factor risk (87% from top contributor)"
+    ],
+    "highlights": [
+      "High number of commits in the past six months (158)",
+      "Recent last commit and release dates",
+      "Multiple contributors active in the past six months",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 156,
+      "forks": 7,
+      "open_issues": 4
+    }
+  },
+  "analyzed_at": "2026-01-06T11:38:20.395086Z",
+  "data_fetched_at": "2026-01-06T11:38:20.395087Z"
+}
