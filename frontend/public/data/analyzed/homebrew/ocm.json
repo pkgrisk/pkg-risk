@@ -1,0 +1,320 @@
+{
+  "ecosystem": "homebrew",
+  "name": "ocm",
+  "description": "CLI for the Red Hat OpenShift Cluster Manager",
+  "version": "1.0.10",
+  "homepage": "https://www.openshift.com/",
+  "repository": {
+    "platform": "github",
+    "owner": "openshift-online",
+    "repo": "ocm-cli",
+    "subpath": null
+  },
+  "install_count_30d": 33,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 84.9,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 78.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 90.79010123725925,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 58.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "openshift-online",
+      "name": "ocm-cli",
+      "description": "CLI for the Red Hat OpenShift Cluster Manager",
+      "stars": 88,
+      "forks": 150,
+      "open_issues": 77,
+      "watchers": 88,
+      "created_at": "2019-08-27T12:00:10Z",
+      "updated_at": "2026-01-05T20:46:33Z",
+      "pushed_at": "2026-01-06T09:08:56Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 71,
+      "active_contributors_6mo": 14,
+      "top_contributor_pct": 32.9,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 8,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 8,
+      "contributor_entropy": 4.28
+    },
+    "commits": {
+      "last_commit_date": "2026-01-02T13:47:38Z",
+      "commits_last_6mo": 48,
+      "commits_last_year": 99
+    },
+    "issues": {
+      "open_issues": 24,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 53,
+      "merged_prs_6mo": 34,
+      "closed_prs_6mo": 100,
+      "stale_prs": 25,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 66,
+      "releases_last_year": 7,
+      "last_release_date": "2025-12-01T19:14:13Z",
+      "latest_version": "v1.0.10",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 83.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 16724,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 100.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The README provides clear and detailed instructions for installation, configuration, and usage, but lacks a concise quick start section and troubleshooting guidance.",
+      "top_issue": "Lack of troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/ocm/main.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The 'plugin.HandlePluginCommand' function executes external commands without proper validation, which could lead to command injection attacks."
+        },
+        {
+          "file": "pkg/gcp/client.go",
+          "line": 145,
+          "severity": "low",
+          "description": "The 'CreateWorkloadIdentityPool' and 'CreateWorkloadIdentityProvider' functions use the 'Do' method from the Google API client library, which could potentially lead to command injection attacks if not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection attacks through the 'plugin.HandlePluginCommand' function.",
+        "Lack of input validation in some functions."
+      ],
+      "summary": "The code has some security concerns, including potential command injection attacks and lack of input validation, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
+    },
+    "sentiment": null,
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "Maintainer responses are clear, helpful, and patient, with a good level of technical detail."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits in the past six months",
+        "A high number of merged PRs in the past six months",
+        "Multiple contributors active in the past six months"
+      ],
+      "summary": "The package is actively maintained with recent activity and contributions."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 6,
+      "summary": "The changelog is well-categorized but lacks clarity and completeness, with no breaking changes or migration guides."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.3,
+      "score_date": "2025-12-29T00:00:00Z",
+      "checks": {
+        "Code-Review": 9.0,
+        "Maintained": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Packaging": -1.0,
+        "Dangerous-Workflow": 10.0,
+        "Token-Permissions": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "Branch-Protection": -1.0,
+        "Signed-Releases": 0.0,
+        "Vulnerabilities": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 9.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 87,
+      "forks": 150,
+      "open_issues": 78,
+      "license": "Apache-2.0",
+      "description": "CLI for the Red Hat OpenShift Cluster Manager",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T09:14:21.309520Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides clear and detailed instructions for installation, configuration, and usage, but lacks a concise quick start section and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of troubleshooting documentation",
+      "Governance: High bus factor risk identified",
+      "Security: Potential command injection attacks through the 'plugin.HandlePluginCommand' function.",
+      "Security: Lack of input validation in some functions.",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Recent commits in the past six months",
+      "A high number of merged PRs in the past six months",
+      "Multiple contributors active in the past six months",
+      "Excellent maintainer communication",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "communication_style": "exemplary",
+    "scorecard_score": 4.3
+  },
+  "analyzed_at": "2026-01-06T09:16:04.488205Z",
+  "data_fetched_at": "2026-01-06T09:16:04.488207Z"
+}
