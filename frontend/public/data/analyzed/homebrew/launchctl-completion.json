@@ -1,0 +1,257 @@
+{
+  "ecosystem": "homebrew",
+  "name": "launchctl-completion",
+  "description": "Bash completion for Launchctl",
+  "version": "2.0",
+  "homepage": "https://github.com/CamJN/launchctl-completion",
+  "repository": {
+    "platform": "github",
+    "owner": "CamJN",
+    "repo": "launchctl-completion",
+    "subpath": null
+  },
+  "install_count_30d": 28,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 61.1,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited contributor data",
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 60.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 80.09286832555262,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 87.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 25.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 0.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "CamJN",
+      "name": "launchctl-completion",
+      "description": "",
+      "stars": 9,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 9,
+      "created_at": "2016-05-28T19:06:47Z",
+      "updated_at": "2025-10-20T02:13:28Z",
+      "pushed_at": "2025-10-19T18:56:23Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Shell",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 1,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 100.0,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 0.0
+    },
+    "commits": {
+      "last_commit_date": "2025-10-19T18:55:52Z",
+      "commits_last_6mo": 1,
+      "commits_last_year": 1
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 1,
+      "avg_response_time_hours": 25901.9,
+      "avg_close_time_hours": 25901.9,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 2,
+      "releases_last_year": 1,
+      "last_release_date": "2025-10-19T18:57:20Z",
+      "latest_version": "v2.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 66.7,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "launchctl-completion.sh",
+          "line": 123,
+          "severity": "high",
+          "description": "Use of eval() function with user input in __launchctl_list_umasks()"
+        },
+        {
+          "file": "launchctl-completion.sh",
+          "line": 246,
+          "severity": "medium",
+          "description": "Use of xargs command with user input in __launchctl_list_service_targets()"
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Use of eval() function with user input",
+        "Lack of input validation for COMP_WORDS"
+      ],
+      "summary": "The launchctl-completion.sh script has some security concerns, including the use of eval() with user input and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "Fails on OSX 12.5 (arm)",
+        "missing license for the repo"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with active maintainer response, but there are unresolved issues and a missing license."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 7,
+      "concerns": [
+        "Low PR activity",
+        "Single contributor"
+      ],
+      "positive_signals": [
+        "Recent commit and release",
+        "No open issues or PRs"
+      ],
+      "summary": "The package is maintained with recent updates, but low PR activity and single contributor are concerns."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T20:54:02.184968Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "Low PR activity",
+      "Single contributor",
+      "Community: Fails on OSX 12.5 (arm)",
+      "Community: missing license for the repo",
+      "Security: Use of eval() function with user input",
+      "Security: Lack of input validation for COMP_WORDS",
+      "Security: Use of eval() function with user input in __launchctl_list_umasks()",
+      "High bus factor risk (100% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commit and release",
+      "No open issues or PRs"
+    ],
+    "community_sentiment": "neutral"
+  },
+  "analyzed_at": "2026-01-06T20:54:59.102870Z",
+  "data_fetched_at": "2026-01-06T20:54:59.102871Z"
+}
