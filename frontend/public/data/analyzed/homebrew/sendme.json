@@ -1,0 +1,300 @@
+{
+  "ecosystem": "homebrew",
+  "name": "sendme",
+  "description": "Tool to send files and directories, based on iroh",
+  "version": "0.31.0",
+  "homepage": "https://iroh.computer/sendme",
+  "repository": {
+    "platform": "github",
+    "owner": "n0-computer",
+    "repo": "sendme",
+    "subpath": null
+  },
+  "install_count_30d": 29,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 70.8,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "established",
+    "security": {
+      "score": 62.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 82.01551929199402,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 67.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 79.68,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 91.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "n0-computer",
+      "name": "sendme",
+      "description": "A tool to send files and directories, based on iroh",
+      "stars": 894,
+      "forks": 63,
+      "open_issues": 37,
+      "watchers": 894,
+      "created_at": "2023-12-12T08:20:28Z",
+      "updated_at": "2026-01-02T12:23:41Z",
+      "pushed_at": "2025-11-14T18:26:51Z",
+      "default_branch": "main",
+      "license": "NOASSERTION",
+      "language": "Rust",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 10,
+      "active_contributors_6mo": 5,
+      "top_contributor_pct": 33.3,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 8,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 2.46
+    },
+    "commits": {
+      "last_commit_date": "2025-11-06T03:24:49Z",
+      "commits_last_6mo": 14,
+      "commits_last_year": 34
+    },
+    "issues": {
+      "open_issues": 30,
+      "closed_issues_6mo": 8,
+      "avg_response_time_hours": 225.7,
+      "avg_close_time_hours": 1094.7,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 7,
+      "merged_prs_6mo": 9,
+      "closed_prs_6mo": 11,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 34,
+      "releases_last_year": 10,
+      "last_release_date": "2025-11-06T03:25:34Z",
+      "latest_version": "v0.31.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 55.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1663,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 80.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The documentation is clear and concise, but lacks examples and troubleshooting information.",
+      "top_issue": "Lack of configuration documentation and troubleshooting guides"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 246,
+          "severity": "medium",
+          "description": "The `get_or_create_secret` function uses the `std::env::var` function to retrieve the secret key from an environment variable. If this variable is not set, a new secret key is generated and printed to stderr. However, if the environment variable is set but contains malicious input, it could potentially lead to security issues."
+        },
+        {
+          "file": "src/main.rs",
+          "line": 272,
+          "severity": "low",
+          "description": "The `canonicalized_path_to_string` function uses the `to_str` method to convert a path component to a string. If this conversion fails, an error is returned. However, if the input path contains malicious characters, it could potentially lead to security issues."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [
+        {
+          "file": "src/main.rs",
+          "line": 246,
+          "type": "secret key"
+        }
+      ],
+      "critical_findings": [
+        "Potential injection risk in the `get_or_create_secret` function",
+        "Lack of input validation for path components"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "--help option missing details",
+        "clipboard functionality issues",
+        "connection timeout due to version mismatch"
+      ],
+      "praise_themes": [
+        "feature request for upload speed visibility",
+        "refactoring suggestions for readability"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community is moderately engaged with some open issues and feature requests, but there are ongoing problems that could use more attention."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are clear, helpful, and show a good level of technical depth while being patient with new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 7,
+      "concerns": [
+        "High number of open issues",
+        "Low number of merged PRs compared to open PRs"
+      ],
+      "positive_signals": [
+        "Recent commits and releases",
+        "Moderate number of contributors active in the past six months"
+      ],
+      "summary": "The package is maintained with recent activity, but there are concerns about unresolved issues and a lower rate of PR merging."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 894,
+      "forks": 63,
+      "open_issues": 36,
+      "license": "non-standard",
+      "description": "A tool to send files and directories, based on iroh",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T13:48:30.216858Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is clear and concise, but lacks examples and troubleshooting information.",
+    "concerns": [
+      "High number of open issues",
+      "Low number of merged PRs compared to open PRs",
+      "Docs: Lack of configuration documentation and troubleshooting guides",
+      "Community: --help option missing details",
+      "Community: clipboard functionality issues",
+      "Security: Potential injection risk in the `get_or_create_secret` function",
+      "Security: Lack of input validation for path components"
+    ],
+    "highlights": [
+      "Recent commits and releases",
+      "Moderate number of contributors active in the past six months",
+      "Excellent maintainer communication",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 894,
+      "forks": 63,
+      "open_issues": 36
+    }
+  },
+  "analyzed_at": "2026-01-06T13:49:59.300372Z",
+  "data_fetched_at": "2026-01-06T13:49:59.300373Z"
+}
