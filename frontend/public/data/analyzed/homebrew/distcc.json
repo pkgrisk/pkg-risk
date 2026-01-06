@@ -1,0 +1,326 @@
+{
+  "ecosystem": "homebrew",
+  "name": "distcc",
+  "description": "Distributed compiler client and server",
+  "version": "3.4",
+  "homepage": "https://github.com/distcc/distcc/",
+  "repository": {
+    "platform": "github",
+    "owner": "distcc",
+    "repo": "distcc",
+    "subpath": null
+  },
+  "install_count_30d": 31,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 53.7,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 13.114627581793494,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 45.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 98.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "distcc",
+      "name": "distcc",
+      "description": "distributed builds for C, C++ and Objective C",
+      "stars": 2235,
+      "forks": 308,
+      "open_issues": 158,
+      "watchers": 2235,
+      "created_at": "2015-06-06T00:52:43Z",
+      "updated_at": "2026-01-05T08:52:03Z",
+      "pushed_at": "2025-12-08T13:53:33Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 73,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 26.1,
+      "contributors_over_5pct": 5,
+      "contributors_prev_6mo": 3,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 3.76
+    },
+    "commits": {
+      "last_commit_date": "2022-01-06T07:19:39Z",
+      "commits_last_6mo": 21,
+      "commits_last_year": 65
+    },
+    "issues": {
+      "open_issues": 141,
+      "closed_issues_6mo": 7,
+      "avg_response_time_hours": 9547.5,
+      "avg_close_time_hours": 22725.8,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 17,
+      "merged_prs_6mo": 18,
+      "closed_prs_6mo": 23,
+      "stale_prs": 12,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 12,
+      "releases_last_year": 0,
+      "last_release_date": "2021-05-11T17:32:41Z",
+      "latest_version": "v3.4",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.25
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 41.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2763,
+      "has_license": false,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": true
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 70.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README provides a good overview of the package's functionality, but lacks clear installation and usage instructions.",
+      "top_issue": "Lack of clear installation and quick start instructions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/include_server_if.c",
+          "line": 64,
+          "severity": "medium",
+          "description": "The dcc_tokenize_string function is called with user-controlled input from the INCLUDE_SERVER_STUB environment variable, which could potentially lead to command injection if not properly sanitized."
+        },
+        {
+          "file": "src/include_server_if.c",
+          "line": 83,
+          "severity": "low",
+          "description": "The strcpy function is used to copy user-controlled input from the INCLUDE_SERVER_PORT environment variable into a fixed-size buffer, which could potentially lead to a buffer overflow if not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in dcc_tokenize_string function",
+        "Lack of validation for user-controlled input"
+      ],
+      "summary": "The code has some security concerns, including potential command injection and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "make uninstall syntax error"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with a minor issue that has been resolved, but an open question suggests ongoing engagement."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 9,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "Maintainer responses are generally clear and helpful, showing patience with new contributors and a willingness to discuss technical details."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "Last commit is over a year old",
+        "Few contributors in the recent period"
+      ],
+      "positive_signals": [
+        "Some activity with open PRs and issues",
+        "Regular issue closure"
+      ],
+      "summary": "The package shows minimal maintenance with occasional updates but lacks active contributor engagement."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 6,
+      "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it somewhat incomplete and less user-friendly."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 5.3,
+      "score_date": "2025-12-29T00:00:00Z",
+      "checks": {
+        "Code-Review": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "Packaging": -1.0,
+        "Maintained": 10.0,
+        "Token-Permissions": 0.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Security-Policy": 0.0,
+        "Vulnerabilities": 10.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": -1.0,
+        "Pinned-Dependencies": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 2233,
+      "forks": 308,
+      "open_issues": 157,
+      "license": "GPL-2.0",
+      "description": "distributed builds for C, C++ and Objective C",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T10:56:05.893098Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good overview of the package's functionality, but lacks clear installation and usage instructions.",
+    "concerns": [
+      "Last commit is over a year old",
+      "Few contributors in the recent period",
+      "Docs: Lack of clear installation and quick start instructions",
+      "Community: make uninstall syntax error",
+      "Security: Potential command injection vulnerability in dcc_tokenize_string function",
+      "Security: Lack of validation for user-controlled input",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Some activity with open PRs and issues",
+      "Regular issue closure",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "scorecard_score": 5.3
+  },
+  "analyzed_at": "2026-01-06T10:57:31.583439Z",
+  "data_fetched_at": "2026-01-06T10:57:31.583440Z"
+}
