@@ -1,0 +1,281 @@
+{
+  "ecosystem": "homebrew",
+  "name": "vapoursynth-imwri",
+  "description": "VapourSynth filters - ImageMagick HDRI writer/reader",
+  "version": "2",
+  "homepage": "https://github.com/vapoursynth/vs-imwri",
+  "repository": {
+    "platform": "github",
+    "owner": "vapoursynth",
+    "repo": "vs-imwri",
+    "subpath": null
+  },
+  "install_count_30d": 40,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 59.1,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "mature",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 67.16,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 26.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 70.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "vapoursynth",
+      "name": "vs-imwri",
+      "description": "Image reader and writer for VapourSynth using the ImageMagick library",
+      "stars": 17,
+      "forks": 5,
+      "open_issues": 2,
+      "watchers": 17,
+      "created_at": "2021-09-09T09:52:00Z",
+      "updated_at": "2025-05-21T21:27:16Z",
+      "pushed_at": "2024-09-18T19:59:07Z",
+      "default_branch": "master",
+      "license": "LGPL-2.1",
+      "language": "C++",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 4,
+      "active_contributors_6mo": 4,
+      "top_contributor_pct": 50.0,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.52
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 2,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 2,
+      "releases_last_year": 0,
+      "last_release_date": "2022-06-27T09:42:10Z",
+      "latest_version": "R2",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 41.7,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 584,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 1,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 2,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The documentation is clear about the package's limitations, but lacks essential information for users to get started.",
+      "top_issue": "Lack of installation instructions and usage examples"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/imwri.cpp",
+          "line": 123,
+          "severity": "medium",
+          "description": "The specialPrintf function uses user-controlled input (filename) to construct a string, which could potentially lead to path traversal or other issues if not properly sanitized."
+        },
+        {
+          "file": "src/imwri.cpp",
+          "line": 233,
+          "severity": "low",
+          "description": "The writeGetFrame function uses user-controlled input (filename) to construct a file path, which could potentially lead to issues if not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal issue in specialPrintf function",
+        "Lack of input validation in writeGetFrame function"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Fails with long network paths on Windows",
+        "Crash on filter free"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral, with some open issues and closed complaints, but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 5,
+      "clarity": 7,
+      "patience": 8,
+      "technical_depth": 6,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "issues spammer with bullshit on top",
+        "lack of detailed response to some issues"
+      ],
+      "summary": "The maintainer's responses are adequate but could be more helpful and clear, especially for new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Only four contributors active in the last six months"
+      ],
+      "positive_signals": [
+        "Last release was recent (2022-06-27)",
+        "Two open issues, which indicates some level of user engagement"
+      ],
+      "summary": "The package shows minimal maintenance with occasional contributions but no recent activity."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T03:20:25.753698Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is clear about the package's limitations, but lacks essential information for users to get started.",
+    "concerns": [
+      "No commits in the past six months",
+      "Only four contributors active in the last six months",
+      "Docs: Lack of installation instructions and usage examples",
+      "Community: Fails with long network paths on Windows",
+      "Community: Crash on filter free",
+      "Communication: issues spammer with bullshit on top",
+      "Communication: lack of detailed response to some issues",
+      "Security: Potential path traversal issue in specialPrintf function",
+      "Security: Lack of input validation in writeGetFrame function"
+    ],
+    "highlights": [
+      "Last release was recent (2022-06-27)",
+      "Two open issues, which indicates some level of user engagement",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-06T03:21:41.184643Z",
+  "data_fetched_at": "2026-01-06T03:21:41.184644Z"
+}
