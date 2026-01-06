@@ -1,0 +1,302 @@
+{
+  "ecosystem": "homebrew",
+  "name": "gifify",
+  "description": "Turn movies into GIFs",
+  "version": "4.0",
+  "homepage": "https://github.com/jclem/gifify",
+  "repository": {
+    "platform": "github",
+    "owner": "jclem",
+    "repo": "gifify",
+    "subpath": null
+  },
+  "install_count_30d": 33,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 65.9,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 68.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 60.08,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 66.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "jclem",
+      "name": "gifify",
+      "description": "gifify turns movies into gifs.",
+      "stars": 1138,
+      "forks": 46,
+      "open_issues": 5,
+      "watchers": 1138,
+      "created_at": "2013-03-15T00:21:06Z",
+      "updated_at": "2026-01-01T14:33:15Z",
+      "pushed_at": "2024-02-13T02:00:14Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Shell",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 7,
+      "active_contributors_6mo": 7,
+      "top_contributor_pct": 78.0,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.26
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 4,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 1,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 4,
+      "releases_last_year": 0,
+      "last_release_date": "2016-04-20T19:43:11Z",
+      "latest_version": "v4.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1382,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 8,
+      "summary": "The README is well-structured and provides clear instructions, but lacks troubleshooting documentation.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "gifify.sh",
+          "line": 73,
+          "severity": "medium",
+          "description": "The $filename variable is used directly in the ffmpeg command without proper sanitization, potentially allowing for command injection attacks if the input file name is not properly validated."
+        },
+        {
+          "file": "gifify.sh",
+          "line": 74,
+          "severity": "low",
+          "description": "The $filter variable is constructed from user-provided options and used in the ffmpeg command, but it does not seem to be directly vulnerable to injection attacks due to the way it's constructed."
+        },
+        {
+          "file": "gifify.sh",
+          "line": 83,
+          "severity": "low",
+          "description": "The $output variable is used as part of the output file name, but it does not seem to be directly vulnerable to injection attacks due to the way it's constructed."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the $filename variable"
+      ],
+      "summary": "The script has some potential security issues, including a possible command injection vulnerability and lack of input validation, but it does not seem to handle sensitive information or expose critical error details."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "convert command deprecated",
+        "Converting creates gigantic tmp files"
+      ],
+      "praise_themes": [
+        "README should explain dependencies",
+        "Thoughts on interface cleanup"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community is generally neutral with some ongoing issues and suggestions for improvements."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [
+        "Occasional use of humor that might be misinterpreted",
+        "Some responses are brief and could benefit from more detail"
+      ],
+      "summary": "The maintainer's responses are generally clear and helpful, showing patience with users. However, there is room for improvement in providing deeper technical explanations."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Last release was over five years ago"
+      ],
+      "positive_signals": [
+        "One merged PR in the past six months",
+        "Seven contributors active in the past six months"
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but an old last release."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 1138,
+      "forks": 46,
+      "open_issues": 5,
+      "license": "MIT",
+      "description": "gifify turns movies into gifs.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T08:51:23.253938Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README is well-structured and provides clear instructions, but lacks troubleshooting documentation.",
+    "concerns": [
+      "No commits in the past six months",
+      "Last release was over five years ago",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Community: convert command deprecated",
+      "Community: Converting creates gigantic tmp files",
+      "Communication: Occasional use of humor that might be misinterpreted",
+      "Communication: Some responses are brief and could benefit from more detail",
+      "Security: Potential command injection vulnerability in the $filename variable"
+    ],
+    "highlights": [
+      "One merged PR in the past six months",
+      "Seven contributors active in the past six months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 1138,
+      "forks": 46,
+      "open_issues": 5
+    }
+  },
+  "analyzed_at": "2026-01-06T08:52:33.829555Z",
+  "data_fetched_at": "2026-01-06T08:52:33.829557Z"
+}
