@@ -1,0 +1,242 @@
+{
+  "ecosystem": "homebrew",
+  "name": "dyld-headers",
+  "description": "Header files for the dynamic linker",
+  "version": "1330",
+  "homepage": "https://opensource.apple.com/",
+  "repository": {
+    "platform": "github",
+    "owner": "apple-oss-distributions",
+    "repo": "dyld",
+    "subpath": null
+  },
+  "install_count_30d": 43,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 58.3,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited contributor data",
+      "Limited issue history"
+    ],
+    "project_age_band": "mature",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 76.53048857986778,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 85.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 20.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 10.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "apple-oss-distributions",
+      "name": "dyld",
+      "description": "",
+      "stars": 656,
+      "forks": 81,
+      "open_issues": 0,
+      "watchers": 656,
+      "created_at": "2021-10-04T21:36:58Z",
+      "updated_at": "2026-01-01T15:33:48Z",
+      "pushed_at": "2025-12-03T22:53:14Z",
+      "default_branch": "main",
+      "license": "NOASSERTION",
+      "language": "C++",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 1,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 100.0,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 1,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.0
+    },
+    "commits": {
+      "last_commit_date": "2025-11-18T22:47:26Z",
+      "commits_last_6mo": 3,
+      "commits_last_year": 7
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "dyld/PremappedLoader.cpp",
+          "line": 246,
+          "severity": "medium",
+          "description": "The function strlcpy() is used to copy a string from an external source (path) into a fixed-size buffer. While strlcpy() prevents buffer overflows, it does not prevent potential issues with null-termination or encoding."
+        },
+        {
+          "file": "dyld/PremappedLoader.cpp",
+          "line": 123,
+          "severity": "low",
+          "description": "The function memcpy() is used to copy data from an external source (uuid) into a fixed-size buffer. While this is generally safe, it could potentially be used to inject malicious data if the uuid is not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risks due to lack of input validation and use of functions like strlcpy() and memcpy().",
+        "Error exposure due to potential logging of sensitive information."
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and error exposure, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": null,
+    "communication": null,
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No recent activity",
+        "Single contributor"
+      ],
+      "positive_signals": [
+        "Recent commits in the last year",
+        "No open issues or PRs"
+      ],
+      "summary": "The package shows minimal maintenance with occasional updates but lacks community involvement."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T01:05:52.145030Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "No recent activity",
+      "Single contributor",
+      "Security: Potential injection risks due to lack of input validation and use of functions like strlcpy() and memcpy().",
+      "Security: Error exposure due to potential logging of sensitive information.",
+      "High bus factor risk (100% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits in the last year",
+      "No open issues or PRs"
+    ]
+  },
+  "analyzed_at": "2026-01-06T01:06:59.156539Z",
+  "data_fetched_at": "2026-01-06T01:06:59.156540Z"
+}
