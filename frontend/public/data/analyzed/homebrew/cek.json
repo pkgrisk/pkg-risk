@@ -1,0 +1,282 @@
+{
+  "ecosystem": "homebrew",
+  "name": "cek",
+  "description": "Explore the (overlay) filesystem and layers of OCI container images",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bschaatsbergen/cek",
+  "repository": {
+    "platform": "github",
+    "owner": "bschaatsbergen",
+    "repo": "cek",
+    "subpath": null
+  },
+  "install_count_30d": 30,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 84.3,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "low",
+    "confidence_factors": [
+      "Very new package (<6 months)",
+      "Limited contributor data",
+      "Limited issue history"
+    ],
+    "project_age_band": "new",
+    "security": {
+      "score": 100.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 92.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 25.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 55.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "bschaatsbergen",
+      "name": "cek",
+      "description": "Explore the (overlay) filesystem and layers of OCI container images.",
+      "stars": 150,
+      "forks": 4,
+      "open_issues": 4,
+      "watchers": 150,
+      "created_at": "2025-12-27T17:55:02Z",
+      "updated_at": "2026-01-06T19:03:15Z",
+      "pushed_at": "2026-01-06T07:57:26Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "containers",
+        "oci"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 1,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 100.0,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 0.0
+    },
+    "commits": {
+      "last_commit_date": "2026-01-06T07:57:18Z",
+      "commits_last_6mo": 32,
+      "commits_last_year": 32
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 2,
+      "avg_response_time_hours": 0.0,
+      "avg_close_time_hours": 23.5,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 11,
+      "closed_prs_6mo": 11,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 6987,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 78.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 8,
+      "summary": "The README provides clear and concise information about the package, its usage, and configuration, but lacks troubleshooting documentation.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 8,
+      "injection_risks": [
+        {
+          "file": "internal/command/cat.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The extractFileFromLayer function uses the tar package to read a tar archive. While this is not directly an injection risk, it's possible that a maliciously crafted tar file could cause issues."
+        },
+        {
+          "file": "internal/command/export.go",
+          "line": 83,
+          "severity": "low",
+          "description": "The RunExport function uses the tarball.WriteToFile function to write a tarball to disk. While this is not directly an injection risk, it's possible that a maliciously crafted image could cause issues."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The code has some potential security issues related to input validation and error handling, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "go version requirement"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is moderately engaged, with concerns around Go version compatibility but no signs of abandonment."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 7,
+      "concerns": [
+        "Low number of contributors",
+        "No recent releases"
+      ],
+      "positive_signals": [
+        "Recent commits and PR activity",
+        "No open issues or PRs"
+      ],
+      "summary": "The package shows signs of maintenance with recent activity but lacks contributor diversity and has no recent releases."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 25,
+      "forks": 1,
+      "open_issues": 4,
+      "license": "MIT",
+      "description": "List, inspect and explore OCI container images, their layers and contents.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-06T20:15:32.476244Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides clear and concise information about the package, its usage, and configuration, but lacks troubleshooting documentation.",
+    "concerns": [
+      "Low number of contributors",
+      "No recent releases",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Community: go version requirement",
+      "High bus factor risk (100% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits and PR activity",
+      "No open issues or PRs",
+      "Code follows security best practices",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "forge_metrics": {
+      "stars": 25,
+      "forks": 1,
+      "open_issues": 4
+    }
+  },
+  "analyzed_at": "2026-01-06T20:17:06.700791Z",
+  "data_fetched_at": "2026-01-06T20:17:06.700792Z"
+}
