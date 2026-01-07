@@ -1,0 +1,321 @@
+{
+  "ecosystem": "homebrew",
+  "name": "rsc_2fa",
+  "description": "Two-factor authentication on the command-line",
+  "version": "1.2.0",
+  "homepage": "https://pkg.go.dev/rsc.io/2fa",
+  "repository": {
+    "platform": "github",
+    "owner": "rsc",
+    "repo": "2fa",
+    "subpath": null
+  },
+  "install_count_30d": 23,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 50.9,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 43.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Dangerous CI/CD workflows detected",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 46.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 80.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 38.8,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "rsc",
+      "name": "2fa",
+      "description": "Two-factor authentication on the command line",
+      "stars": 1911,
+      "forks": 169,
+      "open_issues": 17,
+      "watchers": 1911,
+      "created_at": "2017-11-22T01:40:20Z",
+      "updated_at": "2026-01-06T21:17:42Z",
+      "pushed_at": "2024-08-17T12:34:18Z",
+      "default_branch": "master",
+      "license": "BSD-3-Clause",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 90.0,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.47
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 9,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 8,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 8,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1753,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is clear and provides good examples, but lacks detailed installation instructions and troubleshooting information.",
+      "top_issue": "Lack of detailed installation instructions and troubleshooting information"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "main.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The code uses `strconv.ParseUint` to parse a counter value from the keychain file, but it does not handle errors properly. However, this is not a significant risk since the input comes from a trusted source (the keychain file)."
+        },
+        {
+          "file": "main.go",
+          "line": 156,
+          "severity": "low",
+          "description": "The code uses `fmt.Sprintf` to construct a string with user-provided data, but it does not handle errors properly. However, this is not a significant risk since the input comes from a trusted source (the keychain file)."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "The code stores sensitive data (the keychain) in an unencrypted file.",
+        "The code does not handle errors properly in some cases."
+      ],
+      "summary": "The code has some security issues, including storing sensitive data in plaintext and not handling errors properly, but it is generally well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "malformed key handling",
+        "documentation issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some open issues related to key handling and documentation, but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer's responses are generally clear and helpful, though could provide more technical depth in some cases."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Multiple open issues and PRs"
+      ],
+      "positive_signals": [
+        "Two contributors have been active in the past six months"
+      ],
+      "summary": "The package shows minimal maintenance with some activity but numerous unresolved issues."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 3.0,
+      "score_date": "2025-12-29T00:00:00Z",
+      "checks": {
+        "Dangerous-Workflow": -1.0,
+        "SAST": 0.0,
+        "Token-Permissions": -1.0,
+        "Code-Review": 0.0,
+        "Maintained": 0.0,
+        "Packaging": -1.0,
+        "Pinned-Dependencies": -1.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Signed-Releases": -1.0,
+        "Branch-Protection": 0.0,
+        "Vulnerabilities": 10.0
+      },
+      "code_review_score": 0.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 1910,
+      "forks": 169,
+      "open_issues": 17,
+      "license": "BSD-3-Clause",
+      "description": "Two-factor authentication on the command line",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T02:48:34.920649Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is clear and provides good examples, but lacks detailed installation instructions and troubleshooting information.",
+    "concerns": [
+      "No commits in the past six months",
+      "Multiple open issues and PRs",
+      "Docs: Lack of detailed installation instructions and troubleshooting information",
+      "Community: malformed key handling",
+      "Community: documentation issues",
+      "Security: The code stores sensitive data (the keychain) in an unencrypted file.",
+      "Security: The code does not handle errors properly in some cases.",
+      "High bus factor risk (90% from top contributor)",
+      "Low OpenSSF Scorecard: 3.0/10",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Two contributors have been active in the past six months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "scorecard_score": 3.0
+  },
+  "analyzed_at": "2026-01-07T02:49:54.435951Z",
+  "data_fetched_at": "2026-01-07T02:49:54.435953Z"
+}
