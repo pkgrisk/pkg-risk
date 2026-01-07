@@ -1,0 +1,288 @@
+{
+  "ecosystem": "homebrew",
+  "name": "cyphernetes",
+  "description": "Kubernetes Query Language",
+  "version": "0.18.2",
+  "homepage": "https://cyphernet.es",
+  "repository": {
+    "platform": "github",
+    "owner": "AvitalTamir",
+    "repo": "cyphernetes",
+    "subpath": null
+  },
+  "install_count_30d": 20,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 75.6,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "established",
+    "security": {
+      "score": 66.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 74.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 56.75999999999999,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 62.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 78.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "AvitalTamir",
+      "name": "cyphernetes",
+      "description": "A Kubernetes Query Language",
+      "stars": 1216,
+      "forks": 25,
+      "open_issues": 11,
+      "watchers": 1216,
+      "created_at": "2023-11-13T16:10:06Z",
+      "updated_at": "2026-01-06T20:23:32Z",
+      "pushed_at": "2026-01-01T14:01:13Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 10,
+      "active_contributors_6mo": 3,
+      "top_contributor_pct": 73.2,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 5,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 1.47
+    },
+    "commits": {
+      "last_commit_date": "2025-12-22T19:46:16Z",
+      "commits_last_6mo": 16,
+      "commits_last_year": 94
+    },
+    "issues": {
+      "open_issues": 7,
+      "closed_issues_6mo": 4,
+      "avg_response_time_hours": 29.9,
+      "avg_close_time_hours": 747.4,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 13,
+      "closed_prs_6mo": 16,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 42,
+      "releases_last_year": 10,
+      "last_release_date": "2025-06-29T12:49:59Z",
+      "latest_version": "v0.18.2",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 97.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 6483,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 5,
+      "recent_runs_pass_rate": 90.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is generally clear and provides good examples, but lacks comprehensive configuration and troubleshooting information.",
+      "top_issue": "Lack of detailed configuration and troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cmd/kubectl-cypher/main.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The 'core.ParseQuery' function may be vulnerable to injection attacks if the input query string is not properly sanitized."
+        },
+        {
+          "file": "pkg/provider/apiserver/provider.go",
+          "line": -1,
+          "severity": "unknown",
+          "description": "No obvious injection risks found in this file, but it's recommended to review the code for any potential vulnerabilities."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risks in the 'core.ParseQuery' function.",
+        "Lack of input validation for the 'apiserver.NewAPIServerProviderWithOptions' function."
+      ],
+      "summary": "The code has some potential security vulnerabilities, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Set up Copilot instructions"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is focused on setting up Copilot instructions, but there's no clear indication of frustration or abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are clear, helpful, and encouraging to new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 7,
+      "concerns": [
+        "Open issues are higher than closed ones",
+        "Few merged PRs in the past six months"
+      ],
+      "positive_signals": [
+        "Commits past 6 months: 16",
+        "Contributors active past 6 months: 3"
+      ],
+      "summary": "The package shows signs of regular maintenance but has some open concerns."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 1215,
+      "forks": 25,
+      "open_issues": 11,
+      "license": "Apache-2.0",
+      "description": "A Kubernetes Query Language",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T06:08:32.263414Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and provides good examples, but lacks comprehensive configuration and troubleshooting information.",
+    "concerns": [
+      "Open issues are higher than closed ones",
+      "Few merged PRs in the past six months",
+      "Docs: Lack of detailed configuration and troubleshooting documentation",
+      "Community: Set up Copilot instructions",
+      "Security: Potential injection risks in the 'core.ParseQuery' function.",
+      "Security: Lack of input validation for the 'apiserver.NewAPIServerProviderWithOptions' function."
+    ],
+    "highlights": [
+      "Commits past 6 months: 16",
+      "Contributors active past 6 months: 3",
+      "Excellent maintainer communication",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 1215,
+      "forks": 25,
+      "open_issues": 11
+    }
+  },
+  "analyzed_at": "2026-01-07T06:10:05.457446Z",
+  "data_fetched_at": "2026-01-07T06:10:05.457447Z"
+}
