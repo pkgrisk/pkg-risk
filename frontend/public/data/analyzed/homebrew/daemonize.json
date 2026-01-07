@@ -1,0 +1,336 @@
+{
+  "ecosystem": "homebrew",
+  "name": "daemonize",
+  "description": "Run a command as a UNIX daemon",
+  "version": "1.7.8",
+  "homepage": "https://software.clapper.org/daemonize/",
+  "repository": {
+    "platform": "github",
+    "owner": "bmc",
+    "repo": "daemonize",
+    "subpath": null
+  },
+  "install_count_30d": 12,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 38.1,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 43.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Dangerous CI/CD workflows detected",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 17.55919322141555,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 65.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 24.2,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 26.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "bmc",
+      "name": "daemonize",
+      "description": "Command line utility to run a program as a Unix daemon",
+      "stars": 568,
+      "forks": 99,
+      "open_issues": 19,
+      "watchers": 568,
+      "created_at": "2010-02-20T13:39:40Z",
+      "updated_at": "2025-12-31T12:50:44Z",
+      "pushed_at": "2025-03-28T13:50:13Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 5,
+      "active_contributors_6mo": 5,
+      "top_contributor_pct": 92.6,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.52
+    },
+    "commits": {
+      "last_commit_date": "2025-03-28T13:50:10Z",
+      "commits_last_6mo": 0,
+      "commits_last_year": 2
+    },
+    "issues": {
+      "open_issues": 15,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 1.2,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 937,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README lacks essential information, making it difficult for new users to get started with the daemonize package.",
+      "top_issue": "Missing installation instructions and lack of usage examples"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "setenv.c",
+          "line": 24,
+          "severity": "medium",
+          "description": "Use of strncat() with user-controlled input may lead to buffer overflow vulnerabilities if not properly validated."
+        },
+        {
+          "file": "daemon.c",
+          "line": 83,
+          "severity": "low",
+          "description": "Use of syslog() with user-controlled input may lead to log injection vulnerabilities, but the impact is typically low."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in setenv.c",
+        "Lack of input validation in daemon.c"
+      ],
+      "summary": "The daemonize package has some security concerns, including potential injection risks and lack of input validation, but overall the code appears to be well-structured and follows good security practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "cross-compilation issues",
+        "output redirection to syslog"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Occasional dismissive tone",
+        "Lack of clear encouragement for new contributors"
+      ],
+      "summary": "The maintainer provides technical insights but could be more patient and welcoming to new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Open issues and PRs suggest ongoing problems"
+      ],
+      "positive_signals": [
+        "Contributors are active, but only for issue management and PR reviews",
+        "Recent activity (issues and PRs) indicates some level of engagement"
+      ],
+      "summary": "The package is in minimal maintenance with recent issue and PR activity, but lacks new code contributions."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": false,
+      "appears_complete": true,
+      "clarity_score": 7,
+      "overall_score": 6,
+      "summary": "The changelog is mostly complete and clear, but lacks categorization, breaking change indicators, and upgrade paths."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 3.1,
+      "score_date": "2025-12-29T00:00:00Z",
+      "checks": {
+        "Maintained": 0.0,
+        "Packaging": -1.0,
+        "Pinned-Dependencies": -1.0,
+        "Code-Review": 1.0,
+        "Token-Permissions": -1.0,
+        "Dangerous-Workflow": -1.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Security-Policy": 0.0,
+        "Vulnerabilities": 10.0,
+        "Fuzzing": 0.0,
+        "Signed-Releases": -1.0,
+        "License": 9.0,
+        "Branch-Protection": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 1.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 568,
+      "forks": 99,
+      "open_issues": 19,
+      "license": "non-standard",
+      "description": "Command line utility to run a program as a Unix daemon",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T21:11:58.606580Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README lacks essential information, making it difficult for new users to get started with the daemonize package.",
+    "concerns": [
+      "No commits in the past six months",
+      "Open issues and PRs suggest ongoing problems",
+      "Docs: Missing installation instructions and lack of usage examples",
+      "Community: cross-compilation issues",
+      "Community: output redirection to syslog",
+      "Communication: Occasional dismissive tone",
+      "Communication: Lack of clear encouragement for new contributors",
+      "Security: Potential buffer overflow vulnerability in setenv.c",
+      "Security: Lack of input validation in daemon.c",
+      "High bus factor risk (93% from top contributor)",
+      "Low OpenSSF Scorecard: 3.1/10",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Contributors are active, but only for issue management and PR reviews",
+      "Recent activity (issues and PRs) indicates some level of engagement"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "scorecard_score": 3.1
+  },
+  "analyzed_at": "2026-01-07T21:13:14.913551Z",
+  "data_fetched_at": "2026-01-07T21:13:14.913552Z"
+}
