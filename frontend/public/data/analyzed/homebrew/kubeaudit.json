@@ -1,0 +1,299 @@
+{
+  "ecosystem": "homebrew",
+  "name": "kubeaudit",
+  "description": "Helps audit your Kubernetes clusters against common security controls",
+  "version": "0.22.2",
+  "homepage": "https://github.com/Shopify/kubeaudit",
+  "repository": {
+    "platform": "github",
+    "owner": "Shopify",
+    "repo": "kubeaudit",
+    "subpath": null
+  },
+  "install_count_30d": 24,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 70.7,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "prohibited",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 94.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 18.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 96.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 62.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 78.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "Shopify",
+      "name": "kubeaudit",
+      "description": "kubeaudit helps you audit your Kubernetes clusters against common security controls",
+      "stars": 1930,
+      "forks": 191,
+      "open_issues": 47,
+      "watchers": 1930,
+      "created_at": "2017-09-14T20:37:55Z",
+      "updated_at": "2026-01-02T21:21:20Z",
+      "pushed_at": "2024-08-21T18:48:27Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "audit",
+        "computers",
+        "kubernetes"
+      ],
+      "is_archived": true,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 41,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 24.2,
+      "contributors_over_5pct": 6,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 3.73
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 33,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 14,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 14,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 42,
+      "releases_last_year": 0,
+      "last_release_date": "2024-08-21T19:47:00Z",
+      "latest_version": "v0.22.2",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.02
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 18511,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 5,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides clear and concise information on installation, usage, and configuration, but lacks sufficient examples and troubleshooting guidance.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 8,
+      "injection_risks": [
+        {
+          "file": "internal/k8sinternal/client.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The `clientcmd.BuildConfigFromFlags` function is used with user-provided input, but it does not seem to be vulnerable to injection attacks."
+        },
+        {
+          "file": "auditors/apparmor/apparmor.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The `fmt.Sprintf` function is used with user-controlled data, but it does not seem to be vulnerable to format string injection attacks."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "No critical findings were identified."
+      ],
+      "summary": "The code appears to have some minor security issues related to input validation and error handling, but no critical vulnerabilities were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Deprecation of kubeaudit",
+        "Go get is no longer supported",
+        "Labels are ignored when run inside a cluster"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The community expresses concerns about the project's future and faces issues with outdated documentation, which may indicate potential abandonment."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [
+        "repeated notifications about dependency updates",
+        "lack of detailed explanations for technical decisions"
+      ],
+      "summary": "The maintainer responses are generally clear and helpful, showing patience with new contributors. However, there is room for improvement in explaining the rationale behind certain decisions."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Low number of merged PRs in the past six months"
+      ],
+      "positive_signals": [
+        "Recent release on 2024-08-21T19:47:00+00:00",
+        "Active contributors (10) in the past six months"
+      ],
+      "summary": "The package is minimally maintained with recent activity but lacks recent commits and merged PRs."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 1930,
+      "forks": 191,
+      "open_issues": 47,
+      "license": "MIT",
+      "description": "kubeaudit helps you audit your Kubernetes clusters against common security controls",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T01:08:48.357028Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides clear and concise information on installation, usage, and configuration, but lacks sufficient examples and troubleshooting guidance.",
+    "concerns": [
+      "No commits in the past six months",
+      "Low number of merged PRs in the past six months",
+      "Docs: Insufficient troubleshooting documentation",
+      "Possible abandonment signals detected",
+      "Community: Deprecation of kubeaudit",
+      "Community: Go get is no longer supported",
+      "Communication: repeated notifications about dependency updates",
+      "Communication: lack of detailed explanations for technical decisions",
+      "Security: No critical findings were identified."
+    ],
+    "highlights": [
+      "Recent release on 2024-08-21T19:47:00+00:00",
+      "Active contributors (10) in the past six months",
+      "Code follows security best practices",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 1930,
+      "forks": 191,
+      "open_issues": 47
+    }
+  },
+  "analyzed_at": "2026-01-07T01:10:22.803021Z",
+  "data_fetched_at": "2026-01-07T01:10:22.803023Z"
+}
