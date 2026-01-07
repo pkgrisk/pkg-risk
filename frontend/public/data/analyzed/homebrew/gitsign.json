@@ -1,0 +1,298 @@
+{
+  "ecosystem": "homebrew",
+  "name": "gitsign",
+  "description": "Keyless Git signing using Sigstore",
+  "version": "0.13.0",
+  "homepage": "https://github.com/sigstore/gitsign",
+  "repository": {
+    "platform": "github",
+    "owner": "sigstore",
+    "repo": "gitsign",
+    "subpath": null
+  },
+  "install_count_30d": 19,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 77.1,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 94.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 75.14158465779994,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 78.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 43.519999999999996,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 58.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 83.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "sigstore",
+      "name": "gitsign",
+      "description": "Keyless Git signing using Sigstore",
+      "stars": 1050,
+      "forks": 73,
+      "open_issues": 37,
+      "watchers": 1050,
+      "created_at": "2022-05-12T15:38:22Z",
+      "updated_at": "2026-01-05T06:25:40Z",
+      "pushed_at": "2025-12-15T06:02:58Z",
+      "default_branch": "main",
+      "license": "NOASSERTION",
+      "language": "Go",
+      "topics": [
+        "git",
+        "signing",
+        "sigstore"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 29,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 67.5,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 7,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.69
+    },
+    "commits": {
+      "last_commit_date": "2025-09-22T06:21:16Z",
+      "commits_last_6mo": 20,
+      "commits_last_year": 77
+    },
+    "issues": {
+      "open_issues": 28,
+      "closed_issues_6mo": 1,
+      "avg_response_time_hours": 1.4,
+      "avg_close_time_hours": 1.4,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 9,
+      "merged_prs_6mo": 20,
+      "closed_prs_6mo": 29,
+      "stale_prs": 3,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 24,
+      "releases_last_year": 1,
+      "last_release_date": "2025-04-09T15:16:40Z",
+      "latest_version": "v0.13.0",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.08
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": true,
+      "has_sbom": true,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 36814,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 7,
+      "recent_runs_pass_rate": 84.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally clear and well-structured, but lacks a quick start example and troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "internal/cache/client.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The `id()` function uses the hostname and working directory to generate a unique ID. While this is not directly user-controllable, it could potentially be exploited in a shared environment."
+        },
+        {
+          "file": "internal/config/config.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The `config` package uses the `os/exec` package to execute external commands. While this is not directly user-controllable, it could potentially be exploited if an attacker can manipulate the environment variables or command-line arguments."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk in the `id()` function",
+        "Lack of input validation in the `GetCredentials()` and `StoreCert()` functions"
+      ],
+      "summary": "The code has some potential security risks, including injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "deprecated TUF usage",
+        "rekor v2 considerations"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some open issues related to deprecated features and rekor versioning, but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 6,
+      "clarity": 7,
+      "patience": 8,
+      "technical_depth": 7,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Repetitive responses",
+        "Lack of detailed explanations for some decisions"
+      ],
+      "summary": "The maintainer's responses are generally adequate but could be more helpful and clearer, especially in explaining the 'why' behind certain decisions."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "Low number of merged PRs in the past six months",
+        "High number of open issues and PRs"
+      ],
+      "positive_signals": [
+        "Recent commits within the last year",
+        "Regular issue reporting"
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but faces challenges with unresolved issues."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 1049,
+      "forks": 73,
+      "open_issues": 37,
+      "license": "non-standard",
+      "description": "Keyless Git signing using Sigstore",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T08:05:12.031771Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is generally clear and well-structured, but lacks a quick start example and troubleshooting information.",
+    "concerns": [
+      "Low number of merged PRs in the past six months",
+      "High number of open issues and PRs",
+      "Docs: Lack of troubleshooting section",
+      "Community: deprecated TUF usage",
+      "Community: rekor v2 considerations",
+      "Communication: Repetitive responses",
+      "Communication: Lack of detailed explanations for some decisions",
+      "Security: Potential injection risk in the `id()` function",
+      "Security: Lack of input validation in the `GetCredentials()` and `StoreCert()` functions"
+    ],
+    "highlights": [
+      "Recent commits within the last year",
+      "Regular issue reporting",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 1049,
+      "forks": 73,
+      "open_issues": 37
+    }
+  },
+  "analyzed_at": "2026-01-07T08:07:24.428434Z",
+  "data_fetched_at": "2026-01-07T08:07:24.428435Z"
+}
