@@ -1,0 +1,296 @@
+{
+  "ecosystem": "homebrew",
+  "name": "libp11",
+  "description": "PKCS#11 wrapper library in C",
+  "version": "0.4.16",
+  "homepage": "https://github.com/OpenSC/libp11/wiki",
+  "repository": {
+    "platform": "github",
+    "owner": "OpenSC",
+    "repo": "libp11",
+    "subpath": null
+  },
+  "install_count_30d": 20,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 82.1,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 80.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 99.0498193096049,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 67.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 70.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 68.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "OpenSC",
+      "name": "libp11",
+      "description": "PKCS#11 wrapper library",
+      "stars": 354,
+      "forks": 194,
+      "open_issues": 4,
+      "watchers": 354,
+      "created_at": "2012-11-24T11:07:51Z",
+      "updated_at": "2025-12-21T15:08:50Z",
+      "pushed_at": "2025-11-21T17:41:48Z",
+      "default_branch": "master",
+      "license": "LGPL-2.1",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 77,
+      "active_contributors_6mo": 3,
+      "top_contributor_pct": 51.4,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 5,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 3.17
+    },
+    "commits": {
+      "last_commit_date": "2025-11-21T17:41:21Z",
+      "commits_last_6mo": 16,
+      "commits_last_year": 122
+    },
+    "issues": {
+      "open_issues": 4,
+      "closed_issues_6mo": 15,
+      "avg_response_time_hours": 113.9,
+      "avg_close_time_hours": 754.7,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 9,
+      "closed_prs_6mo": 9,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 19,
+      "releases_last_year": 3,
+      "last_release_date": "2025-06-23T17:46:31Z",
+      "latest_version": "libp11-0.4.16",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 1.0,
+      "has_dependabot": false,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 13221,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": true,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 100.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 9,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "The documentation is comprehensive and provides detailed information on configuration and usage, but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of clear installation instructions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/eng_back.c",
+          "line": 64,
+          "severity": "medium",
+          "description": "The function ENGINE_CTX_log uses sprintf to concatenate strings, which can lead to buffer overflow vulnerabilities if the input is not properly validated."
+        },
+        {
+          "file": "src/eng_back.c",
+          "line": 123,
+          "severity": "low",
+          "description": "The function UTIL_CTX_set_module uses getenv to retrieve an environment variable, which could potentially be tampered with by an attacker."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in the ENGINE_CTX_log function"
+      ],
+      "summary": "The libp11 package has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure library."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "build issues with OpenSSL-4.x-dev",
+        "crashes on Debian 13"
+      ],
+      "praise_themes": [
+        "enhancement requests for new PKCS #11 features"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting issues, but there are also enhancement requests indicating ongoing interest in the project."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 7,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Occasional dismissive tone towards new contributors",
+        "Some responses could be more detailed for less technical users"
+      ],
+      "summary": "The maintainer provides technically sound explanations but could improve clarity and patience, especially with new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "No open PRs, which might indicate a lack of community contribution or interest",
+        "Last release was over 5 months ago"
+      ],
+      "positive_signals": [
+        "Commits past 6 months: 16",
+        "Merged PRs past 6 months: 9",
+        "Contributors active past 6 months: 3"
+      ],
+      "summary": "The package is maintained with regular commits and merges, but the lack of open PRs and recent releases might be a concern."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 354,
+      "forks": 193,
+      "open_issues": 3,
+      "license": "LGPL-2.1",
+      "description": "PKCS#11 wrapper library",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T06:54:30.637766Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is comprehensive and provides detailed information on configuration and usage, but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "No open PRs, which might indicate a lack of community contribution or interest",
+      "Last release was over 5 months ago",
+      "Docs: Lack of clear installation instructions",
+      "Community: build issues with OpenSSL-4.x-dev",
+      "Community: crashes on Debian 13",
+      "Communication: Occasional dismissive tone towards new contributors",
+      "Communication: Some responses could be more detailed for less technical users",
+      "Security: Potential buffer overflow vulnerability in the ENGINE_CTX_log function"
+    ],
+    "highlights": [
+      "Commits past 6 months: 16",
+      "Merged PRs past 6 months: 9",
+      "Contributors active past 6 months: 3",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 354,
+      "forks": 193,
+      "open_issues": 3
+    }
+  },
+  "analyzed_at": "2026-01-07T06:56:05.469942Z",
+  "data_fetched_at": "2026-01-07T06:56:05.469943Z"
+}
