@@ -1,0 +1,281 @@
+{
+  "ecosystem": "homebrew",
+  "name": "shadowenv",
+  "description": "Reversible directory-local environment variable manipulations",
+  "version": "3.4.0",
+  "homepage": "https://shopify.github.io/shadowenv/",
+  "repository": {
+    "platform": "github",
+    "owner": "Shopify",
+    "repo": "shadowenv",
+    "subpath": null
+  },
+  "install_count_30d": 22,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 83.1,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 88.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 71.37469084482782,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 92.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 89.48,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 61.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "Shopify",
+      "name": "shadowenv",
+      "description": "reversible directory-local environment variable manipulations",
+      "stars": 447,
+      "forks": 20,
+      "open_issues": 28,
+      "watchers": 447,
+      "created_at": "2019-01-03T19:04:03Z",
+      "updated_at": "2026-01-03T06:54:01Z",
+      "pushed_at": "2025-12-10T16:27:30Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Rust",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 25,
+      "active_contributors_6mo": 5,
+      "top_contributor_pct": 45.6,
+      "contributors_over_5pct": 6,
+      "contributors_prev_6mo": 3,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 3.06
+    },
+    "commits": {
+      "last_commit_date": "2025-12-10T16:26:39Z",
+      "commits_last_6mo": 11,
+      "commits_last_year": 34
+    },
+    "issues": {
+      "open_issues": 18,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 10,
+      "merged_prs_6mo": 3,
+      "closed_prs_6mo": 13,
+      "stale_prs": 6,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 39,
+      "releases_last_year": 3,
+      "last_release_date": "2025-08-08T21:01:54Z",
+      "latest_version": "3.4.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 99.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 5092,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": true,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 7,
+      "recent_runs_pass_rate": 72.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally clear and provides a good overview of the package's functionality, but could benefit from more troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/cli.rs",
+          "line": 34,
+          "severity": "medium",
+          "description": "The 'cmd_argv' field in the ExecCmd struct is a vector of strings that can contain user input, which may lead to command injection vulnerabilities if not properly sanitized."
+        },
+        {
+          "file": "src/shadowenv.rs",
+          "line": 123,
+          "severity": "low",
+          "description": "The 'format_shadowenv_data' function uses the 'serde_json::to_string' method, which may be vulnerable to JSON injection attacks if the input data is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in the ExecCmd struct"
+      ],
+      "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
+    },
+    "sentiment": null,
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 9,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "Maintainer responses are generally clear and helpful, showing patience and a willingness to engage with contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No merged PRs in the past six months, indicating a potential slowdown in development.",
+        "Open issues and PRs suggest ongoing problems that need attention."
+      ],
+      "positive_signals": [
+        "Recent commits within the last year indicate some level of activity.",
+        "Five contributors active over the past six months show there is still community involvement."
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but faces concerns from open issues and PRs."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The project lacks a succession plan and contributor ladder, posing high risk if the primary maintainer leaves."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 447,
+      "forks": 20,
+      "open_issues": 28,
+      "license": "MIT",
+      "description": "reversible directory-local environment variable manipulations",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T04:10:36.549900Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is generally clear and provides a good overview of the package's functionality, but could benefit from more troubleshooting information.",
+    "concerns": [
+      "No merged PRs in the past six months, indicating a potential slowdown in development.",
+      "Open issues and PRs suggest ongoing problems that need attention.",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Governance: High bus factor risk identified",
+      "Security: Potential command injection vulnerability in the ExecCmd struct"
+    ],
+    "highlights": [
+      "Recent commits within the last year indicate some level of activity.",
+      "Five contributors active over the past six months show there is still community involvement.",
+      "CI/CD configured"
+    ],
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 447,
+      "forks": 20,
+      "open_issues": 28
+    }
+  },
+  "analyzed_at": "2026-01-07T04:12:03.207784Z",
+  "data_fetched_at": "2026-01-07T04:12:03.207786Z"
+}
