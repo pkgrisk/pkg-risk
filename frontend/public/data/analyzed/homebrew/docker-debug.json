@@ -1,0 +1,311 @@
+{
+  "ecosystem": "homebrew",
+  "name": "docker-debug",
+  "description": "Use new container attach on already container go on debug",
+  "version": "0.7.11",
+  "homepage": "https://github.com/zeromake/docker-debug",
+  "repository": {
+    "platform": "github",
+    "owner": "zeromake",
+    "repo": "docker-debug",
+    "subpath": null
+  },
+  "install_count_30d": 21,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 59.5,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "mature",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 68.54158465779994,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 50.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 50.44,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 61.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 63.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "zeromake",
+      "name": "docker-debug",
+      "description": "use new container attach on already container go on debug",
+      "stars": 633,
+      "forks": 41,
+      "open_issues": 1,
+      "watchers": 633,
+      "created_at": "2019-02-13T10:09:13Z",
+      "updated_at": "2025-12-19T08:15:55Z",
+      "pushed_at": "2025-09-21T13:50:03Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "cli",
+        "debug",
+        "docker",
+        "exec"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 6,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 89.2,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.68
+    },
+    "commits": {
+      "last_commit_date": "2025-09-21T13:49:23Z",
+      "commits_last_6mo": 4,
+      "commits_last_year": 8
+    },
+    "issues": {
+      "open_issues": 1,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 2,
+      "closed_prs_6mo": 2,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 24,
+      "releases_last_year": 1,
+      "last_release_date": "2025-09-21T13:50:03Z",
+      "latest_version": "v0.7.11",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 29.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 7266,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": true
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 66.7,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 6,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally clear and provides good installation and quick start instructions, but lacks sufficient examples and troubleshooting information.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "internal/command/cli.go",
+          "line": 246,
+          "severity": "medium",
+          "description": "The `splitDockerDomain` function does not validate the input string, which could lead to potential issues if the input is not properly sanitized."
+        },
+        {
+          "file": "internal/command/cli.go",
+          "line": 334,
+          "severity": "high",
+          "description": "The `CreateContainer` function uses user-provided input (`options.volumes`) to construct mount points, which could lead to potential security issues if the input is not properly validated."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk in `CreateContainer` function",
+        "Insufficient input validation in `splitDockerDomain` function"
+      ],
+      "summary": "The code has some potential security issues, including injection risks and insufficient input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "API version compatibility issues",
+        "Container exit and timeout errors"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is experiencing frustration due to API version compatibility issues and container-related errors, but maintainers are actively addressing these problems."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "\u6709\u65f6\u56de\u590d\u4e0d\u591f\u8be6\u7ec6\uff0c\u5982\u672a\u5b8c\u5168\u89e3\u91ca\u6280\u672f\u51b3\u7b56\u80cc\u540e\u7684\u7406\u7531"
+      ],
+      "summary": "\u603b\u4f53\u6765\u8bf4\uff0c\u7ef4\u62a4\u8005\u5bf9\u95ee\u9898\u7684\u56de\u5e94\u662f\u79ef\u6781\u4e14\u6709\u5e2e\u52a9\u7684\uff0c\u4f46\u53ef\u4ee5\u66f4\u52a0\u8be6\u7ec6\u5730\u89e3\u91ca\u4e00\u4e9b\u6280\u672f\u51b3\u7b56\u3002"
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 7,
+      "concerns": [
+        "No merged PRs in the past six months",
+        "Only one closed issue in the past six months"
+      ],
+      "positive_signals": [
+        "Recent commit and release dates",
+        "Two contributors active in the past six months",
+        "Four commits in the past six months"
+      ],
+      "summary": "The package is maintained with recent activity, but there are concerns about a lack of pull requests and open issues."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 6,
+      "summary": "The changelog is well-categorized but lacks clarity and completeness, with no breaking changes or migration guides."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 633,
+      "forks": 41,
+      "open_issues": 1,
+      "license": "MIT",
+      "description": "use new container attach on already container go on debug",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T04:50:27.960185Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and provides good installation and quick start instructions, but lacks sufficient examples and troubleshooting information.",
+    "concerns": [
+      "No merged PRs in the past six months",
+      "Only one closed issue in the past six months",
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: API version compatibility issues",
+      "Community: Container exit and timeout errors",
+      "Communication: \u6709\u65f6\u56de\u590d\u4e0d\u591f\u8be6\u7ec6\uff0c\u5982\u672a\u5b8c\u5168\u89e3\u91ca\u6280\u672f\u51b3\u7b56\u80cc\u540e\u7684\u7406\u7531",
+      "Security: Potential injection risk in `CreateContainer` function",
+      "Security: Insufficient input validation in `splitDockerDomain` function",
+      "Security: The `CreateContainer` function uses user-provided input (`options.volumes`) to construct mount points, which could lead to potential security issues if the input is not properly validated.",
+      "High bus factor risk (89% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commit and release dates",
+      "Two contributors active in the past six months",
+      "Four commits in the past six months",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 633,
+      "forks": 41,
+      "open_issues": 1
+    }
+  },
+  "analyzed_at": "2026-01-07T04:52:07.818043Z",
+  "data_fetched_at": "2026-01-07T04:52:07.818044Z"
+}
