@@ -1,0 +1,248 @@
+{
+  "ecosystem": "homebrew",
+  "name": "vapoursynth-ocr",
+  "description": "VapourSynth filters - Tesseract OCR filter",
+  "version": "3",
+  "homepage": "https://www.vapoursynth.com",
+  "repository": {
+    "platform": "github",
+    "owner": "vapoursynth",
+    "repo": "vs-ocr",
+    "subpath": null
+  },
+  "install_count_30d": 12,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 59.9,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "mature",
+    "security": {
+      "score": 78.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 70.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 48.76,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 10.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "vapoursynth",
+      "name": "vs-ocr",
+      "description": "OCR plugin for VapourSynth",
+      "stars": 4,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 4,
+      "created_at": "2021-09-09T09:44:05Z",
+      "updated_at": "2024-10-21T18:46:07Z",
+      "pushed_at": "2023-10-01T15:19:49Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 90.0,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.47
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 1,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 3,
+      "releases_last_year": 0,
+      "last_release_date": "2023-10-01T15:19:49Z",
+      "latest_version": "R3",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 30.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/ocr.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "TessBaseAPISetVariable is called with user-controlled input from the 'options' map, which could potentially lead to a command injection vulnerability if Tesseract's API allows for executing arbitrary commands."
+        },
+        {
+          "file": "src/ocr.c",
+          "line": 141,
+          "severity": "low",
+          "description": "The 'datapath' and 'language' variables are used directly in the TessBaseAPIInit3 function, but they are validated and sanitized before use."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [],
+      "summary": "The code has some potential security concerns related to input validation and error handling, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Must Specify Language"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with a minor issue reported, and no significant praise or abandonment signals detected."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Only two contributors active in the last six months"
+      ],
+      "positive_signals": [
+        "Last release was recent (2023-10-01)",
+        "Open issues and PRs are low"
+      ],
+      "summary": "The package is minimally maintained with occasional contributions, but lacks recent activity."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T22:49:04.432391Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "No commits in the past six months",
+      "Only two contributors active in the last six months",
+      "Community: Must Specify Language",
+      "High bus factor risk (90% from top contributor)"
+    ],
+    "highlights": [
+      "Last release was recent (2023-10-01)",
+      "Open issues and PRs are low"
+    ],
+    "community_sentiment": "neutral"
+  },
+  "analyzed_at": "2026-01-07T22:49:59.407231Z",
+  "data_fetched_at": "2026-01-07T22:49:59.407232Z"
+}
