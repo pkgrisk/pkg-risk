@@ -1,0 +1,287 @@
+{
+  "ecosystem": "homebrew",
+  "name": "ratify",
+  "description": "Artifact Ratification Framework",
+  "version": "1.4.0",
+  "homepage": "https://ratify.dev",
+  "repository": {
+    "platform": "github",
+    "owner": "notaryproject",
+    "repo": "ratify",
+    "subpath": null
+  },
+  "install_count_30d": 14,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 86.4,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 100.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 83.04103664720098,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 88.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 96.84,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 36.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 91.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "notaryproject",
+      "name": "ratify",
+      "description": "Artifact Ratification Framework (CNCF Sandbox)",
+      "stars": 282,
+      "forks": 78,
+      "open_issues": 149,
+      "watchers": 282,
+      "created_at": "2021-08-13T16:17:52Z",
+      "updated_at": "2026-01-07T05:47:01Z",
+      "pushed_at": "2025-12-22T05:08:53Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [
+        "kubernetes",
+        "secure-supply-chain"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 45,
+      "active_contributors_6mo": 5,
+      "top_contributor_pct": 47.0,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 8,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 2.73
+    },
+    "commits": {
+      "last_commit_date": "2025-12-09T22:21:39Z",
+      "commits_last_6mo": 78,
+      "commits_last_year": 300
+    },
+    "issues": {
+      "open_issues": 131,
+      "closed_issues_6mo": 4,
+      "avg_response_time_hours": 281.8,
+      "avg_close_time_hours": 4294.6,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 18,
+      "merged_prs_6mo": 83,
+      "closed_prs_6mo": 120,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 32,
+      "releases_last_year": 5,
+      "last_release_date": "2025-06-23T02:45:21Z",
+      "latest_version": "v2.0.0-alpha.1",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.66
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": true,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": true,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": true,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 4100,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 30,
+      "recent_runs_pass_rate": 80.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The README provides a good introduction to the project, but lacks clear installation instructions and detailed examples.",
+      "top_issue": "Lack of clear installation instructions and configuration documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "internal/httpserver/handlers.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The `verifyKey` and `mutateKey` functions use string formatting to construct cache keys. While this is not directly vulnerable, it could potentially lead to issues if the input strings are not properly sanitized."
+        },
+        {
+          "file": "internal/httpserver/handlers.go",
+          "line": 145,
+          "severity": "low",
+          "description": "The `resolveReference` function uses the `registry.ParseReference` method, which may be vulnerable to certain types of attacks if the input reference is not properly validated."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Lack of explicit input validation on incoming request bodies",
+        "Potential for cache key collisions due to string formatting"
+      ],
+      "summary": "The code sample has some security concerns, including potential injection risks and lack of explicit input validation. However, the overall security posture is still relatively strong due to the use of secure defaults and proper error handling."
+    },
+    "sentiment": null,
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "Maintainer responses are clear, patient, and generally helpful, though there is room for more technical depth."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "High number of open issues (131)",
+        "Low number of merged PRs in the past six months (83)"
+      ],
+      "positive_signals": [
+        "Recent commit activity within the last year",
+        "Multiple contributors active over the past six months"
+      ],
+      "summary": "The package shows minimal maintenance with recent commits but a backlog of issues and low PR merge rate."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": true,
+      "bus_factor_risk": "low",
+      "summary": "The project has a documented decision-making process, clear contributor path, and indicates multiple maintainers, reducing the risk of bus factor."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 281,
+      "forks": 77,
+      "open_issues": 148,
+      "license": "Apache-2.0",
+      "description": "Artifact Ratification Framework (CNCF Sandbox)",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T18:13:18.872649Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "has SECURITY.md, Dependabot enabled",
+    "doc_summary": "The README provides a good introduction to the project, but lacks clear installation instructions and detailed examples.",
+    "concerns": [
+      "High number of open issues (131)",
+      "Low number of merged PRs in the past six months (83)",
+      "Docs: Lack of clear installation instructions and configuration documentation",
+      "Security: Lack of explicit input validation on incoming request bodies",
+      "Security: Potential for cache key collisions due to string formatting"
+    ],
+    "highlights": [
+      "Recent commit activity within the last year",
+      "Multiple contributors active over the past six months",
+      "Excellent maintainer communication",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 281,
+      "forks": 77,
+      "open_issues": 148
+    }
+  },
+  "analyzed_at": "2026-01-07T18:15:06.701136Z",
+  "data_fetched_at": "2026-01-07T18:15:06.701138Z"
+}

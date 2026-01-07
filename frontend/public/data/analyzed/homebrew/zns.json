@@ -1,0 +1,293 @@
+{
+  "ecosystem": "homebrew",
+  "name": "zns",
+  "description": "CLI tool for querying DNS records with readable, colored output",
+  "version": "0.4.0",
+  "homepage": "https://github.com/znscli/zns",
+  "repository": {
+    "platform": "github",
+    "owner": "znscli",
+    "repo": "zns",
+    "subpath": null
+  },
+  "install_count_30d": 14,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 75.1,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "established",
+    "security": {
+      "score": 82.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 83.40563279005588,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 69.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 56.92,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 53.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 83.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "znscli",
+      "name": "zns",
+      "description": "CLI tool for querying DNS records with readable, colored output.",
+      "stars": 209,
+      "forks": 6,
+      "open_issues": 12,
+      "watchers": 209,
+      "created_at": "2024-09-06T09:15:01Z",
+      "updated_at": "2026-01-06T03:33:16Z",
+      "pushed_at": "2025-12-12T05:22:23Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [
+        "cli",
+        "client",
+        "dns"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 5,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 58.0,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 4,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 1.49
+    },
+    "commits": {
+      "last_commit_date": "2025-11-08T21:40:21Z",
+      "commits_last_6mo": 10,
+      "commits_last_year": 46
+    },
+    "issues": {
+      "open_issues": 5,
+      "closed_issues_6mo": 2,
+      "avg_response_time_hours": 0.1,
+      "avg_close_time_hours": 2292.2,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 7,
+      "merged_prs_6mo": 10,
+      "closed_prs_6mo": 15,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 4,
+      "releases_last_year": 4,
+      "last_release_date": "2025-09-09T21:24:34Z",
+      "latest_version": "v0.4.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2280,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 96.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides clear and concise information about the package, but lacks comprehensive troubleshooting documentation.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "internal/query/query.go",
+          "line": 83,
+          "severity": "low",
+          "description": "The dns.TypeToString function is used to convert the query type to a string, which could potentially lead to an information disclosure if the query type is not properly validated."
+        },
+        {
+          "file": "cmd/root.go",
+          "line": 246,
+          "severity": "medium",
+          "description": "The dns.ClientConfigFromFile function reads the /etc/resolv.conf file, which could potentially be tampered with to inject malicious DNS servers."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential DNS rebinding attacks due to lack of server validation.",
+        "Potential invalid query types due to lack of qtype validation."
+      ],
+      "summary": "The zns package has some security concerns, including potential injection risks and input validation issues, but overall it appears to be a relatively secure package with proper error handling and logging mechanisms in place."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "dns: overflowing header size",
+        "Alphabetical response ordering should respect AAAA records"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting issues, but there are no signs of abandonment or significant frustration."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "Maintainer responses are generally clear, helpful, and patient, with a good balance of technical detail."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "Low number of merged PRs in the past six months compared to open PRs",
+        "No new commits in the last two months"
+      ],
+      "positive_signals": [
+        "Recent release within the last six months",
+        "Some recent activity with issues and contributors"
+      ],
+      "summary": "The package shows minimal maintenance with occasional updates but lacks consistent contribution."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 209,
+      "forks": 6,
+      "open_issues": 12,
+      "license": "MIT",
+      "description": "CLI tool for querying DNS records with readable, colored output.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T18:38:23.044567Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The README provides clear and concise information about the package, but lacks comprehensive troubleshooting documentation.",
+    "concerns": [
+      "Low number of merged PRs in the past six months compared to open PRs",
+      "No new commits in the last two months",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Community: dns: overflowing header size",
+      "Community: Alphabetical response ordering should respect AAAA records",
+      "Security: Potential DNS rebinding attacks due to lack of server validation.",
+      "Security: Potential invalid query types due to lack of qtype validation."
+    ],
+    "highlights": [
+      "Recent release within the last six months",
+      "Some recent activity with issues and contributors",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 209,
+      "forks": 6,
+      "open_issues": 12
+    }
+  },
+  "analyzed_at": "2026-01-07T18:39:47.508128Z",
+  "data_fetched_at": "2026-01-07T18:39:47.508128Z"
+}
