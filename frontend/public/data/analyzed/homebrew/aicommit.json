@@ -1,0 +1,311 @@
+{
+  "ecosystem": "homebrew",
+  "name": "aicommit",
+  "description": "AI-powered commit message generator",
+  "version": "0.6.5",
+  "homepage": "https://github.com/coder/aicommit",
+  "repository": {
+    "platform": "github",
+    "owner": "coder",
+    "repo": "aicommit",
+    "subpath": null
+  },
+  "install_count_30d": 18,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 58.5,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "established",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 80.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 35.8,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 50.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 63.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "coder",
+      "name": "aicommit",
+      "description": "become the world's laziest committer",
+      "stars": 180,
+      "forks": 8,
+      "open_issues": 6,
+      "watchers": 180,
+      "created_at": "2024-08-28T03:18:51Z",
+      "updated_at": "2026-01-05T05:32:08Z",
+      "pushed_at": "2024-12-18T10:19:52Z",
+      "default_branch": "main",
+      "license": "CC0-1.0",
+      "language": "Go",
+      "topics": [
+        "ai",
+        "git"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 98.6,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.1
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 3,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 3,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 12,
+      "releases_last_year": 0,
+      "last_release_date": "2024-11-06T17:05:22Z",
+      "latest_version": "v0.6.5",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 1.4,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2560,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 25.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides a good introduction to the package and its usage, but lacks comprehensive troubleshooting documentation.",
+      "top_issue": "Lack of troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "cmd/aicommit/main.go",
+          "line": 246,
+          "severity": "high",
+          "description": "The 'git' command is executed with user-controlled input (commit message) without proper sanitization, potentially leading to command injection attacks."
+        },
+        {
+          "file": "cmd/aicommit/main.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The 'resolveRef' function executes a 'git rev-parse' command with user-controlled input (ref) without proper sanitization, potentially leading to command injection attacks."
+        },
+        {
+          "file": "cmd/aicommit/main.go",
+          "line": 93,
+          "severity": "medium",
+          "description": "The 'getLastCommitHash' function executes a 'git rev-parse HEAD' command, which may be vulnerable to command injection attacks if the Git repository is compromised."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [
+        {
+          "file": "cmd/aicommit/main.go",
+          "line": 54,
+          "type": "API key (OPENAI_API_KEY)"
+        }
+      ],
+      "critical_findings": [
+        "Potential command injection attacks through user-controlled commit messages",
+        "Insufficient input validation and sanitization"
+      ],
+      "summary": "The aicommit tool has several security concerns, including potential command injection attacks and insufficient input validation, which require attention to ensure the security of the application."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "installation issues",
+        "API key handling"
+      ],
+      "praise_themes": [
+        "feature requests for improvements",
+        "supporting local API endpoints"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community is actively engaging with feature suggestions and facing minor installation challenges, but overall the project seems to be in good health."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer's responses are generally helpful and clear, showing patience with detailed questions. There is a good balance of technical depth and user-friendliness."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Open issues and PRs suggest potential problems"
+      ],
+      "positive_signals": [
+        "Contributors are still active",
+        "Recent release"
+      ],
+      "summary": "The package is minimally maintained with recent activity but lacks recent code updates."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 180,
+      "forks": 8,
+      "open_issues": 6,
+      "license": "non-standard",
+      "description": "become the world's laziest committer",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T09:12:16.064020Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good introduction to the package and its usage, but lacks comprehensive troubleshooting documentation.",
+    "concerns": [
+      "No commits in the past six months",
+      "Open issues and PRs suggest potential problems",
+      "Docs: Lack of troubleshooting documentation",
+      "Community: installation issues",
+      "Community: API key handling",
+      "Security: Potential command injection attacks through user-controlled commit messages",
+      "Security: Insufficient input validation and sanitization",
+      "Security: The 'git' command is executed with user-controlled input (commit message) without proper sanitization, potentially leading to command injection attacks.",
+      "High bus factor risk (99% from top contributor)"
+    ],
+    "highlights": [
+      "Contributors are still active",
+      "Recent release",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 180,
+      "forks": 8,
+      "open_issues": 6
+    }
+  },
+  "analyzed_at": "2026-01-07T09:13:52.108763Z",
+  "data_fetched_at": "2026-01-07T09:13:52.108765Z"
+}

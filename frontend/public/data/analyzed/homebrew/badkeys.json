@@ -1,0 +1,298 @@
+{
+  "ecosystem": "homebrew",
+  "name": "badkeys",
+  "description": "Tool to find common vulnerabilities in cryptographic public keys",
+  "version": "0.0.16",
+  "homepage": "https://badkeys.info",
+  "repository": {
+    "platform": "github",
+    "owner": "badkeys",
+    "repo": "badkeys",
+    "subpath": null
+  },
+  "install_count_30d": 18,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 72.6,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 78.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 60.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 10.240000000000002,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 49.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 93.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "badkeys",
+      "name": "badkeys",
+      "description": "Tool to find common vulnerabilities in cryptographic public keys",
+      "stars": 310,
+      "forks": 26,
+      "open_issues": 2,
+      "watchers": 310,
+      "created_at": "2022-01-13T14:20:24Z",
+      "updated_at": "2026-01-06T08:45:02Z",
+      "pushed_at": "2026-01-06T08:44:59Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Python",
+      "topics": [
+        "cryptography",
+        "publickey",
+        "rsa",
+        "security"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 99.7,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.03
+    },
+    "commits": {
+      "last_commit_date": "2026-01-06T08:44:55Z",
+      "commits_last_6mo": 44,
+      "commits_last_year": 83
+    },
+    "issues": {
+      "open_issues": 2,
+      "closed_issues_6mo": 8,
+      "avg_response_time_hours": 3745.4,
+      "avg_close_time_hours": 3291.2,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 1,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 10,
+      "releases_last_year": 4,
+      "last_release_date": "2026-01-03T20:08:59Z",
+      "latest_version": "v0.0.16",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": true,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3783,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 96.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally clear and provides a good introduction to the package, but lacks comprehensive troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "badkeys/runcli.py",
+          "line": 123,
+          "severity": "medium",
+          "description": "The 'args.extrabl' argument is split by comma and used to load extra blocklist files without validation, potentially allowing an attacker to manipulate the file loading process."
+        },
+        {
+          "file": "badkeys/runcli.py",
+          "line": 145,
+          "severity": "medium",
+          "description": "The 'args.checks' argument is split by comma and used to select checks without validation, potentially allowing an attacker to manipulate the check selection process."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risks due to lack of input validation",
+        "Error exposure due to lack of error handling"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and error exposure, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "security issues",
+        "exception handling"
+      ],
+      "praise_themes": [
+        "feature requests for improvements"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting various issues and suggesting improvements, indicating a healthy but occasionally frustrated development process."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 7,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer provides useful information and explanations, though there is room for clearer communication and more welcoming language."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 7,
+      "concerns": [
+        "No open PRs",
+        "Low contributor activity"
+      ],
+      "positive_signals": [
+        "Recent commits and releases",
+        "Moderate number of issues and PRs handled in the past six months"
+      ],
+      "summary": "The package is maintained with recent activity, but could benefit from increased contribution."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 310,
+      "forks": 26,
+      "open_issues": 2,
+      "license": "MIT",
+      "description": "Tool to find common vulnerabilities in cryptographic public keys",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T09:16:22.751975Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "has SECURITY.md",
+    "doc_summary": "The documentation is generally clear and provides a good introduction to the package, but lacks comprehensive troubleshooting information.",
+    "concerns": [
+      "No open PRs",
+      "Low contributor activity",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Community: security issues",
+      "Community: exception handling",
+      "Security: Potential injection risks due to lack of input validation",
+      "Security: Error exposure due to lack of error handling",
+      "High bus factor risk (100% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits and releases",
+      "Moderate number of issues and PRs handled in the past six months",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 310,
+      "forks": 26,
+      "open_issues": 2
+    }
+  },
+  "analyzed_at": "2026-01-07T09:17:48.202401Z",
+  "data_fetched_at": "2026-01-07T09:17:48.202402Z"
+}

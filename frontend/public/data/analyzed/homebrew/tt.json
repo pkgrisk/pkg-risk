@@ -1,0 +1,305 @@
+{
+  "ecosystem": "homebrew",
+  "name": "tt",
+  "description": "Command-line utility to manage Tarantool applications",
+  "version": "2.11.0",
+  "homepage": "https://github.com/tarantool/tt",
+  "repository": {
+    "platform": "github",
+    "owner": "tarantool",
+    "repo": "tt",
+    "subpath": null
+  },
+  "install_count_30d": 19,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 76.4,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 92.54103664720098,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 85.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 68.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 93.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "tarantool",
+      "name": "tt",
+      "description": "Command-line utility to manage Tarantool applications",
+      "stars": 109,
+      "forks": 16,
+      "open_issues": 163,
+      "watchers": 109,
+      "created_at": "2021-04-06T13:23:57Z",
+      "updated_at": "2025-12-30T10:46:49Z",
+      "pushed_at": "2025-12-30T10:46:46Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "Go",
+      "topics": [
+        "cli",
+        "go",
+        "tarantool"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 27,
+      "active_contributors_6mo": 5,
+      "top_contributor_pct": 26.3,
+      "contributors_over_5pct": 9,
+      "contributors_prev_6mo": 9,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 3.66
+    },
+    "commits": {
+      "last_commit_date": "2025-12-09T10:40:47Z",
+      "commits_last_6mo": 29,
+      "commits_last_year": 158
+    },
+    "issues": {
+      "open_issues": 162,
+      "closed_issues_6mo": 12,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": 171.8,
+      "good_first_issue_count": 1,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 21,
+      "closed_prs_6mo": 26,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 35,
+      "releases_last_year": 8,
+      "last_release_date": "2025-09-10T14:02:01Z",
+      "latest_version": "v2.11.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 22072,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 6,
+      "recent_runs_pass_rate": 26.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 5,
+      "overall": 7,
+      "summary": "The documentation is comprehensive, but some sections are dense and lack clear examples or step-by-step instructions.",
+      "top_issue": "Lack of a clear, concise quick start guide that shows basic usage and gets users up and running quickly."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cli/create/internal/steps/copy_app_template.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The 'copyEmbedFs' function uses the 'filepath.Join' method to construct file paths, which may be vulnerable to path traversal attacks if user input is not properly sanitized."
+        },
+        {
+          "file": "cli/create/internal/steps/copy_app_template.go",
+          "line": 145,
+          "severity": "medium",
+          "description": "The 'copy.Copy' function uses the 'os.OpenFile' method to open files, which may be vulnerable to file inclusion attacks if user input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal vulnerability in file copying",
+        "Lack of input validation for application name and destination directory"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "CI/CD issues",
+        "Test failures"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some active maintenance but facing CI/CD and test-related challenges."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "Maintainer responses are clear, helpful, and patient. They address issues effectively while encouraging new contributors."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "High number of open issues",
+        "Long time since last release"
+      ],
+      "positive_signals": [
+        "Recent commits in the past six months",
+        "Multiple merged pull requests in the past six months",
+        "Active contributors in the past six months"
+      ],
+      "summary": "The package is maintained with recent activity, but there are concerns regarding the number of open issues and the delay in releasing new versions."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 8,
+      "overall_score": 7,
+      "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 109,
+      "forks": 16,
+      "open_issues": 163,
+      "license": "non-standard",
+      "description": "Command-line utility to manage Tarantool applications",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-07T09:04:33.729957Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is comprehensive, but some sections are dense and lack clear examples or step-by-step instructions.",
+    "concerns": [
+      "High number of open issues",
+      "Long time since last release",
+      "Docs: Lack of a clear, concise quick start guide that shows basic usage and gets users up and running quickly.",
+      "Community: CI/CD issues",
+      "Community: Test failures",
+      "Security: Potential path traversal vulnerability in file copying",
+      "Security: Lack of input validation for application name and destination directory"
+    ],
+    "highlights": [
+      "Recent commits in the past six months",
+      "Multiple merged pull requests in the past six months",
+      "Active contributors in the past six months",
+      "Excellent maintainer communication",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 109,
+      "forks": 16,
+      "open_issues": 163
+    }
+  },
+  "analyzed_at": "2026-01-07T09:06:37.290886Z",
+  "data_fetched_at": "2026-01-07T09:06:37.290887Z"
+}
