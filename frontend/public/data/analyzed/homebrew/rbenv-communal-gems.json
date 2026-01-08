@@ -1,0 +1,269 @@
+{
+  "ecosystem": "homebrew",
+  "name": "rbenv-communal-gems",
+  "description": "Share gems across multiple rbenv Ruby installs",
+  "version": "1.0.1",
+  "homepage": "https://github.com/tpope/rbenv-communal-gems",
+  "repository": {
+    "platform": "github",
+    "owner": "tpope",
+    "repo": "rbenv-communal-gems",
+    "subpath": null
+  },
+  "install_count_30d": 5,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 42.3,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "prohibited",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited contributor data"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 68.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 28.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 45.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 20.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 0.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "tpope",
+      "name": "rbenv-communal-gems",
+      "description": "Share gems across multiple rbenv Ruby installs",
+      "stars": 116,
+      "forks": 8,
+      "open_issues": 6,
+      "watchers": 116,
+      "created_at": "2013-02-24T18:02:28Z",
+      "updated_at": "2025-08-30T22:37:35Z",
+      "pushed_at": "2017-04-07T22:28:29Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Shell",
+      "topics": [],
+      "is_archived": true,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 1,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 100.0,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.0
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 6,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "etc/rbenv.d/install/communal-gems.bash",
+          "line": 9,
+          "severity": "medium",
+          "description": "The 'rbenv communize' command is executed with user-controlled input ($VERSION_NAME), which may pose a risk if the input is not properly sanitized."
+        },
+        {
+          "file": "etc/rbenv.d/rehash/communal-gems.bash",
+          "line": 3,
+          "severity": "low",
+          "description": "The 'shopt -s nullglob' command may be vulnerable to globbing attacks, but the impact is likely low."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk in etc/rbenv.d/install/communal-gems.bash"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "incompatible library version",
+        "Bins are not found after installing another version",
+        "Can't find or install new gems after communizing"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is negative due to multiple unresolved issues and user frustration, but there are no clear signals of abandonment."
+    },
+    "communication": {
+      "helpfulness": 6,
+      "clarity": 7,
+      "patience": 8,
+      "technical_depth": 7,
+      "welcomingness": 7,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Some responses are vague and lack detail",
+        "There's a mix of technical depth and surface-level explanations"
+      ],
+      "summary": "The maintainer provides some useful information but could be more detailed and consistent in their responses."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "no commits in the past six months",
+        "multiple open issues",
+        "lack of merged PRs in the past six months"
+      ],
+      "positive_signals": [
+        "one contributor active in the past six months"
+      ],
+      "summary": "The package shows minimal maintenance with occasional activity but significant concerns regarding updates and issue resolution."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T19:25:52.475458Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "no commits in the past six months",
+      "multiple open issues",
+      "lack of merged PRs in the past six months",
+      "Community: incompatible library version",
+      "Community: Bins are not found after installing another version",
+      "Communication: Some responses are vague and lack detail",
+      "Communication: There's a mix of technical depth and surface-level explanations",
+      "Security: Potential injection risk in etc/rbenv.d/install/communal-gems.bash",
+      "High bus factor risk (100% from top contributor)"
+    ],
+    "highlights": [
+      "one contributor active in the past six months"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-08T19:26:37.277018Z",
+  "data_fetched_at": "2026-01-08T19:26:37.277019Z"
+}

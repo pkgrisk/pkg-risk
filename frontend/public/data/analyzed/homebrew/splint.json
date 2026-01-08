@@ -1,0 +1,276 @@
+{
+  "ecosystem": "homebrew",
+  "name": "splint",
+  "description": "Secure Programming Lint",
+  "version": "3.1.2",
+  "homepage": "https://github.com/splintchecker/splint",
+  "repository": {
+    "platform": "github",
+    "owner": "splintchecker",
+    "repo": "splint",
+    "subpath": null
+  },
+  "install_count_30d": 5,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 62.3,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 68.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 74.56,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 26.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 65.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "splintchecker",
+      "name": "splint",
+      "description": "Splint - annotation-assisted static program checker",
+      "stars": 333,
+      "forks": 76,
+      "open_issues": 19,
+      "watchers": 333,
+      "created_at": "2012-10-10T18:45:25Z",
+      "updated_at": "2026-01-05T08:59:01Z",
+      "pushed_at": "2024-11-29T18:41:51Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 6,
+      "active_contributors_6mo": 6,
+      "top_contributor_pct": 50.0,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.82
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 15,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 6.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 151,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 6,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README lacks essential information, relying on an external link for documentation.",
+      "top_issue": "Insufficient content in the README, with no installation instructions or usage examples provided."
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/cppmain.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "Potential command injection vulnerability in cppProcess function due to lack of input validation for 'infile' and 'outfile' parameters."
+        },
+        {
+          "file": "src/llmain.c",
+          "line": 234,
+          "severity": "low",
+          "description": "Use of system functions like clock() may pose a risk if not properly validated, but in this context it seems to be used for timing purposes only."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in cppProcess function"
+      ],
+      "summary": "The Splint package has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it seems to be a relatively secure piece of software."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "build issues with newer compilers",
+        "configuration and syntax issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is facing some ongoing issues, particularly with compatibility and configuration, but there are no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 7,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Occasional lack of patience with repeated questions",
+        "Some responses are brief and could be more detailed"
+      ],
+      "summary": "The maintainer provides useful technical information but could improve clarity and patience in handling basic or repetitive queries."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "No merged PRs in the past six months",
+        "15 open issues"
+      ],
+      "positive_signals": [
+        "6 contributors active in the past six months"
+      ],
+      "summary": "The package is minimally maintained with some recent contributor activity but lacks recent commits and merged PRs."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T19:57:32.626872Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README lacks essential information, relying on an external link for documentation.",
+    "concerns": [
+      "No commits in the past six months",
+      "No merged PRs in the past six months",
+      "15 open issues",
+      "Docs: Insufficient content in the README, with no installation instructions or usage examples provided.",
+      "Community: build issues with newer compilers",
+      "Community: configuration and syntax issues",
+      "Communication: Occasional lack of patience with repeated questions",
+      "Communication: Some responses are brief and could be more detailed",
+      "Security: Potential command injection vulnerability in cppProcess function"
+    ],
+    "highlights": [
+      "6 contributors active in the past six months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-08T19:58:50.134264Z",
+  "data_fetched_at": "2026-01-08T19:58:50.134266Z"
+}
