@@ -1,0 +1,283 @@
+{
+  "ecosystem": "homebrew",
+  "name": "afuse",
+  "description": "Automounting file system implemented in userspace with FUSE",
+  "version": "0.5.0",
+  "homepage": "https://github.com/pcarrier/afuse/",
+  "repository": {
+    "platform": "github",
+    "owner": "pcarrier",
+    "repo": "afuse",
+    "subpath": null
+  },
+  "install_count_30d": 5,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 61.8,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 80.28,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 50.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "pcarrier",
+      "name": "afuse",
+      "description": "An automounter implemented with FUSE",
+      "stars": 102,
+      "forks": 11,
+      "open_issues": 8,
+      "watchers": 102,
+      "created_at": "2013-01-11T11:29:56Z",
+      "updated_at": "2025-10-23T07:29:40Z",
+      "pushed_at": "2023-10-17T03:14:12Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 4,
+      "active_contributors_6mo": 4,
+      "top_contributor_pct": 37.5,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.91
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 7,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 4.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 4518,
+      "has_license": false,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README provides a good introduction to the package's functionality, but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Installation instructions are not provided"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "compat/fuse_opt.c",
+          "line": 246,
+          "severity": "medium",
+          "description": "Use of sscanf() function can lead to format string vulnerabilities if the format string is not properly sanitized."
+        },
+        {
+          "file": "compat/fuse_opt.c",
+          "line": 341,
+          "severity": "low",
+          "description": "Use of strcpy() and strcat() functions can lead to buffer overflow vulnerabilities if the destination buffer is not large enough."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential format string vulnerability in process_opt_param() function",
+        "Lack of input validation in fuse_opt_add_arg() function"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "permission issues",
+        "documentation unclear"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The community health is neutral with some open issues and lack of maintainer responsiveness, indicating potential abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are clear, helpful, and patient, with a good level of technical depth and a welcoming tone."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Open issues and PRs suggest potential problems"
+      ],
+      "positive_signals": [
+        "Four contributors have been active in the past six months",
+        "At least one open PR indicates some level of ongoing development"
+      ],
+      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits and issue resolution."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 6,
+      "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it somewhat incomplete and unclear for users."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T17:35:17.313182Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good introduction to the package's functionality, but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "No commits in the past six months",
+      "Open issues and PRs suggest potential problems",
+      "Docs: Installation instructions are not provided",
+      "Possible abandonment signals detected",
+      "Community: permission issues",
+      "Community: documentation unclear",
+      "Security: Potential format string vulnerability in process_opt_param() function",
+      "Security: Lack of input validation in fuse_opt_add_arg() function"
+    ],
+    "highlights": [
+      "Four contributors have been active in the past six months",
+      "At least one open PR indicates some level of ongoing development",
+      "Excellent maintainer communication"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2026-01-08T17:36:45.088260Z",
+  "data_fetched_at": "2026-01-08T17:36:45.088262Z"
+}
