@@ -1,0 +1,276 @@
+{
+  "ecosystem": "homebrew",
+  "name": "leaf-proxy",
+  "description": "Lightweight and fast proxy utility",
+  "version": "0.12.0",
+  "homepage": "https://github.com/eycorsican/leaf",
+  "repository": {
+    "platform": "github",
+    "owner": "eycorsican",
+    "repo": "leaf",
+    "subpath": null
+  },
+  "install_count_30d": 10,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 76.0,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "mature",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 56.96,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 83.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "eycorsican",
+      "name": "leaf",
+      "description": "A versatile and efficient proxy framework with nice features suitable for various use cases.",
+      "stars": 2686,
+      "forks": 490,
+      "open_issues": 112,
+      "watchers": 2686,
+      "created_at": "2020-09-27T12:24:37Z",
+      "updated_at": "2026-01-07T15:10:51Z",
+      "pushed_at": "2026-01-06T02:28:33Z",
+      "default_branch": "master",
+      "license": "Apache-2.0",
+      "language": "Rust",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 20,
+      "active_contributors_6mo": 4,
+      "top_contributor_pct": 89.0,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 0.87
+    },
+    "commits": {
+      "last_commit_date": "2026-01-06T02:28:26Z",
+      "commits_last_6mo": 24,
+      "commits_last_year": 29
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 7,
+      "merged_prs_6mo": 3,
+      "closed_prs_6mo": 3,
+      "stale_prs": 6,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 43,
+      "releases_last_year": 1,
+      "last_release_date": "2025-11-05T07:30:29Z",
+      "latest_version": "v0.12.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.07
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3191,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 82.4,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The README provides a good overview of the package's features and configuration options, but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "leaf-cli/src/main.rs",
+          "line": 34,
+          "severity": "medium",
+          "description": "The `test_outbound` function uses the `tokio::runtime::Builder` to create a new runtime, but it does not validate the input for the `tag` parameter. This could potentially lead to an injection attack if the input is not properly sanitized."
+        },
+        {
+          "file": "leaf/src/app/dispatcher.rs",
+          "line": 141,
+          "severity": "low",
+          "description": "The `log_request` function uses string formatting to log requests, but it does not validate the input for the `outbound_tag` parameter. This could potentially lead to a logging injection attack if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection attack in the `test_outbound` function",
+        "Potential logging injection attack in the `log_request` function"
+      ],
+      "summary": "The code has some security concerns, including potential injection attacks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": null,
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "Maintainer responses are generally clear and helpful, showing a good level of patience and technical depth."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits in the past six months",
+        "Multiple contributors have been active recently",
+        "Regular issue and PR management"
+      ],
+      "summary": "The package is actively maintained with recent activity and contributions."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 2685,
+      "forks": 490,
+      "open_issues": 112,
+      "license": "Apache-2.0",
+      "description": "A versatile and efficient proxy framework with nice features suitable for various use cases.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T03:51:19.620763Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good overview of the package's features and configuration options, but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of troubleshooting documentation",
+      "Security: Potential injection attack in the `test_outbound` function",
+      "Security: Potential logging injection attack in the `log_request` function",
+      "High bus factor risk (89% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits in the past six months",
+      "Multiple contributors have been active recently",
+      "Regular issue and PR management",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 2685,
+      "forks": 490,
+      "open_issues": 112
+    }
+  },
+  "analyzed_at": "2026-01-08T03:52:43.947977Z",
+  "data_fetched_at": "2026-01-08T03:52:43.947978Z"
+}

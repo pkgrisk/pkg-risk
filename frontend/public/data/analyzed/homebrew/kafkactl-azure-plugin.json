@@ -1,0 +1,279 @@
+{
+  "ecosystem": "homebrew",
+  "name": "kafkactl-azure-plugin",
+  "description": "Azure Plugin for kafkactl",
+  "version": "1.3.1",
+  "homepage": "https://deviceinsight.github.io/kafkactl/",
+  "repository": {
+    "platform": "github",
+    "owner": "deviceinsight",
+    "repo": "kafkactl-plugins",
+    "subpath": null
+  },
+  "install_count_30d": 10,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 52.5,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "established",
+    "security": {
+      "score": 68.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 54.03383676666367,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 43.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 25.519999999999996,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 0.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 96.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "deviceinsight",
+      "name": "kafkactl-plugins",
+      "description": "",
+      "stars": 29,
+      "forks": 9,
+      "open_issues": 1,
+      "watchers": 29,
+      "created_at": "2024-03-07T15:07:40Z",
+      "updated_at": "2025-07-17T06:39:14Z",
+      "pushed_at": "2025-07-16T13:45:17Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 3,
+      "active_contributors_6mo": 1,
+      "top_contributor_pct": 85.9,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 3,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.69
+    },
+    "commits": {
+      "last_commit_date": "2025-07-16T13:45:14Z",
+      "commits_last_6mo": 3,
+      "commits_last_year": 15
+    },
+    "issues": {
+      "open_issues": 1,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 10,
+      "releases_last_year": 2,
+      "last_release_date": "2025-07-16T10:48:14Z",
+      "latest_version": "v1.3.1",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 25.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 91.7,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "aws/main.go",
+          "line": 64,
+          "severity": "low",
+          "description": "The 'options' map is not validated before accessing its values, which could lead to a panic if the expected keys are missing."
+        },
+        {
+          "file": "azure/main.go",
+          "line": 63,
+          "severity": "medium",
+          "description": "The 'bootstrapServer' variable is constructed from user input and used in a URL parsing operation. Although it's not directly executed, it could potentially lead to issues if the input is malformed."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for token expiration issues due to the use of a fixed time offset"
+      ],
+      "summary": "The code has some security concerns related to input validation and potential error exposure, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "AWS plugin stays running in the background after every kafkactl execution",
+        "AWS: Kafkactl unable to find plugin"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is experiencing frustration with persistent issues related to the AWS plugin, indicating a need for improved maintenance and responsiveness."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "Responses are generally clear and helpful, though could provide more technical depth."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No merged PRs or closed issues in the past six months, indicating low community engagement.",
+        "Only one contributor active in the past six months."
+      ],
+      "positive_signals": [
+        "Recent commit and release dates suggest some level of activity.",
+        "Three commits in the past six months indicate ongoing development."
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but low community engagement."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 29,
+      "forks": 9,
+      "open_issues": 1,
+      "license": "Apache-2.0",
+      "description": "",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T03:43:42.434608Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "No merged PRs or closed issues in the past six months, indicating low community engagement.",
+      "Only one contributor active in the past six months.",
+      "Community: AWS plugin stays running in the background after every kafkactl execution",
+      "Community: AWS: Kafkactl unable to find plugin",
+      "Security: Potential for token expiration issues due to the use of a fixed time offset",
+      "High bus factor risk (86% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commit and release dates suggest some level of activity.",
+      "Three commits in the past six months indicate ongoing development.",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 29,
+      "forks": 9,
+      "open_issues": 1
+    }
+  },
+  "analyzed_at": "2026-01-08T03:44:40.528216Z",
+  "data_fetched_at": "2026-01-08T03:44:40.528217Z"
+}
