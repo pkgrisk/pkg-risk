@@ -1,0 +1,294 @@
+{
+  "ecosystem": "homebrew",
+  "name": "distill-cli",
+  "description": "Use AWS Transcribe and Bedrock to create summaries of your audio recordings",
+  "version": "0.2.0",
+  "homepage": "https://www.allthingsdistributed.com/2024/06/introducing-distill-cli.html",
+  "repository": {
+    "platform": "github",
+    "owner": "awslabs",
+    "repo": "distill-cli",
+    "subpath": null
+  },
+  "install_count_30d": 8,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 69.0,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "established",
+    "security": {
+      "score": 62.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 67.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 88.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 72.12,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 52.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "awslabs",
+      "name": "distill-cli",
+      "description": "",
+      "stars": 231,
+      "forks": 20,
+      "open_issues": 0,
+      "watchers": 231,
+      "created_at": "2024-06-06T20:52:32Z",
+      "updated_at": "2025-12-14T02:43:47Z",
+      "pushed_at": "2024-10-09T15:10:40Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Rust",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 8,
+      "active_contributors_6mo": 8,
+      "top_contributor_pct": 48.0,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 2.14
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 2,
+      "releases_last_year": 0,
+      "last_release_date": "2024-10-09T15:10:40Z",
+      "latest_version": "v0.2.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 60.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 9314,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": true,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 1,
+      "recent_runs_pass_rate": 100.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": true,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The Distill CLI documentation is well-structured and provides clear installation and usage instructions, but lacks comprehensive troubleshooting guidance.",
+      "top_issue": "Insufficient troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 123,
+          "severity": "medium",
+          "description": "The shellexpand::tilde function is used to expand the tilde in file paths, which could potentially lead to path traversal attacks if not properly sanitized."
+        },
+        {
+          "file": "src/main.rs",
+          "line": 193,
+          "severity": "low",
+          "description": "The reqwest client is used to send a POST request to a Slack webhook endpoint. While this does involve user input, the risk of injection is low due to the use of the json! macro to create the payload."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [
+        {
+          "file": "src/main.rs",
+          "line": 55,
+          "type": "AWS credentials"
+        },
+        {
+          "file": "src/main.rs",
+          "line": 221,
+          "type": "Slack webhook endpoint"
+        }
+      ],
+      "critical_findings": [
+        "Potential path traversal attack via shellexpand::tilde",
+        "Unvalidated user input for file paths and language codes"
+      ],
+      "summary": "The Distill CLI has some security concerns, including potential injection risks and unvalidated user input, but overall it appears to be a relatively secure application."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "lack of stable release"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is moderately engaged, with concerns about the lack of a stable release for Homebrew integration."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 10,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are clear, helpful, and welcoming to new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No recent commits or pull requests",
+        "Last commit date unknown"
+      ],
+      "positive_signals": [
+        "Recent release",
+        "Multiple contributors active in the past six months"
+      ],
+      "summary": "The package is minimally maintained with a recent release but lacks recent activity."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The project documents the contribution process but lacks a succession plan and clear paths for contributor growth, indicating high bus factor risk."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T09:00:44.688802Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The Distill CLI documentation is well-structured and provides clear installation and usage instructions, but lacks comprehensive troubleshooting guidance.",
+    "concerns": [
+      "No recent commits or pull requests",
+      "Last commit date unknown",
+      "Docs: Insufficient troubleshooting documentation",
+      "Community: lack of stable release",
+      "Governance: High bus factor risk identified",
+      "Security: Potential path traversal attack via shellexpand::tilde",
+      "Security: Unvalidated user input for file paths and language codes"
+    ],
+    "highlights": [
+      "Recent release",
+      "Multiple contributors active in the past six months",
+      "Excellent maintainer communication",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2026-01-08T09:02:20.643260Z",
+  "data_fetched_at": "2026-01-08T09:02:20.643261Z"
+}
