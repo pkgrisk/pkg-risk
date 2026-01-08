@@ -1,0 +1,311 @@
+{
+  "ecosystem": "homebrew",
+  "name": "moribito",
+  "description": "TUI for LDAP Viewing/Queries",
+  "version": "0.2.6",
+  "homepage": "https://ericschmar.github.io/moribito/",
+  "repository": {
+    "platform": "github",
+    "owner": "ericschmar",
+    "repo": "moribito",
+    "subpath": null
+  },
+  "install_count_30d": 7,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 76.9,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Very new package (<6 months)"
+    ],
+    "project_age_band": "new",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 87.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 68.64,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 73.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 73.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "ericschmar",
+      "name": "moribito",
+      "description": "",
+      "stars": 270,
+      "forks": 6,
+      "open_issues": 7,
+      "watchers": 270,
+      "created_at": "2025-08-20T15:51:51Z",
+      "updated_at": "2026-01-05T20:02:13Z",
+      "pushed_at": "2026-01-04T18:18:20Z",
+      "default_branch": "develop",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 4,
+      "active_contributors_6mo": 4,
+      "top_contributor_pct": 60.6,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 4,
+      "contributor_entropy": 1.08
+    },
+    "commits": {
+      "last_commit_date": "2025-12-01T20:08:07Z",
+      "commits_last_6mo": 300,
+      "commits_last_year": 300
+    },
+    "issues": {
+      "open_issues": 6,
+      "closed_issues_6mo": 37,
+      "avg_response_time_hours": 30.4,
+      "avg_close_time_hours": 422.5,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 79,
+      "closed_prs_6mo": 80,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 6,
+      "releases_last_year": 6,
+      "last_release_date": "2025-08-27T16:03:31Z",
+      "latest_version": "v0.2.6",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 37.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 13760,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": true
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 38.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is well-structured and provides detailed information on installation, configuration, and usage, but lacks troubleshooting guidance.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "internal/ldap/client.go",
+          "line": 123,
+          "severity": "high",
+          "description": "InsecureSkipVerify is set to true in TLS config, which can lead to man-in-the-middle attacks"
+        },
+        {
+          "file": "cmd/moribito/main.go",
+          "line": 141,
+          "severity": "medium",
+          "description": "Command line arguments are directly used without validation or sanitization"
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [
+        {
+          "file": "cmd/moribito/main.go",
+          "line": 55,
+          "type": "password"
+        },
+        {
+          "file": "internal/ldap/client.go",
+          "line": 83,
+          "type": "bind password"
+        }
+      ],
+      "critical_findings": [
+        "InsecureSkipVerify is set to true in TLS config",
+        "No validation for LDAP server host and port"
+      ],
+      "summary": "The code has several security concerns, including insecure TLS configuration, lack of input validation, and potential exposure of sensitive information."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "connection strings not persisting",
+        "TUI sizing and layout issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting issues, but the maintainers are responsive in closing them. The project faces common UI/UX challenges."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past six months (300)",
+        "A significant number of merged PRs in the past six months (79)",
+        "Regular issue resolution with 37 closed issues in the past six months"
+      ],
+      "summary": "The package is actively maintained with a high level of community involvement."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": true,
+      "appears_complete": true,
+      "clarity_score": 9,
+      "overall_score": 8,
+      "summary": "The changelog is well-organized and clear, but lacks migration guides for users upgrading from previous versions."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 270,
+      "forks": 6,
+      "open_issues": 7,
+      "license": "MIT",
+      "description": "",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T13:35:06.368765Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is well-structured and provides detailed information on installation, configuration, and usage, but lacks troubleshooting guidance.",
+    "concerns": [
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Community: connection strings not persisting",
+      "Community: TUI sizing and layout issues",
+      "Security: InsecureSkipVerify is set to true in TLS config",
+      "Security: No validation for LDAP server host and port",
+      "Security: InsecureSkipVerify is set to true in TLS config, which can lead to man-in-the-middle attacks"
+    ],
+    "highlights": [
+      "High number of commits in the past six months (300)",
+      "A significant number of merged PRs in the past six months (79)",
+      "Regular issue resolution with 37 closed issues in the past six months",
+      "Excellent maintainer communication",
+      "Breaking changes clearly marked in changelog",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 270,
+      "forks": 6,
+      "open_issues": 7
+    }
+  },
+  "analyzed_at": "2026-01-08T13:36:43.656466Z",
+  "data_fetched_at": "2026-01-08T13:36:43.656467Z"
+}

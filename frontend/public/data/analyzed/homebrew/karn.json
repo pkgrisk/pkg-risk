@@ -1,0 +1,322 @@
+{
+  "ecosystem": "homebrew",
+  "name": "karn",
+  "description": "Manage multiple Git identities",
+  "version": "0.1.0",
+  "homepage": "https://github.com/prydonius/karn",
+  "repository": {
+    "platform": "github",
+    "owner": "prydonius",
+    "repo": "karn",
+    "subpath": null
+  },
+  "install_count_30d": 7,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 55.6,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 43.0,
+      "weight": 30,
+      "key_factors": [
+        "Dangerous CI/CD workflows detected",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 62.6,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 50.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "prydonius",
+      "name": "karn",
+      "description": "Manage multiple Git identities",
+      "stars": 304,
+      "forks": 7,
+      "open_issues": 8,
+      "watchers": 304,
+      "created_at": "2015-03-29T03:31:41Z",
+      "updated_at": "2025-11-25T23:02:17Z",
+      "pushed_at": "2022-02-13T00:30:11Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 6,
+      "active_contributors_6mo": 6,
+      "top_contributor_pct": 69.4,
+      "contributors_over_5pct": 5,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.57
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 8,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 6,
+      "releases_last_year": 0,
+      "last_release_date": "2021-02-17T23:28:35Z",
+      "latest_version": "v0.1.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 12.5,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2566,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 8,
+      "summary": "The README is well-structured and provides clear instructions, but lacks troubleshooting information.",
+      "top_issue": "Lack of troubleshooting documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "karn.go",
+          "line": 34,
+          "severity": "medium",
+          "description": "The 'eval' function is used in the Install() method, which can pose a risk if user input is not properly sanitized."
+        },
+        {
+          "file": "repo/repo.go",
+          "line": 24,
+          "severity": "low",
+          "description": "The exec.Command function is used with hardcoded 'git' commands and does not directly use user input, but it's still worth noting for potential future modifications."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk due to use of 'eval' function.",
+        "Lack of input validation for configuration file contents and path parameters."
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but does not appear to expose sensitive information or have critical vulnerabilities."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "installation and dependency issues",
+        "CI build failures"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is facing some installation and CI-related challenges, but there are no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are clear, helpful, and patient, with a good level of technical depth and welcoming tone."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Multiple open issues and PRs"
+      ],
+      "positive_signals": [
+        "Recent release in 2021",
+        "Six contributors active in the past six months"
+      ],
+      "summary": "The package is currently receiving minimal maintenance with recent contributions but lacks recent commits and issue resolution."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 2.7,
+      "score_date": "2025-12-29T00:00:00Z",
+      "checks": {
+        "Packaging": -1.0,
+        "Dangerous-Workflow": -1.0,
+        "Code-Review": 3.0,
+        "Maintained": 0.0,
+        "Pinned-Dependencies": -1.0,
+        "Token-Permissions": -1.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": 0.0,
+        "Vulnerabilities": 7.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 3.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": -1.0,
+      "token_permissions_score": -1.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 304,
+      "forks": 7,
+      "open_issues": 8,
+      "license": "MIT",
+      "description": "Manage multiple Git identities",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T13:20:45.162261Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README is well-structured and provides clear instructions, but lacks troubleshooting information.",
+    "concerns": [
+      "No commits in the past six months",
+      "Multiple open issues and PRs",
+      "Docs: Lack of troubleshooting documentation",
+      "Community: installation and dependency issues",
+      "Community: CI build failures",
+      "Security: Potential injection risk due to use of 'eval' function.",
+      "Security: Lack of input validation for configuration file contents and path parameters.",
+      "Low OpenSSF Scorecard: 2.7/10",
+      "Dangerous CI/CD workflow patterns detected",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Recent release in 2021",
+      "Six contributors active in the past six months",
+      "Excellent maintainer communication"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "scorecard_score": 2.7
+  },
+  "analyzed_at": "2026-01-08T13:21:57.812899Z",
+  "data_fetched_at": "2026-01-08T13:21:57.812900Z"
+}
