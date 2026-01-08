@@ -1,0 +1,275 @@
+{
+  "ecosystem": "homebrew",
+  "name": "conman",
+  "description": "Serial console management program supporting a large number of devices",
+  "version": "0.3.1",
+  "homepage": "https://github.com/dun/conman",
+  "repository": {
+    "platform": "github",
+    "owner": "dun",
+    "repo": "conman",
+    "subpath": null
+  },
+  "install_count_30d": 4,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 56.1,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 80.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 35.4,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 25.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 65.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "dun",
+      "name": "conman",
+      "description": "ConMan: The Console Manager",
+      "stars": 111,
+      "forks": 21,
+      "open_issues": 8,
+      "watchers": 111,
+      "created_at": "2015-03-17T18:13:16Z",
+      "updated_at": "2025-12-16T02:21:20Z",
+      "pushed_at": "2024-02-27T00:39:54Z",
+      "default_branch": "master",
+      "license": "GPL-3.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 4,
+      "active_contributors_6mo": 4,
+      "top_contributor_pct": 99.6,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.05
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 8,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 25,
+      "releases_last_year": 0,
+      "last_release_date": "2022-10-18T02:37:55Z",
+      "latest_version": "conman-0.3.1",
+      "has_signed_releases": true,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1412,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The documentation provides a good overview of the package's features, but lacks clear installation and usage instructions.",
+      "top_issue": "Lack of clear installation instructions and quick start examples"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/server-esc.c",
+          "line": 123,
+          "severity": "low",
+          "description": "The function perform_serial_break uses a hardcoded escape character sequence, but it does not directly execute user input."
+        },
+        {
+          "file": "src/server-esc.c",
+          "line": 145,
+          "severity": "medium",
+          "description": "The function send_telnet_cmd is called with user-controlled data, which could potentially lead to a command injection vulnerability if the telnet protocol is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection vulnerability in send_telnet_cmd function",
+        "Lack of input validation for client escape sequences"
+      ],
+      "summary": "The ConMan codebase has some security concerns, including potential command injection vulnerabilities and lack of input validation, but it does not appear to have any critical secrets exposure or dangerous defaults."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "service configuration issues",
+        "bug with UNIX socket connection"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is moderately engaged, but there are some unresolved bugs and feature requests that could benefit from more attention."
+    },
+    "communication": {
+      "helpfulness": 9,
+      "clarity": 8,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer provides clear, helpful, and technically deep responses. They are patient and welcoming to new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Multiple open issues and no merged PRs"
+      ],
+      "positive_signals": [
+        "Contributors are still active",
+        "Recent release in October 2022"
+      ],
+      "summary": "The package is currently receiving minimal maintenance with some recent activity but lacks recent code contributions."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T21:10:20.387203Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation provides a good overview of the package's features, but lacks clear installation and usage instructions.",
+    "concerns": [
+      "No commits in the past six months",
+      "Multiple open issues and no merged PRs",
+      "Docs: Lack of clear installation instructions and quick start examples",
+      "Community: service configuration issues",
+      "Community: bug with UNIX socket connection",
+      "Security: Potential command injection vulnerability in send_telnet_cmd function",
+      "Security: Lack of input validation for client escape sequences",
+      "High bus factor risk (100% from top contributor)"
+    ],
+    "highlights": [
+      "Contributors are still active",
+      "Recent release in October 2022",
+      "Excellent maintainer communication"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary"
+  },
+  "analyzed_at": "2026-01-08T21:11:35.057458Z",
+  "data_fetched_at": "2026-01-08T21:11:35.057459Z"
+}
