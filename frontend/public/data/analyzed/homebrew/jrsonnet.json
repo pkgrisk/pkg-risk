@@ -1,0 +1,314 @@
+{
+  "ecosystem": "homebrew",
+  "name": "jrsonnet",
+  "description": "Rust implementation of Jsonnet language",
+  "version": "0.4.2",
+  "homepage": "https://github.com/CertainLach/jrsonnet",
+  "repository": {
+    "platform": "github",
+    "owner": "CertainLach",
+    "repo": "jrsonnet",
+    "subpath": null
+  },
+  "install_count_30d": 11,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 58.2,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 60.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.149235430560694,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 87.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 45.04,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 10.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 76.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "CertainLach",
+      "name": "jrsonnet",
+      "description": "Rust implementation of Jsonnet language",
+      "stars": 345,
+      "forks": 37,
+      "open_issues": 33,
+      "watchers": 345,
+      "created_at": "2020-05-15T22:48:34Z",
+      "updated_at": "2025-12-17T05:22:46Z",
+      "pushed_at": "2026-01-07T20:44:50Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Rust",
+      "topics": [
+        "hacktoberfest",
+        "interpreter",
+        "jsonnet",
+        "rust"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 16,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 91.5,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 2,
+      "contributor_entropy": 0.63
+    },
+    "commits": {
+      "last_commit_date": "2025-09-26T21:53:18Z",
+      "commits_last_6mo": 3,
+      "commits_last_year": 3
+    },
+    "issues": {
+      "open_issues": 27,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 6,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 2,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 21,
+      "releases_last_year": 0,
+      "last_release_date": "2024-04-07T15:54:17Z",
+      "latest_version": "v0.5.0-pre96-test",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.48
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 54.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": true
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 5,
+      "recent_runs_pass_rate": 16.7,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 4,
+      "injection_risks": [
+        {
+          "file": "xtask/src/main.rs",
+          "line": 43,
+          "severity": "high",
+          "description": "Command injection risk in `cmd!(sh, \"hyperfine {bench_cmd}\").run()?;` due to user-controlled input in `args`"
+        },
+        {
+          "file": "xtask/src/main.rs",
+          "line": 53,
+          "severity": "high",
+          "description": "Command injection risk in `cmd!(sh, \"valgrind --tool=callgrind ... {built} {args...}\").run()?;` due to user-controlled input in `args`"
+        },
+        {
+          "file": "xtask/src/main.rs",
+          "line": 63,
+          "severity": "high",
+          "description": "Command injection risk in `cmd!(sh, \"valgrind --tool=cachegrind ... {built} {args...}\").run()?;` due to user-controlled input in `args`"
+        },
+        {
+          "file": "xtask/src/main.rs",
+          "line": 83,
+          "severity": "high",
+          "description": "Command injection risk in `cmd!(sh, \"gcc -c {test_file}.c\").run()?;` due to user-controlled input in `test_file`"
+        },
+        {
+          "file": "xtask/src/main.rs",
+          "line": 85,
+          "severity": "high",
+          "description": "Command injection risk in `cmd!(sh, \"gcc -o {test_file} ... libjsonnet.a\").run()?;` due to user-controlled input in `test_file`"
+        },
+        {
+          "file": "xtask/src/main.rs",
+          "line": 87,
+          "severity": "high",
+          "description": "Command injection risk in `cmd!(sh, \"{c_bindings}{test_file} {args...}\").run()?;` due to user-controlled input in `args` and `test_file`"
+        }
+      ],
+      "input_validation_score": 2,
+      "secrets_found": [],
+      "critical_findings": [
+        "Command injection risks due to user-controlled input in multiple places",
+        "Lack of input validation for user-controlled input"
+      ],
+      "summary": "The code has several critical command injection vulnerabilities and lacks proper input validation, making it vulnerable to attacks."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "new release",
+        "bug reports"
+      ],
+      "praise_themes": [
+        "documentation update request"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community is actively reporting issues and suggesting improvements, but there's a moderate level of frustration due to open bugs and lack of new releases."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "Maintainer responses are clear, helpful, and technically deep. They address issues thoroughly without showing signs of impatience or hostility."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No merged PRs in the past six months, indicating a lack of active contribution.",
+        "Open issues and PRs suggest ongoing problems that need attention."
+      ],
+      "positive_signals": [
+        "Recent commits within the last year indicate some level of activity.",
+        "Contributors are still active, which is a positive sign."
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but lacks recent contributions and unresolved issues."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 345,
+      "forks": 37,
+      "open_issues": 32,
+      "license": "MIT",
+      "description": "Rust implementation of Jsonnet language",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T00:23:59.638201Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "No merged PRs in the past six months, indicating a lack of active contribution.",
+      "Open issues and PRs suggest ongoing problems that need attention.",
+      "Community: new release",
+      "Community: bug reports",
+      "Security: Command injection risks due to user-controlled input in multiple places",
+      "Security: Lack of input validation for user-controlled input",
+      "Security: Command injection risk in `cmd!(sh, \"hyperfine {bench_cmd}\").run()?;` due to user-controlled input in `args`",
+      "Security: Command injection risk in `cmd!(sh, \"valgrind --tool=callgrind ... {built} {args...}\").run()?;` due to user-controlled input in `args`",
+      "Security: The code has several critical command injection vulnerabilities and lacks proper input validation, making it vulnerable to attacks.",
+      "High bus factor risk (92% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits within the last year indicate some level of activity.",
+      "Contributors are still active, which is a positive sign.",
+      "Excellent maintainer communication",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 345,
+      "forks": 37,
+      "open_issues": 32
+    }
+  },
+  "analyzed_at": "2026-01-08T00:25:41.239964Z",
+  "data_fetched_at": "2026-01-08T00:25:41.239965Z"
+}
