@@ -1,0 +1,299 @@
+{
+  "ecosystem": "homebrew",
+  "name": "jprq",
+  "description": "Join Public Router, Quickly",
+  "version": "2.4",
+  "homepage": "https://jprq.io/",
+  "repository": {
+    "platform": "github",
+    "owner": "azimjohn",
+    "repo": "jprq",
+    "subpath": null
+  },
+  "install_count_30d": 9,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 70.7,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "mature",
+    "security": {
+      "score": 74.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 61.686409404043076,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 92.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 56.44,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 90.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "azimjohn",
+      "name": "jprq",
+      "description": "join public router. quickly.",
+      "stars": 1450,
+      "forks": 197,
+      "open_issues": 42,
+      "watchers": 1450,
+      "created_at": "2020-04-18T10:12:42Z",
+      "updated_at": "2026-01-06T10:24:05Z",
+      "pushed_at": "2025-11-24T20:26:12Z",
+      "default_branch": "master",
+      "license": null,
+      "language": "Go",
+      "topics": [
+        "ngrok-alternative",
+        "ngrok-replacement",
+        "tunnel-server",
+        "tunneling"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": true,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 22,
+      "active_contributors_6mo": 4,
+      "top_contributor_pct": 80.1,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 5,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 1.43
+    },
+    "commits": {
+      "last_commit_date": "2025-10-02T21:06:40Z",
+      "commits_last_6mo": 9,
+      "commits_last_year": 17
+    },
+    "issues": {
+      "open_issues": 33,
+      "closed_issues_6mo": 7,
+      "avg_response_time_hours": 44.1,
+      "avg_close_time_hours": 2973.7,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 9,
+      "merged_prs_6mo": 4,
+      "closed_prs_6mo": 6,
+      "stale_prs": 6,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 7,
+      "releases_last_year": 0,
+      "last_release_date": "2024-11-01T08:39:25Z",
+      "latest_version": "2.4",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 54.0,
+      "has_dependabot": true,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3092,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 4,
+      "recent_runs_pass_rate": 74.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is generally clear and easy to follow, but lacks comprehensive examples and troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "cli/main.go",
+          "line": 123,
+          "severity": "medium",
+          "description": "The handleServe function uses the filepath.Abs function to get the absolute path of a directory. However, it does not validate if the provided directory exists or is accessible before passing it to net.Listen and http.FileServer."
+        },
+        {
+          "file": "server/jprq.go",
+          "line": 141,
+          "severity": "high",
+          "description": "The servePublicConn function uses the parseHost function to get the host from a connection. However, it does not validate if the provided host is valid or if it contains any malicious characters before using it to retrieve a tunnel."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [
+        {
+          "file": "website/main.go",
+          "line": 15,
+          "type": "github client id"
+        },
+        {
+          "file": "website/main.go",
+          "line": 16,
+          "type": "github client secret"
+        }
+      ],
+      "critical_findings": [
+        "Potential path traversal vulnerability in the handleServe function.",
+        "Potential host header injection vulnerability in the servePublicConn function."
+      ],
+      "summary": "The jprq package has several security concerns, including potential injection risks, input validation issues, and secrets exposure, which need to be addressed to ensure the security of the application."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "HTTPS problem",
+        "auth is not working"
+      ],
+      "praise_themes": [
+        "Change TCP tunnel random assigned port"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community health appears stable with some ongoing issues and a few positive feedback points, but there are recurring problems that need attention."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 6,
+      "patience": 8,
+      "technical_depth": 5,
+      "welcomingness": 9,
+      "communication_style": "good",
+      "red_flags": [
+        "some responses are in a non-standard language (Oshajkiy, Uzbek) which might confuse non-native speakers",
+        "occasional use of emojis and informal language"
+      ],
+      "summary": "The maintainer is generally helpful and welcoming but could improve clarity and technical depth."
+    },
+    "maintenance": {
+      "status": "maintained",
+      "confidence": 7,
+      "concerns": [
+        "High number of open issues",
+        "Low number of merged PRs in the past six months"
+      ],
+      "positive_signals": [
+        "Recent commit activity",
+        "Regular release updates"
+      ],
+      "summary": "The package shows signs of regular maintenance but faces some concerns with unresolved issues and low PR merge rate."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T06:51:27.192419Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "maintained",
+    "security_summary": "Dependabot enabled",
+    "doc_summary": "The documentation is generally clear and easy to follow, but lacks comprehensive examples and troubleshooting information.",
+    "concerns": [
+      "High number of open issues",
+      "Low number of merged PRs in the past six months",
+      "Docs: Lack of troubleshooting section",
+      "Community: HTTPS problem",
+      "Community: auth is not working",
+      "Communication: some responses are in a non-standard language (Oshajkiy, Uzbek) which might confuse non-native speakers",
+      "Communication: occasional use of emojis and informal language",
+      "Security: Potential path traversal vulnerability in the handleServe function.",
+      "Security: Potential host header injection vulnerability in the servePublicConn function.",
+      "Security: The servePublicConn function uses the parseHost function to get the host from a connection. However, it does not validate if the provided host is valid or if it contains any malicious characters before using it to retrieve a tunnel.",
+      "High bus factor risk (80% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commit activity",
+      "Regular release updates",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-08T06:53:03.699514Z",
+  "data_fetched_at": "2026-01-08T06:53:03.699516Z"
+}
