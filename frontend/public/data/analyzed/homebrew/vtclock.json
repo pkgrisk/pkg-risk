@@ -1,0 +1,267 @@
+{
+  "ecosystem": "homebrew",
+  "name": "vtclock",
+  "description": "Text-mode fullscreen digital clock",
+  "version": "0.99.1",
+  "homepage": "https://github.com/dse/vtclock",
+  "repository": {
+    "platform": "github",
+    "owner": "dse",
+    "repo": "vtclock",
+    "subpath": null
+  },
+  "install_count_30d": 5,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 53.6,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 54.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 36.44,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 23.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "dse",
+      "name": "vtclock",
+      "description": "a giant text-mode clock",
+      "stars": 31,
+      "forks": 6,
+      "open_issues": 3,
+      "watchers": 31,
+      "created_at": "2012-08-16T02:04:52Z",
+      "updated_at": "2024-12-19T17:52:00Z",
+      "pushed_at": "2024-07-09T18:30:51Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 97.3,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.18
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 2,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 661,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The documentation is lacking in several key areas, including quick start examples and troubleshooting guides.",
+      "top_issue": "No clear instructions or examples for basic usage of the vtclock package"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "figlet.c",
+          "line": 123,
+          "severity": "high",
+          "description": "The sprintf function is used to construct a command string with user input (options->font_name), which can lead to shell injection attacks."
+        },
+        {
+          "file": "figlet.c",
+          "line": 55,
+          "severity": "medium",
+          "description": "The popen function is used to execute the figlet command, which can potentially be exploited if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential shell injection vulnerability in generate_figlet_font function",
+        "Lack of input validation and sanitization"
+      ],
+      "summary": "The code has potential security vulnerabilities, including a high-risk shell injection attack vector and inadequate input validation, which require immediate attention to prevent exploitation."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "version scheme confusion",
+        "display issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is moderately engaged, with concerns around versioning and functionality, but no clear signs of abandonment."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Only one merged PR in the past six months"
+      ],
+      "positive_signals": [
+        "Two contributors active in the past six months",
+        "One open PR"
+      ],
+      "summary": "The package shows minimal maintenance with occasional contributions but lacks recent activity."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T20:36:14.745858Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is lacking in several key areas, including quick start examples and troubleshooting guides.",
+    "concerns": [
+      "No commits in the past six months",
+      "Only one merged PR in the past six months",
+      "Docs: No clear instructions or examples for basic usage of the vtclock package",
+      "Community: version scheme confusion",
+      "Community: display issues",
+      "Security: Potential shell injection vulnerability in generate_figlet_font function",
+      "Security: Lack of input validation and sanitization",
+      "Security: The sprintf function is used to construct a command string with user input (options->font_name), which can lead to shell injection attacks.",
+      "High bus factor risk (97% from top contributor)"
+    ],
+    "highlights": [
+      "Two contributors active in the past six months",
+      "One open PR"
+    ],
+    "community_sentiment": "neutral"
+  },
+  "analyzed_at": "2026-01-08T20:37:36.996724Z",
+  "data_fetched_at": "2026-01-08T20:37:36.996725Z"
+}
