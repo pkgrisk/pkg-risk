@@ -1,0 +1,330 @@
+{
+  "ecosystem": "homebrew",
+  "name": "brigade-cli",
+  "description": "Brigade command-line interface",
+  "version": "2.6.0",
+  "homepage": "https://brigade.sh",
+  "repository": {
+    "platform": "github",
+    "owner": "brigadecore",
+    "repo": "brigade",
+    "subpath": null
+  },
+  "install_count_30d": 8,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 70.0,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 66.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 98.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 70.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 55.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 88.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "brigadecore",
+      "name": "brigade",
+      "description": "Event-driven scripting for Kubernetes",
+      "stars": 2414,
+      "forks": 249,
+      "open_issues": 31,
+      "watchers": 2414,
+      "created_at": "2017-10-23T23:00:48Z",
+      "updated_at": "2026-01-02T05:42:37Z",
+      "pushed_at": "2023-03-07T03:41:43Z",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "topics": [
+        "cncf",
+        "kubernetes"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 88,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 26.3,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 3.22
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 26,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 2,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 5,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 5,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 55,
+      "releases_last_year": 0,
+      "last_release_date": "2022-06-09T14:29:19Z",
+      "latest_version": "v2.6.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.33
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 97.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3334,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": true,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The README provides a good introduction to the Brigade project, but lacks clear installation and troubleshooting instructions.",
+      "top_issue": "Lack of clear installation instructions"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "v2/apiserver/main.go",
+          "line": 123,
+          "severity": "low",
+          "description": "The use of gojsonschema.NewReferenceLoader with a file path could potentially lead to a path traversal vulnerability if the file path is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal vulnerability in gojsonschema.NewReferenceLoader",
+        "Lack of input validation and sanitization for user-provided data"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and secure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Netlify build image update",
+        "docs home page needs updating"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The community health is neutral with some open issues and a closed issue indicating the project has been archived, suggesting potential abandonment."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [
+        "Some responses indicate the project is being archived, which could discourage contributions."
+      ],
+      "summary": "The maintainers are generally clear and patient but show signs of discouragement towards the project's future."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Low number of merged PRs in the past six months"
+      ],
+      "positive_signals": [
+        "Recent release in 2022-06-09T14:29:19+00:00",
+        "Active contributors in the past six months (10)"
+      ],
+      "summary": "The package is minimally maintained with recent contributions but lacks recent commits and merged PRs."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": false,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "high",
+      "summary": "The documentation lacks a succession plan and contributor ladder, posing a high risk of bus factor."
+    }
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 3.5,
+      "score_date": "2025-12-29T00:00:00Z",
+      "checks": {
+        "Maintained": 0.0,
+        "Packaging": -1.0,
+        "Code-Review": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "Token-Permissions": 0.0,
+        "Binary-Artifacts": 10.0,
+        "CII-Best-Practices": 2.0,
+        "Security-Policy": 0.0,
+        "License": 10.0,
+        "Fuzzing": 0.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": -1.0,
+        "SAST": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Vulnerabilities": 0.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 2414,
+      "forks": 249,
+      "open_issues": 31,
+      "license": "Apache-2.0",
+      "description": "Event-driven scripting for Kubernetes",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T08:20:06.068753Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good introduction to the Brigade project, but lacks clear installation and troubleshooting instructions.",
+    "concerns": [
+      "No commits in the past six months",
+      "Low number of merged PRs in the past six months",
+      "Docs: Lack of clear installation instructions",
+      "Possible abandonment signals detected",
+      "Community: Netlify build image update",
+      "Community: docs home page needs updating",
+      "Communication: Some responses indicate the project is being archived, which could discourage contributions.",
+      "Governance: High bus factor risk identified",
+      "Security: Potential path traversal vulnerability in gojsonschema.NewReferenceLoader",
+      "Security: Lack of input validation and sanitization for user-provided data",
+      "Low OpenSSF Scorecard: 3.5/10",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Recent release in 2022-06-09T14:29:19+00:00",
+      "Active contributors in the past six months (10)",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "scorecard_score": 3.5
+  },
+  "analyzed_at": "2026-01-08T08:21:26.237145Z",
+  "data_fetched_at": "2026-01-08T08:21:26.237146Z"
+}
