@@ -1,0 +1,308 @@
+{
+  "ecosystem": "homebrew",
+  "name": "libxdg-basedir",
+  "description": "C implementation of the XDG Base Directory specifications",
+  "version": "1.2.3",
+  "homepage": "https://github.com/devnev/libxdg-basedir",
+  "repository": {
+    "platform": "github",
+    "owner": "devnev",
+    "repo": "libxdg-basedir",
+    "subpath": null
+  },
+  "install_count_30d": 4,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 61.0,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 67.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 60.08,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 31.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 65.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "devnev",
+      "name": "libxdg-basedir",
+      "description": "An implementation of the XDG Base Directory specifications",
+      "stars": 36,
+      "forks": 8,
+      "open_issues": 0,
+      "watchers": 36,
+      "created_at": "2011-11-11T10:19:56Z",
+      "updated_at": "2025-07-17T10:12:58Z",
+      "pushed_at": "2021-04-20T10:03:36Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "C",
+      "topics": [
+        "hacktoberfest",
+        "xdg",
+        "xdg-basedir"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 7,
+      "active_contributors_6mo": 7,
+      "top_contributor_pct": 78.0,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.26
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 4.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1631,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 6,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The documentation is mostly clear but lacks examples and troubleshooting information.",
+      "top_issue": "Lack of usage examples and quick start guide"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "include/basedir_fs.h",
+          "line": 54,
+          "severity": "medium",
+          "description": "The xdgDataFind function uses the relativePath parameter to construct file paths, which could potentially lead to path traversal attacks if not properly sanitized."
+        },
+        {
+          "file": "include/basedir_fs.h",
+          "line": 74,
+          "severity": "medium",
+          "description": "The xdgConfigFind function uses the relativePath parameter to construct file paths, which could potentially lead to path traversal attacks if not properly sanitized."
+        },
+        {
+          "file": "include/basedir_fs.h",
+          "line": 94,
+          "severity": "medium",
+          "description": "The xdgDataOpen function uses the relativePath and mode parameters to construct file paths and open files, which could potentially lead to path traversal attacks or unauthorized file access if not properly sanitized."
+        },
+        {
+          "file": "include/basedir_fs.h",
+          "line": 114,
+          "severity": "medium",
+          "description": "The xdgConfigOpen function uses the relativePath and mode parameters to construct file paths and open files, which could potentially lead to path traversal attacks or unauthorized file access if not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential path traversal attacks in xdgDataFind, xdgConfigFind, xdgDataOpen, and xdgConfigOpen functions.",
+        "Lack of input validation for function parameters."
+      ],
+      "summary": "The libxdg-basedir library has some security concerns related to potential path traversal attacks and lack of input validation, but overall it appears to be a relatively secure library with no critical findings related to secrets handling or error exposure."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "Incorrect memory allocation",
+        "Release"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The community is moderately frustrated with the lack of releases and some code issues, but maintainers seem to be actively addressing these concerns."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "good",
+      "red_flags": [
+        "Occasional use of informal language like 'blarg'"
+      ],
+      "summary": "The maintainer provides useful information but could be more welcoming and maintain a consistent tone."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No recent commits or activity",
+        "Last commit and last release dates are unknown"
+      ],
+      "positive_signals": [
+        "Contributors active past 6 months"
+      ],
+      "summary": "The package shows minimal maintenance with some contributor activity but lacks recent updates."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 36,
+      "forks": 8,
+      "open_issues": 0,
+      "license": "MIT",
+      "description": "An implementation of the XDG Base Directory specifications",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T22:15:17.431123Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is mostly clear but lacks examples and troubleshooting information.",
+    "concerns": [
+      "No recent commits or activity",
+      "Last commit and last release dates are unknown",
+      "Docs: Lack of usage examples and quick start guide",
+      "Possible abandonment signals detected",
+      "Community: Incorrect memory allocation",
+      "Community: Release",
+      "Communication: Occasional use of informal language like 'blarg'",
+      "Security: Potential path traversal attacks in xdgDataFind, xdgConfigFind, xdgDataOpen, and xdgConfigOpen functions.",
+      "Security: Lack of input validation for function parameters."
+    ],
+    "highlights": [
+      "Contributors active past 6 months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 36,
+      "forks": 8,
+      "open_issues": 0
+    }
+  },
+  "analyzed_at": "2026-01-08T22:16:49.429384Z",
+  "data_fetched_at": "2026-01-08T22:16:49.429386Z"
+}
