@@ -1,0 +1,291 @@
+{
+  "ecosystem": "homebrew",
+  "name": "attempt-cli",
+  "description": "CLI for retrying fallible commands",
+  "version": "1.1.0",
+  "homepage": "https://github.com/MaxBondABE/attempt",
+  "repository": {
+    "platform": "github",
+    "owner": "MaxBondABE",
+    "repo": "attempt",
+    "subpath": null
+  },
+  "install_count_30d": 7,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 75.0,
+    "grade": "C",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "mature",
+    "security": {
+      "score": 56.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 100.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 87.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 45.8,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 56.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "MaxBondABE",
+      "name": "attempt",
+      "description": "CLI for retrying fallible commands",
+      "stars": 207,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 207,
+      "created_at": "2022-09-08T06:37:42Z",
+      "updated_at": "2026-01-06T23:43:34Z",
+      "pushed_at": "2025-10-12T21:12:06Z",
+      "default_branch": "main",
+      "license": "Unlicense",
+      "language": "Rust",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 98.7,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 1,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 0.1
+    },
+    "commits": {
+      "last_commit_date": "2025-10-12T21:01:13Z",
+      "commits_last_6mo": 48,
+      "commits_last_year": 62
+    },
+    "issues": {
+      "open_issues": 1,
+      "closed_issues_6mo": 3,
+      "avg_response_time_hours": 61.2,
+      "avg_close_time_hours": 300.4,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 4,
+      "closed_prs_6mo": 4,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 2,
+      "releases_last_year": 2,
+      "last_release_date": "2025-09-10T02:48:43Z",
+      "latest_version": "v1.1.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 8.9,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 2181,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": true,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 78.9,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 5,
+      "overall": 6,
+      "summary": "The README provides a good introduction to the package, but lacks comprehensive documentation and examples for advanced use cases.",
+      "top_issue": "Insufficient configuration documentation"
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "src/main.rs",
+          "line": 73,
+          "severity": "high",
+          "description": "The `args.build_command()` function is used to spawn a child process. If the command string contains user input, it may be vulnerable to shell injection attacks."
+        },
+        {
+          "file": "src/arguments.rs",
+          "line": 34,
+          "severity": "medium",
+          "description": "The `parse_arguments_from` function uses `OsString::into` to convert the command line arguments into a string. If these strings contain user input, they may be vulnerable to injection attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential shell injection vulnerability in the `args.build_command()` function",
+        "Lack of input validation for command line arguments"
+      ],
+      "summary": "The code has some security concerns, including potential shell injection vulnerabilities and lack of input validation, but no secrets are hardcoded and error exposure is relatively low."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "security issues",
+        "unreliable e2e tests"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is actively addressing issues, but there are concerns about security and test reliability."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "Maintainer responses are generally clear and helpful, though could provide more technical depth."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Recent commits in the past six months",
+        "Multiple merged pull requests in the past six months",
+        "Regular issue closure"
+      ],
+      "summary": "The package is actively maintained with recent activity and contributions."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 206,
+      "forks": 0,
+      "open_issues": 1,
+      "license": "non-standard",
+      "description": "CLI for retrying fallible commands",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-08T11:32:14.481253Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a good introduction to the package, but lacks comprehensive documentation and examples for advanced use cases.",
+    "concerns": [
+      "Docs: Insufficient configuration documentation",
+      "Community: security issues",
+      "Community: unreliable e2e tests",
+      "Security: Potential shell injection vulnerability in the `args.build_command()` function",
+      "Security: Lack of input validation for command line arguments",
+      "Security: The `args.build_command()` function is used to spawn a child process. If the command string contains user input, it may be vulnerable to shell injection attacks.",
+      "High bus factor risk (99% from top contributor)"
+    ],
+    "highlights": [
+      "Recent commits in the past six months",
+      "Multiple merged pull requests in the past six months",
+      "Regular issue closure",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 206,
+      "forks": 0,
+      "open_issues": 1
+    }
+  },
+  "analyzed_at": "2026-01-08T11:33:28.732003Z",
+  "data_fetched_at": "2026-01-08T11:33:28.732004Z"
+}
