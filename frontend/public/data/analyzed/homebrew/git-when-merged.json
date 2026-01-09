@@ -1,0 +1,295 @@
+{
+  "ecosystem": "homebrew",
+  "name": "git-when-merged",
+  "description": "Find where a commit was merged in git",
+  "version": "1.2.1",
+  "homepage": "https://github.com/mhagger/git-when-merged",
+  "repository": {
+    "platform": "github",
+    "owner": "mhagger",
+    "repo": "git-when-merged",
+    "subpath": null
+  },
+  "install_count_30d": 3,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 63.9,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 56.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 67.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 58.4,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 58.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "mhagger",
+      "name": "git-when-merged",
+      "description": "Determine when a particular commit was merged into a git branch",
+      "stars": 457,
+      "forks": 26,
+      "open_issues": 0,
+      "watchers": 457,
+      "created_at": "2013-02-02T06:08:12Z",
+      "updated_at": "2025-12-15T12:12:22Z",
+      "pushed_at": "2023-08-06T07:59:58Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "Python",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 9,
+      "active_contributors_6mo": 9,
+      "top_contributor_pct": 84.8,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.05
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 4,
+      "releases_last_year": 0,
+      "last_release_date": "2022-08-09T15:08:04Z",
+      "latest_version": "v1.2.1",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 5.3,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 9967,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is generally clear and provides good installation instructions, but could benefit from more examples and troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section"
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "src/git_when_merged.py",
+          "line": 123,
+          "severity": "medium",
+          "description": "The use of subprocess.check_output with user-controlled input (e.g., 'git', 'config', '--get-all', '--null', key) may lead to command injection attacks if the input is not properly sanitized."
+        },
+        {
+          "file": "src/git_when_merged.py",
+          "line": 155,
+          "severity": "medium",
+          "description": "The use of subprocess.Popen with user-controlled input (e.g., 'git', 'for-each-ref', '--format=%(refname) %(objecttype) %(*objecttype)') may lead to command injection attacks if the input is not properly sanitized."
+        },
+        {
+          "file": "src/git_when_merged.py",
+          "line": 193,
+          "severity": "medium",
+          "description": "The use of subprocess.check_output with user-controlled input (e.g., 'git', 'rev-parse', '--verify', '-q', arg) may lead to command injection attacks if the input is not properly sanitized."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection attacks due to unsanitized user input.",
+        "Lack of input validation for certain functions."
+      ],
+      "summary": "The code has some security concerns, including potential command injection attacks and lack of input validation, but does not appear to expose sensitive information or use insecure defaults by default."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "incorrect behavior for HEAD commit",
+        "wrong results may be returned"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some issues reported, but the maintainers have been responsive in closing these issues."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 9,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer's responses are generally helpful and clear, showing patience with the contributor and a good level of technical depth."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No recent commits or activity",
+        "Last release was over a year ago"
+      ],
+      "positive_signals": [
+        "Contributors active past 6 months"
+      ],
+      "summary": "The package shows minimal maintenance with no recent activity but has some contributor engagement."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 457,
+      "forks": 26,
+      "open_issues": 0,
+      "license": "GPL-2.0",
+      "description": "Determine when a particular commit was merged into a git branch",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T00:48:07.778674Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and provides good installation instructions, but could benefit from more examples and troubleshooting information.",
+    "concerns": [
+      "No recent commits or activity",
+      "Last release was over a year ago",
+      "Docs: Lack of troubleshooting section",
+      "Community: incorrect behavior for HEAD commit",
+      "Community: wrong results may be returned",
+      "Security: Potential command injection attacks due to unsanitized user input.",
+      "Security: Lack of input validation for certain functions.",
+      "High bus factor risk (85% from top contributor)"
+    ],
+    "highlights": [
+      "Contributors active past 6 months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 457,
+      "forks": 26,
+      "open_issues": 0
+    }
+  },
+  "analyzed_at": "2026-01-09T00:50:15.071639Z",
+  "data_fetched_at": "2026-01-09T00:50:15.071640Z"
+}
