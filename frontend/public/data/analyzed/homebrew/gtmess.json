@@ -1,0 +1,254 @@
+{
+  "ecosystem": "homebrew",
+  "name": "gtmess",
+  "description": "Console MSN messenger client",
+  "version": "0.97",
+  "homepage": "https://gtmess.sourceforge.net/",
+  "repository": {
+    "platform": "github",
+    "owner": "geotz",
+    "repo": "gtmess",
+    "subpath": null
+  },
+  "install_count_30d": null,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 60.0,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited contributor data",
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 54.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 61.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 53.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "geotz",
+      "name": "gtmess",
+      "description": "console MSN messenger client for Linux and other Unix systems",
+      "stars": 1,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 1,
+      "created_at": "2014-10-03T10:57:18Z",
+      "updated_at": "2015-09-22T09:34:20Z",
+      "pushed_at": "2014-10-03T13:12:24Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 0,
+      "active_contributors_6mo": 0,
+      "top_contributor_pct": 0.0,
+      "contributors_over_5pct": 0,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": null
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 6528,
+      "has_license": false,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 6,
+      "installation": 2,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 4,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The documentation is comprehensive but lacks clear installation instructions and troubleshooting guidance.",
+      "top_issue": "Installation instructions are incomplete, with no information on how to install the package using homebrew."
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "src/client/nserver.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "Use of sscanf with user-controlled input in msn_handle_msgbody function"
+        },
+        {
+          "file": "src/client/nserver.c",
+          "line": 156,
+          "severity": "low",
+          "description": "Use of sprintf with user-controlled input in notif_openlog function"
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential for buffer overflow in msn_get_payload function",
+        "Lack of input validation and sanitization in multiple functions"
+      ],
+      "summary": "The code has several security concerns, including potential injection risks, lack of input validation, and possible error exposure, which need to be addressed to ensure the security and reliability of the application."
+    },
+    "sentiment": null,
+    "communication": null,
+    "maintenance": {
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No recent activity",
+        "Unknown last commit and release dates"
+      ],
+      "positive_signals": [],
+      "summary": "The package shows no recent activity and has unknown critical dates, indicating it may be stale."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": false,
+      "appears_complete": false,
+      "clarity_score": 5,
+      "overall_score": 4,
+      "summary": "The changelog is not well-structured and lacks important details such as breaking changes, migration guides, and proper categorization."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T11:47:25.605260Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "stale",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is comprehensive but lacks clear installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "No recent activity",
+      "Unknown last commit and release dates",
+      "Docs: Installation instructions are incomplete, with no information on how to install the package using homebrew.",
+      "Security: Potential for buffer overflow in msn_get_payload function",
+      "Security: Lack of input validation and sanitization in multiple functions"
+    ],
+    "highlights": []
+  },
+  "analyzed_at": "2026-01-09T11:48:55.822794Z",
+  "data_fetched_at": "2026-01-09T11:48:55.822794Z"
+}
