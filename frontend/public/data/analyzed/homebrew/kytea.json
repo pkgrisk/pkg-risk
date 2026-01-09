@@ -1,0 +1,298 @@
+{
+  "ecosystem": "homebrew",
+  "name": "kytea",
+  "description": "Toolkit for analyzing text, especially Japanese and Chinese",
+  "version": "0.4.7",
+  "homepage": "https://www.phontron.com/kytea/",
+  "repository": {
+    "platform": "github",
+    "owner": "neubig",
+    "repo": "kytea",
+    "subpath": null
+  },
+  "install_count_30d": 1,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 58.0,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 56.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 80.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 57.6,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 33.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "neubig",
+      "name": "kytea",
+      "description": "The Kyoto Text Analysis Toolkit for word segmentation and pronunciation estimation, etc.",
+      "stars": 212,
+      "forks": 26,
+      "open_issues": 8,
+      "watchers": 212,
+      "created_at": "2010-12-22T02:56:51Z",
+      "updated_at": "2026-01-07T09:13:43Z",
+      "pushed_at": "2020-04-03T13:46:02Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "C++",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 9,
+      "active_contributors_6mo": 9,
+      "top_contributor_pct": 85.1,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.95
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 8,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 10.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 607,
+      "has_license": false,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The documentation is lacking in key areas, making it difficult for new users to get started with the package.",
+      "top_issue": "Insufficient examples and quick start guide"
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "src/lib/kytea-config.cpp",
+          "line": 123,
+          "severity": "medium",
+          "description": "The getenv function is used to retrieve the KYTEA_MODEL environment variable, which could potentially be set by an attacker."
+        },
+        {
+          "file": "src/bin/run-kytea.cpp",
+          "line": 20,
+          "severity": "low",
+          "description": "The parseRunCommandLine and parseTrainCommandLine functions do not appear to directly execute user input as shell commands, but they may be vulnerable to command-line argument injection attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command-line argument injection vulnerability in parseRunCommandLine and parseTrainCommandLine functions",
+        "Lack of input validation in setIOFormat function"
+      ],
+      "summary": "The KyTea codebase has some security concerns, including potential command-line argument injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "installation issues",
+        "compilation errors"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some open installation and compilation issues, but no signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Multiple open issues and no recent PR activity"
+      ],
+      "positive_signals": [
+        "9 contributors active over the past six months",
+        "No merged PRs but this could indicate a focus on issue resolution rather than feature development"
+      ],
+      "summary": "The package shows minimal maintenance with some contributor activity, but lacks recent code updates."
+    },
+    "changelog": {
+      "breaking_changes_marked": false,
+      "has_migration_guides": false,
+      "well_categorized": false,
+      "appears_complete": false,
+      "clarity_score": 3,
+      "overall_score": 2,
+      "summary": "The changelog is incomplete, not well-organized, and lacks clarity for users."
+    },
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 211,
+      "forks": 26,
+      "open_issues": 8,
+      "license": "non-standard",
+      "description": "The Kyoto Text Analysis Toolkit for word segmentation and pronunciation estimation, etc.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T08:08:14.392642Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is lacking in key areas, making it difficult for new users to get started with the package.",
+    "concerns": [
+      "No commits in the past six months",
+      "Multiple open issues and no recent PR activity",
+      "Docs: Insufficient examples and quick start guide",
+      "Community: installation issues",
+      "Community: compilation errors",
+      "Security: Potential command-line argument injection vulnerability in parseRunCommandLine and parseTrainCommandLine functions",
+      "Security: Lack of input validation in setIOFormat function",
+      "High bus factor risk (85% from top contributor)"
+    ],
+    "highlights": [
+      "9 contributors active over the past six months",
+      "No merged PRs but this could indicate a focus on issue resolution rather than feature development",
+      "Excellent maintainer communication"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 211,
+      "forks": 26,
+      "open_issues": 8
+    }
+  },
+  "analyzed_at": "2026-01-09T08:09:34.181091Z",
+  "data_fetched_at": "2026-01-09T08:09:34.181092Z"
+}
