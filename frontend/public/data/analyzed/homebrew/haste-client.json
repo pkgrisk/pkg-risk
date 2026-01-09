@@ -1,0 +1,298 @@
+{
+  "ecosystem": "homebrew",
+  "name": "haste-client",
+  "description": "CLI client for haste-server",
+  "version": "0.3.0",
+  "homepage": "https://hastebin.com/",
+  "repository": {
+    "platform": "github",
+    "owner": "toptal",
+    "repo": "haste-client",
+    "subpath": null
+  },
+  "install_count_30d": 2,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 54.3,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "prohibited",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 54.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 39.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 58.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 66.36,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 50.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "toptal",
+      "name": "haste-client",
+      "description": "CLI client for haste-server",
+      "stars": 642,
+      "forks": 111,
+      "open_issues": 0,
+      "watchers": 642,
+      "created_at": "2011-11-29T14:18:24Z",
+      "updated_at": "2026-01-05T06:58:33Z",
+      "pushed_at": "2023-02-02T14:44:20Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "Ruby",
+      "topics": [],
+      "is_archived": true,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 13,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 78.0,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.42
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 10.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3593,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": true,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 100.0,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is clear and provides many examples, but lacks troubleshooting information.",
+      "top_issue": "Lack of troubleshooting section or common problem solutions"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "lib/haste/uploader.rb",
+          "line": 64,
+          "severity": "medium",
+          "description": "The `do_post` method uses user-controlled data in the request body, but it's not directly vulnerable to injection attacks since it's a POST request with JSON data. However, if the server is not properly configured, this could lead to potential issues."
+        },
+        {
+          "file": "lib/haste/uploader.rb",
+          "line": 71,
+          "severity": "low",
+          "description": "The `connection_config` method uses user-controlled data for basic authentication, but it's properly sanitized and not directly vulnerable to injection attacks."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [
+        {
+          "file": "lib/haste/cli.rb",
+          "line": 10,
+          "type": "API token"
+        },
+        {
+          "file": "lib/haste/cli.rb",
+          "line": 11,
+          "type": "server token"
+        },
+        {
+          "file": "lib/haste/cli.rb",
+          "line": 12,
+          "type": "share server URL"
+        },
+        {
+          "file": "lib/haste/cli.rb",
+          "line": 13,
+          "type": "username"
+        },
+        {
+          "file": "lib/haste/cli.rb",
+          "line": 14,
+          "type": "password"
+        }
+      ],
+      "critical_findings": [
+        "Potential injection risks in the `do_post` method",
+        "Lack of input validation and sanitization"
+      ],
+      "summary": "The haste-client package has some security concerns, including potential injection risks, lack of input validation, and exposure of sensitive information, but it does not appear to have any critical vulnerabilities."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "spam"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is negative due to spam issues, but maintainers are actively addressing them."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [],
+      "summary": "The maintainer responses are generally helpful and clear, showing patience with new contributors. However, there is room for more technical depth in explanations."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No recent commits or activity",
+        "Last commit and last release dates are unknown"
+      ],
+      "positive_signals": [
+        "Contributors active past 6 months"
+      ],
+      "summary": "The package has minimal maintenance with some contributor activity, but lacks recent updates."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T04:24:47.776696Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is clear and provides many examples, but lacks troubleshooting information.",
+    "concerns": [
+      "No recent commits or activity",
+      "Last commit and last release dates are unknown",
+      "Docs: Lack of troubleshooting section or common problem solutions",
+      "Community: spam",
+      "Security: Potential injection risks in the `do_post` method",
+      "Security: Lack of input validation and sanitization"
+    ],
+    "highlights": [
+      "Contributors active past 6 months",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "negative",
+    "communication_style": "good"
+  },
+  "analyzed_at": "2026-01-09T04:26:14.330523Z",
+  "data_fetched_at": "2026-01-09T04:26:14.330525Z"
+}
