@@ -1,0 +1,318 @@
+{
+  "ecosystem": "homebrew",
+  "name": "sqlsmith",
+  "description": "Random SQL query generator",
+  "version": "1.4",
+  "homepage": "https://github.com/anse1/sqlsmith",
+  "repository": {
+    "platform": "github",
+    "owner": "anse1",
+    "repo": "sqlsmith",
+    "subpath": null
+  },
+  "install_count_30d": 1,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 52.0,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 44.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Weak branch protection"
+      ]
+    },
+    "maintenance": {
+      "score": 55.27085241590671,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 80.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 35.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 0.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "anse1",
+      "name": "sqlsmith",
+      "description": "A random SQL query generator",
+      "stars": 823,
+      "forks": 137,
+      "open_issues": 14,
+      "watchers": 823,
+      "created_at": "2015-06-01T10:41:29Z",
+      "updated_at": "2026-01-08T07:03:20Z",
+      "pushed_at": "2025-11-02T15:56:01Z",
+      "default_branch": "master",
+      "license": "GPL-3.0",
+      "language": "C++",
+      "topics": [
+        "fuzz-testing",
+        "monetdb",
+        "postgresql",
+        "sqlite3"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 13,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 91.4,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.63
+    },
+    "commits": {
+      "last_commit_date": "2025-11-02T15:45:48Z",
+      "commits_last_6mo": 1,
+      "commits_last_year": 1
+    },
+    "issues": {
+      "open_issues": 13,
+      "closed_issues_6mo": 2,
+      "avg_response_time_hours": 2244.8,
+      "avg_close_time_hours": 2449.2,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 5,
+      "releases_last_year": 0,
+      "last_release_date": "2022-03-03T08:40:09Z",
+      "latest_version": "v1.4",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 5.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": false,
+      "readme_size_bytes": 0,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 1,
+      "recent_runs_pass_rate": 100.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "monetdb.cc",
+          "line": 123,
+          "severity": "high",
+          "description": "SQL string concatenation in query construction"
+        },
+        {
+          "file": "sqlite.cc",
+          "line": 145,
+          "severity": "medium",
+          "description": "User input used directly in SQL queries without proper sanitization"
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential SQL injection vulnerabilities due to string concatenation in query construction",
+        "Lack of input validation and sanitization for user-provided data"
+      ],
+      "summary": "The code has several security concerns, including potential SQL injection vulnerabilities and lack of input validation, which could lead to unauthorized access or data tampering."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "frequent segmentation fault during fuzz testing",
+        "high error rate while running sqlsmith"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral with some ongoing issues and open questions, but there are no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 9,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth while maintaining a welcoming tone."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No merged PRs in the past six months, indicating a lack of active contribution acceptance.",
+        "Last release was over two years ago."
+      ],
+      "positive_signals": [
+        "Recent commits and contributors activity suggest some level of ongoing involvement.",
+        "There are open issues and PRs that may indicate current needs or improvements being sought."
+      ],
+      "summary": "The package shows minimal maintenance with recent activity but an extended period since the last release."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 3.4,
+      "score_date": "2025-12-29T00:00:00Z",
+      "checks": {
+        "Token-Permissions": 0.0,
+        "Code-Review": 1.0,
+        "Maintained": 2.0,
+        "Dangerous-Workflow": 10.0,
+        "Packaging": -1.0,
+        "CII-Best-Practices": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Security-Policy": 0.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Vulnerabilities": 10.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 1.0,
+      "maintained_score": 2.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 822,
+      "forks": 137,
+      "open_issues": 14,
+      "license": "GPL-3.0",
+      "description": "A random SQL query generator",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T09:54:51.654285Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "",
+    "concerns": [
+      "No merged PRs in the past six months, indicating a lack of active contribution acceptance.",
+      "Last release was over two years ago.",
+      "Community: frequent segmentation fault during fuzz testing",
+      "Community: high error rate while running sqlsmith",
+      "Security: Potential SQL injection vulnerabilities due to string concatenation in query construction",
+      "Security: Lack of input validation and sanitization for user-provided data",
+      "Security: SQL string concatenation in query construction",
+      "High bus factor risk (91% from top contributor)",
+      "Low OpenSSF Scorecard: 3.4/10",
+      "Weak branch protection settings"
+    ],
+    "highlights": [
+      "Recent commits and contributors activity suggest some level of ongoing involvement.",
+      "There are open issues and PRs that may indicate current needs or improvements being sought.",
+      "Excellent maintainer communication",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "scorecard_score": 3.4
+  },
+  "analyzed_at": "2026-01-09T09:55:54.592850Z",
+  "data_fetched_at": "2026-01-09T09:55:54.592852Z"
+}
