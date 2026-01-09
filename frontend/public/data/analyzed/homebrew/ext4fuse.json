@@ -1,0 +1,265 @@
+{
+  "ecosystem": "homebrew",
+  "name": "ext4fuse",
+  "description": "Read-only implementation of ext4 for FUSE",
+  "version": "0.1.3",
+  "homepage": "https://github.com/gerard/ext4fuse",
+  "repository": {
+    "platform": "github",
+    "owner": "gerard",
+    "repo": "ext4fuse",
+    "subpath": null
+  },
+  "install_count_30d": 1,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 56.6,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 55.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 57.28,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 65.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "gerard",
+      "name": "ext4fuse",
+      "description": "EXT4 implementation for FUSE",
+      "stars": 1008,
+      "forks": 116,
+      "open_issues": 40,
+      "watchers": 1008,
+      "created_at": "2010-05-22T16:11:36Z",
+      "updated_at": "2026-01-06T10:15:17Z",
+      "pushed_at": "2021-04-11T05:18:49Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 13,
+      "active_contributors_6mo": 10,
+      "top_contributor_pct": 88.6,
+      "contributors_over_5pct": 1,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.91
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 34,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 6,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 5,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 3.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3902,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 8,
+      "overall": 7,
+      "summary": "The README provides clear and concise information, but lacks detailed examples and configuration documentation.",
+      "top_issue": "Limited examples and lack of comprehensive configuration documentation"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "fuse-main.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "Use of system calls like disk_read and disk_open without proper validation of input parameters"
+        },
+        {
+          "file": "dcache.c",
+          "line": 55,
+          "severity": "low",
+          "description": "Use of strncpy which may lead to buffer overflow if not properly validated"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow in dcache_insert function",
+        "Lack of input validation for disk file path and name parameters"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks, lack of input validation, and error exposure, but no critical secrets or dangerous defaults were found."
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Linux requirement for macOS",
+        "Mounting issues on various macOS versions",
+        "Read-write capabilities"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community faces significant frustration with the project's compatibility and functionality, particularly regarding Linux requirements and mounting issues across different macOS versions."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Low number of merged PRs in the past six months"
+      ],
+      "positive_signals": [
+        "Multiple contributors active in the past six months",
+        "Some open issues and pull requests indicate community interest"
+      ],
+      "summary": "The package shows minimal maintenance with occasional contributions but lacks recent activity."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T07:28:26.760645Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides clear and concise information, but lacks detailed examples and configuration documentation.",
+    "concerns": [
+      "No commits in the past six months",
+      "Low number of merged PRs in the past six months",
+      "Docs: Limited examples and lack of comprehensive configuration documentation",
+      "Community: Linux requirement for macOS",
+      "Community: Mounting issues on various macOS versions",
+      "Security: Potential buffer overflow in dcache_insert function",
+      "Security: Lack of input validation for disk file path and name parameters",
+      "High bus factor risk (89% from top contributor)"
+    ],
+    "highlights": [
+      "Multiple contributors active in the past six months",
+      "Some open issues and pull requests indicate community interest"
+    ],
+    "community_sentiment": "negative"
+  },
+  "analyzed_at": "2026-01-09T07:29:46.896151Z",
+  "data_fetched_at": "2026-01-09T07:29:46.896153Z"
+}

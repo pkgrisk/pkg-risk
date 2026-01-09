@@ -1,0 +1,260 @@
+{
+  "ecosystem": "homebrew",
+  "name": "envv",
+  "description": "Shell-independent handling of environment variables",
+  "version": "1.7",
+  "homepage": "https://github.com/jakewendt/envv",
+  "repository": {
+    "platform": "github",
+    "owner": "jakewendt",
+    "repo": "envv",
+    "subpath": null
+  },
+  "install_count_30d": 1,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 65.7,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 64.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 67.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 64.2,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "jakewendt",
+      "name": "envv",
+      "description": "Envv is a shell-independent way of handling environment variables. (not mine)",
+      "stars": 16,
+      "forks": 3,
+      "open_issues": 0,
+      "watchers": 16,
+      "created_at": "2010-04-11T22:21:23Z",
+      "updated_at": "2024-01-16T15:25:24Z",
+      "pushed_at": "2024-01-16T15:25:19Z",
+      "default_branch": "master",
+      "license": null,
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 3,
+      "active_contributors_6mo": 3,
+      "top_contributor_pct": 71.4,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.15
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 1,
+      "releases_last_year": 0,
+      "last_release_date": "2015-02-06T20:33:32Z",
+      "latest_version": "v1.7",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 20.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3224,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides a clear overview of the package's purpose and includes useful examples, but lacks detailed installation instructions and troubleshooting guidance.",
+      "top_issue": "Insufficient documentation for installation and troubleshooting"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "envv.c",
+          "line": 245,
+          "severity": "high",
+          "description": "The DoSetenv function uses sprintf to construct a string that will be executed by the shell. This could lead to command injection if Var or Val contain malicious input."
+        },
+        {
+          "file": "envv.c",
+          "line": 255,
+          "severity": "medium",
+          "description": "The DoChoose function also constructs a string that will be executed by the shell using sprintf. Similar to the previous issue, this could lead to command injection if Var or Val contain malicious input."
+        }
+      ],
+      "input_validation_score": 4,
+      "secrets_found": [],
+      "critical_findings": [
+        "Command injection vulnerability in DoSetenv and DoChoose functions"
+      ],
+      "summary": "The envv.c code has several security concerns, including command injection vulnerabilities and lack of input validation, which could lead to unexpected behavior or malicious activity."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "segfault with particular output size"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral, with a focus on resolving bugs rather than praising the project."
+    },
+    "communication": null,
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Last release was over seven years ago"
+      ],
+      "positive_signals": [
+        "Contributors active past 6 months"
+      ],
+      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent code updates."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T07:25:24.567998Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides a clear overview of the package's purpose and includes useful examples, but lacks detailed installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "No commits in the past six months",
+      "Last release was over seven years ago",
+      "Docs: Insufficient documentation for installation and troubleshooting",
+      "Community: segfault with particular output size",
+      "Security: Command injection vulnerability in DoSetenv and DoChoose functions",
+      "Security: The DoSetenv function uses sprintf to construct a string that will be executed by the shell. This could lead to command injection if Var or Val contain malicious input."
+    ],
+    "highlights": [
+      "Contributors active past 6 months"
+    ],
+    "community_sentiment": "neutral"
+  },
+  "analyzed_at": "2026-01-09T07:26:37.914045Z",
+  "data_fetched_at": "2026-01-09T07:26:37.914046Z"
+}

@@ -1,0 +1,288 @@
+{
+  "ecosystem": "homebrew",
+  "name": "git-test",
+  "description": "Run tests on each distinct tree in a revision list",
+  "version": "1.0.4",
+  "homepage": "https://github.com/spotify/git-test",
+  "repository": {
+    "platform": "github",
+    "owner": "spotify",
+    "repo": "git-test",
+    "subpath": null
+  },
+  "install_count_30d": 1,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 55.8,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "prohibited",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 62.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 28.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 80.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 74.8,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "spotify",
+      "name": "git-test",
+      "description": "test your commits",
+      "stars": 205,
+      "forks": 41,
+      "open_issues": 3,
+      "watchers": 205,
+      "created_at": "2015-01-08T12:50:22Z",
+      "updated_at": "2025-11-06T03:07:45Z",
+      "pushed_at": "2023-01-04T13:15:20Z",
+      "default_branch": "master",
+      "license": "Apache-2.0",
+      "language": "Shell",
+      "topics": [
+        "agnostic",
+        "test-automation",
+        "version-control"
+      ],
+      "is_archived": true,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 6,
+      "active_contributors_6mo": 6,
+      "top_contributor_pct": 61.5,
+      "contributors_over_5pct": 6,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.85
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 1,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 2,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 2,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 2.3,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 4347,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient examples and troubleshooting information.",
+      "top_issue": "Lack of comprehensive troubleshooting section"
+    },
+    "security": {
+      "overall_score": 4,
+      "injection_risks": [
+        {
+          "file": "regress.sh",
+          "line": 6,
+          "severity": "medium",
+          "description": "The command './git-test -v -o reports \"$@\"' uses user input from the command line arguments without proper validation or sanitization, potentially leading to shell injection risks."
+        }
+      ],
+      "input_validation_score": 2,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential shell injection risk due to unvalidated command line arguments"
+      ],
+      "summary": "The provided code has a medium-severity security concern related to potential shell injection risks and lacks proper input validation, but does not expose sensitive information or use insecure defaults."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Tagging issues for releases"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is moderately engaged, with some frustration around tagging issues but no signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 6,
+      "technical_depth": 9,
+      "welcomingness": 5,
+      "communication_style": "adequate",
+      "red_flags": [
+        "The maintainer seems to have missed a significant issue for over a year.",
+        "There's a lack of encouragement towards new contributors."
+      ],
+      "summary": "The responses are generally adequate but could be more welcoming and patient, especially with new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Open issues and PRs suggest ongoing problems"
+      ],
+      "positive_signals": [
+        "Contributors active past 6 months"
+      ],
+      "summary": "The package shows minimal maintenance with active contributors but lacks recent code updates."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 205,
+      "forks": 42,
+      "open_issues": 3,
+      "license": "Apache-2.0",
+      "description": "test your commits",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T07:44:07.841620Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient examples and troubleshooting information.",
+    "concerns": [
+      "No commits in the past six months",
+      "Open issues and PRs suggest ongoing problems",
+      "Docs: Lack of comprehensive troubleshooting section",
+      "Community: Tagging issues for releases",
+      "Communication: The maintainer seems to have missed a significant issue for over a year.",
+      "Communication: There's a lack of encouragement towards new contributors.",
+      "Security: Potential shell injection risk due to unvalidated command line arguments",
+      "Security: The provided code has a medium-severity security concern related to potential shell injection risks and lacks proper input validation, but does not expose sensitive information or use insecure defaults."
+    ],
+    "highlights": [
+      "Contributors active past 6 months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 205,
+      "forks": 42,
+      "open_issues": 3
+    }
+  },
+  "analyzed_at": "2026-01-09T07:44:55.132565Z",
+  "data_fetched_at": "2026-01-09T07:44:55.132565Z"
+}
