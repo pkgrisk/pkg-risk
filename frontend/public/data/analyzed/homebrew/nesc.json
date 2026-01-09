@@ -1,0 +1,280 @@
+{
+  "ecosystem": "homebrew",
+  "name": "nesc",
+  "description": "Programming language for deeply networked systems",
+  "version": "1.4.0",
+  "homepage": "https://github.com/tinyos/nesc",
+  "repository": {
+    "platform": "github",
+    "owner": "tinyos",
+    "repo": "nesc",
+    "subpath": null
+  },
+  "install_count_30d": 3,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 62.2,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 70.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 86.4,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 50.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 65.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "tinyos",
+      "name": "nesc",
+      "description": "Master nesc repository",
+      "stars": 107,
+      "forks": 53,
+      "open_issues": 12,
+      "watchers": 107,
+      "created_at": "2012-12-17T08:03:33Z",
+      "updated_at": "2025-12-25T11:36:50Z",
+      "pushed_at": "2018-12-16T02:26:14Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 7,
+      "active_contributors_6mo": 7,
+      "top_contributor_pct": 46.7,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 2.05
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 12,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 1,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 1,
+      "releases_last_year": 0,
+      "last_release_date": "2014-08-07T06:49:24Z",
+      "latest_version": "v1.3.6",
+      "has_signed_releases": false,
+      "prerelease_ratio": 1.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 672,
+      "has_license": false,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": false,
+      "has_tests_dir": true,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README provides some basic information, but lacks examples and troubleshooting guidance.",
+      "top_issue": "Lack of usage examples and quick start guide"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/nesc-main.c",
+          "line": 234,
+          "severity": "medium",
+          "description": "The function nesc_option() uses strncmp to compare user input with predefined strings, but it does not validate the length of the input. This could lead to a buffer overflow vulnerability if an attacker provides a long enough string."
+        },
+        {
+          "file": "src/nesc-main.c",
+          "line": 246,
+          "severity": "low",
+          "description": "The function add_nesc_include() uses rstrdup to copy user input into a new string, but it does not check for null bytes in the input. This could lead to unexpected behavior if an attacker provides a string with null bytes."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential buffer overflow vulnerability in nesc_option() function",
+        "Lack of validation for user input in nesc_option() function"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "nesC internal error",
+        "compilation issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community faces recurring compilation and nesC-related errors, but there are no signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Some responses are brief and could be more detailed",
+        "There is a mix of technical depth and basic explanations"
+      ],
+      "summary": "The maintainer's responses are generally helpful but could benefit from more detailed explanations and a consistent level of technical depth."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "A large number of open issues (12)",
+        "No recent merged pull requests"
+      ],
+      "positive_signals": [
+        "Recent release in 2014",
+        "Seven contributors active in the past six months"
+      ],
+      "summary": "The package is minimally maintained with some recent contributor activity but lacks recent commits and issue resolution."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T01:36:06.570143Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README provides some basic information, but lacks examples and troubleshooting guidance.",
+    "concerns": [
+      "No commits in the past six months",
+      "A large number of open issues (12)",
+      "No recent merged pull requests",
+      "Docs: Lack of usage examples and quick start guide",
+      "Community: nesC internal error",
+      "Community: compilation issues",
+      "Communication: Some responses are brief and could be more detailed",
+      "Communication: There is a mix of technical depth and basic explanations",
+      "Security: Potential buffer overflow vulnerability in nesc_option() function",
+      "Security: Lack of validation for user input in nesc_option() function"
+    ],
+    "highlights": [
+      "Recent release in 2014",
+      "Seven contributors active in the past six months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-09T01:37:31.947550Z",
+  "data_fetched_at": "2026-01-09T01:37:31.947552Z"
+}
