@@ -1,0 +1,298 @@
+{
+  "ecosystem": "homebrew",
+  "name": "bioawk",
+  "description": "AWK modified for biological data",
+  "version": "1.0",
+  "homepage": "https://github.com/lh3/bioawk",
+  "repository": {
+    "platform": "github",
+    "owner": "lh3",
+    "repo": "bioawk",
+    "subpath": null
+  },
+  "install_count_30d": 3,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 61.7,
+    "grade": "D",
+    "percentile": null,
+    "risk_tier": "conditional",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 58.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 76.24,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 38.5,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "lh3",
+      "name": "bioawk",
+      "description": "BWK awk modified for biological data",
+      "stars": 637,
+      "forks": 116,
+      "open_issues": 25,
+      "watchers": 637,
+      "created_at": "2012-01-06T03:05:25Z",
+      "updated_at": "2025-12-23T14:06:02Z",
+      "pushed_at": "2022-08-11T01:06:45Z",
+      "default_branch": "master",
+      "license": null,
+      "language": "C",
+      "topics": [
+        "bioinformatics",
+        "sequence-analysis"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 6,
+      "active_contributors_6mo": 6,
+      "top_contributor_pct": 52.4,
+      "contributors_over_5pct": 4,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 2.03
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 21,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 4,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 4,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 1,
+      "releases_last_year": 0,
+      "last_release_date": "2015-08-25T14:01:07Z",
+      "latest_version": "v1.0",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 3193,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 6,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "The bioawk README provides clear explanations and examples, but lacks installation instructions and troubleshooting guidance.",
+      "top_issue": "Installation instructions are not provided"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "main.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "The -v option allows user input to be executed as a variable assignment, which could potentially lead to code injection if not properly sanitized."
+        },
+        {
+          "file": "run.c",
+          "line": 145,
+          "severity": "low",
+          "description": "The tempfree function does not check for NULL pointers before calling tfree, which could potentially lead to a null pointer dereference."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential code injection vulnerability in the -v option",
+        "Lack of input validation for program filenames and variable names"
+      ],
+      "summary": "The bioawk package has some security concerns, including potential code injection vulnerabilities and lack of input validation, but overall it appears to be a relatively secure package."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "NR mismatch with VCF header",
+        "Segmentation fault issues"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health is neutral, with some open issues and occasional frustration, but no clear signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 6,
+      "patience": 8,
+      "technical_depth": 7,
+      "welcomingness": 7,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Some responses are brief and lack detail",
+        "Occasional use of 'woops' suggests a casual tone that might be perceived as unprofessional"
+      ],
+      "summary": "The maintainer's responses are generally adequate but could benefit from more detailed explanations and a more professional tone."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "No merged PRs in the past six months",
+        "Last release was over seven years ago"
+      ],
+      "positive_signals": [
+        "Contributors are still active, though infrequently",
+        "There are open issues and pull requests indicating some level of community interest"
+      ],
+      "summary": "The package is in minimal maintenance with occasional contributions but lacks recent activity."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 637,
+      "forks": 116,
+      "open_issues": 25,
+      "license": "",
+      "description": "BWK awk modified for biological data",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T00:05:14.672845Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The bioawk README provides clear explanations and examples, but lacks installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "No commits in the past six months",
+      "No merged PRs in the past six months",
+      "Last release was over seven years ago",
+      "Docs: Installation instructions are not provided",
+      "Community: NR mismatch with VCF header",
+      "Community: Segmentation fault issues",
+      "Communication: Some responses are brief and lack detail",
+      "Communication: Occasional use of 'woops' suggests a casual tone that might be perceived as unprofessional",
+      "Security: Potential code injection vulnerability in the -v option",
+      "Security: Lack of input validation for program filenames and variable names"
+    ],
+    "highlights": [
+      "Contributors are still active, though infrequently",
+      "There are open issues and pull requests indicating some level of community interest"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 637,
+      "forks": 116,
+      "open_issues": 25
+    }
+  },
+  "analyzed_at": "2026-01-09T00:06:40.949988Z",
+  "data_fetched_at": "2026-01-09T00:06:40.949990Z"
+}
