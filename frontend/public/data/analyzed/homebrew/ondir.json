@@ -1,0 +1,284 @@
+{
+  "ecosystem": "homebrew",
+  "name": "ondir",
+  "description": "Automatically execute scripts as you traverse directories",
+  "version": "0.2.4",
+  "homepage": "https://swapoff.org/ondir.html",
+  "repository": {
+    "platform": "github",
+    "owner": "alecthomas",
+    "repo": "ondir",
+    "subpath": null
+  },
+  "install_count_30d": 2,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 58.0,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 54.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 56.5,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 50.2,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 54.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "alecthomas",
+      "name": "ondir",
+      "description": "OnDir is a small program to automate tasks specific to certain directories",
+      "stars": 235,
+      "forks": 19,
+      "open_issues": 2,
+      "watchers": 235,
+      "created_at": "2010-09-21T13:05:59Z",
+      "updated_at": "2026-01-02T06:27:51Z",
+      "pushed_at": "2023-12-01T21:53:56Z",
+      "default_branch": "master",
+      "license": "GPL-2.0",
+      "language": "C",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 83.3,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.65
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 1,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 1,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 1,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 1988,
+      "has_license": false,
+      "has_changelog": true,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 4,
+      "examples": 9,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The documentation is generally clear and provides useful examples, but lacks detailed installation instructions and troubleshooting guidance.",
+      "top_issue": "Lack of comprehensive installation instructions and troubleshooting section"
+    },
+    "security": {
+      "overall_score": 5,
+      "injection_risks": [
+        {
+          "file": "conf.c",
+          "line": 123,
+          "severity": "medium",
+          "description": "The expand_envars function uses getenv to retrieve environment variables which could potentially be tampered with by an attacker"
+        },
+        {
+          "file": "ondir.c",
+          "line": 141,
+          "severity": "high",
+          "description": "The system call putenv is used with user-controlled input which can lead to arbitrary code execution"
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "High severity injection risk in ondir.c at line 141",
+        "Medium severity injection risk in conf.c at line 123"
+      ],
+      "summary": "The code has several security concerns including high and medium severity injection risks, lack of input validation, and potential error exposure which need to be addressed to ensure the security of the application."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "regex support documentation",
+        "hang issues"
+      ],
+      "praise_themes": [
+        "useful tool",
+        "portability across Linux and macOS"
+      ],
+      "abandonment_signals": true,
+      "summary": "The community finds the tool useful but expresses concerns about maintenance, hang issues, and lack of clear documentation."
+    },
+    "communication": {
+      "helpfulness": 7,
+      "clarity": 6,
+      "patience": 5,
+      "technical_depth": 8,
+      "welcomingness": 6,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Inconsistent handling of user feedback",
+        "Lack of clear instructions for beginners"
+      ],
+      "summary": "The maintainer's responses are generally adequate but could be more consistent and clearer, especially for new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "Only one merged PR in the past six months"
+      ],
+      "positive_signals": [
+        "Two contributors active in the past six months"
+      ],
+      "summary": "The package shows minimal maintenance with occasional contributions but lacks recent activity."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T05:30:06.287701Z",
+    "sources_available": []
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and provides useful examples, but lacks detailed installation instructions and troubleshooting guidance.",
+    "concerns": [
+      "No commits in the past six months",
+      "Only one merged PR in the past six months",
+      "Docs: Lack of comprehensive installation instructions and troubleshooting section",
+      "Possible abandonment signals detected",
+      "Community: regex support documentation",
+      "Community: hang issues",
+      "Communication: Inconsistent handling of user feedback",
+      "Communication: Lack of clear instructions for beginners",
+      "Security: High severity injection risk in ondir.c at line 141",
+      "Security: Medium severity injection risk in conf.c at line 123",
+      "Security: The system call putenv is used with user-controlled input which can lead to arbitrary code execution",
+      "High bus factor risk (83% from top contributor)"
+    ],
+    "highlights": [
+      "Two contributors active in the past six months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate"
+  },
+  "analyzed_at": "2026-01-09T05:31:32.208024Z",
+  "data_fetched_at": "2026-01-09T05:31:32.208025Z"
+}
