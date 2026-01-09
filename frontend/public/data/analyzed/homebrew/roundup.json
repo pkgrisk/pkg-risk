@@ -1,0 +1,295 @@
+{
+  "ecosystem": "homebrew",
+  "name": "roundup",
+  "description": "Unit testing tool",
+  "version": "0.0.6",
+  "homepage": "https://bmizerany.github.io/roundup",
+  "repository": {
+    "platform": "github",
+    "owner": "bmizerany",
+    "repo": "roundup",
+    "subpath": null
+  },
+  "install_count_30d": 1,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 53.6,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "restricted",
+    "update_urgency": "medium",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 56.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 46.0,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 75.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 58.08,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 22.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 60.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "bmizerany",
+      "name": "roundup",
+      "description": "eliminate bugs and weeds from shell scripts",
+      "stars": 433,
+      "forks": 54,
+      "open_issues": 17,
+      "watchers": 433,
+      "created_at": "2010-07-30T18:29:27Z",
+      "updated_at": "2025-12-14T07:57:04Z",
+      "pushed_at": "2017-04-11T05:36:49Z",
+      "default_branch": "master",
+      "license": "NOASSERTION",
+      "language": "Shell",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 9,
+      "active_contributors_6mo": 9,
+      "top_contributor_pct": 84.5,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 1.01
+    },
+    "commits": {
+      "last_commit_date": null,
+      "commits_last_6mo": 0,
+      "commits_last_year": 0
+    },
+    "issues": {
+      "open_issues": 8,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 9,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 9,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 0,
+      "releases_last_year": 0,
+      "last_release_date": null,
+      "latest_version": null,
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 0.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 411,
+      "has_license": false,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": false,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": false,
+      "workflow_count": 0,
+      "recent_runs_pass_rate": null,
+      "has_tests_workflow": false,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": false,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README is brief and lacks essential information for new users to get started with the package.",
+      "top_issue": "Lack of installation instructions and quick start examples"
+    },
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "roundup.sh",
+          "line": 123,
+          "severity": "high",
+          "description": "The use of `source` to execute test plans can lead to arbitrary code execution if an attacker can manipulate the test plan files."
+        },
+        {
+          "file": "roundup.sh",
+          "line": 145,
+          "severity": "medium",
+          "description": "The use of `eval`-like behavior through `set -x` and `trap` can lead to code injection if an attacker can manipulate the test output."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Arbitrary code execution through test plan files",
+        "Potential for code injection through test output manipulation"
+      ],
+      "summary": "The roundup.sh script has several security concerns, including arbitrary code execution and potential code injection vulnerabilities, but does not expose sensitive information or use insecure defaults."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "broken website links",
+        "Makefile syntax errors on OpenBSD"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is experiencing some issues, but there are no clear signs of abandonment or severe frustration."
+    },
+    "communication": {
+      "helpfulness": 6,
+      "clarity": 7,
+      "patience": 5,
+      "technical_depth": 8,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Maintainer is not actively maintaining the package",
+        "Lack of clear instructions for contributors"
+      ],
+      "summary": "The maintainer's responses are generally adequate but show a lack of active maintenance and could be more welcoming to new contributors."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "No merged PRs in the past six months",
+        "Open issues and PRs suggest ongoing problems"
+      ],
+      "positive_signals": [
+        "9 contributors active in the past six months"
+      ],
+      "summary": "The package is likely being minimally maintained with occasional contributions, but lacks recent activity."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 433,
+      "forks": 54,
+      "open_issues": 17,
+      "license": "non-standard",
+      "description": "eliminate bugs and weeds from shell scripts",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T09:35:26.996264Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The README is brief and lacks essential information for new users to get started with the package.",
+    "concerns": [
+      "No commits in the past six months",
+      "No merged PRs in the past six months",
+      "Open issues and PRs suggest ongoing problems",
+      "Docs: Lack of installation instructions and quick start examples",
+      "Community: broken website links",
+      "Community: Makefile syntax errors on OpenBSD",
+      "Communication: Maintainer is not actively maintaining the package",
+      "Communication: Lack of clear instructions for contributors",
+      "Security: Arbitrary code execution through test plan files",
+      "Security: Potential for code injection through test output manipulation",
+      "Security: The use of `source` to execute test plans can lead to arbitrary code execution if an attacker can manipulate the test plan files.",
+      "High bus factor risk (84% from top contributor)"
+    ],
+    "highlights": [
+      "9 contributors active in the past six months"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 433,
+      "forks": 54,
+      "open_issues": 17
+    }
+  },
+  "analyzed_at": "2026-01-09T09:36:40.994760Z",
+  "data_fetched_at": "2026-01-09T09:36:40.994763Z"
+}
