@@ -1,0 +1,292 @@
+{
+  "ecosystem": "homebrew",
+  "name": "tsnet-serve",
+  "description": "Expose HTTP applications to a Tailscale Tailnet network",
+  "version": "1.3.2",
+  "homepage": "https://github.com/shayne/tsnet-serve",
+  "repository": {
+    "platform": "github",
+    "owner": "shayne",
+    "repo": "tsnet-serve",
+    "subpath": null
+  },
+  "install_count_30d": 3,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 53.6,
+    "grade": "F",
+    "percentile": null,
+    "risk_tier": "prohibited",
+    "update_urgency": "medium",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Limited issue history"
+    ],
+    "project_age_band": "established",
+    "security": {
+      "score": 62.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 34.0031202527898,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 65.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 28.520000000000003,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 46.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 93.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "shayne",
+      "name": "tsnet-serve",
+      "description": "Tailscale Serve in a tsnet app",
+      "stars": 46,
+      "forks": 6,
+      "open_issues": 0,
+      "watchers": 46,
+      "created_at": "2023-06-03T16:24:11Z",
+      "updated_at": "2025-11-03T08:35:07Z",
+      "pushed_at": "2025-07-05T13:38:59Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "Go",
+      "topics": [],
+      "is_archived": true,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 2,
+      "active_contributors_6mo": 2,
+      "top_contributor_pct": 90.9,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 1,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 0,
+      "contributor_entropy": 0.44
+    },
+    "commits": {
+      "last_commit_date": "2025-07-05T13:38:56Z",
+      "commits_last_6mo": 0,
+      "commits_last_year": 14
+    },
+    "issues": {
+      "open_issues": 0,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 0,
+      "merged_prs_6mo": 0,
+      "closed_prs_6mo": 0,
+      "stale_prs": 0,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 13,
+      "releases_last_year": 5,
+      "last_release_date": "2025-06-22T11:46:19Z",
+      "latest_version": "v1.3.2",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": false,
+      "has_security_policy": false,
+      "signed_commits_pct": 44.2,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": true,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 4262,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": false,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": false,
+      "has_pr_template": false,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 2,
+      "recent_runs_pass_rate": 92.3,
+      "has_tests_workflow": true,
+      "has_lint_workflow": false,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "The documentation is generally clear and provides many examples, but lacks installation instructions for Homebrew and troubleshooting guidance.",
+      "top_issue": "Lack of troubleshooting section"
+    },
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "main.go",
+          "line": 145,
+          "severity": "medium",
+          "description": "The 'expandProxyTarget' function does not validate the input string for potential injection risks. Although it checks if the scheme is valid, an attacker could potentially manipulate the URL to bypass security controls."
+        },
+        {
+          "file": "main.go",
+          "line": 173,
+          "severity": "low",
+          "description": "The 'allNumeric' function does not handle non-ASCII characters. However, this is unlikely to cause a significant injection risk in this context."
+        }
+      ],
+      "input_validation_score": 6,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential injection risk in the 'expandProxyTarget' function",
+        "Insecure TLS verification is allowed by default"
+      ],
+      "summary": "The code has some security concerns, including potential injection risks and insecure defaults, but overall it appears to be well-structured and follows good practices."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "connection is not secure?"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The community shows some signs of dissatisfaction with the project, as one issue suggests abandoning it in favor of an alternative. However, there are no major complaints or praises."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 9,
+      "patience": 10,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "exemplary",
+      "red_flags": [],
+      "summary": "The maintainer's responses are clear, helpful, and patient, with a good balance of technical depth."
+    },
+    "maintenance": {
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in the past six months",
+        "No open issues or PRs"
+      ],
+      "positive_signals": [
+        "Last release was recent",
+        "Contributors active in the past six months"
+      ],
+      "summary": "The package is minimally maintained with recent activity but lacks recent code updates."
+    },
+    "changelog": null,
+    "governance": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 46,
+      "forks": 6,
+      "open_issues": 0,
+      "license": "MIT",
+      "description": "Tailscale Serve in a tsnet app",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-01-09T02:32:42.873787Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "minimal-maintenance",
+    "security_summary": "No issues",
+    "doc_summary": "The documentation is generally clear and provides many examples, but lacks installation instructions for Homebrew and troubleshooting guidance.",
+    "concerns": [
+      "No commits in the past six months",
+      "No open issues or PRs",
+      "Docs: Lack of troubleshooting section",
+      "Possible abandonment signals detected",
+      "Community: connection is not secure?",
+      "Security: Potential injection risk in the 'expandProxyTarget' function",
+      "Security: Insecure TLS verification is allowed by default",
+      "High bus factor risk (91% from top contributor)"
+    ],
+    "highlights": [
+      "Last release was recent",
+      "Contributors active in the past six months",
+      "Excellent maintainer communication",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "exemplary",
+    "forge_metrics": {
+      "stars": 46,
+      "forks": 6,
+      "open_issues": 0
+    }
+  },
+  "analyzed_at": "2026-01-09T02:33:58.976831Z",
+  "data_fetched_at": "2026-01-09T02:33:58.976832Z"
+}
