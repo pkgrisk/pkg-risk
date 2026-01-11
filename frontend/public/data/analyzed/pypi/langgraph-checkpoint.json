@@ -1,31 +1,31 @@
 {
   "ecosystem": "pypi",
-  "name": "langgraph-sdk",
-  "description": "SDK for interacting with LangGraph API",
-  "version": "0.3.2",
-  "homepage": "https://pypi.org/project/langgraph-sdk/",
+  "name": "langgraph-checkpoint",
+  "description": "Library with base interfaces for LangGraph checkpoint savers.",
+  "version": "3.0.1",
+  "homepage": "https://pypi.org/project/langgraph-checkpoint/",
   "repository": {
     "platform": "github",
     "owner": "langchain-ai",
     "repo": "langgraph",
-    "subpath": "libs/sdk-py"
+    "subpath": null
   },
-  "install_count_30d": 15828836,
+  "install_count_30d": 15332113,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 90.3,
-    "grade": "A",
+    "overall": 87.3,
+    "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
-    "update_urgency": "low",
+    "update_urgency": "high",
     "confidence": "medium",
     "confidence_factors": [
       "No LLM assessment available"
     ],
     "project_age_band": "established",
     "security": {
-      "score": 100.0,
+      "score": 90.0,
       "weight": 30,
       "key_factors": []
     },
@@ -148,11 +148,29 @@
       "has_sigstore": false,
       "has_sbom": false,
       "has_reproducible_builds": false,
-      "known_cves": 0,
+      "known_cves": 1,
       "vulnerable_deps": 0,
       "cve_history": {
-        "total_cves": 0,
-        "cves": [],
+        "total_cves": 1,
+        "cves": [
+          {
+            "id": "GHSA-wwqv-p2pp-99h5",
+            "summary": "LangGraph Checkpoint affected by RCE in \"json\" mode of JsonPlusSerializer ",
+            "severity": "HIGH",
+            "cvss_score": null,
+            "published_date": "2025-11-05T19:52:50Z",
+            "fixed_version": "3.0.0",
+            "patch_release_date": null,
+            "days_to_patch": null,
+            "references": [
+              "https://github.com/langchain-ai/langgraph/security/advisories/GHSA-wwqv-p2pp-99h5",
+              "https://nvd.nist.gov/vuln/detail/CVE-2025-64439",
+              "https://github.com/langchain-ai/langgraph/commit/c5744f583b11745cd406f3059903e17bbcdcc8ac",
+              "https://github.com/langchain-ai/langgraph",
+              "https://github.com/langchain-ai/langgraph/blob/c5744f583b11745cd406f3059903e17bbcdcc8ac/libs/checkpoint/langgraph/checkpoint/serde/jsonplus.py"
+            ]
+          }
+        ],
         "avg_days_to_patch": null,
         "has_unpatched": false
       }
@@ -200,14 +218,14 @@
     },
     "dependency_graph": {
       "direct_count": 2,
-      "transitive_count": 7,
+      "transitive_count": 25,
       "vulnerable_direct": 0,
       "vulnerable_transitive": 0,
-      "max_depth": 3
+      "max_depth": 5
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-11T08:50:33.987409Z",
+    "fetched_at": "2026-01-11T08:55:41.011635Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -216,7 +234,7 @@
   },
   "analysis_summary": {
     "maintenance_status": "unknown",
-    "security_summary": "Dependabot enabled",
+    "security_summary": "1 known CVEs, Dependabot enabled",
     "doc_summary": "",
     "concerns": [],
     "highlights": [
@@ -228,8 +246,8 @@
       "forks": 4062,
       "open_issues": 290
     },
-    "dependency_count": 9
+    "dependency_count": 27
   },
-  "analyzed_at": "2026-01-11T08:50:33.987830Z",
-  "data_fetched_at": "2026-01-11T08:50:33.987831Z"
+  "analyzed_at": "2026-01-11T08:55:41.011836Z",
+  "data_fetched_at": "2026-01-11T08:55:41.011837Z"
 }
