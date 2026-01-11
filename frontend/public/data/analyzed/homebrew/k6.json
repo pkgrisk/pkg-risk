@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 4,
+      "quick_start": 8,
       "examples": 7,
       "configuration": 6,
       "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is clear and provides a good introduction to the package, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions"
+      "summary": "Excellent clarity and quick start example, but lacks inline installation instructions and troubleshooting guidance, requiring users to navigate to external documentation.",
+      "top_issue": "No installation instructions in README - users must click through to external docs to learn how to install k6 (especially critical since this is a homebrew package)"
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,17 @@
       "summary": "The k6 package has some security concerns, including potential code injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows good security practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "browser integration issues",
-        "dependency updates"
+        "Browser support incomplete on Windows platform",
+        "Async function handling issues with websockets",
+        "Abandoned/unmaintained dependencies in codebase"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The k6 community is actively reporting and discussing various technical issues, with maintainers showing moderate responsiveness to user concerns."
+      "abandonment_signals": true,
+      "summary": "K6 shows moderate community health with active issue tracking and some maintainer engagement, but concerning dependency debt with 15 abandoned dependencies and unresolved platform-specific bugs suggest resource constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,17 +228,21 @@
       "summary": "The maintainers' responses are generally helpful, clear, and patient, making them a welcoming and supportive community for contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (542)",
-        "Recent last commit (2025-12-18)",
-        "Frequent releases (last release 2025-11-24)",
-        "Large number of merged PRs in the past 6 months (215)",
-        "Many active contributors in the past 6 months (32)"
+      "concerns": [
+        "No commits in past 6 months despite recent last commit timestamp",
+        "785 open issues with no recent activity to address them",
+        "Zero closed issues in past 6 months indicates no bug fixing",
+        "No merged PRs in past 6 months suggests no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date raises questions about versioning"
       ],
-      "summary": "The k6 package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+      "positive_signals": [
+        "Repository still exists and has not been archived",
+        "Recent commit timestamp suggests some form of activity"
+      ],
+      "summary": "The k6 package shows signs of stagnation with zero development activity, unresolved issues, and no contributor engagement over the past 6 months, despite a recent commit timestamp."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +252,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The k6 project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T03:45:56.767972+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

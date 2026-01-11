@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 2,
-      "quick_start": 6,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 4,
+      "configuration": 3,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The README provides a good overview of the package's functionality, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided"
+      "summary": "Clear purpose and basic usage examples, but completely missing installation instructions and troubleshooting guidance.",
+      "top_issue": "No installation instructions provided - users don't know how to install or build the software before using the command-line examples"
     },
     "security": {
       "overall_score": 6,
@@ -195,19 +195,21 @@
       "summary": "The provided code has some security concerns, including lack of input validation and potential for buffer overflows, but no critical injection risks or exposed secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "stack overflow issues",
-        "image handling limitations"
+        "Security vulnerabilities (unbounded recursion, integer overflow)",
+        "Image handling limitations (authentication, CMYK format, absolute paths)",
+        "Layout and scaling issues (fitting content to pages, margin control)",
+        "Feature requests go unimplemented for years"
       ],
       "praise_themes": [
-        "long-term support and usage",
-        "feature requests for accessibility"
+        "Long-term reliability and stability (users cite decade+ usage)",
+        "Gratitude for maintenance efforts"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the project's long-term maintenance but faces some ongoing technical challenges."
+      "abandonment_signals": true,
+      "summary": "htmldoc shows signs of neglect with recent critical security bugs, unresolved feature requests spanning 20+ years, and slow maintainer engagement, though some users remain loyal to the stable tool."
     },
     "communication": {
       "helpfulness": 7,
@@ -223,15 +225,20 @@
       "summary": "The maintainer provides technical details but sometimes lacks patience and clarity, especially when closing issues."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active in the last six months",
-        "A high number of merged PRs indicating community involvement"
+      "concerns": [
+        "No commits in past 6 months despite recent activity",
+        "Zero merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "Open issues not being resolved (2 open, 0 closed in 6 months)",
+        "Unknown last release date suggests poor release management"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Repository still exists and accessible",
+        "Some recent commit activity on 2025-12-28 suggests minimal ongoing attention"
+      ],
+      "summary": "htmldoc appears stale with no meaningful maintenance activity over the past 6 months despite a recent commit, indicating the project is no longer actively developed."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +256,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T03:49:28.896215+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

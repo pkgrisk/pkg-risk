@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 10,
       "examples": 9,
-      "configuration": 5,
+      "configuration": 7,
       "troubleshooting": 8,
-      "overall": 8,
-      "summary": "The README provides a clear and concise introduction to the BWA package, with good examples and troubleshooting sections, but installation instructions could be improved.",
-      "top_issue": "Installation instructions are not very detailed and assume some prior knowledge of compiling software from source code."
+      "overall": 9,
+      "summary": "Excellent documentation with clear purpose, installation, quick start examples, and comprehensive FAQ section covering common issues.",
+      "top_issue": "Configuration options and parameters are mentioned but not fully documented in the README itself (requires man page reference)"
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,21 @@
       "summary": "The code has some security concerns, including potential injection risks, inadequate input validation, and error exposure issues, but no critical secrets or dangerous defaults were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "performance issues with high-thread counts",
-        "alignment and indexing errors"
+        "Performance degradation with high thread counts (256+ cores)",
+        "Memory usage issues and overflow",
+        "Output file corruption/zero-size files",
+        "Segmentation faults on certain inputs",
+        "Inconsistent results across different reference sizes",
+        "Tool compatibility issues (xa2multi.pl with hard-clipped alignments)",
+        "Small genome indexing errors"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing moderate frustration due to performance and alignment issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "BWA shows signs of maintenance stagnation with slow or no responses to technical issues spanning years, unresolved performance bugs on modern hardware, and a backlog of unanswered bug reports suggesting reduced active development."
     },
     "communication": {
       "helpfulness": 5,
@@ -236,17 +241,17 @@
       "summary": "The maintainer's responses are generally adequate but could be more helpful, clear, and welcoming."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues (72) and PRs (25) suggests potential maintenance backlog."
+        "No commits in past 6 months despite last commit being from March 2025",
+        "97 open issues with zero closed in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No release information available"
       ],
-      "positive_signals": [
-        "Recent release on March 22, 2025",
-        "10 contributors have been active in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks ongoing development."
+      "positive_signals": [],
+      "summary": "BWA appears to be abandoned with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -257,7 +262,10 @@
       "overall_score": 6,
       "summary": "The changelog lacks clear categorization, marked breaking changes, and migration guides, but it is relatively complete and understandable."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T03:47:26.375381+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

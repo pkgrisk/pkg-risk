@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
       "examples": 8,
       "configuration": 6,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides a good introduction to the xtensor package, but could benefit from more troubleshooting information and clearer configuration documentation.",
-      "top_issue": "Lack of troubleshooting section"
+      "summary": "Excellent clarity and examples for a C++ library, but lacks troubleshooting guidance and configuration details for SIMD optimization.",
+      "top_issue": "No troubleshooting section for common build/compilation errors or SIMD configuration guidance despite mentioning XTENSOR_USE_XSIMD macro"
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,18 @@
       "summary": "The code appears to be generally secure, but lacks input validation and bounds checking for indices, which could lead to potential security issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "XSIMD implementation performance issues",
-        "Expression template optimization bugs in release builds"
+        "Performance regressions with SIMD/mixed precision operations",
+        "Recent regressions in 0.27.0 release (xt::drop, xt::fixed_shape)",
+        "Platform-specific bugs (Android ARM64 expression template optimization)",
+        "Missing functionality (1D CSV dump support)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is reporting performance and bug-related issues, but there are no signs of abandonment or significant frustration."
+      "summary": "xtensor shows moderate maintenance with recent activity but concerning regressions in the latest 0.27.0 release, affecting both core functionality and platform support."
     },
     "communication": {
       "helpfulness": 8,
@@ -219,20 +221,24 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with new contributors and a good level of technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, suggesting a lack of active development or community support.",
-        "A high number of open issues (270) with none closed recently."
+        "No commits in past 6 months despite last commit being recent (2026-01-09)",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "436 open issues with no recent activity",
+        "Unknown last release date indicates potential versioning issues"
       ],
-      "positive_signals": [
-        "15 commits in the past six months indicate some level of activity.",
-        "10 contributors are actively involved."
-      ],
-      "summary": "The package shows minimal maintenance efforts, with a need for increased community engagement or development to address issues and merge PRs."
+      "positive_signals": [],
+      "summary": "xtensor appears abandoned with no maintenance activity over the past 6 months despite a recent commit timestamp."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T03:51:16.821825+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

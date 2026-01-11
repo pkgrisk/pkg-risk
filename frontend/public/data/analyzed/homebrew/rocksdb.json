@@ -179,13 +179,13 @@
     "readme": {
       "clarity": 8,
       "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 3,
+      "quick_start": 3,
+      "examples": 5,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good introduction to RocksDB, but lacks clear installation and troubleshooting instructions.",
-      "top_issue": "Installation instructions are not provided in the README."
+      "overall": 3,
+      "summary": "Clear purpose statement but almost no practical usage information for getting started with the package.",
+      "top_issue": "No installation instructions whatsoever, especially critical for a Homebrew package where users expect setup guidance"
     },
     "security": {
       "overall_score": 8,
@@ -196,31 +196,37 @@
       "summary": "The code appears to have a good security posture with no major injection risks or secrets exposure, but could benefit from additional input validation and consideration of environment-specific defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "version compatibility issues",
-        "release tagging delays"
+        "Platform-specific compatibility issues (BSD file descriptor limits, GCC 15 build failures)",
+        "Java distribution and packaging concerns (missing platform libs in JAR, version lags)",
+        "Long-standing unresolved issues (BSD issue from 2021 still open)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active release cycle and version management",
+        "Engagement with Java ecosystem and testing coordination"
+      ],
       "abandonment_signals": false,
-      "summary": "The rocksdb community is moderately active with some open issues and version compatibility concerns, but maintainers are responsive and no signs of abandonment are evident."
+      "summary": "RocksDB shows active maintenance with regular releases and maintainer engagement, but has accumulated platform-specific technical debt and Java packaging concerns that require attention."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low rate of issue closure",
-        "low rate of PR merges"
+        "Zero commits in the past 6 months despite having 1370 open issues",
+        "No closed issues in the past 6 months indicating no active issue triage",
+        "No merged PRs in the past 6 months showing no code contributions being accepted",
+        "Zero active contributors in the past 6 months",
+        "High open issue count (1370) with no resolution activity",
+        "Last commit was today but with 0 commits past 6 months indicates this is likely a data inconsistency or automated process"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors"
+        "Last commit timestamp is recent (2026-01-10), though this appears inconsistent with 0 commits past 6 months"
       ],
-      "summary": "The package receives regular commits and has active contributors, but the low issue closure and PR merge rates suggest maintenance efforts are not keeping pace with community engagement."
+      "summary": "RocksDB homebrew package appears abandoned with no maintenance activity (commits, issue resolution, or PR merges) over the past 6 months despite having a large backlog of open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -238,7 +244,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for RocksDB lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T03:56:47.814583+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

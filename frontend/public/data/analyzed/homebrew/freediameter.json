@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 2,
       "quick_start": 1,
-      "examples": 2,
-      "configuration": 2,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and usage examples.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "summary": "Clear architectural overview but completely lacks practical usage information, installation steps, or examples.",
+      "top_issue": "No installation instructions in README (only references external INSTALL file), and zero code examples or quick start guidance"
     },
     "security": {
       "overall_score": 7,
@@ -200,16 +200,20 @@
       "summary": "The freeDiameterd code has some potential security concerns, including format string vulnerabilities and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "build issues with CMake and GCC",
-        "SCTP configuration problems"
+        "Build failures with newer compiler versions (CMake 4, GCC-15)",
+        "SCTP transport layer issues (multiple IP addresses, role configuration)",
+        "Memory/resource leaks (mutex handling)",
+        "Module configuration problems (rt_rewrite, dict loading)",
+        "API design complexity (synchronous requests, AVP processing)",
+        "Compilation issues on modern Linux distributions"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate responsiveness from maintainers and common issues related to build and SCTP configurations."
+      "abandonment_signals": true,
+      "summary": "freediameter shows signs of maintenance challenges with unresolved technical issues, slow response times, and compatibility problems with modern build tools, though some questions suggest ongoing usage."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,20 +226,24 @@
       "summary": "Maintainer responses are clear, helpful, and patient. Technical depth is good, and the communication style is welcoming."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "No merged PRs in the past 6 months"
+        "No commits in past 6 months despite last commit being from October 2025",
+        "22 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing no development activity",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "Recent commit activity",
-        "Multiple contributors active in the past 6 months"
-      ],
-      "summary": "The package shows signs of active maintenance with recent commits and multiple contributors, but there are concerns about unresolved issues and lack of PR merges."
+      "positive_signals": [],
+      "summary": "The freediameter project appears abandoned with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T03:46:12.242736+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

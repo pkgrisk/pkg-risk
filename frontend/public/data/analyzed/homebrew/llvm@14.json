@@ -176,27 +176,33 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 4,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 3,
+      "examples": 1,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a good introduction to the LLVM project, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and quick start example"
+      "summary": "Clear project overview but lacks practical usage guidance, with installation delegated to external docs and no quick-start examples.",
+      "top_issue": "No concrete quick-start examples showing how to actually use LLVM tools (compile a program, run optimizer, etc.) - only links to external documentation"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "warnings and errors",
-        "optimization issues"
+        "Compiler crashes and segmentation faults",
+        "Assertion failures in frontend code",
+        "Regressions across clang versions",
+        "False warnings in clangd diagnostics"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active fuzzing and regression detection",
+        "Cross-compiler collaboration (GCC bug reports)",
+        "Clear documentation via Compiler Explorer links"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting and discussing technical issues, with maintainers responding promptly to address concerns."
+      "summary": "LLVM maintains healthy community engagement with active issue triage, but faces challenges with compiler stability and tool reliability that create moderate user frustration."
     },
     "communication": {
       "helpfulness": 8,
@@ -212,16 +218,19 @@
       "summary": "The maintainer's responses are generally helpful and technically sound, but could benefit from clearer explanations and a more welcoming tone for new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (1000)",
-        "Large number of contributors active in the past 6 months (334)",
-        "Recent last commit (2026-01-02) and last release (2025-12-16)",
-        "Significant number of merged PRs in the past 6 months (274)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-11)",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months indicating no development activity",
+        "No closed issues in past 6 months despite 33,961 open issues",
+        "Extremely high number of open issues (33,961) with no triage or closure"
       ],
-      "summary": "The llvm package is actively maintained with a high volume of commits, contributors, and recent releases."
+      "positive_signals": [
+        "Recent commit timestamp suggests repository exists and is accessible"
+      ],
+      "summary": "Package appears stale with no active maintenance over 6 months despite massive backlog of open issues and zero contributor engagement."
     },
     "changelog": null,
     "governance": {
@@ -231,7 +240,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for llvm@14 lacks a clear succession plan and decision-making process, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T03:45:04.968531+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
