@@ -168,13 +168,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
+      "quick_start": 4,
+      "examples": 5,
       "configuration": 7,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides clear installation instructions and some examples, but lacks a quick start guide and troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation and quick start example"
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Well-structured build and installation documentation, but lacks inline usage examples and troubleshooting guidance.",
+      "top_issue": "No quick start code example showing how to connect to an XMPP server or send a basic message"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,19 @@
       "summary": "The libstrophe code has some security concerns, including potential XML injection attacks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Build failures with C23 rules",
-        "Blocking I/O in xmpp_connect_client"
+        "Blocking I/O in connection functions prevents async/event-loop usage",
+        "Windows/cross-compilation compatibility issues",
+        "Missing runtime configuration options (connect_timeout)",
+        "API limitations (cannot distinguish auth failures from connection failures)",
+        "Entity encoding issues with libxml2 backend"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of abandonment or significant praise."
+      "summary": "libstrophe shows moderate maintenance activity with unresolved architectural issues around blocking I/O and API limitations, plus recent Windows compatibility problems, but no signs of abandonment."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,20 +226,24 @@
       "summary": "The maintainer responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with the contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in past 6 months despite last commit being recent (2025-12-20)",
+        "25 open issues with no recent resolution activity",
+        "No closed issues in past 6 months indicating stalled maintenance",
+        "No merged PRs in past 6 months suggests no active development or review",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date indicates incomplete metadata"
       ],
-      "positive_signals": [
-        "Recent commit activity within the last year",
-        "Regular issue reporting and some resolution"
-      ],
-      "summary": "The package shows signs of regular maintenance but faces challenges with unresolved issues."
+      "positive_signals": [],
+      "summary": "libstrophe appears abandoned with no maintenance activity for at least 6 months despite recent commit timestamp anomaly."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T04:02:41.955064+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

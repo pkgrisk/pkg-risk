@@ -165,7 +165,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 7,
+      "installation": 4,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 4,
+      "summary": "Clear concept but severely lacks practical usage examples and has incomplete installation instructions.",
+      "top_issue": "No quick start example showing how to actually use the server after compilation - users won't know how to connect or run basic commands"
+    },
     "security": {
       "overall_score": 5,
       "injection_risks": [
@@ -190,18 +200,22 @@
       "summary": "The code has some security concerns, including potential buffer overflows and command injection risks, but no critical secrets or sensitive information exposure was found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "compilation errors",
-        "bug reports"
+        "Compilation errors and missing dependencies (ev.h, leveldb/c.h)",
+        "Memory/buffer management issues causing segfaults and livelocks",
+        "Incomplete Redis command implementation",
+        "Encoding bugs with certain operations (sadd)",
+        "Threading issues causing crashes"
       ],
       "praise_themes": [
-        "enhancement suggestions"
+        "Project concept was well-received",
+        "Useful as a Redis replacement for leveldb-backed storage"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some ongoing issues and enhancement requests, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project is severely abandoned with critical unresolved bugs dating back 10+ years, no maintainer engagement, missing compilation dependencies, and core functionality issues that prevent basic usage."
     },
     "communication": {
       "helpfulness": 7,
@@ -214,20 +228,25 @@
       "summary": "Maintainer responses are generally clear and helpful, though there is room for more technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and no recent activity"
+        "No commits in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No closed issues in the past 6 months",
+        "No active contributors in the past 6 months",
+        "5 open issues with no activity",
+        "Last commit was over 7 months ago",
+        "No releases tracked"
       ],
-      "positive_signals": [
-        "Contributors active in the past six months",
-        "Recent open PRs and merged PRs (though none in the last six months)"
-      ],
-      "summary": "The package shows minimal maintenance with some contributor activity but lacks recent commits and issue resolution."
+      "positive_signals": [],
+      "summary": "redis-leveldb shows clear signs of abandonment with zero development activity for over 6 months and unresolved open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T04:01:28.556564+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

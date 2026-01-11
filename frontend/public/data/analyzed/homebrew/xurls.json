@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 6,
-      "summary": "The documentation is clear and concise, but lacks comprehensive installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of configuration documentation and troubleshooting section"
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and quick start with working code examples, but lacks troubleshooting guidance and detailed configuration options.",
+      "top_issue": "No troubleshooting section or error handling examples for common issues like malformed URLs or edge cases"
     },
     "security": {
       "overall_score": 7,
@@ -219,16 +219,18 @@
       "summary": "The code has some security concerns, including potential SSRF attacks and denial-of-service vulnerabilities, but overall it appears to be well-structured and follows best practices for Go development."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "URL parsing issues",
-        "Email address detection"
+        "URL parsing edge cases (double quotes, trailing colons, special characters)",
+        "Incorrect handling of URL fragments and special characters in relaxed mode",
+        "Unwanted email address extraction in relaxed mode",
+        "Character matching too permissive (CJK characters, whitespace)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but the maintainers are responsive in closing them. The project faces consistent URL parsing challenges."
+      "summary": "The xurls project shows moderate health with consistent bug reports on URL parsing edge cases, responsive maintenance that addresses issues, but no active community engagement or feature requests being championed."
     },
     "communication": {
       "helpfulness": 7,
@@ -241,20 +243,26 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of community contribution or approval.",
-        "Last release was over five months ago."
+        "No commits in past 6 months despite last commit being recent (2025-08-31)",
+        "No active contributors in past 6 months",
+        "Open issues present with no recent resolution activity",
+        "No merged PRs in past 6 months indicating no active development",
+        "Unknown last release date suggests poor release cadence tracking"
       ],
       "positive_signals": [
-        "Commits have been made within the last six months.",
-        "There is one active contributor."
+        "Repository exists and has some community engagement (2 open issues)",
+        "Recent commit history available before the 6-month window"
       ],
-      "summary": "The package shows minimal maintenance with recent commits but lacks merged PRs and has not had a new release in several months."
+      "summary": "This package appears stale with no development activity in the past 6 months, unresolved issues, and no active maintainers responding to contributions."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-11T04:01:20.891960+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
