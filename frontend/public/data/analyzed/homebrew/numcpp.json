@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 9,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is clear and provides many examples, but installation instructions are not directly available in the README and troubleshooting information is lacking.",
-      "top_issue": "Lack of direct installation instructions and troubleshooting information in the README"
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and quick-start guide with strong NumPy-to-NumCpp comparisons, but lacks troubleshooting guidance and configuration details.",
+      "top_issue": "No troubleshooting section for common compilation issues, dependency problems, or platform-specific gotchas typical of header-only C++ libraries"
     },
     "security": {
       "overall_score": 7,
@@ -195,20 +195,22 @@
       "summary": "The NumCpp library appears to be generally secure, but lacks robust input validation and error handling mechanisms."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "np.linalg.eigvals support",
-        "CUDA support",
-        "vectorized instructions (AVX512)",
-        "multi-dimensional array operations"
+        "Missing NumPy compatibility features (expand_dims, stride_tricks, eigvals, FFT)",
+        "Limited multi-dimensional array support (max 2D vs NumPy's N-dimensional)",
+        "Performance issues with large matrix operations (lstsq/SVD)",
+        "Data loading bugs (nc::load shape parsing)",
+        "Linear algebra function bugs (pinv with non-square matrices)"
       ],
       "praise_themes": [
-        "enhancement requests for missing numpy functions"
+        "Project recognized as useful NumPy-like tool for C++",
+        "Active feature requests indicating user interest"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively requesting enhancements and improvements, but there are no clear signs of abandonment or severe frustration."
+      "summary": "Moderately healthy community with consistent feature requests and bug reports, but maintainers show slow responsiveness to issues (some open since 2022) and significant gaps remain in NumPy compatibility and multi-dimensional support."
     },
     "communication": {
       "helpfulness": 6,
@@ -224,17 +226,20 @@
       "summary": "The maintainer provides technically sound explanations but could improve clarity and patience, especially with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of open PRs and issues",
-        "Single contributor for the past six months"
+        "No commits in past 6 months despite last commit being recent (2025-12-04)",
+        "6 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release - likely outdated"
       ],
       "positive_signals": [
-        "Recent commit and release within the last month",
-        "Moderate number of commits in the past six months"
+        "Recent commit activity (within last ~40 days) suggests not completely abandoned"
       ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns around low PR engagement and single-contributor reliance."
+      "summary": "This package appears stale with a recent commit but no sustained maintenance activity, open issues, or development over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +249,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:03:20.405075+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

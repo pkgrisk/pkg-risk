@@ -182,14 +182,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
+      "installation": 7,
+      "quick_start": 3,
       "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to get new users started with the package."
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "Well-organized README with good learning resources and installation options, but lacks inline quick-start code examples and troubleshooting guidance.",
+      "top_issue": "No quick-start code example in the README itself - users must click through to external documentation to see any actual Kokkos code"
     },
     "security": {
       "overall_score": 8,
@@ -200,18 +200,17 @@
       "summary": "The Kokkos_Atomics_Desul_Wrapper.hpp file appears to be secure, with no injection risks or secrets found, but could benefit from explicit input validation for pointer arguments."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "compilation segfault with Kokkos::ALL as of Cuda 13.1.0"
+        "Backend-specific failures (ROCm/HIP)",
+        "Compiler compatibility issues (Clang 17 ICE with CUDA)",
+        "Build configuration conflicts (ARM NEON + CUDA)"
       ],
-      "praise_themes": [
-        "changelog for upcoming release",
-        "backend and architecture enhancements"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is facing a specific issue but overall the project seems to be actively developing with new features and improvements."
+      "summary": "Kokkos shows active maintenance with recent issue activity and resolved bugs, though technical complexity around multi-backend support and compiler interactions presents ongoing challenges."
     },
     "communication": {
       "helpfulness": 7,
@@ -224,15 +223,20 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (299)",
-        "A large number of merged PRs in the past six months (271)",
-        "Recent activity with a release on 2026-01-05"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-07)",
+        "592 open issues with zero closed issues in past 6 months indicates stalled issue triage",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No releases in unknown timeframe"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Repository still has recent activity (last commit Jan 7, 2026)",
+        "No open pull requests suggests minimal work in progress"
+      ],
+      "summary": "The kokkos package shows signs of stalled maintenance with a large backlog of open issues and no recent development activity despite a recent commit timestamp."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -243,7 +247,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:04:53.253107+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

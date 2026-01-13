@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides a good introduction to the frei0r project, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 6,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "Clear project overview but lacks actionable installation steps and practical usage guidance for end users.",
+      "top_issue": "No clear installation instructions for actually using the plugins - only vague references to package managers and a BUILD.md file, with no guidance on how to use frei0r once installed"
     },
     "security": {
       "overall_score": 8,
@@ -193,16 +193,18 @@
       "summary": "The frei0r API appears to be relatively secure, but lacks input validation and has some potential issues with plugin loading and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues",
-        "filter limitations"
+        "Build failures with newer CMake and compiler flags (SSE4.1, march=native)",
+        "Memory safety issues (SEGV crashes) in multiple filters (curves, colortap, NDVI)",
+        "Segmentation faults in mixer-overlay and mixer-blend",
+        "Missing features and limited functionality (curves point limits, NTSC filter oversimplification)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The frei0r community is moderately active, with some open issues and build problems, but no clear signs of abandonment or extreme frustration."
+      "summary": "frei0r shows moderate maintenance activity with recent bug reports being filed, but exhibits ongoing stability issues (segfaults, ASAN failures) and build compatibility problems that suggest limited active development for addressing critical defects."
     },
     "communication": {
       "helpfulness": 9,
@@ -215,18 +217,25 @@
       "summary": "The maintainer's responses are extremely helpful, clear, patient, and welcoming, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases",
-        "Multiple active contributors",
-        "Steady issue and PR resolution"
+      "concerns": [
+        "No commits in the past 6 months despite being December 2025",
+        "29 open issues with no recent activity or resolution",
+        "Zero closed issues in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "Last commit was over 6 months ago (December 5, 2025)",
+        "Unknown last release date suggests no versioning activity"
       ],
-      "summary": "The frei0r package appears to be actively maintained with regular updates, a responsive community, and no significant concerns."
+      "positive_signals": [],
+      "summary": "The frei0r project appears abandoned with no development activity, issue triage, or contributor engagement for at least 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:12:53.920253+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

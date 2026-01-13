@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 4,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally well-structured and informative, but lacks clear configuration guidance and troubleshooting resources.",
-      "top_issue": "Lack of comprehensive configuration documentation and troubleshooting guides"
+      "overall": 5,
+      "summary": "Excellent high-level overview with clear installation instructions, but lacks concrete usage examples and configuration guidance in the main README.",
+      "top_issue": "No quick start code example in main README - users must navigate to language-specific READMEs to see any actual usage code"
     },
     "security": {
       "overall_score": 6,
@@ -215,16 +215,21 @@
       "summary": "The mcap package has several security concerns, including command injection vulnerabilities and potential error exposure issues, but no hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "memory usage",
-        "protobuf schema issues"
+        "Memory management issues with large unordered MCAP files",
+        "Data loss/corruption in filtering operations (mcap filter breaking Foxglove scripts)",
+        "String/tuple handling bugs in Python iterator",
+        "Limited streaming support in Rust implementation"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active feature development across multiple language bindings (Rust, Python, CLI)",
+        "Responsive issue closure with fixes implemented"
+      ],
       "abandonment_signals": false,
-      "summary": "The mcap community is actively addressing technical issues, with maintainers responding to and resolving bugs and feature requests in a timely manner."
+      "summary": "The mcap project shows moderate health with active maintenance and feature development, but users face real performance and correctness issues that suggest the codebase needs attention to robustness in production scenarios."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,21 +242,25 @@
       "summary": "The maintainer responses are generally helpful, clear, and technically sound, with a good communication style, but may benefit from slightly more welcoming tone towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months despite last commit being recent (suggests stale data or inactive development)",
+        "84 open issues with no closures in past 6 months indicates unaddressed problems",
+        "No merged PRs in past 6 months shows no active code review or contributions",
+        "Zero active contributors in past 6 months confirms lack of maintenance activity",
+        "Unknown last release date suggests release process has stalled"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many active contributors",
-        "high number of merged PRs"
+        "Recent commit timestamp (2026-01-13) may indicate occasional activity, though no commits in 6-month window contradicts this"
       ],
-      "summary": "The mcap package appears to be actively maintained with frequent updates, a recent release, and a large number of active contributors."
+      "summary": "The mcap package appears abandoned with zero maintenance activity over the past 6 months, 84 unresolved issues, and no active contributors despite a recent commit timestamp."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:13:11.817744+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

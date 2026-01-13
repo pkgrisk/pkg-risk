@@ -167,15 +167,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 8,
       "configuration": 7,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is clear and provides a good introduction to the package, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Well-structured README with clear purpose, basic usage, and integration guides, but lacks troubleshooting content.",
+      "top_issue": "No troubleshooting section for common problems like build failures, incompatible binaries, or debugging information requirements"
     },
     "security": {
       "overall_score": 7,
@@ -204,14 +204,20 @@
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "DWARF compatibility issues",
-        "coverage reporting inaccuracies"
+        "macOS/DWARF debugging format compatibility issues",
+        "Coverage accuracy problems (false negatives on closing braces, exception lines)",
+        "Missing compiled release assets",
+        "Lack of architecture support (SPARC)",
+        "Long-standing issues without resolution"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The kcov community is moderately active, with some users experiencing frustration due to compatibility and coverage reporting issues, but the maintainer is responsive to a moderate degree."
+      "praise_themes": [
+        "Tool works well on Linux",
+        "Users appreciate the core functionality"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows signs of maintenance neglect with slow issue resolution, platform-specific bugs lingering for months, and missing release artifacts, though core Linux functionality remains valued."
     },
     "communication": {
       "helpfulness": 9,
@@ -224,19 +230,20 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically sound, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low number of closed issues",
-        "large number of open issues",
-        "infrequent releases"
+        "No commits in past 6 months despite last commit being from January 2026",
+        "88 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date suggests poor release cadence"
       ],
       "positive_signals": [
-        "recent commits",
-        "active contributors",
-        "merged PRs in the past 6 months"
+        "Repository still exists and has a recent commit (January 2026)"
       ],
-      "summary": "The kcov package appears to be receiving minimal maintenance with some recent activity, but concerns around issue closure and release frequency remain."
+      "summary": "kcov is stale with no maintenance activity for at least 6 months, evidenced by zero commits, PRs, closed issues, and active contributors despite a backlog of 88 open issues."
     },
     "changelog": null,
     "governance": {
@@ -246,7 +253,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for kcov lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:06:53.228017+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

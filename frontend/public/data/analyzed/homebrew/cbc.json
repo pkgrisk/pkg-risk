@@ -173,13 +173,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides clear and detailed installation instructions, but lacks concise examples and troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "Excellent installation documentation across multiple platforms, but severely lacking in usage examples, quick start guide, configuration details, and troubleshooting.",
+      "top_issue": "No examples showing how to actually use Cbc to solve optimization problems - neither as a library nor as a stand-alone executable"
     },
     "security": {
       "overall_score": 8,
@@ -192,14 +192,18 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "crashes and assertion failures",
-        "preprocess issues with infeasibility detection"
+        "Frequent crashes with SIGABRT and SIGSEGV signals",
+        "Assertion failures in core solver components (CoinIndexedVector, CbcNode, ClpNonLinearCost)",
+        "Incorrect solutions that violate constraints despite claiming optimality",
+        "Preprocessing creates infeasibility in feasible models",
+        "Build/installation issues on modern systems (Ubuntu 24.04)",
+        "Cut generation crashes (CglCliqueStrengthening)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration due to recurring crashes, preprocess issues, and infeasibility detection problems, with maintainers responding moderately to address these concerns."
+      "abandonment_signals": true,
+      "summary": "CBC shows signs of stagnation with critical stability issues, unresolved crashes, correctness bugs, and minimal maintainer engagement (last release Aug 2024, unanswered feature requests)."
     },
     "communication": {
       "helpfulness": 9,
@@ -215,20 +219,24 @@
       "summary": "The maintainer provides detailed and helpful responses, but could improve in terms of clarity and patience for users with varying skill levels."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low rate of issue closure",
-        "infrequent releases"
+        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "159 open issues with no resolution activity",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months showing stalled development",
+        "Unknown last release date suggests no recent versions"
       ],
-      "positive_signals": [
-        "recent commits",
-        "active contributors"
-      ],
-      "summary": "The package receives occasional updates and has active contributors, but the low issue closure rate and infrequent releases suggest minimal maintenance."
+      "positive_signals": [],
+      "summary": "The cbc package appears abandoned with accumulated open issues, zero maintenance activity over 6 months, and no active contributors despite a recent timestamp that may reflect repository metadata rather than actual maintenance."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:09:41.647560+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

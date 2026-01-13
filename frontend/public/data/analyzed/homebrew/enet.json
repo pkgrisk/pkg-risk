@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 2,
-      "installation": 6,
-      "quick_start": 4,
+      "installation": 5,
+      "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "The README is very brief and lacks essential information, making it difficult for new users to understand and use the package.",
-      "top_issue": "Lack of clear and complete documentation within the README itself, instead redirecting users to an external website."
+      "summary": "Minimal README that delegates to external homepage without explaining what the package does or how to use it.",
+      "top_issue": "No description of what ENet is or does - users must visit external site to understand the package's purpose"
     },
     "security": {
       "overall_score": 8,
@@ -193,16 +193,20 @@
       "summary": "The provided code appears to be generally secure, but lacks comprehensive input validation and error handling mechanisms."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "udp flooding",
-        "ipv6 support"
+        "Security vulnerabilities and DDoS susceptibility (UDP flooding, malicious packets)",
+        "Memory leaks and crashes (enet_free crashes, 32-48 byte leaks)",
+        "Missing IPv6 support despite community requests",
+        "Incomplete/buggy disconnect event handling (peer data nulled)",
+        "Control flow issues in enet_host_service (timing, low RTO problems)",
+        "Debugging difficulties (timeout during code pauses)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged with common issues around security and functionality, but there are no clear signs of frustration or abandonment."
+      "abandonment_signals": true,
+      "summary": "ENet shows signs of stagnation with critical security concerns unaddressed, memory management bugs unresolved, and maintainer engagement appearing minimal despite open issues spanning over 18 months."
     },
     "communication": {
       "helpfulness": 6,
@@ -218,20 +222,26 @@
       "summary": "The maintainer's responses are generally technical and provide some useful information, but the lack of patience and welcoming attitude could deter new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Low number of commits and closed issues"
+        "No commits in past 6 months despite last commit being from July 2025",
+        "96 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicates no active issue management",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process is not maintained"
       ],
       "positive_signals": [
-        "One contributor has been active in the past six months",
-        "Recent commit activity"
+        "Project has some historical activity (last commit exists from July 2025)"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent contributions."
+      "summary": "The enet package shows clear signs of stagnation with no maintenance activity over the past 6 months, accumulating open issues without resolution."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:10:46.280808+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

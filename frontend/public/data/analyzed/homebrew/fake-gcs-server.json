@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 7,
       "configuration": 6,
-      "troubleshooting": 2,
+      "troubleshooting": 5,
       "overall": 7,
-      "summary": "The documentation is clear and provides a good quick start, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting information"
+      "summary": "Clear and well-structured documentation with excellent Docker examples, but lacks comprehensive configuration reference and troubleshooting guidance.",
+      "top_issue": "Configuration options are mentioned via `-help` flag but not documented inline, forcing users to run the container just to discover available options"
     },
     "security": {
       "overall_score": 7,
@@ -223,14 +223,15 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Object metadata not preserved",
-        "storage.create function deprecated - storage.createFrom() hangs"
+        "Core functionality broken - object metadata not preserved on upload/retrieve",
+        "Incompatibility with modern Google Cloud Storage libraries (createFrom() hanging)",
+        "Data loss issue affecting production use cases"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant issues with object metadata preservation and deprecation of functions, indicating a negative sentiment but no clear signals of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with critical data loss bugs remaining unresolved and no maintainer engagement on issues spanning 20+ months."
     },
     "communication": {
       "helpfulness": 7,
@@ -243,20 +244,23 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with repeated questions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (95)",
-        "Low number of merged PRs in the past six months compared to open PRs"
+        "No commits in past 6 months despite last commit being very recent (2026-01-13), indicating the timestamp may be inaccurate or repository is stale",
+        "139 open issues with zero closed in past 6 months suggests no active triage or maintenance",
+        "Zero contributors active in past 6 months",
+        "No merged PRs in past 6 months indicates no active development or review",
+        "Unknown last release date suggests release process has been abandoned"
       ],
-      "positive_signals": [
-        "Recent commit within the last year",
-        "Multiple contributors active in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges due to a high number of unresolved issues."
+      "positive_signals": [],
+      "summary": "fake-gcs-server shows clear signs of abandonment with no maintenance activity over 6 months despite a large backlog of open issues and no active contributors."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:13:33.264744+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

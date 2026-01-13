@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 7,
       "configuration": 6,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, with good installation instructions and examples, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Excellent clarity and quick start with a clear example, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like build failures, linking errors, or SSL certificate problems"
     },
     "security": {
       "overall_score": 7,
@@ -208,15 +208,17 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Session::PrepareXxx() methods don't fully reset HTTP method state",
-        "Can't cancel an async request v1.12.0 ... v1.14.1"
+        "Critical bugs in core functionality (HTTP method state not resetting, async request cancellation broken)",
+        "Documentation site compromised/redirecting to scam websites",
+        "Thread pool issues (deadlocks, max_threads parameter not working)",
+        "Long-standing unresolved issues (websocket request from 2020, pkg-config support from 2024)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant issues with the library, particularly around session management and asynchronous requests, indicating a need for more active maintenance."
+      "abandonment_signals": true,
+      "summary": "Community health is poor: critical unfixed bugs, compromised documentation, slow/no maintainer response, and multi-year old feature requests with no progress indicate project stagnation or abandonment."
     },
     "communication": {
       "helpfulness": 6,
@@ -229,15 +231,17 @@
       "summary": "The maintainer is generally helpful and patient, with clear explanations. However, there are occasional delays in resolving issues due to external factors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months",
-        "A significant number of merged PRs indicating ongoing development"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2025-12-15)",
+        "79 open issues with zero closed in past 6 months indicates unresponsive maintainers",
+        "No merged PRs in past 6 months shows inactive development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release suggests release process has stalled"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "The cpr package appears abandoned with no maintenance activity over the past 6 months despite a recent commit timestamp, a large backlog of unaddressed issues, and no contributor engagement."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +251,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:05:22.320095+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
