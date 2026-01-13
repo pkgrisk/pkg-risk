@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 8,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 9,
       "examples": 9,
-      "configuration": 9,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and concise information on the package's functionality, installation, and usage, but lacks sufficient troubleshooting documentation.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "configuration": 8,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Excellent documentation with clear examples and comprehensive advanced usage, but lacks troubleshooting guidance and the unit test example is truncated.",
+      "top_issue": "No troubleshooting section for common errors (e.g., import failures, invalid policy formats, IAM definition updates) and the unit test example at the end is incomplete/cut off"
     },
     "security": {
       "overall_score": 7,
@@ -204,16 +204,19 @@
       "summary": "The code has some security concerns, including potential injection risks and input validation issues, but no critical findings were identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "version availability",
-        "compatibility issues with Python 3.12"
+        "Python 3.12 compatibility broken due to removed pkg_resources",
+        "Release pipeline failures blocking PyPI publication",
+        "Incorrect IAM policy validation (false positives)",
+        "Data quality issues in IAM definitions (duplicate/conflicting entries)",
+        "Invalid JSON policy files not properly detected"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some frustration due to version availability and compatibility issues, but the project seems active without signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Parliament shows signs of neglect with critical unfixed bugs, a stalled v1.64 release stuck for ~9 months, and no maintainer engagement despite multiple high-priority issues."
     },
     "communication": {
       "helpfulness": 7,
@@ -229,20 +232,27 @@
       "summary": "The maintainer's responses are generally adequate but could be more welcoming and detailed in explaining decisions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "A high number of open issues (42) suggests potential unresolved problems."
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "49 open issues with no triage activity",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "10 contributors active in the past six months, which shows some level of community involvement and support.",
-        "Regular issue reporting and PR activity, even if not resolved or merged frequently."
+        "Repository still exists and is accessible",
+        "Last commit relatively recent (2026-01-07)"
       ],
-      "summary": "The package is minimally maintained with occasional contributions but lacks recent updates and has a high number of unresolved issues."
+      "summary": "Parliament is stale with no maintenance activity for 6+ months despite having 49 open issues and no recent releases."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:01:38.996918+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
