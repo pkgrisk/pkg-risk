@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 9,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is comprehensive and detailed, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+      "examples": 1,
+      "configuration": 6,
+      "troubleshooting": 5,
+      "overall": 5,
+      "summary": "Well-structured documentation for a developer tool that explains features and configuration thoroughly but completely lacks usage examples and quick-start guidance.",
+      "top_issue": "No usage examples or quick-start guide showing how to actually use the language server after installation - users must figure out editor integration entirely on their own"
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,23 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or sensitive information are exposed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Unrecognized command line arguments",
-        "Module path issues with CMake integration"
+        "Parser crashes and memory issues (ASSOCIATE shadowing, OOM)",
+        "Syntax support gaps (RECORD/STRUCTURE statements, semicolon handling)",
+        "Configuration issues (--incrmental_sync typo, CLI argument not applied to highlighting)",
+        "Module resolution with CMake integration",
+        "String literal rendering with custom line lengths",
+        "Character encoding issues with non-English comments"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate frustration due to unresolved issues and some open problems. There are no clear signs of abandonment."
+      "praise_themes": [
+        "Core functionality appreciated ('very awesome', 'very useful software')",
+        "Language server integration desired and used"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is concerning with slow maintainer responsiveness, unresolved crashes spanning years, fundamental syntax support gaps, and accumulating technical debt suggesting possible project abandonment or significant resource constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,18 +237,18 @@
       "summary": "The maintainer responses are clear, helpful, and patient, with a good balance of technical depth and user-friendly explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "No closed issues or releases in the past six months"
+        "No commits in over 3 years (last commit August 2022)",
+        "64 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicates no maintenance",
+        "No merged PRs in past 6 months shows no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release suggests no recent versions"
       ],
-      "positive_signals": [
-        "10 contributors active in the past six months",
-        "Recent open issues and PRs indicate some level of activity"
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The fortran-language-server project is abandoned with no development activity, issue resolution, or contributor engagement for over 3 years."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +259,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:03:25.187456+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

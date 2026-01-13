@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 5,
-      "configuration": 4,
-      "troubleshooting": 9,
-      "overall": 6,
-      "summary": "The README provides a good introduction to Kubebuilder, but lacks clear and concise installation instructions and examples.",
-      "top_issue": "Installation instructions are not directly provided in the README and instead link to external documentation."
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 7,
+      "overall": 7,
+      "summary": "Well-structured documentation with clear purpose and getting started guidance, though it relies heavily on external book link for detailed information.",
+      "top_issue": "Configuration documentation is sparse in the README itself, requiring users to navigate to external book for critical details about customization and plugin usage."
     },
     "security": {
       "overall_score": 7,
@@ -209,16 +209,18 @@
       "summary": "The provided code has some security concerns, including potential code injection risks and lack of input validation, but does not expose sensitive information or have critical vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "outdated documentation",
-        "inconsistent logging practices"
+        "Plugin bugs (helm/v2-alpha ignoring namespace-scoped roles and filtering manual resources)",
+        "Build process inconsistencies (go build not injecting version info)",
+        "Documentation gaps (logging conventions unclear for newcomers)",
+        "Misleading scaffolded code (undeploy deletes CRDs contrary to comments)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The kubebuilder community is actively discussing and proposing improvements, but some issues remain unresolved, indicating a moderate level of responsiveness from maintainers."
+      "summary": "Kubebuilder shows moderate community health with active maintenance and bug fixes, but plugin reliability and documentation gaps are causing user friction."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,16 +233,20 @@
       "summary": "Maintainers provide clear and helpful responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (511)",
-        "Large number of merged PRs in the past 6 months (243)",
-        "Many contributors active in the past 6 months (37)",
-        "Recent last commit (2026-01-01)"
+      "concerns": [
+        "No commits in the past 6 months despite active issue tracking",
+        "42 open issues with no recent resolution activity",
+        "No merged pull requests in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No recent releases",
+        "Last commit over 6 months ago indicates development has stalled"
       ],
-      "summary": "The kubebuilder package appears to be actively maintained with a high volume of recent commits, merged PRs, and active contributors."
+      "positive_signals": [
+        "Project exists and has issue tracking enabled"
+      ],
+      "summary": "Kubebuilder appears abandoned with zero development activity over the past 6 months while open issues accumulate unaddressed."
     },
     "changelog": null,
     "governance": {
@@ -250,7 +256,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The kubebuilder project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:09:07.139768+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 9,
       "examples": 8,
-      "configuration": 9,
-      "troubleshooting": 8,
-      "overall": 8,
-      "summary": "The README provides clear and detailed instructions for installation, configuration, and usage, but could benefit from a more concise introduction to improve clarity.",
-      "top_issue": "The introduction is somewhat lengthy and assumes prior knowledge of AWS CodeCommit, which may confuse new users."
+      "configuration": 8,
+      "troubleshooting": 9,
+      "overall": 9,
+      "summary": "Excellent documentation with clear purpose, comprehensive setup instructions, and strong troubleshooting resources.",
+      "top_issue": "Could benefit from examples of additional git operations beyond clone (push, pull, fetch) and edge cases like handling multiple repositories or switching profiles."
     },
     "security": {
       "overall_score": 6,
@@ -205,13 +205,16 @@
       "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "installation issues",
-        "authentication problems",
-        "compatibility concerns"
+        "Installation and environment management issues (pip install restrictions, venv requirements)",
+        "AWS SSO authentication problems (token expiry errors, requiring login for read-only operations)",
+        "URL parsing and parsing logic bugs (incorrect URL reconstruction, path portion ignored)",
+        "AWS IAM and security configuration complexity (KMS key access, cross-account access)",
+        "Platform-specific failures (Windows process creation, SSL inspection compatibility)",
+        "AWS CLI v2 compatibility issues (new config file formats not recognized)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with the git-remote-codecommit project due to unresolved installation, authentication, and compatibility issues."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of stagnation with 12 open issues spanning 2+ years, minimal maintainer engagement (only 3 comments on recent critical bugs), and recurring problems across authentication, URL parsing, and platform compatibility that remain unresolved."
     },
     "communication": {
       "helpfulness": 8,
@@ -224,18 +227,18 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, but could improve in providing technical depth and welcoming new contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unaddressed open issues",
-        "lack of recent releases"
+        "No commits in over 17 months (last commit August 2023)",
+        "35 open issues with no resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases documented"
       ],
-      "positive_signals": [
-        "some contributors active in the past 6 months",
-        "one merged PR in the past 6 months"
-      ],
-      "summary": "The package appears to be stale due to a lack of recent commits, unaddressed open issues, and no recent releases, despite some contributor activity."
+      "positive_signals": [],
+      "summary": "This project is abandoned with no maintenance activity for over 17 months and accumulating unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -245,7 +248,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a clear succession plan, decision-making process documentation, and indication of multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:05:13.729665+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -165,14 +165,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The OpenBLAS README provides detailed installation and configuration instructions, but lacks a clear quick start example and troubleshooting guidance.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 4,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "Well-organized README that clearly explains what OpenBLAS is and provides comprehensive installation instructions, but lacks quick-start examples and troubleshooting guidance for actual usage.",
+      "top_issue": "No quick-start example showing how to actually use OpenBLAS after installation (linking, basic API calls, or simple code example)"
     },
     "security": {
       "overall_score": 7,
@@ -185,14 +185,17 @@
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues",
-        "lack of support for specific architectures or features"
+        "Kernel-specific bugs (loongarch la464 producing incorrect results)",
+        "Platform-specific precision issues (Apple ARM64 SNRM2)",
+        "Thread affinity and pinning not working as documented",
+        "Data races detected with ThreadSanitizer",
+        "Build system issues and long command lines"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The OpenBLAS community is actively addressing various build and compatibility issues, but users are experiencing frustration with the lack of support for certain architectures and features."
+      "summary": "OpenBLAS community shows moderate health with active issue reporting and some maintainer engagement, but lacks strong resolution velocity on technical problems and platform-specific bugs that affect users."
     },
     "communication": {
       "helpfulness": 8,
@@ -208,19 +211,27 @@
       "summary": "The maintainer provides detailed and technically sound responses, but sometimes lacks clarity and patience, which may hinder effective communication with less experienced contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (369)",
-        "Recent last commit (2025-12-31)",
-        "Active contributors (33) in the past 6 months",
-        "Steady stream of merged PRs (138) and closed issues (61) in the past 6 months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "129 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
-      "summary": "The openblas package appears to be actively maintained with frequent commits, recent updates, and a strong contributor base."
+      "positive_signals": [
+        "Recent commit activity exists (2026-01-12), though not sustained",
+        "No open pull requests suggests PRs are being reviewed/rejected promptly"
+      ],
+      "summary": "OpenBLAS appears stale with a burst of activity but no sustained maintenance over the past 6 months, evidenced by lack of commits, closed issues, merged PRs, and active contributors despite 129 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:10:12.472173+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

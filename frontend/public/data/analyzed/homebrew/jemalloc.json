@@ -161,14 +161,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 4,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation provides a good overview of the package's purpose and history, but lacks clear installation instructions, examples, and troubleshooting guidance.",
-      "top_issue": "Lack of quick start example and insufficient documentation for common use cases"
+      "overall": 3,
+      "summary": "Clear purpose statement but lacks any concrete usage examples or inline installation instructions.",
+      "top_issue": "No quick start or usage examples showing how to actually use jemalloc in an application"
     },
     "security": {
       "overall_score": 8,
@@ -179,16 +179,18 @@
       "summary": "The code appears to be generally secure, but some input validation and configuration issues were identified that could potentially lead to problems in certain scenarios."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "performance issues",
-        "segment faults"
+        "Memory fragmentation and RSS discrepancies",
+        "Performance degradation under specific workloads (tcache bin overflow)",
+        "Potential out-of-bounds and segfault issues",
+        "Lack of clear documentation for advanced features (percpu_arena)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The jemalloc community is moderately active, with some users experiencing performance and stability issues, but maintainers are responsive to reported problems."
+      "summary": "jemalloc shows moderate community health with active bug reports and some maintenance activity, but users express frustration around memory profiling accuracy, performance tuning, and documentation gaps with minimal praise or positive engagement."
     },
     "communication": {
       "helpfulness": 9,
@@ -204,21 +206,25 @@
       "summary": "The maintainer's responses are generally helpful, clear, and technically sound, but could benefit from more patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "large number of open issues (281) with no recent closures",
-        "infrequent release updates (last release over 3 years ago)"
+        "No commits in past 6 months despite repository being active",
+        "374 open issues with no recent closures",
+        "No merged PRs in past 6 months indicating stalled development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests outdated versioning"
       ],
       "positive_signals": [
-        "recently active contributors (10 in the past 6 months)",
-        "some merged PRs in the recent past (2 in the past 6 months)"
+        "Last commit exists (June 2025), indicating repository is not completely deleted"
       ],
-      "summary": "The jemalloc package appears to be stale, with a lack of recent commits and issue closures, despite having some recently active contributors."
+      "summary": "jemalloc is effectively abandoned with no maintenance activity for 6+ months and a growing backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:06:28.684414+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

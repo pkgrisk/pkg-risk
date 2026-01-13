@@ -195,15 +195,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 10,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and easy to follow, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "examples": 8,
+      "configuration": 9,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent comprehensive documentation with clear installation and usage examples, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section - common errors, compiler issues, or integration problems are not documented"
     },
     "security": {
       "overall_score": 8,
@@ -216,16 +216,21 @@
       "summary": "The provided code snippet from the toml++ package appears to be secure with no major injection risks or secrets exposure, but could benefit from additional input validation and error handling measures."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "linker errors and compilation issues",
-        "outdated releases"
+        "Compilation errors across multiple C++ standards (C++20, C++23) and compilers (g++, MSVC, clang, GCC)",
+        "Long delay since last release (v3.4.0 from October 2023, now January 2026 - 15+ months)",
+        "Linker errors with specific configurations (static linking, exceptions disabled, vcpkg)",
+        "Repository size bloat for submodule usage"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to ongoing compilation issues and the lack of recent releases, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Library is actively maintained despite infrequent releases",
+        "Users recognize value as a submodule despite size concerns"
+      ],
+      "abandonment_signals": true,
+      "summary": "Moderate community health with concerning maintenance gaps: unresolved compiler bugs, significant release delays (15+ months), and slow issue responsiveness despite active development suggest the project may be understaffed or losing focus."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,17 +243,20 @@
       "summary": "The maintainer provides clear, helpful, and technically deep responses. They are patient with repeated questions and maintain a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Last commit is over a year old",
-        "Few open PRs and issues"
+        "No commits in past 6 months despite last commit being recent (2025-12-24)",
+        "No activity on open issues - 21 issues remain unaddressed",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "Recent commits in the past six months",
-        "Regular release cycle with the last one in October 2023"
+        "No open pull requests suggests code is not in flux"
       ],
-      "summary": "The package shows minimal maintenance activity but has recent updates and a regular release schedule."
+      "summary": "The package appears stale with a recent commit but zero subsequent maintenance activity over the past 6 months, including no issue resolution or development work."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -266,7 +274,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:09:29.392941+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

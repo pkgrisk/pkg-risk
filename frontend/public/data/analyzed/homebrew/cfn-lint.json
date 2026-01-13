@@ -168,13 +168,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 9,
-      "troubleshooting": 4,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides clear and concise information about the package, its installation, and usage, but lacks detailed troubleshooting guides.",
-      "top_issue": "Insufficient documentation of common problems and solutions"
+      "summary": "Clear, well-structured README with excellent installation options but lacks troubleshooting guidance and deeper configuration examples.",
+      "top_issue": "No troubleshooting section - common errors, SAM transform issues, or validation failures are not documented"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,18 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but no hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "recursion errors",
-        "flaky behavior in GitHub Actions"
+        "False positives in linting rules (E3601 for valid JSON/YAML)",
+        "Tool flakiness in CI/CD environments (GitHub Actions)",
+        "Runtime errors with specific flags (--non-zero-exit-code recursion)",
+        "Documentation discrepancies with AWS official sources"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The cfn-lint community is experiencing frustration with recurring issues and slow maintainer response, indicating a need for improved support and bug fixes."
+      "summary": "cfn-lint shows moderate community health with active issue tracking but some reliability concerns in production workflows and documentation accuracy gaps that need addressing."
     },
     "communication": {
       "helpfulness": 9,
@@ -223,16 +225,20 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (88 in the past 6 months)",
-        "Recent release (2025-12-18)",
-        "Active contributors (10 in the past 6 months)",
-        "High merge rate of PRs (88 in the past 6 months)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-13)",
+        "95 open issues with no closed issues in past 6 months indicates unaddressed problems",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release date suggests release tracking has ceased",
+        "No pull request activity indicates stalled development pipeline"
       ],
-      "summary": "The cfn-lint package is actively maintained with frequent updates, releases, and a high level of community engagement."
+      "positive_signals": [
+        "Recent commit timestamp suggests repository may have received a final update or automated sync"
+      ],
+      "summary": "cfn-lint appears to be abandoned with no active maintenance despite a recent commit timestamp; accumulating unresolved issues with zero developer activity over 6 months indicates the project is no longer being actively maintained."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -250,7 +256,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a clear succession plan, decision-making process documentation, and indication of multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:12:44.827739+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
