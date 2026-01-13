@@ -174,13 +174,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 6,
+      "quick_start": 7,
       "examples": 9,
-      "configuration": 4,
-      "troubleshooting": 2,
+      "configuration": 6,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides many examples, but lacks a concise quick start section and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting information"
+      "summary": "Well-structured documentation with excellent examples and clear installation, but lacks troubleshooting guidance and assumes familiarity with LLVM tooling concepts.",
+      "top_issue": "No troubleshooting section despite complex toolchain dependencies and potential platform-specific issues with LLVM tools"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,18 @@
       "summary": "The code has some security concerns related to input validation and potential injection attacks, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "panics and bugs in published versions",
-        "inconsistent behavior with rebuilds"
+        "Panic errors with clap argument parsing in v0.4.0 and main branch",
+        "ENOENT errors when executing binutils tools via cargo commands",
+        "Unnecessary rebuilds when running sequential tool commands",
+        "Compatibility issues with newer Rust versions (1.89.0)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues indicating ongoing development challenges but no signs of significant frustration or abandonment."
+      "abandonment_signals": true,
+      "summary": "cargo-binutils shows signs of maintenance issues with unresolved panics affecting core functionality, multiple open bugs, and apparent lack of recent fixes despite ongoing user reports."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,15 +230,19 @@
       "summary": "Responses are generally helpful and clear, showing patience with users but could be more welcoming."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged PRs in the past six months",
-        "Regular issue tracking and resolution"
+      "concerns": [
+        "No commits in past 6 months despite last commit being from September 2025",
+        "16 open issues with no activity",
+        "No closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No recent releases",
+        "Open issues suggest unresolved problems accumulating"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "cargo-binutils is abandoned with no maintenance activity for at least 6 months and accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -247,7 +253,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-structured and clearly marks breaking changes, but lacks migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:25:02.310800+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

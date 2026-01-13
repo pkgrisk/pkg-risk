@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 7,
+      "examples": 1,
+      "configuration": 8,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The documentation is thorough but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to get new users started with the package."
+      "summary": "Clear introduction and installation instructions, but completely lacks quick-start examples or troubleshooting guidance for actual usage.",
+      "top_issue": "No basic usage examples showing how to actually use fonttools or TTX tool after installation"
     },
     "security": {
       "overall_score": 7,
@@ -209,16 +209,19 @@
       "summary": "The fonttools package has some security concerns, including potential arbitrary code execution and command-line argument injection risks, but overall it appears to be well-structured and follows best practices for input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and regressions",
-        "feature implementation issues"
+        "Build and compilation failures (missing libm linkage on Linux)",
+        "Runtime errors in core functionality (ttx dumping tables, decompilation failures)",
+        "Regression bugs introduced in recent releases (subset cmap handling)",
+        "Interoperability issues with other tools (AFDKO feature file extensions)",
+        "Font table parsing issues with edge cases (OS/2 v5, feat table in system fonts)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The fonttools community is actively reporting and discussing issues, with maintainers responding moderately, indicating a relatively healthy project ecosystem."
+      "summary": "fonttools shows moderate community health with recent critical bugs affecting core functionality (table dumping, subsetting), active issue reporting, but mixed quality in releases with regressions and platform-specific build issues that require maintainer attention."
     },
     "communication": {
       "helpfulness": 9,
@@ -234,17 +237,20 @@
       "summary": "The maintainer provides helpful and technically deep responses, but could improve in terms of clarity and patience when dealing with repeated or basic questions."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months despite last commit being recent (2026-01-08)",
+        "No closed issues in past 6 months indicating no active issue resolution",
+        "No merged PRs in past 6 months suggesting no active development",
+        "Zero active contributors in past 6 months",
+        "402 open issues with no recent closure activity"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "multiple active contributors"
+        "Recent commit activity exists (2026-01-08)",
+        "No open pull requests suggests maintainers are not accepting work"
       ],
-      "summary": "The fonttools package appears to be actively maintained with regular updates, a strong contributor base, and a recent release."
+      "summary": "fonttools appears stale with a recent commit but no activity over the past 6 months, zero contributors, and 402 unresolved open issues."
     },
     "changelog": null,
     "governance": {
@@ -254,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for fonttools lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:27:14.313159+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

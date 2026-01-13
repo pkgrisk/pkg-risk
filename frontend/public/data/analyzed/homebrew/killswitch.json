@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 7,
-      "examples": 2,
-      "configuration": 1,
-      "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation is concise but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Insufficient examples and no troubleshooting section"
+      "examples": 6,
+      "configuration": 3,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Clear purpose and basic usage, but lacks configuration options, troubleshooting guidance, and explanation of how the kill switch works.",
+      "top_issue": "No documentation on configuration options, how to specify which VPN to monitor, or what to do when things go wrong"
     },
     "security": {
       "overall_score": 5,
@@ -216,18 +216,23 @@
       "summary": "The killswitch package has several security concerns, including command injection vulnerabilities and lack of input validation, which can be exploited by attackers to gain unauthorized access or disrupt system functionality."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "killswitch not working with certain protocols or configurations",
-        "issues with blocking traffic on specific network interfaces"
+        "VPN IP detection fails on newer macOS versions (Sonoma 14.0+)",
+        "Incompatibility with modern VPN protocols (OpenVPN, WireGuard)",
+        "Traffic blocking issues when VPN disconnects manually",
+        "Configuration complexity and syntax errors in pf rules",
+        "Unreliable behavior across different VPN providers and network setups",
+        "M1/M2 Mac compatibility concerns"
       ],
       "praise_themes": [
-        "user appreciation for the tool's functionality"
+        "Useful utility concept for VPN kill switch functionality",
+        "Appreciation for the tool's existence and basic functionality"
       ],
-      "abandonment_signals": false,
-      "summary": "The community expresses mixed sentiment, with common issues related to compatibility and configuration. Maintainers are moderately responsive."
+      "abandonment_signals": true,
+      "summary": "killswitch shows signs of abandonment with slow/no maintainer response to critical bugs affecting modern macOS and VPN protocols, leaving users frustrated with reliability issues and compatibility problems."
     },
     "communication": {
       "helpfulness": 7,
@@ -243,17 +248,20 @@
       "summary": "The maintainer's responses show some effort to help but could be more clear and patient, particularly with beginners."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs"
+        "No commits in the past 6 months despite last commit being recent (2025-12-17)",
+        "Zero active contributors in the past 6 months",
+        "5 open issues with no resolution activity",
+        "No merged pull requests in the past 6 months",
+        "No closed issues in the past 6 months indicating lack of issue triage",
+        "Unknown last release suggests no versioned releases recently"
       ],
       "positive_signals": [
-        "Contributors active past 6 months",
-        "Recent release"
+        "Recent last commit date indicates the repository exists"
       ],
-      "summary": "The package is minimally maintained with recent activity but has open issues that require attention."
+      "summary": "The killswitch package appears abandoned with no maintenance activity over the past 6 months despite having unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -271,7 +279,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear succession plans, decision-making processes, and paths for contributors to become maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:26:55.679805+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

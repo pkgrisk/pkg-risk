@@ -162,15 +162,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a good introduction to Overmind and its features, but lacks clear troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common problems and solutions"
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent README with clear purpose, comprehensive installation options, and detailed configuration examples, but lacks troubleshooting guidance and the content appears cut off.",
+      "top_issue": "No troubleshooting section for common issues (tmux connection problems, port conflicts, process failures) and the README content appears incomplete (cuts off mid-section at 'Pr')"
     },
     "security": {
       "overall_score": 5,
@@ -199,14 +199,21 @@
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "unexpected termination",
-        "environment variable issues"
+        "Process lifecycle management issues (unclean exits, orphan sockets)",
+        "Environment variable handling inconsistencies (.env overriding CLI vars)",
+        "Signal handling and process termination problems (SIGINT not working properly)",
+        "Socket path length limitations causing startup failures",
+        "Missing CLI flags for features available via env vars",
+        "Lack of documentation for available features (signals option)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The Overmind community is moderately active with a mix of open and closed issues, indicating some frustration but no clear signs of abandonment."
+      "praise_themes": [
+        "Appreciation for the tool's core functionality",
+        "Solves a real need for process management"
+      ],
+      "abandonment_signals": true,
+      "summary": "Overmind has moderate community engagement with recurring issues around process lifecycle management and environment handling, but slow maintainer responsiveness and several long-standing unresolved issues suggest possible maintenance concerns."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,21 +229,24 @@
       "summary": "The maintainer provides clear and technically sound responses, but can be occasionally dismissive or sarcastic, which may deter some contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unaddressed open issues and PRs",
-        "lack of recent releases"
+        "No commits in past 6 months despite last commit being from April 2025",
+        "55 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing lack of development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggesting stalled release cycle"
       ],
-      "positive_signals": [
-        "recently active contributors",
-        "existing open issues and PRs indicate some community engagement"
-      ],
-      "summary": "The overmind package appears to be stale due to a lack of recent commits, releases, and merged PRs, despite having recently active contributors."
+      "positive_signals": [],
+      "summary": "The overmind package appears abandoned with no commits, issue resolution, or contributor activity for at least the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:27:58.501198+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

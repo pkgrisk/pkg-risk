@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 7,
       "troubleshooting": 8,
-      "overall": 7,
-      "summary": "The documentation is generally clear and well-structured, but could benefit from more examples and configuration details.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, installation, and usage examples, though configuration options could be more comprehensive in the README itself.",
+      "top_issue": "Configuration documentation relies heavily on external manual page reference rather than providing common options inline"
     },
     "security": {
       "overall_score": 7,
@@ -190,16 +190,19 @@
       "summary": "The provided setup.py file for flawfinder appears to have a moderate security posture, with no injection risks or hardcoded secrets found, but lacks explicit input validation and may expose some error details."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "open issues with no comments or low engagement",
-        "documentation needs updates"
+        "False positives in static analysis (C++ ranges, variable names, template methods)",
+        "Character encoding issues on Windows",
+        "Incomplete documentation (GitHub action examples, feature gaps)",
+        "Missing features for flexible file/folder exclusion",
+        "Parser bugs with modern C++ syntax (digit separators)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and documentation improvements needed, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Flawfinder shows signs of slow maintenance with multiple unresolved false positive issues, encoding bugs from 2022 still open, and feature requests lacking response, suggesting limited active development."
     },
     "communication": {
       "helpfulness": 7,
@@ -212,18 +215,20 @@
       "summary": "The maintainer provides clear and mostly helpful responses, showing patience with the contributor. However, some technical decisions are explained less deeply."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in past 6 months despite active issue tracking",
+        "39 open issues with no recent closure activity",
+        "No merged PRs in past 6 months indicates stalled development",
+        "No active contributors in past 6 months",
+        "Last commit over 5 months ago with no recent activity"
       ],
       "positive_signals": [
-        "Ten contributors are still active",
-        "Recent open issues and PRs indicate some level of community interest"
+        "Open issues being tracked suggests project not completely abandoned",
+        "Project still exists in homebrew package manager"
       ],
-      "summary": "The package is minimally maintained with recent activity from contributors, but lacks recent commits and merged PRs."
+      "summary": "Flawfinder appears stale with no development activity for 6+ months despite 39 unresolved issues, indicating the maintainer is inactive or the project has been deprioritized."
     },
     "changelog": null,
     "governance": {
@@ -233,7 +238,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a clear succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:18:27.103049+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

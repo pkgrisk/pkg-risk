@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
+      "quick_start": 8,
       "examples": 7,
       "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and detailed information on installation, configuration, and usage, but lacks a concise quick start example and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Well-structured documentation with clear installation paths and good API reference, but lacks troubleshooting guidance and more real-world usage examples.",
+      "top_issue": "No troubleshooting section - common issues like journald build failures, linking errors, or runtime problems are not documented"
     },
     "security": {
       "overall_score": 7,
@@ -207,18 +207,21 @@
       "summary": "The yder logging framework has some security concerns, including potential injection risks and lack of input validation, but it does not appear to have any critical vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "file path handling issues",
-        "bug reports"
+        "Memory safety issues with pointer handling (init_log_file not copied, causes buffer corruption)",
+        "Undocumented API behavior expecting static/global memory allocation",
+        "Missing features (local time vs GMT, trace log level)",
+        "Dependency resolution issues during builds"
       ],
       "praise_themes": [
-        "feature requests for improvements"
+        "Users willing to contribute (trace level implementation offered)",
+        "Library functionality is functional enough for real-world use"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues and suggesting features, but there's a moderate level of frustration due to unresolved bugs."
+      "abandonment_signals": true,
+      "summary": "yder shows signs of slow maintenance with multiple critical memory safety issues in open bugs, unresponsive maintainer on recent issues (Sept 2025 issues have 0-3 comments), and older closed issues suggesting sporadic attention rather than active development."
     },
     "communication": {
       "helpfulness": 7,
@@ -234,17 +237,18 @@
       "summary": "The maintainer's responses are generally clear and helpful, but there is room for improvement in terms of detail and encouragement for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Only one merged PR in the past six months"
+        "No commits in past 6 months (last commit March 2024)",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months despite 5 open issues",
+        "Unknown last release date",
+        "No recent maintenance activity whatsoever"
       ],
-      "positive_signals": [
-        "Recent release on 2023-09-16T21:40:15+00:00",
-        "Nine contributors have been active in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The yder package shows clear signs of abandonment with zero development activity for at least 9 months and unresolved open issues accumulating without attention."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -255,7 +259,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized and appears complete, but lacks clarity in marking breaking changes or providing migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:26:32.339156+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
