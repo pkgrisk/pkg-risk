@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a good introduction to OpenTSDB, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and quick start examples"
+      "overall": 2,
+      "summary": "Clear project description but completely lacks any practical usage information, installation steps, examples, or configuration guidance.",
+      "top_issue": "No installation instructions, usage examples, or getting started guide - only describes what the project is, not how to use it"
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,19 @@
       "summary": "The OpenTSDBMain class has some security concerns, including potential injection risks and lack of input validation, but overall the code appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build and test issues",
-        "documentation gaps"
+        "Test failures and build issues on master branch",
+        "Outdated dependencies (AsyncHBaseClient, old Java support)",
+        "Delayed release cycles (2.4.1 stuck with vulnerabilities, 2.4.2 requested but not released)",
+        "Broken systemd unit file configuration",
+        "Build failures on non-standard architectures (aarch64)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some build and test challenges, but there are no clear signs of abandonment or severe frustration."
+      "abandonment_signals": true,
+      "summary": "OpenTSDB shows signs of abandonment with unresponded issues spanning 8+ months, failing tests on master branch, outdated dependencies, and delayed security releases creating user frustration."
     },
     "communication": {
       "helpfulness": 7,
@@ -229,17 +232,18 @@
       "summary": "Responses are generally clear and helpful, though technical depth could be improved."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 537 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over 1 month old",
+        "No releases tracked"
       ],
-      "positive_signals": [
-        "Recent release date",
-        "Active contributors in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent code contributions."
+      "positive_signals": [],
+      "summary": "OpenTSDB shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -249,7 +253,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes but lacks a clear succession plan and contributor ladder, posing medium risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:20:38.728650+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

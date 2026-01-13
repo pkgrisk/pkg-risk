@@ -185,15 +185,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 5,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the PMD package, but lacks detailed configuration and troubleshooting documentation.",
-      "top_issue": "Insufficient documentation on configuration options and troubleshooting common problems"
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 7,
+      "overall": 7,
+      "summary": "Well-structured README with excellent clarity and installation guidance, but lacks inline quick-start examples and configuration details.",
+      "top_issue": "No quick-start code example in the README itself - users must follow external links to see actual usage commands beyond the basic 'pmd check' invocation"
     },
     "security": {
       "overall_score": 8,
@@ -204,16 +204,21 @@
       "summary": "The provided PMD code appears to be secure with no major injection risks or secrets exposure, but could benefit from improved input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "parsing issues with Java code",
-        "CLI command limitations"
+        "False positives in rule detection (getter/setter, overloaded methods)",
+        "Breaking changes in error handling between versions",
+        "Parser failures with valid Java syntax (lambda expressions, switch expressions)",
+        "Incomplete or incorrect type resolution in auxclasspath",
+        "Overly strict rule triggers for valid JDBC/SQL usage patterns"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Feature requests being considered (new rules like AvoidFutureAnnotation)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting and discussing issues, but the maintainers' responsiveness is moderate, indicating a relatively healthy project with room for improvement."
+      "summary": "PMD shows moderate community health with active issue tracking and some feature development, but users express frustration with false positives, parsing bugs, and breaking changes in recent versions (7.0.0+)."
     },
     "communication": {
       "helpfulness": 9,
@@ -226,16 +231,20 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (889)",
-        "Recent last commit and release dates (2025-12-30)",
-        "Large number of merged PRs in the past 6 months (273)",
-        "Multiple active contributors in the past 6 months (15)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being from January 2026",
+        "632 open issues with no recent closure activity",
+        "Zero merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests lack of recent versioning"
       ],
-      "summary": "The pmd package appears to be actively maintained with frequent commits, releases, and a significant number of contributors."
+      "positive_signals": [
+        "Repository still exists and has some historical activity",
+        "Open issues indicate user engagement/bug reports"
+      ],
+      "summary": "PMD appears stale with no development activity in at least 6 months, a large backlog of unresolved issues, and no recent releases."
     },
     "changelog": null,
     "governance": {
@@ -245,7 +254,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the homebrew package 'pmd' lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:24:40.207541+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -192,15 +192,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 7,
       "quick_start": 4,
-      "examples": 5,
-      "configuration": 7,
+      "examples": 3,
+      "configuration": 5,
       "troubleshooting": 2,
       "overall": 5,
-      "summary": "The README provides a good overview of the package's features and capabilities, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise installation instructions and quick start examples"
+      "summary": "Excellent high-level explanation of what Hydra is and why to use it, but lacks concrete quick-start examples and troubleshooting guidance in the README itself.",
+      "top_issue": "No inline quick-start code or configuration examples - users must navigate to external docs to see any actual usage"
     },
     "security": {
       "overall_score": 7,
@@ -233,18 +233,22 @@
       "summary": "The codebase has some security concerns, including potential injection risks, insufficient input validation, and lack of proper error handling, but no critical secrets or sensitive information exposure was found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "High CPU & RAM Usage on ARM32 and ARM64",
-        "Unable to create client using DCR endpoint"
+        "Logging verbosity issues (health check spam)",
+        "Configuration limitations (CSRF cookies, default values)",
+        "Environmental/platform-specific bugs (Apple Silicon, time change CPU spike)",
+        "Missing OAuth standards support (RFC8693 Token Exchange pending since 2018)"
       ],
       "praise_themes": [
-        "Feature requests for improvements in functionality"
+        "Clear contribution guidelines followed by reporters",
+        "Professional issue templates with preflight checklists",
+        "Community engagement (Slack, security newsletter signups)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, but there are ongoing issues that may cause frustration."
+      "abandonment_signals": true,
+      "summary": "Ory Hydra shows moderate community health with engaged contributors following proper procedures, but concerning abandonment signals include a 7+ year old feature request still pending (RFC8693) and recent bugs (Apple Silicon, configuration) with minimal engagement, suggesting maintainer capacity constraints."
     },
     "communication": {
       "helpfulness": 7,
@@ -260,15 +264,17 @@
       "summary": "The maintainers provide some useful information but could be more welcoming and clearer about contribution guidelines."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (268)",
-        "Recent open and closed issues and PRs indicate ongoing development",
-        "Multiple contributors active in the last six months"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being very recent (suggests data anomaly or stale repository)",
+        "113 open issues with no closed issues in past 6 months indicates issues are not being addressed",
+        "No merged PRs in past 6 months shows no active development or community contributions being integrated",
+        "No active contributors in past 6 months confirms lack of maintenance activity",
+        "Unknown last release date suggests release history is not being tracked or maintained"
       ],
-      "summary": "The package is actively maintained with a high level of recent activity."
+      "positive_signals": [],
+      "summary": "ory-hydra appears abandoned with a large backlog of unresolved issues and zero maintenance activity over the past 6 months, despite a recent commit timestamp that may indicate a data inconsistency."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -286,7 +292,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks details on succession, decision-making, and contributor paths but indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:16:12.514422+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

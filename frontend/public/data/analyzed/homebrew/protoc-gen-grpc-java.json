@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 8,
       "quick_start": 7,
       "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but could benefit from more troubleshooting guidance and clearer configuration instructions.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Solid documentation for gRPC-Java library with comprehensive installation options across build systems, but lacks troubleshooting guidance and the package name suggests a specific tool (protoc-gen-grpc-java) while the README covers the entire gRPC-Java ecosystem.",
+      "top_issue": "Zero troubleshooting content for common issues like build failures, dependency conflicts, or runtime errors; also potential confusion between the specific protoc plugin tool vs the full gRPC-Java library"
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,22 @@
       "summary": "The provided code appears to be secure, but some minor issues were found related to input validation and potential injection risks."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "instrumentation and interception issues",
-        "upgrade and compatibility problems"
+        "Security and vulnerability disclosure gaps (exposed certificates, vulnerable dependency inquiry)",
+        "Thread pool resource exhaustion risks in shared executor",
+        "NullPointerException bugs in load stats manager",
+        "Random CANCELLED exceptions in streaming RPCs (unresolved for extended period)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Collaborative engagement with upstream dependencies (Netty CI integration support)",
+        "Feature development momentum (HTTP CONNECT proxy, mirroring, gRFC implementations)",
+        "Proactive issue tracking and documentation standards"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues and seeking help, with maintainers responding moderately, indicating a relatively healthy but not overly vibrant project ecosystem."
+      "summary": "Active but moderately responsive community with strong feature development; recent critical bugs and security concerns suggest maintenance could be more proactive in addressing production-impacting issues and vulnerability handling."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,18 +228,18 @@
       "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to make the community more inclusive."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in the past 6 months",
+        "494 open issues with no recent closures",
+        "No merged PRs in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "No recent releases",
+        "Last commit over 6 months ago"
       ],
-      "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many merged PRs",
-        "large number of active contributors"
-      ],
-      "summary": "The package is actively maintained with a high volume of recent activity, despite having a notable number of open issues."
+      "positive_signals": [],
+      "summary": "This package appears to be abandoned with no maintenance activity for at least 6 months and a large backlog of unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -243,7 +249,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "low",
       "summary": "The governance documentation for the homebrew package 'protoc-gen-grpc-java' indicates a well-structured and transparent process with multiple maintainers, a clear decision-making process, and a path for contributors to become maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:26:25.782323+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

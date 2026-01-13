@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 2,
       "examples": 1,
-      "configuration": 2,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides clear installation instructions but lacks examples, configuration documentation, and troubleshooting guidance.",
-      "top_issue": "Lack of usage examples and configuration documentation"
+      "overall": 3,
+      "summary": "Clear project description and installation steps, but completely lacks usage examples, API documentation, and any code samples showing how to actually use the library.",
+      "top_issue": "No code examples or API usage documentation - users can install it but have no idea how to parse or emit YAML in their C code"
     },
     "security": {
       "overall_score": 7,
@@ -201,12 +201,16 @@
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "memory leaks",
-        "compatibility issues"
+        "Memory leaks in api.c with invalid UTF-8 input",
+        "Scanner API infinite-loop risk causing DoS",
+        "Segmentation faults in yaml_free",
+        "CMake version compatibility issues",
+        "Emoji handling incorrectly treating valid unicode as non-printable",
+        "Token parsing issues with flow mappings"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The libyaml community appears to be struggling with unresolved issues, lack of maintainer engagement, and signs of abandonment."
+      "summary": "libyaml shows severe abandonment with critical unfixed bugs (memory leaks, segfaults, DoS vectors), spam issues, zero maintainer engagement, and no responses to legitimate bug reports spanning 2+ years."
     },
     "communication": {
       "helpfulness": 6,
@@ -224,20 +228,26 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "large number of open issues and PRs with little recent activity",
-        "last release over 2 years ago"
+        "No commits in past 6 months despite last commit being August 2024",
+        "114 open issues with no recent resolutions",
+        "Zero closed issues in past 6 months indicating no active maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "No releases tracked, suggesting version stagnation"
       ],
       "positive_signals": [
-        "10 contributors active in the past 6 months",
-        "1 merged PR in the past 6 months"
+        "Project exists and has historical commits",
+        "No open PRs suggests not accumulating unreviewed changes"
       ],
-      "summary": "The libyaml package appears to be stale, with minimal maintenance activity despite a large number of open issues and PRs."
+      "summary": "libyaml shows clear signs of staleness with no commits, issue closures, or contributor activity over the past 6 months, despite a substantial backlog of 114 open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:23:55.482216+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

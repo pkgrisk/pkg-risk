@@ -192,15 +192,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks clear installation instructions and troubleshooting guides.",
-      "top_issue": "Installation instructions are not provided in the README, making it difficult for new users to get started."
+      "quick_start": 1,
+      "examples": 2,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "Excellent feature overview and clarity about what the tool does, but completely lacks practical installation instructions, quick start examples, or any code snippets showing actual usage.",
+      "top_issue": "No installation instructions whatsoever - the README only links to external user guides without showing even basic installation steps like 'brew install pgbackrest' for the Homebrew package"
     },
     "security": {
       "overall_score": 7,
@@ -227,18 +227,22 @@
       "summary": "The pgbackrest codebase has some security concerns, including potential SQL injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "permissions issues",
-        "symlink handling"
+        "Unclear error messages for disk-full and permission issues",
+        "TLS/SSL configuration problems with non-standard endpoints",
+        "S3 compatibility issues (missing delete permissions, symlink handling)",
+        "Complex configuration requirements for backup-only setups",
+        "Performance issues with archive-copy operations"
       ],
       "praise_themes": [
-        "enhancement requests for new features"
+        "Enhancement suggestions being considered (Pod Identity, bundling docs)",
+        "Feature requests acknowledged and discussed"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, raising valid concerns and suggesting improvements, but there are some recurring issues that could benefit from more detailed guidance or fixes."
+      "summary": "pgbackrest shows active maintenance with responsive issue handling, though users struggle with configuration complexity, error messaging clarity, and edge-case S3/permission scenarios."
     },
     "communication": {
       "helpfulness": 8,
@@ -251,15 +255,20 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged pull requests in the past six months",
-        "A recent release date"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-11)",
+        "Zero closed issues in past 6 months indicating no maintenance activity",
+        "Zero merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "48 open issues with no resolution activity",
+        "Unknown last release date suggests versioning/release process has stalled"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Recent commit timestamp suggests repository still exists and wasn't deleted"
+      ],
+      "summary": "pgbackrest appears abandoned with no maintenance activity, closed issues, or merged PRs in the past 6 months despite 48 open issues."
     },
     "changelog": null,
     "governance": {
@@ -269,7 +278,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation does not provide clear information on succession planning, decision-making processes, or a path for contributors to become maintainers. However, it indicates that multiple people have merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:26:47.827127+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

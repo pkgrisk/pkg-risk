@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "The README provides basic information about LuaJIT but lacks essential details on installation, usage, and troubleshooting.",
-      "top_issue": "Missing installation instructions and lack of examples or quick start guide"
+      "summary": "While the README clearly states what LuaJIT is, it provides no practical information and merely redirects users to external HTML documentation.",
+      "top_issue": "No installation instructions, usage examples, or getting started guide - the README is essentially just a pointer to separate documentation files"
     },
     "security": {
       "overall_score": 7,
@@ -209,33 +209,43 @@
       "summary": "The luajit package has some security concerns, including potential code injection vulnerabilities and lack of proper input validation, but overall it appears to be relatively secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "FFI and GC anchors",
-        "Duality of 0 in DUALNUM build"
+        "Type conversion and narrowing issues in DUALNUM mode",
+        "FFI and GC anchor memory management problems",
+        "Floating-point rounding and number conversion inconsistencies",
+        "OOM errors during garbage collection in JIT traces"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Bug reports are detailed with reproducible examples",
+        "Security vulnerabilities are taken seriously and addressed",
+        "Active engagement on complex technical issues"
+      ],
       "abandonment_signals": false,
-      "summary": "The luajit community is actively engaged, with maintainers responding to issues, but users are experiencing technical difficulties and requesting enhancements."
+      "summary": "LuaJIT shows healthy community engagement with maintainers actively addressing complex technical issues, though recurring type-system and FFI-related bugs indicate ongoing architectural challenges requiring sustained attention."
     },
     "communication": null,
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no contributors active in the past 6 months",
-        "unknown last release"
+        "No commits in the past 6 months despite last commit being from Jan 2026",
+        "64 open issues with no recent resolution activity",
+        "Zero closed issues in the past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "recent commits within the past 6 months",
-        "active issue and PR closure"
-      ],
-      "summary": "The luajit package appears to be stale due to a lack of recent contributor activity, despite some recent commits and issue closures."
+      "positive_signals": [],
+      "summary": "LuaJIT appears to be abandoned with no maintenance activity for at least 6 months despite having a backlog of 64 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:21:00.806248+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
