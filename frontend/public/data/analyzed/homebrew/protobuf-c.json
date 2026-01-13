@@ -163,12 +163,12 @@
       "clarity": 8,
       "installation": 9,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
+      "examples": 5,
+      "configuration": 6,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting information"
+      "summary": "Well-structured documentation with clear installation and basic usage, but lacks concrete examples and troubleshooting guidance for common issues.",
+      "top_issue": "No actual code examples showing how to define messages in .proto files, serialize/deserialize data, or handle common use cases in C code"
     },
     "security": {
       "overall_score": 8,
@@ -180,15 +180,21 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "optional field support in proto3",
-        "compilation issues"
+        "Proto3 optional fields not supported (multiple duplicates)",
+        "Build/compilation issues (protobuf header not found, configuration timeouts)",
+        "Segmentation faults with proto2 groups",
+        "CMake/Windows build problems",
+        "Naming convention inconsistencies between generated structs and functions"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with some open issues and a mix of positive and negative sentiments, but the maintainers are responsive to user concerns."
+      "praise_themes": [
+        "Library usefulness acknowledged",
+        "Pure C implementation appreciated"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community is frustrated by slow progress on critical feature gaps (proto3 optional support since 2021) and build stability issues, with minimal maintainer engagement evidenced by unanswered support questions and duplicate feature requests languishing open."
     },
     "communication": {
       "helpfulness": 8,
@@ -204,17 +210,18 @@
       "summary": "The maintainer provides detailed technical explanations, but could improve in terms of clarity and patience when dealing with repeated or basic questions."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unmerged PRs and open issues"
+        "No commits in the past 6 months",
+        "32 open issues with no recent closure activity",
+        "No merged pull requests in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "No recent releases",
+        "Last commit was 9+ months ago"
       ],
-      "positive_signals": [
-        "recent release",
-        "active contributors in the recent past"
-      ],
-      "summary": "The package appears to be stale due to a lack of recent commits and activity, despite having a recent release and active contributors in the past."
+      "positive_signals": [],
+      "summary": "The protobuf-c project shows clear signs of abandonment with no maintenance activity over the past 6 months and a growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -232,7 +239,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for protobuf-c lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:18:10.467414+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 8,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 3,
+      "examples": 1,
+      "configuration": 5,
+      "troubleshooting": 6,
       "overall": 5,
-      "summary": "The README provides detailed technical information, but lacks clear and concise examples for new users to quickly understand the package's usage.",
-      "top_issue": "Lack of a quick start example or tutorial that demonstrates basic usage of the liburing library."
+      "summary": "Technical documentation that covers building and installation well but completely lacks usage examples or quick-start code.",
+      "top_issue": "No code examples showing how to actually use the library - only links to external documentation and build instructions"
     },
     "security": {
       "overall_score": 8,
@@ -192,16 +192,18 @@
       "summary": "The liburing codebase appears to be well-structured and secure, but may benefit from additional input validation and error handling measures to prevent potential security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "ENOSPC error with zcrx",
-        "Higher CPU utilization in io_uring based design"
+        "Performance regressions in kernel updates affecting real-world workloads (NFS, packet processing)",
+        "Missing or incomplete documentation (IORING_OP_PIPE man page)",
+        "Complex error handling and synchronization semantics not well documented",
+        "Zero-copy receive (zcrx) stability issues with error conditions"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of frustration or abandonment. Issues related to performance and specific functionalities are common."
+      "summary": "Liburing shows active development with users engaging on performance and edge case issues, but documentation gaps and unresolved performance regressions suggest moderate maintenance capacity relative to feature complexity."
     },
     "communication": {
       "helpfulness": 8,
@@ -214,15 +216,20 @@
       "summary": "The maintainer's responses are clear, helpful, and patient, with a good level of technical depth. They encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (144)",
-        "Multiple contributors active in the past six months (23)",
-        "Recent merged pull requests in the past six months (25)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-11)",
+        "57 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months suggesting no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date makes version stability unclear"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Recent commit activity exists (2026-01-11), indicating repository is not completely abandoned"
+      ],
+      "summary": "liburing appears stale with no meaningful maintenance activity over 6 months despite a recent commit, with a growing backlog of 57 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -240,7 +247,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:15:00.202052+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -161,14 +161,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 7,
-      "quick_start": 9,
-      "examples": 6,
-      "configuration": 5,
+      "installation": 6,
+      "quick_start": 7,
+      "examples": 5,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides a good overview of the package, but lacks detailed configuration options and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "overall": 5,
+      "summary": "Clear overview and architecture explanation, but installation instructions are complex and lack troubleshooting guidance.",
+      "top_issue": "Installation section provides two approaches (getdeps.py and manual CMake) but doesn't explain which to use when, and the manual approach requires users to figure out how to install dependencies themselves with minimal guidance on CMAKE_PREFIX_PATH setup"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,18 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but it also has some good practices, such as using secure encryption and decryption methods."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues",
-        "compatibility problems"
+        "Build failures on non-x86/ARM architectures (RISC-V)",
+        "Compilation errors on macOS (Monterey) with override keyword",
+        "Build system fragility and recent regressions",
+        "Missing build artifacts (EncryptedRecordBench)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The fizz community is moderately active with some build and compatibility issues, but maintainers are responsive to user concerns."
+      "summary": "Active but unpolished project with moderate maintenance; technical debt in architecture support and build system stability, though maintainers are attempting fixes for reported issues."
     },
     "communication": {
       "helpfulness": 9,
@@ -228,17 +230,18 @@
       "summary": "The maintainer responses are highly helpful, clear, and patient, providing technical depth and a welcoming environment for contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no closed issues in the past 6 months",
-        "low number of merged PRs compared to open PRs"
+        "No commits in the past 6 months despite last commit being recent (suggests repository is stale or abandoned)",
+        "40 open issues with no resolution activity",
+        "Zero closed issues in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No release information available"
       ],
-      "positive_signals": [
-        "recent commits and last release",
-        "large number of active contributors"
-      ],
-      "summary": "The fizz package appears to be stale due to a lack of issue resolution and slow PR merging, despite recent activity and a large contributor base."
+      "positive_signals": [],
+      "summary": "The fizz package appears abandoned with no maintenance activity over the past 6 months despite a recent last commit timestamp, which may indicate a stale mirror or archived repository."
     },
     "changelog": null,
     "governance": {
@@ -248,7 +251,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for Fizz lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:23:52.186476+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

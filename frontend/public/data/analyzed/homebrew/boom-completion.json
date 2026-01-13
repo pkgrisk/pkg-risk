@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 6,
-      "quick_start": 8,
-      "examples": 7,
+      "installation": 4,
+      "quick_start": 10,
+      "examples": 8,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 6,
-      "summary": "The documentation is clear and engaging, but lacks comprehensive installation instructions, configuration details, and troubleshooting guidance.",
-      "top_issue": "Installation instructions are incomplete, as they only provide a gem install command without specifying any potential dependencies or Homebrew-specific instructions."
+      "summary": "Excellent clarity and quick start with engaging examples, but completely lacks configuration options, troubleshooting guidance, and Homebrew-specific installation context.",
+      "top_issue": "No troubleshooting section for common issues (clipboard problems, storage location, command conflicts) and installation shows gem instead of brew despite being a Homebrew package."
     },
     "security": {
       "overall_score": 6,
@@ -201,18 +201,21 @@
       "summary": "The boom-completion package has some security concerns, including potential command injection vulnerabilities and a lack of input validation and sanitization, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "data storage location",
-        "command and list auto-completion"
+        "Shell quoting issues (single quotes stripped from snippets)",
+        "Missing command-line completion despite multiple requests",
+        "Homebrew installation not supported",
+        "Error handling for edge cases (empty .boom file, name conflicts)"
       ],
       "praise_themes": [
-        "usefulness of the tool for saving reaction gifs"
+        "Useful tool for snippet management",
+        "Helpful for workflow automation (Slack gifs, commonly used commands)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally neutral with some open issues, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows severe abandonment with 6+ year old open issues unanswered, no maintainer engagement, critical bugs unfixed (quote stripping), and repeated feature requests (completion, Homebrew) ignored for years."
     },
     "communication": {
       "helpfulness": 6,
@@ -228,17 +231,18 @@
       "summary": "The maintainer's responses are generally adequate but could benefit from more clarity and depth in explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in over 2 years (last commit February 2023)",
+        "No activity in past 6 months across all metrics",
+        "7 open issues with no resolution or triage",
+        "No merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "Ten contributors are still active",
-        "There have been no merged PRs, which could indicate a pause or issue with merging"
-      ],
-      "summary": "The package shows minimal maintenance activity but has an active contributor base."
+      "positive_signals": [],
+      "summary": "Package is abandoned with no commits, releases, or maintenance activity for over 2 years and accumulating unaddressed issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +253,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks clear categorization, marked breaking changes, and migration guides, making it difficult for users to understand the evolution of the package."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:18:37.563606+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

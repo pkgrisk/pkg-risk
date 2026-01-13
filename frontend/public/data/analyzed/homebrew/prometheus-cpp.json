@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent clarity and quick start with comprehensive build instructions, but lacks troubleshooting guidance and runtime configuration documentation.",
+      "top_issue": "No troubleshooting section for common runtime issues like connection errors, metric exposition failures, or integration problems with Prometheus servers"
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,19 @@
       "summary": "The code has some security concerns, including potential HTTP header injection and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "linkage errors",
-        "documentation issues"
+        "Segmentation faults and crashes in release mode",
+        "Memory allocation failures (std::bad_alloc exceptions)",
+        "Linkage errors with dependencies (CivetServer)",
+        "Poor documentation and outdated docstrings",
+        "Unclear best practices for library integration"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and documentation complaints, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "prometheus-cpp shows signs of maintenance neglect with multiple critical bugs (crashes, memory issues) remaining open for 1-3 years, sparse contributor activity, and slow/absent maintainer responses to user issues."
     },
     "communication": {
       "helpfulness": 6,
@@ -233,20 +236,24 @@
       "summary": "The maintainer's responses are generally clear and technically sound, but could benefit from being more patient and providing additional context."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "A high number of open issues (46) suggests there may be unresolved problems that need attention."
+        "No commits in the past 6 months despite last commit being over 10 months ago",
+        "59 open issues with no recent resolution activity",
+        "No closed issues in the past 6 months",
+        "No open or merged pull requests in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "No recent releases"
       ],
-      "positive_signals": [
-        "Recent release on 2024-11-03",
-        "Active contributors in the past six months (10)"
-      ],
-      "summary": "The package shows minimal maintenance with recent contributions but lacks active development and has a high number of unresolved issues."
+      "positive_signals": [],
+      "summary": "prometheus-cpp is effectively abandoned with no development activity, issue resolution, or contributor engagement for at least 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:22:50.732609+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

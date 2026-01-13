@@ -183,14 +183,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 3,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a brief introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and examples in the README"
+      "summary": "Clear description of what igraph is but completely lacks installation steps, usage examples, or any practical documentation in the README itself.",
+      "top_issue": "No installation instructions in README - only references external website, leaving users unable to get started without navigating away"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,21 @@
       "summary": "The code appears to be generally secure with proper input validation and error handling, but some potential issues were found related to input validation and default configuration."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "numerical errors",
-        "inconsistent function signatures"
+        "Numerical algorithm correctness issues (ARPACK eigenvector convergence)",
+        "Architecture-specific bugs (arm64, ppc64el, riscv64, s390x)",
+        "Missing documentation clarity (igraph_setup() safety guarantees)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Well-documented feature requests with use cases",
+        "Good first issue tagged for contributor onboarding",
+        "Detailed bug reports with reproduction steps"
+      ],
       "abandonment_signals": false,
-      "summary": "The igraph community is moderately active, with some open issues and a mix of bug reports and feature requests, but no clear signs of abandonment or extreme frustration."
+      "summary": "igraph shows healthy community engagement with active maintainers addressing both critical bugs and feature requests, though some issues span years indicating a backlog of desired enhancements."
     },
     "communication": {
       "helpfulness": 9,
@@ -223,17 +228,18 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in the past 6 months despite last commit being in December 2025",
+        "265 open issues with no recent activity or resolution",
+        "No closed issues in the past 6 months",
+        "No open or merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests lack of versioning activity"
       ],
-      "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors"
-      ],
-      "summary": "The igraph package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+      "positive_signals": [],
+      "summary": "The igraph package shows clear signs of abandonment with zero maintenance activity over the past 6 months despite a large backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -251,7 +257,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The igraph project has a clear path for contributors to get involved, but lacks documentation on decision-making and succession planning."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:25:33.575097+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

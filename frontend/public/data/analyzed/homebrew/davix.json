@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 7,
       "examples": 6,
       "configuration": 4,
       "troubleshooting": 2,
       "overall": 6,
-      "summary": "The documentation is generally clear and provides a good overview of the package, but lacks detailed configuration options and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Clear purpose and basic usage examples, but lacks configuration details, authentication setup guidance, and troubleshooting information.",
+      "top_issue": "Authentication methods are listed but not explained (how to obtain/use x509 certificates, VOMS proxies, or configure S3/Azure credentials)"
     },
     "security": {
       "overall_score": 6,
@@ -202,15 +202,19 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues",
-        "compatibility problems with S3 and other services"
+        "Build compatibility issues (CMake 4.0.0, C++14 flags)",
+        "Thread safety regressions in recent releases",
+        "S3 integration bugs (file creation, directory listing)",
+        "Test reliability issues (freezing tests)",
+        "macOS/platform-specific failures",
+        "Upstream dependency blocking (conda-forge libxml update)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The davix community is experiencing a mix of resolved and ongoing issues, with maintainers showing moderate responsiveness to user concerns."
+      "abandonment_signals": true,
+      "summary": "Davix shows signs of moderate maintenance with critical bugs persisting (thread safety, build issues) and several open issues blocking downstream projects, suggesting declining active engagement with the maintainer community."
     },
     "communication": {
       "helpfulness": 9,
@@ -223,20 +227,24 @@
       "summary": "Mihai's responses are highly helpful, clear, patient, and technically deep, making him an exemplary maintainer."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low number of closed issues",
-        "small number of active contributors"
+        "No commits in past 6 months despite last commit being 4+ months ago",
+        "24 open issues with no activity or resolution",
+        "No closed issues in past 6 months indicating no bug fixes",
+        "Zero merged PRs in past 6 months showing no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "recent commits",
-        "recent release"
-      ],
-      "summary": "The davix package appears to be receiving minimal maintenance with some recent activity, but concerns about issue closure and contributor count remain."
+      "positive_signals": [],
+      "summary": "The davix project shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:14:56.176467+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

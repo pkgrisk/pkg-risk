@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 8,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good overview of the project, but lacks clear and concise instructions for new users to get started quickly.",
-      "top_issue": "Lack of a quick start guide with basic usage examples"
+      "overall": 3,
+      "summary": "Clear description of what Tectonic is, but README redirects to external website for all practical usage information including installation, examples, and configuration.",
+      "top_issue": "No installation instructions, quick start guide, or usage examples in the README itself\u2014all critical information is only available on the external website"
     },
     "security": {
       "overall_score": 7,
@@ -215,16 +215,20 @@
       "summary": "The provided C code for PDF parsing has some security concerns, including potential buffer overflows and insufficient input validation, but no critical secrets exposure or injection risks were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 6,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build errors",
-        "compatibility issues with packages"
+        "Dependency version management (OpenSSL 1.1 vs 3, outdated bridge crates)",
+        "LaTeX package compatibility (gregoriotex, revtex, pLaTeX formats)",
+        "UTF-8 and character encoding issues",
+        "Missing toolchain features (makeindex, differential testing)",
+        "Build failures on specific platforms (Windows, NixOS, i686)",
+        "TeX Live bundle versioning (stuck on 2022, users need 2024+)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The tectonic community is active, but users are experiencing various technical issues and compatibility problems that are not being addressed quickly."
+      "summary": "Tectonic shows moderate maintenance with active CI but struggled dependency management and LaTeX compatibility issues creating user frustration; no abandonment signals detected."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,17 +241,17 @@
       "summary": "The maintainer's responses are generally helpful, clear, patient, and technically sound, creating a welcoming environment for contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "relatively low number of closed issues",
-        "high number of open issues"
+        "No commits for over 3 months (last commit October 2025, assessment date January 2026)",
+        "162 open issues with no recent closures",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "No recent releases"
       ],
-      "positive_signals": [
-        "recent commits and release",
-        "active contributors and merged PRs"
-      ],
-      "summary": "The tectonic package appears to be maintained with regular updates and contributions, but may benefit from addressing the large number of open issues."
+      "positive_signals": [],
+      "summary": "The tectonic project appears abandoned with no development activity, issue resolution, or contributor engagement for at least 3 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -265,7 +269,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for Tectonic lacks a clear succession plan, decision-making process, and contributor ladder, but suggests multiple maintainers have merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:23:09.388770+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

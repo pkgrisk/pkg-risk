@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
+      "clarity": 1,
       "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 1,
-      "summary": "The README lacks essential information, making it difficult for new users to understand and use the package.",
-      "top_issue": "Missing installation instructions and lack of examples or usage documentation"
+      "summary": "README provides no information whatsoever, only pointing to external documentation.",
+      "top_issue": "README contains zero documentation - no description of what uthash is, no installation steps, no examples, only a link to external docs"
     },
     "security": {
       "overall_score": 7,
@@ -191,19 +191,21 @@
       "summary": "The utarray library appears to have a moderate security posture, with some potential issues related to input validation and error handling, but no critical vulnerabilities were identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "memory management issues",
-        "code quality concerns"
+        "Memory management bugs (segfaults, use-after-free, double deletes)",
+        "Macro safety issues and edge cases in core data structures",
+        "Type safety concerns (signed/unsigned comparison mismatches)",
+        "Documentation gaps leading to user confusion on proper API usage"
       ],
       "praise_themes": [
-        "helpful community contributions",
-        "useful debugging assistance"
+        "Header-only library design appreciated for ease of integration",
+        "Community members submitting constructive fixes and enhancements"
       ],
-      "abandonment_signals": false,
-      "summary": "The uthash community appears to be moderately active with responsive maintainers, but users are experiencing some frustration with memory management and code quality issues."
+      "abandonment_signals": true,
+      "summary": "uthash has a persistent pattern of memory safety bugs and macro-related issues that frustrate users, with moderate maintainer engagement but limited momentum on infrastructure improvements like CMake support (open since 2021)."
     },
     "communication": {
       "helpfulness": 9,
@@ -220,19 +222,24 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "large number of open issues and PRs"
+        "No commits in past 6 months",
+        "31 open issues with no recent resolution activity",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases"
       ],
       "positive_signals": [
-        "recently closed issues and merged PRs indicate some activity",
-        "multiple active contributors"
+        "Project has been developed previously (last commit exists)"
       ],
-      "summary": "The package appears to be stale due to a lack of recent commits, despite having multiple active contributors and some recent issue and PR activity."
+      "summary": "uthash shows signs of being unmaintained with no development activity, issue resolution, or releases in the past 6 months despite 31 open issues remaining unaddressed."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:23:55.204421+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

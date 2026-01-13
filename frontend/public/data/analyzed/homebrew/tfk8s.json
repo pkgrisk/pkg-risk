@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and concise information about the package, its features, and usage, but lacks troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and examples with strong installation instructions, but lacks troubleshooting guidance and detailed configuration documentation.",
+      "top_issue": "No troubleshooting section for common errors or issues users might encounter when converting YAML to HCL or working with the Terraform Kubernetes Provider"
     },
     "security": {
       "overall_score": 7,
@@ -213,19 +213,24 @@
       "summary": "The tfk8s package has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure package."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "crashes due to invalid YAML",
-        "lack of clear installation instructions"
+        "Frequent crashes with 'panic: not a string' errors on valid YAML inputs",
+        "Tool crashes on Kubernetes manifests (Kustomize, Istio, ServiceEntry)",
+        "Null value handling causes crashes",
+        "Lack of field filtering/ignore options for generated Terraform",
+        "Missing binary releases for different distributions",
+        "Unclear installation documentation"
       ],
       "praise_themes": [
-        "tool solves complex problems",
-        "becoming a critical dependency for users"
+        "Solves previously difficult k8s-to-Terraform conversion problems",
+        "Useful for cluster replication and Kubernetes reconnaissance",
+        "Critical utility for infrastructure automation workflows"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the tool's functionality but faces issues with crashes and unclear installation steps, indicating moderate frustration."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of abandonment with unresolved critical crashes spanning 2+ years, positive use cases being blocked by stability issues, and no visible maintainer engagement despite clear user frustration and dependency."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,17 +243,19 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They address issues effectively while encouraging new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in over 12 months (last commit January 2024)",
+        "No activity from any contributors in the past 6 months",
+        "25 open issues with no resolution or triage",
+        "Zero closed issues in the past 6 months",
+        "No merged pull requests in the past 6 months",
+        "No releases recorded",
+        "Extended inactivity suggests project is no longer maintained"
       ],
-      "positive_signals": [
-        "Recent release in December 2022",
-        "Six contributors active in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent code updates."
+      "positive_signals": [],
+      "summary": "The tfk8s project appears to be abandoned with over a year of inactivity, no contributor engagement, and accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -259,7 +266,10 @@
       "overall_score": 6,
       "summary": "The changelog lacks categorization, clear marking of breaking changes, and migration guides, but it is relatively complete and understandable."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T19:26:52.800417+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
