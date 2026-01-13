@@ -31,6 +31,14 @@ jobs:
         working-directory: frontend
         run: npm ci
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build data chunks
+        run: python scripts/build_chunks.py frontend/public/data
+
       - name: Set base URL
         id: base-url
         run: |
@@ -46,8 +54,11 @@ jobs:
         working-directory: frontend
         run: npm run build
 
-      - name: Copy data files
-        run: cp -r frontend/public/data frontend/dist/
+      - name: Copy data files (excluding analyzed/)
+        run: |
+          mkdir -p frontend/dist/data
+          # Copy everything except the large analyzed/ directory
+          rsync -av --exclude='analyzed' frontend/public/data/ frontend/dist/data/
 
       - name: Create 404.html for SPA routing
         run: cp frontend/dist/index.html frontend/dist/404.html

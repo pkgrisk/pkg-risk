@@ -7,6 +7,7 @@ import { ScoreJustification } from '../components/ScoreJustification';
 import { CriticalIssuesBanner } from '../components/CriticalIssuesBanner';
 import { QuickVerdict } from '../components/QuickVerdict';
 import { RecommendationsCard } from '../components/RecommendationsCard';
+import { loadPackageFromChunk } from '../utils/chunkLoader';
 import type { PackageAnalysis } from '../types/package';
 
 interface PackageDetailProps {
@@ -58,27 +59,24 @@ export function PackageDetail({ packages, cacheDetail }: PackageDetailProps) {
       return;
     }
 
-    // Otherwise, fetch it on-demand
+    // Otherwise, fetch it from chunked storage
     async function loadDetail() {
       setLoading(true);
       setError(null);
 
       try {
-        const res = await fetch(
-          `${import.meta.env.BASE_URL}data/analyzed/${ecosystem}/${name}.json`
+        const detail = await loadPackageFromChunk(
+          ecosystem!,
+          name!,
+          import.meta.env.BASE_URL
         );
 
-        if (!res.ok) {
-          if (res.status === 404) {
-            setError('not_found');
-          } else {
-            setError(`Failed to load package: ${res.status}`);
-          }
+        if (!detail) {
+          setError('not_found');
           setLoading(false);
           return;
         }
 
-        const detail: PackageAnalysis = await res.json();
         setPkg(detail);
         cacheDetail(cacheKey, detail);
         setLoading(false);

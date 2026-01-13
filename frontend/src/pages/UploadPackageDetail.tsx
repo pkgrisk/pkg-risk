@@ -8,6 +8,7 @@ import { ScoreJustification } from '../components/ScoreJustification';
 import { CriticalIssuesBanner } from '../components/CriticalIssuesBanner';
 import { QuickVerdict } from '../components/QuickVerdict';
 import { RecommendationsCard } from '../components/RecommendationsCard';
+import { loadPackageFromChunk } from '../utils/chunkLoader';
 import type { MatchedDependency, ProjectAnalysis, PackageAnalysis } from '../types/package';
 
 export function UploadPackageDetail() {
@@ -45,12 +46,13 @@ export function UploadPackageDetail() {
       try {
         const ecosystem = pkg!.parsed.ecosystem;
         const name = pkg!.parsed.name;
-        const res = await fetch(
-          `${import.meta.env.BASE_URL}data/analyzed/${ecosystem}/${encodeURIComponent(name)}.json`
+        const data = await loadPackageFromChunk(
+          ecosystem,
+          name,
+          import.meta.env.BASE_URL
         );
 
-        if (res.ok) {
-          const data: PackageAnalysis = await res.json();
+        if (data) {
           setFullPkg(data);
         }
       } catch (err) {
