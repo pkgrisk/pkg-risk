@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and provides a good overview of the package's features, but could benefit from more troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 10,
+      "configuration": 7,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, comprehensive examples, and detailed usage information, though lacking troubleshooting guidance and some configuration details.",
+      "top_issue": "No troubleshooting section for common errors or edge cases (e.g., what to do if cleanup fails, handling permissions issues, or dealing with corrupted cache entries)"
     },
     "security": {
       "overall_score": 7,
@@ -207,17 +207,20 @@
       "summary": "The code has some security concerns, including potential injection risks and error exposure, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "error messages",
-        "output duplication",
-        "broken symlinks"
+        "Panics on edge cases (broken symlinks, missing files, unexpected states)",
+        "Parser breaks with new Rust editions and Cargo features",
+        "Command-line argument handling bugs and unintuitive behavior",
+        "Poor error messages that don't help users debug issues",
+        "Output duplication and formatting issues",
+        "Lack of binary releases causing CI slowdowns"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and error reports, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "cargo-cache shows signs of abandonment with multiple unresolved bugs across core functionality (panics, parsing failures, CLI issues), zero comments on all open issues, and no maintainer engagement despite issues spanning 1+ year."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,18 +233,18 @@
       "summary": "The maintainer's responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "Many open issues and no closed issues in the past six months"
+        "No commits in over 2.5 years (last commit June 2023)",
+        "34 open issues with no recent activity or triage",
+        "No closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
-      "positive_signals": [
-        "Some contributors are active in the past six months",
-        "At least one open PR exists"
-      ],
-      "summary": "The package shows signs of minimal maintenance with some recent activity but significant concerns."
+      "positive_signals": [],
+      "summary": "cargo-cache is abandoned with no commits, issue resolution, or contributor activity for over 2.5 years and 34 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +255,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it less user-friendly. It also appears incomplete as some versions lack detailed entries."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:08:20.625959+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

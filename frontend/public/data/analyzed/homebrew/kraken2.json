@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 4,
-      "quick_start": 2,
-      "examples": 3,
-      "configuration": 5,
+      "clarity": 3,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is somewhat unclear and lacks concrete examples, making it difficult for new users to quickly understand and start using the package.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "overall": 2,
+      "summary": "Extremely minimal README that defers all content to an external manual without providing any basic usage information.",
+      "top_issue": "No installation instructions, usage examples, or even a basic description of what the tool does beyond 'taxonomic sequence classification system'"
     },
     "security": {
       "overall_score": 6,
@@ -207,17 +207,18 @@
       "summary": "The code has some security concerns, including potential information disclosure through error messages and lack of input validation, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "download issues",
-        "network connectivity problems",
-        "indexing errors"
+        "Database download failures (rsync, network timeouts, connectivity issues)",
+        "Recent regressions in v2.17.1 (IndexError during result merging, extra spaces in fastq headers)",
+        "Build failures on macOS",
+        "Output formatting inconsistencies (common names vs taxonomic names)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some common technical issues, but there are no signs of significant frustration or abandonment."
+      "abandonment_signals": true,
+      "summary": "Kraken2 shows signs of declining maintenance with accumulating unresolved bugs in recent releases, persistent download infrastructure issues, and limited maintainer engagement despite active user frustration."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,17 +231,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months suggests limited community contribution or approval.",
-        "High number of open issues (292) indicates potential unresolved problems."
+        "No commits in past 6 months despite last commit on 2026-01-03",
+        "565 open issues with no recent activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "Recent commits and releases within the last year indicate some level of activity.",
-        "A recent release (2025-11-24) shows that updates are being made, even if infrequently."
-      ],
-      "summary": "The package is minimally maintained with occasional updates but faces significant issues and a lack of community contribution."
+      "positive_signals": [],
+      "summary": "The kraken2 package shows clear signs of abandonment with no maintenance activity over the past 6 months and a large backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +253,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:11:09.723972+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

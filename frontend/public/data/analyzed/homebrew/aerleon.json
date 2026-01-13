@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 10,
       "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 4,
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The README provides a good overview of the package and its features, but lacks concise examples and troubleshooting guidance.",
-      "top_issue": "Lack of clear, step-by-step quick start example and comprehensive troubleshooting section"
+      "summary": "Excellent clarity and installation instructions, but lacks inline quick-start examples and relies heavily on external documentation for configuration and troubleshooting.",
+      "top_issue": "No inline quick-start example showing basic usage - users must click through to external documentation to see what a simple Aerleon policy looks like or how to actually run the tool"
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,18 @@
       "summary": "The code has some security concerns related to input validation and potential error exposure, but no critical secrets or injection risks were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Paloalto generator limitations",
-        "Proxmox generator limitations"
+        "Protocol and service port mapping bugs affecting multiple generators (Cisco, Arista, NX-OS)",
+        "Missing feature support in generators (Paloalto profile_setting, log_start; Proxmox established keyword)",
+        "Type annotation inconsistencies causing validation issues",
+        "API limitations with nested includes"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is facing some limitations with the generators, but there hasn't been a significant drop in engagement or responsiveness from maintainers."
+      "summary": "Active project with functional users reporting genuine bugs and missing features, but addressing issues at a measured pace with some technical debt in type definitions and generator support gaps."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,15 +237,20 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months",
-        "A significant number of merged PRs indicating ongoing development"
+      "concerns": [
+        "No commits in past 6 months despite last commit being only 4 days ago (indicates repository was recently updated but is now stale)",
+        "73 open issues with no resolution activity",
+        "No closed issues in past 6 months",
+        "No open or merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests lack of release management"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Repository exists and has recent activity (last commit Jan 9, 2026)"
+      ],
+      "summary": "The aerleon package appears abandoned with no maintenance activity over the past 6 months despite a recent commit, indicating the project is not actively maintained."
     },
     "changelog": null,
     "governance": {
@@ -253,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear succession plans, decision-making processes, and paths for contributors to become maintainers, indicating a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:12:35.537553+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

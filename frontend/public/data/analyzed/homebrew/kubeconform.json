@@ -164,15 +164,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 9,
       "configuration": 8,
       "troubleshooting": 6,
       "overall": 8,
-      "summary": "The README is well-structured and provides a good overview of the package, but some sections could be improved for better clarity and conciseness.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Excellent documentation with clear purpose, comprehensive examples, and multiple installation methods, though troubleshooting section could be more prominent.",
+      "top_issue": "Troubleshooting information is buried in GitHub issue links rather than having a dedicated section with common problems and solutions"
     },
     "security": {
       "overall_score": 7,
@@ -199,16 +199,22 @@
       "summary": "The kubeconform codebase has some potential security concerns, including input validation issues and the availability of an insecure TLS verification flag, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "schema location issues",
-        "error handling and reporting"
+        "Schema location template not working reliably (multiple issues with -schema-location flag)",
+        "Duration format validation incomplete (doesn't support all Kubernetes API machinery formats)",
+        "Rate limiting issues when downloading schemas from GitHub",
+        "Crashes/panics with certain schema file content (nil pointer dereference)",
+        "Validation gaps - tool misses some errors while catching others inconsistently"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The kubeconform community is active, but users are experiencing frustration with schema location issues and error handling, while maintainers respond moderately to issues."
+      "praise_themes": [
+        "Tool is useful and well-built",
+        "Appreciated for maintaining the project"
+      ],
+      "abandonment_signals": true,
+      "summary": "kubeconform shows signs of maintenance neglect with multiple unresolved bugs, inconsistent validation behavior, and slow/unresponsive issue handling that frustrates users seeking reliable Kubernetes manifest validation."
     },
     "communication": {
       "helpfulness": 9,
@@ -221,21 +227,24 @@
       "summary": "The maintainer's responses are extremely helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low commit frequency",
-        "high number of open issues and PRs",
-        "limited contributor activity"
+        "No commits in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "86 open issues with no resolution activity",
+        "Last commit over 2 months ago (October 13, 2025)"
       ],
-      "positive_signals": [
-        "recent commits within the past 6 months",
-        "some issue and PR closure activity"
-      ],
-      "summary": "The kubeconform package appears to be receiving minimal maintenance with infrequent updates and a large backlog of open issues and PRs."
+      "positive_signals": [],
+      "summary": "The project shows no maintenance activity for at least 6 months with a large backlog of unresolved issues and no contributor engagement."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:13:40.364562+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

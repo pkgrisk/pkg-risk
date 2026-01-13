@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is clear and concise, but lacks troubleshooting information and could benefit from more detailed configuration examples.",
-      "top_issue": "Lack of troubleshooting section"
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 9,
+      "configuration": 8,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and examples with comprehensive usage documentation, but lacks troubleshooting guidance for common issues.",
+      "top_issue": "No troubleshooting section - missing guidance on common problems like incompatible Python versions, conflicting formatters, or handling edge cases where autopep8 fails"
     },
     "security": {
       "overall_score": 7,
@@ -211,18 +211,23 @@
       "summary": "The update_readme.py script has some minor security concerns, but overall it appears to be a low-risk utility for updating the README.rst file."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Imports moved above a sys.path.insert call, breaking code",
-        "Unable to remove unnecessary, trailing spaces in Python code"
+        "F-string formatting bugs (inserting spaces in expressions)",
+        "Operator spacing ignored in f-strings (E225/E226)",
+        "Unable to format long string literals (E501)",
+        "Assertion errors on complex code",
+        "Import reordering breaking code with sys.path.insert",
+        "Missing trailing space removal feature",
+        "Lack of block-level formatting control"
       ],
       "praise_themes": [
-        "Feature Inquiry for autopep8 functionality enhancement"
+        "Tool is appreciated for existing functionality"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged with some common issues and feature requests, but maintainers are not actively addressing them."
+      "abandonment_signals": true,
+      "summary": "The autopep8 project shows signs of limited maintenance with multiple unresolved bugs spanning recent years, particularly around f-string handling and operator spacing, combined with slow responsiveness and dependency on abandoned libraries like pydiff."
     },
     "communication": {
       "helpfulness": 7,
@@ -235,20 +240,23 @@
       "summary": "Responses are generally clear and helpful, though technical depth could be improved with more detailed explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (124)",
-        "Low number of merged PRs in the past six months (5)"
+        "No commits in over 1 year (last commit November 2024, now January 2026)",
+        "No active contributors in the past 6 months",
+        "127 open issues with no recent activity or resolution",
+        "No merged PRs in the past 6 months indicating no feature development or bug fixes",
+        "No new releases, suggesting no version updates or maintenance releases"
       ],
-      "positive_signals": [
-        "Recent commit within the last year",
-        "Some contributor activity in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent commits but faces a high issue backlog."
+      "positive_signals": [],
+      "summary": "autopep8 appears to be abandoned with over a year of inactivity, no contributor engagement, and a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:14:02.015742+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

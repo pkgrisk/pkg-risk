@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "configuration": 6,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides a good quick start, but lacks comprehensive troubleshooting information.",
-      "top_issue": "Lack of detailed troubleshooting section"
+      "summary": "Excellent clarity and quick start guidance, but lacks inline configuration examples and troubleshooting content.",
+      "top_issue": "No troubleshooting section for common errors; users must rely on external issue tracker and manual"
     },
     "security": {
       "overall_score": 8,
@@ -203,17 +203,22 @@
       "summary": "The ProGuard codebase appears to have a moderate security posture, with some potential issues related to input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "self-referencing pom file",
-        "runtime AbstractMethodError with obfuscated lambdas",
-        "infinite wait during minify_productionWithR8"
+        "Bytecode handling bugs (stack size mismatches, checkcast verification errors)",
+        "InvokeDynamic/Lambda obfuscation desynchronization causing runtime errors",
+        "Optimization phase failures on valid bytecode",
+        "Configuration misleading warnings and edge cases",
+        "Missing class warnings for valid Java standard library references"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Optimizer effectiveness acknowledged by users",
+        "Active bug confirmation and labeling by maintainers"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate frustration due to open issues and some unresolved bugs. There are no clear signs of abandonment."
+      "summary": "ProGuard shows moderate community health with active maintainers addressing confirmed bugs, but users experience frustration with bytecode transformation edge cases and complex lambda/generic handling that occasionally causes runtime failures."
     },
     "communication": {
       "helpfulness": 9,
@@ -226,15 +231,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient, with a good balance of technical depth and encouragement for new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months",
-        "A moderate number of open issues and PRs, indicating ongoing development"
+      "concerns": [
+        "No commits in past 6 months despite last commit being today (2026-01-13)",
+        "192 open issues with no recent activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No release information available"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "ProGuard appears abandoned with a stale repository showing no maintenance activity, unresolved issues, and no contributor engagement despite the recent timestamp anomaly."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +252,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes but lacks a clear succession plan or contributor ladder, indicating medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:10:50.676093+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

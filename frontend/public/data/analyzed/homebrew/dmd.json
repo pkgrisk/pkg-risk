@@ -182,27 +182,30 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 3,
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 2,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README provides a good overview of the project, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and troubleshooting documentation"
+      "summary": "Clear project description with good structure overview, but lacks practical installation instructions, usage examples, and troubleshooting guidance.",
+      "top_issue": "No actual installation instructions beyond a single dub build command that requires prerequisites (D compiler and dub) without explaining how to obtain them or what to do after building"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "compilation issues with certain packages",
-        "inconsistent behavior of the DMD compiler"
+        "Compiler performance issues (unnecessary bounds checks)",
+        "Error messages lacking context (lambda call site information)",
+        "Regressions in recent versions (2.112 breaks existing code)",
+        "ImportC/C interop problems with nullptr and static functions",
+        "Compiler crashes on valid code (UDA with File type)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with open issues indicating ongoing development and some frustration but no clear signs of abandonment."
+      "summary": "DMD shows active maintenance with recent version releases, but users report significant frustration with performance regressions, compiler crashes, and inadequate error diagnostics in the latest 2.112 release."
     },
     "communication": {
       "helpfulness": 7,
@@ -215,15 +218,18 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of patience and technical depth."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (593)",
-        "A significant number of merged PRs in the past six months (268)",
-        "Multiple contributors active in the past six months (43)"
+      "status": "abandoned",
+      "confidence": 10,
+      "concerns": [
+        "Zero commits in past 6 months despite last commit being recent (2026-01-13)",
+        "3811 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package dmd (homebrew) is actively maintained with a high level of community involvement."
+      "positive_signals": [],
+      "summary": "This package is abandoned with no maintenance activity over the past 6 months, a massive backlog of unresolved issues, and no release history available."
     },
     "changelog": null,
     "governance": {
@@ -233,7 +239,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation provides a clear process for contributing and bug reporting but lacks formal succession planning or a contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:07:39.510335+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

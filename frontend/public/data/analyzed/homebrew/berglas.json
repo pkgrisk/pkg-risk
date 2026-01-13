@@ -183,15 +183,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and detailed instructions for installation, setup, and usage, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent comprehensive documentation with clear setup and examples, but lacks troubleshooting guidance for common errors.",
+      "top_issue": "No troubleshooting section covering common problems like authentication errors, permission issues, or KMS/Storage setup failures"
     },
     "security": {
       "overall_score": 7,
@@ -217,16 +217,18 @@
       "summary": "The berglas package has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to handle secrets securely."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "vulnerability issues",
-        "dependency updates"
+        "Dependency vulnerabilities not patched (golang.org/x/crypto, golang.org/x/net CVEs)",
+        "Docker image registry access failures (HTTP 412 errors)",
+        "Webhook configuration issues and YAML parsing errors",
+        "Feature gaps (webhook doesn't handle configMap-based secrets)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively addressing vulnerabilities and dependency issues, but there are recurring concerns about package stability."
+      "abandonment_signals": true,
+      "summary": "Berglas shows severe community health concerns with unresolved security vulnerabilities, critical infrastructure failures blocking deployments, and no apparent maintainer engagement on critical issues."
     },
     "communication": {
       "helpfulness": 6,
@@ -242,15 +244,20 @@
       "summary": "The maintainer responses are adequate but could be more helpful and welcoming, especially when explaining decisions."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged PRs in the past six months",
-        "Active contributors in the past six months"
+      "concerns": [
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "2 open issues with no recent activity",
+        "Unknown last release date"
       ],
-      "summary": "The package berglas appears to be actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Last commit within 6 months (2026-01-02)"
+      ],
+      "summary": "Project appears abandoned with no maintenance activity for at least 6 months despite having open issues."
     },
     "changelog": null,
     "governance": {
@@ -260,7 +267,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:03:28.149444+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
