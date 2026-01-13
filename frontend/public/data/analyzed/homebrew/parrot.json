@@ -172,7 +172,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 5,
+      "summary": "Clear project description and installation steps, but lacks practical usage examples and the prominent deprecation notice significantly impacts its usefulness.",
+      "top_issue": "No quick start example showing how to actually use Parrot VM to run bytecode or compile dynamic languages, only build instructions"
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [
@@ -198,15 +208,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "memory leaks",
-        "GC errors"
+        "Memory leaks and resource cleanup issues",
+        "ASAN/AddressSanitizer errors across multiple components",
+        "Garbage collection bugs and flaky GC errors",
+        "Null pointer dereferences and out-of-bounds access",
+        "Unicode/UTF8 handling bugs in bitwise operations"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is negative due to multiple unresolved memory leak issues and GC errors, indicating ongoing development challenges."
+      "abandonment_signals": true,
+      "summary": "The parrot project shows signs of decline with persistent memory safety issues, stale bugs (some from 2011-2012), minimal maintainer engagement, and a recent cluster of critical defects that remain unresolved."
     },
     "communication": {
       "helpfulness": 7,
@@ -219,20 +232,23 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing patience with detailed inquiries."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (299)",
-        "Low merged PRs in the past six months (13)"
+        "No commits in past 6 months despite last commit being recent (2025-12-20)",
+        "449 open issues with zero closed in past 6 months indicates no active triage",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months shows no development activity",
+        "Unknown last release suggests release process is stalled"
       ],
-      "positive_signals": [
-        "Recent commit activity",
-        "Some contributor activity in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with recent commits but a high issue count and low PR merge rate."
+      "positive_signals": [],
+      "summary": "The parrot package appears abandoned with no maintenance activity for 6+ months despite a recent last commit timestamp, suggesting the repository may be in a dormant or no-longer-maintained state."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:01:39.982266+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
