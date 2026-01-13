@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 8,
-      "overall": 6,
-      "summary": "The README provides detailed installation and troubleshooting instructions, but lacks a clear quick start example and sufficient usage examples.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+      "examples": 1,
+      "configuration": 3,
+      "troubleshooting": 6,
+      "overall": 4,
+      "summary": "Clear explanation of what the library does and comprehensive installation instructions, but completely lacks usage examples or quick start code.",
+      "top_issue": "No code examples showing how to actually use the library to read or write Data Matrix barcodes - users must figure out the API entirely on their own"
     },
     "security": {
       "overall_score": 8,
@@ -188,18 +188,22 @@
       "summary": "The libdmtx library appears to be generally secure, but lacks input validation and bounds checking in some areas, which could potentially lead to security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Decoding issues",
-        "Support for specific features like FNC1 and DPM"
+        "GS1/FNC1 symbol support lacking (multiple feature requests)",
+        "Decoding bugs and edge cases (variable-length fields, DPM format)",
+        "Lack of documentation (deskewing, usage examples)",
+        "Release cadence too slow (requests from 2019 still pending)",
+        "Library reuse issues causing memory/state problems"
       ],
       "praise_themes": [
-        "Feature requests for improved functionality"
+        "Appreciation for the library's core functionality",
+        "Recognition of CMake improvements in master branch"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues but maintaining a neutral tone, with moderate responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "libdmtx shows signs of maintenance neglect with slow responsiveness to multi-year-old feature requests, unresolved decoding bugs, and minimal documentation, though users appreciate its core barcode functionality."
     },
     "communication": {
       "helpfulness": 7,
@@ -212,17 +216,18 @@
       "summary": "Maintainer responses are generally clear and patient, though technical depth could be improved in some areas."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Few commits in the past six months (only 2)",
-        "High number of open issues (19)"
+        "No commits in past 6 months despite last commit being from November 2025",
+        "19 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests outdated or unmaintained release cycle"
       ],
-      "positive_signals": [
-        "One merged PR in the past six months indicates some level of activity",
-        "Two contributors have been active in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with occasional contributions and issue resolution."
+      "positive_signals": [],
+      "summary": "libdmtx appears to be abandoned with no maintenance activity for at least 6 months despite open issues remaining unaddressed."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -233,7 +238,10 @@
       "overall_score": 2,
       "summary": "The changelog lacks structure and clarity, with no indication of breaking changes or migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:30:33.257005+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

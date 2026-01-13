@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 3,
       "quick_start": 4,
       "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 1,
+      "configuration": 7,
+      "troubleshooting": 2,
       "overall": 5,
-      "summary": "The documentation is detailed but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions, with the user being directed to an external INSTALL file without further explanation."
+      "summary": "Good operational documentation with detailed runtime usage examples, but lacks installation instructions and troubleshooting guidance.",
+      "top_issue": "Installation instructions are essentially missing - only references INSTALL file without providing any concrete steps or requirements"
     },
     "security": {
       "overall_score": 5,
@@ -209,16 +209,21 @@
       "summary": "The code has several security concerns including potential injection risks and lack of input validation, but no secrets were found and error exposure is moderate."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "garbled output headers on busy server",
-        "build failures"
+        "Output display corruption/garbling on busy servers",
+        "Build failures and dependency issues (PCRE, ADNS, autotools)",
+        "Lack of support for modern log formats (syslog-ng, JSON)",
+        "Unresponsive keyboard commands during operation",
+        "Limited documentation and build instructions"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some ongoing issues and questions, but no clear signs of abandonment."
+      "praise_themes": [
+        "Tool rediscovery and appreciation for functionality"
+      ],
+      "abandonment_signals": true,
+      "summary": "Apachetop shows clear signs of abandonment with unresponsive maintainers, unresolved critical bugs (display corruption, build failures), obsolete dependencies (PCRE 8.x), and no engagement with modern log format requests since 2020."
     },
     "communication": {
       "helpfulness": 5,
@@ -234,17 +239,18 @@
       "summary": "The maintainer's responses are generally adequate but could be more consistent and clearer, especially when guiding new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Only one merged PR in the past six months"
+        "No commits in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No closed issues in the past 6 months",
+        "Last commit was over 1 year ago (February 2024)",
+        "Open issues remain unresolved with no activity"
       ],
-      "positive_signals": [
-        "Three contributors have been active in the past six months",
-        "Recent open issues and pull requests indicate some level of community interest"
-      ],
-      "summary": "The package is receiving minimal maintenance with occasional contributions, but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The project shows clear signs of abandonment with zero activity across all metrics (commits, PRs, contributor engagement, issue resolution) over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -255,7 +261,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive, but lacks information on breaking changes and upgrade paths."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:59:27.999259+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

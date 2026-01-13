@@ -167,28 +167,30 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
+      "clarity": 10,
       "installation": 10,
-      "quick_start": 8,
-      "examples": 9,
+      "quick_start": 9,
+      "examples": 8,
       "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 8,
-      "summary": "The documentation is clear, comprehensive, and provides a wide range of installation options and examples, but could benefit from more troubleshooting information.",
-      "top_issue": "Lack of detailed troubleshooting section"
+      "troubleshooting": 5,
+      "overall": 9,
+      "summary": "Exceptional documentation with crystal-clear purpose, comprehensive installation options, and strong usage examples, though configuration details and troubleshooting guidance are lighter.",
+      "top_issue": "Configuration options (e.g., how to customize rules, suppress warnings, configure output formats) are mentioned but not documented in the README itself, requiring users to follow external links"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 6,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "false positives",
-        "unresolved bugs"
+        "False positive warnings (SC2317, SC2034, SC2329) causing user frustration",
+        "Incomplete language feature support (declare -n, variable assignments in arithmetic operations)",
+        "Build infrastructure issues (GHC 9.14 compatibility)",
+        "Edge cases not handled properly (unset with variables, POSIXLY_CORRECT behavior)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The shellcheck community is experiencing frustration due to unresolved bugs and false positives, with maintainers responding slowly to issues."
+      "abandonment_signals": true,
+      "summary": "Shellcheck shows signs of slow maintenance with accumulating false positives, unresolved edge cases from recent months, and recent build failures, though the project hasn't been completely abandoned."
     },
     "communication": {
       "helpfulness": 9,
@@ -201,18 +203,20 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months despite last commit being recent (2026-01-06)",
+        "1188 open issues with no closed issues in past 6 months indicates unaddressed backlog",
+        "Zero active contributors in past 6 months suggests abandoned development",
+        "No merged PRs in past 6 months indicates no ongoing work or review",
+        "Unknown last release makes it unclear if any versions are being shipped"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors",
-        "merged PRs"
+        "Recent commit activity (2026-01-06) suggests repository is not completely dormant",
+        "No open PRs means maintainers are not juggling active contributions"
       ],
-      "summary": "The shellcheck package appears to be actively maintained with regular updates, fixes, and contributions from multiple developers."
+      "summary": "ShellCheck shows signs of stagnation with a massive unresolved issue backlog and no development activity for 6+ months despite recent repository access."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -223,7 +227,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:59:53.038468+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

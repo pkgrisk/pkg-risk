@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 2,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 6,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a comprehensive troubleshooting section"
+      "summary": "Excellent clarity and examples for a C library, but lacks troubleshooting guidance and runtime configuration documentation.",
+      "top_issue": "No troubleshooting section for common errors like file corruption, memory issues, or compatibility problems with different Excel versions"
     },
     "security": {
       "overall_score": 5,
@@ -201,16 +201,23 @@
       "summary": "The xlsxio package has several security concerns, including arbitrary file access and creation vulnerabilities, lack of input validation, and inadequate error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Unable to obtain all sheets in xlsx",
-        "After using xlsxioread_sheet_open, cannot use xlsxioread_sheetlist_next to get the next sheet"
+        "Sheet iteration limitations - cannot reliably traverse all sheets in workbooks",
+        "DateTime/date handling - Excel serial numbers not converted to readable formats",
+        "API design issues - conflicting function behaviors (xlsxioread_sheet_open breaks xlsxioread_sheetlist_next)",
+        "Memory safety issues - potential realloc() leaks and segmentation faults",
+        "Missing features - no merged cell support, no random cell access by index",
+        "Build/dependency issues - minizip vs minizip-ng confusion, 32-bit DLL problems"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints about sheet traversal functionality."
+      "praise_themes": [
+        "Project appreciated for existence and functionality",
+        "Generally useful for xlsx reading/conversion tasks"
+      ],
+      "abandonment_signals": true,
+      "summary": "xlsxio shows signs of slow maintenance with unresolved core functionality bugs, design issues causing user frustration, and critical features like sheet enumeration and datetime handling that have lingered for years without fixes."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,20 +230,24 @@
       "summary": "The maintainer's responses are clear, helpful, and patient, with a good level of technical depth and a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of commits in the past six months (only 1)",
-        "No merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being 4+ months ago",
+        "45 open issues with no recent activity or resolution",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases in recent history",
+        "Stale issues indicate lack of maintainer engagement"
       ],
-      "positive_signals": [
-        "Recent commit and release dates indicate some level of activity",
-        "One contributor is still active"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but low contribution."
+      "positive_signals": [],
+      "summary": "The xlsxio package appears abandoned with no maintenance activity for at least 6 months and a growing backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:59:12.575375+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

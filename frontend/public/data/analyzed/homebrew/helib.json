@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 3,
+      "clarity": 7,
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 5,
+      "configuration": 2,
       "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is informative but dense, requiring some time to understand the package's purpose and usage.",
-      "top_issue": "Lack of clear and concise quick start guide or troubleshooting section"
+      "overall": 4,
+      "summary": "README provides good high-level context about homomorphic encryption schemes but lacks inline installation instructions and quick-start examples, requiring users to navigate to separate files.",
+      "top_issue": "No installation instructions or quick-start code example in the main README; users must read separate INSTALL.md and navigate to examples directory to get started."
     },
     "security": {
       "overall_score": 7,
@@ -203,15 +203,18 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "memory leaks",
-        "performance issues",
-        "bug reports"
+        "Critical bugs (SEGV, memory leaks, heap-buffer-overflow) in core operations",
+        "Lack of documentation and explanations for design decisions",
+        "Performance issues (quadratic scaling with slot count)",
+        "Build and integration problems (macOS .dylib generation, Java JNA binding)",
+        "Incorrect results from core functions (extractDigits, plaintext operations)",
+        "Outdated examples and compatibility issues with newer versions"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is negative due to multiple open bug reports and performance issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "HElib shows signs of maintenance abandonment with multiple critical unresolved bugs, zero responses to recent issues, minimal documentation, and users questioning active development status."
     },
     "communication": {
       "helpfulness": 7,
@@ -224,18 +227,18 @@
       "summary": "Responses are generally clear and helpful, showing a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in past 6 months",
+        "184 open issues with no recent resolution",
+        "No closed issues in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Last commit over 5 months ago"
       ],
-      "positive_signals": [
-        "Recent release on 2023-07-18T14:29:17+00:00",
-        "Active contributors (10) in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks active development and issue resolution."
+      "positive_signals": [],
+      "summary": "helib is abandoned with no maintenance activity, unresolved issues accumulating, and complete lack of contributor engagement for over 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -253,7 +256,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T22:31:20.574091+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
