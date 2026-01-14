@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 7,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 8,
       "configuration": 6,
       "troubleshooting": 5,
       "overall": 7,
-      "summary": "The README provides a clear overview of the package and its capabilities, but could benefit from more detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "summary": "Excellent clarity and quick start examples, but lacks detailed configuration documentation and troubleshooting guidance in the README itself.",
+      "top_issue": "Configuration options (assembly modes, parameters, hardware requirements) are mentioned but not documented, requiring users to consult the external manual for essential information."
     },
     "security": {
       "overall_score": 7,
@@ -215,16 +215,21 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "installation issues",
-        "runtime errors"
+        "OS/runtime errors (errno 22, return value -11, missing libgomp.so.1)",
+        "Performance issues (stuck on distance estimation, memory/threading problems)",
+        "Parameter validation (--meta mode not catching errors early)",
+        "Alignment mode confusion (nanopore vs pacbio mode mismatch)",
+        "Contig size limits (100K HMM scan limitation blocking biosynthetic mode)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to common installation and runtime issues, but there are no signs of abandonment."
+      "praise_themes": [
+        "Tool functionality and assembly quality (rnaviralspades produces more contigs than alternatives)"
+      ],
+      "abandonment_signals": true,
+      "summary": "SPAdes shows declining community health with slow maintainer responsiveness, recurring runtime/environment issues, and users encountering hard blockers without timely resolution or guidance."
     },
     "communication": {
       "helpfulness": 6,
@@ -240,21 +245,24 @@
       "summary": "The responses are generally clear and technically sound, but could be more welcoming and less dismissive towards new users."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Long time since last release"
+        "No commits in past 6 months despite last commit being recent (indicates stale repository state)",
+        "292 open issues with no resolution activity",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "Recent commits in the past 6 months",
-        "Moderate number of merged PRs in the past 6 months",
-        "Active contributors in the past 6 months"
-      ],
-      "summary": "The package is maintained with recent activity, but there are concerns regarding the high number of open issues and lack of new releases."
+      "positive_signals": [],
+      "summary": "The spades package appears abandoned with no maintenance activity for at least 6 months despite a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:59:19.889703+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

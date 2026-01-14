@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The README provides a good introduction to WP-CLI and its installation, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient documentation on configuration options and troubleshooting common issues."
+      "quick_start": 8,
+      "examples": 8,
+      "configuration": 5,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent clarity and installation guidance with good examples, but lacks dedicated troubleshooting section and configuration documentation.",
+      "top_issue": "Configuration options are mentioned but not documented in the README (only referenced via external links), and there's no troubleshooting section for common issues"
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,18 @@
       "summary": "The WP-CLI package has some security concerns, including potential code injection vulnerabilities and lack of input validation, but overall it appears to be well-maintained and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "memory issues",
-        "compatibility problems"
+        "PHP compatibility issues (open_basedir, iconv/mbstring)",
+        "Path handling edge cases (spaces in PHP binary paths)",
+        "Command documentation display formatting",
+        "Missing feature support for newer cache backends"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The wp-cli community appears to be active and maintained, with responsive maintainers addressing various technical issues and feature requests."
+      "abandonment_signals": true,
+      "summary": "WP-CLI shows signs of maintenance stagnation with unresolved issues spanning multiple years (dating back to 2018) and infrequent maintainer engagement, though the codebase remains reasonably functional for core use cases."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,17 +240,20 @@
       "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive environment for contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "relatively high number of open issues"
+        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "Zero closed issues in past 6 months shows no issue triage or resolution",
+        "164 open issues with no recent activity suggests backlog accumulation",
+        "No active contributors in past 6 months indicates abandoned development",
+        "Unknown last release date prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors"
+        "Recent commit activity on 2026-01-12 suggests repository is not completely dormant"
       ],
-      "summary": "The wp-cli package appears to be actively maintained with regular updates, a sizable team of active contributors, and a recent release."
+      "summary": "wp-cli shows signs of stagnation with no development activity, issue resolution, or PR merging over the past 6 months despite a recent commit timestamp."
     },
     "changelog": null,
     "governance": {
@@ -258,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The WP-CLI project has a documented decision process and a path for contributors to become maintainers, but lacks a clear succession plan and indicates a single maintainer."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:57:11.720654+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

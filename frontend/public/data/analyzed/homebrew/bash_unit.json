@@ -175,7 +175,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and installation instructions with good examples, but lacks troubleshooting section and full configuration reference.",
+      "top_issue": "No troubleshooting section for common issues like test failures, environment setup problems, or debugging failed assertions"
+    },
     "security": {
       "overall_score": 6,
       "injection_risks": [
@@ -206,16 +216,22 @@
       "summary": "The install script has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "set -e issue",
-        "kcov integration"
+        "Technical bugs in core functionality (set -e subshell issue, assertion matching with special characters)",
+        "Integration challenges with external tools (kcov coverage, LC_ALL locale handling)",
+        "Installation issues across platforms (Alpine, GitHub Actions, macOS)",
+        "Missing feature requests (parallel test execution, stdout/stderr assertions)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Tool quality and visual appeal recognized by community",
+        "Good documentation structure with room for improvement",
+        "Active feature requests indicate engagement with the project"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of frustration or abandonment. The project seems to be receiving moderate responsiveness from maintainers."
+      "summary": "bash_unit shows healthy community engagement with resolved technical issues, active feature requests, and moderate maintainer responsiveness, though some integration challenges and platform-specific bugs persist."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,17 +244,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth while maintaining a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "12 open issues with no resolution activity",
+        "Last commit over 3 months ago (2025-09-28)"
       ],
-      "positive_signals": [
-        "Recent commit and release dates",
-        "Active contributors"
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns due to a high number of unresolved issues."
+      "positive_signals": [],
+      "summary": "bash_unit appears abandoned with no maintenance activity for over 3 months and 12 unresolved open issues."
     },
     "changelog": null,
     "governance": {
@@ -248,7 +265,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high risk if the primary maintainer leaves."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:30:21.486344+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

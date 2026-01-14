@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 7,
       "quick_start": 6,
-      "examples": 7,
+      "examples": 4,
       "configuration": 5,
-      "troubleshooting": 4,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is clear and provides a good overview of the game, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Lack of detailed configuration options and troubleshooting guides"
+      "summary": "Clear project description with good story/context but lacks hands-on quick start examples and troubleshooting guidance for actual gameplay or development.",
+      "top_issue": "No quick start code/command example showing how to actually launch the game after installation, and minimal troubleshooting beyond the macOS Gatekeeper issue."
     },
     "security": {
       "overall_score": 7,
@@ -215,16 +215,18 @@
       "summary": "The SuperTux codebase has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bugs in specific levels",
-        "launch issues on certain platforms"
+        "Graphics rendering glitches (cave/aboveground mode switching)",
+        "Performance issues (high CPU usage with SDL renderer)",
+        "Physics inconsistencies (momentum/velocity not resetting properly)",
+        "Release naming confusion (portable Windows builds unlabeled)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The SuperTux community is actively reporting and addressing bugs, with maintainers responding promptly to issues, indicating a healthy and engaged community."
+      "summary": "SuperTux shows healthy community engagement with active bug reporting and maintainer responsiveness (3 of 6 bugs closed), though technical debt around graphics rendering and performance optimization remains."
     },
     "communication": {
       "helpfulness": 8,
@@ -240,18 +242,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, but could improve in welcoming new contributors and providing more detailed explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months despite last activity being today (suggests homebrew formula-only updates, not upstream development)",
+        "272 open issues with no recent closures indicates backlog is not being triaged",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months shows no active development or community contributions",
+        "Unknown last release date suggests release infrastructure may be abandoned"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many active contributors",
-        "steady merge of PRs"
+        "Last commit timestamp is very recent (2026-01-13), though this appears to be a homebrew formula update rather than active upstream development"
       ],
-      "summary": "The supertux package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+      "summary": "SuperTux appears to be abandoned upstream with no development activity for 6+ months, though the homebrew formula may receive occasional updates."
     },
     "changelog": null,
     "governance": {
@@ -261,7 +264,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for SuperTux lacks a clear succession plan, decision-making process, and contributor ladder, but suggests multiple maintainers are involved."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:56:09.709483+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

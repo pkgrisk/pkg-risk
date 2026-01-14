@@ -184,13 +184,13 @@
     "readme": {
       "clarity": 8,
       "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package's functionality, but lacks clear installation and troubleshooting instructions.",
-      "top_issue": "Lack of clear installation instructions"
+      "quick_start": 3,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "Clear high-level description but critically missing installation instructions, usage examples, and practical getting-started guidance.",
+      "top_issue": "No installation instructions whatsoever - users cannot get started without visiting external documentation site"
     },
     "security": {
       "overall_score": 7,
@@ -201,17 +201,19 @@
       "summary": "The provided code appears to have a moderate level of security, but lacks input validation and has potential issues with error exposure and configuration defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "login issues with `spreaper`",
-        "logging of stack traces",
-        "support for TLS in various configurations"
+        "Authentication and authorization failures (401 errors, JWT token expiration, login issues)",
+        "TLS/SSL configuration limitations (JMX SSL, server TLS, metrics endpoint mTLS)",
+        "Repair execution failures and inconsistent behavior (repairs not running, segment runner exceptions)",
+        "Migration and upgrade issues causing compatibility problems",
+        "Missing observability features for repair scheduling and monitoring"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing several common issues, but there are no signs of abandonment. Maintainers are moderately responsive to the reported problems."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with widespread authentication/TLS configuration issues, frequent repair execution failures in v4.0.x, minimal maintainer engagement (several issues unanswered), and apparent abandonment of the project as users struggle with recent major version upgrades."
     },
     "communication": {
       "helpfulness": 7,
@@ -224,17 +226,20 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with repeated questions."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs relative to open PRs"
+        "No commits in past 6 months despite last commit being today (2026-01-13)",
+        "253 open issues with zero closed in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No releases recorded",
+        "Significant backlog with no triage activity"
       ],
       "positive_signals": [
-        "Recent commits and releases",
-        "Moderate number of contributors"
+        "Repository still exists and has not been deleted"
       ],
-      "summary": "The package is maintained with recent activity, but there are concerns about the backlog of issues and PRs."
+      "summary": "cassandra-reaper appears abandoned with stagnant issue backlog, no recent development activity, and zero community engagement despite 253 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +257,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes and indicates multiple maintainers, but lacks a succession plan and contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:31:47.327911+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
+      "quick_start": 8,
       "examples": 9,
       "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and concise information about the package, its usage, and examples, but lacks troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, installation, and comprehensive examples, though lacking troubleshooting guidance and some configuration details.",
+      "top_issue": "No troubleshooting section for common errors like authentication failures, connection issues, or registry compatibility problems"
     },
     "security": {
       "overall_score": 7,
@@ -225,16 +225,21 @@
       "summary": "The code has some security concerns, including potential template injection attacks and hardcoded credentials, but overall it follows good practices for input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "behavior of ping is against Docker v2 API Spec",
-        "`reg rm` irritatingly states \"docker.io\" for image deleted from GitLab registry"
+        "Go module installation broken with go.mod replace directives",
+        "API spec non-compliance (401 response handling for ping)",
+        "Missing credential support for podman auth.json",
+        "Incorrect registry identification in output messages",
+        "Registry compatibility issues (Red Hat registry digest format)",
+        "DNS resolution not respecting /etc/hosts",
+        "Missing TLS client certificate and CA certificate support"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health appears neutral with some open issues and no clear signs of abandonment, but there is moderate frustration due to API compliance and output issues."
+      "abandonment_signals": true,
+      "summary": "The project shows severe abandonment with 7 open issues spanning 5+ years, zero recent maintainer engagement, critical functionality gaps (go install broken, missing auth methods, TLS support), and no indication of active maintenance or roadmap."
     },
     "communication": {
       "helpfulness": 8,
@@ -247,21 +252,24 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient. They provide technical depth and maintain a welcoming attitude towards new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in past 6 months",
+        "59 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "Ten contributors are still active",
-        "Regular issue reporting is occurring"
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent code updates."
+      "positive_signals": [],
+      "summary": "The reg package shows no maintenance activity for at least 6 months with a large backlog of unresolved issues and no contributor engagement."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-13T23:30:43.198947+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
