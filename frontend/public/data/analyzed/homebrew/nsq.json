@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 5,
+      "examples": 2,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation provides a good overview of the package, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of quick start guide and troubleshooting section"
+      "overall": 3,
+      "summary": "Clear high-level description but README defers all practical information to external docs without providing any installation commands or usage examples.",
+      "top_issue": "No installation instructions in README - only links to external docs, making it impossible to get started without leaving the repository"
     },
     "security": {
       "overall_score": 7,
@@ -219,16 +219,20 @@
       "summary": "The nsq package has some potential security concerns related to input validation and error exposure, but overall appears to be well-secured with proper handling of sensitive data and secure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "disk queue corruption",
-        "message loss during scaling"
+        "Feature requests left open without resolution (PCRE regex support, message priority, structured logging)",
+        "Long-standing issues not addressed (structured JSON logging open since 2023)",
+        "Missing configuration options (max attempts config)",
+        "Data corruption and reliability concerns (disk queue corruption, message loss during scaling)",
+        "Infrastructure/deployment issues (Docker image validation failures, ARM64 support requests)",
+        "Authentication security concerns (secrets leaking in error messages)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some recurring issues, but there are no signs of abandonment. Maintainers are moderately responsive to the reported problems."
+      "abandonment_signals": true,
+      "summary": "NSQ shows signs of maintenance stagnation with multiple unresolved feature requests, security concerns, and reliability issues accumulating over months, indicating slow or inactive maintainer engagement."
     },
     "communication": {
       "helpfulness": 7,
@@ -241,17 +245,18 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "A high number of open issues (53) suggests there may be unresolved problems that need attention."
+        "No commits in over 6 months (last commit July 2025, now January 2026)",
+        "No active contributors in the past 6 months",
+        "No merged pull requests in the past 6 months",
+        "No closed issues in the past 6 months despite 72 open issues",
+        "No releases recorded",
+        "High number of unresolved issues (72) with no triage activity"
       ],
-      "positive_signals": [
-        "Recent activity with contributors (10 active past six months) and PRs (17 open) indicates some level of community engagement.",
-        "One merged PR in the past six months shows that contributions are being accepted, which is a positive sign."
-      ],
-      "summary": "The package has minimal maintenance with recent contributor activity but lacks recent commits and has many unresolved issues."
+      "positive_signals": [],
+      "summary": "The nsq package appears abandoned with no maintenance activity for over 6 months, unresolved issues accumulating, and no signs of active development or community engagement."
     },
     "changelog": null,
     "governance": {
@@ -261,7 +266,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T01:07:02.181184+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

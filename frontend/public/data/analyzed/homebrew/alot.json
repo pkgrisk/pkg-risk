@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 5,
+      "installation": 3,
+      "quick_start": 6,
+      "examples": 4,
       "configuration": 4,
       "troubleshooting": 2,
       "overall": 5,
-      "summary": "The documentation provides a good overview of the package's features, but lacks detailed installation and configuration instructions.",
-      "top_issue": "Lack of clear and concise installation instructions"
+      "summary": "Clear project description and basic usage overview, but lacks actual installation instructions and troubleshooting content in the README itself.",
+      "top_issue": "No installation instructions in README - only a link to external documentation, leaving users unable to get started without navigating away"
     },
     "security": {
       "overall_score": 7,
@@ -211,18 +211,22 @@
       "summary": "The code has some potential security issues, including a possible command injection vulnerability and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bugs in handling email content",
-        "malformed email support"
+        "Email parsing robustness - malformed emails crash application",
+        "Character encoding issues with non-ASCII characters",
+        "Unicode and charset handling bugs",
+        "Outdated dependencies (gpg library not updated since 2018)",
+        "Missing error handling for edge cases"
       ],
       "praise_themes": [
-        "potential for PyPI distribution"
+        "Release planning and communication",
+        "Interest in modernization (PyPI distribution, switching to python-gnupg)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally neutral with some frustration over bugs, but the project seems to have active maintainers and potential improvements suggested."
+      "abandonment_signals": true,
+      "summary": "Alot shows signs of dormancy with slow maintainer response to recurring bugs (some issues open 5+ years), though recent activity around releases and modernization efforts suggest the project is not completely abandoned."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,14 +239,18 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with new contributors. There is a good level of technical depth in the discussions."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being from 2025-12-09",
+        "222 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "The alot package is abandoned with no maintenance activity, unresolved issues, or contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -252,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T01:08:07.015880+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

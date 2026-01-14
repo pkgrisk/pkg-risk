@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 5,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 4,
       "troubleshooting": 3,
       "overall": 5,
-      "summary": "The README provides a good introduction to the package, but lacks concrete examples and troubleshooting information.",
-      "top_issue": "Lack of quick start example and insufficient documentation for common use cases"
+      "summary": "Clear high-level description with good external links, but lacks inline quick-start examples and practical usage guidance in the README itself.",
+      "top_issue": "No inline quick-start example showing actual usage - users must navigate to external documentation to understand how to use ccache with their compiler"
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,21 @@
       "summary": "The ccache package has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "cache misses",
-        "compatibility issues"
+        "Vague documentation for PCH limitations and compiler support",
+        "Compiler compatibility issues (MSVC, nvcc, clang)",
+        "Platform/distribution challenges (Windows Unicode, Alpine Linux)",
+        "Missing configuration flexibility for directory-specific settings"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Performance optimization suggestions welcomed",
+        "Active feature requests indicating ongoing project interest"
+      ],
       "abandonment_signals": false,
-      "summary": "The ccache community is actively engaged, with maintainers responding to issues and users reporting a mix of bugs, feature requests, and compatibility problems."
+      "summary": "ccache maintains moderate community health with constructive feature requests and legitimate bug reports, but slower response times and unresolved edge-case compiler issues suggest maintainers may be capacity-constrained."
     },
     "communication": {
       "helpfulness": 9,
@@ -227,17 +232,20 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (202)",
-        "Recent last commit (2025-12-28)",
-        "Multiple merged PRs in the past 6 months (21)",
-        "Recent last release (2025-11-26)",
-        "Active contributors (12) in the past 6 months"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being Jan 13, 2026",
+        "62 open issues with no recent activity or resolution",
+        "Zero closed issues in the past 6 months indicating no active maintenance",
+        "No merged PRs in past 6 months showing no development activity",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests lack of version management"
       ],
-      "summary": "The ccache package appears to be actively maintained with frequent commits, releases, and a responsive community."
+      "positive_signals": [
+        "Repository still exists and is accessible"
+      ],
+      "summary": "ccache appears to be in a stale state with no maintenance activity over the past 6 months despite having an active issue backlog."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +255,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The ccache project lacks a clear succession plan and decision-making process, but provides a path for contributors to become maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T01:12:20.970960+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

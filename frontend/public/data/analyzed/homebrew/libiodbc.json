@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 7,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 9,
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 6,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is thorough but dense, making it difficult for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of a clear quick start guide or troubleshooting section"
+      "overall": 4,
+      "summary": "The README provides good background on what iODBC is but lacks concrete installation commands, quick-start code examples, and troubleshooting guidance for common issues.",
+      "top_issue": "No actual installation commands provided - only vague instructions about placing libraries in system directories without specific steps for any platform."
     },
     "security": {
       "overall_score": 7,
@@ -200,17 +200,19 @@
       "summary": "The iODBC Administrator code has some security concerns, including potential environment variable injection attacks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "build issues with recent compilers",
-        "type mismatches and warnings",
-        "diagnostics handling"
+        "Compiler compatibility issues (GCC 15 C23 standard changes)",
+        "64-bit pointer handling bugs (32-bit vs 64-bit type mismatches)",
+        "ODBC specification non-compliance",
+        "Build failures and compilation errors",
+        "Memory safety issues (buffer overflow, crashes)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration due to multiple open issues related to build compatibility, type mismatches, and diagnostics handling. However, there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "libiodbc shows concerning maintenance gaps with unresolved compiler compatibility issues, pointer handling bugs, and slow responsiveness to critical build failures, indicating potential project stagnation."
     },
     "communication": {
       "helpfulness": 7,
@@ -223,17 +225,18 @@
       "summary": "Responses are generally clear and helpful, showing patience with repeated questions and providing technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or bug fixes.",
-        "Open issues and PRs suggest ongoing problems that need attention."
+        "No commits in past 6 months despite being 7+ days since last activity",
+        "36 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicates no active maintenance",
+        "No merged PRs in past 6 months shows no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release infrastructure may be dormant"
       ],
-      "positive_signals": [
-        "Contributors active in the past six months, showing some level of community involvement.",
-        "Recent release within the last two years"
-      ],
-      "summary": "The package is minimally maintained with recent contributor activity but lacks recent commits and has an accumulation of open issues."
+      "positive_signals": [],
+      "summary": "libiodbc appears to be abandoned with no maintenance activity for at least 6 months and a growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -244,7 +247,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T01:12:44.743849+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

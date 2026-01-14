@@ -175,13 +175,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 1,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 5,
       "overall": 5,
-      "summary": "The documentation is clear and well-structured, but lacks a quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start guide to get new users started with the package"
+      "summary": "Clear introduction and excellent installation options, but lacks concrete usage examples and quick-start guide in the README itself.",
+      "top_issue": "No quick-start example showing how to actually create, manage, or restore a backup - users must navigate to external documentation to perform any actual operations"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,19 @@
       "summary": "The Rustic application has some security concerns, including environment variable injection risks and lack of input validation, but no secrets are hardcoded and error exposure is relatively low."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Environment variables in config files not supported",
-        "Crash during rustic restore from local repository"
+        "Filesystem compatibility issues (xattrs, fusermount3 options)",
+        "Configuration and environment variable handling",
+        "Edge case bugs causing crashes (empty snapshots, restore failures)",
+        "Third-party backend issues (Google Drive OpenDAL broken)",
+        "Missing user convenience features (snapshot grouping)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness and some common complaints, but no clear signs of abandonment."
+      "summary": "Rustic shows moderate community health with active development and bug fixes, but users face real usability friction around filesystem compatibility and configuration that needs attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,15 +226,17 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past month",
-        "Multiple merged PRs in the past six months",
-        "Regular issue and PR activity"
+      "concerns": [
+        "No commits in past 6 months despite last commit date being recent (likely repository mirror or metadata artifact)",
+        "137 open issues with no recent closures indicates unaddressed backlog",
+        "No merged PRs in past 6 months shows no active development or community contributions being integrated",
+        "No active contributors in past 6 months indicates no ongoing maintenance effort",
+        "Unknown last release date suggests release process is not tracked or inactive"
       ],
-      "summary": "The package is actively maintained with recent commits, multiple merged PRs, and regular issue and PR activity."
+      "positive_signals": [],
+      "summary": "The rustic package appears abandoned with a large unresolved issue backlog, no recent commits or merges despite the recent timestamp, and no active contributors or releases."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -249,7 +254,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks details on succession, decision-making, contributor paths, and indicates a single maintainer."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T01:02:04.704025+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
