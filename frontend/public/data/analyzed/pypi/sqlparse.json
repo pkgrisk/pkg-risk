@@ -258,14 +258,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
-      "examples": 7,
+      "installation": 10,
+      "quick_start": 10,
+      "examples": 8,
       "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the sqlparse package, but lacks comprehensive examples and troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent quick start and installation instructions with clear examples, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section or common error documentation; configuration options only shown in examples without comprehensive reference"
     },
     "security": {
       "overall_score": 8,
@@ -289,16 +289,18 @@
       "summary": "The sqlparse package has a good security posture, but some minor input validation and error handling issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Formatter issues",
-        "Split function behavior"
+        "Formatting bugs (CREATE TABLE, comment stripping, tab/space conversion)",
+        "Regressions in recent versions (0.5.4, 0.5.5 breaking changes)",
+        "Split function failures with complex SQL syntax (BEGIN...END, IF blocks)",
+        "Lack of type annotations/stubs for type checking"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active, with common complaints about formatting and split function behavior, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "sqlparse shows signs of maintenance challenges with recent versions introducing regressions, unresolved formatting bugs dating back to 2022, and minimal community engagement despite high-impact issues affecting dependent projects like DBT."
     },
     "communication": {
       "helpfulness": 8,
@@ -311,17 +313,20 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (241)",
-        "Low number of merged PRs in the past six months (8)"
+        "No commits in past 6 months despite last commit being recent (2025-12-19)",
+        "253 open issues with no recent activity",
+        "Zero closed issues in past 6 months indicating no active issue triage",
+        "No merged PRs in past 6 months suggesting no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date indicates potential release cycle stagnation"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Four contributors have been active in the past six months"
+        "Repository still exists and has recent timestamp"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges due to a high issue count."
+      "summary": "sqlparse appears abandoned with no maintenance activity over 6 months despite a recent commit timestamp, accumulating 253 unresolved issues with no triage or development progress."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -339,7 +344,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks formal processes and roles but indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:09:33.668474+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

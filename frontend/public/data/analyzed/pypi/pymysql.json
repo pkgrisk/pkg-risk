@@ -195,15 +195,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 9,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The PyMySQL README provides clear installation instructions and a basic example, but lacks comprehensive configuration documentation and troubleshooting resources.",
-      "top_issue": "Insufficient troubleshooting information"
+      "configuration": 6,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Well-structured documentation with excellent clarity and installation instructions, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like connection errors, authentication failures, or character encoding problems that MySQL clients frequently encounter."
     },
     "security": {
       "overall_score": 7,
@@ -230,16 +230,18 @@
       "summary": "The PyMySQL library has some potential security risks, including SQL injection vulnerabilities and lack of input validation, but overall it appears to be a secure library with proper configuration and usage."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "connect_timeout parameter issue",
-        "password with comma authentication failure"
+        "timeout handling inconsistencies (connect_timeout not working reliably)",
+        "special character handling in credentials (commas in passwords)",
+        "missing MySQL 8.0+ feature support (new INSERT syntax, SSL modes)",
+        "incomplete parameter validation (Decimal NaN/Infinity not caught)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate responsiveness and common issues reported."
+      "abandonment_signals": true,
+      "summary": "PyMySQL shows signs of maintenance neglect with several open feature requests from 2020-2025 and unresolved edge cases, though some critical bugs are being addressed."
     },
     "communication": {
       "helpfulness": 6,
@@ -255,17 +257,18 @@
       "summary": "The maintainer provides technical insights but can be less patient with new contributors and could improve in guiding them through issues."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of contributors (only 1 active in the past 6 months)",
-        "High number of open issues (17)"
+        "No commits in past 6 months despite last commit being from August 2025",
+        "22 open issues with no recent resolution activity",
+        "No merged PRs in past 6 months indicating no active development",
+        "Zero active contributors in past 6 months",
+        "No recent releases",
+        "Last commit is over 4 months old with no follow-up activity"
       ],
-      "positive_signals": [
-        "Recent commit and release dates",
-        "Moderate number of commits and PRs in the past 6 months"
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns due to low contributor engagement and a high number of open issues."
+      "positive_signals": [],
+      "summary": "pymysql appears to be abandoned with no development activity, issue resolution, or contributor engagement in the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -276,7 +279,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-structured and clearly marks breaking changes, but lacks migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:10:38.429400+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

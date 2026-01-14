@@ -486,15 +486,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 9,
+      "installation": 3,
       "quick_start": 9,
-      "examples": 6,
-      "configuration": 4,
+      "examples": 5,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The documentation is clear and provides a good quick start example, but lacks installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided"
+      "summary": "Excellent clarity and quick start example, but lacks installation instructions, configuration details, and any troubleshooting guidance.",
+      "top_issue": "No installation instructions provided - users must guess how to install (likely pip install werkzeug)"
     },
     "security": {
       "overall_score": 8,
@@ -505,16 +505,18 @@
       "summary": "The Werkzeug Request class appears to have a good security posture with no injection risks or secrets found, but there are some input validation issues and potentially insecure default configurations that should be reviewed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "routing issues",
-        "type signature and documentation discrepancies"
+        "Regressions in recent versions (3.1.4, 3.1.5) breaking existing functionality",
+        "Multipart/form-data parsing bugs (truncation, zero-length data)",
+        "Routing behavior changes between major versions without clear migration path",
+        "Documentation inconsistencies and typos in deprecation notices"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, particularly around routing and type signatures, but there are no clear signs of frustration or abandonment."
+      "summary": "Werkzeug community health is deteriorating due to recent regressions in core functionality (multipart parsing, request data handling) and routing behavior changes, coupled with inadequate documentation, though the project remains actively maintained with moderate responsiveness to issues."
     },
     "communication": {
       "helpfulness": 7,
@@ -530,18 +532,27 @@
       "summary": "The maintainer provides technical insights but could be more detailed in explanations and welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active in the last six months",
-        "A healthy ratio of merged PRs to open PRs"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-08)",
+        "Zero merged PRs in past 6 months indicating no active development",
+        "No closed issues in past 6 months showing lack of issue triage",
+        "Zero active contributors in past 6 months",
+        "12 open issues with no resolution activity",
+        "Unknown last release date prevents assessment of release cadence"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Repository has recent activity (last commit 2026-01-08)",
+        "Repository still has open issues being tracked"
+      ],
+      "summary": "Werkzeug appears stale with no development activity over the past 6 months despite recent commit metadata, suggesting the repository may be archived or unmaintained."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:05:46.485932+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

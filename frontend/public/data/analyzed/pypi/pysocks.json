@@ -177,13 +177,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 4,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides good examples, but could be improved with more troubleshooting information and configuration details.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Well-structured documentation with clear installation and basic usage, but lacks troubleshooting guidance and has an abruptly truncated error documentation section.",
+      "top_issue": "Error documentation is incomplete (cuts off mid-sentence at 'This may indicate that the prox'), and troubleshooting section is entirely missing despite common SOCKS proxy issues users face."
     },
     "security": {
       "overall_score": 7,
@@ -210,16 +210,21 @@
       "summary": "The PySocks library has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure library."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "NO_PROXY support",
-        "IPv6 support"
+        "IPv6 support missing",
+        "NO_PROXY environment variable not supported",
+        "Local/private network connections incorrectly routed through proxy",
+        "UDP proxy issues",
+        "Module wrapping affects entire application",
+        "Git tags and version management issues",
+        "Test failures in release versions"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of maintainer unresponsiveness or abandonment. The project faces common complaints about missing features like NO_PROXY and IPv6 support."
+      "abandonment_signals": true,
+      "summary": "PySocks shows severe abandonment with 13 open issues spanning years (2018-2025), zero closed issues in recent years, unresponsive maintainers, critical missing features (IPv6, NO_PROXY), and fundamental architectural problems that remain unaddressed."
     },
     "communication": {
       "helpfulness": 7,
@@ -235,18 +240,18 @@
       "summary": "The maintainer provides useful information but can be less patient with repeated questions and sometimes lacks clarity."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "No closed issues or releases since 2019"
+        "No commits in over 2.5 years (last commit July 2023)",
+        "61 open issues with no recent activity",
+        "Zero closed issues in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
-      "positive_signals": [
-        "Recent open issues and PRs indicate some level of community interest",
-        "Multiple contributors active in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "pysocks is abandoned with no maintenance activity for over 2.5 years and 61 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -257,7 +262,10 @@
       "overall_score": 4,
       "summary": "The changelog is basic and lacks key information such as breaking changes, migration guides, and proper categorization."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:08:27.737047+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

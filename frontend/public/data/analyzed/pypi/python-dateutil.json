@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its features, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common use cases and troubleshooting scenarios"
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions with a compelling quick-start example, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like timezone problems, parsing failures, or dependency conflicts"
     },
     "security": {
       "overall_score": 8,
@@ -199,16 +199,23 @@
       "summary": "The dateutil parser code appears to be secure with no major injection risks or secrets exposure, but has some minor input validation issues and potential for incorrect parsing due to lack of explicit separator validation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "vulnerability disclosure process",
-        "parser issues"
+        "Parser bugs with non-standard datetime formats (YYYY:MM:DD, colon-separated)",
+        "Ambiguous date parsing issues (dayfirst/yearfirst behavior inconsistent with docs)",
+        "Timezone offset parsing errors (GMT prefix causing sign inversion)",
+        "Fuzzy parser returning incorrect years",
+        "Missing security disclosure process (empty Security tab, unreachable contact email)",
+        "Infinite loops in rrule with edge cases (zero interval)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and a lack of maintainer responsiveness, particularly regarding vulnerability disclosures."
+      "praise_themes": [
+        "Appreciation for maintainers' work",
+        "Community engagement on proposals (datestuff merge suggestion, RDATE support)"
+      ],
+      "abandonment_signals": true,
+      "summary": "python-dateutil shows signs of slow maintenance with accumulating parser bugs, inadequate security contact procedures, and unresolved feature requests spanning years, though the library remains actively used and some community discussion persists."
     },
     "communication": {
       "helpfulness": 7,
@@ -224,17 +231,20 @@
       "summary": "Maintainer responses are generally clear and technically sound, but could be more welcoming and patient."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of commits in the past six months",
-        "High number of open issues and pull requests"
+        "No commits in past 6 months despite last commit being from September 2025",
+        "420 open issues with no recent resolutions",
+        "Zero closed issues in past 6 months indicates no active issue management",
+        "No merged PRs in past 6 months suggests no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "Recent commit within the last year",
-        "Regular release activity (last release was less than a year ago)"
+        "Package exists and has historical maintenance (last commit exists)"
       ],
-      "summary": "The package is minimally maintained with occasional updates but faces several unresolved issues."
+      "summary": "python-dateutil shows clear signs of being stale with no development activity, issue resolution, or contributor engagement over the past 6 months despite a large backlog of 420 open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +262,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks formal processes and roles for contributor progression, decision-making, and succession."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:14:06.170826+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

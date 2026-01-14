@@ -390,15 +390,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
+      "clarity": 10,
       "installation": 10,
-      "quick_start": 8,
-      "examples": 6,
-      "configuration": 4,
+      "quick_start": 10,
+      "examples": 8,
+      "configuration": 3,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear introduction to the package and its features, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common use cases and troubleshooting scenarios"
+      "overall": 8,
+      "summary": "Excellent quick-start documentation with clear purpose and basic usage, but lacks inline configuration examples and troubleshooting guidance.",
+      "top_issue": "No configuration examples in README (timeouts, proxies, session setup) - users must visit external docs for common patterns"
     },
     "security": {
       "overall_score": 8,
@@ -424,16 +424,20 @@
       "summary": "The provided code snippet from the 'requests' library appears to have some potential security concerns, including input validation issues and potential for injection attacks, but overall it seems to follow secure coding practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "import issues with Python 3.14.0a5",
-        "documentation errors"
+        "Duplicate spam issues (12 identical 'Crash bug' issues closed without resolution)",
+        "Binary method name handling bug (builtin_str converts b'GET' to string \"b'GET'\" instead of \"GET\")",
+        "Python 3.14 compatibility issues causing interpreter crashes on import",
+        "Lack of issue triage and spam prevention"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and documentation complaints, but no signs of abandonment."
+      "praise_themes": [
+        "Acknowledgment of historical discussions around URL parsing standards"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is poor: massive spam issue influx, unresolved bugs with no maintainer engagement, and apparent lack of repository moderation indicate significant neglect."
     },
     "communication": {
       "helpfulness": 5,
@@ -449,17 +453,18 @@
       "summary": "The responses are generally technical and clear, but lack patience and can be hostile to new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 10,
       "concerns": [
-        "High number of open issues (176)",
-        "Low number of merged PRs in the past 6 months (11)"
+        "No commits in past 6 months despite last commit being from 2025-12-01",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "329 open issues with no recent resolution activity",
+        "No releases since at least 6 months ago"
       ],
-      "positive_signals": [
-        "Recent commit activity within the last year",
-        "Multiple contributors active in the past 6 months"
-      ],
-      "summary": "The package is maintained with recent commits and contributors, but there are concerns due to a high number of open issues and low PR merge rate."
+      "positive_signals": [],
+      "summary": "The requests package shows no maintenance activity for at least 6 months with accumulating open issues and no contributor engagement, indicating the project is abandoned."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -470,7 +475,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks dedicated migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:14:27.739181+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -283,13 +283,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "quick_start": 8,
+      "examples": 7,
       "configuration": 5,
       "troubleshooting": 2,
       "overall": 6,
-      "summary": "The README provides a good introduction to the package and its features, but could benefit from more detailed examples and troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting documentation"
+      "summary": "Clear introduction and basic usage examples, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like SSL errors, authentication failures, or caching problems"
     },
     "security": {
       "overall_score": 7,
@@ -316,16 +316,19 @@
       "summary": "The httplib2 library has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a well-maintained and secure library."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "DeprecationWarning issues",
-        "Proxy support issues"
+        "Broken dependencies (pyparsing version constraints)",
+        "Proxy functionality regressions in v0.30.0",
+        "Environment variable support (HTTP_PROXY/HTTPS_PROXY) broken",
+        "Inconsistent NO_PROXY behavior with urllib",
+        "Deprecation warnings from pyparsing 3.3.0"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness, focusing on deprecation and proxy-related issues."
+      "abandonment_signals": true,
+      "summary": "Httplib2 shows signs of poor maintenance with multiple open regressions introduced in v0.30.0, broken dependency constraints, and slow issue resolution indicating possible abandonment."
     },
     "communication": {
       "helpfulness": 8,
@@ -338,17 +341,18 @@
       "summary": "Maintainer responses are clear, helpful, and patient. Technical depth is strong, and the maintainer encourages new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in past 6 months despite recent last commit timestamp",
+        "62 open issues with no resolution activity",
+        "Zero closed issues in past 6 months indicates no maintenance",
+        "No merged PRs in past 6 months shows stalled development",
+        "No active contributors in past 6 months",
+        "Unknown last release suggests release infrastructure abandoned"
       ],
-      "positive_signals": [
-        "Commits in the past six months",
-        "Contributors active in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with occasional commits and contributors, but a high issue count is concerning."
+      "positive_signals": [],
+      "summary": "httplib2 shows clear signs of abandonment with no maintenance activity, unresolved issues, or development progress over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -359,7 +363,10 @@
       "overall_score": 7,
       "summary": "The changelog is clear about breaking changes but lacks categorization and migration guides, making it somewhat difficult for users to understand the context of each change."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:10:58.525794+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -187,15 +187,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, with good installation instructions and examples, but lacks detailed configuration documentation and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and quick start with comprehensive examples, but lacks troubleshooting guidance and configuration details.",
+      "top_issue": "No troubleshooting section for common errors or problems users might encounter"
     },
     "security": {
       "overall_score": 7,
@@ -221,18 +221,19 @@
       "summary": "The code has some potential security concerns, including lack of input validation and potential issues with environment variable manipulation, but no critical findings were discovered."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Permission denied when sharing cache between users",
-        "_add_retries_to_file_obj_read_method makes file_obj invalid for pyarrow"
+        "Breaking changes in 4.0.0 release causing widespread compatibility issues",
+        "Performance problems with load_from_disk being extremely slow (7-8 hours reported)",
+        "Deprecated dataset scripts without clear migration path",
+        "File handling issues with pyarrow and streaming reads",
+        "Lack of sharding support for large parquet exports"
       ],
-      "praise_themes": [
-        "Feature request for incremental dataset support"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with a mix of feature requests and bug reports, but some issues indicate potential maintenance challenges."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The datasets library is experiencing significant community dissatisfaction driven by a problematic 4.0.0 release, performance regressions, breaking API changes, and perceived lack of attention to critical bugs despite moderate maintainer activity."
     },
     "communication": {
       "helpfulness": 7,
@@ -245,14 +246,17 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with the contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-13)",
+        "1034 open issues with zero closed in past 6 months indicates unaddressed backlog",
+        "Zero merged PRs in past 6 months shows no active development or review",
+        "No active contributors in past 6 months",
+        "Last release date unknown, suggesting release process may be broken or abandoned"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [],
+      "summary": "The datasets package shows severe abandonment indicators with a massive unaddressed issue backlog, zero development activity, and no contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -262,7 +266,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents a clear decision-making process but lacks formal succession planning and a contributor ladder, indicating medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:09:11.720922+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

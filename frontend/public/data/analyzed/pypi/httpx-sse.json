@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 6,
+      "quick_start": 10,
+      "examples": 9,
+      "configuration": 8,
       "troubleshooting": 7,
-      "overall": 8,
-      "summary": "The documentation is well-structured and provides clear examples, but could benefit from more detailed configuration options and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "overall": 9,
+      "summary": "Excellent documentation with clear examples and comprehensive API reference, though it could benefit from more troubleshooting guidance for common errors.",
+      "top_issue": "Limited troubleshooting section - only covers reconnection handling but doesn't address common error scenarios like connection timeouts, malformed SSE data, or authentication issues"
     },
     "security": {
       "overall_score": 8,
@@ -192,18 +192,21 @@
       "summary": "The code has some potential security issues, including a JSON injection risk and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Incorrect newline parsing",
-        "Ambiguous error when getting 401 from server"
+        "Error handling lacks context (401 responses, non-SSE content types)",
+        "Edge cases in SSE specification compliance (newline parsing, comment handling with IDs)",
+        "Connection state management issues (stuck until first event)",
+        "Documentation/examples can be misleading (stamina retry example)"
       ],
       "praise_themes": [
-        "Feature request for multipart/related support"
+        "Stable, well-designed API",
+        "Good library foundation for SSE handling"
       ],
       "abandonment_signals": false,
-      "summary": "The community is moderately active, with some frustration over specific issues but no clear signs of abandonment."
+      "summary": "httpx-sse shows healthy community engagement with a mix of legitimate bug reports and feature requests; the maintainer is responsive but there are several unresolved edge cases suggesting moderate technical debt in specification compliance and error handling."
     },
     "communication": {
       "helpfulness": 8,
@@ -216,18 +219,19 @@
       "summary": "The maintainer responses are clear, helpful, and encouraging to new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs compared to open PRs",
-        "Recent release but recent commits suggest active development"
+        "No commits in past 6 months despite last commit being from December 2025",
+        "7 open issues with no recent activity or resolution",
+        "No merged PRs in past 6 months indicating lack of development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests version tracking issues"
       ],
       "positive_signals": [
-        "Commits in the past six months",
-        "Merged PRs in the past six months",
-        "Active contributors in the past six months"
+        "No open PRs indicates no pending changes creating technical debt"
       ],
-      "summary": "The package shows signs of regular updates and contributions, though there are a few concerns regarding PR balance."
+      "summary": "httpx-sse appears to be stale with no development activity in the past 6 months despite open issues remaining unresolved."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -238,7 +242,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-structured and clear, but lacks migration guides for users upgrading from older versions."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:12:29.072532+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
