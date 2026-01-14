@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 3,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks clear troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting information"
+      "overall": 6,
+      "summary": "Well-structured README with clear architecture explanation but lacks configuration documentation and troubleshooting guidance.",
+      "top_issue": "No configuration options documented for HTTPServer or other components, leaving users to discover settings through code exploration"
     },
     "security": {
       "overall_score": 5,
@@ -208,16 +208,18 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "crashes",
-        "lack of IPv6 support"
+        "Chunked HTTP response encoding issues",
+        "Memory safety/destructor guard concerns",
+        "IPv6 availability crash",
+        "Dependency management and build failures"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with the project due to crashes and lack of support for certain environments, with maintainers being slow to respond."
+      "summary": "Proxygen shows moderate community health with active bug reports on critical issues (memory crashes, protocol failures) but minimal maintainer engagement and no visible praise or positive sentiment."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,17 +235,18 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, but could improve in terms of welcoming new contributors and providing consistent engagement."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low rate of issue closure",
-        "low rate of PR merges"
+        "No commits in past 6 months despite last commit being recent (suggests stale repository state or metadata error)",
+        "36 open issues with no activity indicates unresponsive maintenance",
+        "Zero closed issues in past 6 months shows issues are not being addressed",
+        "No merged PRs in past 6 months indicates no active development",
+        "Zero active contributors in past 6 months confirms lack of maintenance",
+        "Unknown last release suggests release process has ceased"
       ],
-      "positive_signals": [
-        "recent commits and active contributors",
-        "frequent updates in the past 6 months"
-      ],
-      "summary": "The proxygen package appears to be receiving some maintenance, but the low issue closure and PR merge rates suggest that it may not be actively maintained."
+      "positive_signals": [],
+      "summary": "Proxygen shows clear signs of abandonment with no commits, issue closures, PR merges, or contributor activity over the past 6 months despite a large backlog of open issues."
     },
     "changelog": null,
     "governance": {
@@ -253,7 +256,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for Proxygen lacks a clear succession plan, decision-making process, and contributor ladder, but indicates multiple maintainers with merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T01:14:18.708003+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
