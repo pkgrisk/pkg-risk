@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 6,
       "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is clear and provides a good introduction to the package, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting information"
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions with a solid basic example, but lacks comprehensive examples, configuration documentation, and troubleshooting guidance.",
+      "top_issue": "Missing configuration documentation (authentication details, connection options, timeout settings) and no troubleshooting section for common errors like quota limits or authentication failures."
     },
     "security": {
       "overall_score": 8,
@@ -193,16 +193,20 @@
       "summary": "The provided code appears to be generally secure with no critical findings, but could benefit from additional input validation and consideration of potential error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Schema conflict when storing dataframes with datetime objects",
-        "Intermittent failures in BigQuery queries"
+        "Intermittent location/dataset lookup failures despite correct configuration",
+        "Schema handling issues with datetime objects and dataframes",
+        "Partition expiration silently using defaults instead of respecting None values",
+        "Rate limiting and retry logic gaps for concurrent operations",
+        "Missing support for newer BigQuery data types (INTERVAL)",
+        "Inconsistent behavior between similar methods (to_dataframe vs to_dataframe_iterable)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with open issues and some frustration but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows moderate maintenance with a backlog of long-standing issues (some dating to 2018) related to edge cases, missing features, and API inconsistencies, indicating incremental rather than active development."
     },
     "communication": {
       "helpfulness": 7,
@@ -215,15 +219,20 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases within the last month",
-        "High number of merged PRs in the past six months indicating active contribution",
-        "Multiple contributors have been actively involved"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "Zero closed issues in past 6 months suggests no maintenance activity",
+        "65 open issues with no resolution indicates backlog accumulation",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit timestamp suggests repository still exists"
+      ],
+      "summary": "google-cloud-bigquery appears abandoned with no development, issue resolution, or release activity over the past 6 months despite a recent commit timestamp."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -234,7 +243,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:24:30.184076+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

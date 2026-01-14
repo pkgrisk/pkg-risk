@@ -185,14 +185,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 1,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 3,
+      "troubleshooting": 2,
       "overall": 4,
-      "summary": "The README provides a good overview of the package's features, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions"
+      "summary": "Clear explanation of what Flake8 does but lacks concrete installation instructions and working examples in the README itself, relying heavily on external documentation links.",
+      "top_issue": "No installation instructions in README - only links to external quickstart documentation, forcing users to navigate away immediately"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,19 @@
       "summary": "The code has some security concerns, including potential error exposure and lack of input validation, but no critical injection risks or hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "`--benchmark` / `--statistics` don't play well with custom formatters or `--quiet`",
-        "Inconsistent exclude behaviour"
+        "Configuration file handling issues (exclude behavior, config file search)",
+        "Output formatting problems (benchmark/statistics with custom formatters)",
+        "False positives in linting rules (E201 in f-strings, E713 in quotes)",
+        "Python 3.14 compatibility issues",
+        "Formatter and quiet mode interaction bugs"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and moderate responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "Flake8 shows signs of maintenance neglect with slow responsiveness to bugs (some open for 5+ years), multiple unresolved compatibility issues, and a lack of positive community engagement or feature enthusiasm."
     },
     "communication": {
       "helpfulness": 5,
@@ -231,20 +234,26 @@
       "summary": "The responses are generally technical and provide some useful information, but lack patience and can be unwelcoming."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs compared to open issues",
-        "No recent releases"
+        "No commits in past 6 months despite last commit date being in future (data anomaly)",
+        "No closed issues in past 6 months indicates no active issue resolution",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "23 open issues accumulating without resolution",
+        "Unknown last release date suggests release tracking gap"
       ],
       "positive_signals": [
-        "Recent commits and PR activity in the past six months",
-        "Four contributors have been active recently"
+        "No open pull requests (low churn/abandoned PRs)"
       ],
-      "summary": "The package shows signs of maintenance but faces concerns related to issue resolution and release frequency."
+      "summary": "flake8 shows clear signs of stagnation with zero maintenance activity over the past 6 months despite having accumulated open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:31:05.814194+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

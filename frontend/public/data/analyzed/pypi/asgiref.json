@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 4,
       "configuration": 5,
-      "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The documentation is detailed and informative, but could benefit from clearer installation instructions and more prominent troubleshooting information.",
-      "top_issue": "Lack of clear and concise installation instructions"
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "Well-written conceptual documentation that explains what the library does and why, but lacks practical installation instructions and minimal working code examples.",
+      "top_issue": "No installation instructions provided (just 'pip install -e .[tests]' for testing, not for regular use) and no complete working code examples showing how to actually use sync_to_async or async_to_sync"
     },
     "security": {
       "overall_score": 7,
@@ -190,19 +190,18 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error exposure that should be addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "async context issues",
-        "type annotations"
+        "Async/sync boundary bugs causing hangs and broken behavior",
+        "Type annotation gaps affecting developer tooling",
+        "Edge cases in ASGI spec handling (None values, optional fields)",
+        "ContextVar support issues with sync_to_async"
       ],
-      "praise_themes": [
-        "spec contributions",
-        "bug reports"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues and suggesting improvements, but there's a moderate level of frustration with unaddressed async context bugs."
+      "summary": "asgiref shows moderate health with active issue tracking but several unresolved production bugs in async handling and spec compliance that indicate potential gaps in maintenance depth."
     },
     "communication": {
       "helpfulness": 8,
@@ -215,17 +214,20 @@
       "summary": "The maintainer responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being recent (2025-12-10)",
+        "60 open issues with no recent activity or closure",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date raises questions about release cadence"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Multiple contributors active in the past six months"
+        "No open pull requests suggests issues aren't being actively worked on but also not accumulating",
+        "Recent last commit date (December 2025) shows some recent activity"
       ],
-      "summary": "The package is maintained with recent activity, but there are concerns about unresolved issues and low PR merge rate."
+      "summary": "asgiref appears stale with no active maintenance activity over the past 6 months despite a recent commit, indicated by zero recent commits, merged PRs, closed issues, and active contributors."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -236,7 +238,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:22:19.543909+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

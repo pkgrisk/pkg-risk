@@ -173,28 +173,33 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 6,
+      "installation": 8,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides good installation instructions and some configuration details, but lacks a clear quick start example and sufficient troubleshooting information.",
-      "top_issue": "Lack of a concise quick start example to help new users understand the basic usage of the package."
+      "examples": 1,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "Installation is clear but the README lacks any usage examples, making it impossible for new users to understand how to actually use the library.",
+      "top_issue": "No quick start or usage examples showing how to actually use fsspec to interact with filesystems"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "GCSFilesystem creation is surprisingly slow",
-        "Block Cache requests the data twice for reads greater than 160MB"
+        "Performance issues (GCSFilesystem creation slow, block cache double-fetches)",
+        "Whitespace/special character handling in filesystem operations (FTP)",
+        "Missing features or incomplete implementations (viewfs schema support, cross-filesystem copying edge cases)",
+        "Async/kwargs not properly propagated in some methods"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Maintainer actively fixing issues and adding bounds (recent s3fs lower bound addition)",
+        "Community engagement with cross-project collaboration (aiobotocore, universal-pathlib, Arrow)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health appears neutral with some open issues and low maintainer responsiveness."
+      "summary": "fsspec shows active maintenance with quick issue resolution, but users report performance bottlenecks and edge cases in filesystem operations that need attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -207,18 +212,26 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (44)",
-        "Multiple contributors active in the past six months (25)",
-        "A significant number of merged PRs in the past six months (44)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-13)",
+        "334 open issues with no recent activity",
+        "Zero closed issues in past 6 months",
+        "No open or merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
-      "summary": "The package fsspec appears to be actively maintained with a strong community contribution."
+      "positive_signals": [
+        "Recent commit timestamp exists (though may be data anomaly)"
+      ],
+      "summary": "fsspec appears abandoned with no maintenance activity over the past 6 months despite a large backlog of 334 open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:31:16.024878+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

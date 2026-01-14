@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 4,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good introduction to dbt, but lacks clear installation instructions and examples for the dbt-adapters package.",
-      "top_issue": "Lack of specific installation instructions and quick start guide for the dbt-adapters package"
+      "overall": 2,
+      "summary": "High-level overview that defers all practical details to external links and subpackages, leaving users unable to accomplish anything without extensive navigation.",
+      "top_issue": "No actual installation instructions, quick start example, or usage guidance in the README itself\u2014only links to external documentation and references to multiple subpackages without clarity on which one to use"
     },
     "security": {
       "overall_score": 7,
@@ -195,16 +195,18 @@
       "summary": "The codebase has some security concerns, including potential template injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "expand_target_column_types not working on iceberg tables",
-        "Redshift intermittent error"
+        "Redshift concurrent transaction conflicts (regression issue appearing twice)",
+        "Type checking and import issues with mypy stubs",
+        "Missing adapter support for newer features (Iceberg tables)",
+        "Missing configuration options (query timeout)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of frustration or abandonment."
+      "summary": "dbt-adapters shows active community engagement with recent issues reported, but frustration stems from recurring regressions, incomplete feature coverage across adapters, and moderate maintainer responsiveness with some issues going unacknowledged."
     },
     "communication": {
       "helpfulness": 7,
@@ -217,15 +219,19 @@
       "summary": "The maintainer responses are generally clear and helpful, showing a good level of technical depth and patience with contributors. However, there is room for improvement in the clarity of some explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (241)",
-        "A significant number of merged PRs in the past six months (98)",
-        "Recent last release date (2024-12-05)"
+      "concerns": [
+        "Zero commits in the past 6 months despite last commit being recent (2026-01-14)",
+        "662 open issues with no closed issues in past 6 months indicates no issue triage",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests no development activity",
+        "Unknown last release indicates no recent version releases"
       ],
-      "summary": "The package is actively maintained with frequent contributions and releases."
+      "positive_signals": [
+        "Repository exists and has recent commit history (though not recent activity)"
+      ],
+      "summary": "Package appears abandoned with no active maintenance, development, or community engagement over the past 6 months despite having 662 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -243,7 +249,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks formal processes for succession, decision-making, and contributor progression but indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:21:32.810309+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

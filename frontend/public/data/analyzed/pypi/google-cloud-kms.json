@@ -183,8 +183,8 @@
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 1,
-      "summary": "The documentation is overly complex and lacks clear instructions, making it difficult for new users to understand the package's purpose and usage.",
-      "top_issue": "Lack of clear and concise information about the google-cloud-kms package specifically, with most content appearing to be a general introduction to Google Cloud Python Client libraries."
+      "summary": "This README is severely truncated and only contains generic Google Cloud Python client library boilerplate without any KMS-specific content.",
+      "top_issue": "README is incomplete/truncated - contains only generic Google Cloud library information and a partial table of other services, with zero content about google-cloud-kms itself (no description, installation, usage examples, or KMS-specific documentation)"
     },
     "security": {
       "overall_score": 8,
@@ -195,15 +195,19 @@
       "summary": "The code has a good security posture with no injection risks or secrets found, but could improve input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "release PRs blocked due to failing unittests"
+        "Local server authentication flow failures (wsgi_app.last_request_uri errors)",
+        "Lack of timeout/shutdown control for run_local_server()",
+        "Missing configuration options for redirect host and credentials namespacing",
+        "Poor documentation of port=0 behavior",
+        "Long-standing unresolved issues (some from 2017-2019)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with ongoing issues blocking releases, but there are no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community experiencing frustration with core OAuth flow functionality, but maintainers are unresponsive with issues dating back 7+ years remaining unaddressed."
     },
     "communication": {
       "helpfulness": 7,
@@ -219,15 +223,17 @@
       "summary": "The maintainer's responses provide technical details but could be more welcoming and less repetitive."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "A large number of merged PRs in the past six months (195)",
-        "Recent activity with a release on 2026-01-08"
+      "concerns": [
+        "No commits in past 6 months despite last commit timestamp being very recent (suggests stale data or abandoned state)",
+        "595 open issues with no closed issues in past 6 months indicates unaddressed problems accumulating",
+        "Zero active contributors in past 6 months shows lack of maintainer engagement",
+        "No merged PRs in past 6 months indicates contributions are not being reviewed or integrated",
+        "Unknown last release date raises questions about versioning and release cycle"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [],
+      "summary": "google-cloud-kms appears abandoned with a large backlog of unresolved issues, no recent commits or contributor activity, and no merged pull requests in the past six months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -238,7 +244,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks specific information for the 'google-cloud-kms' package and does not provide clear categorization, breaking changes, migration guides, or completeness."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:27:31.678357+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

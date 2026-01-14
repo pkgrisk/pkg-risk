@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 8,
       "configuration": 7,
       "troubleshooting": 6,
       "overall": 8,
-      "summary": "The README provides clear and concise information about the package, its features, and usage, but could benefit from more detailed troubleshooting guides.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Excellent clarity and quick start with comprehensive AWS service coverage, but lacks troubleshooting guidance and has incomplete content at the end.",
+      "top_issue": "The README appears to be truncated at the end ('A slightly more conceptually elegant way to handle this is to use') and lacks troubleshooting/FAQ section for common authentication errors."
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,19 @@
       "summary": "The provided code sample has some security concerns, including potential injection risks, lack of input validation, and hardcoded secrets, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "setup automated testing",
-        "Passing in keyword arguments leads to a TypeError"
+        "Critical bugs in core functionality (keyword arguments, port handling, path parsing)",
+        "Broken packaging and distribution issues (missing HISTORY.md, dependency problems)",
+        "Integration failures with major AWS services (Bedrock, OpenSearch, Athena)",
+        "No response to open issues for months/years",
+        "Regression in version updates breaking existing functionality"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there's no clear sign of abandonment or significant praise."
+      "abandonment_signals": true,
+      "summary": "The project shows clear signs of abandonment with multiple critical, unresolved bugs dating back to 2023 and no maintainer engagement, making it unreliable for production use with AWS services."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,17 +238,19 @@
       "summary": "The maintainer responses are clear, helpful, and encouraging to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in over 6 months (last commit July 2024)",
+        "20 open issues with no recent closure activity",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
       "positive_signals": [
-        "Recent release on 2024-07-21T21:27:24+00:00",
-        "Active contributors (10) in the past six months"
+        "Repository still exists and is accessible"
       ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent code updates."
+      "summary": "This package appears abandoned with no maintenance activity for at least 6 months, unresolved issues, and no recent releases."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +261,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it incomplete for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:17:53.237627+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

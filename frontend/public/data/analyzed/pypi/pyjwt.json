@@ -261,15 +261,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 10,
       "examples": 6,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 6,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks comprehensive examples and troubleshooting documentation.",
-      "top_issue": "Insufficient configuration and troubleshooting documentation"
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Excellent clarity and quick start with minimal installation friction, but lacks configuration details, algorithm examples, and troubleshooting guidance.",
+      "top_issue": "No configuration documentation for key JWT parameters (algorithms, expiration, claims validation) and no troubleshooting section for common security pitfalls"
     },
     "security": {
       "overall_score": 8,
@@ -296,31 +296,45 @@
       "summary": "The code has some potential security risks, including JSON injection and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "API documentation and argument clarity",
-        "Security vulnerabilities"
+        "Critical security vulnerabilities not addressed promptly (CVE-2025-45768)",
+        "Import failures in production environments (apache2/mod_wsgi)",
+        "HTTP client issues causing IncompleteRead errors",
+        "Test failures on supported Python versions",
+        "Misleading API documentation and parameter naming",
+        "Missing contributing guidelines and community documentation",
+        "Unexpected validation behavior with missing claims",
+        "Loss of datetime precision in JWT encoding"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with concerns around API clarity and security, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "PyJWT shows signs of poor community health with unresolved critical security vulnerabilities, production failures, API design issues, and minimal maintainer engagement across multiple months of open issues."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged PRs in the past six months",
-        "Regular issue closure"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent",
+        "48 open issues with no recent resolution activity",
+        "Zero closed issues in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests outdated release process"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit activity on 2026-01-12 indicates repository is not completely dead"
+      ],
+      "summary": "PyJWT appears abandoned with no maintenance activity for 6+ months despite recent repository timestamp, indicating the project is likely not actively maintained."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:29:56.905964+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -192,15 +192,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 3,
-      "configuration": 1,
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 5,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a clear description of the package's purpose but lacks detailed installation instructions, examples, and troubleshooting guidance.",
-      "top_issue": "Lack of explicit installation instructions"
+      "summary": "The README clearly states what the package is (a pathlib-compatible zipfile wrapper) but completely lacks installation instructions, usage examples, and any practical guidance beyond a single-line usage hint.",
+      "top_issue": "No installation instructions and virtually no usage examples - only states 'Use zipp.Path in place of zipfile.Path' without showing how to import, instantiate, or use any methods"
     },
     "security": {
       "overall_score": 8,
@@ -211,16 +211,22 @@
       "summary": "The zipp package appears to be secure, but lacks input validation for potential path traversal attacks."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 4,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "incorrect globbing behavior",
-        "missing license information"
+        "glob pattern matching behavior deviates from pathlib standards",
+        "Missing LICENSE file in repository",
+        "TypeError when calling str() on Path objects initialized with fileobj",
+        "glob('**') returns incorrect results compared to pathlib.Path"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Maintainers actively backport fixes from CPython",
+        "Issues are being addressed and resolved",
+        "Good engagement with upstream Python development"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some active maintenance but facing issues related to incorrect functionality and missing documentation."
+      "summary": "Healthy maintenance activity with active issue resolution and CPython backporting, but several long-standing glob behavior discrepancies and documentation gaps remain unresolved."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,20 +239,26 @@
       "summary": "The maintainer provides clear and technically sound explanations, though there is room for more patience in handling basic questions."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "Recent activity but no new releases"
+        "No commits in past 6 months despite last commit being recent (Oct 2025)",
+        "8 open issues with no recent activity",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date makes it unclear if issues are being addressed"
       ],
       "positive_signals": [
-        "Commits in the past six months",
-        "Contributors active in the past six months"
+        "Project has received commits (most recent Oct 2025)",
+        "No open pull requests suggests low demand or stalled development"
       ],
-      "summary": "The package shows signs of maintenance with recent commits and contributors, but lacks new releases."
+      "summary": "The zipp package appears to be in minimal maintenance mode with no recent development activity despite having open issues that remain unaddressed."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:20:21.910462+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

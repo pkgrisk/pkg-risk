@@ -205,15 +205,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 9,
-      "examples": 6,
-      "configuration": 2,
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 8,
+      "examples": 5,
+      "configuration": 4,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks installation instructions and troubleshooting documentation.",
-      "top_issue": "Installation instructions are not provided"
+      "summary": "Clear purpose and basic usage example, but lacks installation instructions, configuration details, and any troubleshooting guidance.",
+      "top_issue": "No installation instructions provided - users must guess to use 'pip install hpack'"
     },
     "security": {
       "overall_score": 7,
@@ -237,18 +237,19 @@
       "summary": "The hpack package has some potential security concerns related to input validation and error handling, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Decoder isn't Threadsafe",
-        "RuntimeError: deque mutated during iteration"
+        "Thread safety issues with global variables in decoder",
+        "Runtime errors during concurrent/retry operations (deque mutation)",
+        "Missing test fixtures in sdist distribution",
+        "Excessive debug logging pollution",
+        "Unresolved issues spanning years without fixes"
       ],
-      "praise_themes": [
-        "Cythonize HPack"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some open issues and a closed pull request for improvement. There are no clear signs of abandonment."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "hpack shows signs of maintenance neglect with critical unfixed bugs (thread safety, deque mutations), packaging issues, and issues open for years without resolution, indicating a struggling or abandoned library despite its importance in HTTP/2 infrastructure."
     },
     "communication": {
       "helpfulness": 8,
@@ -261,20 +262,26 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and maintain a welcoming tone."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs"
+        "No commits in past 6 months despite last commit being recent (2026-01-11)",
+        "9 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicating no bug fixes",
+        "No merged PRs in past 6 months suggesting no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggesting release information is not available"
       ],
       "positive_signals": [
-        "Active contributors in the past six months",
-        "Recent merged PRs"
+        "Repository exists and has some historical maintenance"
       ],
-      "summary": "The package has recent activity but lacks recent commits, indicating a maintained status with some concerns."
+      "summary": "hpack appears abandoned or in minimal maintenance mode with unresolved issues and no recent development activity despite a recent commit timestamp."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:17:55.557472+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

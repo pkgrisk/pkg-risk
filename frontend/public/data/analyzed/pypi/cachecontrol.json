@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 8,
       "examples": 4,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The documentation is clear and concise, but lacks installation instructions and troubleshooting information.",
-      "top_issue": "Missing installation instructions"
+      "summary": "Clear purpose and basic usage example, but lacks installation instructions, configuration details, and troubleshooting guidance.",
+      "top_issue": "No installation instructions provided - users must infer they need to pip install cachecontrol"
     },
     "security": {
       "overall_score": 8,
@@ -194,16 +194,19 @@
       "summary": "The cachecontrol library appears to have a good security posture with no major injection risks or secrets exposure issues found, but some minor input validation and error handling concerns were identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "HTTP 302 Found responses with Cache Headers not being cached",
-        "Cache performs two gets on misses"
+        "Caching behavior doesn't follow HTTP RFC specifications (302 redirects)",
+        "Performance inefficiencies (double cache.get() calls on misses)",
+        "Cache corruption risks from incomplete writes",
+        "Lack of per-resource cache control options",
+        "Release process issues (missing test files in distributions)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, but there are open issues that could benefit from more attention and resolution."
+      "abandonment_signals": true,
+      "summary": "CacheControl shows signs of neglect with unresolved technical issues dating back years, minimal maintainer engagement, and recent regression in release quality suggesting the project may be under-resourced or abandoned."
     },
     "communication": {
       "helpfulness": 7,
@@ -216,17 +219,21 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with repeated questions and a good level of technical depth."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs relative to open PRs"
+        "No commits in past 6 months despite last commit being recent (2026-01-06)",
+        "31 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicates no maintenance activity",
+        "No merged PRs in past 6 months suggests pull requests are not being reviewed",
+        "No active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release frequency"
       ],
       "positive_signals": [
-        "Recent commits in the last month",
-        "Regular contribution from multiple contributors"
+        "Project has a recent commit history (last commit 2026-01-06)",
+        "No open PRs suggests the project is not accumulating unreviewed changes"
       ],
-      "summary": "The package is maintained with recent activity, but there are concerns about unresolved issues and PRs."
+      "summary": "The cachecontrol package appears stale with no maintenance activity over the past 6 months despite recent commit history, indicated by zero commits, closed issues, and merged PRs in that period."
     },
     "changelog": null,
     "governance": {
@@ -236,7 +243,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:24:07.397645+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

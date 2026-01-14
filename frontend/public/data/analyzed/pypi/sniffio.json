@@ -178,14 +178,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 2,
-      "quick_start": 8,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides a clear explanation of the package's purpose, but lacks installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided in the README."
+      "installation": 6,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Clear, focused documentation with excellent explanation of purpose and basic usage, but lacks explicit installation instructions and troubleshooting guidance.",
+      "top_issue": "No installation instructions provided in README (though pip/conda badges suggest standard install methods)"
     },
     "security": {
       "overall_score": 8,
@@ -199,16 +199,18 @@
       "summary": "The sniffio package appears to be generally secure, but there are some potential issues with input validation and error exposure that should be addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "sniffio fails to detect asyncio in certain environments",
-        "inclusion of test folder in package"
+        "Detection failures with specific async frameworks (Twisted)",
+        "Tests folder incorrectly included in package distribution",
+        "Deprecated dependencies (curio) in test suite",
+        "Missing exports in __all__ declaration"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "summary": "Sniffio maintains moderate health with responsive issue handling on packaging/distribution concerns, though some older issues remain unresolved and async framework compatibility gaps persist."
     },
     "communication": {
       "helpfulness": 7,
@@ -224,16 +226,21 @@
       "summary": "The maintainer's responses are generally helpful and clear, but could be more patient and welcoming to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "High number of open issues and PRs"
+        "No commits in past 6 months (last commit Feb 2024, over 11 months ago)",
+        "No active contributors in past 6 months",
+        "15 open issues with no recent activity or closure",
+        "No merged PRs in past 6 months",
+        "No releases in past 6 months",
+        "Unknown last release date suggests lack of versioning activity"
       ],
       "positive_signals": [
-        "Multiple contributors active in the past six months"
+        "Project exists and has some historical maintenance",
+        "No indication of hostile takeover or security compromise"
       ],
-      "summary": "The package is minimally maintained with multiple contributors, but lacks recent activity."
+      "summary": "The sniffio package shows signs of stagnation with no commits, contributor activity, or release activity in over 6 months, combined with a growing backlog of 15 unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -243,7 +250,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation for sniffio lacks clear information on succession, decision-making, contributor paths, and maintainer roles."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:23:44.177185+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

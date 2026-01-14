@@ -349,14 +349,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is generally clear and well-structured, but lacks a comprehensive quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section with common problems and solutions."
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 4,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "Clear purpose and context but lacks basic installation/usage instructions, jumping straight to building from source and advanced topics.",
+      "top_issue": "No pip installation command or basic connection example in the quick start section - README assumes users will build from source rather than install the published package"
     },
     "security": {
       "overall_score": 7,
@@ -380,30 +380,34 @@
       "summary": "The code has some potential security concerns related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "memory leaks",
-        "type hints and cursor behavior"
+        "Missing parameter support (private_key_passphrase, ON_ERROR error reporting)",
+        "Feature gaps in authentication methods (Workload Identity Federation, AKS managed identities)",
+        "KeyError exceptions and runtime failures with specific package managers (uv)"
       ],
-      "praise_themes": [
-        "feature requests for asyncio support",
-        "enhancements for better type handling"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, with a mix of feature requests and bug reports. The project seems to be moderately responsive but could benefit from more timely resolution of memory-related issues."
+      "summary": "Community shows moderate health with active maintainer triage but some unresolved feature requests and user friction around authentication flows."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent last commit and release dates"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-14)",
+        "199 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release tracking may be broken or outdated"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Recent commit timestamp exists (though appears to be a data anomaly given zero activity metrics)"
+      ],
+      "summary": "This package exhibits clear signs of abandonment with zero maintenance activity over the past 6 months despite a large backlog of unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -413,7 +417,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:20:48.342375+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 2,
+      "clarity": 8,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is very brief and lacks essential information for new users to get started with the package.",
-      "top_issue": "Lack of clear installation instructions, quick start examples, and troubleshooting guides"
+      "overall": 2,
+      "summary": "The README clearly states the package purpose but defers all practical information to an external website, providing no installation, usage, or configuration guidance.",
+      "top_issue": "README contains no installation instructions, quick start guide, or examples - users must visit external documentation for any practical information"
     },
     "security": {
       "overall_score": 8,
@@ -209,18 +209,19 @@
       "summary": "The pre-commit package has a good security posture, with no critical findings or injection risks, but some minor issues with input validation and potential error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "performance issues",
-        "environment variable handling"
+        "Performance issues with large repositories (git rev-list slowness, diff scanning)",
+        "Missing environment variable configuration in .pre-commit-config.yaml",
+        "Verbose output and logging limitations",
+        "Docker environment variable passing not supported",
+        "Tool argument ordering inflexibility (files before arguments)"
       ],
-      "praise_themes": [
-        "feature suggestions"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, but there are ongoing performance and feature requests that indicate some frustration."
+      "summary": "Pre-commit has an engaged but modest community with recent issues showing active concerns about performance optimization and feature requests for configuration flexibility, with maintainers responding but showing some reluctance to expand scope."
     },
     "communication": {
       "helpfulness": 3,
@@ -237,15 +238,20 @@
       "summary": "The maintainer's responses are unhelpful, unclear, and unwelcoming, often dismissing valid concerns without providing clear explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the last six months",
-        "High number of merged PRs indicating community engagement"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent (2025-12-22)",
+        "No merged PRs in the past 6 months",
+        "No closed issues in the past 6 months despite 31 open issues",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit activity (within last month as of analysis date)",
+        "Repository is not completely abandoned with some git history"
+      ],
+      "summary": "The pre-commit project shows signs of stagnation with no maintenance activity for 6 months, despite a recent commit, suggesting possible abandonment or indefinite maintenance hiatus."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -263,7 +269,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:28:17.570483+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
