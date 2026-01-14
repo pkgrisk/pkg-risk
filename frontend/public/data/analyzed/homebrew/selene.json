@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 4,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is brief and lacks essential information for new users to get started with the package.",
-      "top_issue": "Lack of installation instructions, quick start examples, and troubleshooting guides"
+      "overall": 2,
+      "summary": "Clear project description but completely lacks installation, usage examples, and any practical guidance in the README itself.",
+      "top_issue": "No installation instructions or usage examples in README - entirely relies on external documentation link"
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,18 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Bad CPU type in executable",
-        "Uploaded Linux/macOS artifacts lose executable permissions"
+        "Binary distribution issues (executable permissions, CPU type errors, missing architectures)",
+        "Limited Lua version support (missing Lua 5.4, custom stdlib difficulties)",
+        "require() function handling incomplete (string requires, custom requires)",
+        "macOS release binary problems (arm-only, not universal, executable bit lost)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some technical issues, but there are no clear signs of abandonment or significant frustration."
+      "abandonment_signals": true,
+      "summary": "Selene shows signs of maintenance neglect with multiple unresolved infrastructure issues (release artifacts, binary compatibility), incomplete feature support (Lua 5.4, goto statements), and slow issue response, though some recent activity in 2025-2026 suggests minimal continued development."
     },
     "communication": {
       "helpfulness": 7,
@@ -233,17 +235,18 @@
       "summary": "The maintainer is generally helpful, clear, patient, and welcoming but could improve with more detailed explanations."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being from November 2025",
+        "143 open issues with no recent closures",
+        "Zero closed issues in past 6 months",
+        "No open or merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date indicates no recent releases"
       ],
-      "positive_signals": [
-        "Recent commit activity",
-        "Regular contributor engagement"
-      ],
-      "summary": "The package is maintained but faces some concerns with unresolved issues and low PR merge rate."
+      "positive_signals": [],
+      "summary": "This project appears abandoned with no maintenance activity, no issue resolution, and no contributor engagement over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -254,7 +257,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T14:26:19.601387+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

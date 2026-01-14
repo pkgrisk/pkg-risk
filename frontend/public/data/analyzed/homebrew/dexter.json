@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 8,
-      "examples": 9,
-      "configuration": 8,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 9,
       "troubleshooting": 7,
       "overall": 8,
-      "summary": "The README provides clear and detailed instructions for installation, usage, and configuration, but could benefit from more concise troubleshooting information.",
-      "top_issue": "Some sections, such as troubleshooting, are not as comprehensive or easy to follow as others."
+      "summary": "Excellent documentation with clear purpose, comprehensive installation steps, and good examples, though troubleshooting could be more detailed.",
+      "top_issue": "Troubleshooting section is brief and mostly covers installation issues rather than runtime problems or common indexing scenarios users might encounter."
     },
     "security": {
       "overall_score": 7,
@@ -201,19 +201,23 @@
       "summary": "The code has some security concerns, including potential SQL injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "indexing partitioned tables",
-        "installation issues on Windows",
-        "support for new versions of pg_stat_statements"
+        "Concurrent index creation fails on partitioned tables",
+        "Dependency and compatibility issues (google-protobuf, ARM64, Windows)",
+        "NoMethodError and nil reference errors in query planning",
+        "hypopg extension OID exhaustion crashes",
+        "Lack of support for TimescaleDB hypertables",
+        "pg_stat_statements version compatibility issues"
       ],
       "praise_themes": [
-        "tool is useful and appreciated by users"
+        "Tool effectiveness and usefulness",
+        "Feature request collaboration"
       ],
       "abandonment_signals": false,
-      "summary": "The community health appears stable with active maintainer response, but there are recurring issues that need attention."
+      "summary": "Active but moderately supported project with users encountering technical issues around database compatibility, dependency management, and edge cases; users generally appreciate the tool but seek better handling of advanced PostgreSQL features."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,18 +230,19 @@
       "summary": "The maintainer's responses are clear, helpful, and patient, with a good level of technical depth and a welcoming tone."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No recent releases",
-        "Zero open PRs"
+        "No commits in past 6 months despite last commit being recent (2025-12-26)",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No closed issues in past 6 months despite 2 open issues",
+        "Unknown last release date suggests no releases in tracked period"
       ],
       "positive_signals": [
-        "Regular commits in the past six months",
-        "One merged PR in the past six months",
-        "Two contributors active in the past six months"
+        "Recent commit activity (2025-12-26) suggests some very recent work"
       ],
-      "summary": "The package is maintained with regular updates and contributions, but lacks recent releases and open PRs."
+      "summary": "The package appears abandoned with no maintenance activity over the past 6 months despite a recent commit, indicating either a one-time fix or repository stasis."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -248,7 +253,10 @@
       "overall_score": 7,
       "summary": "The changelog marks breaking changes and is mostly complete, but lacks categorized sections and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T14:21:35.777716+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

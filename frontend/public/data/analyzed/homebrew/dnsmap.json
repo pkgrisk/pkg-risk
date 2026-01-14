@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 2,
-      "examples": 6,
+      "examples": 3,
       "configuration": 4,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The documentation is informative but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example and absence of a dedicated troubleshooting section"
+      "summary": "Clear purpose and installation but severely lacks actual usage examples, command syntax, and troubleshooting guidance.",
+      "top_issue": "No command-line syntax or basic usage example shown - users must guess how to actually run dnsmap after installation"
     },
     "security": {
       "overall_score": 5,
@@ -211,30 +211,36 @@
       "summary": "The dnsmap tool has some security concerns, including potential injection risks and lack of robust input validation, but it does not appear to handle sensitive data or have critical vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "domain validation issues",
-        "[Bug] not working with .network domain"
+        "Domain validation too restrictive (TLD length limits, .io/.network domains failing)",
+        "Missing DNS query type flexibility (AAAA records not supported)",
+        "No custom DNS resolver support",
+        "Feature requests unaddressed for years (2021 requests still open)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and feature requests but no clear signs of abandonment."
+      "praise_themes": [
+        "Community interest in packaging (nixpkgs integration)",
+        "Resurrected open source project gaining attention"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows moderate abandonment with core functionality bugs unfixed for years, unresponded feature requests dating to 2021, and only one recent issue addressed while critical domain validation problems persist."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and no recent PR activity"
+        "No commits in past 6 months (last commit June 2024)",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months despite 3 open issues",
+        "Unknown last release date",
+        "No maintenance activity indicators"
       ],
-      "positive_signals": [
-        "Contributors active in the past six months",
-        "Recent closed issues"
-      ],
-      "summary": "The package shows minimal maintenance with some recent contributor activity but lacks recent code updates."
+      "positive_signals": [],
+      "summary": "The dnsmap project shows clear signs of abandonment with no commits, contributor activity, or issue resolution in the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +258,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks formal succession and decision-making processes, but provides a path for contributors to become maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T14:34:31.035783+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
