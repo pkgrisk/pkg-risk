@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 3,
+      "installation": 1,
       "quick_start": 1,
-      "examples": 2,
-      "configuration": 2,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides basic information about the package, but lacks detailed instructions and examples for users to get started.",
-      "top_issue": "Lack of installation instructions and quick start guide"
+      "overall": 2,
+      "summary": "Minimal README that only identifies the project and links to external wiki documentation without any immediate usage guidance.",
+      "top_issue": "No installation instructions, usage examples, or inline documentation - entirely relies on users navigating to external wiki"
     },
     "security": {
       "overall_score": 8,
@@ -198,16 +198,20 @@
       "summary": "The provided code appears to be a C++ implementation of a device probe for the SoapySDR library, with no major security concerns identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "device enumeration issues",
-        "compatibility problems"
+        "Segmentation faults and crashes (enumeration, device initialization)",
+        "Platform-specific bugs (ARM/aarch64 device dict passing failures)",
+        "Outdated releases and version stagnation (0.8.1 since Sep 2024)",
+        "Missing driver support and unmaintained plugins (Icom modules 7+ years old)",
+        "Windows build/linking issues with vcpkg",
+        "Hardware compatibility problems (RX-888 MK II, ADRV9002)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The SoapySDR community is moderately active, with some users experiencing frustration due to device enumeration and compatibility issues, but maintainers are responsive to reported problems."
+      "abandonment_signals": true,
+      "summary": "SoapySDR shows signs of maintenance stagnation with unresolved critical bugs (segfaults), outdated releases, unmaintained driver ecosystem, and slow/absent maintainer responses to user issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -220,21 +224,26 @@
       "summary": "The maintainer provides helpful and clear responses, demonstrating patience and technical depth, but could improve in welcoming new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low number of contributors",
-        "high number of open issues",
-        "unknown last release"
+        "No commits in past 6 months despite last commit being recent (2026-01-02)",
+        "49 open issues with no recent activity or triage",
+        "Zero closed issues in past 6 months indicating no bug fixes",
+        "Zero merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release tracking has stalled"
       ],
       "positive_signals": [
-        "recent commits",
-        "merged PRs in the past 6 months"
+        "Recent commit activity exists (2026-01-02), though appears to be initial/historical rather than ongoing maintenance"
       ],
-      "summary": "The soapysdr package appears to have some maintenance activity, but the low number of contributors and high number of open issues raise concerns about its overall health."
+      "summary": "The project shows clear signs of abandonment with zero maintenance activity over 6 months, accumulating open issues, and no contributions from active maintainers."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T16:00:32.827270+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
