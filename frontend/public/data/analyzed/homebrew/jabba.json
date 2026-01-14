@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 8,
+      "quick_start": 8,
+      "examples": 9,
       "configuration": 7,
       "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a good overview of the package and its features, but could benefit from more concise language and better troubleshooting documentation.",
-      "top_issue": "Lack of clear troubleshooting section"
+      "overall": 8,
+      "summary": "Excellent clarity and installation instructions with comprehensive examples, but lacks troubleshooting section and configuration documentation.",
+      "top_issue": "No dedicated troubleshooting section for common issues like installation failures, permission errors, or conflicts with existing Java installations"
     },
     "security": {
       "overall_score": 7,
@@ -203,17 +203,21 @@
       "summary": "The jabba package has some security concerns, including potential command injection vulnerabilities and lack of thorough input validation, but it does not appear to have any critical or high-severity issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Jabba persist env",
-        "ALL Installs are all failing! Upstream issue?",
-        "use has no effect when jabba installed via homebrew"
+        "jabba use command has no effect or doesn't persist JAVA_HOME",
+        "Homebrew installation broken - version switching doesn't work",
+        "Scoop installation broken - use and current commands non-functional",
+        "Installation failures across multiple platforms (Windows, WSL, macOS)",
+        "Shell integration issues (bash, zsh, PowerShell, nushell compatibility)",
+        "PATH environment variable corruption on repeated use commands",
+        "Version naming/validation too restrictive (underscore character rejection)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some issues with Jabba, particularly around environment variable persistence and installation failures, but overall the project seems to be actively maintained."
+      "abandonment_signals": true,
+      "summary": "jabba shows signs of poor maintenance with critical core functionality broken across multiple package managers (homebrew, scoop) and shell environments, causing widespread user frustration with minimal maintainer engagement."
     },
     "communication": {
       "helpfulness": 7,
@@ -226,17 +230,18 @@
       "summary": "The maintainer responses are generally helpful and patient, with clear explanations but could benefit from more technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "Only one merged PR in the past six months, suggesting limited contribution and maintenance activity."
+        "No commits in past 6 months (last commit April 2025, over 8 months ago)",
+        "22 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating lack of bug fixes",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggesting no development activity",
+        "No recent releases"
       ],
-      "positive_signals": [
-        "10 contributors are still active, which could indicate potential for future contributions.",
-        "Recent open issues and PRs suggest that there is ongoing need or interest in the project."
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but no new commits, raising concerns about its long-term sustainability."
+      "positive_signals": [],
+      "summary": "The jabba project appears abandoned with no development activity, issue resolution, or contributor engagement in the past 6 months despite having 22 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -247,7 +252,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but incomplete and lacks clear marking of breaking changes or migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:18:55.103232+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

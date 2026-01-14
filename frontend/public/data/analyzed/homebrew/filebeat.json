@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 5,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation provides a good overview of the Beats ecosystem, but lacks clear installation instructions and troubleshooting guides for the filebeat package specifically.",
-      "top_issue": "Lack of specific installation instructions and quick start examples for the filebeat package"
+      "overall": 3,
+      "summary": "Clear high-level overview but completely lacks actionable getting-started content, deferring everything to external documentation.",
+      "top_issue": "No installation instructions or usage examples in the README\u2014users must navigate to external documentation to do anything practical with the package."
     },
     "security": {
       "overall_score": 7,
@@ -196,21 +196,35 @@
       "critical_findings": [],
       "summary": "The provided code snippets appear to be relatively secure, but lack explicit input validation and may expose sensitive information through logs or insecure defaults."
     },
-    "sentiment": null,
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "Excessive logging output",
+        "Inconsistent retry behavior across Beat products",
+        "Lack of fallback recovery mechanisms"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "Active development with focused technical issues; team is addressing logging and reliability concerns, but some features lack mature error handling and recovery mechanisms."
+    },
     "communication": null,
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low rate of closed issues",
-        "high number of open PRs"
+        "No commits in past 6 months despite being a core Elastic tool",
+        "992 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicates no maintenance",
+        "No merged PRs in past 6 months shows no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process stalled"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "large number of active contributors"
+        "Recent commit exists (2026-01-13), though appears to be from upstream sync rather than maintenance"
       ],
-      "summary": "The filebeat package appears to be maintained, with a high volume of commits and a recent release, but may benefit from improved issue and PR management."
+      "summary": "Filebeat appears abandoned or in maintenance freeze with no active development, issue resolution, or contributor engagement over the past 6 months despite large backlog of open issues."
     },
     "changelog": null,
     "governance": {
@@ -220,7 +234,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the filebeat package lacks a clear succession plan and decision-making process, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:17:11.460787+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

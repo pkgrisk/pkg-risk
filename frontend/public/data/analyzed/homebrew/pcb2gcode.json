@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is thorough in installation instructions but lacks a clear quick start guide and sufficient examples for common use cases.",
-      "top_issue": "Lack of a concise quick start section to help new users get started with the package quickly."
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 4,
+      "overall": 4,
+      "summary": "Excellent clarity and comprehensive installation instructions, but completely lacks usage examples, configuration documentation, and practical quick-start guidance.",
+      "top_issue": "No examples showing how to actually use pcb2gcode after installation - no command-line syntax, no sample workflows, no configuration options documented"
     },
     "security": {
       "overall_score": 5,
@@ -205,16 +205,19 @@
       "summary": "The provided code snippet has some potential security concerns, including injection risks and lack of input validation, but it does not seem to handle sensitive data or have any critical vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "infinite loop issue",
-        "nonsensical milling path"
+        "Critical bugs causing infinite loops and memory exhaustion with invalid input",
+        "Unsafe tool movement sequence (Z descent before XY movement) causing collisions and damage",
+        "Incorrect milling paths and geometry generation with certain isolation widths",
+        "Limited configuration flexibility for tool identifier assignment",
+        "Path-finding algorithm generating invalid cuts that damage boards"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some technical issues but there are no signs of abandonment or severe dissatisfaction."
+      "abandonment_signals": true,
+      "summary": "pcb2gcode shows signs of abandonment with 5 open critical bugs spanning 5+ years (oldest from 2020), no maintainer engagement, and multiple reports of data-damaging failures that severely impact production workflows."
     },
     "communication": {
       "helpfulness": 6,
@@ -230,20 +233,24 @@
       "summary": "The maintainer's responses are generally adequate but show inconsistency and a lack of enthusiasm for some issues."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (62)",
-        "Low number of merged PRs in the past six months (13)"
+        "No commits in past 6 months (last commit was 2025-12-24, over 2 weeks ago relative to today 2026-01-13)",
+        "75 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No releases recorded"
       ],
-      "positive_signals": [
-        "Recent commit and release dates",
-        "Moderate number of contributors active in the past six months (3)"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges due to a high issue count."
+      "positive_signals": [],
+      "summary": "This project shows complete inactivity with no commits, issue resolution, PR merges, or contributor activity in the past 6 months, indicating it has been abandoned."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:22:28.213539+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

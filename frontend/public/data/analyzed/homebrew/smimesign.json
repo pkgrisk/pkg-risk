@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
+      "quick_start": 7,
+      "examples": 5,
       "configuration": 8,
-      "troubleshooting": 4,
+      "troubleshooting": 6,
       "overall": 7,
-      "summary": "The README provides a clear and detailed explanation of the package's functionality, but could benefit from more concise examples and troubleshooting guidance.",
-      "top_issue": "Lack of explicit troubleshooting section or common problem solutions"
+      "summary": "Excellent clarity and installation instructions, but lacks concrete usage examples showing how to actually sign commits after configuration.",
+      "top_issue": "No examples of actually signing a commit or tag after setup - users configure everything but aren't shown the final step of 'git commit -S' or how to verify signatures"
     },
     "security": {
       "overall_score": 7,
@@ -210,16 +210,19 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but does not appear to have any critical vulnerabilities that would allow for immediate exploitation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "--list-keys lists items not found in Keychain Access",
-        "CFError -25293 error on Mac"
+        "Cryptographic errors and signing failures on macOS (CFError -25293)",
+        "TLS/signature compatibility issues (PSS padding, TLS v1.3)",
+        "Smart card integration limitations and discrepancies",
+        "Time bomb in test suite (certificate expiration)",
+        "Regression in certificate chain handling"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some issues but there's no clear sign of abandonment or high frustration."
+      "abandonment_signals": true,
+      "summary": "Smimesign shows signs of abandonment with multiple unresolved critical issues spanning 4+ years, zero maintainer engagement, and recent security/compatibility failures on macOS."
     },
     "communication": {
       "helpfulness": 8,
@@ -232,17 +235,18 @@
       "summary": "Maintainer responses are generally clear and helpful, though there is room for improvement in patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Last release was over a year ago"
+        "No commits in the past 6 months despite last commit being from December 2025",
+        "40 open issues with no resolution activity",
+        "Zero closed issues in the past 6 months",
+        "No merged pull requests in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests stalled release process"
       ],
-      "positive_signals": [
-        "Commits in the past six months",
-        "Contributors active in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with occasional commits and contributors, but lacks recent updates."
+      "positive_signals": [],
+      "summary": "The project shows clear signs of abandonment with zero maintenance activity over the past 6 months and a growing backlog of unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -252,7 +256,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder but documents the decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:20:17.153469+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

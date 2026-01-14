@@ -175,13 +175,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 5,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The documentation is thorough in some areas, such as installation and configuration options, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to help new users understand basic usage within seconds."
+      "summary": "Excellent installation instructions across platforms, but critically missing practical usage examples and troubleshooting guidance.",
+      "top_issue": "No actual usage examples showing how to forward a port - only shows help output without demonstrating a real-world scenario like 'tcptunnel --local-port=8080 --remote-host=example.com --remote-port=80'"
     },
     "security": {
       "overall_score": 7,
@@ -207,18 +207,22 @@
       "summary": "The tcptunnel code has some security concerns, including potential injection risks and input validation issues, but overall it appears to be a relatively secure implementation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "file descriptor leak",
-        "connection reset by peer despite using --stay-alive"
+        "Lack of concurrent connection support",
+        "Connection stability issues (spontaneous disconnections)",
+        "File descriptor leaks under load",
+        "Platform-specific limitations (Windows fork support missing)",
+        "Port binding conflicts with existing services"
       ],
       "praise_themes": [
-        "multi-thread version request"
+        "Tool remains useful for debugging despite age",
+        "Lightweight alternative to complex tools like Wireshark"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some frustration around common issues but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The tcptunnel project shows significant abandonment with unresolved critical issues spanning 8+ years, no maintainer engagement, and multiple feature requests from users attempting to patch core limitations themselves."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,19 +235,24 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Only one contributor active in the last six months"
+        "No commits in over 18 months (last commit July 2022)",
+        "No activity in past 6 months across all metrics",
+        "4 open issues with no resolution or response",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release cadence has stopped"
       ],
-      "positive_signals": [
-        "One open PR exists"
-      ],
-      "summary": "The package shows minimal maintenance with limited recent activity."
+      "positive_signals": [],
+      "summary": "tcptunnel is abandoned with no development activity, issue responses, or releases for over 18 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:13:06.222005+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
