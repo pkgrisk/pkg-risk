@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 2,
+      "clarity": 7,
+      "installation": 5,
       "quick_start": 4,
-      "examples": 8,
+      "examples": 6,
       "configuration": 3,
-      "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation is somewhat clear and provides good examples, but lacks installation instructions and troubleshooting information.",
-      "top_issue": "Lack of clear installation instructions"
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "Decent technical documentation for developers familiar with HFST ecosystem, but lacks installation instructions, complete quick-start guide, and troubleshooting help for newcomers.",
+      "top_issue": "Missing installation/build instructions - only lists dependencies but doesn't explain how to actually build or install the library"
     },
     "security": {
       "overall_score": 6,
@@ -203,16 +203,19 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or sensitive information exposure was found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "suggestions not available",
-        "libospell.so: undefined symbol"
+        "Spell checking suggestions not working (core functionality broken)",
+        "Platform-specific bugs (Windows, SPARC64, GCC 13 compatibility)",
+        "Command-line flags not functioning as documented (--max-weight has no effect)",
+        "Case handling errors in office variant",
+        "Flag diacritics not supported in error models"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "hfstospell shows signs of abandonment with multiple unresolved critical bugs spanning years (2018-2024), slow maintainer response, and core functionality failures that directly impact users' primary use case of spell checking."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,17 +231,17 @@
       "summary": "The maintainer provides useful information and technical details, but could be more welcoming to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "A high number of open issues (13)"
+        "No commits in past 6 months",
+        "13 open issues with no recent closures",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over 1 year old (Feb 2024)"
       ],
-      "positive_signals": [
-        "Contributors active in the past six months",
-        "Recent release on 2024-02-20"
-      ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent commits and has a high number of open issues."
+      "positive_signals": [],
+      "summary": "The hfstospell project shows no signs of active maintenance with zero activity across all metrics over the past 6 months and a growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +252,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:11:59.946911+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

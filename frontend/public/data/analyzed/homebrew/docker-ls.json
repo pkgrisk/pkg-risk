@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
+      "quick_start": 8,
       "examples": 9,
       "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is comprehensive and well-structured, but could benefit from a clearer quick start section and more troubleshooting information.",
-      "top_issue": "Lack of troubleshooting information"
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent README with clear purpose, comprehensive installation options, and good examples, though lacking dedicated troubleshooting section.",
+      "top_issue": "No troubleshooting section for common issues like authentication failures, rate limiting, or SSL certificate problems"
     },
     "security": {
       "overall_score": 6,
@@ -209,16 +209,22 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and error exposure, but no hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "authorization issues",
-        "registry support"
+        "Authentication and authorization failures with various registries (GCR, ECR, GitLab)",
+        "DNS resolution issues with private registries",
+        "Pagination limitations (default 100 repositories)",
+        "Compatibility issues with shell autocompletion",
+        "Reference/digest format not properly supported"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some common complaints around authorization and registry support, but the maintainers seem to be actively addressing these issues."
+      "praise_themes": [
+        "Tool functionality is useful when it works",
+        "Library provides useful capabilities for registry interaction"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is poor with unresponsive maintainers, multiple unresolved authentication issues across registry types, and no meaningful engagement on feature requests or bug reports dating back to 2016-2021."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,17 +237,19 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient. They provide technical depth where appropriate and maintain a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Only one open issue and no merged PRs in the last six months"
+        "No commits in over 17 months (since August 2023)",
+        "Zero commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No closed issues in past 6 months despite having 2 open issues",
+        "Last release date unknown - likely old",
+        "No recent maintenance or bug fixes"
       ],
-      "positive_signals": [
-        "Eight contributors were active in the past six months",
-        "A recent release was made in February 2021"
-      ],
-      "summary": "The package shows minimal maintenance with occasional contributions but lacks recent activity."
+      "positive_signals": [],
+      "summary": "docker-ls is abandoned with no activity for over a year and unresolved open issues accumulating."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +260,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks clear marking of breaking changes, migration guides, and proper categorization, making it less user-friendly."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:10:18.304330+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 6,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
+      "examples": 3,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package and its installation, but lacks clear examples and troubleshooting guidance.",
-      "top_issue": "Lack of quick start example and troubleshooting documentation"
+      "overall": 3,
+      "summary": "Basic installation is clear, but lacks usage examples, configuration details, and any troubleshooting guidance for a complex scientific tool.",
+      "top_issue": "No quick start example showing how to actually run MrBayes or what commands to use after installation"
     },
     "security": {
       "overall_score": 7,
@@ -191,16 +191,19 @@
       "summary": "The code appears to be generally secure, but lacks input validation and may have potential buffer overflow vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation issues on ARM64",
-        "MCMC convergence problems"
+        "Compilation issues on ARM64/Apple Silicon with BEAGLE",
+        "MCMC convergence problems and numerical instability (NA values, low ESS)",
+        "Inconsistent behavior across partitioned vs unpartitioned analyses",
+        "Move proposal and parameter configuration conflicts",
+        "Clock analysis and topology/branch length linking issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to ongoing compilation and MCMC convergence issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "MrBayes shows concerning signs of slow maintenance with multiple unresolved technical issues spanning 2+ years, particularly affecting modern hardware (ARM64) and advanced analyses, with no visible maintainer engagement on open issues."
     },
     "communication": {
       "helpfulness": 7,
@@ -213,20 +216,24 @@
       "summary": "Maintainer responses are generally helpful and clear, showing patience with repeated questions. However, there is room for deeper technical explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "Open issues and PRs suggest potential unresolved problems or feature requests."
+        "No commits in past 6 months despite recent activity timestamp",
+        "76 open issues with no resolution activity",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests outdated or forgotten project"
       ],
-      "positive_signals": [
-        "Contributors are still active, which could indicate some level of interest in maintaining the package.",
-        "Recent open PRs show that there is at least some ongoing effort to improve the project."
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits and issue resolution."
+      "positive_signals": [],
+      "summary": "MrBayes appears to be abandoned with no maintenance activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:07:49.450420+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

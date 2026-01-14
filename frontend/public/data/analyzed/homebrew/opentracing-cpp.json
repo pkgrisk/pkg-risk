@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
+      "clarity": 3,
+      "installation": 7,
       "quick_start": 4,
-      "examples": 9,
+      "examples": 6,
       "configuration": 2,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks clarity and conciseness, making it difficult for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of clear and concise introduction to the package's purpose and basic usage, compounded by a deprecation notice that may confuse new users."
+      "overall": 3,
+      "summary": "Documentation is technically detailed but severely undermined by prominent deprecation warning and lacks clear explanation of what OpenTracing actually does for new users.",
+      "top_issue": "README leads with deprecation warning and requires reading external documentation to understand what the library does, failing the 30-second clarity test"
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,21 @@
       "summary": "The code has some security concerns, including potential injection attacks and lack of input validation, but no critical secrets exposure or error handling issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "C++20 compatibility issues",
-        "Compilation errors on specific architectures"
+        "C++20 compatibility issues (std::result_of removal)",
+        "Build failures on modern systems (Ubuntu SIGSTKSZ, Apple M1 arm64)",
+        "CMake configuration problems with INTERFACE include directories",
+        "Platform/architecture support gaps"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some technical challenges, but there are no signs of abandonment or severe frustration."
+      "praise_themes": [
+        "Good documentation and tutorials",
+        "Functional on supported platforms"
+      ],
+      "abandonment_signals": true,
+      "summary": "The project shows clear abandonment signals with multiple unresolved technical issues from 2020-2023, zero maintainer engagement, and no responses to legitimate build compatibility problems across modern architectures and C++ standards."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,17 +235,18 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with repeated questions and a good level of technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "No merged PRs in the past six months",
-        "A significant number of open issues and PRs"
+        "No commits in past 6 months (last commit over 12 months ago)",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No closed issues in past 6 months despite 20 open issues",
+        "No recent releases",
+        "Stagnant issue backlog suggests unresponsive maintainers"
       ],
-      "positive_signals": [
-        "10 contributors active in the past six months"
-      ],
-      "summary": "The package is being minimally maintained with contributions, but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "opentracing-cpp shows all indicators of abandonment with over a year of inactivity and unaddressed issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +257,10 @@
       "overall_score": 3,
       "summary": "The changelog is currently empty and does not provide any useful information for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:12:59.755688+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

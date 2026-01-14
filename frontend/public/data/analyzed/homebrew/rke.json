@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 5,
+      "clarity": 7,
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 5,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear step-by-step installation instructions and troubleshooting documentation"
+      "overall": 4,
+      "summary": "README clearly explains what RKE is and prominently warns of EOL, but lacks concrete installation/usage examples and primarily redirects to external documentation.",
+      "top_issue": "No actual installation or usage instructions in the README itself - everything defers to external docs, making it impossible to get started without leaving the page"
     },
     "security": {
       "overall_score": 7,
@@ -206,18 +206,20 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 4,
+      "frustration_level": 3,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "conflicts between host and container services",
-        "issues with network configuration"
+        "DNS resolution failures with Calico CNI",
+        "iSCSI conflicts between host and kubelet",
+        "Cloud provider configuration issues with vSphere"
       ],
       "praise_themes": [
-        "stability and reliability of the software",
-        "support for self-hosting and learning"
+        "Reliability and stability over extended deployments",
+        "Long-term version compatibility and smooth upgrades",
+        "Educational value for Kubernetes learning"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the stability and reliability of RKE, but experiences occasional frustration with specific issues, and maintainers respond moderately to reported problems."
+      "abandonment_signals": true,
+      "summary": "RKE project shows stable, appreciated software with loyal long-term users, but exhibits abandonment signals through stale issue backlog and lack of recent engagement despite moderate technical complaints."
     },
     "communication": {
       "helpfulness": 6,
@@ -233,18 +235,24 @@
       "summary": "The maintainer's responses are generally clear and technically sound, but often come across as impersonal and lacking in patience, with an over-reliance on automated messages."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases",
-        "Active contributors and merged PRs",
-        "Reasonable issue closure rate"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-09)",
+        "36 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicates no maintenance work",
+        "No merged PRs in past 6 months shows no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release - likely outdated"
       ],
-      "summary": "The package appears to be actively maintained with regular updates, contributions, and issue resolution."
+      "positive_signals": [],
+      "summary": "The rke package is abandoned with a stale codebase, unresolved issues accumulating, and no maintenance activity over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:07:23.689741+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and concise overview of the PCRE2 library, with good installation and quick start instructions, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "quick_start": 10,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Exceptionally clear and well-structured README with excellent quickstart and examples, though lacking troubleshooting guidance and complete configuration documentation.",
+      "top_issue": "No troubleshooting section for common build errors, linking issues, or platform-specific problems despite supporting many platforms"
     },
     "security": {
       "overall_score": 7,
@@ -195,16 +195,23 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "build issues",
-        "feature requests"
+        "Performance regressions with lookahead/lookaround constructs",
+        "Compile-time length limitations (64KB pattern size)",
+        "Missing GNU grep compatibility features (--T flag, -- delimiter)",
+        "Build system inflexibility (CMake only, no Meson support)",
+        "Documentation gaps on DFA semantics and lookaround behavior"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Willingness to consider architectural improvements",
+        "Regular bug fixes and version updates",
+        "Active issue triage and closure"
+      ],
       "abandonment_signals": false,
-      "summary": "The pcre2 community is moderately active, with maintainers responding to issues and users reporting a mix of build problems, feature requests, and technical questions."
+      "summary": "PCRE2 shows healthy maintenance activity with responsive issue handling, but users express frustration over performance edge cases, artificial limitations, and feature parity gaps with GNU grep."
     },
     "communication": {
       "helpfulness": 8,
@@ -220,16 +227,20 @@
       "summary": "The maintainer provides clear and technically deep explanations, but can be occasionally abrupt or dismissive of basic or vague questions."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (121 in the past 6 months)",
-        "Recent release (2025-10-21)",
-        "Active issue and PR management (32 closed issues, 66 merged PRs)",
-        "Multiple active contributors (9 in the past 6 months)"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months despite last commit being only 8 days ago indicates repository may be archived or inactive",
+        "45 open issues with no recent activity suggests issues are not being triaged or addressed",
+        "Zero closed issues in past 6 months indicates no bug fixes or maintenance activity",
+        "No merged PRs in past 6 months suggests contributions are not being reviewed or integrated",
+        "No active contributors in past 6 months indicates team has likely moved on"
       ],
-      "summary": "The pcre2 package appears to be actively maintained with frequent updates, releases, and contributor activity."
+      "positive_signals": [
+        "Recent commit exists (2026-01-05), showing repository is not completely abandoned",
+        "No open PRs indicates development is not actively underway but also no backlog of pending changes"
+      ],
+      "summary": "The pcre2 homebrew package shows signs of stagnation with no maintenance activity over the past 6 months despite a recent commit, suggesting it may be in maintenance mode or abandoned."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -240,7 +251,10 @@
       "overall_score": 7,
       "summary": "The changelog for the homebrew package 'pcre2' is well-structured and informative, but lacks explicit migration guides and could benefit from clearer explanations of some technical details."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:13:23.754071+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

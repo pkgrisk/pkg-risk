@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 6,
-      "examples": 7,
-      "configuration": 8,
+      "examples": 3,
+      "configuration": 6,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and detailed information on installation, configuration, and usage, but lacks concise examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "overall": 5,
+      "summary": "Well-structured installation documentation but lacks practical examples and troubleshooting guidance for actual PKCS#11 usage.",
+      "top_issue": "No examples showing how to actually use SoftHSM with applications or code - only shows token initialization, not integration or common operations"
     },
     "security": {
       "overall_score": 7,
@@ -192,15 +192,17 @@
       "summary": "The code appears to be generally secure but lacks proper input validation and error handling, which could lead to potential security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "deadlock in softhsm2"
+        "API compatibility issues with recent OpenSSL versions",
+        "Unresolved deadlock when using OpenSSL 4.0-dev",
+        "Missing post-quantum cryptography support"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively discussing issues, but there are unresolved technical problems that cause frustration."
+      "summary": "SoftHSM shows moderate health with active bug reports and some responsiveness, but faces technical debt around OpenSSL compatibility and standards support (PKCS#11 v3.0, MLDSA) that remains unaddressed."
     },
     "communication": {
       "helpfulness": 7,
@@ -213,20 +215,25 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing a good level of patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (141)",
-        "Low number of merged PRs in the past six months (13)"
+        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "174 open issues with no closed issues in past 6 months indicates issues are not being triaged",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests pull requests are not being reviewed",
+        "Unknown last release date indicates release process has stalled"
       ],
       "positive_signals": [
-        "Recent activity with commits in the last year",
-        "Multiple contributors active in the past six months"
+        "Recent commit activity exists (2026-01-12)"
       ],
-      "summary": "The package shows minimal maintenance efforts with a high issue count and low PR merge rate."
+      "summary": "SoftHSM is abandoned with a large backlog of unresolved issues and no active maintenance despite recent repository activity."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:08:47.749958+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

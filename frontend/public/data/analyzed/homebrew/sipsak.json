@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 2,
-      "installation": 8,
+      "installation": 6,
       "quick_start": 1,
-      "examples": 3,
-      "configuration": 2,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is lacking in clarity, examples, and troubleshooting, making it difficult for new users to understand and use the package.",
-      "top_issue": "Lack of clear and concise information about what the package does and how to use it."
+      "overall": 2,
+      "summary": "Minimal README that defers all meaningful documentation to a man page, providing no information about what the package actually does or how to use it.",
+      "top_issue": "No description of what sipsak is or what problem it solves - a new user has no idea if this is a SIP testing tool, server, client, or library"
     },
     "security": {
       "overall_score": 7,
@@ -206,15 +206,20 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "buffer overflow issues",
-        "outdated changelog"
+        "Critical bugs: buffer overflow and segmentation faults",
+        "Header parsing incompatibility with common servers (Freeswitch)",
+        "TLS/SSL transport issues on modern systems (Rocky 9, OpenSSL 3.0)",
+        "Version mismatch between changelog and releases",
+        "No responses to bug reports"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with ongoing issues and outdated information, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Appreciation for the tool's existence and functionality"
+      ],
+      "abandonment_signals": true,
+      "summary": "The sipsak project shows signs of abandonment with critical unfixed bugs, zero maintainer engagement on issues, and compatibility problems with modern systems indicating lack of active maintenance."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,18 +232,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "A high number of open issues (17)",
-        "Only one merged PR in the past six months"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 24 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over 7 months ago (May 2025)",
+        "No recent releases"
       ],
-      "positive_signals": [
-        "Ten contributors have been active in the past six months",
-        "There are currently seven open pull requests, indicating ongoing development efforts"
-      ],
-      "summary": "The package is receiving minimal maintenance with occasional contributions but faces concerns due to a lack of recent commits and numerous unresolved issues."
+      "positive_signals": [],
+      "summary": "The sipsak package shows clear signs of abandonment with a complete absence of maintenance activity over the past 6+ months and unaddressed open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +254,10 @@
       "overall_score": 6,
       "summary": "The changelog is mostly complete but lacks clear categorization, marking of breaking changes, and migration guides, which could improve user understanding."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:14:39.129389+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
