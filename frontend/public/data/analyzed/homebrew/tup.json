@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 2,
+      "clarity": 7,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is clear about the package's purpose, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of installation instructions and examples"
+      "overall": 2,
+      "summary": "Clear high-level description but completely lacks practical usage information, installation steps, or any examples.",
+      "top_issue": "No installation instructions, quick start guide, or usage examples provided"
     },
     "security": {
       "overall_score": 7,
@@ -201,17 +201,21 @@
       "summary": "The code has some security concerns, including potential injection risks and inadequate input validation, but it does not appear to have any critical vulnerabilities that would allow for immediate exploitation."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "tup doesn't work on WSL",
-        "NIM compiler support is broken since version 0.7.10 (Linux x86)",
-        "tup only works with sudo"
+        "Platform compatibility issues (WSL, Windows, macOS FUSE)",
+        "Build system integration problems (Nim compiler, FUSE filesystem)",
+        "Permission and security constraints (setgroups errors, user namespace issues)",
+        "Missing or unclear documentation (build instructions, dependencies)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community expresses frustration with tup's compatibility issues and lack of clear build instructions, but there are no signs of abandonment."
+      "praise_themes": [
+        "Project fundamentals are solid (appreciation expressed for the tool itself)",
+        "Feature requests indicate active user interest"
+      ],
+      "abandonment_signals": true,
+      "summary": "The tup project shows signs of maintenance neglect with slow responsiveness to platform-specific bugs, incomplete documentation, and unresolved issues spanning multiple years (some open since 2014-2015), despite apparent user appreciation for the core tool."
     },
     "communication": {
       "helpfulness": 8,
@@ -224,17 +228,19 @@
       "summary": "The maintainer's responses are clear, helpful, and demonstrate a good level of technical depth while being patient with the contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of contributors (only 1 active in the past 6 months)",
-        "No recent releases"
+        "No commits in past 6 months despite last commit being recent (July 2025)",
+        "162 open issues with no recent closure activity",
+        "Zero merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
       "positive_signals": [
-        "Recent commits and PR activity",
-        "Moderate number of open issues and PRs indicating community interest"
+        "Repository still exists and was active at some point (July 2025 commit)"
       ],
-      "summary": "The package shows minimal maintenance with occasional updates but lacks sustained contributor engagement."
+      "summary": "The tup package appears abandoned with no maintenance activity for 6+ months despite having a substantial backlog of 162 open issues."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +250,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear plans for succession, decision-making processes, and paths for contributors to become maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:11:24.636960+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

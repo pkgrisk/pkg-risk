@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally clear and comprehensive, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problems and solutions documentation"
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 9,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Well-structured documentation with clear purpose, installation methods, and comprehensive CLI options, though lacking troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common errors like network issues, parsing failures, or workspace-related problems"
     },
     "security": {
       "overall_score": 8,
@@ -205,17 +205,20 @@
       "summary": "The cargo-outdated code has some potential security concerns, including path traversal issues and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "version release issues",
-        "compatibility with newer Rust versions",
-        "issues with read-only files"
+        "Tool fails on projects with feature flag conflicts (opencv docs-only)",
+        "Workspace configuration errors (wrong workspace member detection)",
+        "Permission issues with read-only Cargo files",
+        "Rust edition 2024 compatibility warnings and errors",
+        "Compilation failures with recent Rust versions (1.85, 1.86)",
+        "Release versioning problems (0.18.0 and 0.17.0 not published to crates.io)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with open issues related to version releases and compatibility, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The cargo-outdated project shows signs of maintenance stagnation with multiple unresolved critical issues spanning Rust compatibility, release management, and core functionality bugs, with several closed issues suggesting abandoned attempts to fix underlying problems."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,17 +231,18 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with repeated questions, but could improve in explaining the 'why' behind decisions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of active contribution.",
-        "Low number of closed issues and no recent releases suggest limited user feedback or updates."
+        "No commits in past 6 months despite last commit being from November 2025",
+        "73 open issues with no recent activity",
+        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
+        "No merged PRs in past 6 months showing no feature development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process is stalled"
       ],
-      "positive_signals": [
-        "Recent commits within the last year",
-        "Five contributors have been active over the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with occasional contributions but lacks recent activity in terms of PRs and releases."
+      "positive_signals": [],
+      "summary": "cargo-outdated appears to be abandoned with no maintenance activity for at least 6 months despite having a significant backlog of 73 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:12:53.426815+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

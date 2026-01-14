@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 5,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks clear installation and troubleshooting instructions, making it difficult for new users to get started.",
-      "top_issue": "Lack of clear installation instructions and absence of a dedicated troubleshooting section"
+      "overall": 3,
+      "summary": "Clear description of what OpenBao does but almost entirely lacks user-facing documentation, focusing instead on developer contribution workflow.",
+      "top_issue": "No installation instructions for end users - only developer setup; missing quick start guide, usage examples, and configuration documentation"
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,22 @@
       "summary": "The code has some potential security risks, including command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows good security practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs in HA clusters",
-        "missing features"
+        "Race conditions and reliability issues in HA/Raft deployments",
+        "Feature parity gaps with upstream Vault (TLS parameters, policy list handling)",
+        "Stale technical debt and dependency management",
+        "Test coverage gaps (acceptance tests not running in CI)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active ecosystem growth (new integrators like Percona joining)",
+        "Engagement with community contributions (multiple 'good first issue' and 'help wanted' labels)",
+        "Recent issue creation showing ongoing development"
+      ],
       "abandonment_signals": false,
-      "summary": "The openbao community is actively reporting issues and feature requests, but maintainers appear to be slow in responding, indicating a need for more engagement to address user concerns."
+      "summary": "OpenBao shows moderate health with active development and ecosystem growth, but reveals maturity concerns through unresolved infrastructure bugs, feature gaps versus upstream, and accumulated technical debt requiring community contribution."
     },
     "communication": {
       "helpfulness": 9,
@@ -227,19 +233,20 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically sound, creating a welcoming environment for contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "large number of open PRs"
+        "No commits in past 6 months despite recent activity timestamp",
+        "222 open issues with no recent closures",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date",
+        "No recent development activity"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many active contributors",
-        "high number of merged PRs"
+        "Repository still exists and has recent timestamp"
       ],
-      "summary": "The package appears to be actively maintained with a high volume of recent activity, despite some concerns around issue and PR backlog."
+      "summary": "OpenBao appears abandoned with no development activity, contributor engagement, or issue resolution in the past 6 months despite a large backlog of open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -257,7 +264,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "low",
       "summary": "The OpenBao project has a well-documented governance structure with clear succession plans, decision-making processes, and contributor pathways, indicating a low bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:18:31.276356+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

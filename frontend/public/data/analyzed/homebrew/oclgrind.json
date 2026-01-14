@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The README provides detailed installation and usage instructions, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 6,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose and solid installation instructions, but lacks concrete usage examples and configuration details.",
+      "top_issue": "Missing concrete code examples showing how to actually use Oclgrind with real OpenCL programs beyond the single basic command-line invocation"
     },
     "security": {
       "overall_score": 7,
@@ -194,18 +194,24 @@
       "summary": "The code appears to be generally secure, but lacks input validation in some areas and uses deprecated OpenCL APIs."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "support for newer LLVM versions",
-        "thread safety of OpenCL runtime implementation"
+        "LLVM version support lags behind (currently supporting LLVM 16-19, but issues with 20-21 still open)",
+        "Release cadence is infrequent (users requesting releases to enable package manager updates)",
+        "Thread-safety issues in OpenCL runtime remain unresolved since 2013",
+        "Interactive debugger limitations with pointer types after LLVM 15 opaque pointer migration",
+        "Compilation errors and compatibility issues with recent LLVM versions",
+        "macOS CI/build issues (libcurses.tbd dependency problem)"
       ],
       "praise_themes": [
-        "requests for new features or improvements"
+        "Tool is valued as essential for OpenCL kernel debugging",
+        "Recent updates appreciated by community",
+        "Described as 'invaluable' for CUDA and OpenCL development"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, but there are ongoing issues related to support for newer tools and thread safety concerns."
+      "abandonment_signals": true,
+      "summary": "oclgrind shows signs of maintenance but with gaps: recent LLVM support work (19, 20, 21) indicates active development, yet long-standing issues (thread-safety since 2013, opaque pointer support since 2023) remain unresolved, release delays frustrate package managers, and sporadic CI issues suggest capacity constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,20 +224,24 @@
       "summary": "The maintainer's responses are clear, helpful, and demonstrate a good level of patience and technical depth while maintaining a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the last year, indicating a potential decrease in active development.",
-        "A significant number of open issues and PRs suggests ongoing problems that need attention."
+        "No commits in past 6 months despite last commit being recent (indicates stale repository)",
+        "48 open issues with no recent closure activity",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No releases recorded",
+        "Discrepancy between last commit timestamp and actual commit history suggests repository may be archived or dormant"
       ],
-      "positive_signals": [
-        "Regular issue reporting indicates community engagement.",
-        "Some recent activity with merged PRs shows that contributions are being accepted."
-      ],
-      "summary": "The package is in minimal maintenance, showing some recent activity but facing a number of unresolved issues and PRs."
+      "positive_signals": [],
+      "summary": "oclgrind appears to be an abandoned project with no meaningful development activity over the past 6 months, despite technical recent commit metadata."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:09:22.224948+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

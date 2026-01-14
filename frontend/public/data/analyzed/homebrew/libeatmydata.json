@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 6,
+      "clarity": 10,
+      "installation": 9,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 6,
-      "summary": "The README provides a clear introduction and installation instructions, but lacks comprehensive examples, configuration documentation, and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation and configuration options"
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions with strong warnings, but lacks configuration options documentation and troubleshooting guidance.",
+      "top_issue": "No documentation of configuration options, command-line flags, or environment variables that users might need to control behavior"
     },
     "security": {
       "overall_score": 7,
@@ -188,16 +188,22 @@
       "summary": "The libeatmydata library has some security concerns, including potential data corruption or loss due to disabled synchronization and lack of input validation, but overall it appears to be a relatively secure library."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "eatmydata doesn't seem to work on macos",
-        "error: use of undeclared identifier 'O_DSYNC' on FreeBSD"
+        "Core functionality broken on macOS (DYLD_FORCE_FLAT_NAMESPACE no longer works)",
+        "Platform-specific bugs unfixed (FreeBSD O_DSYNC, OpenBSD build failures)",
+        "Missing documentation and unclear usage",
+        "Incompatibilities with modern tools (readlink -f, Chromium/Chrome)",
+        "Incomplete feature implementation (missing syncfs() stub)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some open issues and questions, but no clear signs of abandonment."
+      "praise_themes": [
+        "Recognized as useful utility ('gem')",
+        "Adopted by major distributions (Arch/Manjaro)"
+      ],
+      "abandonment_signals": true,
+      "summary": "libeatmydata shows signs of abandonment with multiple critical platform-specific bugs open since 2017-2023, no maintainer responses, and core functionality broken on macOS, indicating poor community health."
     },
     "communication": {
       "helpfulness": 7,
@@ -213,20 +219,26 @@
       "summary": "The maintainer provides useful information but could benefit from more detailed explanations and a bit more polish."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 14 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over 7 months ago",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent release on 2023-01-08T20:18:55+00:00",
-        "Active contributors (10) in the past six months"
+        "Repository still exists and is accessible"
       ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent commits and merged PRs."
+      "summary": "The libeatmydata project appears stale with no development activity for over 6 months and unresolved issues accumulating."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:07:30.952548+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
