@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 2,
+      "clarity": 6,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is lacking in key areas, making it difficult for new users to get started with the package.",
-      "top_issue": "No clear installation instructions or usage examples are provided."
+      "overall": 2,
+      "summary": "While the README clearly states what the tool does (parallel bzip2 compression), it completely lacks any practical usage information including installation, basic usage examples, or command-line syntax.",
+      "top_issue": "No installation instructions or usage examples - users have no idea how to install or run the tool"
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "performance issues",
-        "file permission changes",
-        "build failures"
+        "Performance regression (2x slower after recent commits)",
+        "Platform compatibility issues (macOS crashes, Windows porting, Fedora build failures)",
+        "Silent mode not functioning correctly (-q flag still outputs warnings)",
+        "File permission handling bugs",
+        "Website/infrastructure problems (domain not resolving, spam content)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is expressing frustration with performance, build, and file handling issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The lbzip2 project shows signs of abandonment with multiple unresolved bugs dating back years, zero maintainer engagement, and infrastructure issues indicating lack of active stewardship."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,17 +232,18 @@
       "summary": "Maintainer responses are clear, helpful, and demonstrate a good level of technical depth while being patient with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of open PRs and active contributors",
-        "High number of open issues"
+        "No commits in past 6 months despite last commit being from August 2025",
+        "13 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "Zero merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests releases may be outdated"
       ],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Regular release schedule"
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns due to unresolved issues."
+      "positive_signals": [],
+      "summary": "This package is abandoned with no maintenance activity for at least 6 months and accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +254,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:00:35.262387+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

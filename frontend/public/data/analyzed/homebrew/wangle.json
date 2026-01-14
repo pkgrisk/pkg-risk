@@ -160,15 +160,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 5,
+      "examples": 6,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides a good overview of the package, but lacks concise quick start examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting section and concise quick start examples"
+      "overall": 5,
+      "summary": "The README provides a reasonable high-level overview and building instructions, but lacks concrete quick-start code examples, configuration details, and troubleshooting guidance.",
+      "top_issue": "No standalone quick-start code example - users are redirected to a separate tutorial file and examples directory without seeing basic usage upfront"
     },
     "security": {
       "overall_score": 8,
@@ -179,16 +179,18 @@
       "summary": "The provided code appears to have a good security posture with no major injection risks or secrets exposure, but some input validation and configuration issues were identified that require attention."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation issues",
-        "performance problems"
+        "Architecture-specific test failures (arm64 QEMU failures)",
+        "Memory management and leak issues during shutdown",
+        "Build and compilation errors across different platforms",
+        "Resource destruction order problems causing crashes"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The wangle community is experiencing some technical difficulties and performance issues, but maintainers are moderately responsive to user concerns."
+      "abandonment_signals": true,
+      "summary": "Wangle shows signs of reduced maintenance with open issues from 2024 unresolved, infrequent responses, and a mix of platform-specific and architectural bugs suggesting the project may have lower priority or limited active development resources."
     },
     "communication": {
       "helpfulness": 6,
@@ -205,18 +207,18 @@
       "summary": "The maintainer responses are somewhat helpful and clear, but lack patience and technical depth, while also being unwelcoming to new contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no closed issues in the past 6 months",
-        "very few merged PRs in the past 6 months"
+        "No commits in past 6 months despite recent activity timestamp",
+        "46 open issues with no resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent versioning"
       ],
-      "positive_signals": [
-        "frequent commits in the past 6 months",
-        "recent release",
-        "many active contributors"
-      ],
-      "summary": "The wangle package appears to be stale due to a lack of issue resolution and PR merging despite recent commits and releases."
+      "positive_signals": [],
+      "summary": "Wangle shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -226,7 +228,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The wangle project lacks a clear succession plan and decision-making process, but indicates multiple maintainers with merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:05:26.213521+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

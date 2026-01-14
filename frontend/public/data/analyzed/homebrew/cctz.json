@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package and its functionality, but lacks clear troubleshooting guidance and configuration documentation.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 7,
+      "examples": 8,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent conceptual explanation and clear purpose, but lacks troubleshooting guidance and configuration documentation for non-Bazel users.",
+      "top_issue": "No troubleshooting section for common issues like missing zoneinfo files, build failures, or platform-specific problems"
     },
     "security": {
       "overall_score": 8,
@@ -192,16 +192,17 @@
       "summary": "The cctz library appears to be well-designed and secure, with no major security concerns found in the provided code samples."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "binary size concerns",
-        "Windows timezone implementation"
+        "Windows platform compatibility issues (timezone detection, strptime polyfill)",
+        "Performance concerns (2.5-8x slower than C/C++ alternatives)",
+        "Build system compatibility (CMake version requirements)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with open issues related to binary size and Windows compatibility, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of maintenance stagnation with unresolved platform-specific issues dating back to 2017-2018 and slow responsiveness to recent performance and compatibility concerns, despite some recent activity in 2025."
     },
     "communication": {
       "helpfulness": 8,
@@ -214,17 +215,18 @@
       "summary": "The responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience and a welcoming attitude towards new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Few merged PRs in the past six months",
-        "Open issues and open PRs"
+        "No commits in past 6 months despite last commit being from December 2025",
+        "9 open issues with no activity to address them",
+        "Zero closed issues in the past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases recorded"
       ],
-      "positive_signals": [
-        "Commits in the past six months",
-        "Recent release"
-      ],
-      "summary": "The package shows signs of maintenance but has some concerns regarding issue resolution."
+      "positive_signals": [],
+      "summary": "This project appears abandoned with no maintenance activity, issue resolution, or contributor engagement in the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -234,7 +236,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:08:41.567282+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

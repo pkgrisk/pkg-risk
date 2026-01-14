@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 6,
       "quick_start": 2,
       "examples": 1,
-      "configuration": 4,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The documentation is brief and lacks detailed examples, making it difficult for new users to quickly understand and use the package.",
-      "top_issue": "Lack of examples and quick start guide"
+      "summary": "README provides a basic description and build instructions but lacks any usage examples, configuration guidance, or practical quick-start information.",
+      "top_issue": "No usage examples or quick-start guide showing how to actually use rinetd to redirect connections after installation"
     },
     "security": {
       "overall_score": 8,
@@ -185,16 +185,21 @@
       "summary": "The provided code snippet appears to be a part of the rinetd package and does not contain any critical security vulnerabilities, but input validation in the parseConfiguration function should be reviewed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "performance degradation",
-        "configuration file issues"
+        "Performance degradation and throughput issues",
+        "Missing socket options (TCP_KEEPALIVE)",
+        "Domain name resolution not dynamic/requires restart",
+        "Configuration limitations (no include directives, path parsing issues)",
+        "Resource exhaustion (too many open files)",
+        "IPv6 support gaps (link-local addresses, dual stack)",
+        "Platform-specific bugs (Windows line breaks, FreeBSD issues)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with open issues, but there are no clear signs of frustration or abandonment. Performance and configuration issues are the main concerns."
+      "abandonment_signals": true,
+      "summary": "The rinetd project shows significant community frustration with 16+ open issues spanning critical bugs and feature gaps, zero maintainer engagement, and no recent activity suggesting the project is effectively abandoned."
     },
     "communication": {
       "helpfulness": 8,
@@ -207,18 +212,18 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "A high number of open issues"
+        "No commits in past 6 months",
+        "30 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests outdated version"
       ],
-      "positive_signals": [
-        "Contributors are still active",
-        "There have been some recent PR submissions"
-      ],
-      "summary": "The package is currently receiving minimal maintenance with occasional contributions but faces significant concerns regarding issue resolution and lack of updates."
+      "positive_signals": [],
+      "summary": "The rinetd package shows no signs of active maintenance with zero commits, contributions, and issue resolution over the past 6 months despite accumulating 30 open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -229,7 +234,10 @@
       "overall_score": 5,
       "summary": "The changelog lacks clear categorization, marked breaking changes, and migration guides, but it is relatively complete and understandable."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:07:59.756720+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
