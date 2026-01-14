@@ -190,14 +190,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
+      "installation": 7,
+      "quick_start": 5,
+      "examples": 3,
+      "configuration": 6,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides a good overview of the package, but installation instructions are incomplete and troubleshooting information is lacking.",
-      "top_issue": "Lack of comprehensive troubleshooting guide"
+      "overall": 5,
+      "summary": "Clear project overview with good language support matrix, but lacks concrete usage examples and troubleshooting guidance in the README itself.",
+      "top_issue": "No inline code examples showing actual API client usage - users must click through to external documentation to see how to use the generated code"
     },
     "security": {
       "overall_score": 7,
@@ -217,7 +217,23 @@
       ],
       "summary": "The codebase has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
-    "sentiment": null,
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "OpenAPI spec compliance issues (missing type keyword, components property not used)",
+        "Language-specific code generation bugs (C#, TypeScript)",
+        "Complex schema handling (anyOf, nullable types, Record<T>)",
+        "Response type handling (multiple content types, binary data, event-stream)"
+      ],
+      "praise_themes": [
+        "Active issue tracking and bug documentation",
+        "Multi-language support attempts"
+      ],
+      "abandonment_signals": false,
+      "summary": "Kiota shows moderate community health with active issue engagement, but users experience frustration with inconsistent OpenAPI spec compliance and language-specific code generation bugs that remain open for weeks."
+    },
     "communication": {
       "helpfulness": 5,
       "clarity": 7,
@@ -232,17 +248,17 @@
       "summary": "The maintainer's responses are adequate but show signs of inconsistency and a lack of patience with repetitive queries."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs compared to open PRs",
-        "High number of open issues"
+        "No commits in past 6 months despite recent timestamp",
+        "169 open issues with no closure activity",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests stale release cycle"
       ],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple contributors are active"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges with issue backlog and PR handling."
+      "positive_signals": [],
+      "summary": "The kiota package appears abandoned with no maintenance activity for at least 6 months, accumulating a large backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -260,7 +276,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project has a documented decision process and contributor path, but lacks a succession plan and indicates only one maintainer."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T16:10:37.390376+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 6,
       "installation": 5,
-      "quick_start": 2,
-      "examples": 3,
+      "quick_start": 3,
+      "examples": 4,
       "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is organized but fails to clearly explain what opentelemetry-proto specifically does, instead providing generic OpenTelemetry Python documentation that doesn't match this particular package.",
-      "top_issue": "Critical mismatch: this appears to be the main OpenTelemetry Python repo README, not documentation for the 'opentelemetry-proto' package specifically, which is a protocol buffer definitions package with entirely different usage patterns."
+      "overall": 4,
+      "summary": "The README provides good project overview and installation commands but lacks package-specific clarity since it covers the entire opentelemetry-python monorepo rather than just the opentelemetry-proto package.",
+      "top_issue": "This README is for the entire OpenTelemetry Python repository, not specifically for opentelemetry-proto - users searching for this specific package won't understand what opentelemetry-proto does or how it differs from opentelemetry-api or opentelemetry-sdk"
     },
     "security": {
       "overall_score": 8,
@@ -206,14 +206,13 @@
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
         "Semantic convention inconsistencies (gen_ai vs llm field naming)",
-        "Breaking changes not properly implemented across versions",
-        "Signal handling and span lifecycle management issues",
-        "Performance concerns with recursive logging implementation",
-        "Type validation errors on specific Python versions"
+        "Documentation gaps (unclear which field names are standard)",
+        "Process termination handling for spans",
+        "Performance concerns with recursive stack walking"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintenance addressing specification alignment issues and performance concerns, though some features show incomplete implementation across SDK versions."
+      "summary": "The project shows active maintenance with recent issues and thoughtful technical discussions, though there are unresolved semantic convention alignment problems and performance concerns that suggest coordination challenges between documentation and implementation."
     },
     "communication": {
       "helpfulness": 7,
@@ -229,18 +228,21 @@
       "summary": "The maintainer's responses provide useful technical information but could benefit from clearer guidance and more detail, especially for new contributors."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite recent last commit timestamp",
+        "No commits in past 6 months despite recent activity timestamp",
         "440 open issues with no resolution activity",
-        "Zero closed issues in past 6 months",
+        "No closed issues in past 6 months",
+        "Zero contributors active in past 6 months",
         "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests stale release cycle"
+        "No releases available"
       ],
-      "positive_signals": [],
-      "summary": "opentelemetry-proto shows clear signs of abandonment with no maintenance activity over 6 months, a large backlog of unresolved issues, and no contributor engagement."
+      "positive_signals": [
+        "Repository exists and is accessible",
+        "Recent timestamp suggests repository hasn't been deleted"
+      ],
+      "summary": "This package is stale with no meaningful maintenance activity over the past 6 months, evidenced by zero commits, closed issues, merged PRs, and active contributors."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -261,7 +263,7 @@
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T05:32:45.573202+00:00"
+    "llm_analyzed_at": "2026-01-14T16:14:42.756395+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
