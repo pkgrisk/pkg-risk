@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 5,
-      "configuration": 3,
-      "troubleshooting": 7,
-      "overall": 5,
-      "summary": "The README provides a good introduction to Kubernetes, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 4,
+      "overall": 3,
+      "summary": "Excellent clarity on what Kubernetes is, but severely lacking practical usage instructions for the CLI tool itself.",
+      "top_issue": "This is the Kubernetes core project README, not kubernetes-cli documentation - it shows how to build K8s from source but provides no information on installing or using kubectl (the CLI), which is what Homebrew users actually need."
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,18 @@
       "summary": "The code has some potential security concerns related to input validation and command injection risks, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "permanent and transient errors",
-        "image pull failures"
+        "Performance issues (CPU usage from iptables configuration)",
+        "Network connectivity and routing problems (LoadBalancer service issues, Tailscale VPN timeouts)",
+        "Pod lifecycle management issues (deletion after restart with mounted secrets/configmaps)",
+        "CEL validation rule cost budgeting constraints blocking legitimate use cases"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively engaged with maintainers, but some issues have been open for an extended period, indicating room for improvement in addressing user concerns."
+      "abandonment_signals": true,
+      "summary": "Kubernetes maintains moderate community health with responsive maintainers, but shows concerning patterns of stale/rotten issues, minimal engagement on several open problems, and a mix of critical bugs alongside feature requests that lack active prioritization."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,17 +239,20 @@
       "summary": "The maintainer responses are generally helpful and clear, but could benefit from more human interaction and technical depth to fully support contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (979)",
-        "Recent last commit (2025-12-31)",
-        "Frequent releases (last release on 2025-12-17)",
-        "Large number of contributors active in the past 6 months (141)",
-        "Steady issue and PR resolution rate"
+      "concerns": [
+        "Zero commits in the past 6 months despite active issue tracking",
+        "2528 open issues with no recent closures indicate unaddressed backlog",
+        "No merged PRs in past 6 months suggests no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
-      "summary": "The kubernetes-cli package appears to be actively maintained with a high volume of commits, releases, and contributor activity."
+      "positive_signals": [
+        "Issues are still being tracked and reported",
+        "Recent activity on repository (last commit 2026-01-14) shows some monitoring"
+      ],
+      "summary": "kubernetes-cli is in stale maintenance status with no development activity, unresolved issues, and unmerged PRs indicating the project is not actively maintained."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -265,7 +270,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the kubernetes-cli package lacks a clear succession plan and decision-making process, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:59:45.523619+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
