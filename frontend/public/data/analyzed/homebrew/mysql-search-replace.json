@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 7,
       "configuration": 8,
-      "troubleshooting": 6,
-      "overall": 8,
-      "summary": "The documentation is well-structured and provides clear instructions, but could benefit from more concise language and additional troubleshooting information.",
-      "top_issue": "Lack of detailed troubleshooting guides for common issues"
+      "troubleshooting": 5,
+      "overall": 7,
+      "summary": "Well-structured documentation with comprehensive CLI options and clear warnings, but lacks a concrete quick-start example and troubleshooting depth.",
+      "top_issue": "Quick start section describes steps but doesn't show actual example output or screenshots of the web interface, making it hard to know what success looks like"
     },
     "security": {
       "overall_score": 6,
@@ -203,15 +203,20 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "backend errors",
-        "database access issues"
+        "PHP version compatibility issues (PHP 8.3 breaks, PHP 7.4 works)",
+        "Database connection errors (mysqli_sql_exception, PDOException)",
+        "AJAX/HTTP protocol handling bugs (http:// causes errors)",
+        "Serialization data handling issues (Yoast plugin conflicts)",
+        "Version number not updated in codebase",
+        "Deprecated PHP functions causing warnings (htmlentities)",
+        "MariaDB authentication failures after upgrades"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The community health is negative with moderate maintainer responsiveness, frequent backend and database access issues, and no clear signs of active development or maintenance."
+      "summary": "Community health is poor with 12 open issues spanning multiple years, zero maintainer responses, critical PHP 8.3 incompatibility, and no active engagement despite user frustration."
     },
     "communication": {
       "helpfulness": 6,
@@ -227,17 +232,18 @@
       "summary": "The maintainer's responses are adequate but could be more helpful and patient, especially with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, which could indicate that development has slowed down or stopped.",
-        "A significant number of open issues (25) and PRs (8), suggesting potential bugs or feature requests that have not been addressed."
+        "No commits in over 8 months (last commit April 2025, current date January 2026)",
+        "33 open issues with no recent activity or triage",
+        "Zero closed issues in past 6 months indicating no active maintenance",
+        "No merged PRs in past 6 months showing no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests lack of versioning discipline"
       ],
-      "positive_signals": [
-        "Recent release on 2025-04-11",
-        "Active contributors in the past six months (10)"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent commits and has a high number of open issues."
+      "positive_signals": [],
+      "summary": "The mysql-search-replace package appears to be abandoned with no development activity, issue resolution, or contributor engagement over the past 8+ months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -248,7 +254,10 @@
       "overall_score": 6,
       "summary": "The changelog is mostly complete but lacks clear categorization, breaking change indicators, and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:57:42.351321+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
