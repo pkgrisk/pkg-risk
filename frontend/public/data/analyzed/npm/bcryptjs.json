@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is well-structured and provides clear examples, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "quick_start": 10,
+      "examples": 10,
+      "configuration": 8,
+      "troubleshooting": 6,
+      "overall": 9,
+      "summary": "Excellent documentation with clear examples and comprehensive API coverage, though lacking dedicated troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like bcrypt vs bcryptjs compatibility, performance optimization, or debugging hash mismatches"
     },
     "security": {
       "overall_score": 8,
@@ -197,20 +197,22 @@
       "summary": "The bcryptjs package has a good security posture with proper input validation and error handling, but there are some minor issues that need attention to ensure the highest level of security."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Deprecation of `process.nextTick` usage",
-        "Support for older hash schemes (2a)",
-        "Issues with bundling and client-side usage"
+        "Crypto module compatibility issues (v3.0.0+ breaking changes)",
+        "Environment support gaps (React Native, Next.js, browser bundling)",
+        "Event loop starvation with process.nextTick",
+        "Import/undefined errors in modern frameworks (NestJS)",
+        "Bcrypt scheme compatibility (2a vs 2b) with legacy systems",
+        "Module not found errors in bundled environments"
       ],
       "praise_themes": [
-        "Community engagement and feedback",
-        "Maintenance of the project over time"
+        "Library appreciation for bcrypt hashing in Node.js"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively engaged, but there are ongoing issues related to deprecated code and support for older schemes that may cause frustration."
+      "abandonment_signals": true,
+      "summary": "The bcryptjs project shows signs of stagnation with slow maintainer response, multiple unresolved compatibility issues across modern JavaScript environments, and several breaking changes in recent versions that lack proper migration guidance."
     },
     "communication": {
       "helpfulness": 7,
@@ -226,20 +228,27 @@
       "summary": "The maintainer provides technical details but could be more patient and clearer in addressing basic questions."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low commit frequency in the past six months",
-        "Single contributor for recent activity"
+        "No commits in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "Last commit was over 1 year ago (Nov 2025 is in the past from Jan 2026 perspective, but this appears to be a data anomaly - the date suggests only ~2 months ago, yet zero activity metrics indicate stagnation)",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "No open issues or PRs",
-        "Recent release and commits"
+        "Zero open issues suggests either well-maintained or dormant with no incoming problems",
+        "Zero open PRs indicates no pending work or contributions"
       ],
-      "summary": "The package is maintained with recent releases, but low recent activity raises some concerns."
+      "summary": "bcryptjs appears abandoned with no development activity, contributions, or releases in the past 6 months despite recent commit timestamp anomaly."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:29:55.326409+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

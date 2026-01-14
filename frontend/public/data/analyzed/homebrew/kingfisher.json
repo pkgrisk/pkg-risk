@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 10,
       "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally clear and provides a good overview of the package's features, but installation instructions are incomplete and troubleshooting information is lacking.",
-      "top_issue": "Insufficient installation instructions for various platforms"
+      "configuration": 8,
+      "troubleshooting": 6,
+      "overall": 9,
+      "summary": "Exceptionally clear, well-structured README with excellent visual aids, comprehensive installation options, and strong quick-start examples, though troubleshooting content is limited.",
+      "top_issue": "Lacks dedicated troubleshooting section for common installation or runtime errors"
     },
     "security": {
       "overall_score": 7,
@@ -194,14 +194,21 @@
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bug fixes",
-        "feature requests"
+        "Performance/startup overhead (3s startup time for file scanning)",
+        "External API dependency issues (Atlassian removing endpoints, timeouts)",
+        "Integration complexity (no Python bindings, CLI-only interface)",
+        "False positives in detection rules (SHA256 hashes flagged as credentials)",
+        "Authentication challenges (Bitbucket Cloud, legacy options)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active bug fixing (multiple bugs closed recently)",
+        "New features being implemented (findings viewer, access map demo)",
+        "Regular releases and updates (v1.69.0 to v1.73.0 in recent weeks)"
+      ],
       "abandonment_signals": false,
-      "summary": "The kingfisher community is moderately active with a mix of open and closed issues, indicating a maintained but imperfect project."
+      "summary": "Kingfisher shows healthy active maintenance with responsive issue closure, though users express frustration over performance constraints, external API fragility, and limited integration options for non-CLI workflows."
     },
     "communication": {
       "helpfulness": 9,
@@ -214,16 +221,18 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (964)",
-        "Recent last commit and release dates (2026-01-03)",
-        "Multiple merged PRs in the past 6 months (105)",
-        "Low number of open issues (4)"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent (2026-01-14)",
+        "Zero active contributors in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No closed issues in the past 6 months indicating no maintenance activity",
+        "4 open issues with no resolution activity",
+        "Unknown last release date suggests no recent versioning"
       ],
-      "summary": "The kingfisher package appears to be actively maintained with frequent commits, releases, and a high level of community engagement."
+      "positive_signals": [],
+      "summary": "This package appears abandoned with no maintenance activity for at least 6 months despite having unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -234,7 +243,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and comprehensive, but lacks explicit breaking change markers and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:20:02.418582+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
