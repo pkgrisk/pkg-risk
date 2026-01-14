@@ -252,12 +252,12 @@
       "clarity": 8,
       "installation": 9,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 2,
+      "examples": 5,
+      "configuration": 3,
+      "troubleshooting": 1,
       "overall": 6,
-      "summary": "The documentation is clear and concise, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Lack of detailed configuration options and troubleshooting guides"
+      "summary": "Clear overview and installation but lacks configuration details, comprehensive examples, and any troubleshooting guidance.",
+      "top_issue": "No configuration documentation or troubleshooting section; users must visit external docs for essential information like worker types, timeout settings, and common deployment issues."
     },
     "security": {
       "overall_score": 7,
@@ -284,16 +284,20 @@
       "summary": "The gunicorn package has some security concerns, including potential code injection vulnerabilities and lack of input validation, but overall it appears to be a relatively secure package with proper error handling and no exposed secrets."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "fd leak in thread worker causing periodic outages",
-        "Worker timeout needs to be set too long to account for worker startup"
+        "File descriptor leaks causing periodic outages",
+        "Worker timeout configuration inflexibility for slow startup scenarios",
+        "Request distribution doesn't account for worker thread availability",
+        "RFC compliance issues with 204/304 responses",
+        "Lack of monitoring/observability for worker health metrics",
+        "Signal name reporting issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of frustration or abandonment. The project seems to have moderate responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "Gunicorn shows signs of stagnation with slow maintainer responsiveness, long-standing open issues (some 7+ years old), and unresolved infrastructure problems affecting production deployments."
     },
     "communication": {
       "helpfulness": 7,
@@ -308,17 +312,20 @@
       "summary": "The maintainer's responses are generally clear and provide some depth, but could be more welcoming to contributors suggesting type hints."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (167)",
-        "Low number of merged PRs in the past 6 months (9)"
+        "No commits in past 6 months despite project being active",
+        "261 open issues with no recent closures",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date suggests stagnation",
+        "Last commit is over 1 month old with no follow-up activity"
       ],
       "positive_signals": [
-        "Recent commit activity within the last year",
-        "Regular contributor activity"
+        "Project has zero open PRs (no pending work), suggesting maintenance may have been intentionally paused"
       ],
-      "summary": "The package is maintained but faces challenges with issue resolution."
+      "summary": "Gunicorn appears abandoned with no maintenance activity for 6+ months, 261 unresolved issues, and zero active contributors despite the project's critical role in Python web deployments."
     },
     "changelog": null,
     "governance": {
@@ -328,7 +335,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a documented decision-making process but lacks a succession plan and clear contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:17:19.997565+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

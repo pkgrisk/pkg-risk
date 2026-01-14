@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 6,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides some useful information, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of a quick start guide or examples to help new users get started with the package."
+      "overall": 3,
+      "summary": "The README focuses almost entirely on development/contribution setup rather than end-user installation and usage documentation.",
+      "top_issue": "No installation instructions for end users (only development setup), no usage examples showing how to actually use the package, and no examples of working with kernels or the Jupyter protocol"
     },
     "security": {
       "overall_score": 7,
@@ -209,19 +209,21 @@
       "summary": "The jupyter-client package has some security concerns, including potential injection risks and insufficient input validation, but overall it appears to be well-maintained and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "resource cleanup issues",
-        "missing functionality in the Messaging Specification"
+        "API design issues (missing parameters not passed through correctly)",
+        "Resource cleanup and management problems (unclosed sockets, event loops)",
+        "Blocking behavior in utility functions (get_msgs stuck without timeout)",
+        "Incomplete documentation (messaging specification gaps)"
       ],
       "praise_themes": [
-        "proactive enhancement proposals",
-        "ongoing work on remote provisioners"
+        "Active enhancement proposals and kernel handshaking improvements",
+        "Community engagement on provisioner extensibility"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively contributing to enhancements and addressing resource management, but there are ongoing issues that require attention."
+      "summary": "jupyter-client shows moderate community health with ongoing development and feature discussions, but users are encountering real pain points around resource management, API correctness, and blocking function behavior that suggest the project could benefit from more responsive issue triage and fixes."
     },
     "communication": {
       "helpfulness": 7,
@@ -234,17 +236,20 @@
       "summary": "The maintainer responses are generally clear and helpful, though there is room for more detailed explanations of 'why' certain decisions were made."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (194)",
-        "Low number of merged PRs in the past six months (20)"
+        "No commits in past 6 months despite last commit being recent (2026-01-08)",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "Zero closed issues in past 6 months suggests no active maintenance",
+        "No active contributors in past 6 months",
+        "High open issue count (203) with no recent resolution activity",
+        "Unknown last release date prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "Recent activity with a commit and release on 2026-01-08",
-        "Multiple contributors active over the past six months"
+        "Recent commit exists (2026-01-08), suggesting project is not completely defunct"
       ],
-      "summary": "The package shows recent activity but faces challenges with unresolved issues and low PR merge rate."
+      "summary": "jupyter-client appears abandoned with no development activity, issue resolution, or contributors for at least 6 months despite a recent commit timestamp that may indicate stale repository state."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -262,7 +267,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes and indicates multiple maintainers, but lacks a succession plan or contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:19:11.594304+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -209,15 +209,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 3,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 5,
       "overall": 5,
-      "summary": "The README provides a good overview of the package's features and installation instructions, but lacks clear examples and troubleshooting guidance.",
-      "top_issue": "Lack of quick start example or basic usage demonstration"
+      "summary": "Clear overview and installation but lacks any inline usage examples, relying entirely on external documentation links.",
+      "top_issue": "No quick start code examples in README - users must click through to external docs to see basic usage"
     },
     "security": {
       "overall_score": 8,
@@ -237,16 +237,19 @@
       "summary": "The deepdiff/model.py file has a low risk of injection attacks and good error handling practices, but could improve input validation for certain parameters."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Feature requests for improved functionality",
-        "Incorrect diff results"
+        "Edge cases with list/dict comparisons producing incorrect results",
+        "Support for custom/special object types (JsonObject, ObjectId, etc.) missing or broken",
+        "Performance issues with large data structures (40k+ keys)",
+        "Datetime handling bugs with date objects",
+        "Test suite failures and release management issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively raising issues and feature requests, but the project seems to be moderately responsive with no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Deepdiff shows signs of maintenance debt with unresponded feature requests dating back to 2023, unresolved bugs in core functionality, and slow issue resolution, though the project remains actively used."
     },
     "communication": {
       "helpfulness": 7,
@@ -259,17 +262,19 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (95)",
-        "Low number of merged PRs in the past six months (2)"
+        "No commits in over 3 months (last commit October 13, 2025, current date January 13, 2026)",
+        "Zero commits in the past 6 months despite the package being on PyPI",
+        "101 open issues with no recent activity or resolution",
+        "No merged PRs in the past 6 months indicating no active development",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests release history may not be tracked or accessible",
+        "No open PRs suggests maintainer is not reviewing community contributions"
       ],
-      "positive_signals": [
-        "Recent commit and release dates",
-        "Some recent activity with 23 commits in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance efforts with a high issue count."
+      "positive_signals": [],
+      "summary": "deepdiff appears to be abandoned with no development activity, contributor engagement, or issue resolution for over 3 months and 101 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -280,7 +285,10 @@
       "overall_score": 6,
       "summary": "The changelog is mostly clear and comprehensive, but lacks migration guides and proper categorization."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:19:07.305574+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

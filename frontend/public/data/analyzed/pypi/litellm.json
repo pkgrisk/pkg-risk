@@ -412,15 +412,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 8,
+      "quick_start": 10,
       "examples": 9,
       "configuration": 7,
-      "troubleshooting": 4,
+      "troubleshooting": 5,
       "overall": 8,
-      "summary": "The documentation is well-structured and provides a good overview of the package's capabilities, but could benefit from more troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Excellent quick-start with clear code examples for multiple use cases (LLMs, Agents, MCP), but lacks troubleshooting guidance and detailed configuration documentation.",
+      "top_issue": "No troubleshooting section for common errors or debugging tips"
     },
     "security": {
       "overall_score": 5,
@@ -463,16 +463,19 @@
       "summary": "The code has several security concerns, including potential SQL injection risks and unvalidated user input, which could lead to data breaches or other malicious activities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "[Bug]: LiteLLM Returning missing tables",
-        "[Bug]: Virtual Key Budget tracking does not work properly for routing"
+        "Protocol incompatibilities between LLM providers (OpenAI vs Anthropic vs Gemini)",
+        "Streaming and telemetry bugs causing duplicate events",
+        "MCP server connection failures with stdio-based servers",
+        "Integration issues with specific model providers (Seedream, Gemini)",
+        "Schema translation dropping required object properties"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to open bugs and lack of active praise or positive feedback."
+      "summary": "LiteLLM shows moderate community health with active bug reports around provider compatibility and streaming, recent issue creation (mostly within last 3 days), at least one resolved issue, but minimal visible maintainer engagement on most tickets."
     },
     "communication": {
       "helpfulness": 7,
@@ -485,14 +488,18 @@
       "summary": "The maintainer responses are generally clear and helpful, though there is room for more technical depth in explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent last commit and release date"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-14)",
+        "1183 open issues with no closed issues in past 6 months indicates unaddressed backlog",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests development has stalled",
+        "No releases in past 6 months",
+        "Last commit date is in the future (2026-01-14) which suggests data inconsistency or timestamp error"
       ],
-      "summary": "The package is actively maintained with frequent contributions."
+      "positive_signals": [],
+      "summary": "litellm shows severe signs of abandonment with no activity across all maintenance indicators (commits, PRs, issues, releases, contributors) over the past 6 months, despite a suspicious future-dated last commit."
     },
     "changelog": null,
     "governance": {
@@ -502,7 +509,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks formal succession planning, decision-making processes, and contributor pathways, but indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:16:34.038304+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
