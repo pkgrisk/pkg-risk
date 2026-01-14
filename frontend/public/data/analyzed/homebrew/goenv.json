@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 5,
-      "troubleshooting": 1,
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 2,
       "overall": 4,
-      "summary": "The documentation is clear about the package's purpose, but lacks a quick start guide and troubleshooting information.",
-      "top_issue": "Lack of a concise quick start example to get new users started with the package."
+      "summary": "Clear purpose statement but critical information is split across external files, forcing users to navigate multiple documents to get started.",
+      "top_issue": "No inline installation instructions or quick start example - users must click through to INSTALL.md to even begin using the tool"
     },
     "security": {
       "overall_score": 7,
@@ -216,16 +216,23 @@
       "summary": "The goenv package has some potential security concerns, including injection risks and input validation issues, but no critical secrets or error exposure vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "shim resolution issues",
-        "version management problems"
+        "Version resolution failures with shims not finding Go binaries",
+        "PATH ordering issues causing system Go to shadow goenv installations",
+        "Alias and version detection breaking across releases",
+        "Directory/project switching not triggering version changes",
+        "Environment variable initialization problems on M1/ARM systems",
+        "Hard-coded absolute paths (/bin/ls) breaking on non-standard systems"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Project is well-regarded by long-time users",
+        "Core functionality highly valued for managing multiple Go versions"
+      ],
       "abandonment_signals": false,
-      "summary": "The goenv community is experiencing some technical difficulties, but the maintainers are actively addressing issues and responding to user concerns."
+      "summary": "Moderate community health with persistent technical issues around version detection and environment setup, but users remain engaged and maintainers are actively closing issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,15 +245,20 @@
       "summary": "The maintainer's responses are generally helpful, clear, patient, and welcoming, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent last commit and release",
-        "High number of commits, merged PRs, and closed issues in the past 6 months",
-        "Multiple active contributors"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2025-12-16)",
+        "8 open issues with no activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months suggesting contributions are not being reviewed",
+        "No active contributors in past 6 months",
+        "Unknown last release suggests no versioned releases or poor release tracking"
       ],
-      "summary": "The goenv package appears to be actively maintained with recent updates, a high volume of activity, and multiple contributors."
+      "positive_signals": [
+        "Recent commit activity exists (2025-12-16), though appears to be historical data only"
+      ],
+      "summary": "The project is effectively abandoned with no maintenance activity in the past 6 months despite having unresolved issues and open contributions."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -264,7 +276,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The goenv project lacks a clear succession plan, decision-making process documentation, and multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:04:06.521962+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

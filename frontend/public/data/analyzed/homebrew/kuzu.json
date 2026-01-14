@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is mostly clear and provides a good overview of the package, but lacks concise installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise installation instructions for users who are not familiar with Docker or setting up a local extension server."
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 5,
+      "overall": 4,
+      "summary": "Clear high-level description but lacks concrete installation instructions and quick-start examples in the README itself.",
+      "top_issue": "No installation instructions in README - users must click through to external documentation to learn how to install the package"
     },
     "security": {
       "overall_score": 7,
@@ -214,15 +214,17 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Segmentation fault issues",
-        "Performance bottlenecks"
+        "Segmentation faults in core operations (label extraction, edge removal, query matching)",
+        "Critical performance issues blocking database initialization (10+ seconds for 10k records)",
+        "Data corruption and loss after checkpoint operations",
+        "Build and linking issues with pre-built libraries"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration due to multiple open segmentation fault bugs and performance issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with 6 open critical bugs (segfaults, data loss, performance blocking) showing no maintainer engagement or responses, indicating potential project stagnation or resource constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,15 +237,20 @@
       "summary": "Maintainer responses are clear, helpful, and technically deep. They address the issues with patience and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent last commit and release date",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being from October 2025",
+        "329 open issues with no recent resolution activity",
+        "Zero closed issues in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests release process is inactive"
       ],
-      "summary": "The package kuzu appears to be actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Repository exists and has some historical activity"
+      ],
+      "summary": "The kuzu package appears stale with no maintenance activity for at least 6 months, a large backlog of unresolved issues, and no recent releases or contributor engagement."
     },
     "changelog": null,
     "governance": {
@@ -253,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:06:38.718755+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -169,15 +169,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 7,
       "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 2,
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The README provides clear installation instructions and links to additional resources, but lacks concise quick start examples and troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Clear overview and structure but lacks concrete examples and relies heavily on external documentation links.",
+      "top_issue": "No inline code examples showing actual .proto file creation or basic usage - only links to external tutorials"
     },
     "security": {
       "overall_score": 7,
@@ -203,32 +203,34 @@
       "summary": "The code has some security concerns, including potential injection risks and insufficient input validation, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "regressions",
-        "unresolved issues",
-        "platform-specific problems"
+        "Security vulnerabilities in PHP implementation (DoS attacks)",
+        "Bugs not fixed promptly (locale-aware JSON serialization issue from Oct 2024 still open)",
+        "Blocking release for Ruby 4.0 support due to version constraint"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Code actually works on new Ruby versions (just needs release)",
+        "Security issues being tracked and acknowledged"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing frustration due to unresolved issues, regressions, and platform-specific problems, with maintainers being slow to respond."
+      "summary": "Active project with moderate maintenance, but PHP implementation has unresolved security vulnerabilities and non-critical bugs causing user frustration, while release cycles appear slow."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "relatively high number of open issues",
-        "open PRs outnumber merged PRs in the last 6 months"
+        "No commits in past 6 months despite recent timestamp",
+        "238 open issues with no recent closures",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests stalled release cycle"
       ],
-      "positive_signals": [
-        "high commit activity in the past 6 months",
-        "recent release and last commit",
-        "large number of active contributors"
-      ],
-      "summary": "The package is actively maintained with a high volume of commits, releases, and contributor activity, despite some concerns regarding open issues and PRs."
+      "positive_signals": [],
+      "summary": "Protobuf appears abandoned with no maintenance activity for 6+ months, large backlog of unresolved issues, and no recent releases."
     },
     "changelog": null,
     "governance": {
@@ -238,7 +240,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for protobuf@29 indicates a clear decision-making process and multiple maintainers, but lacks a succession plan and contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:02:17.430353+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

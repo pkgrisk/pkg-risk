@@ -189,15 +189,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 9,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation and usage instructions.",
-      "top_issue": "Lack of clear installation and quick start instructions"
+      "summary": "Excellent high-level clarity and feature overview, but completely lacks practical installation instructions, usage examples, and configuration guidance in the README itself.",
+      "top_issue": "No installation instructions or quick start code in README - only external links to documentation website"
     },
     "security": {
       "overall_score": 7,
@@ -224,16 +224,22 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "crashes with new columnar mva64 column",
-        "unstable select results immediately after data loads"
+        "Regression bugs in query execution (WHERE IN, OR operators across fields)",
+        "Stability issues with new features (columnar mva64 crashes, auto-embeddings bugs)",
+        "Configuration and deployment issues (systemd WorkingDirectory, ALTER TABLE failures)",
+        "Test infrastructure problems (regex validation failures in integration tests)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active feature development (vector search, MCP server, auto-embeddings)",
+        "Quick issue resolution (multiple recently closed bugs)",
+        "Community engagement (labels, issue tracking, feature proposals)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues indicating crashes and instability, but no clear signs of abandonment."
+      "summary": "ManticoreSearch shows healthy active development with responsive maintainers, but recent releases have introduced stability regressions that need addressing, particularly around new columnar and vector search features."
     },
     "communication": {
       "helpfulness": 7,
@@ -246,15 +252,18 @@
       "summary": "The maintainer responses are generally clear and helpful, showing a good level of technical depth and patience with users."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (691)",
-        "A significant number of merged PRs in the past six months (235)",
-        "Recent last release date (2025-12-07)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (likely automated or cherry-picked)",
+        "697 open issues with no activity",
+        "Zero closed issues in past 6 months indicates no maintenance work",
+        "No merged PRs in past 6 months shows no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [],
+      "summary": "Manticoresearch appears to be abandoned with a large backlog of unresolved issues and no maintenance activity over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -264,7 +273,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:01:09.863007+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
