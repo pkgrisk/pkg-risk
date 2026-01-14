@@ -185,15 +185,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 9,
+      "installation": 3,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 1,
+      "examples": 8,
+      "configuration": 5,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is clear and provides a good quick start, but lacks installation instructions and troubleshooting information.",
-      "top_issue": "Installation instructions are not provided"
+      "overall": 6,
+      "summary": "Excellent clarity and examples for basic usage, but completely lacks installation instructions and troubleshooting guidance.",
+      "top_issue": "No installation instructions provided - users must infer to use pip install semver"
     },
     "security": {
       "overall_score": 8,
@@ -204,18 +204,23 @@
       "summary": "The semver package appears to have a good security posture, with no critical findings or injection risks identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Validation errors and bugs",
-        "Documentation updates needed"
+        "Validation strictness - rejects valid semantic versions with double dashes and numeric prerelease identifiers with periods",
+        "CLI limitations - difficulty passing optional parameters to bump functions",
+        "Prerelease comparison bugs - incorrect ASCII ordering for prerelease identifiers like rc9 vs rc10",
+        "Build/packaging infrastructure issues - missing files in source distributions, incomplete metadata on PyPI",
+        "Limited feature set - no support for version ranges, npm-style operators (~, ^), or determining bump types between versions"
       ],
       "praise_themes": [
-        "Enhancement proposals for future versions"
+        "Active maintenance and bug fixes",
+        "Documentation improvements and integration with external projects like Pydantic",
+        "Willingness to close out-of-spec feature requests with clear labeling"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but the project seems to be maintaining a steady pace of addressing them. There are some ongoing frustrations with validation and bugs, but no clear signs of abandonment."
+      "summary": "The semver project shows active maintenance with recent bug fixes and responsive issue handling, but community frustration stems from strict spec interpretation causing practical compatibility issues, incomplete CLI API design, and recent packaging/infrastructure problems that suggest some rough edges in the release process."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,20 +233,26 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues (12) suggests potential bugs or feature requests that have not been addressed."
+        "No commits in the past 6 months despite last commit being recent (2025-12-09)",
+        "15 open issues with no recent activity or resolution",
+        "No merged PRs in the past 6 months indicates no active development",
+        "No active contributors in the past 6 months",
+        "No releases tracked, suggesting version stagnation"
       ],
       "positive_signals": [
-        "Recent activity with contributors (10) indicates some level of community interest or involvement.",
-        "Regular issue reporting and management, even if not resolved"
+        "Recent commit exists (2025-12-09), indicating some minimal recent activity",
+        "No open PRs suggests maintainers are actively closing or preventing PRs"
       ],
-      "summary": "The package is in minimal maintenance with recent contributor activity but lacks active development and timely resolution of issues."
+      "summary": "The semver package shows signs of stagnation with no recent development activity, unresolved issues, and no contributor engagement over the past 6 months despite a recent commit."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:02:27.448181+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

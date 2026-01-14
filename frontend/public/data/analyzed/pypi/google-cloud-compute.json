@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 2,
+      "clarity": 2,
+      "installation": 1,
       "quick_start": 1,
-      "examples": 3,
-      "configuration": 2,
-      "troubleshooting": 2,
-      "overall": 2,
-      "summary": "The documentation is overly complex and lacks clear instructions for new users, making it difficult to get started with the package.",
-      "top_issue": "Lack of clear installation instructions and a quick start guide"
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 1,
+      "summary": "This README is a generic Google Cloud Python Client landing page that provides no information about what google-cloud-compute actually does, how to install it, or how to use it.",
+      "top_issue": "The README does not describe the google-cloud-compute package at all - it's a generic template listing dozens of unrelated Google Cloud services without any package-specific documentation."
     },
     "security": {
       "overall_score": 7,
@@ -208,15 +208,18 @@
       "summary": "The code has some potential security concerns related to command injection and input validation, but no critical findings were identified."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "release PRs blocked due to failing unittests"
+        "Local server authentication flow issues (timeouts, AttributeError on wsgi_app.last_request_uri)",
+        "Lack of configuration flexibility (redirect host, output control, credentials namespacing)",
+        "Documentation gaps (port=0 behavior, scope type annotations)",
+        "Long-standing feature requests without resolution (Android resources, code_verifier support, POST redirect)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with ongoing issues blocking releases, but there are no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of stagnation with multiple critical authentication bugs open since 2020 and numerous feature requests (some 8+ years old) without maintainer engagement, indicating poor community health and limited active development."
     },
     "communication": {
       "helpfulness": 7,
@@ -232,15 +235,19 @@
       "summary": "The maintainer's responses provide useful information but could be more welcoming and clearer in handling new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "A large number of merged PRs in the past six months (195)",
-        "Recent activity with a release on 2026-01-08"
+      "concerns": [
+        "No commits in past 6 months despite being a core Google Cloud library",
+        "595 open issues with zero closed in past 6 months indicates unaddressed backlog",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests stalled development",
+        "Unknown last release date indicates lack of version tracking"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Recent timestamp (2026-01-13) shows repository still exists"
+      ],
+      "summary": "google-cloud-compute appears abandoned with no maintenance activity, zero contributor engagement, and a growing unaddressed issue backlog over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +258,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks clear information and is incomplete, making it difficult for users to understand and follow changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:03:12.596213+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

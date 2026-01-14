@@ -213,13 +213,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 7,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its features, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "overall": 7,
+      "summary": "Well-structured README with clear installation and quick start, but lacks troubleshooting guidance and appears truncated at the end.",
+      "top_issue": "No troubleshooting section and the README appears incomplete (cuts off mid-section on 'Exception Handling')"
     },
     "security": {
       "overall_score": 6,
@@ -246,16 +246,21 @@
       "summary": "The redshift-connector package has some security concerns, including potential SQL injection vulnerabilities and lack of input validation, but it does not appear to have any critical issues with secrets handling or error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Deprecation warnings",
-        "Incompatibility with Python versions"
+        "Dependency version incompatibilities (lxml, Python 3.9+ typing in older Python versions)",
+        "Unresolved deprecation warnings from SSL/TLS libraries",
+        "Missing feature parity with competitors (Snowflake cursor features, SQLAlchemy support)",
+        "Authentication plugin issues (Okta, IDC, BrowserIdcAuthPlugin)",
+        "dbt integration problems causing pipeline failures",
+        "Lambda deployment incompatibility",
+        "Poor error messages and debugging experience"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and complaints about deprecation warnings and version incompatibilities."
+      "abandonment_signals": true,
+      "summary": "Community health is poor\u2014project shows signs of abandonment with unresponsive maintainers, mounting dependency conflicts, unresolved deprecation warnings, and critical integration failures affecting downstream projects like dbt."
     },
     "communication": {
       "helpfulness": 8,
@@ -268,17 +273,18 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months suggests limited community contribution or approval.",
-        "High number of open issues indicates potential unresolved bugs or feature requests."
+        "No commits in past 6 months despite last commit being November 2025",
+        "53 open issues with no recent activity",
+        "Zero closed issues in past 6 months indicating no bug fixes",
+        "No open or merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "Recent commits and releases indicate some level of activity.",
-        "Two contributors are actively involved in maintaining the package."
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges with unmerged PRs and open issues."
+      "positive_signals": [],
+      "summary": "The redshift-connector package appears to be abandoned with no development activity, issue resolution, or releases in the past 6 months despite an accumulation of 53 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -296,7 +302,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks formal succession planning, decision-making processes, and a contributor ladder but indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T06:04:10.372233+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
