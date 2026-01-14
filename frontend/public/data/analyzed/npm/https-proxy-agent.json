@@ -213,15 +213,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
+      "clarity": 7,
       "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is lacking in key areas, making it difficult for new users to get started.",
-      "top_issue": "No clear installation instructions or quick start example"
+      "overall": 2,
+      "summary": "The README only explains what the monorepo contains and points to other packages, but provides no installation instructions, usage examples, or practical guidance for this specific package.",
+      "top_issue": "No installation instructions or code examples - users must navigate to other packages to find any actionable information"
     },
     "security": {
       "overall_score": 8,
@@ -232,16 +232,18 @@
       "summary": "The code appears to be generally secure with no critical findings, but some minor issues were identified related to input validation and potential error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Please Pin github dependency version to a commit hash",
-        "HttpsProxyAgent options are lost when calling the `connect` method"
+        "Security vulnerabilities (ReDoS in regex, npm trusted publishing not adopted)",
+        "Options/configuration not being passed through correctly to underlying methods",
+        "Performance could be optimized for high-throughput scenarios",
+        "Async handling issues causing hanging promises and unsettled awaits"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is moderately active with some open issues, but there's no clear sign of frustration or abandonment."
+      "summary": "Active maintenance with legitimate unresolved issues around security practices, option handling, and performance optimization, but no signs of abandonment."
     },
     "communication": {
       "helpfulness": 7,
@@ -254,17 +256,18 @@
       "summary": "The maintainer's responses are generally clear and helpful, though there is room for more detailed explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues (34) and PRs (10) suggests potential maintenance backlog."
+        "No commits in past 6 months despite last commit being from July 2025",
+        "44 open issues with no recent activity or triage",
+        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests versioning/release process is stalled"
       ],
-      "positive_signals": [
-        "Recent activity with both an issue and release on July 7th, 2025.",
-        "Multiple contributors are still involved in the project."
-      ],
-      "summary": "The package shows minimal maintenance efforts but has recent activity and active contributors."
+      "positive_signals": [],
+      "summary": "The package appears abandoned with no maintenance activity for at least 6 months and a large backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -275,7 +278,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks details and organization, making it difficult for users to understand and follow updates."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:01:24.871777+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

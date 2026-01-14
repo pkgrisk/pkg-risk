@@ -192,15 +192,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 9,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 8,
       "overall": 8,
-      "summary": "The README provides clear and concise information about the package, its usage, and troubleshooting, but could benefit from more detailed configuration documentation.",
-      "top_issue": "Lack of detailed configuration documentation"
+      "summary": "Excellent documentation with clear examples and security warnings, though configuration options like saltRounds could use more explanation.",
+      "top_issue": "Configuration section lacks details on choosing saltRounds values and performance/security tradeoffs"
     },
     "security": {
       "overall_score": 7,
@@ -227,16 +227,21 @@
       "summary": "The bcrypt library has a good security posture, but there are some potential issues with input validation and error handling that could be improved."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "deprecated dependencies",
-        "installation issues"
+        "Deprecated dependencies causing installation warnings (inflight, npmlog, rimraf, are-we-there-yet)",
+        "Native module build failures and missing pre-built binaries for various platforms",
+        "Test timeouts and performance issues on macOS",
+        "Installation failures on non-standard platforms (Termux, Alpine Docker)",
+        "Silent application crashes when using bcrypt.compare()",
+        "Missing darwin-arm64 builds for Apple Silicon",
+        "CXXABI version compatibility issues on Linux"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing moderate frustration due to deprecated dependencies and installation issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "bcrypt shows signs of poor maintenance with unresolved build issues, accumulating deprecated dependencies, platform compatibility problems, and slow response to user frustration."
     },
     "communication": {
       "helpfulness": 7,
@@ -249,17 +254,21 @@
       "summary": "Responses are generally clear and helpful, showing a good level of technical depth while maintaining patience with users."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "26 open issues with no recent resolution",
+        "No closed issues in the past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent commit activity within the last year",
-        "Regular issue closure"
+        "Repository still exists and is accessible",
+        "Last commit was recent (2026-01-06)"
       ],
-      "summary": "The package shows signs of maintenance but faces some concerns regarding PR contributions and open issues."
+      "summary": "The bcrypt package shows signs of stagnation with no development activity, issue resolution, or releases over the past 6 months despite having open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -270,7 +279,10 @@
       "overall_score": 7,
       "summary": "The changelog is mostly clear and comprehensive, with marked breaking changes, but lacks categorization and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:06:12.387564+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

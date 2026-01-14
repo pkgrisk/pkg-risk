@@ -229,15 +229,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
-      "troubleshooting": 8,
-      "overall": 4,
-      "summary": "The README provides some useful links and resources, but lacks clear installation instructions, a quick start example, and sufficient documentation for common use cases.",
-      "top_issue": "Lack of clear installation instructions and a quick start example"
+      "clarity": 3,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 4,
+      "overall": 2,
+      "summary": "The README provides almost no useful information, delegating everything to external documentation without even a basic code example.",
+      "top_issue": "No installation instructions or code examples in the README\u2014users must navigate to external docs to learn anything about basic usage"
     },
     "security": {
       "overall_score": 7,
@@ -264,16 +264,21 @@
       "summary": "The socket.io package has some security concerns, including potential denial-of-service attacks and insufficient input validation, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "TypeScript compatibility issues",
-        "Missing dependencies in releases"
+        "TypeScript type definition issues (@types/ws missing)",
+        "Build and compilation problems (eiows native module failures)",
+        "Double-close/server lifecycle bugs in recent versions",
+        "Silent data loss (functions omitted from JSON serialization)",
+        "Binary data handling bugs in ESM builds",
+        "Payload size limitations causing disconnects",
+        "Browser compatibility inconsistencies (Firefox vs Chrome)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing moderate frustration due to TypeScript-related issues and missing dependencies, but there are no clear signs of abandonment."
+      "summary": "Socket.IO shows moderate maintenance with recent activity but suffers from accumulating TypeScript, build, and serialization bugs that indicate potential quality control gaps in the release pipeline."
     },
     "communication": {
       "helpfulness": 7,
@@ -286,14 +291,20 @@
       "summary": "Responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-07)",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months despite 198 open issues",
+        "No releases in past 6 months (release date unknown)",
+        "High number of unresolved open issues (198) with no recent activity"
       ],
-      "summary": "The package is actively maintained with recent activity."
+      "positive_signals": [
+        "Last commit timestamp is recent (2026-01-07)"
+      ],
+      "summary": "socket.io appears abandoned with no maintenance activity for 6+ months despite recent commit timestamp, indicating the repository is likely unmaintained or in a frozen state."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -311,7 +322,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision-making process but lacks a succession plan or contributor ladder, indicating medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:03:25.085521+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

@@ -200,12 +200,12 @@
       "clarity": 8,
       "installation": 9,
       "quick_start": 6,
-      "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "examples": 5,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The README provides a good overview of the package and its features, but lacks clear examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Clear purpose and installation, but lacks practical usage examples and troubleshooting guidance beyond CLI reference.",
+      "top_issue": "No quick start example showing actual code transformation - jumps directly to CLI options without demonstrating what terser does with real JavaScript input/output"
     },
     "security": {
       "overall_score": 7,
@@ -234,14 +234,20 @@
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Standalone executable",
-        "Property mangling can generate method names that collide with existing (including non-mangled) instance properties on the same prototype chain"
+        "Performance optimization limitations (tree-shaking, duplicate literal hoisting)",
+        "Configuration complexity and lack of sensible defaults for pure functions",
+        "Edge cases in mangling logic causing runtime errors",
+        "Dependency on Node.js ecosystem instead of standalone executable",
+        "Hang/freeze issues with certain configurations"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged but faces some unresolved issues, particularly around standalone executables and property mangling conflicts."
+      "praise_themes": [
+        "Tool is recognized as great and useful",
+        "Community actively seeking optimization improvements"
+      ],
+      "abandonment_signals": true,
+      "summary": "Terser shows signs of low maintenance activity with open bugs dating back to 2020, slow responsiveness to feature requests, and recent critical issues (runtime collisions, hangs) going unaddressed."
     },
     "communication": {
       "helpfulness": 7,
@@ -254,17 +260,20 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (273)",
-        "Low number of merged PRs in the past 6 months (2)"
+        "Zero commits in past 6 months despite last commit being recent (2026-01-12)",
+        "327 open issues with no recent closures",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests possible release tracking issues"
       ],
       "positive_signals": [
-        "Recent commit activity within the last year",
-        "Some contributor activity in the past 6 months"
+        "Recent commit activity (2026-01-12) indicates some level of attention",
+        "No open PRs suggests maintainers may be preventing unmaintained contributions"
       ],
-      "summary": "The package shows minimal maintenance with recent commits but a high issue count and low PR merge rate."
+      "summary": "Terser appears stale with a recent commit but no ongoing maintenance activity, suggesting either dormancy or that the recent commit was a one-off update without continued development."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -282,7 +291,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision-making process but lacks a succession plan or contributor ladder, indicating medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:03:23.691589+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {
