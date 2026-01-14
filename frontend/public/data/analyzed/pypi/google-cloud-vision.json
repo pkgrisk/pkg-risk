@@ -183,8 +183,8 @@
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 1,
-      "summary": "The README does not provide clear information about the google-cloud-vision package, its usage, or installation instructions.",
-      "top_issue": "Lack of specific information about the google-cloud-vision package, with the README instead providing general information about Google Cloud Python Client and a list of other packages."
+      "summary": "This README is completely generic boilerplate for all Google Cloud Python libraries and contains zero specific information about the Vision API package itself.",
+      "top_issue": "Wrong README file - this is the parent monorepo README listing all Google Cloud services, not the google-cloud-vision package README, providing no package-specific installation, usage, or examples"
     },
     "security": {
       "overall_score": 8,
@@ -195,15 +195,18 @@
       "summary": "This code has a good security posture with no injection risks or secrets found, but could improve input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "release PRs blocked due to failing unittests"
+        "wsgi_app.last_request_uri AttributeError (recurring issue from 2020-2021, never fixed)",
+        "run_local_server timeout issues and premature shutdown (2021-2023, unresolved)",
+        "Feature requests accumulating without action (spanning 2017-2022)",
+        "Security concerns with Python 3.7/3.8 (CVE-2025-47273/CVE-2024-6345, still unresolved)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing mild frustration with ongoing release blockages, but there are no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows significant neglect with 8 years of open issues (since 2017), recurring unresolved bugs (wsgi_app, timeout), multiple unaddressed feature requests, and critical security concerns left unresolved despite p1 priority labeling."
     },
     "communication": {
       "helpfulness": 7,
@@ -216,15 +219,19 @@
       "summary": "Responses are generally clear and helpful, though there is room for improvement in welcoming new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "A large number of merged PRs in the past six months (195)",
-        "Recent activity with a release on January 8, 2026"
+      "concerns": [
+        "No commits in past 6 months despite last commit being very recent (suggests repository mirror or archived state)",
+        "595 open issues with zero closed in past 6 months indicates no active issue triage",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date suggests release process is stalled"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Repository still exists and has recent activity timestamp"
+      ],
+      "summary": "google-cloud-vision appears abandoned with no meaningful maintenance activity over 6 months despite 595 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -235,7 +242,10 @@
       "overall_score": 2,
       "summary": "The changelog lacks key information such as breaking changes, migration guides, and proper categorization, making it difficult for users to understand and use effectively."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:14:14.477636+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

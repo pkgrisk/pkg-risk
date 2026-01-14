@@ -215,15 +215,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 7,
+      "installation": 1,
       "quick_start": 1,
-      "examples": 2,
-      "configuration": 2,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a brief introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and examples"
+      "overall": 2,
+      "summary": "The README clearly explains what Babel does but completely lacks installation instructions, usage examples, or any practical guidance for getting started.",
+      "top_issue": "No installation instructions or basic usage examples - users must navigate to external documentation to do anything"
     },
     "security": {
       "overall_score": 7,
@@ -249,20 +249,19 @@
       "summary": "The Babel package has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug in handling of empty translations and plural entries",
-        "silent failures during extraction with Jinja templates",
-        "issues with symbolic links"
+        "Silent failures in message extraction (Jinja2 syntax errors)",
+        "Edge case bugs in .po file parsing (invalid characters, blank dates)",
+        "Missing or incomplete fallback behavior (units, plurals)",
+        "Configuration inconsistencies between CLI and config files",
+        "Feature gaps (symlink support, directory creation)"
       ],
-      "praise_themes": [
-        "active community engagement",
-        "detailed issue descriptions"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is engaged but faces several bugs, particularly in handling translations and template extraction. The issues are well-documented, indicating active participation."
+      "summary": "Babel maintains moderate community health with active issue tracking, but shows signs of accumulated technical debt and edge case bugs that suggest maintenance could be more proactive in preventing silent failures and improving documentation."
     },
     "communication": {
       "helpfulness": 8,
@@ -275,17 +274,20 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth while maintaining a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (164)",
-        "Low number of merged PRs in the past six months (14)"
+        "No commits in past 6 months despite last commit being recent (2026-01-10)",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months indicating no development activity",
+        "No closed issues in past 6 months despite 199 open issues",
+        "Unknown last release date suggests release history is not tracked or accessible",
+        "High number of open issues (199) with no recent triage or resolution"
       ],
       "positive_signals": [
-        "Recent commit within the last year",
-        "Regular contributor activity"
+        "Last commit timestamp is recent (2026-01-10), though this may be misleading"
       ],
-      "summary": "The package shows minimal maintenance with recent commits and contributors, but a high issue count is concerning."
+      "summary": "This PyPI babel package appears abandoned with no active maintenance, zero contributor activity in 6 months, and a large backlog of unresolved issues despite a recent commit timestamp."
     },
     "changelog": null,
     "governance": {
@@ -295,7 +297,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation indicates a process for contributions and multiple maintainers, but lacks a succession plan or clear contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:14:12.519486+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 4,
       "quick_start": 2,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides clear installation instructions but lacks examples, configuration documentation, and troubleshooting guidance.",
-      "top_issue": "Lack of usage examples and quick start guide"
+      "overall": 3,
+      "summary": "The README clearly states what the package is but focuses almost entirely on developer setup rather than end-user installation and usage.",
+      "top_issue": "No end-user installation instructions (missing 'pip install ipykernel'), no usage examples, and no documentation on how to actually use the kernel with Jupyter"
     },
     "security": {
       "overall_score": 7,
@@ -210,15 +210,18 @@
       "summary": "The ipykernel package has some potential security risks related to input validation and error exposure, but overall it appears to be well-secured."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "eventloop errors on exit with wx and ipykernel 7.1.0"
+        "Breaking changes in version 7.x without documentation or migration guides",
+        "Event loop integration issues and regressions",
+        "GUI backend compatibility problems (wx, ipympl)",
+        "Dependency maintenance concerns (nest-asyncio unmaintained)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing a specific issue but the sentiment is neutral, indicating no significant frustration or praise."
+      "summary": "ipykernel shows signs of maintenance activity but faces user friction from v7.x breaking changes and inadequate documentation, with upstream dependency risks from unmaintained nest-asyncio."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,15 +234,20 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with the process and a good level of technical depth."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months",
-        "A significant number of merged PRs indicating ongoing development"
+      "concerns": [
+        "No commits in past 6 months despite last commit being very recent (2026-01-13)",
+        "306 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No open or merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit timestamp suggests repository still exists"
+      ],
+      "summary": "ipykernel appears abandoned with no maintenance activity for 6+ months despite a recent commit timestamp, which may indicate stale data or repository archival."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -257,7 +265,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and clear contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:16:49.672272+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

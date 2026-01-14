@@ -175,13 +175,13 @@
     "readme": {
       "clarity": 9,
       "installation": 8,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a clear introduction to the package, but could benefit from more concise and easily accessible examples and troubleshooting information.",
-      "top_issue": "Lack of concise quick start example that demonstrates basic usage without requiring external dependencies or pre-processing"
+      "quick_start": 4,
+      "examples": 5,
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 6,
+      "summary": "Well-structured documentation with excellent clarity about purpose and installation, but lacks concrete code examples showing actual usage.",
+      "top_issue": "No inline code examples demonstrating basic usage - users must browse separate examples directory to understand how to actually use the parser"
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,19 @@
       "summary": "The pycparser package has some potential security concerns, including a high-risk command injection vulnerability and lack of input validation, but overall the code appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "parsing errors",
-        "missing security advisories"
+        "Dependency on abandoned ply library (unmaintained since 2017)",
+        "Parser fails on modern C standards (C23, GCC 15)",
+        "Parsing errors with valid C code (typeof, nullptr_t, parenthesized compound statements)",
+        "Bundled ply contains known security vulnerabilities",
+        "Multiple unresolved parser bugs with no fixes"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some ongoing issues and a closed request for improved security policies."
+      "abandonment_signals": true,
+      "summary": "pycparser shows signs of declining maintenance with critical dependency issues (abandoned ply), accumulating unresolved bugs particularly around modern C standard support, slow maintainer responsiveness, and a security-aware contributor noting disabled security advisories."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,20 +232,27 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Few merged PRs in the past six months"
+        "No commits in past 6 months (last commit October 2025)",
+        "44 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release information is unavailable"
       ],
       "positive_signals": [
-        "Recent commit and release dates",
-        "Moderate number of contributors active in the past six months"
+        "No open PRs indicates stable codebase or low interest",
+        "pycparser is a mature, stable C parser library with established usage"
       ],
-      "summary": "The package is maintained with recent activity, but there are concerns about unresolved issues and low PR merge rate."
+      "summary": "pycparser appears stale with no maintenance activity in 6+ months despite 44 open issues, though this may reflect its mature, stable nature rather than abandonment."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:14:58.739934+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

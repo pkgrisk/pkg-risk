@@ -172,28 +172,33 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and provides a good overview of the package's functionality, but could benefit from more troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent documentation with clear explanations and comprehensive examples, but lacks troubleshooting guidance and configuration reference.",
+      "top_issue": "No troubleshooting section for common issues like oversubscription problems, conflicting OpenMP runtimes, or platform-specific threading library detection failures"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "thread safety issues with `threadpool_limits`",
-        "lack of Windows support for OpenMP warnings"
+        "Thread safety issues with threadpool_limits under ThreadPoolExecutor",
+        "Platform-specific bugs (Windows deadlocks, macOS builds)",
+        "Missing support for Apple Accelerate/vecLib BLAS implementation",
+        "Sub-process handling failures on specific OS versions"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Documentation and warnings are helpful for debugging downstream issues (e.g., SciPy)",
+        "Cross-platform testing and compatibility efforts"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with open issues related to thread safety and platform-specific support, but no clear signs of abandonment."
+      "summary": "Community shows moderate health with active but not urgent issues; maintainers are engaged (one issue has comments) though some issues remain open for extended periods (oldest from 2023), indicating either low priority or resource constraints rather than abandonment."
     },
     "communication": {
       "helpfulness": 7,
@@ -206,17 +211,20 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with the contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Low number of commits and closed issues"
+        "No commits in past 6 months despite last commit being from 2025-11-08",
+        "24 open issues with no resolution activity",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No releases in past 6 months",
+        "No closed issues in past 6 months indicating lack of maintenance"
       ],
       "positive_signals": [
-        "Recent commit within the last year",
-        "Regular contributor activity"
+        "No open PRs suggests maintainers are not overwhelmed with pending changes"
       ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent contributions."
+      "summary": "The project appears stale with no maintenance activity for at least 6 months and 24 unresolved issues accumulating without attention."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -227,7 +235,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-structured, clearly marks breaking changes, and provides comprehensive information but lacks explicit migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:15:36.781583+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

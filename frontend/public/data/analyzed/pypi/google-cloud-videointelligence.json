@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 2,
-      "installation": 4,
+      "installation": 1,
       "quick_start": 1,
-      "examples": 3,
-      "configuration": 5,
-      "troubleshooting": 6,
-      "overall": 3,
-      "summary": "The documentation is overly broad and lacks specific information about the google-cloud-videointelligence package, making it difficult for users to understand its purpose and usage.",
-      "top_issue": "Lack of clear and concise information about the package's functionality and usage"
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 1,
+      "summary": "This README is completely wrong for the package - it shows a generic Google Cloud Python Client overview with a massive table of unrelated services instead of documentation for the video intelligence API.",
+      "top_issue": "Wrong README content: shows generic Google Cloud library listing instead of package-specific documentation for google-cloud-videointelligence"
     },
     "security": {
       "overall_score": 8,
@@ -195,15 +195,23 @@
       "summary": "The code has a good security posture with no injection risks or secrets found, but there are some input validation issues and potential error exposure concerns that need to be addressed."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "release PRs blocked due to failing unittests"
+        "Authentication flow timeout issues (wsgi_app.last_request_uri errors)",
+        "Lack of control over printed messages to stdout",
+        "Missing documentation clarity (port=0 behavior)",
+        "Old feature requests languishing without implementation",
+        "Type annotation/documentation inconsistencies",
+        "Missing configuration options (redirect host, code_verifier support)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with delayed releases due to technical issues."
+      "praise_themes": [
+        "Security consciousness (CVE response for Python 3.7/3.8)",
+        "Integration with Google security initiatives (OSS-Fuzz)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is concerning with many unresolved issues spanning 8+ years, slow maintainer response, critical auth flow bugs affecting users, and stalled feature requests indicating neglect despite active security patches."
     },
     "communication": {
       "helpfulness": 7,
@@ -216,14 +224,18 @@
       "summary": "Responses are generally clear and helpful, though could be more welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "A large number of merged PRs in the past six months (195)"
+      "concerns": [
+        "No commits in past 6 months despite 595 open issues",
+        "Zero closed issues in past 6 months indicating no maintenance activity",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests outdated or unpublished status",
+        "Large backlog of 595 open issues with no resolution"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [],
+      "summary": "This package is abandoned with no maintenance activity for 6+ months and a growing unaddressed issue backlog."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -234,7 +246,10 @@
       "overall_score": 2,
       "summary": "The changelog lacks important details such as breaking changes, migration guides, and proper categorization, making it difficult for users to understand the updates comprehensively."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:13:34.734257+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

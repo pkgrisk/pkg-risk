@@ -312,14 +312,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 4,
       "quick_start": 6,
-      "examples": 4,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The PyYAML README provides clear installation instructions but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common use cases and troubleshooting solutions"
+      "examples": 5,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Good overview and basic examples, but uses outdated setup.py installation method and lacks troubleshooting guidance.",
+      "top_issue": "Installation instructions use deprecated setup.py instead of modern pip install, which is confusing for current Python users"
     },
     "security": {
       "overall_score": 7,
@@ -340,17 +340,20 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "AttributeError in error handling",
-        "IndexError on empty input",
-        "Inconsistent behavior with YAML tags",
-        "Segfault issues"
+        "Build failures with Cython 3.0+",
+        "Unhandled edge cases causing IndexError and AttributeError",
+        "Parser inconsistencies with YAML tags",
+        "Duplicate keys not validated per YAML spec",
+        "Key sorting behavior unexpected and undesirable",
+        "Segfault in Python 3.14",
+        "Security concerns with unsafe loader"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration due to multiple open bugs and issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "PyYAML shows severe abandonment with 11 open issues including unresolved Cython compatibility (since Jan 2022), recent critical bugs (IndexError, AttributeError, segfaults), spec non-compliance, and zero maintainer engagement on any issues."
     },
     "communication": {
       "helpfulness": 7,
@@ -363,20 +366,27 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with repeated questions and providing technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of commits in the past six months (only 1)",
-        "High number of open issues (208)"
+        "No commits in past 6 months despite last commit being recent (Sept 2025)",
+        "329 open issues with no resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests versioning/release process is not documented or tracked"
       ],
       "positive_signals": [
-        "Recent release and last commit dates",
-        "Some recent merged PRs"
+        "Repository still exists and had recent activity (Sept 2025)",
+        "No open PRs indicates maintainers are not accepting new contributions"
       ],
-      "summary": "The package is minimally maintained with occasional updates but faces a high issue backlog."
+      "summary": "pyyaml appears abandoned or in deep maintenance freeze with no development activity, issue resolution, or releases in the past 6 months despite a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:12:14.950464+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

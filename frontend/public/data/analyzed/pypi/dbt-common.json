@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
-      "installation": 4,
+      "clarity": 3,
+      "installation": 2,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "The README for dbt-common lacks clear explanations, installation instructions, and usage examples.",
-      "top_issue": "Lack of clear explanation of what the package does and how to use it."
+      "summary": "This README is primarily oriented toward maintainers releasing the package rather than end-users trying to use it, with minimal information about what the package does or how to use it.",
+      "top_issue": "No explanation of what shared utilities dbt-common provides or how developers would actually use this package in their own code"
     },
     "security": {
       "overall_score": 7,
@@ -200,16 +200,17 @@
       "summary": "The code has some potential security risks, including template injection and lack of explicit input validation, but overall it appears to be well-structured and follows best practices for handling errors and secrets."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "protobuf dependency issues",
-        "conflicts with other packages"
+        "Dependency version conflicts (protobuf and isodate incompatibilities with other packages like Apache Airflow)",
+        "Feature requests languishing without resolution (isodate bump request from July 2025 still open with 'Stale' label)",
+        "Regression issues requiring quick fixes (config get changes causing compilation errors)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some technical challenges, but the issues are being addressed."
+      "abandonment_signals": true,
+      "summary": "dbt-common shows moderate maintenance with recent activity on critical bugs but concerning dependency management issues and stalled feature requests suggest capacity constraints or deprioritization of some community needs."
     },
     "communication": {
       "helpfulness": 7,
@@ -222,15 +223,20 @@
       "summary": "The maintainer provides clear and technically sound explanations, showing patience with the process."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (51)",
-        "Multiple contributors active in the past six months (12)",
-        "A significant number of merged PRs in the past six months (24)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "24 open issues with no recent activity",
+        "Zero closed issues in past 6 months indicating no active issue triage",
+        "No merged PRs in past 6 months suggesting no active development",
+        "No contributors active in past 6 months",
+        "Unknown last release date suggests version history is unavailable or stale"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Recent last commit timestamp indicates repository still exists"
+      ],
+      "summary": "dbt-common appears abandoned with no maintenance activity for 6+ months despite open issues remaining unaddressed."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -248,7 +254,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, increasing the risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:11:09.457864+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
