@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 2,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 3,
+      "examples": 4,
+      "configuration": 5,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is clear and provides good installation instructions, but lacks a quick start guide, sufficient examples, and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting information and configuration documentation"
+      "overall": 4,
+      "summary": "Clear description of what the package does, but lacks concrete usage examples and troubleshooting guidance.",
+      "top_issue": "No quick start example showing actual usage with a web server (nginx/lighttpd), only mentions spawn-fcgi vaguely and references external homepage for launcher details"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,19 @@
       "summary": "The fcgiwrap.c code has some security concerns, including potential injection risks and lack of proper input validation, but overall it appears to be a relatively secure implementation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Systemd integration",
-        "Installation issues"
+        "Compilation errors with modern compiler flags (-Werror=implicit-fallthrough)",
+        "Process lifecycle issues (child respawning, service startup failures)",
+        "Long-standing bugs unfixed (2015 release request still open)",
+        "Build system problems (missing dependencies, macro definitions)",
+        "Platform-specific issues (FreeBSD, Termux compatibility)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active, with open issues focusing on system integration and installation challenges, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "fcgiwrap shows clear signs of abandonment with multiple unresolved compilation errors, no releases since 2013, zero maintainer engagement on open issues, and critical bugs remaining unfixed for years."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,20 +226,24 @@
       "summary": "Maintainer responses are generally helpful and clear, showing patience with new contributors while maintaining technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "No merged PRs in the past six months",
-        "A high number of open issues and PRs"
+        "No commits in past 6 months",
+        "39 open issues with no activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
-      "positive_signals": [
-        "Ten contributors have been active in the past six months"
-      ],
-      "summary": "The package is being minimally maintained with active contributors, but there are concerns about lack of recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "fcgiwrap shows no signs of active maintenance with zero activity across all metrics for the past 6 months and a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:09:03.229949+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

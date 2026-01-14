@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
+      "clarity": 4,
+      "installation": 1,
+      "quick_start": 1,
       "examples": 1,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is lacking in several key areas, making it difficult for new users to get started with the package.",
-      "top_issue": "Insufficient installation instructions and lack of examples"
+      "overall": 2,
+      "summary": "Minimal documentation that explains the concept but provides no practical guidance on installation, configuration, or usage.",
+      "top_issue": "No installation instructions - users cannot actually use the package without knowing how to install it or configure Go to use it as the pkg-config replacement"
     },
     "security": {
       "overall_score": 7,
@@ -210,16 +210,18 @@
       "summary": "The pkg-config-wrapper package has some security concerns, including command injection and potential PATH manipulation vulnerabilities, but overall it appears to be well-structured and follows good security practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "recursive detection issue",
-        "Windows filepath string issues"
+        "Critical self-detection bug causing recursive calls and resource exhaustion",
+        "Platform-specific issues (Windows filepath handling, ARM builds)",
+        "Runtime panics with slice bounds errors",
+        "Lack of clear licensing information for contributors"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and one closed issue, indicating moderate maintainership but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of abandonment with unresolved critical bugs (open since 2020-2022), no maintainer responses to issues, and incomplete platform support across Windows and ARM architectures."
     },
     "communication": {
       "helpfulness": 7,
@@ -232,20 +234,26 @@
       "summary": "The responses are generally clear and helpful, though could benefit from more technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Open issues and PRs suggest potential unresolved problems."
+        "No commits in the past 6 months despite last commit being from April 2025",
+        "3 open issues with no recent activity or resolution",
+        "Zero merged PRs in the past 6 months indicating no active development",
+        "No active contributors in the past 6 months",
+        "No releases or version updates in at least 6 months"
       ],
       "positive_signals": [
-        "Recent release in 2023-06-08",
-        "10 contributors active over the past six months"
+        "Project has been committed to at some point (last commit April 2025)",
+        "Issues exist suggesting the project was previously tracked"
       ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent commits and has open issues."
+      "summary": "pkg-config-wrapper shows clear signs of staleness with no commits, PRs, or contributor activity in 6+ months despite having unresolved open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:17:08.025434+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

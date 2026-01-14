@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 6,
-      "examples": 7,
+      "clarity": 6,
+      "installation": 3,
+      "quick_start": 7,
+      "examples": 5,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The documentation is clear and provides good examples, but lacks installation instructions and troubleshooting information.",
-      "top_issue": "Installation instructions are incomplete and scattered across different sections of the README."
+      "summary": "API documentation is clear but lacks critical information about installation, package purpose, and offers no configuration or troubleshooting guidance.",
+      "top_issue": "Missing installation instructions for the library itself (only shows how to compile against it, not how to install ssdeep/fuzzy library)"
     },
     "security": {
       "overall_score": 7,
@@ -194,16 +194,20 @@
       "summary": "The ssdeep codebase appears to be generally secure, but some input validation and error handling issues were identified that could potentially lead to security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation issues on MSVC",
-        "installation issues on Mac M1"
+        "Platform-specific compilation issues (Windows MSVC, macOS M1)",
+        "Poor documentation and installation guidance",
+        "Lack of GPU support for performance-critical workloads",
+        "Crashes on malformed/edge-case inputs",
+        "Licensing clarity issues",
+        "Binary file handling problems"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness from the maintainer and common complaints about compilation and installation issues."
+      "abandonment_signals": true,
+      "summary": "ssdeep shows signs of stagnation with unresolved platform compatibility issues, sparse maintainer engagement, and outdated tooling, indicating a project losing momentum despite continued user interest."
     },
     "communication": {
       "helpfulness": 8,
@@ -216,17 +220,18 @@
       "summary": "Maintainer responses are generally clear and helpful, though there is room for more encouragement of new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Last release was over five years ago"
+        "No commits in past 6 months",
+        "19 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown release history indicates stagnation"
       ],
-      "positive_signals": [
-        "Recent commits and open issues indicate some level of activity",
-        "One contributor has been active recently"
-      ],
-      "summary": "The package shows minimal maintenance with occasional updates but lacks recent contributions."
+      "positive_signals": [],
+      "summary": "ssdeep is abandoned with zero maintenance activity over the past 6 months and 19 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -237,7 +242,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clarity in marking breaking changes or providing migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:17:11.491455+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

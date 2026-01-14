@@ -193,15 +193,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 2,
-      "quick_start": 8,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 8,
+      "installation": 1,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good overview of the project and its features, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions"
+      "overall": 3,
+      "summary": "Excellent project overview and marketing content, but completely lacks practical installation instructions, usage examples, or technical documentation in the README itself.",
+      "top_issue": "No installation instructions for calicoctl - the README only links to external docs and assumes users will navigate there for all practical information"
     },
     "security": {
       "overall_score": 7,
@@ -227,16 +227,20 @@
       "summary": "The codebase has some security concerns, including potential command injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "documentation issues",
-        "version compatibility problems"
+        "eBPF mode incompatibilities with Wireguard and routing",
+        "DNS resolution failures for external endpoints",
+        "Build and compilation issues (make st hanging)",
+        "Configuration flags not being applied properly",
+        "Datastore connectivity and initialization errors",
+        "Upgrade/downgrade rollback issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The calicoctl community is moderately active with some open issues and a mix of documentation and version compatibility concerns, but no clear signs of abandonment or extreme frustration."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with 8 open issues across critical networking and infrastructure features, minimal maintainer engagement (only 1-5 comments per issue), and no positive user sentiment or praise evident in recent activity."
     },
     "communication": {
       "helpfulness": 9,
@@ -249,19 +253,20 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, creating a welcoming environment for contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "relatively high number of open issues",
-        "large number of open PRs"
+        "No commits in past 6 months despite last commit being recent (2026-01-14)",
+        "185 open issues with no recent closure activity",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests stalled release cycle"
       ],
       "positive_signals": [
-        "high commit activity past 6 months",
-        "recent last commit",
-        "frequent merged PRs",
-        "many active contributors"
+        "Recent commit activity (2026-01-14) indicates some ongoing work",
+        "Repository still exists and has not been archived"
       ],
-      "summary": "The calicoctl package appears to be actively maintained with a high level of recent activity, despite some concerns regarding open issues and pull requests."
+      "summary": "The calicoctl project shows signs of stagnation with zero commits, PRs, and contributor activity over the past 6 months despite a recent commit timestamp, indicating possible maintenance issues or inaccurate metadata."
     },
     "changelog": null,
     "governance": {
@@ -271,7 +276,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for calicoctl outlines a clear decision-making process and indicates multiple maintainers, but lacks a succession plan and a contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T04:15:18.170773+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
