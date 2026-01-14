@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
+      "quick_start": 10,
+      "examples": 10,
       "configuration": 8,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is comprehensive and provides many examples, but could be improved with a clearer quick start section and better troubleshooting guidance.",
-      "top_issue": "Lack of clear troubleshooting instructions"
+      "troubleshooting": 1,
+      "overall": 8,
+      "summary": "Excellent clarity and examples with comprehensive retry patterns, but the README is cut off mid-sentence in the Error Handling section and lacks any troubleshooting guidance.",
+      "top_issue": "README appears truncated (ends mid-sentence in Error Handling section) and provides zero troubleshooting information for common retry issues like infinite loops, performance impacts, or debugging retry behavior"
     },
     "security": {
       "overall_score": 8,
@@ -197,18 +197,22 @@
       "summary": "The tenacity library has a good security posture with no injection risks or secrets found, but could improve input validation and error handling to prevent potential issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "multiprocessing integration",
-        "retry_with behavior"
+        "Multiprocessing compatibility issues",
+        "Exception handling edge cases (TryAgain, reraise behavior)",
+        "API design inconsistencies (retry_with type masking, retry_never control)",
+        "Long test execution times with retry delays",
+        "Missing documentation on common patterns"
       ],
       "praise_themes": [
-        "library functionality"
+        "Core library functionality appreciated",
+        "Recognition of project quality (\"great library\", \"Love the project\")"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the library but faces some issues with multiprocessing and retry_with functionality, which are causing moderate frustration."
+      "abandonment_signals": true,
+      "summary": "Tenacity shows signs of declining maintenance with slow response times, unresolved issues spanning 8+ years (2017-2025), and several open bugs suggesting inadequate issue triage and feature discussion."
     },
     "communication": {
       "helpfulness": 7,
@@ -221,20 +225,24 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs in the past six months"
+        "No commits in 6+ months despite last commit being recent (Jan 1, 2026)",
+        "128 open issues with no recent closures",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases",
+        "Stalled development activity across all metrics"
       ],
-      "positive_signals": [
-        "Recent commits in the last year",
-        "Regular contributor activity"
-      ],
-      "summary": "The package is maintained but faces some concerns with unresolved issues and low PR merge rate."
+      "positive_signals": [],
+      "summary": "The tenacity package shows clear signs of abandonment with zero development activity over the past 6 months and a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:57:44.322634+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

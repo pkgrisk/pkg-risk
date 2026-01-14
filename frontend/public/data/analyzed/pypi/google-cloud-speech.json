@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 2,
-      "installation": 4,
+      "installation": 1,
       "quick_start": 1,
-      "examples": 3,
-      "configuration": 5,
-      "troubleshooting": 6,
-      "overall": 3,
-      "summary": "The documentation is overly broad and lacks focus on the specific package, google-cloud-speech, making it difficult for users to quickly understand its purpose and usage.",
-      "top_issue": "Lack of clear and concise information about the google-cloud-speech package itself"
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 1,
+      "summary": "This README is for the wrong package - it describes the entire Google Cloud Python monorepo instead of the specific google-cloud-speech package.",
+      "top_issue": "Wrong README content: shows generic Google Cloud library table instead of speech-to-text API documentation, installation, or usage examples"
     },
     "security": {
       "overall_score": 8,
@@ -195,15 +195,20 @@
       "summary": "The provided code appears to be secure with no critical findings, but there are some areas that require attention such as input validation and potential error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "release PRs blocked due to failing unittests"
+        "Local server authentication flow breaks with timeout/NoneType errors",
+        "Lack of configurable options for redirect host and printed output",
+        "Long-standing feature requests from 2017-2019 remain unaddressed",
+        "Python 3.7/3.8 test infrastructure disabled without resolution",
+        "Poor error handling in run_local_server method",
+        "Documentation gaps on port=0 behavior"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing minor frustration with release delays but there are no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of slow maintenance with 15+ open issues spanning years (2017-2023), multiple unresolved bugs in core authentication flows, and feature requests that have stalled without engagement from maintainers."
     },
     "communication": {
       "helpfulness": 7,
@@ -216,15 +221,20 @@
       "summary": "Responses are generally clear and helpful, though there is room for improvement in welcoming new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "A large number of merged PRs in the past six months (195)",
-        "Recent activity with a release on 2026-01-08"
+      "concerns": [
+        "No commits in past 6 months despite being a Google Cloud library",
+        "595 open issues with no recent activity or triage",
+        "No closed issues in past 6 months indicating lack of issue management",
+        "Zero merged PRs in past 6 months suggesting inactive development",
+        "No active contributors in past 6 months",
+        "Unknown last release date raises questions about versioning cadence"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Recent commit activity exists (2026-01-13), though timing suggests automated or backfilled data"
+      ],
+      "summary": "This Google Cloud library shows clear signs of stagnation with zero development activity, issue triage, or PR merges over the past 6 months despite a large backlog of open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -235,7 +245,10 @@
       "overall_score": 3,
       "summary": "The changelog lacks clear information and is not comprehensive or well-organized."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:32:17.814815+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

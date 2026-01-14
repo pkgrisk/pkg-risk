@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 4,
-      "quick_start": 6,
-      "examples": 7,
+      "installation": 6,
+      "quick_start": 4,
+      "examples": 5,
       "configuration": 5,
-      "troubleshooting": 3,
+      "troubleshooting": 7,
       "overall": 6,
-      "summary": "The README provides a good overview of the Jedi package, but some sections could be improved for better clarity and completeness.",
-      "top_issue": "Lack of clear installation instructions"
+      "summary": "Well-organized README that clearly explains what Jedi is and its extensive editor integration, but defers too much to external documentation for critical getting-started information like installation steps and basic API usage examples.",
+      "top_issue": "No inline quick-start code example showing basic API usage - users must click through to external docs to see how to actually use the library"
     },
     "security": {
       "overall_score": 5,
@@ -213,16 +213,22 @@
       "summary": "The Jedi package has several security concerns, including potential command injection vulnerabilities and unvalidated user input, which could lead to code execution or data exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Autocompletion issues",
-        "Inconsistent inference results"
+        "Autocompletion issues with third-party libraries (numpy, sklearn)",
+        "Unstable/inconsistent behavior in core functions (goto, infer, get_signatures)",
+        "Missing support for Python language features (__new__, __getattr__, typing.Self)",
+        "Edge cases in package resolution (editable installs, namespace packages)",
+        "Deprecated dependencies (pkg_resources)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Recognition of project quality and usefulness",
+        "Appreciation for maintainer efforts"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some common complaints about autocompletion and inconsistent inference, but there are no signs of abandonment."
+      "summary": "Jedi shows moderate community engagement with recurring issues around library compatibility and language feature support, but no signs of abandonment; maintainers appear responsive but with some open issues lacking timely resolution."
     },
     "communication": {
       "helpfulness": 7,
@@ -238,17 +244,20 @@
       "summary": "Maintainer responses are generally helpful and clear, but show signs of limited patience with repeated questions and a lack of active maintenance."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being recent (2025-12-21)",
+        "No merged PRs in past 6 months indicates lack of development activity",
+        "No closed issues in past 6 months suggests minimal triage or maintenance",
+        "No active contributors in past 6 months",
+        "97 open issues without resolution activity"
       ],
       "positive_signals": [
-        "Recent commit activity",
-        "Multiple contributors active in the past six months"
+        "Recent commit exists (2025-12-21), showing some activity within last month",
+        "No open PRs indicates no pending work or contributions being reviewed"
       ],
-      "summary": "The package shows signs of maintenance but faces some concerns with unresolved issues and low PR merge rate."
+      "summary": "Jedi appears stale with a single recent commit but no meaningful maintenance activity (commits, PR merges, issue closure, or active contributors) over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -258,7 +267,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear governance structures, increasing the risk of losing progress if key contributors leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:58:49.748867+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

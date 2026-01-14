@@ -186,15 +186,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 9,
+      "installation": 3,
       "quick_start": 9,
       "examples": 8,
-      "configuration": 4,
-      "troubleshooting": 3,
+      "configuration": 1,
+      "troubleshooting": 2,
       "overall": 6,
-      "summary": "The README provides a clear introduction and quick start example, but lacks installation instructions and troubleshooting documentation.",
-      "top_issue": "Installation instructions are not provided in the README."
+      "summary": "Excellent clarity and quick-start example, but completely missing installation instructions and minimal troubleshooting guidance.",
+      "top_issue": "No installation instructions provided (not even 'pip install pyparsing')"
     },
     "security": {
       "overall_score": 7,
@@ -221,16 +221,22 @@
       "summary": "The code has some potential security issues, including injection risks and lack of input validation, but no critical secrets or dangerous defaults were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "error messages",
-        "bug in parsing"
+        "Regressions between versions (3.2.4 parsing error, missing license metadata in 3.3.0)",
+        "Bug fixes incomplete or delayed (leading whitespace bug, concurrency issues)",
+        "Poor error messages and debugging experience",
+        "Documentation gaps and outdated version requirements"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active feature development (left recursion support, new warning system)",
+        "Engagement with community questions (closed issues show responses)",
+        "Willingness to refactor and improve documentation"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of frustration or abandonment. The project seems to be maintaining a steady flow of feedback and closed issues."
+      "summary": "Pyparsing shows moderate health with active development and issue engagement, but is experiencing quality concerns from regressions, incomplete bug fixes, and documentation gaps that are creating user frustration."
     },
     "communication": {
       "helpfulness": 8,
@@ -243,15 +249,21 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth while also being welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (166)",
-        "Recent open and merged PRs within the last six months",
-        "Regular issue tracking with recent closed issues"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-06)",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "38 open issues with no recent resolution activity",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Repository exists and has recent commit history",
+        "No abandoned indicators like deleted repository"
+      ],
+      "summary": "pyparsing shows signs of stagnation with zero maintenance activity over the past 6 months despite having open issues, suggesting the project may be in dormant or minimal maintenance mode."
     },
     "changelog": null,
     "governance": {
@@ -261,7 +273,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a clear succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T05:59:11.680505+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
