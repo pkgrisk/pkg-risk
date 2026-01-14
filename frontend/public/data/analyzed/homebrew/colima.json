@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
+      "quick_start": 8,
+      "examples": 7,
       "configuration": 8,
-      "troubleshooting": 6,
+      "troubleshooting": 8,
       "overall": 8,
-      "summary": "The documentation is well-structured and provides a good overview of the package, but some sections could be improved with more detailed examples and troubleshooting information.",
-      "top_issue": "Lack of detailed troubleshooting guides for common issues"
+      "summary": "Excellent README with clear purpose, multiple installation methods, and good runtime coverage, though it could benefit from more concrete workflow examples.",
+      "top_issue": "Limited real-world workflow examples showing how to actually use containers after setup (building images, running containers, common tasks)"
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,22 @@
       "summary": "The code has some security concerns, including lack of input validation and potential for error exposure, but no critical injection risks or secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "networking issues",
-        "compatibility problems"
+        "Mounting issues (paths with spaces, virtiofs compatibility)",
+        "Container crashes and EOF errors",
+        "Environment variable injection (proxy settings)",
+        "Startup failures for new users",
+        "Hot reloading not working properly",
+        "Segmentation faults (Java, native extensions)",
+        "Deprecated configuration warnings",
+        "Network access limitations (LAN access)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The colima community is experiencing some frustration with networking and compatibility issues, but the maintainers are moderately responsive to user concerns."
+      "abandonment_signals": true,
+      "summary": "Colima shows concerning signs of maintenance neglect with numerous unresolved bugs, minimal maintainer engagement, and slow responsiveness to user issues spanning critical functionality like container stability and file mounting."
     },
     "communication": {
       "helpfulness": 9,
@@ -230,21 +236,24 @@
       "summary": "The maintainer's responses are extremely helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits for over a year (last commit Jan 11, 2025)",
+        "374 open issues with no resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases"
       ],
-      "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors",
-        "merged PRs"
-      ],
-      "summary": "The colima package appears to be actively maintained with regular updates, contributions, and issue resolution."
+      "positive_signals": [],
+      "summary": "Colima appears abandoned with no maintenance activity for over a year despite having a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:29:07.527495+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

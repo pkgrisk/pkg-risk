@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 6,
-      "examples": 4,
-      "configuration": 3,
-      "troubleshooting": 5,
-      "overall": 5,
-      "summary": "The Linkerd README provides a good introduction to the project, but lacks clear installation instructions and comprehensive examples.",
-      "top_issue": "Installation instructions are not clearly documented in the README."
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "Excellent high-level clarity about what Linkerd is, but completely lacks concrete installation steps, usage examples, and technical documentation in the README itself.",
+      "top_issue": "Installation and quick start are external links only\u2014no actual commands or examples shown in the README to help users get started immediately"
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,18 @@
       "summary": "The codebase has some security concerns, including potential command injection vulnerabilities and unvalidated user input, but no hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "high CPU usage of policy controller",
-        "issues with proxy recovery after policy controller issues"
+        "Configuration limitations (idle timeouts, header sizes)",
+        "Gateway API compatibility issues causing CPU spikes and warnings",
+        "Authentication/authorization edge cases (EKS Access Entries, tap authorization)",
+        "Race conditions and infrastructure setup issues (CNI, Grafana port mismatch)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and moderate responsiveness from maintainers."
+      "summary": "Linkerd shows moderate community health with active issue tracking and closure, but users experience frustration around inflexible configuration options, upstream compatibility issues, and authentication edge cases that lack clear solutions."
     },
     "communication": {
       "helpfulness": 7,
@@ -233,15 +235,19 @@
       "summary": "Responses are generally clear and helpful, though could benefit from more technical depth."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (472)",
-        "A significant number of merged PRs in the past six months (253)",
-        "Recent last commit and release dates"
+      "concerns": [
+        "No commits in past 6 months despite recent last commit date",
+        "204 open issues with no recent activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests missing release information",
+        "Significant backlog of unresolved issues"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [],
+      "summary": "Project appears abandoned with no maintenance activity over the past 6 months despite 204 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -259,7 +265,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "low",
       "summary": "The governance documentation for Linkerd is well-structured, indicating a clear path from contributor to maintainer and documenting the decision-making process. There's also a plan in place for succession if primary maintainers leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:24:44.991592+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

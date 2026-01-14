@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 4,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 9,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 8,
       "troubleshooting": 2,
       "overall": 6,
-      "summary": "The documentation is clear and comprehensive, but lacks installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are incomplete and unclear."
+      "summary": "Clear description of what the library does and its configuration options, but lacks concrete code examples and has minimal installation/troubleshooting guidance.",
+      "top_issue": "No actual code examples showing how to compress/decompress data - only high-level steps describing the API flow without specific function calls or syntax"
     },
     "security": {
       "overall_score": 7,
@@ -201,19 +201,23 @@
       "summary": "The heatshrink code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure implementation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "encoding/decoding issues",
-        "buffer management"
+        "Encoding/decoding failures with specific parameters (-w 10, -w 10 -l 5)",
+        "API design issues (const correctness for input buffers)",
+        "Edge cases with large window sizes (15-bit indexing overflow)",
+        "Lack of JavaScript encoder implementation",
+        "Missing documentation on state serialization for resuming decompression"
       ],
       "praise_themes": [
-        "use in embedded projects",
-        "positive feedback on the project"
+        "Project quality and usefulness appreciated",
+        "Suitable for embedded systems applications",
+        "Active adoption in diverse projects (DOS debugger, real-world compression)"
       ],
       "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the heatshrink package, but there are ongoing issues related to encoding and decoding that cause some frustration."
+      "summary": "Heatshrink has engaged users and some active maintenance, but several unresolved bugs around parameter combinations and edge cases suggest the project could benefit from more systematic testing and faster issue resolution."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,17 +230,18 @@
       "summary": "The maintainer provides clear, helpful, and technically deep responses while showing patience with repeated or basic questions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "High number of open issues and pull requests"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 40 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases",
+        "Last commit over 7 months ago"
       ],
-      "positive_signals": [
-        "Some contributors have been active in the past six months",
-        "One merged PR in the past six months"
-      ],
-      "summary": "The package is likely receiving minimal maintenance with some recent activity but a high issue count."
+      "positive_signals": [],
+      "summary": "The heatshrink project shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6+ months."
     },
     "changelog": null,
     "governance": {
@@ -246,7 +251,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:33:46.113719+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

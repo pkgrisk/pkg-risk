@@ -169,12 +169,12 @@
       "clarity": 8,
       "installation": 9,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and clear, but lacks troubleshooting information and could benefit from more examples.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "examples": 8,
+      "configuration": 9,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Comprehensive technical documentation with excellent build instructions and examples, but lacks troubleshooting guidance and could better explain the package's purpose upfront.",
+      "top_issue": "No troubleshooting section for common build errors, runtime issues, or codec usage problems"
     },
     "security": {
       "overall_score": 8,
@@ -185,16 +185,21 @@
       "summary": "The code appears to be generally secure, with no major injection risks or secrets exposed, but could benefit from additional input validation and bounds checking."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "lack of new releases",
-        "build issues"
+        "No releases in 2+ years despite 340+ commits",
+        "Build failures with modern C++ standards (string_view not recognized)",
+        "CMake compatibility issues with older versions",
+        "Compiler flag overrides in build configuration",
+        "Missing exported symbols in shared library"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "PGP signing of commits appreciated"
+      ],
       "abandonment_signals": true,
-      "summary": "The community is moderately frustrated with the lack of updates and new releases, as well as build issues, which may indicate potential abandonment."
+      "summary": "The libilbc project shows signs of abandonment with stagnant releases, unresponsive maintainers, accumulated build issues across multiple platforms, and growing technical debt as modern compilers and dependencies evolve."
     },
     "communication": {
       "helpfulness": 7,
@@ -210,17 +215,18 @@
       "summary": "The maintainer's responses are generally adequate but could be more consistent and clearer."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in over 12 months (last commit January 2024)",
+        "Zero activity in past 6 months across all metrics",
+        "No merged PRs or closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "8 open issues with no resolution activity",
+        "Unknown last release date indicates stalled release cycle"
       ],
-      "positive_signals": [
-        "Contributors active in the past six months",
-        "Recent closed issues and merged PRs indicate some level of activity"
-      ],
-      "summary": "The package is minimally maintained with recent contributor activity but lacks recent commits and has open issues."
+      "positive_signals": [],
+      "summary": "The libilbc project appears abandoned with no development activity, issue resolution, or maintenance for over a year."
     },
     "changelog": null,
     "governance": {
@@ -230,7 +236,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:27:37.136864+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

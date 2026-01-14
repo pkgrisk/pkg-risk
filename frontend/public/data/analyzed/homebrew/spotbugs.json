@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 7,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 7,
-      "configuration": 5,
+      "examples": 2,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is informative but lacks clear installation instructions and a quick start guide, making it difficult for new users to get started.",
-      "top_issue": "Lack of a concise quick start section with basic usage examples"
+      "overall": 3,
+      "summary": "Clear project description but lacks basic usage instructions, focusing instead on building from source and integration links.",
+      "top_issue": "No installation instructions for Homebrew users or standalone usage examples - README prioritizes building from source over end-user documentation"
     },
     "security": {
       "overall_score": 7,
@@ -202,16 +202,17 @@
       "summary": "The code has some security concerns, including potential XXE attacks and lack of input validation, but no critical injection risks or hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "dependency issues",
-        "false positives"
+        "False positives in bug detection (EI_EXPOSE_REP with Android LiveData, NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE)",
+        "Compatibility issues with newer Java versions (Java 25 fat jar initialization, JDK 18+ encoding defaults)",
+        "Outdated detection rules not accounting for modern framework patterns"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is facing some common issues like dependency management and false positives, but the project seems to be actively maintained."
+      "summary": "SpotBugs shows moderate maintenance with active bug fixes but struggles with false positives and Java version compatibility issues that frustrate users."
     },
     "communication": {
       "helpfulness": 6,
@@ -226,15 +227,18 @@
       "summary": "The responses are generally adequate but show signs of impatience and hostility, particularly towards certain contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (298)",
-        "A significant number of merged PRs in the past six months (229)",
-        "Recent last commit and release dates"
+      "concerns": [
+        "No commits in past 6 months despite last commit being very recent (indicates stale repository state)",
+        "449 open issues with no recent activity suggests issues are not being addressed",
+        "Zero closed issues in past 6 months indicates no active issue resolution",
+        "No merged PRs in past 6 months shows no active development or community contributions being integrated",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has stopped"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [],
+      "summary": "SpotBugs appears to be abandoned with no maintenance activity for at least 6 months despite a large backlog of 449 unaddressed open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +256,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes and a contributor ladder but lacks a formal succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:28:06.925228+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

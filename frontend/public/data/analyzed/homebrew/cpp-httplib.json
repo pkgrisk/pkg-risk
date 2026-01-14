@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 10,
       "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 7,
-      "overall": 7,
-      "summary": "The documentation is clear and provides many examples, but lacks installation instructions and could improve configuration and troubleshooting sections.",
-      "top_issue": "Installation instructions are incomplete and unclear."
+      "configuration": 8,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent header-only library documentation with clear examples and quick start, though troubleshooting guidance is limited.",
+      "top_issue": "Lacks troubleshooting section for common errors like connection failures, timeout handling, or build issues beyond SSL errors"
     },
     "security": {
       "overall_score": 7,
@@ -197,19 +197,22 @@
       "summary": "The code has some security concerns related to input validation and error handling, but overall it appears to be a relatively secure implementation of an HTTP server."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "SSL/TLS connection issues",
-        "compatibility problems"
+        "Architecture-specific test failures (i686, gcc 16 compatibility)",
+        "Threading/blocking issues with chunked content providers",
+        "Platform-specific bugs (Windows segfaults, musl compatibility)",
+        "Build/dependency resolution issues (zstd finding, getaddrinfo feature gating)"
       ],
       "praise_themes": [
-        "clean design",
-        "minimal dependencies"
+        "Clean design and single-header approach appreciated",
+        "Minimal dependencies valued",
+        "Library functionality generally works well on primary platforms"
       ],
       "abandonment_signals": false,
-      "summary": "The cpp-httplib community is generally healthy, with an active maintainer and users who appreciate the library's design, but some compatibility and SSL/TLS issues need to be addressed."
+      "summary": "Active but understaffed project with solid core functionality, struggling with edge cases across diverse platforms and build environments, with moderate maintainer engagement on critical issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,19 +225,26 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and welcoming, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (117 in the past 6 months)",
-        "Recent release (2026-01-01)",
-        "High number of merged PRs (51 in the past 6 months)",
-        "Many active contributors (21 in the past 6 months)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-14)",
+        "No closed issues in past 6 months indicating lack of maintenance activity",
+        "No merged PRs in past 6 months suggesting pull requests are not being reviewed",
+        "No active contributors in past 6 months",
+        "8 open issues remaining unaddressed"
       ],
-      "summary": "The package appears to be actively maintained with frequent updates, releases, and a large number of contributors."
+      "positive_signals": [
+        "Recent commit activity exists (though not within 6 month window)",
+        "No abandoned indicators like deleted repository"
+      ],
+      "summary": "The project appears stale with no maintenance activity over the past 6 months despite having a recent commit timestamp, suggesting the repository may be inactive or unmaintained."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:23:15.741919+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

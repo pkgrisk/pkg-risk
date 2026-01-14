@@ -161,14 +161,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 4,
       "troubleshooting": 3,
       "overall": 5,
-      "summary": "The documentation is thorough but dense, making it difficult for new users to quickly understand the package and its usage.",
-      "top_issue": "Lack of a clear quick start guide or example usage"
+      "summary": "Well-structured library overview with detailed build instructions but lacks quick-start examples and practical usage guidance.",
+      "top_issue": "No quick-start code examples showing how to actually use any folly components after installation"
     },
     "security": {
       "overall_score": 7,
@@ -180,30 +180,36 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "memory leaks",
-        "compatibility issues"
+        "Dependency on unreleased/unstable library features (liburing)",
+        "Build failures on specific platforms (Ubuntu 22.04)",
+        "C++ standard compatibility issues (C++17 vs C++20)",
+        "Memory leaks in core abstractions (Future timeout/cancellation)",
+        "Segmentation faults in memory allocation utilities",
+        "Build configuration issues (binutils-dev dependency not documented)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with unresolved issues, including memory leaks and compatibility problems, indicating a need for more active maintenance."
+      "abandonment_signals": true,
+      "summary": "Folly shows signs of maintenance neglect with multiple critical bugs open since 2023, unresolved compatibility issues across C++ standards and platforms, and no evidence of active maintainer engagement on pressing issues."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "No commits in past 6 months despite last commit being recent (likely from automated system)",
+        "436 open issues with no activity",
+        "Zero closed issues in past 6 months indicating no issue triage",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process is not tracked or abandoned"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "large number of active contributors"
+        "Project exists and has historical commits"
       ],
-      "summary": "The folly package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+      "summary": "Folly appears abandoned with no maintenance activity over the past 6 months despite a large backlog of open issues."
     },
     "changelog": null,
     "governance": {
@@ -213,7 +219,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the Folly project lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:33:11.159793+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
