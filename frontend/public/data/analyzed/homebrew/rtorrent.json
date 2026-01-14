@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 7,
+      "installation": 4,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides some basic information, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of a quick start guide with concrete examples to get users started with the package."
+      "overall": 3,
+      "summary": "README clearly describes what rtorrent is but lacks actual installation steps, usage examples, and troubleshooting guidance, directing users to external wiki instead.",
+      "top_issue": "No installation instructions provided - only build-from-source steps with missing details (no ./configure or make commands shown), and no guidance for package manager installation despite being a Homebrew package"
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,21 @@
       "summary": "The code has some potential security issues, including a possible command injection vulnerability and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 9,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "crashes",
-        "performance issues"
+        "Crashes and segmentation faults in version 0.16.6",
+        "Poll::process() event_error with curl_socket causing aborts",
+        "Session directory locking failures preventing startup",
+        "Network connectivity issues (hostname resolution, wifi disconnects)",
+        "Data display corruption (throttle limits showing garbage values)",
+        "Regression from 0.16.5 to 0.16.6",
+        "Platform-specific failures (Raspberry Pi, ARM, Termux)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The rtorrent community is experiencing a mix of resolved and ongoing issues, with moderate maintainer responsiveness and some user frustration."
+      "abandonment_signals": true,
+      "summary": "Critical stability regression in version 0.16.6 with multiple unresolved crashes affecting core functionality, poor version upgrade experience, and slow/unresponsive maintainer engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -236,21 +241,26 @@
       "summary": "The maintainer provides generally helpful and technically detailed responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive community."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "419 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No release information available"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors",
-        "merged PRs"
+        "Recent last commit date suggests repository still exists"
       ],
-      "summary": "The rtorrent package appears to be actively maintained with regular updates, fixes, and contributions from multiple developers."
+      "summary": "rtorrent is abandoned with no maintenance activity over 6 months despite a large backlog of 419 open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:00:40.599527+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -162,15 +162,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 3,
       "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and examples"
+      "summary": "Clear purpose statement but lacks practical usage examples, configuration guidance, and troubleshooting information.",
+      "top_issue": "No usage examples provided - users must run 'pigz' command to discover how to actually use it for compression tasks"
     },
     "security": {
       "overall_score": 7,
@@ -190,16 +190,23 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or dangerous defaults were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "cross-platform support",
-        "thread utilization"
+        "Cross-platform build system support (CMake) for Windows/Linux/Mac",
+        "Thread utilization issues on high-core-count systems",
+        "Platform-specific bugs (Windows pipe input, ARM64 support)",
+        "Performance and configuration concerns on large HPC systems",
+        "Occasional crashes and data corruption (CRC32 mismatches, segfaults)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Project fills a genuine need for parallel gzip compression",
+        "Users appreciate multi-threading capabilities",
+        "Functional parity with gzip is valued"
+      ],
       "abandonment_signals": false,
-      "summary": "The pigz community is moderately active, with some open issues and a mix of resolved and unresolved complaints, but no clear signs of abandonment or extreme frustration."
+      "summary": "Pigz has a moderately healthy community with engaged users reporting legitimate bugs and feature requests, though maintainer responses appear measured; issues span from infrastructure improvements to platform-specific bugs, with no signs of project abandonment but some user frustration around unresolved long-standing requests (CMake support since 2018, adaptive compression since 2015)."
     },
     "communication": {
       "helpfulness": 9,
@@ -216,19 +223,25 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unmerged open PRs",
-        "multiple open issues"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "14 open issues remaining unaddressed"
       ],
       "positive_signals": [
-        "at least one active contributor in the past 6 months"
+        "Last commit exists (2025-08-16)",
+        "No open PRs suggests not abandoned entirely"
       ],
-      "summary": "The pigz package appears to be stale due to a lack of recent commits and unaddressed open issues and PRs."
+      "summary": "The project shows signs of stagnation with no recent development activity, unresolved issues, and no contributor engagement over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T15:07:08.729836+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",
