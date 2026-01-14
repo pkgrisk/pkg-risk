@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 2,
-      "quick_start": 6,
+      "quick_start": 8,
       "examples": 9,
       "configuration": 4,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package's features and usage, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided"
+      "troubleshooting": 1,
+      "overall": 6,
+      "summary": "Excellent clarity and examples but completely missing installation instructions and troubleshooting guidance.",
+      "top_issue": "No installation instructions provided (how to build from source, dependencies, package manager options)"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,21 @@
       "summary": "The xclib.c code has some potential security issues, including injection risks and lack of input validation, but overall appears to be a relatively secure X11 library."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "buffer size limitations",
-        "selection ownership issues"
+        "Large buffer handling (>1MB) causes crashes, hangs, or data corruption",
+        "Long release cycles with critical fixes unreleased",
+        "Wayland/compatibility issues (weston-xwayland, VMware clipboard)",
+        "Process handling issues (orphaned subprocesses, hangs in command substitution)",
+        "Limited feature set (no config files, single target copying, hardcoded cut buffer)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The xclip community is experiencing frustration with ongoing issues, but the maintainer's occasional responses and lack of abandonment signals suggest a slow but not entirely neglected project."
+      "praise_themes": [
+        "Gratitude for project existence"
+      ],
+      "abandonment_signals": true,
+      "summary": "xclip shows signs of abandonment with unresolved critical bugs (large buffer crashes, process hangs), slow maintainer response, and a 4+ year gap since last release despite community requests and pending fixes."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,20 +234,22 @@
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "large number of open issues (72) with minimal closure (1) in the past 6 months",
-        "no merged PRs in the past 6 months",
-        "last release was over 7 years ago"
+        "No commits in past 6 months despite last commit being recent (suggests repository may be archived or abandoned)",
+        "87 open issues with zero closed in past 6 months indicates issues are not being addressed",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months shows no development activity",
+        "Unknown last release date suggests release cadence has stopped"
       ],
-      "positive_signals": [
-        "10 contributors active in the past 6 months, although no commits were made"
-      ],
-      "summary": "The xclip package appears to be abandoned due to a lack of recent commits, releases, and issue/PR resolution despite having active contributors."
+      "positive_signals": [],
+      "summary": "xclip appears abandoned with no maintenance activity for 6+ months despite having significant backlog of open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:25:53.188860+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

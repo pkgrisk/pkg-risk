@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 8,
-      "troubleshooting": 4,
+      "quick_start": 8,
+      "examples": 8,
+      "configuration": 9,
+      "troubleshooting": 3,
       "overall": 8,
-      "summary": "The README provides clear and detailed information about the package, its features, installation, and usage, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting section with common problems and solutions"
+      "summary": "Excellent, comprehensive documentation with clear installation and usage instructions, but lacks troubleshooting guidance for common errors.",
+      "top_issue": "No troubleshooting section for common issues like compilation errors, OpenMP problems, or alignment failures"
     },
     "security": {
       "overall_score": 7,
@@ -206,19 +206,23 @@
       "summary": "The code has some security concerns related to input validation and potential injection risks, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Segmentation fault",
-        "Multi-threading issues",
-        "Memory consumption"
+        "Segmentation faults on various input types",
+        "Multi-threading issues and option parsing problems",
+        "CPU compatibility issues (illegal instruction errors)",
+        "Memory consumption problems with large datasets",
+        "Output format changes breaking downstream parsers",
+        "Documentation gaps (removed --type parameter without clear migration path)",
+        "Inconsistent results with different CPU instruction sets (AVX2 vs non-AVX2)"
       ],
       "praise_themes": [
-        "Great software"
+        "Software is recognized as useful and performant"
       ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some common technical issues reported, but the maintainers are actively addressing them."
+      "summary": "kalign shows concerning stability issues with segmentation faults, threading problems, and CPU compatibility errors affecting core functionality, though the maintainer appears to close issues regularly suggesting moderate engagement."
     },
     "communication": {
       "helpfulness": 7,
@@ -231,17 +235,20 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing patience with repeated questions and a willingness to provide technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "Only two merged PRs in the past six months."
+        "No commits in past 6 months despite being July 2025",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "3 open issues with no recent activity",
+        "Unknown last release date suggests lack of versioning discipline"
       ],
       "positive_signals": [
-        "Four contributors have been active in the past six months.",
-        "Recent activity with an open issue and pull requests."
+        "Repository still exists and has some issue tracking"
       ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks active development."
+      "summary": "kalign appears to be stale with no meaningful development activity in the past 6 months and unresolved open issues."
     },
     "changelog": null,
     "governance": {
@@ -251,7 +258,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project has documented decision-making processes and a contributor path, but lacks a succession plan or indication of multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:28:57.075177+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -160,15 +160,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
+      "clarity": 7,
       "installation": 8,
       "quick_start": 4,
-      "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 5,
+      "examples": 2,
+      "configuration": 6,
+      "troubleshooting": 7,
       "overall": 6,
-      "summary": "The documentation is detailed but dense, making it difficult for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of a clear and concise introduction to the package's functionality and a quick start guide"
+      "summary": "Comprehensive build instructions for developers but lacks clarity on what the package does and provides no usage examples beyond compilation.",
+      "top_issue": "No quick start usage example showing how to actually use libdwarf in code after installation - only build instructions provided"
     },
     "security": {
       "overall_score": 5,
@@ -195,19 +195,21 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or sensitive information exposure was found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "DWARF parsing issues",
-        "build failures"
+        "MacOS/ARM64 compatibility issues with DWARF parsing",
+        "Build failures on Windows with type redefinition errors",
+        "Compiler compatibility issues (GCC 14, implicit declarations)",
+        "Incomplete API documentation or unclear behavior"
       ],
       "praise_themes": [
-        "helpful feedback",
-        "quick issue resolution"
+        "Appreciation for libdwarf library existence",
+        "Active maintenance and issue resolution"
       ],
       "abandonment_signals": false,
-      "summary": "The dwarfutils community is active and responsive, with maintainers quickly addressing issues and users providing helpful feedback, despite some recurring problems with DWARF parsing and build failures."
+      "summary": "Active maintainer with generally responsive engagement, but recurring platform-specific issues (macOS, Windows, ARM64) and compiler compatibility problems indicate quality control gaps affecting cross-platform users."
     },
     "communication": {
       "helpfulness": 9,
@@ -220,17 +222,20 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past 6 months (227)",
-        "Recent last commit (2025-12-29)",
-        "Active contributors (7) in the past 6 months",
-        "Merged PRs in the past 6 months (7)",
-        "Closed issues in the past 6 months (9)"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent (suggests stale repository state)",
+        "Zero active contributors in the past 6 months",
+        "No merged PRs in the past 6 months indicating no maintenance activity",
+        "No closed issues in the past 6 months despite 3 open issues",
+        "Unknown last release date suggests no versioning activity"
       ],
-      "summary": "The dwarfutils package is actively maintained with frequent updates, active contributors, and a high commit frequency."
+      "positive_signals": [
+        "Repository exists and is accessible",
+        "Last commit timestamp is recent (2026-01-12)"
+      ],
+      "summary": "The dwarfutils package appears stale with no maintenance activity over 6 months, open issues, and no active contributors despite recent commit metadata."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -248,7 +253,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for dwarfutils lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:58:03.984194+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

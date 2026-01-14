@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 7,
       "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a good overview of the package and its usage, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "overall": 6,
+      "summary": "Well-structured technical documentation with clear prerequisites and build steps, but lacks practical examples and troubleshooting guidance for common use cases.",
+      "top_issue": "Missing real-world usage examples and troubleshooting guidance - the README explains what outputs are created but provides minimal examples of how to actually use the tool for typical coastline extraction workflows"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,19 @@
       "summary": "The code has some security concerns, including SQL injection vulnerabilities and potential information disclosure through error messages, but no critical secrets or credentials are exposed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues with GDAL versions",
-        "invalid output formats"
+        "GDAL compatibility issues (3.7.0, 3.8.0 builds failing)",
+        "Invalid geometry output (ESRI shapes with type 0, empty GPKG features)",
+        "Coastline orientation and validity problems (holes outside shells, reversed coastlines)",
+        "Data quality issues (incomplete water polygons, estuaries not handled)",
+        "Test suite fragility (failures with GEOS 3.9.1 and geometry library updates)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with active maintainer response but frequent build and output format issues."
+      "summary": "osmcoastline shows moderate maintenance activity with issues resolved over time, but persistent dependency compatibility problems and complex geometric edge cases indicate an aging C++ project struggling with evolving GDAL/GEOS ecosystems."
     },
     "communication": {
       "helpfulness": 7,
@@ -231,17 +234,19 @@
       "summary": "The maintainer provides technical insights but could be more welcoming and ensure clearer resolutions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No recent pull requests or merged PRs, indicating limited community contribution.",
-        "Only one contributor active in the past six months."
+        "No commits in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No closed issues in the past 6 months",
+        "No active contributors in the past 6 months",
+        "3 open issues with no resolution activity"
       ],
       "positive_signals": [
-        "Recent commits and releases within the last year.",
-        "Regular issue tracking and resolution."
+        "Last commit exists (January 2026), showing project is not completely abandoned"
       ],
-      "summary": "The package is minimally maintained with recent activity but lacks community contributions."
+      "summary": "osmcoastline appears stale with no maintenance activity for at least 6 months despite having open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -252,7 +257,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-structured, clearly marks breaking changes, and is comprehensive and clear, but lacks migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:26:15.958324+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

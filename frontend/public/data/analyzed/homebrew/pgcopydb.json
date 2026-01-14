@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 2,
-      "quick_start": 9,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 4,
+      "configuration": 6,
       "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is clear and concise, but lacks installation instructions and troubleshooting guides.",
-      "top_issue": "Installation instructions are not provided in the README."
+      "summary": "Clear purpose and excellent command reference, but completely missing installation instructions and troubleshooting guidance.",
+      "top_issue": "No installation instructions provided - users cannot install the tool without visiting external documentation"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,20 @@
       "summary": "The code has some potential security risks, including injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Docker image availability for different architectures",
-        "Data corruption due to deserialization issues"
+        "Data corruption bugs (null deserialization in follow mode)",
+        "PostgreSQL version compatibility issues (v17, v18)",
+        "Build failures and compilation errors",
+        "Platform-specific issues (Docker arm64 only)",
+        "Data validation problems (string length constraints)",
+        "Code quality issues (copy-paste bugs)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with concerns around Docker image support and data integrity, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The pgcopydb project shows signs of maintenance decline with multiple critical bugs (data corruption, version incompatibility) remaining open without responses, no recent version releases addressing PostgreSQL 17/18, and slow maintainer engagement on high-priority issues."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,17 +232,18 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with contributors. However, some technical depth could be improved."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "A high number of open issues (68) suggests there are unresolved problems that need attention."
+        "No commits in past 6 months despite last commit being from April 2025",
+        "93 open issues with no activity",
+        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
+        "No merged PRs in past 6 months showing no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "Recent release on 2024-08-07",
-        "10 contributors active in the past six months, showing some level of community or individual interest"
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent development and has a high number of unresolved issues."
+      "positive_signals": [],
+      "summary": "pgcopydb shows clear signs of abandonment with no commits, issue resolution, or contributor activity in the past 6 months despite 93 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +261,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:29:59.420032+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

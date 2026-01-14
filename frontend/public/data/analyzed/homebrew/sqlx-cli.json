@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is thorough but lacks a clear and concise introduction to get new users started quickly.",
-      "top_issue": "Lack of a quick start example that demonstrates basic usage"
+      "clarity": 4,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 2,
+      "overall": 2,
+      "summary": "This README is for the SQLx Rust library, not the sqlx-cli tool, making it completely irrelevant for Homebrew users installing the CLI.",
+      "top_issue": "Wrong README entirely - this documents the Rust library (sqlx) instead of the command-line tool (sqlx-cli), leaving CLI users with zero usage information"
     },
     "security": {
       "overall_score": 7,
@@ -216,18 +216,19 @@
       "summary": "The sqlx-cli crate has some security concerns, including potential SQL injection attacks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bug with migrations",
-        "timeout issues in thread queries"
+        "QueryBuilder limitations (reusing bind parameters, out-of-order building)",
+        "Connection pool timeout issues in threaded contexts",
+        "Rare panics in MySQL packet parsing",
+        "Database-specific bugs (MariaDB, thread spawning)",
+        "No migration squashing for large projects"
       ],
-      "praise_themes": [
-        "enhancement proposals for macro improvements"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is actively discussing both bugs and enhancements, showing moderate engagement but no clear signs of frustration or abandonment."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Community shows moderate health with active feature requests but concerning signs of slow maintenance: several critical bugs (panics, pool timeouts) remain unresolved for 1-3+ years, 2 closed enhancement issues from November 2025 suggest recent activity, yet 8 of 10 issues remain open with minimal engagement, indicating potential maintainer capacity constraints."
     },
     "communication": {
       "helpfulness": 5,
@@ -244,15 +245,17 @@
       "summary": "The responses are generally technical and provide some useful information, but the maintainers can be dismissive and inconsistent in their communication."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent and frequent commits (last commit on 2025-12-30)",
-        "High number of contributors active in the past six months (24 contributors)",
-        "A significant number of merged PRs in the past six months (43 merged PRs)"
+      "concerns": [
+        "No commits in past 6 months despite being on homebrew",
+        "728 open issues with no recent closures",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "Last commit over a month ago with no follow-up activity"
       ],
-      "summary": "The package is actively maintained with recent commits, high contributor activity, and a good number of merged pull requests."
+      "positive_signals": [],
+      "summary": "sqlx-cli appears to be abandoned with no development activity, issue resolution, or contributor engagement in the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -270,7 +273,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, which increases the risk of losing project continuity if primary maintainers leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T00:24:11.906235+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
