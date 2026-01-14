@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 7,
-      "configuration": 4,
+      "clarity": 7,
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation provides a good overview of the package's purpose and features, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise installation instructions within the README itself, instead relying on external links."
+      "overall": 3,
+      "summary": "README provides clear high-level purpose but lacks inline installation steps, quick start examples, or any troubleshooting guidance, forcing users to navigate external documentation.",
+      "top_issue": "No installation command shown in README - users must click through to platform-specific docs to find basic 'brew install kubefirst' instruction"
     },
     "security": {
       "overall_score": 6,
@@ -226,16 +226,19 @@
       "summary": "The Kubefirst codebase has several security concerns, including potential injection risks and inadequate input validation, but it also demonstrates good practices such as secure logging and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bug in kubefirst for `k3d` create",
-        "stuck deployment issues with Argo CD"
+        "Local cluster deployment failures (k3d, k3d create timeout issues)",
+        "Installation and initialization hangs/getting stuck during provisioning",
+        "TLS certificate and Vault integration issues",
+        "Feature limitations (mandatory DNS provider, lack of RKE2/on-prem support)",
+        "Repository creation conflicts during setup"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing moderate frustration due to bugs and deployment issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with multiple critical bugs affecting core functionality (local deployments failing, installation hanging), minimal issue resolution, and users expressing significant frustration about basic use cases being blocked or unreliable."
     },
     "communication": {
       "helpfulness": 7,
@@ -248,17 +251,18 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with users. However, there is room for more technical depth in some cases."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (280)",
-        "Low number of merged PRs in the past six months (2)"
+        "No commits in past 6 months despite last commit being from November 2025",
+        "288 open issues with no recent activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases"
       ],
-      "positive_signals": [
-        "Recent commit and release dates",
-        "Some recent activity with 36 commits and 1 closed issue in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance efforts with a high number of unresolved issues."
+      "positive_signals": [],
+      "summary": "kubefirst appears to be abandoned with zero maintenance activity over the past 6 months and a large backlog of unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -268,7 +272,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a documented decision-making process and multiple maintainers, but lacks a succession plan or contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T14:13:28.080758+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 2,
-      "quick_start": 9,
-      "examples": 4,
-      "configuration": 6,
+      "quick_start": 8,
+      "examples": 5,
+      "configuration": 4,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides a good introduction to the package and its basic usage, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are incomplete and unclear."
+      "overall": 4,
+      "summary": "Good clarity and quick start example, but critically missing installation instructions and troubleshooting guidance.",
+      "top_issue": "No installation instructions - only links to releases page without explaining how to build or install from source"
     },
     "security": {
       "overall_score": 7,
@@ -195,16 +195,18 @@
       "summary": "The provided C code appears to have some security concerns, including potential injection risks and insufficient input validation, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Suspicious usage of malloc",
-        "Possible use after-free"
+        "Critical memory safety bugs (use-after-free, unchecked malloc)",
+        "No response to bug reports for extended periods",
+        "Outdated CI/CD infrastructure (Travis CI)",
+        "Documentation and download issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is raising valid concerns about memory management and stability, but there are no clear signs of abandonment or significant inactivity."
+      "abandonment_signals": true,
+      "summary": "The bam project shows signs of abandonment with critical unresolved security bugs, zero maintainer engagement on recent issues, and outdated infrastructure remaining unfixed for 1-2 years."
     },
     "communication": {
       "helpfulness": 7,
@@ -217,17 +219,18 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Last release was over four years ago"
+        "No commits in past 6 months",
+        "14 open issues with no resolution activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent versioning"
       ],
-      "positive_signals": [
-        "One contributor has been active in the past six months",
-        "There are open PRs indicating some level of community interest or contribution"
-      ],
-      "summary": "The package is in minimal maintenance with occasional contributions but lacks recent activity."
+      "positive_signals": [],
+      "summary": "Package appears abandoned with no development activity, issue resolution, or contributor engagement for at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -238,7 +241,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it somewhat incomplete."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T14:18:17.376550+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

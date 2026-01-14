@@ -168,13 +168,13 @@
     "readme": {
       "clarity": 8,
       "installation": 6,
-      "quick_start": 4,
-      "examples": 2,
-      "configuration": 1,
-      "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear and concise installation instructions and examples"
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 3,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "Clear technical explanation of the data structure but lacks any code examples showing how to actually use the library.",
+      "top_issue": "No code examples demonstrating basic API usage (initialization, insertion, lookup, iteration) - only build instructions provided"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,20 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "incorrect behavior with key prefixes",
-        "SSE instructions need review"
+        "Correctness bugs in core functionality (prefix handling, leaf splitting, SIMD comparisons)",
+        "Long-standing unresolved issues (oldest from 2014, many from 2018-2021 still open)",
+        "Memory inefficiency (storing full keys in leaf nodes)",
+        "Unclear behavior and missing documentation (thread safety, byte ordering, API semantics)",
+        "Critical data structure bugs affecting search and insert operations",
+        "Edge case handling failures (null searches, key prefix issues, null-byte keys)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and low engagement in discussions."
+      "abandonment_signals": true,
+      "summary": "The libart project shows severe abandonment with 14 open issues spanning 10+ years, multiple unpatched correctness bugs in core operations, and no visible maintainer engagement despite reports of data corruption risks."
     },
     "communication": {
       "helpfulness": 7,
@@ -226,20 +230,25 @@
       "summary": "The maintainer provides useful information and is generally patient, but could be more welcoming and provide clearer reasons for marking issues."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "No merged PRs in the past six months",
-        "17 open issues"
+        "No commits for nearly 2 years (last commit March 2022)",
+        "19 open issues with no recent activity",
+        "Zero commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases recorded",
+        "No closed issues in past 6 months"
       ],
-      "positive_signals": [
-        "10 contributors active in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The libart project appears abandoned with no development activity for approximately 2 years and numerous unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T14:17:56.217423+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

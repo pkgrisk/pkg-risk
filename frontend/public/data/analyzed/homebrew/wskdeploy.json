@@ -190,9 +190,9 @@
       "examples": 6,
       "configuration": 5,
       "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The documentation is generally well-structured and provides a good overview of the package, but could benefit from more examples and clearer configuration instructions.",
-      "top_issue": "Lack of detailed configuration documentation"
+      "overall": 7,
+      "summary": "Well-structured README with clear installation options and build instructions, but lacks concrete usage examples and configuration details for the core deployment functionality.",
+      "top_issue": "Missing practical examples of manifest.yml structure and wskdeploy command usage patterns - users are directed to external docs for the most critical information about actually using the tool"
     },
     "security": {
       "overall_score": 6,
@@ -230,17 +230,21 @@
       "summary": "The wskdeploy package has some security concerns, including potential injection risks and hardcoded secrets, but overall it follows good practices for error handling and secure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Client Timeout Error.",
-        "Option \"include\" in manifest.yml file does not preserve files permission",
-        "Empty files are missing"
+        "URL formatting bugs (double HTTPS prefix)",
+        "File permission preservation issues",
+        "Timeout limitations for large deployments",
+        "Empty files being silently dropped",
+        "Runtime compatibility gaps",
+        "Type system crashes (panic on JSON binding)",
+        "Documentation gaps in specification"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of decline with multiple unresolved bugs dating back 2+ years, no maintainer engagement on open issues, and critical functionality gaps that force users to implement workarounds."
     },
     "communication": {
       "helpfulness": 7,
@@ -253,18 +257,17 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "A high number of open issues"
+        "No commits in past 6 months despite last commit being 2024-12-12",
+        "183 open issues with zero closed in past 6 months indicates no active issue triage",
+        "No merged PRs in past 6 months suggests no active development or review",
+        "Zero active contributors in past 6 months",
+        "Unknown last release indicates no recent version releases"
       ],
-      "positive_signals": [
-        "Recent activity with contributors active in the past six months",
-        "Regular issue reporting by the community"
-      ],
-      "summary": "The package is minimally maintained with recent contributor activity but lacks recent code commits and merged PRs."
+      "positive_signals": [],
+      "summary": "wskdeploy is abandoned with no development activity, issue resolution, or contributor engagement for at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -282,7 +285,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T14:13:05.282084+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
