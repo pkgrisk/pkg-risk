@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is comprehensive and provides a good overview of the project, but lacks clear installation instructions and troubleshooting guides.",
-      "top_issue": "Lack of clear and concise installation instructions for various platforms"
+      "quick_start": 5,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README provides good high-level context and feature lists but lacks concrete installation instructions, practical examples, and any troubleshooting guidance.",
+      "top_issue": "Missing package manager installation instructions (brew install libsql) and no examples showing how to actually use the library in code"
     },
     "security": {
       "overall_score": 7,
@@ -207,15 +207,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Windows build failure with encryption",
-        "Deletion of records causes CPU spike and locks up the database"
+        "Critical platform-specific bugs (Windows encryption failure)",
+        "Performance degradation during bulk operations (CPU spikes during deletes)",
+        "Data integrity issues (vector index corruption on deletes)",
+        "Data loss risks (local db nuked during sync)",
+        "Missing features or unclear functionality (namespace replication, importing SQLite files)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant issues, particularly on Windows and during deletion operations, indicating a need for more active maintenance."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with unresolved critical bugs blocking production use, multiple data integrity/loss issues, abandoned dependencies, and slow maintainer response times creating significant user frustration."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,18 +231,17 @@
       "summary": "The maintainer responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "low number of merged PRs relative to open PRs"
+        "No commits in past 6 months despite last commit being 26 days ago",
+        "411 open issues with zero closed in past 6 months indicates unresponsive maintainers",
+        "No merged PRs in past 6 months shows lack of development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release suggests release pipeline is broken or abandoned"
       ],
-      "positive_signals": [
-        "recent last commit",
-        "significant number of commits in the past six months",
-        "multiple contributors active in the past six months"
-      ],
-      "summary": "The package is actively maintained with recent activity and multiple contributors, but there are concerns about the backlog of issues."
+      "positive_signals": [],
+      "summary": "libsql appears to be abandoned with a large backlog of unresolved issues and no recent maintenance activity."
     },
     "changelog": null,
     "governance": {
@@ -249,7 +251,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks a succession plan and contributor ladder but documents the decision process and indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:28:55.775194+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

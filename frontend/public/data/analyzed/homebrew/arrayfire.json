@@ -184,15 +184,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 4,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 6,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 6,
-      "summary": "The ArrayFire README provides a clear introduction to the package and its capabilities, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Insufficient installation instructions"
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Excellent clarity and examples with strong visual demonstrations, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section and configuration is barely addressed, leaving users to discover solutions on their own when things go wrong."
     },
     "security": {
       "overall_score": 7,
@@ -203,32 +203,34 @@
       "summary": "The code appears to be generally secure, but lacks comprehensive input validation and error handling mechanisms."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build issues",
-        "bug reports"
+        "CUDA compatibility issues (13.1, 12.x versions breaking builds)",
+        "Build failures with modern dependencies (fmt 11.2.0, GCC 12.3+, OpenCL headers)",
+        "Hardware support lagging (Blackwell cards, RTX 6000 Pro not supported)",
+        "Long feature request backlog (FFT dimension request from 2015, still open 10 years later)",
+        "Delayed release cycles (1 year+ between 3.9.0 and 3.9.1 request)"
       ],
-      "praise_themes": [
-        "feature requests"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to ongoing build and bug issues, but there are feature requests indicating active engagement."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "ArrayFire shows critical signs of maintenance degradation with numerous unresolved CUDA/build issues, zero responses on recent bugs, a decade-old feature request still pending, and binary releases falling behind modern hardware capabilities."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (282)",
-        "Low number of merged PRs in the past six months (6)"
+        "No commits in past 6 months despite last commit being September 2025",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months despite 303 open issues",
+        "Unknown last release date suggests lack of release cadence",
+        "High number of open issues (303) with no resolution activity"
       ],
-      "positive_signals": [
-        "Recent commit and release dates",
-        "Some contributor activity in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but a high issue count."
+      "positive_signals": [],
+      "summary": "ArrayFire appears to be abandoned with zero maintenance activity over the past 6 months, 303 unresolved issues, and no recent releases or contributor engagement."
     },
     "changelog": null,
     "governance": {
@@ -238,7 +240,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:56:51.813754+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

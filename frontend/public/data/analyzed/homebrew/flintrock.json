@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to Flintrock, but could benefit from more detailed examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting documentation"
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent quick-start documentation with clear examples and installation instructions, though troubleshooting guidance is limited and some sections appear incomplete.",
+      "top_issue": "The README cuts off mid-sentence in the 'Use Cases' section and lacks troubleshooting information for common errors users might encounter when launching clusters."
     },
     "security": {
       "overall_score": 6,
@@ -213,18 +213,22 @@
       "summary": "The Flintrock codebase has some security concerns, including potential shell injection vulnerabilities and lack of input validation, but it does not appear to have any critical issues with secrets handling or error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "cluster setup failures",
-        "backward compatibility issues"
+        "Dependency version compatibility issues (Python 3.14, pyyaml, cryptography, AdoptOpenJDK deprecation)",
+        "Cluster setup and operational failures (yum lock contention, instance restart issues, proxy/VPC networking)",
+        "Lack of releases and updates (2-year gap between releases, stale dependencies)",
+        "Backward compatibility breaking changes between versions",
+        "Infrastructure configuration complexity (EC2 tags, instance types)"
       ],
       "praise_themes": [
-        "user support and engagement"
+        "Tool usefulness for cluster management",
+        "Appreciation for developer effort"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is engaged with both positive feedback and constructive criticism, but there are ongoing issues that require attention."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of slow maintenance with mounting technical debt, unresolved dependency issues blocking newer Python versions, and a 2+ year release gap causing user frustration and dependency rot."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,17 +241,18 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth while maintaining a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being recent (2024-12-13)",
+        "40 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release suggests lack of release management"
       ],
-      "positive_signals": [
-        "Recent release on 2023-11-27T05:31:30+00:00",
-        "Active contributors (10) in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "Flintrock appears abandoned with no maintenance activity for at least 6 months despite a recent commit, indicated by zero issue resolutions, no code changes, and 40 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -265,7 +270,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, increasing the risk of losing project continuity if key contributors leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:23:23.609765+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

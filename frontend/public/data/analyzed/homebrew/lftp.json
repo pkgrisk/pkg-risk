@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 4,
+      "clarity": 6,
+      "installation": 4,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides some basic information, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of quick start guide and examples"
+      "overall": 3,
+      "summary": "Provides a basic description and build-from-source instructions, but lacks any usage examples, configuration guidance, or troubleshooting help.",
+      "top_issue": "No usage examples or quick start guide showing how to actually use lftp for file transfers"
     },
     "security": {
       "overall_score": 7,
@@ -218,17 +218,19 @@
       "summary": "The lftp package has some security concerns, including potential command injection risks and lack of input validation, but overall it appears to be a relatively secure package."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "file transfer issues",
-        "buffer overflows",
-        "connection problems"
+        "File transfer reliability issues (corruption, hangs, size mismatches)",
+        "Mirror command limitations (whitelist/exclude path handling)",
+        "TLS/SSL session handling problems",
+        "Build failures with older compilers",
+        "Security concerns with credential storage"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The lftp community is experiencing frustration with unresolved issues, including file transfer problems and buffer overflows, despite some maintainer activity."
+      "abandonment_signals": true,
+      "summary": "lftp shows signs of minimal maintenance with slow issue resolution, accumulating unresolved bugs spanning 5+ years, and feature requests going unaddressed despite active user engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -244,19 +246,18 @@
       "summary": "The maintainer provides technically sound and somewhat helpful responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive community."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low number of closed issues",
-        "high number of open issues",
-        "infrequent releases"
+        "No commits in past 6 months",
+        "262 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests stale release process"
       ],
-      "positive_signals": [
-        "recent commits",
-        "active contributors",
-        "merged PRs in the past 6 months"
-      ],
-      "summary": "The lftp package appears to be receiving minimal maintenance with some recent activity, but concerns around issue closure and release frequency remain."
+      "positive_signals": [],
+      "summary": "lftp appears to be abandoned with zero maintenance activity over the past 6 months and a large backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -267,7 +268,10 @@
       "overall_score": 7,
       "summary": "The changelog for the lftp package is well-organized and comprehensive, but lacks clear markings of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-14T03:19:39.499962+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
