@@ -189,7 +189,56 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 4,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "README is confusing because it documents the builder tool that generates type stubs rather than the actual package (types-aiobotocore-eks) that users installed.",
+      "top_issue": "Wrong README - this is for mypy-boto3-builder (the generator tool), not for types-aiobotocore-eks (the generated type stubs package), causing complete confusion about what was actually installed and how to use it."
+    },
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Version mismatch between main package and submodules (types-boto3 1.42 vs submodules max 1.41)",
+        "Duplicate .py and .pyi stub files causing tooling confusion",
+        "Incorrect type definitions in generated stubs (missing async def, wrong Literal types)",
+        "Missing extras metadata in pyproject.toml configuration",
+        "Documentation outdated (local generation instructions broken)",
+        "Overly broad type definitions for file operations",
+        "Confusion between types-boto3 and boto3-stubs packages"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The project maintains reasonable activity with multiple issues being tracked and some resolved, but suffers from quality control problems in stub generation (duplicate files, type inaccuracies) and configuration issues that create friction for users."
+    },
+    "maintenance": {
+      "status": "abandoned",
+      "confidence": 9,
+      "concerns": [
+        "No commits in past 6 months despite last commit being 14 days ago (indicates repository inactivity)",
+        "15 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases in the measured period"
+      ],
+      "positive_signals": [
+        "Recent commit activity 14 days ago suggests repository is not completely dead",
+        "Repository still exists and is accessible"
+      ],
+      "summary": "This package appears abandoned with no meaningful maintenance activity over the past 6 months, despite a recent commit timestamp that may indicate automated or sporadic updates."
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T20:38:55.231826+00:00"
+  },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
