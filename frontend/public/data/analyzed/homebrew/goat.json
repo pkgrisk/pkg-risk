@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and provides a good overview of the package's functionality, but could benefit from more concise quick start instructions and better troubleshooting guidance.",
-      "top_issue": "Lack of clear troubleshooting section"
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 10,
+      "configuration": 6,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent technical documentation with comprehensive examples and installation options, but lacks troubleshooting guidance and detailed configuration reference.",
+      "top_issue": "No troubleshooting section for common errors (authentication failures, network issues, API rate limits, etc.) and configuration options are scattered rather than systematically documented."
     },
     "security": {
       "overall_score": 7,
@@ -214,16 +214,21 @@
       "summary": "The code has some security concerns, including potential injection risks and unvalidated input, but overall it appears to be well-structured and follows best practices for secure coding."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "segfault issues",
-        "migration issues"
+        "Platform-specific bugs (macOS arm64 vs Linux x86_64 inconsistencies)",
+        "Windows/NTFS compatibility issues with special characters in filenames",
+        "Release build quality (dirty version numbers in production releases)",
+        "Feature incompleteness (missing PDS selection in blob operations, DNS validation failures)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Tool is useful enough that users are reporting detailed issues",
+        "Community is actively identifying edge cases and platform-specific problems"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with segfault and migration issues, but there are no clear signs of abandonment."
+      "summary": "Goat has engaged users reporting legitimate bugs, but maintainers are responding inconsistently with some issues remaining unresolved for months, suggesting moderate maintenance rather than active development."
     },
     "communication": {
       "helpfulness": 7,
@@ -236,15 +241,18 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with the contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the last six months",
-        "A moderate number of open issues and PRs, indicating ongoing development"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (indicates stale repository state)",
+        "19 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months showing no maintenance activity",
+        "No merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggesting release process is stalled"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "The goat package appears abandoned with no maintenance activity over the past 6 months despite having unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -255,7 +263,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it incomplete for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T22:16:32.064028+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

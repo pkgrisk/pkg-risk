@@ -178,29 +178,34 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 6,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 3,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README provides a good overview of the package, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of quick start guide and troubleshooting documentation"
+      "summary": "Well-organized library overview with clear purpose but lacks practical usage examples and points to external files for critical information.",
+      "top_issue": "No quick start example showing actual code usage - users must find and run example programs without guidance on how to call even a single subroutine"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Potential DLACPY Overlap Bug in SLICOT with Optimized BLAS/LAPACK",
-        "Bug in SB02RU (Discrete-time, HINV='I')",
-        "Source tarballs do not contain make.inc and top-level makefile"
+        "Critical bugs in core numerical routines (DLACPY overlapping memory, SB02RU symplectic matrix)",
+        "Build/compilation issues across different compilers and platforms",
+        "Lack of CI/CD and automated testing infrastructure",
+        "Incompatibility with modern LAPACK versions (DGEGS deprecation)",
+        "Limited packaging availability in major Linux distributions"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Wide adoption in MATLAB, Scilab, and scientific computing communities",
+        "Active bug reporting and issue tracking by users"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with ongoing bugs and issues related to SLICOT's compatibility with modern BLAS/LAPACK implementations, which are impacting package maintainers and users alike."
+      "summary": "SLICOT shows moderate community health with active bug reporting on critical numerical issues and packaging concerns, but maintainers are responding to issues and the library remains widely used despite infrastructure gaps."
     },
     "communication": {
       "helpfulness": 8,
@@ -213,17 +218,18 @@
       "summary": "Maintainer responses are generally clear and helpful, though there is room for more encouragement of new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs compared to open issues",
-        "No recent commits"
+        "No commits in past 6 months",
+        "9 open issues with no resolution activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests stale release process"
       ],
-      "positive_signals": [
-        "Regular issue closure",
-        "Recent release"
-      ],
-      "summary": "The package is maintained with regular issue resolution, but could benefit from more active contributions."
+      "positive_signals": [],
+      "summary": "The slicot package shows clear signs of abandonment with zero maintenance activity over the past 6 months despite having unresolved open issues."
     },
     "changelog": null,
     "governance": {
@@ -233,7 +239,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks formal succession planning, decision-making processes, and a contributor ladder but indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T22:02:10.609616+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

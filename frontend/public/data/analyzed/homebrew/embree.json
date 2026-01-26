@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The documentation is detailed and comprehensive, but could benefit from more concise language and a clearer quick start guide.",
-      "top_issue": "Lack of clear troubleshooting section and limited configuration documentation"
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 5,
+      "overall": 5,
+      "summary": "Clear high-level overview and platform coverage, but lacks practical quick-start examples and configuration guidance for actually using the library.",
+      "top_issue": "No code examples showing basic ray tracing usage - only build system integration is shown, leaving users unclear how to actually use the API"
     },
     "security": {
       "overall_score": 7,
@@ -193,16 +193,19 @@
       "summary": "The code has a moderate security risk due to lack of input validation and potential for null pointer dereferences, but no injection risks or hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Undefined references on avx512 feature",
-        "Embree SYCL primID always returns 0"
+        "Compilation issues on ARM Linux platforms",
+        "Build configuration problems (DEBUG flags in RelWithDebInfo)",
+        "Platform-specific bugs (AVX-512 undefined references)",
+        "Regression in newer versions (SYCL primID issue in 4.4.0)",
+        "API design inconsistencies (const-correctness)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing issues with the latest version of embree, indicating a need for more active maintenance and support."
+      "abandonment_signals": true,
+      "summary": "Embree shows signs of declining maintainer engagement with multiple open technical issues spanning 6 years (oldest from 2020) receiving no responses, indicating either resource constraints or reduced project focus despite active user-reported bugs."
     },
     "communication": {
       "helpfulness": 7,
@@ -215,17 +218,20 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a potential slowdown in active development.",
-        "Low number of closed issues and merged PRs, suggesting limited community engagement or issue resolution."
+        "No commits in past 6 months despite last commit being recent (2026-01-22)",
+        "56 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicates no maintenance",
+        "No merged PRs in past 6 months shows no development activity",
+        "Zero active contributors in past 6 months",
+        "Unknown last release suggests no versioning activity"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Multiple contributors are still active"
+        "Recent commit exists (2026-01-22), though appears to be old activity resurfacing"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent contributions and resolutions."
+      "summary": "The embree package appears abandoned with no maintenance activity over the past 6 months despite a backlog of 56 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -236,7 +242,10 @@
       "overall_score": 7,
       "summary": "The changelog is mostly clear and comprehensive, but lacks migration guides and proper categorization."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T22:07:27.065025+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

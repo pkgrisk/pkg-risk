@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is generally well-structured and informative, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Well-structured README that clearly explains what the project does and provides installation steps, but lacks concrete usage examples, configuration details, and troubleshooting guidance for end users.",
+      "top_issue": "No concrete examples of actually using the toolchain to compile a Verilog file to bitstream - the 'Getting Started' section ends with 'you should now be able to build the examples' but doesn't show how to do this or provide a minimal working example."
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,18 @@
       "summary": "The codebase has some security concerns, including potential template injection and lack of input validation, but no critical secrets or sensitive data exposure was found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Build issues with Boost version changes",
-        "Design and configuration problems"
+        "Dependency compatibility issues (Boost 1.89.0 breaking change)",
+        "Hardware-specific bugs (IO type encoding, PLL placement issues, RAM data width)",
+        "Missing features in code generation (PLL signal specification, LUT6 instantiation)",
+        "Non-deterministic tool output (ecppll random values)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some common issues, but the project seems to be actively maintained without signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of moderate maintenance with several long-standing open issues, dependency vulnerabilities, and a very old unresolved macOS compatibility bug from 2019 suggesting limited active development."
     },
     "communication": {
       "helpfulness": 7,
@@ -227,17 +229,18 @@
       "summary": "The maintainer responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Long time since last release (over a year)",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being from October 2025",
+        "51 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicating no maintenance activity",
+        "No merged PRs in past 6 months showing no development progress",
+        "Zero active contributors in past 6 months",
+        "No releases available suggesting stalled development"
       ],
-      "positive_signals": [
-        "Recent commits and contributors activity",
-        "Moderate number of open issues and PRs indicating community interest"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent releases."
+      "positive_signals": [],
+      "summary": "Project appears abandoned with no maintenance activity, open issues, or development progress over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +250,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T22:15:16.273027+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

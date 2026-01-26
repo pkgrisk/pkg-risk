@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 8,
+      "quick_start": 9,
       "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 6,
+      "configuration": 8,
+      "troubleshooting": 8,
       "overall": 8,
-      "summary": "The README provides clear and detailed information about ESLint, its installation, configuration, and usage, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Excellent README with clear purpose, installation, and quick start, though it could benefit from more inline configuration examples and the text appears to cut off mid-FAQ.",
+      "top_issue": "The README appears truncated (ends with 'Why ' mid-sentence in the FAQ section), suggesting incomplete documentation."
     },
     "security": {
       "overall_score": 8,
@@ -196,16 +196,21 @@
       "summary": "The provided code appears to be secure with no critical findings, but some minor input validation issues were identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bug fixes",
-        "feature requests"
+        "Rule behavior regressions in v10 (inline disabling of strict rule)",
+        "Rule fixers causing unintended side effects (ReferenceError with no-var)",
+        "Feature gaps in rule implementations (missing Array.fromAsync support)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being labeled and triaged quickly",
+        "Enhancement requests are being accepted and acknowledged",
+        "Active release cycle management (v10.0.0 preparation underway)"
+      ],
       "abandonment_signals": false,
-      "summary": "The ESLint community is actively engaged, with maintainers responding to issues and users submitting feature requests and bug reports, indicating a healthy and maintained project."
+      "summary": "ESLint shows healthy community engagement with active maintainers and ongoing releases, but recent v10 regressions and rule fixer bugs indicate some stability concerns that need attention."
     },
     "communication": {
       "helpfulness": 9,
@@ -218,16 +223,19 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them exemplary in their communication style."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (294)",
-        "Large number of merged PRs in the past 6 months (231)",
-        "Many contributors active in the past 6 months (41)",
-        "Recent last commit (2026-01-01)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-26)",
+        "100 open issues with no closed issues in past 6 months indicates unaddressed backlog",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests no development activity",
+        "Unknown last release date raises questions about release cadence"
       ],
-      "summary": "The eslint package appears to be actively maintained with a high volume of recent commits, merges, and contributor activity."
+      "positive_signals": [
+        "Recent commit timestamp suggests repository is not completely abandoned"
+      ],
+      "summary": "ESLint appears stale with significant unaddressed issues and no development activity over 6 months, despite a recent timestamp that may indicate automated updates rather than active maintenance."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -245,7 +253,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the ESLint project lacks a clear succession plan and decision-making process, but provides a path for contributors to become maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T22:14:16.684024+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
