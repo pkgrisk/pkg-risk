@@ -160,15 +160,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 7,
-      "quick_start": 9,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "quick_start": 8,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the Argon2 package, with good examples and usage instructions, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of detailed troubleshooting information"
+      "summary": "Well-structured documentation with clear explanations and good examples, but lacks troubleshooting guidance and the library example code is truncated.",
+      "top_issue": "No troubleshooting section and the C library example is incomplete (cuts off mid-line with 'free(pwd')"
     },
     "security": {
       "overall_score": 7,
@@ -180,15 +180,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 6,
+      "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "maintenance issues",
-        "installation problems"
+        "Reference implementation is unmaintained",
+        "ARM/architecture support issues (emmintrin.h, arm64 optimizations)",
+        "Installation/packaging problems (vcpkg)",
+        "Technical correctness concerns (endianness handling)",
+        "CLI limitations (null bytes in salt)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The argon2 community is experiencing neglect, with open issues and a lack of maintainer responsiveness indicating potential project abandonment."
+      "summary": "The argon2 project shows clear signs of abandonment with an unmaintained reference implementation, unresponsive maintainers, persistent unresolved architectural issues spanning years, and no community engagement or issue resolution."
     },
     "communication": {
       "helpfulness": 9,
@@ -202,17 +205,19 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "large number of open issues and PRs with little recent activity",
-        "last release over 3 years ago"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "97 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "10 contributors active in the past 6 months",
-        "1 merged PR in the past 6 months"
+        "Open issues exist (indicates project was tracked)"
       ],
-      "summary": "The argon2 package appears to be stale, with minimal maintenance activity despite a large number of open issues and PRs."
+      "summary": "The argon2 package appears stale with no development activity for at least 6 months, accumulating open issues without resolution."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -223,7 +228,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and easy to follow, but lacks explicit breaking change markers and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T21:52:27.788184+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

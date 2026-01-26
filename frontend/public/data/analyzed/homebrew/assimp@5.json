@@ -195,14 +195,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 4,
       "quick_start": 2,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks a clear and concise quick start guide, making it difficult for new users to get started quickly.",
-      "top_issue": "Lack of a simple, step-by-step quick start example"
+      "examples": 3,
+      "configuration": 3,
+      "troubleshooting": 5,
+      "overall": 4,
+      "summary": "Clear project overview with excellent scope description but critically lacking actual usage examples and installation instructions for end users.",
+      "top_issue": "No quick start code example showing how to actually load a 3D file - the README focuses on project structure and community resources instead of demonstrating basic API usage."
     },
     "security": {
       "overall_score": 7,
@@ -213,17 +213,22 @@
       "summary": "The code appears to be generally secure with no major injection risks or secrets exposure, but could benefit from improved input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "heap-buffer-overflow",
-        "memory allocation failure",
-        "integer overflow"
+        "Compilation failures with latest compiler versions (GCC 15.1.1)",
+        "File format parsing bugs (FBX rotation keys, OBJ .mtl parsing, .webp extension truncation)",
+        "Security vulnerabilities (buffer overflows, stack overflow, memory allocation DoS)",
+        "Platform-specific issues (QNX RTOS transformation matrices)",
+        "Memory safety issues (heap-based buffer overflow, uncontrolled recursion)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with multiple open bugs related to memory and integer overflows, indicating a need for more active maintenance."
+      "praise_themes": [
+        "Library works reliably on embedded hardware despite security issues",
+        "Cross-platform support (Windows, Linux, embedded systems)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Assimp shows concerning security vulnerabilities and compilation issues with modern toolchains, coupled with unresolved long-standing bugs (some from 2021), suggesting moderate but potentially insufficient maintenance for a security-sensitive parsing library."
     },
     "communication": {
       "helpfulness": 7,
@@ -236,14 +241,19 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "Zero commits in the past 6 months despite repository activity",
+        "390 open issues with no recent closure activity",
+        "No merged pull requests in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date indicates stale release cycle"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Repository still exists and has recent activity (last commit Jan 24, 2026)"
+      ],
+      "summary": "The assimp@5 package appears abandoned with no maintenance activity over the past 6 months despite a large backlog of 390 unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -253,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T21:44:45.701149+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 4,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The Kyverno README provides a good overview of the project and its capabilities, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Insufficient installation instructions and lack of troubleshooting documentation"
+      "summary": "Excellent high-level overview with clear use cases, but lacks concrete installation commands and working code examples in the README itself.",
+      "top_issue": "No inline installation instructions or code examples - users must click through to external documentation to actually use the tool"
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,24 @@
       "summary": "The code has some potential security risks, including command injection and insufficient input validation, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "vulnerabilities",
-        "bugs"
+        "Image verification cache issues with non-root containers",
+        "Policy reports becoming corrupted/unreliable after initial creation",
+        "Mutation operations incorrectly deleting entire array sections instead of individual items",
+        "Update requests getting stuck without status updates",
+        "Lack of informative error messages from policy execution",
+        "Generate rules not working correctly with label selectors",
+        "Private registry configuration issues"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Feature requests being implemented (Helm chart scanning, exception namespace lists)",
+        "CLI testing improvements"
+      ],
       "abandonment_signals": false,
-      "summary": "The kyverno community is actively addressing issues, including vulnerabilities and bugs, with maintainers responding promptly to reports and engaging in discussions."
+      "summary": "Kyverno shows moderate maintainer engagement with active bug fixes and feature development, but users report frustration with data integrity issues (corrupted reports), array mutation bugs, and unclear error messaging that undermine confidence in the platform's reliability."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,16 +242,19 @@
       "summary": "The maintainers provide helpful and clear responses, demonstrating patience and a welcoming attitude towards contributors, although technical explanations could be more in-depth at times."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (425)",
-        "Large number of merged PRs in the past 6 months (238)",
-        "Many contributors active in the past 6 months (53)",
-        "Recent last commit (2026-01-03)"
+      "concerns": [
+        "No commits in past 6 months despite being a recent homebrew formula",
+        "406 open issues with zero closed in past 6 months indicates unaddressed backlog",
+        "No active contributors in the past 6 months",
+        "No merged PRs in past 6 months suggests stalled development",
+        "Unknown last release date raises questions about release cadence"
       ],
-      "summary": "The kyverno package appears to be actively maintained with a high volume of recent commits, merges, and contributor activity."
+      "positive_signals": [
+        "Recent activity on 2026-01-26 suggests the formula still exists"
+      ],
+      "summary": "Kyverno appears stale with no maintenance activity for 6+ months and a growing unaddressed issue backlog, indicating the project is not actively maintained."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -261,7 +272,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "Kyverno's governance documentation indicates multiple maintainers but lacks a clear succession plan and contributor ladder, posing a medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T21:53:40.105936+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

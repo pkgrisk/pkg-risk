@@ -169,15 +169,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
+      "clarity": 4,
+      "installation": 6,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides some basic information, but lacks clear explanations and examples for new users.",
-      "top_issue": "Lack of a quick start guide or example usage to help new users understand how to use the Helidon Build Tools."
+      "overall": 3,
+      "summary": "README describes the project as build tools for Helidon but provides no explanation of what they do, how to use them, or why someone would need them\u2014only development/contribution instructions.",
+      "top_issue": "No user-facing documentation\u2014the README only explains how to build/develop the tools themselves, not how to install or use them as an end user (all docs are relegated to subdirectory READMEs)"
     },
     "security": {
       "overall_score": 8,
@@ -188,19 +188,22 @@
       "summary": "The Helidon package appears to have a good security posture, with no evident injection risks or secrets exposure, but may benefit from explicit input validation mechanisms."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "jlink image issues with Java 24/25",
-        "warnings during jlink-image execution"
+        "Java version compatibility issues (Java 24/25 breaking changes)",
+        "JUnit 5.13.0 incompatibility causing test failures",
+        "CLI bugs on Windows (exit codes, property arguments)",
+        "jlink image generation warnings and Jandex index issues"
       ],
       "praise_themes": [
-        "planned Maven 4 support",
-        "enhancement for AoT features"
+        "Proactive investigation of upcoming major dependencies (Maven 4)",
+        "Enhancement planning for modern Java features (AoT, Java 25)",
+        "Consideration of alternative runtimes (Podman support)"
       ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate frustration due to ongoing issues and warnings but also some positive developments planned."
+      "summary": "Helidon shows healthy active maintenance with responsive bug fixes and forward-looking enhancements, though recent Java version churn (24/25) and dependency updates (JUnit 5.13.0) are creating compatibility friction."
     },
     "communication": {
       "helpfulness": 8,
@@ -213,18 +216,18 @@
       "summary": "The maintainer responses are clear, helpful, and demonstrate a good level of technical depth while being patient with the contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Long time since last release"
+        "No commits in past 6 months despite last commit being recent (2026-01-21)",
+        "106 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No recent release information available"
       ],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Moderate number of merged PRs in the past six months",
-        "Active contributors in the past six months"
-      ],
-      "summary": "The package is maintained with recent activity, but there are concerns regarding the high number of open issues and lack of new releases."
+      "positive_signals": [],
+      "summary": "Helidon appears abandoned with no development activity, issue resolution, or contributor engagement in the past 6 months despite recent commit metadata."
     },
     "changelog": null,
     "governance": {
@@ -234,7 +237,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation provides a clear process for contributing code and issues, but lacks a succession plan or contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T21:55:20.917354+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

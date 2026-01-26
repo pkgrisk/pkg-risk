@@ -195,14 +195,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 7,
       "examples": 6,
       "configuration": 5,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is generally clear and provides a good overview of the package, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting information and lack of clear configuration documentation"
+      "summary": "Well-structured README with clear purpose and architecture, but installation instructions conflate the framework with the CLI tool (goctl), and troubleshooting is nearly absent.",
+      "top_issue": "Confusing installation section: 'go get' installs the framework library, but users need 'goctl' (the CLI tool) to actually use it - this disconnect isn't explained until Quick Start section."
     },
     "security": {
       "overall_score": 7,
@@ -229,16 +229,17 @@
       "summary": "The code has some security concerns, including potential injection risks and unvalidated user input, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "log rotation issues",
-        "minimum Go version requirement"
+        "Type system limitations (custom types, interface{} support)",
+        "Code generation not handling optional fields correctly",
+        "Logging and middleware functionality gaps"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness, facing common issues related to logging and minimum Go version requirements."
+      "summary": "Project shows moderate health with technical issues being addressed, though several older issues marked stale suggest some backlog accumulation and the recent feature request indicates active users seeking improvements."
     },
     "communication": {
       "helpfulness": 7,
@@ -251,14 +252,20 @@
       "summary": "The responses are generally clear and patient, but could provide more technical depth."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors active in the recent period"
+      "concerns": [
+        "No commits in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No closed issues in the past 6 months despite 296 open issues",
+        "No releases in the past 6 months",
+        "High number of unresolved issues (296) with no activity"
       ],
-      "summary": "The package goctl (homebrew) is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Last commit exists (though over 6 months old)"
+      ],
+      "summary": "The goctl package appears to be abandoned with no maintenance activity for at least 6 months and a large backlog of unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -268,7 +275,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks a succession plan and a contributor ladder but documents the decision process and indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T21:51:16.663820+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

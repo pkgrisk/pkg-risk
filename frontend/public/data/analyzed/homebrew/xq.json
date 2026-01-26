@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 9,
       "examples": 9,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 6,
-      "summary": "The README provides clear and concise information on the package's features, usage, and installation, but lacks documentation on configuration options and troubleshooting.",
-      "top_issue": "Lack of configuration documentation"
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent README with clear purpose, comprehensive installation options, and strong examples, but lacks troubleshooting guidance and detailed configuration documentation.",
+      "top_issue": "No troubleshooting section for common errors (e.g., XPath syntax errors, encoding issues, large file handling)"
     },
     "security": {
       "overall_score": 7,
@@ -209,16 +209,18 @@
       "summary": "The code has some security concerns, including potential XML injection attacks and insufficient input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bug reports",
-        "parsing issues"
+        "XML parsing errors with special characters and escape sequences",
+        "Data loss when converting to JSON (CDATA content dropped)",
+        "Output not idempotent - xq output cannot be parsed by xq again",
+        "Incorrect handling of HTML entities and special symbols"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The xq community is actively reporting and resolving bugs, indicating a healthy and maintained project."
+      "summary": "Active maintainer addressing legitimate XML/JSON conversion bugs, but recurring core issues with entity escaping and data preservation indicate unresolved fundamental design problems."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,20 +233,26 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient, providing a welcoming environment for contributors and users."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "last release is over a year old",
-        "open issues slightly outnumber closed issues in the past 6 months"
+        "No commits in past 6 months despite last commit being recent (2026-01-21)",
+        "14 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicating no issue triage",
+        "No merged PRs in past 6 months suggesting no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "frequent commits in the past 6 months",
-        "active contributors and merged PRs"
+        "Repository exists and has some community engagement (14 open issues)"
       ],
-      "summary": "The package xq appears to be maintained with regular updates and contributions, despite some minor concerns about release frequency and issue closure rates."
+      "summary": "The xq package appears abandoned or in deep hibernation with no maintenance activity over the past 6 months despite having unresolved community issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T21:44:53.556682+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
