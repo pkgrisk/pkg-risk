@@ -173,7 +173,54 @@
       "has_multi_platform": false
     }
   },
-  "llm_assessments": null,
+  "llm_assessments": {
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Well-structured README with clear examples and installation, but lacks troubleshooting guidance and deeper configuration details.",
+      "top_issue": "No troubleshooting section for common issues like dimension mismatches, gradient computation errors, or performance considerations"
+    },
+    "sentiment": {
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
+      "common_complaints": [
+        "Numerical stability issues with edge cases (alpha=1, -inf inputs, fp16/bf16)",
+        "Deterministic algorithm incompatibility (CUDA cumsum with torch.use_deterministic_algorithms)",
+        "NaN gradients with certain tensor shapes (singleton dimensions)",
+        "Instability and discontinuities in function output (around zero)",
+        "Missing documentation and usage examples for advanced features"
+      ],
+      "praise_themes": [
+        "Well-implemented core library",
+        "Useful functionality for sparse attention mechanisms"
+      ],
+      "abandonment_signals": true,
+      "summary": "The entmax library shows signs of abandonment with 7 unresolved open issues dating back to 2020, multiple unaddressed numerical stability bugs, and minimal maintainer engagement despite clear user frustration."
+    },
+    "maintenance": {
+      "status": "abandoned",
+      "confidence": 9,
+      "concerns": [
+        "No commits in past 6 months despite repository activity",
+        "14 open issues with no recent resolution",
+        "No merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "No releases recorded",
+        "Last commit was over 7 months ago"
+      ],
+      "positive_signals": [],
+      "summary": "The entmax package appears to be abandoned with no maintenance activity, updates, or community engagement over the past 6+ months."
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-26T11:00:45.177175+00:00"
+  },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
