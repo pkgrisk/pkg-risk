@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 9,
+      "examples": 8,
       "configuration": 9,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and detailed information on installation, usage, and configuration, but lacks sufficient troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common problems and solutions"
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Excellent documentation with clear installation, usage, and configuration guidance, but lacks dedicated troubleshooting section for common errors.",
+      "top_issue": "No troubleshooting section addressing common errors like syntax parsing failures, backup/restore procedures, or handling the ~1% of scripts that fail processing"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,22 @@
       "summary": "The beautysh codebase exhibits some security concerns, including potential injection risks and lack of thorough input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "indentation issues",
-        "configuration limitations"
+        "Indentation/formatting bugs causing regressions (indent/outdent mismatch errors)",
+        "Variable style enforcement not respecting formatter tags and affecting single-quoted strings",
+        "Continuation line indentation being removed",
+        "Manifest/packaging errors breaking pre-commit compatibility",
+        "Python version compatibility issues (3.8 support claims but modern syntax used)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The beautysh community is moderately active with some open issues and a mix of positive and negative sentiments, but no clear signs of abandonment."
+      "praise_themes": [
+        "Lightweight and useful utility",
+        "Appreciated for basic functionality"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is poor: multiple critical bugs causing regressions remain unfixed for months, Python compatibility issues unresolved, and slow maintainer responsiveness creates user frustration with a tool that was previously stable."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,19 +237,24 @@
       "summary": "The maintainer's responses are generally helpful but lack clarity and technical depth, with a notable issue of repetitive responses that may indicate a lack of patience or attention to individual user concerns."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits (66 in the past 6 months)",
-        "Active issue closure (31 closed in the past 6 months)",
-        "Recent release (2025-11-18)",
-        "Multiple contributors active in the past 6 months"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent (likely repository state snapshot)",
+        "7 open issues with no activity or resolution",
+        "No closed issues in the past 6 months indicating lack of maintenance",
+        "No merged PRs in the past 6 months showing no development activity",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests no versioning activity"
       ],
-      "summary": "The beautysh package appears to be actively maintained with frequent commits, issue closures, and releases."
+      "positive_signals": [],
+      "summary": "The beautysh package shows no signs of active maintenance with zero commits, merged PRs, closed issues, and active contributors over the past 6 months, indicating the project has been abandoned."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:41:48.445910+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

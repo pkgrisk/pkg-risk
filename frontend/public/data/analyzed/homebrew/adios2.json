@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 7,
-      "quick_start": 2,
-      "examples": 6,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 3,
+      "examples": 4,
       "configuration": 4,
-      "troubleshooting": 1,
+      "troubleshooting": 2,
       "overall": 5,
-      "summary": "The README provides a good overview of the ADIOS2 package, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of a quick start example and incomplete troubleshooting documentation"
+      "summary": "Well-structured README with clear purpose and architecture overview, but lacks practical quick-start examples and installation commands are delegated to external documentation.",
+      "top_issue": "No quick-start code example showing basic usage - users must read external docs to write their first line of ADIOS2 code"
     },
     "security": {
       "overall_score": 7,
@@ -195,16 +195,18 @@
       "summary": "The code appears to have some minor security issues, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Missing ZFP 1.0+ support",
-        "Spack solver enables petsc+trilinos variant issue"
+        "Recent version 2.11.0 introduced regressions across multiple platforms (macOS, Windows)",
+        "Build system issues with dependencies (DILL CMake, EVPath)",
+        "Long-standing 32-bit Windows compatibility problems",
+        "Type conversion and compatibility issues with third-party libraries (HDF5 2.0)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some open issues, but there are no signs of abandonment, and the maintainers have been moderately responsive."
+      "abandonment_signals": true,
+      "summary": "Community health is poor: ADIOS2 2.11.0 has introduced critical build regressions on macOS and Windows, with some issues dating back to 2024 remaining unresolved and marked as stale, suggesting insufficient maintainer capacity or prioritization."
     },
     "communication": {
       "helpfulness": 7,
@@ -220,18 +222,26 @@
       "summary": "The maintainer's responses are generally clear and helpful, but could benefit from more patience and detailed technical explanations for new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (219)",
-        "A significant number of merged PRs in the past six months (119)",
-        "Multiple contributors active in the past six months (20)"
+      "concerns": [
+        "No commits in past 6 months despite recent last commit date",
+        "69 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests outdated version info"
       ],
-      "summary": "The package adios2 is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Repository still exists and is accessible"
+      ],
+      "summary": "The adios2 project appears abandoned with no maintenance activity over the past 6 months, despite a recent last commit timestamp that may indicate a data freshness issue."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:56:49.448090+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

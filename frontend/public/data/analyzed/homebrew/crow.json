@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 4,
+      "clarity": 9,
+      "installation": 3,
       "quick_start": 9,
-      "examples": 9,
-      "configuration": 2,
-      "troubleshooting": 1,
+      "examples": 8,
+      "configuration": 4,
+      "troubleshooting": 2,
       "overall": 6,
-      "summary": "The documentation is clear and provides a good quick start, but lacks detailed installation instructions and troubleshooting information.",
-      "top_issue": "Lack of clear installation instructions"
+      "summary": "Excellent clarity and quick start examples, but installation instructions are offloaded to external docs and troubleshooting is nearly absent.",
+      "top_issue": "Installation instructions only link to external documentation without any inline guidance, making it difficult for users to get started immediately from the README."
     },
     "security": {
       "overall_score": 8,
@@ -207,16 +207,23 @@
       "summary": "The Crow library appears to have a good security posture, with no critical findings and only minor potential issues related to template injection and input validation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug in `qs_scanvalue` when the key is not found",
-        "High CPU Usage on main worker core thread - busy polling behavior"
+        "RFC compliance issues (multipart parsing)",
+        "Performance problems (high CPU usage, busy polling)",
+        "Build system complexity (CMake, vcpkg conflicts)",
+        "Regression between versions (WebSocket 1.2.1 vs 1.3.0)",
+        "Missing protocol support (HTTP/2)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Good community engagement on technical issues",
+        "Issues marked with 'good first issue' and 'help wanted' labels",
+        "Security-conscious (reports of out-of-bounds read)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health appears stable with active maintainer response, but there are ongoing issues that require attention."
+      "summary": "Crow has a moderately engaged community with a mix of feature requests and bug reports, though some long-standing issues (HTTP/2 since 2020) and recent regressions indicate maintenance capacity constraints."
     },
     "communication": {
       "helpfulness": 7,
@@ -232,17 +239,24 @@
       "summary": "The maintainer's responses are generally helpful and technical, but could improve in clarity and consistency."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent open issues and PRs indicate ongoing development"
+      "concerns": [
+        "No commits in past 6 months (last commit over 1 month ago)",
+        "84 open issues with no recent activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [],
+      "summary": "The project appears abandoned with no development activity, issue resolution, or contributor engagement over the past 6 months despite a large backlog of open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:32:17.622727+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -184,12 +184,12 @@
       "clarity": 8,
       "installation": 2,
       "quick_start": 1,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 1,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 3,
       "overall": 3,
-      "summary": "The README provides a good overview of the package's features, but lacks clear installation and troubleshooting instructions.",
-      "top_issue": "Installation instructions are incomplete and only point to an external wiki without providing any details in the README itself."
+      "summary": "Clear description of what the package does, but completely lacks installation instructions, usage examples, and configuration guidance in the README itself.",
+      "top_issue": "No installation or usage instructions in README - everything is deferred to external wiki link"
     },
     "security": {
       "overall_score": 6,
@@ -215,16 +215,21 @@
       "summary": "The code has some potential security risks, including a possible command injection vulnerability and lack of input validation, but no secrets were found and error exposure is relatively low."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "memory usage issues",
-        "translation API bugs"
+        "Search functionality failures and inconsistencies",
+        "Rate limiting and throttling from subtitle providers (HTTP 429)",
+        "Database locking issues during concurrent job execution",
+        "Performance degradation with new job manager",
+        "Error handling and retry mechanisms for API failures",
+        "Subtitle sync/timing issues corrupting output",
+        "Unicode character encoding problems"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some active maintenance and common complaints around memory usage and translation APIs."
+      "summary": "Bazarr shows moderate community health with active issue reporting and some maintainer engagement, but users are frustrated with recent performance regressions, provider reliability issues, and inadequate error handling that wastes resources."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,16 +242,18 @@
       "summary": "Maintainer responses are generally clear, helpful, and patient. Technical explanations could be more detailed."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (137)",
-        "Multiple contributors active in the past six months (18)",
-        "Recent release and last commit dates",
-        "Significant number of merged PRs in the past six months (48)"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being very recent (likely from data sync)",
+        "35 open issues with no resolution activity",
+        "Zero closed issues in the past 6 months",
+        "No open or merged pull requests in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests no recent version releases"
       ],
-      "summary": "The package is actively maintained with regular updates, contributions, and releases."
+      "positive_signals": [],
+      "summary": "This package appears abandoned with no maintenance activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -256,7 +263,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a documented decision-making process and contributor path, but relies on a single maintainer for merging PRs."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:59:52.181453+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -197,15 +197,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 2,
       "quick_start": 1,
-      "examples": 3,
-      "configuration": 4,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a good overview of the package's features, but lacks clear installation instructions and examples for getting started.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "summary": "README provides a clear feature overview but completely lacks installation instructions, quick start guides, examples, and any practical usage documentation.",
+      "top_issue": "No installation instructions beyond 'uses qt qmake build system' and no quick start guide showing how to create or run even a basic application"
     },
     "security": {
       "overall_score": 7,
@@ -232,15 +232,17 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of proper input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Incorrect X-Forwarded-For header parsing"
+        "Security vulnerability in X-Forwarded-For header parsing",
+        "Lack of HTTPS support requiring reverse proxy workaround",
+        "Resource cleanup issues in test framework causing warnings"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is raising valid concerns, but the issues are not strongly negative or positive, indicating a neutral sentiment."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of neglect with an unresolved security issue from October 2025, a 7-year-old HTTPS feature request still pending, and persistent test framework problems indicating minimal maintenance and community support."
     },
     "communication": {
       "helpfulness": 7,
@@ -253,17 +255,17 @@
       "summary": "Responses are generally clear and helpful, though could improve in explaining 'why' behind decisions."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of open PRs",
-        "Few contributors"
+        "No commits in past 6 months despite last commit being over a year ago",
+        "No active contributors in past 6 months",
+        "Open issues not being addressed or closed",
+        "No merged PRs in past 6 months indicating no active development",
+        "No releases, suggesting project is not being versioned or shipped"
       ],
-      "positive_signals": [
-        "Recent commits and releases",
-        "Moderate number of merged PRs in the past six months"
-      ],
-      "summary": "The package is maintained with recent activity, but could benefit from more contributions."
+      "positive_signals": [],
+      "summary": "The treefrog package appears to be abandoned with no development activity, contributor engagement, or issue resolution in the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -274,7 +276,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:50:22.503793+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

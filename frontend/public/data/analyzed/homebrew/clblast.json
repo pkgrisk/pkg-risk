@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 7,
       "configuration": 5,
       "troubleshooting": 8,
       "overall": 7,
-      "summary": "The README provides a good overview of the package, but could benefit from more concise language and additional examples to help new users get started quickly.",
-      "top_issue": "Lack of clear and concise configuration documentation"
+      "summary": "Well-structured README with clear purpose and comprehensive documentation links, but lacks concrete code examples in the main document.",
+      "top_issue": "Quick start section shows header includes but no actual function call examples - users must navigate to separate API docs to see how to use any routine"
     },
     "security": {
       "overall_score": 8,
@@ -198,19 +198,21 @@
       "summary": "The code appears to be generally secure, but lacks input validation and has potential issues with error exposure and insecure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "CUDA API support",
-        "Performance improvements"
+        "API design constraints (CUDA legacy support limiting OpenCL modernization)",
+        "Performance considerations in error handling",
+        "Build system complexity (custom CMake vs built-in)"
       ],
       "praise_themes": [
-        "Active community engagement",
-        "Detailed documentation"
+        "Active performance optimization efforts (tuning infrastructure)",
+        "Community contribution mechanisms for hardware-specific tuning",
+        "Proactive maintenance of CI/CD infrastructure"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaged, with multiple open issues and high comment counts, but there are ongoing concerns about performance and API support."
+      "summary": "CLBlast shows healthy community engagement with active maintenance and performance focus, though some contributors express frustration with architectural constraints around CUDA legacy support and performance trade-offs."
     },
     "communication": {
       "helpfulness": 7,
@@ -223,17 +225,18 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with the contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of contributors",
-        "No commits in the last year"
+        "No commits in past 6 months despite last commit being from December 2025",
+        "47 open issues with no recent activity or triage",
+        "No closed issues in past 6 months indicating no maintenance effort",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release infrastructure may be dormant"
       ],
-      "positive_signals": [
-        "Regular issue closure",
-        "Recent release"
-      ],
-      "summary": "The package is maintained with regular issue resolution, but faces challenges with contributor engagement and recent activity."
+      "positive_signals": [],
+      "summary": "The clblast package shows clear signs of abandonment with zero maintenance activity over the past 6 months and a growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +254,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:34:01.214156+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

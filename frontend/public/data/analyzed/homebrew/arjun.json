@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 6,
       "examples": 7,
-      "configuration": 5,
+      "configuration": 6,
       "troubleshooting": 2,
       "overall": 6,
-      "summary": "The README provides a good introduction to the package, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Clear purpose and motivation with good installation instructions, but relies heavily on external wiki links for actual usage examples and lacks inline troubleshooting guidance.",
+      "top_issue": "No troubleshooting section and critical usage information is behind wiki links rather than in the main README"
     },
     "security": {
       "overall_score": 6,
@@ -214,17 +214,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Error when using post method",
-        "Arjun misidentifies a page as non-web",
-        "Insecure requests raise issue",
-        "Tool only works if the endpoint accept GET request"
+        "Crashes on POST requests and certain HTTP scenarios",
+        "False negatives (skipping valid endpoints like empty 200 responses and 405 errors)",
+        "Missing or undeclared dependencies (python-ratelimit)",
+        "Tool doesn't work with non-GET endpoints",
+        "Stability issues when processing URL lists"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing multiple issues, indicating frustration and moderate maintainership."
+      "abandonment_signals": true,
+      "summary": "Arjun shows significant abandonment with 9 open unresolved issues spanning 14+ months, zero maintainer engagement, critical bugs affecting core functionality (POST method crashes, endpoint detection failures), and unmet user requests indicating the project is no longer actively maintained."
     },
     "communication": {
       "helpfulness": 7,
@@ -240,17 +241,18 @@
       "summary": "The maintainer's responses are generally helpful and clear, with a good level of technical depth. However, there is room for improvement in providing more detailed explanations and ensuring all issues are addressed."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Only one merged PR in the past six months, suggesting limited community contribution and maintenance."
+        "No commits in past 6 months despite being on homebrew",
+        "19 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "10 contributors active in the past six months, which shows some level of community involvement.",
-        "Recent activity with open issues and pull requests, indicating that there is still some ongoing engagement."
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but no new commits or merged PRs in the last six months."
+      "positive_signals": [],
+      "summary": "The arjun project appears abandoned with zero maintenance activity over the past 6 months and a growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -261,7 +263,10 @@
       "overall_score": 6,
       "summary": "The changelog is comprehensive but lacks clear categorization, marking of breaking changes, and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:29:59.617758+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

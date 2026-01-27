@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
       "examples": 8,
       "configuration": 6,
-      "troubleshooting": 2,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "The README provides a good overview of the package and its features, but could benefit from more detailed configuration documentation and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Excellent clarity and quick-start with comprehensive examples, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common problems like GPG key setup, git remote configuration, or permission issues"
     },
     "security": {
       "overall_score": 8,
@@ -205,16 +205,22 @@
       "summary": "The codebase appears to be generally secure, but some potential issues with input validation and error exposure were identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "security concerns",
-        "documentation gaps"
+        "Dependency on unmaintained ofiles package with outdated nix 0.17",
+        "Missing support for multiple password stores across repositories",
+        "Lack of age encryption support despite prior HN discussion",
+        "Compatibility documentation gaps with pass password manager",
+        "GPG ID file comment stripping incompatibility with pass standard"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some open issues around security and documentation that may require attention."
+      "praise_themes": [
+        "CLI design praised as superior to alternatives like gopass",
+        "Interest in Rust-based implementation over Python alternatives"
+      ],
+      "abandonment_signals": true,
+      "summary": "The prs project shows signs of moderate maintenance with unresolved feature requests dating back years (age support from 2021), an open documentation issue from 2023, and critical dependency maintenance problems, suggesting possible maintainer burnout or deprioritization."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,17 +233,18 @@
       "summary": "The maintainer provides clear, detailed responses that are helpful and patient, with a good balance of technical depth and user-friendliness."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs compared to open issues",
-        "No active contributors for the last release"
+        "No commits in past 6 months despite last commit being recent (2026-01-22)",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "7 open issues with no recent activity",
+        "Unknown last release date suggests no recent releases"
       ],
-      "positive_signals": [
-        "Recent commits and releases",
-        "Moderate number of recent commits and merged PRs"
-      ],
-      "summary": "The package is maintained with regular updates, but there are concerns about the contribution activity."
+      "positive_signals": [],
+      "summary": "The prs package appears abandoned with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -248,7 +255,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:16:38.039495+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 9,
+      "quick_start": 8,
       "examples": 7,
       "configuration": 6,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is clear and provides a good overview of the package's functionality, but lacks in troubleshooting and configuration sections.",
-      "top_issue": "Lack of troubleshooting section"
+      "summary": "Well-structured README with clear purpose and installation steps, but lacks troubleshooting guidance and the project's archived status significantly impacts its usefulness.",
+      "top_issue": "Project is archived and unmaintained, which is disclosed upfront but fundamentally limits the value of otherwise good documentation"
     },
     "security": {
       "overall_score": 7,
@@ -204,19 +204,23 @@
       "summary": "The code has some potential security issues, including injection risks and insecure default configurations."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "performance issues",
-        "lack of binary releases for arm64"
+        "Out of memory errors with file diffing on large images",
+        "Permission denied errors",
+        "File diff misses changes in archives with identical sizes",
+        "Lack of checksum/content-based comparison for file changes",
+        "Missing features (environment variables, labels comparison)",
+        "No arm64 binary releases"
       ],
       "praise_themes": [
-        "enhancement proposals",
-        "useful for reproducible builds"
+        "Tool usefulness for reproducible build verification",
+        "Community willingness to contribute solutions"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is engaged with multiple enhancement requests, but there are some performance and platform-specific issues that could be improved."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of maintenance decline with slow responsiveness to bug reports (out of memory, permission issues) dating back to 2020, numerous feature requests marked 'help wanted' remaining unaddressed, and the last activity being from 2021, indicating potential abandonment despite the tool's utility for container analysis."
     },
     "communication": {
       "helpfulness": 7,
@@ -229,17 +233,20 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with contributors. However, there is room for more technical depth in explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No recent commits or pull requests suggest active development.",
-        "The last release was over a month ago."
+        "No commits in past 6 months",
+        "No active contributors in past 6 months",
+        "No issue activity (open or closed) in past 6 months",
+        "No pull request activity in past 6 months",
+        "Last commit was 9+ months ago"
       ],
       "positive_signals": [
-        "Contributors are still active, indicating some level of interest in the package.",
-        "There are no open issues or PRs, which could indicate that any necessary changes have been made recently."
+        "Zero open issues suggests no outstanding problems or unaddressed bugs",
+        "Zero open PRs indicates no pending changes waiting for review"
       ],
-      "summary": "The package is likely being minimally maintained by a few contributors, but may be at risk if development stalls."
+      "summary": "container-diff is stale with no development activity, contributor engagement, or issue resolution for at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -257,7 +264,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:27:13.979517+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

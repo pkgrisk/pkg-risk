@@ -176,7 +176,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Well-structured documentation with clear purpose, excellent installation instructions, and good usage examples, though troubleshooting is mostly by-example rather than systematically organized.",
+      "top_issue": "Lacks a dedicated troubleshooting section with common issues and solutions - debugging guidance is embedded in verbose example output rather than structured as FAQs or common problems."
+    },
     "security": {
       "overall_score": 5,
       "injection_risks": [
@@ -202,16 +212,20 @@
       "summary": "The code has several security concerns, including potential SQL injection vulnerabilities and lack of input validation, which could lead to unauthorized access or data tampering."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "frequent segmentation fault during fuzz testing",
-        "high error rate while running sqlsmith"
+        "Memory safety issues (double free, segmentation faults)",
+        "Compilation errors on different platforms (CentOS 7)",
+        "High error rates and crashes when fuzzing certain databases",
+        "Missing documentation (logging, table schemas, feature guidance)",
+        "Limited query generation control (cardinality, grammar constraints)",
+        "Process hangs with specific flags (--exclude-catalog)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some ongoing issues and open questions, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "SQLsmith shows signs of abandonment with critical memory safety bugs remaining unresolved for months, slow/unresponsive maintainers, and recurring compilation issues across platforms suggesting inadequate maintenance and testing."
     },
     "communication": {
       "helpfulness": 8,
@@ -224,20 +238,24 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth while maintaining a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of active contribution acceptance.",
-        "Last release was over two years ago."
+        "No commits in past 6 months despite repository activity",
+        "15 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicates no maintenance",
+        "No merged PRs in past 6 months shows stalled development",
+        "No active contributors in past 6 months",
+        "No recent releases available"
       ],
-      "positive_signals": [
-        "Recent commits and contributors activity suggest some level of ongoing involvement.",
-        "There are open issues and PRs that may indicate current needs or improvements being sought."
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but an extended period since the last release."
+      "positive_signals": [],
+      "summary": "sqlsmith is abandoned with no maintenance activity over the past 6 months and accumulating unaddressed issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:36:04.102394+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

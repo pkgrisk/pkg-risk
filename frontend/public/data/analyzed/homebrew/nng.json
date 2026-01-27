@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 5,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package's features and goals, but lacks clear installation instructions and examples for new users.",
-      "top_issue": "Lack of clear installation instructions and quick start example"
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "Clear high-level description but severely lacks practical usage examples, installation steps, and any quick-start code to get users started.",
+      "top_issue": "No installation instructions, no code examples, and no quick-start guide - the README is cut off mid-sentence and appears incomplete"
     },
     "security": {
       "overall_score": 5,
@@ -208,15 +208,19 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "OpenSSL compatibility issues",
-        "Panic and invalid argument errors"
+        "Compilation errors across different platforms (MSVC, GCC, Release builds)",
+        "Memory safety and crash issues (race conditions, mutex locks, reap crashes)",
+        "API contract violations (AIO callbacks not firing reliably)",
+        "Platform-specific bugs (Windows crashes, POSIX error handling)",
+        "Networking protocol issues (UDP PUBSUB message reception degradation)",
+        "Dependency version compatibility (OpenSSL versions)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with stability and compatibility issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The nng project shows concerning health indicators with multiple critical bugs (crashes, race conditions, API violations) largely unaddressed, zero comments on most issues, slow maintainer response, and a pattern of platform-specific compilation failures suggesting inadequate CI/testing coverage."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,18 +233,25 @@
       "summary": "The maintainer's responses are clear, helpful, and technically deep, showing patience with users of varying skill levels."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged pull requests in the past six months",
-        "Regular issue management"
+      "concerns": [
+        "No commits in the past 6 months",
+        "87 open issues with no recent activity",
+        "No closed issues in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "No release information available",
+        "Last commit was over 6 months ago (2025-12-02)"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "The nng package appears to be abandoned with no maintenance activity or contributor engagement in the past 6 months and a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:57:55.324312+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

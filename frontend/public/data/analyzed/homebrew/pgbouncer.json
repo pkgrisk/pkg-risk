@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides detailed installation and configuration instructions, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+      "examples": 1,
+      "configuration": 3,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "Clear project description and thorough build instructions, but completely lacks usage examples and basic configuration guidance.",
+      "top_issue": "No quick start guide or basic usage examples showing how to actually use PgBouncer after installation"
     },
     "security": {
       "overall_score": 7,
@@ -215,14 +215,18 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "waiting queries increase after upgrade",
-        "build failure due to missing pandoc"
+        "Authentication system bugs (SCRAM failures, segfaults)",
+        "Connection management issues (dropped connections, login loops)",
+        "Performance degradation (latency spikes, waiting queries)",
+        "Build/dependency issues (pandoc requirement, release tarball problems)",
+        "Protocol negotiation bugs",
+        "Regression introduced in recent versions (1.25.1)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing issues with recent upgrades and build processes, indicating a negative sentiment but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "PgBouncer shows concerning signs of community health decline with multiple critical bugs (authentication failures, segfaults, connection drops), apparent regressions in recent versions, minimal maintainer engagement on issues, and no positive community sentiment evident."
     },
     "communication": {
       "helpfulness": 7,
@@ -238,18 +242,25 @@
       "summary": "The responses are generally helpful and clear, but could be more patient and welcoming towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple open PRs indicating ongoing development",
-        "A significant number of contributors active over the past six months"
+      "concerns": [
+        "No commits in past 6 months despite being active until recently",
+        "270 open issues with no recent activity to address them",
+        "No merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "No releases despite open issues and potential bug fixes needed"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Last commit exists from January 2026, showing some recent activity"
+      ],
+      "summary": "pgbouncer appears abandoned with no meaningful development activity over the past 6 months despite a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:02:48.413464+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -180,7 +180,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, comprehensive installation instructions, and good quick start examples, but lacks troubleshooting guidance and in-document configuration examples.",
+      "top_issue": "No troubleshooting section for common problems like pre-commit hook failures, version bump conflicts, or changelog generation issues"
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [
@@ -206,16 +216,22 @@
       "summary": "The Commitizen package has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a well-structured and secure piece of code."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "technical issues",
-        "broken links"
+        "Recent regression breaking existing workflows (PR #1815 enforces history check)",
+        "Pre-commit hook integration issues with git edge cases",
+        "Complex feature interactions (pre-release to release version flow)",
+        "Documentation/link maintenance"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active issue triage and categorization",
+        "Willingness to consider infrastructure improvements (Prek proposal)",
+        "Code quality focus (ruff rules, refactoring)"
+      ],
       "abandonment_signals": false,
-      "summary": "The commitizen community appears to be moderately healthy, with active maintainers addressing technical issues and broken links in a timely manner."
+      "summary": "Commitizen shows active maintenance with recent development, but has introduced a regression affecting existing users and maintains some backlog of unresolved feature requests, indicating a moderately healthy but imperfect community."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,16 +244,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, creating a welcoming environment for contributors, but sometimes lack technical depth in their explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (127)",
-        "Recent last commit and release dates",
-        "Large number of merged PRs in the past 6 months (111)",
-        "Multiple active contributors in the past 6 months (19)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-22)",
+        "153 open issues with zero closed issues in past 6 months indicates no active triage",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release date suggests release process has stalled",
+        "No pull request activity indicates project is not accepting or reviewing contributions"
       ],
-      "summary": "The package appears to be actively maintained with frequent updates, a large number of contributors, and a high volume of pull requests being addressed."
+      "positive_signals": [
+        "Recent commit activity on 2026-01-22 suggests some minimal recent touch"
+      ],
+      "summary": "The project appears abandoned with a large backlog of open issues, no maintenance activity for 6 months, and no contributor engagement despite recent commit history anomaly."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -248,7 +268,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and easy to follow, but lacks explicit migration guides for breaking changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:09:21.890029+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

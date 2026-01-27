@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 8,
       "examples": 6,
       "configuration": 4,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The documentation is clear and provides a good quick start example, but lacks installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided"
+      "summary": "Excellent clarity and quick start example, but completely missing installation instructions and troubleshooting guidance.",
+      "top_issue": "No installation instructions - users don't know how to compile, link, or install the library despite it being a C library requiring build steps"
     },
     "security": {
       "overall_score": 8,
@@ -199,16 +199,20 @@
       "summary": "The code appears to be secure with no major injection risks or secrets exposure, but could benefit from additional input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 3,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bug reports",
-        "feature requests"
+        "Unicode handling with invalid characters",
+        "Missing advanced chart features (secondary axes, combined charts, date axes)",
+        "Limited form control support"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Security-conscious (OSS-Fuzz integration)",
+        "Prompt bug fixes (infinite loop issue resolved)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with both bug reports and feature suggestions, but there are no clear signs of frustration or abandonment."
+      "summary": "libxlsxwriter shows healthy maintenance with active bug fixes and security engagement, though feature requests suggest users want parity with the Python XlsxWriter library."
     },
     "communication": {
       "helpfulness": 5,
@@ -224,17 +228,18 @@
       "summary": "The maintainer's responses are generally clear and technically sound, but could be more encouraging to new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs compared to open issues",
-        "No commits in the last 6 months"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 13 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases",
+        "Last commit over 3 weeks ago with no follow-up activity"
       ],
-      "positive_signals": [
-        "Regular issue closure activity",
-        "Contributors active past 6 months"
-      ],
-      "summary": "The package is maintained with regular issue resolution, but there has been no recent code activity."
+      "positive_signals": [],
+      "summary": "libxlsxwriter shows clear signs of abandonment with zero activity across all maintenance indicators over the past 6 months and unresolved issues accumulating."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +249,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:52:38.260296+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

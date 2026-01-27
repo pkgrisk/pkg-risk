@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 7,
+      "installation": 3,
       "quick_start": 6,
       "examples": 7,
-      "configuration": 3,
-      "troubleshooting": 4,
+      "configuration": 4,
+      "troubleshooting": 2,
       "overall": 5,
-      "summary": "The README provides a good introduction to the package's functionality, but lacks clear installation instructions and configuration documentation.",
-      "top_issue": "Installation instructions are not provided"
+      "summary": "README provides decent usage examples but lacks installation instructions and has minimal troubleshooting guidance.",
+      "top_issue": "No installation instructions provided - users must figure out how to build/install the encoder themselves"
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,20 @@
       "summary": "The jbig2enc code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure implementation."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bugs and errors",
-        "build issues"
+        "Invalid JBIG2 file generation (EndOfFile segment, per-page symbol tables)",
+        "Missing image regions in PDF output",
+        "Build/compilation failures (autogen.sh, configure errors)",
+        "Stack size limits causing crashes on large files",
+        "Lack of binary releases",
+        "Documentation issues (incorrect units: dpi vs dpm)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The jbig2enc community is moderately active, with some users experiencing frustration due to bugs and build issues, but the maintainers are responsive and addressing concerns."
+      "abandonment_signals": true,
+      "summary": "jbig2enc shows signs of abandonment with critical unfixed bugs, slow maintainer response, and unresolved issues dating back years while users struggle with build failures and data corruption problems."
     },
     "communication": {
       "helpfulness": 8,
@@ -232,17 +236,18 @@
       "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to make the community more inclusive."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low commit frequency",
-        "outstanding open issues"
+        "No commits in past 6 months despite last commit being recent (2025-12-31)",
+        "13 open issues with no activity",
+        "Zero closed issues in past 6 months indicates no maintenance response",
+        "No merged PRs in past 6 months shows no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release suggests no version management"
       ],
-      "positive_signals": [
-        "recent commit activity",
-        "some issue closure and PR merging"
-      ],
-      "summary": "The package receives minimal maintenance with infrequent updates and a backlog of open issues, but some recent activity suggests it is not completely abandoned."
+      "positive_signals": [],
+      "summary": "jbig2enc is abandoned with no maintenance activity in the past 6 months despite unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -253,7 +258,10 @@
       "overall_score": 2,
       "summary": "The changelog for the homebrew package 'jbig2enc' appears to be incomplete and lacks clear categorization, migration guides, and breaking change markings."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:07:47.776888+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

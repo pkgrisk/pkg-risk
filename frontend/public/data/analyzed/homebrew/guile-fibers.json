@@ -166,30 +166,35 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
+      "clarity": 1,
       "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 1,
-      "summary": "The documentation is severely lacking, with only a notice of the repository's relocation.",
-      "top_issue": "The README does not provide any information about the package itself, its usage, or installation instructions."
+      "summary": "README only contains a repository relocation notice with no actual package documentation.",
+      "top_issue": "No documentation provided - only a redirect to a new repository location at Codeberg"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "open bugs and issues",
-        "performance bottlenecks"
+        "Performance bottlenecks (2-4 seconds vs 200-400ms for competing implementations)",
+        "Test suite failures on certain architectures (armhf/armel) and configurations",
+        "Memory leaks and excessive heap growth",
+        "Build and compilation issues (cross-compilation, environment setup)",
+        "Flaky tests with timing issues (server startup race conditions)"
       ],
       "praise_themes": [
-        "enhancement proposals"
+        "Active community interest in performance improvements",
+        "Growing adoption (now in Debian)",
+        "Engagement on enhancement proposals (promises/condition variables)"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively discussing improvements and facing some performance challenges, but there are no clear signs of abandonment."
+      "summary": "Guile-fibers has moderate community health with engaged contributors and recent activity, but faces unresolved performance issues, architecture-specific test failures, and memory management problems that suggest the maintainer may be capacity-constrained or deprioritizing certain issues."
     },
     "communication": {
       "helpfulness": 7,
@@ -205,17 +210,18 @@
       "summary": "The maintainer provides technical insights but can be dismissive and unresponsive to suggestions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of community contribution or approval.",
-        "The last release was over a year ago, which may indicate that development has slowed down."
+        "No commits in past 6 months despite last commit being over 6 months ago",
+        "36 open issues with no recent activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No recent releases"
       ],
-      "positive_signals": [
-        "Commits have been made within the past six months, showing some level of activity.",
-        "There is one contributor active in the recent period, suggesting at least one person is still involved."
-      ],
-      "summary": "The package shows minimal maintenance with occasional commits but no recent merges or releases."
+      "positive_signals": [],
+      "summary": "guile-fibers shows clear signs of abandonment with zero maintenance activity over the past 6 months and unaddressed issue backlog."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -226,7 +232,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:27:29.753129+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

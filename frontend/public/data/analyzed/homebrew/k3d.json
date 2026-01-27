@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions with a solid quick start workflow, but lacks detailed configuration guidance and troubleshooting sections.",
+      "top_issue": "No troubleshooting section for common issues and minimal configuration documentation (mainly defers to external k3d.io website)"
     },
     "security": {
       "overall_score": 7,
@@ -203,16 +203,19 @@
       "summary": "The code has some security concerns related to potential information disclosure, lack of input validation, and potentially insecure default configurations."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bugs",
-        "installation issues"
+        "Registry creation issues with --registry-use parameter not being respected",
+        "Network connectivity problems (host.k3d.internal breaks on reboot)",
+        "Container runtime compatibility (Podman remote host Docker CLI requirement)",
+        "Installation reliability (raw.githubusercontent.com 503 errors)",
+        "IP persistence after cluster restart"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The k3d community is moderately active with some open bugs and installation issues, but maintainers are responsive to user concerns."
+      "abandonment_signals": true,
+      "summary": "k3d shows signs of declining maintenance with slow response times to recent bugs, multiple unresolved issues from 2023-2026, and no maintainer engagement visible in the provided issue set."
     },
     "communication": {
       "helpfulness": 9,
@@ -225,17 +228,20 @@
       "summary": "The maintainer's responses are extremely helpful, clear, patient, and welcoming, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low number of closed issues",
-        "high number of open issues and PRs"
+        "No commits in the past 6 months despite last commit being recent (2026-01-25)",
+        "272 open issues with no recent activity or resolution",
+        "Zero closed issues in the past 6 months indicating no active bug fixing",
+        "No merged PRs in the past 6 months showing lack of development activity",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests release process may be stalled"
       ],
       "positive_signals": [
-        "recent commits and release",
-        "active contributors"
+        "Recent commit timestamp (2026-01-25) indicates some minimal repository activity"
       ],
-      "summary": "The k3d package appears to be receiving minimal maintenance with some recent activity, but a large backlog of open issues and PRs raises concerns about its overall health."
+      "summary": "k3d appears stale with a large backlog of unresolved issues and no development activity over the past 6 months despite a recent commit."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -253,7 +259,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The k3d project lacks a clear succession plan and decision-making process, but has a contributor recognition system in place."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:33:48.595776+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

@@ -186,15 +186,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 8,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 7,
       "troubleshooting": 6,
       "overall": 8,
-      "summary": "The documentation is well-structured and provides clear examples, but could benefit from a more concise introduction and better troubleshooting guidance.",
-      "top_issue": "Lack of concise introduction to quickly understand the package's purpose"
+      "summary": "Excellent clarity and quick start with visual examples, but platform-specific installation steps could be better organized and troubleshooting is relegated to external docs.",
+      "top_issue": "Installation instructions are fragmented with platform-specific workarounds mixed in; should be reorganized into clear per-platform sections and the libclang setup is confusing (mentions both DYLB_FALLBACK and LIBCLANG_PATH without explaining when each applies)."
     },
     "security": {
       "overall_score": 8,
@@ -205,16 +205,19 @@
       "summary": "The code appears to be well-structured and secure, with no major injection risks or secrets exposed, but could benefit from additional input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "dependency issues",
-        "documentation clarity"
+        "Build failures on Windows with hunspell dependency",
+        "Upstream dependency issues (nlprule/rust-onig causing failures)",
+        "Documentation clarity issues (extra dictionaries, search paths)",
+        "False positives in spell checking (operators, unicode characters, units)",
+        "Missing support for non-markdown documentation formats (org-mode)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with open issues focusing on dependency conflicts and documentation improvements."
+      "summary": "Active project with recent issue activity and some resolved bugs, but dealing with infrastructure challenges (dependency failures, documentation gaps) that create friction for users on certain platforms."
     },
     "communication": {
       "helpfulness": 7,
@@ -230,17 +233,18 @@
       "summary": "The maintainer provides some useful information but could be more clear and consistent in their communication."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues (46) and PRs (10) suggests potential maintenance backlog."
+        "No commits in over 4 months (last commit September 2025, current date January 2026)",
+        "57 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases recorded"
       ],
-      "positive_signals": [
-        "Recent activity with both an issue and release on March 18, 2025.",
-        "Ten contributors have been active in the past six months, suggesting some level of community or individual interest."
-      ],
-      "summary": "The package shows minimal maintenance efforts with recent releases but lacks ongoing development and resolution of issues."
+      "positive_signals": [],
+      "summary": "cargo-spellcheck appears abandoned with no maintenance activity for 4+ months and growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +255,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clarity and completeness, with no clear marking of breaking changes or migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:43:22.638883+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

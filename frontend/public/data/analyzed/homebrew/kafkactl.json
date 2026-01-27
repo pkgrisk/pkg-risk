@@ -180,7 +180,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 9,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Excellent installation and configuration docs, but lacks quick-start examples and troubleshooting guidance for new users.",
+      "top_issue": "No basic usage example showing how to actually use kafkactl commands after installation - the asciicast video is not sufficient for quick learning"
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [
@@ -206,16 +216,21 @@
       "summary": "The code has some security concerns, including command injection risks and lack of input validation, but no hardcoded secrets or critical error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "authorization errors",
-        "configuration issues"
+        "Data safety issues (accidental null values, TOCTOU bugs)",
+        "Exit code handling and error reporting",
+        "TLS/certificate configuration complexity",
+        "Kubernetes integration limitations"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Appreciation for the tool's functionality",
+        "Recognition of project usefulness for Kafka management"
+      ],
       "abandonment_signals": false,
-      "summary": "The kafkactl community is moderately active with some open issues and a mix of enhancement requests and bug reports, indicating a neutral sentiment and moderate maintainer responsiveness."
+      "summary": "Active community with practical concerns around data safety and operational configuration, showing moderate maintainer engagement with some open issues pending resolution."
     },
     "communication": {
       "helpfulness": 9,
@@ -228,16 +243,20 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and welcoming, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits (78 in the last 6 months)",
-        "Active issue resolution (13 closed issues in the last 6 months)",
-        "Regular releases (last release within the last year)",
-        "Multiple active contributors (8 in the last 6 months)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-23)",
+        "14 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests poor release cadence"
       ],
-      "summary": "The kafkactl package appears to be actively maintained with frequent commits, issue resolutions, and releases, indicating a healthy and vibrant project."
+      "positive_signals": [
+        "Recent commit exists (2026-01-23), indicating repository is not completely dormant"
+      ],
+      "summary": "Kafkactl appears abandoned with no maintenance activity for 6+ months despite recent repository access, indicating the project is no longer actively developed or maintained."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -248,7 +267,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and comprehensive, but lacks clear markings of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T01:22:02.903247+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
