@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 4,
-      "quick_start": 2,
-      "examples": 3,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is sparse and lacks clear instructions, making it difficult for new users to get started.",
-      "top_issue": "Lack of a quick start guide or examples to help new users understand how to use the package."
+      "clarity": 4,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 2,
+      "overall": 2,
+      "summary": "Extremely sparse documentation that lists what the package implements but provides no usage guidance, examples, or concrete next steps beyond installation.",
+      "top_issue": "No quick start guide or basic usage examples - users are left with only 'there are man pages' as guidance after installation"
     },
     "security": {
       "overall_score": 7,
@@ -213,15 +213,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "compatibility issues",
-        "security vulnerabilities"
+        "Recent regression in locking mechanisms (#1308) causing widespread build failures and test hangs",
+        "Core functionality bugs (PKINIT, kpasswd, kcm TGT renewal) unfixed for extended periods",
+        "Macro redefinition conflicts between system headers and bundled libraries",
+        "Missing TCP support in kpasswdd despite RFC documentation",
+        "NAT/multi-address handling issues in authentication protocols"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The Heimdal community is experiencing frustration due to unresolved compatibility and security issues, with a slow response from maintainers."
+      "abandonment_signals": true,
+      "summary": "Heimdal shows signs of maintenance stress with a critical recent regression cascading across multiple subsystems, alongside a backlog of unresolved authentication bugs and an apparent gap between RFC specifications and implementation."
     },
     "communication": {
       "helpfulness": 9,
@@ -237,18 +240,18 @@
       "summary": "The maintainer provides detailed and helpful responses, but could improve in terms of clarity and welcomingness for new contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low number of closed issues and merged PRs in the past 6 months",
-        "large number of open issues and PRs",
-        "last release was over 3 years ago"
+        "No commits in past 6 months despite last commit being recent (2026-01-24)",
+        "250 open issues with zero closed in past 6 months indicates no active issue management",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release date suggests release cycle has stalled",
+        "High issue count relative to maintenance activity suggests backlog accumulation"
       ],
-      "positive_signals": [
-        "recent commits within the past 6 months",
-        "some active contributors in the past 6 months"
-      ],
-      "summary": "The heimdal package appears to be stale due to low maintenance activity and a large backlog of open issues and PRs, despite some recent commits and active contributors."
+      "positive_signals": [],
+      "summary": "Heimdal appears abandoned with no meaningful maintenance activity in the past 6 months despite a recent commit timestamp, evidenced by zero closed issues, zero contributions, and a large unaddressed issue backlog."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -259,7 +262,10 @@
       "overall_score": 7,
       "summary": "The Heimdal changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T02:02:57.281605+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

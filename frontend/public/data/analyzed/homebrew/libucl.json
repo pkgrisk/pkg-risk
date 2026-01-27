@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 9,
-      "configuration": 7,
+      "installation": 1,
+      "quick_start": 2,
+      "examples": 7,
+      "configuration": 6,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is detailed and provides many examples, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided"
+      "overall": 4,
+      "summary": "Excellent format specification but completely missing installation instructions and API usage examples for developers trying to use the C library.",
+      "top_issue": "No installation instructions - users cannot determine how to build, install, or link against this C library"
     },
     "security": {
       "overall_score": 8,
@@ -194,15 +194,19 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "security issues",
-        "memory leaks"
+        "Security vulnerabilities (heap buffer overflows, use-after-free, uninitialized memory)",
+        "Memory leaks in parser",
+        "JSON emission bugs with invalid comma in merged objects",
+        "SO version numbering going backwards",
+        "Suspected low-quality AI-generated issues cluttering the tracker",
+        "Lack of maintainer engagement on open issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is negative due to frequent security and memory leak issues, though the maintainers are moderately responsive."
+      "abandonment_signals": true,
+      "summary": "libucl shows critical signs of abandonment with multiple unresponded security vulnerabilities, memory safety issues discovered through fuzzing, and suspected spam issues polluting the tracker without maintainer triage."
     },
     "communication": {
       "helpfulness": 7,
@@ -218,17 +222,24 @@
       "summary": "The maintainer provides technical insights but could be more patient and clearer, especially for less experienced contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being from December 2025",
+        "97 open issues with no resolution activity",
+        "No closed issues in past 6 months indicating no bug fixes or maintenance",
+        "No open or merged PRs in past 6 months showing no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "libucl appears to be abandoned with no maintenance activity over the past 6 months despite a large backlog of open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T02:00:16.421757+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

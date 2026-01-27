@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 7,
-      "examples": 6,
+      "examples": 7,
       "configuration": 9,
-      "troubleshooting": 4,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides clear and detailed information about the package, its features, and installation instructions, but lacks comprehensive troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common problems and solutions for troubleshooting"
+      "summary": "Well-structured README with excellent clarity and configuration details, but lacks troubleshooting guidance and the quick start example is incomplete.",
+      "top_issue": "The usage example shows reproc_run() but doesn't explain what it returns, how to capture output, or handle errors - the most common use case (retrieving program output) isn't demonstrated."
     },
     "security": {
       "overall_score": 7,
@@ -216,16 +216,18 @@
       "summary": "The reproc package has some security concerns, including potential command injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues",
-        "Windows compatibility problems"
+        "Windows-specific issues (process termination, zombie processes, console handling)",
+        "Build system problems (CMake FetchContent, GCC 13 compatibility)",
+        "Platform-specific bugs (ulimit handling on macOS, drain timeout on Windows)",
+        "Missing features (admin elevation, console configuration)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The reproc community is moderately active, with some users experiencing frustration due to build issues and Windows compatibility problems, but the maintainer is responsive to reported issues."
+      "summary": "reproc has a stable but aging codebase with persistent Windows compatibility issues, moderate maintainer engagement, and several long-standing bugs that suggest resource constraints rather than abandonment."
     },
     "communication": {
       "helpfulness": 8,
@@ -242,16 +244,19 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unaddressed open issues and PRs"
+        "No commits in the past 6 months despite last commit being from April 2024",
+        "27 open issues with no recent activity or resolution",
+        "Zero closed issues in the past 6 months indicating no bug fixes or maintenance",
+        "No merged PRs in the past 6 months showing no feature development or community contributions",
+        "No active contributors in the past 6 months",
+        "Unknown last release date, suggesting release cycle has stopped"
       ],
       "positive_signals": [
-        "recent release",
-        "multiple contributors active in the recent past"
+        "Project still has some open PRs being tracked (though none merged recently)"
       ],
-      "summary": "The reproc package appears to be stale due to a lack of recent commits and unaddressed issues, despite having a recent release and multiple contributors."
+      "summary": "The reproc project shows clear signs of stagnation with no commits, issue resolution, or PR merges in the past 6 months, indicating it has entered a maintenance limbo state."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -262,7 +267,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and easy to follow, but lacks explicit migration guides for breaking changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T02:01:06.992084+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

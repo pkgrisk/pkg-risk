@@ -179,27 +179,32 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 8,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 6,
       "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The README provides detailed installation and configuration instructions, but lacks a clear quick start example and troubleshooting guidance.",
-      "top_issue": "Lack of a concise quick start section to help new users get started with the package"
+      "overall": 5,
+      "summary": "Clear purpose statement and build instructions, but lacks any code examples showing actual Raku programming usage.",
+      "top_issue": "No quick start or usage examples - README focuses entirely on building the compiler without showing how to write or run even a single line of Raku code"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "segmentation faults",
-        "bugs in core functionality"
+        "RakuAST frontend regressions and incompleteness (EXPORT not called, smartmatch behavior changed)",
+        "Single-argument edge cases in reduce/productions causing unexpected errors",
+        "Parameter handling inconsistencies (min/max :by parameter ignored, -M override behavior)",
+        "Build/compilation issues on specific platforms (OpenSuse Leap 16 segfault)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Community engagement on IRC and GitHub discussions",
+        "Detailed bug reports with reproducible examples"
+      ],
       "abandonment_signals": false,
-      "summary": "The Rakudo community is experiencing frustration due to numerous open issues, including segmentation faults and bugs in core functionality, with slow maintainer responsiveness."
+      "summary": "Rakudo shows moderate community health with active issue reporting and some maintainer engagement, but faces concerning regressions in the new RakuAST frontend and edge case handling that suggest the project is in a transitional phase with incomplete migration work."
     },
     "communication": {
       "helpfulness": 9,
@@ -212,17 +217,18 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub issue tracker."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months despite last commit being recent (2026-01-24)",
+        "884 open issues with no activity to address them",
+        "Zero closed issues in past 6 months indicating no maintenance work",
+        "No merged PRs in past 6 months showing no development progress",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors"
-      ],
-      "summary": "The rakudo package appears to be actively maintained with regular updates, a sizable team of active contributors, and a recent release."
+      "positive_signals": [],
+      "summary": "Rakudo appears abandoned with significant backlog of 884 unresolved issues and complete lack of maintenance activity over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -232,7 +238,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The Rakudo project has a documented decision process and multiple maintainers, but lacks a clear succession plan and contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T02:01:44.365396+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

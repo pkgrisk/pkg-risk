@@ -181,14 +181,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
+      "installation": 7,
+      "quick_start": 4,
       "examples": 6,
       "configuration": 5,
-      "troubleshooting": 4,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is comprehensive but lacks a clear and concise introduction to get new users started quickly.",
-      "top_issue": "Lack of a quick start example that demonstrates basic usage"
+      "summary": "Well-structured library overview with good external documentation links, but lacks inline quick-start examples and troubleshooting guidance.",
+      "top_issue": "No inline code examples showing basic usage - users must click external links to see how to actually use the library"
     },
     "security": {
       "overall_score": 8,
@@ -199,16 +199,23 @@
       "summary": "The code appears to be secure with no major injection risks or secrets exposure, but could benefit from additional input validation for edge cases."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Build with -Wshadow",
-        "Update minimum CMake version to >=3.10"
+        "Build configuration issues (CMake version compatibility, policy handling)",
+        "Header guard conflicts causing real bugs in dependent projects",
+        "Parsing bugs (leap seconds, AM/PM handling with timezones)",
+        "Missing features (IANA database packaging, leap second removal support)",
+        "Security concern (SSL verification disabled for timezone downloads)",
+        "Code quality (variable shadowing warnings)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active, but there are open issues related to build and dependency management that could use attention."
+      "praise_themes": [
+        "Great library overall (acknowledged by users)",
+        "Useful C++ standard addition"
+      ],
+      "abandonment_signals": true,
+      "summary": "The howard-hinnant-date library shows signs of slow maintenance with a mix of legitimate bugs and feature requests aging 6+ years, combined with recent infrastructure issues that indicate the maintainer is not actively triaging or addressing community concerns."
     },
     "communication": {
       "helpfulness": 8,
@@ -221,20 +228,26 @@
       "summary": "Maintainer responses are clear, helpful, and patient. Technical depth is strong, and the maintainer encourages new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Long time since last release (6 months)",
-        "Low number of merged PRs in the past 6 months"
+        "No commits in past 6 months despite last commit being recent (2026-01-10)",
+        "176 open issues with no resolution activity",
+        "Zero closed issues in past 6 months indicating no active maintenance",
+        "No merged PRs in past 6 months showing lack of development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests possible version stagnation"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Some contributor activity in the past 6 months"
+        "Project has received commits at some point (last commit Jan 2026)"
       ],
-      "summary": "The package shows minimal maintenance with recent commits but lacks recent releases and active PR merging."
+      "summary": "This project appears abandoned with 6+ months of inactivity, 176 unresolved issues, and no recent maintenance despite initial recent commit activity."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-01-27T02:12:31.972808+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
