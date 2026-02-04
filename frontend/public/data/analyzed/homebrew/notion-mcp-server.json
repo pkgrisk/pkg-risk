@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is detailed but overwhelming, with a lack of concise introduction and troubleshooting guidance.",
-      "top_issue": "Insufficient quick start example and troubleshooting section"
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Comprehensive installation and setup documentation with clear migration guidance, but lacks quick-start examples and troubleshooting sections.",
+      "top_issue": "No concrete usage examples showing how to actually use the MCP server after installation - users install it but don't know what commands or prompts to use."
     },
     "security": {
       "overall_score": 5,
@@ -213,16 +213,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Authentication issues",
-        "Server reconnection failures",
-        "Parameter serialization bugs"
+        "Object parameters being stringified/double-serialized instead of passed as JSON objects",
+        "Parameter type mismatches (page_id vs block_id) breaking tool functionality",
+        "Schema validation errors preventing tool usage in strict validation environments",
+        "Child pages and databases being trashed by replace_content operations",
+        "Tools returning invalid_request_url errors for valid API calls"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with authentication and server connection issues, indicating a need for more active maintenance and support."
+      "abandonment_signals": true,
+      "summary": "The project has critical, recurring serialization bugs that block core functionality (page creation, updates, queries), with multiple duplicate issues suggesting slow or ineffective maintenance and poor community communication about known problems."
     },
     "communication": {
       "helpfulness": 7,
@@ -235,20 +237,24 @@
       "summary": "Responses are generally clear and helpful, though could be more detailed in some cases."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (77)",
-        "Low number of merged PRs in the past six months (5)"
+        "No commits in past 6 months despite last commit being recent (2026-01-31)",
+        "95 open issues with no activity or resolution",
+        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
+        "No merged PRs in past 6 months showing no feature development or contributions accepted",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests potential versioning/release issues"
       ],
-      "positive_signals": [
-        "Recent commit activity within the last year",
-        "Four contributors have been active in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with recent commits but a high issue count and low PR merge rate."
+      "positive_signals": [],
+      "summary": "The project is effectively abandoned with significant unresolved issues and zero maintenance activity over the past 6 months despite having a recent commit timestamp."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T08:01:01.764171+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

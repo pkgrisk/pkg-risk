@@ -168,27 +168,30 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Well-structured README with excellent installation instructions but lacks configuration details and troubleshooting guidance for the pgcompact tool.",
+      "top_issue": "No configuration documentation for pgcompact's many flags and options beyond basic command-line examples, and missing troubleshooting section for common issues like bloat detection failures or reindexing problems."
     },
     "security": null,
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "deadlocks during index renaming",
-        "compaction issues on PostgreSQL versions",
-        "permissions issues with AWS RDS"
+        "Tool breaks on newer PostgreSQL versions (9.6 incompatibility)",
+        "Index and constraint handling bugs during reindexing operations",
+        "Permission issues with AWS RDS environments",
+        "Deadlocks and database locking during maintenance windows",
+        "Timeout and statement cancellation errors",
+        "Tool incompatibility with concurrent database operations (pg_dump)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community expresses frustration with several open issues, particularly around compaction and permissions, but there are no clear signals of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project appears abandoned with critical bugs spanning 10+ years (2014-2019) remaining unresolved, no maintainer engagement, and version incompatibility with modern PostgreSQL versions making it unsuitable for production use."
     },
     "communication": {
       "helpfulness": 8,
@@ -201,16 +204,17 @@
       "summary": "The maintainer provides clear, detailed explanations and is patient with repeated questions. The responses are helpful and technically sound."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs present"
+        "No commits in over 9 years (last commit April 2016)",
+        "No activity in past 6 months across all metrics",
+        "8 open issues with no responses or fixes",
+        "No releases, merged PRs, or contributor activity",
+        "Complete stagnation indicates project is no longer maintained"
       ],
-      "positive_signals": [
-        "Contributors active in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with some open issues and PRs, but contributors are still active."
+      "positive_signals": [],
+      "summary": "pgtoolkit is abandoned with no development activity since 2016 and unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -221,7 +225,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clarity and completeness, with no clear marking of breaking changes or migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T08:02:21.771913+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

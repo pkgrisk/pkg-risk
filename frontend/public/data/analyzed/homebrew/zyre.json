@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides detailed installation instructions and some examples, but lacks clear configuration documentation and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "Clear overview and detailed build instructions, but lacks quick start examples, configuration guidance, and troubleshooting help.",
+      "top_issue": "No actual usage examples showing how to write code with Zyre - only test commands are provided after installation"
     },
     "security": {
       "overall_score": 5,
@@ -233,14 +233,17 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "ModuleNotFoundError: No module named 'zyre.zyre_cffi'",
-        "Registering Zyre socket fails with \"TypeError: unhashable type: 'Zsock'\""
+        "Python compatibility issues (3.12 module import failures)",
+        "Memory/socket leaks (700+ sockets accumulating, not closing on disconnect)",
+        "Crashes when system is under stress (main thread hanging, abnormal network data)",
+        "Poller integration broken (unhashable type errors)",
+        "Outdated CI infrastructure (Ubuntu 20.04 EOL)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community faces significant issues, particularly related to module imports and socket registration, indicating a need for more active maintenance."
+      "abandonment_signals": true,
+      "summary": "Zyre shows signs of maintenance neglect with critical Python 3.12 compatibility breaks, unresolved socket leak issues, and outdated CI still running EOL Ubuntu versions\u2014indicating slow or inactive maintainership with growing technical debt."
     },
     "communication": {
       "helpfulness": 6,
@@ -256,17 +259,18 @@
       "summary": "The maintainer's responses show some effort to help, but could be more detailed and consistent in their communication."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "Open issues and PRs suggest potential unresolved problems or feature requests."
+        "Zero commits in the past 6 months despite last commit being 2026-02-03",
+        "10 open issues with no recent activity or resolution",
+        "No merged PRs in the past 6 months indicating no active development",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests release cycle has stalled",
+        "No closed issues in past 6 months shows lack of maintenance attention"
       ],
-      "positive_signals": [
-        "Contributors are still active, which could indicate some level of interest in maintaining the package.",
-        "Recent open issues might mean there is ongoing community engagement."
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent development or issue resolution."
+      "positive_signals": [],
+      "summary": "The zyre package appears abandoned with zero development activity, unresolved issues, and no contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -276,7 +280,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T08:02:33.166767+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
