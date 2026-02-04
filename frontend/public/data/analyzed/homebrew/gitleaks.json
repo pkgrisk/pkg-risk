@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its usage, but could benefit from more detailed examples and troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting documentation"
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 5,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions with good quick-start examples, but lacks comprehensive configuration documentation and troubleshooting guidance.",
+      "top_issue": "Configuration is mentioned throughout (baseline, config files, .gitleaksignore, rules) but not explained\u2014users see flags like '--config', '--baseline-path', '--enable-rule' without learning what goes in these files or how to customize detection rules."
     },
     "security": {
       "overall_score": 7,
@@ -216,16 +216,19 @@
       "summary": "The code has some security concerns, including potential template injection and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bug reports",
-        "feature requests"
+        "Documentation gaps (how to ignore/whitelist directories)",
+        "Breaking changes in recent versions (allowlist regex not honored in 8.30.0)",
+        "Memory/performance issues with large repositories",
+        "Configuration complexity and unclear defaults",
+        "External service issues (Google Form access, Blog Cloudflare error)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The gitleaks community is experiencing some technical issues and awaiting maintainer responses, but there are no clear signs of abandonment or extreme frustration."
+      "abandonment_signals": true,
+      "summary": "Community shows signs of frustration with slow maintainer responsiveness, recent breaking changes, and unresolved performance issues, with some issues open since January 2024 receiving minimal engagement."
     },
     "communication": {
       "helpfulness": 9,
@@ -238,17 +241,20 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No closed issues in past 6 months despite 342 open issues",
+        "Unknown last release date",
+        "Large backlog of unresolved issues with no triage activity"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors"
+        "Project exists and was previously maintained (last commit Jan 2026)"
       ],
-      "summary": "The gitleaks package appears to be maintained, with recent activity and a decent number of active contributors, but has a significant backlog of open issues and PRs."
+      "summary": "gitleaks appears abandoned with no maintenance activity for 6+ months, a large stagnant issue backlog, and no recent releases or contributor engagement."
     },
     "changelog": null,
     "governance": {
@@ -258,7 +264,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the gitleaks package lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:10:41.949834+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "maintained",

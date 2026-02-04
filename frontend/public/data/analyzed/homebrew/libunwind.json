@@ -161,14 +161,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 5,
-      "overall": 6,
-      "summary": "The documentation is detailed and comprehensive, but lacks a clear quick start guide and concise examples for new users.",
-      "top_issue": "Lack of a concise quick start guide or tutorial for new users to get started with the library."
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 5,
+      "troubleshooting": 6,
+      "overall": 5,
+      "summary": "Well-structured README with clear purpose and comprehensive platform support, but lacks practical usage examples and quick-start code snippets.",
+      "top_issue": "No code examples showing how to actually use the library API for common tasks like getting a backtrace or walking the call stack"
     },
     "security": {
       "overall_score": 8,
@@ -181,16 +181,19 @@
       "summary": "The code appears to be generally secure, but lacks input validation and error handling for potential null pointer dereferences."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "segfaults",
-        "unwinding issues"
+        "Critical segmentation faults in core unwinding functions",
+        "Architecture-specific bugs (aarch64, ppc32, x86/x86_64) not being fixed",
+        "CI/test failures across multiple architectures",
+        "Memory validation issues interfering with other libraries",
+        "Platform compatibility issues (musl vs glibc)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The libunwind community is experiencing technical difficulties and frustration due to unresolved segfaults and unwinding issues, with slow maintainer responsiveness."
+      "abandonment_signals": true,
+      "summary": "libunwind shows signs of stagnation with multiple critical unresolved bugs across architectures, slow maintainer response times, and unaddressed CI failures suggesting limited active development and maintenance resources."
     },
     "communication": {
       "helpfulness": 9,
@@ -205,17 +208,21 @@
       "summary": "The maintainer's responses are generally helpful, clear, and technically sound, but could benefit from a more welcoming tone and patience with repeated questions."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "relatively low number of active contributors"
+        "Zero commits in the past 6 months despite being a critical system library",
+        "109 open issues with no activity to address them",
+        "Zero closed issues in past 6 months indicates no bug fixes or maintenance",
+        "No merged PRs in past 6 months shows no active development or community contributions",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release date suggests versioning/release process is inactive"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active merging of PRs"
+        "Last commit exists (2026-02-01), so repository is not completely abandoned",
+        "Zero open PRs could indicate low demand for changes or inactive review process"
       ],
-      "summary": "The libunwind package appears to be maintained, with recent activity and a steady stream of updates, but may benefit from additional contributor support to address open issues."
+      "summary": "libunwind appears stale with no maintenance activity for 6+ months despite a significant backlog of 109 open issues, indicating the project is not actively developed or maintained."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -226,7 +233,10 @@
       "overall_score": 7,
       "summary": "The changelog for libunwind is well-structured and comprehensive, but could be improved with clearer marking of breaking changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:13:29.937972+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "maintained",

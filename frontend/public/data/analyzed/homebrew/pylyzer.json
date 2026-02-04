@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 9,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its features, but lacks comprehensive configuration and troubleshooting documentation.",
-      "top_issue": "Insufficient troubleshooting guidance"
+      "configuration": 5,
+      "troubleshooting": 6,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions with good quick-start examples, but lacks comprehensive configuration documentation and troubleshooting for common issues.",
+      "top_issue": "Configuration options are mentioned ('For other options, check the manual') but not documented inline, forcing users to visit external documentation for basic setup like customizing error reporting or LSP behavior."
     },
     "security": {
       "overall_score": 7,
@@ -208,18 +208,23 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "memory leak in conda environment",
-        "package-level imports fail with ImportError",
-        "incomplete installation instructions"
+        "Installation broken - ERG_PATH dependency not documented or included",
+        "Memory leaks causing crashes in conda environments",
+        "Crashes on common imports (pandas, etc.)",
+        "Package detection fails for PEP518 (pyproject.toml only) projects",
+        "False positive type errors (list multiplication, import resolution)",
+        "LSP mode overly verbose with unnecessary type annotations",
+        "Recursion limit exceeded panics"
       ],
       "praise_themes": [
-        "faster alternative to pytype"
+        "Performance advantages over pytype",
+        "Improved error location readability vs pyright"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately frustrated, facing issues like memory leaks and incomplete documentation, but still finds value in the tool."
+      "abandonment_signals": true,
+      "summary": "The project shows critical abandonment signals with fundamental installation failures, unresolved crashes on basic operations, zero maintainer engagement on recent issues, and core functionality gaps that make it unsuitable for production use."
     },
     "communication": {
       "helpfulness": 7,
@@ -232,20 +237,24 @@
       "summary": "Responses are generally clear and helpful, showing patience with users but could improve in explaining the 'why' behind decisions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Only one merged PR in the past six months, suggesting limited community contribution and maintenance."
+        "No commits in past 6 months despite last commit being from May 2025",
+        "29 open issues with no resolution activity",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release indicates release process has stalled"
       ],
-      "positive_signals": [
-        "Seven contributors active in the past six months, which shows some level of community involvement.",
-        "Regular issue reporting and management, even if not resolved frequently."
-      ],
-      "summary": "The package is minimally maintained with occasional contributions but lacks recent development activity."
+      "positive_signals": [],
+      "summary": "Pylyzer appears to be abandoned with no maintenance activity for at least 6 months despite having a backlog of 29 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:25:44.238389+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 7,
-      "examples": 9,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides good examples, but installation instructions could be improved and troubleshooting information is lacking.",
-      "top_issue": "Lack of troubleshooting information"
+      "summary": "Clear, well-structured documentation with good examples but lacks troubleshooting guidance and minimal quick-start context.",
+      "top_issue": "No troubleshooting section - users won't know what to do when tests fail or how to interpret results"
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,20 @@
       "summary": "The code has some potential security concerns, including indexed header field representation injection risks and unknown frame types being sent without validation, but overall it appears to be well-structured and follows best practices for error handling and input validation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Test cases not aligned with RFC specifications",
-        "Race conditions in tests"
+        "Test cases contain bugs that don't conform to RFC specifications",
+        "Tests send invalid/unparseable frame data",
+        "Race conditions in test execution",
+        "Incorrect implementation of HPACK and HTTP/2 frame size handling",
+        "Tests have wrong expectations (e.g., expecting PROTOCOL_ERROR instead of STREAM_CLOSED)",
+        "Settings acknowledgment timing issues not handled"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but the project seems to be receiving some attention as recent issues are closed. However, there are ongoing complaints about test cases and race conditions."
+      "abandonment_signals": true,
+      "summary": "h2spec shows signs of abandonment with multiple unresolved spec compliance bugs reported over years (2017-2025), no maintainer responses, and fundamental test implementation errors that undermine its credibility as an HTTP/2 conformance tool."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,20 +238,24 @@
       "summary": "The maintainer responses are clear, helpful, and patient, with a good level of technical depth and welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "A significant number of open issues (27)"
+        "No commits in over 2 years (last commit October 2023)",
+        "34 open issues with no activity to address them",
+        "Zero closed issues in past 6 months indicates no maintenance",
+        "No merged PRs in past 6 months shows no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent versions"
       ],
-      "positive_signals": [
-        "Ten contributors have been active in the past six months"
-      ],
-      "summary": "The package is receiving minimal maintenance with occasional contributions, but there are concerns about lack of activity and unresolved issues."
+      "positive_signals": [],
+      "summary": "h2spec is abandoned with no maintenance activity for over 2 years and 34 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:15:46.490807+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

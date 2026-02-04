@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 10,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 7,
-      "summary": "The documentation is clear and provides many examples, but lacks information on configuration options and troubleshooting.",
-      "top_issue": "Lack of configuration documentation"
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent technical documentation with clear examples and installation steps, but lacks troubleshooting guidance and the versions table appears incomplete.",
+      "top_issue": "No troubleshooting section for common compilation errors, linking issues, or platform-specific problems; versions table is cut off mid-sentence"
     },
     "security": {
       "overall_score": 8,
@@ -185,16 +185,19 @@
       "summary": "The code appears to have some minor security concerns related to input validation and error handling, but overall it seems to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "PostgreSQL version upgrade",
-        "Accessing yylval.str"
+        "PostgreSQL version support lag (PG18 not yet supported)",
+        "Missing or incomplete API exposure (yylval.str access)",
+        "Build/installation issues (missing headers in Makefile)",
+        "API limitations (NAMEDATALEN configurability)",
+        "Edge case bugs with malformed input"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged with common issues around PostgreSQL version support and specific API usage, but there are no clear signs of abandonment."
+      "summary": "libpg_query shows moderate maintenance with active bug reports and feature requests, but slow responsiveness to PostgreSQL version upgrades and API enhancement requests suggests limited development bandwidth."
     },
     "communication": {
       "helpfulness": 8,
@@ -207,15 +210,19 @@
       "summary": "Maintainer responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months",
-        "A healthy number of merged PRs indicating community involvement"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being very recent (2026-02-04), indicating potential data inconsistency or abandoned state",
+        "49 open issues with zero closed issues in past 6 months suggests issues are not being triaged or resolved",
+        "Zero active contributors in the past 6 months indicates no ongoing development activity",
+        "No merged PRs in past 6 months suggests pull requests are not being reviewed or accepted",
+        "Unknown last release date prevents assessment of release cadence"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Repository still exists and has recent timestamp activity"
+      ],
+      "summary": "libpg_query appears to be in a stale maintenance state with no development activity for 6 months despite 49 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -226,7 +233,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:40:10.504056+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

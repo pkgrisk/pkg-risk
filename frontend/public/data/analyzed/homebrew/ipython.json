@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 3,
       "quick_start": 7,
-      "examples": 4,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The README provides a good overview of IPython's features, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Insufficient examples and troubleshooting documentation"
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "Clear description of what IPython does and basic running instructions, but lacks proper installation steps, practical examples, configuration guidance, and troubleshooting help.",
+      "top_issue": "No installation instructions provided - users are directed to external documentation without any inline guidance on how to actually install IPython via pip or other package managers"
     },
     "security": {
       "overall_score": 7,
@@ -202,16 +202,21 @@
       "summary": "IPython's configuration and application setup appear to be generally secure, but there are some potential issues with input validation and error handling that should be addressed to improve overall security."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "tab-completion issues",
-        "test failures"
+        "Python version compatibility issues (3.12, 3.14)",
+        "Windows-specific bugs (event loop, encoding errors)",
+        "Event loop handling inconsistencies across versions",
+        "External dependency blocking progress (jedi lacks 3.14 support)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Good paste handling for indented code",
+        "Useful magic commands like %timeit"
+      ],
       "abandonment_signals": false,
-      "summary": "The IPython community is actively addressing various technical issues, with maintainers responding to and resolving problems in a timely manner."
+      "summary": "IPython shows moderate community health with active issues being reported, but slow resolution on critical compatibility problems and some long-standing bugs (event loop issue from 2019 with 48 comments still open)."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,17 +232,20 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient, providing a good balance of technical depth and welcoming tone."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "last release is over 4 years old",
-        "open issues outnumber closed issues in the past 6 months"
+        "No commits in past 6 months despite being a major Python package",
+        "1572 open issues with no recent resolution activity",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "Last release date unknown, suggesting stale release process"
       ],
       "positive_signals": [
-        "high number of commits in the past 6 months",
-        "active contributors and merged PRs"
+        "Last commit relatively recent (Feb 2, 2026)",
+        "Package still has some issue tracking activity (issues exist)"
       ],
-      "summary": "The ipython package appears to be maintained, with regular commits and active contributors, but has an outdated last release and a concerning issue closure rate."
+      "summary": "IPython shows signs of project stagnation with no development activity, merged PRs, or issue resolution for 6+ months despite a large backlog of open issues."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +255,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The IPython project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:13:15.096978+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "maintained",

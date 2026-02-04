@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
+      "quick_start": 9,
+      "examples": 8,
       "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good examples, but installation instructions are incomplete and troubleshooting information is lacking.",
-      "top_issue": "Lack of comprehensive installation instructions and troubleshooting guidance"
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and examples for basic usage, but lacks detailed installation steps, configuration guidance, and troubleshooting information.",
+      "top_issue": "Installation instructions are vague (mentions submodule or package but no concrete commands) and the compilation unit requirement is mentioned but not clearly explained with examples."
     },
     "security": {
       "overall_score": 6,
@@ -185,16 +185,19 @@
       "summary": "The provided code snippet appears to be a lookup table for MsgPack parsing, but lacks input validation and may have issues with error exposure and dangerous defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build issues on aarch64-linux-gnu-gcc",
-        "assertion failures in mp_encode_int"
+        "Build failures on non-x86 architectures (aarch64-linux-gnu-gcc)",
+        "Critical bugs unfixed for years (assertion failure in mp_encode_int since 2021)",
+        "Platform-specific floating point issues (x86 vs x86_64 failures)",
+        "Security vulnerabilities (CVE-2016-9036, integer overflow in mp_check)",
+        "Compiler warnings treated as errors (-Werror=sign-compare)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project is effectively abandoned with critical bugs remaining unfixed for 3+ years, multiple unresolved platform compatibility issues, security vulnerabilities, and no maintainer engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -207,20 +210,23 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing a good level of patience and technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Last release was over five years ago"
+        "No commits for over 6 years (last commit April 2019)",
+        "No activity in past 6 months across all metrics",
+        "9 open issues with no resolution",
+        "No releases or merged PRs in past 6 months",
+        "Zero active contributors in past 6 months"
       ],
-      "positive_signals": [
-        "10 contributors active in the past six months",
-        "One open PR, indicating some level of ongoing activity"
-      ],
-      "summary": "The package has minimal maintenance with recent contributor activity but lacks recent commits and updates."
+      "positive_signals": [],
+      "summary": "msgpuck shows clear signs of abandonment with no development activity since 2019 and accumulating unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:43:36.549365+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

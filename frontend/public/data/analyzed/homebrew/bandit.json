@@ -180,14 +180,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is clear and provides a good overview of the package, but lacks detailed installation instructions and troubleshooting guides.",
-      "top_issue": "Lack of clear installation instructions for Homebrew users"
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "Clear project description but severely lacking practical usage documentation, with no installation instructions, minimal examples, and no configuration or troubleshooting guidance in the README itself.",
+      "top_issue": "No installation instructions provided (only references external documentation) and no quick start example showing how to actually run bandit on Python code"
     },
     "security": {
       "overall_score": 8,
@@ -211,16 +211,21 @@
       "summary": "Bandit's codebase appears to have some minor security concerns related to input validation and potential path traversal issues, but overall it seems well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "performance issues",
-        "bug reports"
+        "False positives and noise in security checks (B105, B614, B615)",
+        "Incorrect line number reporting for multi-line constructs",
+        "nosec suppression not working reliably across Python versions",
+        "Performance issues with large/complex files",
+        "Broken documentation links in warnings"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is reporting performance and bug-related issues, but there are no signs of abandonment or significant praise."
+      "praise_themes": [
+        "Interest in AI-powered fix suggestions (enhancement request)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Bandit shows moderate community engagement with legitimate bug reports, but slow issue resolution, accumulating false positive complaints, and a 6-year-old performance issue suggest possible maintainer capacity constraints or deprioritization."
     },
     "communication": {
       "helpfulness": 7,
@@ -236,15 +241,18 @@
       "summary": "The maintainer's responses are generally helpful and clear, but there is room for improvement in addressing issues that might confuse non-technical contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases within the past month",
-        "Multiple contributors active in the last six months",
-        "A significant number of merged PRs indicating ongoing development"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-03)",
+        "215 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [],
+      "summary": "Bandit appears abandoned with no maintenance activity for 6+ months despite a recent repository timestamp, indicating either a stale mirror or genuinely inactive development."
     },
     "changelog": null,
     "governance": {
@@ -254,7 +262,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation provides a clear path for contributors but lacks a succession plan, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:21:17.976348+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

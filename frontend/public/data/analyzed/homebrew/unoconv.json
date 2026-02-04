@@ -172,7 +172,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 6,
+      "quick_start": 7,
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 7,
+      "overall": 6,
+      "summary": "Well-structured documentation that clearly explains the tool's purpose and common issues, but lacks comprehensive installation steps and configuration details.",
+      "top_issue": "Installation instructions are fragmented and assume knowledge of distribution package management; no single clear path for different platforms until much later in the document."
+    },
     "security": {
       "overall_score": 8,
       "injection_risks": [],
@@ -182,16 +192,18 @@
       "summary": "The unoconv setup.py code appears to be relatively secure, with no major injection risks or secrets exposure, but could benefit from improved input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "LooseVersion deprecated",
-        "File codification not working"
+        "Dependency/compatibility issues (LooseVersion deprecation)",
+        "Character encoding and internationalization problems (non-latin, Chinese characters)",
+        "File format conversion bugs (hidden cells, file corruption)",
+        "Environment-specific failures with identical setups"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with active maintainer response, but there are ongoing issues that need attention."
+      "abandonment_signals": true,
+      "summary": "unoconv shows signs of significant abandonment with unresolved critical issues spanning 2+ years, no maintainer engagement, and growing compatibility problems with Python 3.10+ and international content."
     },
     "communication": {
       "helpfulness": 5,
@@ -207,17 +219,17 @@
       "summary": "Responses are generally adequate but could be more helpful and encouraging to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Last release was over five years ago"
+        "No commits in the past 6+ months (last commit April 2023)",
+        "35 open issues with no recent closure activity",
+        "Zero merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests extended release gap"
       ],
-      "positive_signals": [
-        "Ten contributors active in the past six months",
-        "Some open issues and PRs indicate community interest"
-      ],
-      "summary": "The package is minimally maintained with recent contributor activity, but lacks recent commits and an update since 2017."
+      "positive_signals": [],
+      "summary": "unoconv is abandoned with no maintenance activity for nearly 9 months and a growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -228,7 +240,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks information on breaking changes and migration guides, making it incomplete for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:03:27.394551+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

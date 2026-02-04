@@ -180,14 +180,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 3,
       "quick_start": 6,
       "examples": 4,
       "configuration": 7,
       "troubleshooting": 5,
       "overall": 5,
-      "summary": "The documentation is clear about the package's purpose, but lacks installation instructions and comprehensive examples.",
-      "top_issue": "Lack of clear installation instructions"
+      "summary": "Clear purpose and comprehensive CLI reference, but lacks installation instructions and practical usage examples.",
+      "top_issue": "No installation instructions provided despite being available on PyPI and Homebrew"
     },
     "security": {
       "overall_score": 7,
@@ -214,18 +214,21 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but it does not appear to have any critical vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Patterns in .gitattributes do not work if they end with a slash",
-        "Passing compression level with `xz` or `txz` output formats does not work"
+        ".gitattributes pattern matching issues (directory-only patterns, nested globs, scoping)",
+        "Submodule handling bugs (duplicated paths, uncommitted changes, missing from .git/config)",
+        "Feature gaps (export-subst support, tarfile format options, compression level handling)",
+        "Test infrastructure problems (ResourceWarning issues preventing test execution)"
       ],
       "praise_themes": [
-        "Contributor is working on integrating git-archive-all as a GitHub Action"
+        "Third-party GitHub Action wrapper created by community",
+        "Tool is useful enough for downstream packaging efforts (NixOS, Fedora, Homebrew)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health appears stable, with some unresolved issues and one contributor actively working on improvements."
+      "abandonment_signals": true,
+      "summary": "git-archive-all shows signs of maintenance stagnation with multiple unresolved bugs dating back to 2019-2020, limited maintainer engagement on open issues, and critical test infrastructure problems blocking package adoption."
     },
     "communication": {
       "helpfulness": 7,
@@ -238,20 +241,24 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Multiple open issues and PRs"
+        "No commits in past 6 months despite last commit being recent (2025-01-13)",
+        "11 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent versioning"
       ],
-      "positive_signals": [
-        "Recent release in October 2022",
-        "Active contributors (10) in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent commits and has pending issues."
+      "positive_signals": [],
+      "summary": "git-archive-all appears abandoned with no development activity for 6 months despite open issues remaining unaddressed."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:16:33.765789+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -168,13 +168,13 @@
     "readme": {
       "clarity": 8,
       "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
-      "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and quick start example"
+      "quick_start": 3,
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "Clear explanation of purpose but lacks actionable quick-start examples and relies heavily on external documentation files.",
+      "top_issue": "No inline quick-start example showing actual ROBODoc usage - all practical information deferred to external files (INSTALL.md, Docs/manual.html)"
     },
     "security": {
       "overall_score": 7,
@@ -194,16 +194,20 @@
       "summary": "The code appears to have some security concerns, primarily related to input validation and potential injection risks, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Documentation issues with the `--internal` flag",
-        "Build and compilation problems across different environments"
+        "Build and compilation failures across platforms (macOS, AIX, Ubuntu)",
+        "Missing or broken include files (unistd.h)",
+        "Long-standing unresolved bugs (TOC reversed since 2022, internal flag broken since 2025)",
+        "Build system issues (configure.in vs configure.ac, missing autoconf setup)",
+        "Feature regressions in recent commits",
+        "Hardened compilation incompatibility"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing multiple build and documentation issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Robodoc shows severe abandonment signals with multiple critical build failures across platforms, unresponsive maintainers, recent feature regressions, and issues spanning from 2015-2025 without resolution."
     },
     "communication": {
       "helpfulness": 5,
@@ -219,18 +223,20 @@
       "summary": "The responses are generally adequate but could be more helpful and clear, especially for technical issues."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "24 open issues with no resolution activity",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Four contributors have been active in the past six months",
-        "Last release was recent for a homebrew package"
+        "Project still has an open issue tracker (not completely abandoned)"
       ],
-      "summary": "The package shows minimal maintenance with some recent activity but lacks recent commits and merged PRs."
+      "summary": "The robodoc project shows clear signs of stagnation with zero activity across all maintenance indicators over the past 6 months and unresolved issues accumulating."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -241,7 +247,10 @@
       "overall_score": 2,
       "summary": "The changelog is incomplete, not well-organized, and lacks clarity and necessary information for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:17:53.749766+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -177,28 +177,29 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 3,
-      "configuration": 2,
+      "clarity": 3,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README lacks essential information for new users, such as installation instructions and basic usage examples.",
-      "top_issue": "Insufficient documentation for getting started with the package"
+      "overall": 2,
+      "summary": "README provides almost no usable information, serving only as a pointer to external documentation with no standalone value.",
+      "top_issue": "Zero installation instructions, usage examples, or explanation of what Metals does - users must visit external website for any useful information"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "`textDocument/signatureHelp`'s response sometimes has `\"activeParameter\": -1` breaking LSP spec",
-        "inlining not working due to false-positive variable shadowing"
+        "Dependency version handling issues (Mill wrapper extension mismatch)",
+        "Upstream dependency breaking changes (bazel-bsp 4.0.2 regression)",
+        "Build system integration failures (Scala 3 Bazel builds broken)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and closed bugs, indicating moderate maintainership but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is concerning with critical build failures, zero maintainer engagement on open issues, and dependency management problems indicating potential maintenance gaps."
     },
     "communication": {
       "helpfulness": 8,
@@ -211,15 +212,20 @@
       "summary": "The responses are generally helpful and clear, showing patience with new contributors and a good level of technical depth."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (304)",
-        "A significant number of merged PRs in the past six months (266)",
-        "Multiple contributors active in the past six months (31)"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent (indicates stale repository state)",
+        "242 open issues with no resolution activity",
+        "Zero closed issues in past 6 months shows no bug fixing or maintenance",
+        "No merged PRs in past 6 months indicates no active development or community contributions",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process has ceased"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Recent commit timestamp (2026-02-04) suggests repository was updated at some point"
+      ],
+      "summary": "The metals package appears abandoned with no maintenance activity over the past 6 months despite a large backlog of open issues."
     },
     "changelog": null,
     "governance": {
@@ -229,7 +235,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:23:07.826304+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 5,
+      "installation": 4,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 3,
       "troubleshooting": 2,
       "overall": 5,
-      "summary": "The documentation is thorough but dense, making it difficult for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of clear and concise installation instructions and troubleshooting guides"
+      "summary": "Clear purpose and good API documentation, but lacks concrete installation steps, practical examples, and troubleshooting guidance.",
+      "top_issue": "Installation instructions are vague ('run autogen.sh and follow instructions' or 'use meson') with no actual commands, dependencies, or platform-specific guidance for users to get started."
     },
     "security": {
       "overall_score": 7,
@@ -196,12 +196,15 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "rendering issues",
-        "compatibility problems"
+        "Rendering bugs with wrapped/long lines and visual order",
+        "Build compatibility issues (MSYS2/MinGW, GCC 15.1, iOS cross-compilation)",
+        "Missing documentation (manpage generation)",
+        "API breaking changes affecting downstream projects (Pango)",
+        "Unicode standard support lagging"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The fribidi community is experiencing a mix of rendering and compatibility issues, with some frustration due to slow maintainer responsiveness."
+      "abandonment_signals": true,
+      "summary": "Fribidi shows signs of minimal maintenance with unresolved technical debt, critical bugs affecting downstream projects, and slow response to compatibility issues, though some recent activity suggests the project is not completely abandoned."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,17 +221,19 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unaddressed open issues",
-        "infrequent PR merges"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 24 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over a month ago with no follow-up activity"
       ],
       "positive_signals": [
-        "recent contributors",
-        "some issue closure activity"
+        "Last commit exists (not completely abandoned)",
+        "Package still has some maintenance history"
       ],
-      "summary": "The fribidi package appears to be stale due to a lack of recent commits and unaddressed open issues, despite some recent contributor activity."
+      "summary": "The fribidi package shows clear signs of stagnation with zero maintenance activity over the past 6 months despite an accumulating backlog of 24 open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -239,7 +244,10 @@
       "overall_score": 3,
       "summary": "The provided changelog for the homebrew package 'fribidi' appears to be more of a historical narrative than a traditional changelog, lacking clear markings of breaking changes, migration guides, and categorization."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:12:59.049611+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

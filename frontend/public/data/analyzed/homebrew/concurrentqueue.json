@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 7,
-      "configuration": 5,
+      "configuration": 6,
       "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The documentation is generally well-written and informative, but could benefit from clearer installation instructions and more comprehensive troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions for the homebrew package ecosystem"
+      "overall": 7,
+      "summary": "Excellent clarity and quick-start with strong technical explanations, but lacks comprehensive examples, configuration guidance, and troubleshooting documentation.",
+      "top_issue": "No troubleshooting section for common problems like compilation errors, thread safety gotchas, or performance issues despite being a complex concurrent data structure"
     },
     "security": {
       "overall_score": 8,
@@ -191,18 +191,19 @@
       "summary": "The concurrentqueue library appears to be secure with no major injection risks or secrets exposure, but could benefit from additional input validation and bounds checking."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "performance and type limitations in dequeue mechanism",
-        "compilation issues with CMake"
+        "CMake installation path inconsistencies causing include path conflicts",
+        "Thread safety and concurrency bugs (thread-local variable invalidation, producer switching issues)",
+        "API usability issues (dequeue requiring pre-constructed objects, lack of round-robin guarantees)",
+        "Build system deprecation warnings and compatibility issues",
+        "Insufficient debugging/inspection tools for queue contents"
       ],
-      "praise_themes": [
-        "community engagement through detailed issue descriptions"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is engaged but faces some common technical challenges, indicating moderate frustration levels."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The concurrentqueue project shows signs of maintenance neglect with multiple unresolved bugs spanning 1-2 years, slow/absent maintainer response to critical threading issues, and accumulating technical debt in build configuration despite some user contributions to problem diagnosis."
     },
     "communication": {
       "helpfulness": 7,
@@ -215,20 +216,24 @@
       "summary": "The maintainer provides detailed and helpful responses, though there is room for improvement in clarity and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or bug fixes.",
-        "A high number of open issues (65) suggests there may be unresolved problems."
+        "No commits in past 6 months despite last commit being July 2025",
+        "73 open issues with no recent closures",
+        "No merged pull requests in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No recent releases",
+        "Issues accumulating without resolution"
       ],
-      "positive_signals": [
-        "Recent release in 2023-06-19 indicates some level of activity.",
-        "Multiple contributors active in the past six months suggest a community or group effort to maintain the package."
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent commits and has many open issues."
+      "positive_signals": [],
+      "summary": "concurrentqueue appears to be abandoned with no maintenance activity for at least 6+ months and 73 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T13:24:10.855157+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
