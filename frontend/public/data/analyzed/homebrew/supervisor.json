@@ -178,8 +178,8 @@
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a brief overview of the package, but lacks essential details on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and examples"
+      "summary": "Clear purpose statement but lacks any practical usage information, deferring everything to external documentation.",
+      "top_issue": "No installation instructions, usage examples, or quick start guide in the README itself"
     },
     "security": {
       "overall_score": 7,
@@ -203,16 +203,23 @@
       "summary": "The code has some potential security risks, including SQL injection and input validation issues, but overall it appears to be relatively secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "logging issues",
-        "program restart problems"
+        "File descriptor leaks and duplicate FDs causing resource issues",
+        "Process restart behavior with groups is unpredictable/broken",
+        "File rotation logging not working correctly with external modifications",
+        "High CPU usage (polling-related performance regression)",
+        "Deprecation warnings from outdated dependencies (pkg_resources)",
+        "Signal number handling incomplete",
+        "Process startup timing/synchronization issues"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The Supervisor community is moderately active, with some open issues and a mix of technical questions and bug reports, but no clear signs of abandonment or extreme frustration."
+      "praise_themes": [
+        "Community members willing to contribute and help maintain"
+      ],
+      "abandonment_signals": true,
+      "summary": "Supervisor shows signs of maintenance neglect with multiple long-standing bugs (some dating to 2012-2016), minimal maintainer engagement, and unresolved critical issues including resource leaks and performance regressions."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,21 +235,26 @@
       "summary": "The maintainer responses are generally clear and technically sound, but could improve in terms of patience and welcomingness towards users and potential contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low number of merged PRs",
-        "high number of open issues and PRs",
-        "unknown last release"
+        "No commits in the past 6 months despite last commit being relatively recent (Dec 2025)",
+        "172 open issues with no activity to address them",
+        "Zero closed issues in past 6 months indicates no maintenance activity",
+        "No merged PRs in past 6 months suggests no active development or review",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process is inactive"
       ],
       "positive_signals": [
-        "recent commits",
-        "active contributors"
+        "Had some activity within the past year (December 2025 commit)"
       ],
-      "summary": "The supervisor package appears to have some maintenance activity, but the low rate of issue and PR resolution raises concerns about its overall health."
+      "summary": "The supervisor project appears stale with no maintenance activity in the past 6 months despite a recent commit timestamp, accumulating 172 unaddressed issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:29:48.099483+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -171,7 +171,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 9,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Good introduction and quickstart, but lacks configuration details and troubleshooting guidance with most documentation offloaded to Wiki.",
+      "top_issue": "No troubleshooting section and configuration is barely mentioned, requiring users to navigate to external Wiki for most documentation"
+    },
     "security": {
       "overall_score": 5,
       "injection_risks": [
@@ -196,16 +206,20 @@
       "summary": "The RTags package has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but no critical secrets exposure or error handling issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Crashes and memory leaks",
-        "Incomplete indexing"
+        "Crashes and memory leaks (rdm daemon consuming all memory, invalid read errors)",
+        "Missing standard include path detection and header file handling",
+        "Global namespace identifier (::) not properly handled",
+        "Build/compilation issues (CMake, LibClang detection, cross-compilation)",
+        "Diagnostics not working in Emacs integration",
+        "Incomplete indexing of functions"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some common complaints about crashes, memory leaks, and incomplete indexing, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "rtags shows signs of stagnation with multiple unresolved critical bugs, slow maintainer response, open issues from 2025 without replies, and no recent releases despite being in active use\u2014indicating a declining project with diminishing community support."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,17 +232,18 @@
       "summary": "Maintainer responses are generally helpful and clear, showing patience with users and a good level of technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months suggests limited community contribution or approval.",
-        "High number of open issues and PRs indicates potential maintenance backlog."
+        "No commits in past 6 months",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "180 open issues with no triage activity",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "Recent commits indicate some level of activity.",
-        "Regular issue reporting by the community shows engagement."
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces challenges in resolving issues and integrating contributions."
+      "positive_signals": [],
+      "summary": "rtags shows no maintenance activity over the past 6 months with a large backlog of unresolved issues and no contributor engagement."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -239,7 +254,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:17:05.222365+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

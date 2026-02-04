@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
+      "installation": 7,
+      "quick_start": 5,
       "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 3,
+      "configuration": 6,
+      "troubleshooting": 5,
       "overall": 6,
-      "summary": "The documentation is comprehensive but could be improved with clearer installation instructions and a more prominent quick start section.",
-      "top_issue": "Lack of clear, step-by-step installation instructions for users who are new to the package or MQTT in general."
+      "summary": "Comprehensive documentation that explains the library well but lacks a simple quick-start example and has incomplete sections (CMake table cuts off).",
+      "top_issue": "No basic code example showing how to connect and publish/subscribe in the first few paragraphs - users must navigate to separate documentation or sample files"
     },
     "security": {
       "overall_score": 8,
@@ -199,15 +199,18 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Segmentation Fault",
-        "double free or corruption",
-        "Invalid read of size 4"
+        "Memory safety issues (double free, segmentation faults, invalid reads)",
+        "Payload corruption and invalid character handling",
+        "Platform-specific bugs (Raspberry Pi segfaults)",
+        "Poor error messages (generic -1 with null details)",
+        "Thread synchronization and cleanup problems",
+        "Build system deprecation warnings"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant technical issues, leading to high frustration levels. There are no clear signs of abandonment yet."
+      "abandonment_signals": true,
+      "summary": "libpaho-mqtt shows signs of poor maintenance with critical memory safety bugs, minimal maintainer engagement (most issues unanswered or marked 'more info needed'), and accumulating technical debt in threading and error handling."
     },
     "communication": {
       "helpfulness": 7,
@@ -220,17 +223,18 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with the contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of contributors (only 1 active in the past 6 months)",
-        "No recent releases, last one was in August 2025"
+        "No commits in past 6 months despite recent activity timestamp",
+        "189 open issues with no closed issues in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No releases available",
+        "High issue backlog suggests unaddressed user problems"
       ],
-      "positive_signals": [
-        "Recent commits and PR activity",
-        "Some issues are being addressed with closed PRs"
-      ],
-      "summary": "The package shows minimal maintenance efforts with low contributor engagement and no new releases recently."
+      "positive_signals": [],
+      "summary": "libpaho-mqtt shows clear signs of abandonment with no development activity, no issue resolution, and a large unaddressed backlog over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -240,7 +244,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:11:57.561983+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
+      "clarity": 3,
       "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 1,
-      "summary": "The documentation is severely lacking in essential information, making it difficult for users to understand and use the package.",
-      "top_issue": "Lack of installation instructions, usage examples, and configuration documentation"
+      "overall": 2,
+      "summary": "This README contains only a vague description and extensive licensing information, with no practical usage documentation whatsoever.",
+      "top_issue": "Completely missing all practical information: no installation instructions, usage examples, API documentation, or guidance on how to actually use CRFsuite for labeling sequential data."
     },
     "security": {
       "overall_score": 8,
@@ -191,18 +191,23 @@
       "summary": "The CRFSuite C++/SWIG API appears to be secure, with no major injection risks or secrets exposed, but could benefit from additional input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "prebuild wheel availability",
-        "platform-specific issues"
+        "Missing prebuild wheels for new versions (Intel Mac)",
+        "Cross-platform compatibility issues (Windows, Ubuntu, M1 Mac)",
+        "Architecture-specific compiler flags applied incorrectly (PowerPC Intel flags)",
+        "Python wrapper produces different results than command-line tool",
+        "Non-deterministic results across identical runs",
+        "Build failures and compilation errors",
+        "Lack of incremental training support"
       ],
       "praise_themes": [
-        "existing contributions from community members"
+        "Library described as great and useful for NLP tasks (slot extraction, IOB labeling)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some ongoing issues and moderate responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "CRFsuite shows severe abandonment with 12 open issues spanning 5+ years, zero maintainer engagement, critical platform support gaps (M1 Mac, PowerPC), missing binary distributions, and unresolved core functionality issues (non-deterministic results, API inconsistencies)."
     },
     "communication": {
       "helpfulness": 8,
@@ -215,21 +220,24 @@
       "summary": "Maintainer responses are generally helpful and clear, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in past 6 months (last commit June 2024)",
+        "58 open issues with no recent activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases available or tracked"
       ],
-      "positive_signals": [
-        "Recent contributors (past six months)",
-        "Multiple open PRs indicating community interest"
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "CRFsuite is abandoned with no maintenance activity for 7+ months, no issue resolution, and no community engagement."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:09:51.308395+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

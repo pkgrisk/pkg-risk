@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section to help users resolve common issues."
+      "configuration": 9,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, comprehensive installation instructions, and detailed editor aliasing setup, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like permission errors, PATH problems, or shell configuration conflicts"
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,21 @@
       "summary": "The tre-command package has some potential security concerns, including path traversal and regex injection attacks, but overall it appears to be well-designed with proper input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "non-UTF8 filename handling",
-        "output order issues"
+        "Core functionality bugs (non-UTF8 filename panic, incorrect sorting)",
+        "Platform-specific issues (Windows character encoding, PowerShell detection)",
+        "Feature parity gaps (missing multiple directory inputs like tree/ls/du)",
+        "Shell integration problems (zsh completion, alias file generation)",
+        "Documentation gaps (unclear option purposes like '-s')"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "praise_themes": [
+        "Project concept appreciated (cute name, good idea)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is concerning: multiple unresolved issues spanning 3+ years with minimal maintainer engagement, critical bugs remain unfixed, and feature requests go unanswered despite simple requests like multiple directory support."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,17 +234,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth where appropriate and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Multiple open issues and PRs"
+        "No commits in past 6 months (last commit was September 2024)",
+        "20 open issues with no resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases tracked"
       ],
-      "positive_signals": [
-        "Contributors are active",
-        "Recent release in 2022"
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent code updates."
+      "positive_signals": [],
+      "summary": "The project shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -250,7 +256,10 @@
       "overall_score": 7,
       "summary": "The changelog is clear about breaking changes and comprehensive, but lacks categorized sections and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:44:28.004612+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

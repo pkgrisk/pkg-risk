@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 6,
       "configuration": 4,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The Pydantic README provides a clear introduction and installation instructions, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of configuration options and troubleshooting steps"
+      "summary": "Excellent clarity and quick start with a clear example, but lacks comprehensive examples, configuration documentation, and troubleshooting guidance in the README itself.",
+      "top_issue": "No troubleshooting section and minimal configuration documentation - users must navigate to external docs for anything beyond basic usage"
     },
     "security": {
       "overall_score": 8,
@@ -191,16 +191,17 @@
       "summary": "The provided code from the pydantic package appears to be secure, with no major injection risks or secrets exposure found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "validation error messages",
-        "compatibility issues"
+        "Non-deterministic JSON schema generation with unordered collections",
+        "Smart union mode incorrectly omits valid strings with on_error='omit'",
+        "Duplicated models in deeply nested JSON schema generation"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The pydantic community is active and engaged, with maintainers responding to issues in a timely manner, but users are experiencing some frustration with validation error messages and compatibility issues."
+      "summary": "Pydantic V2 shows moderate health with active bug tracking but slow issue resolution; technical issues indicate need for determinism improvements in schema generation."
     },
     "communication": {
       "helpfulness": 8,
@@ -216,16 +217,20 @@
       "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (312)",
-        "Large number of merged PRs in the past 6 months (215)",
-        "Recent last commit (2025-12-29) and last release (2025-12-18)",
-        "Many contributors active in the past 6 months (58)"
+      "concerns": [
+        "No commits in past 6 months despite recent last commit timestamp",
+        "548 open issues with zero closed in past 6 months indicates unaddressed backlog",
+        "Zero merged PRs in past 6 months suggests no active development",
+        "No active contributors in past 6 months",
+        "Last release date unknown, preventing assessment of release cadence"
       ],
-      "summary": "The pydantic package is actively maintained with a high volume of commits, merged PRs, and recent releases, indicating a healthy and vibrant project."
+      "positive_signals": [
+        "Repository still exists and has recent activity timestamp",
+        "Some community engagement evidenced by open issues and PRs"
+      ],
+      "summary": "Pydantic (homebrew) appears stale with no development activity, closed issues, or PR merges over the past 6 months despite a large open issue backlog."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -236,7 +241,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and comprehensive, but lacks clear markings for breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:54:53.557559+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

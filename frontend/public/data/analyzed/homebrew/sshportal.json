@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 8,
       "configuration": 7,
-      "troubleshooting": 4,
+      "troubleshooting": 6,
       "overall": 8,
-      "summary": "The documentation is well-structured and provides a clear overview of the package's features and usage, but lacks detailed troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Well-structured README with clear purpose, excellent quick start guide, and comprehensive feature list, though troubleshooting guidance is limited.",
+      "top_issue": "Troubleshooting section is minimal - only covers SSH key association failure, lacks guidance for common operational issues like database problems, connection failures, or performance tuning."
     },
     "security": {
       "overall_score": 7,
@@ -213,32 +213,35 @@
       "summary": "The sshportal package has some security concerns related to input validation and potential command injection, but overall it appears to follow good practices for handling secrets and errors."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "dependency management",
-        "missing arm64 support"
+        "Missing features (ed25519 key support, ARM64 Docker image)",
+        "Installation and setup difficulties (PATH issues, connection problems)",
+        "Database compatibility issues (MySQL/MariaDB foreign key constraints)",
+        "Lack of documentation (admin user reset, connection instructions)"
       ],
-      "praise_themes": [
-        "planned v2 development"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged with some open issues, but there are no clear signs of abandonment."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Community health is poor with multiple unresolved issues spanning 4+ years, minimal maintainer engagement, and users seeking basic features and documentation."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "A high number of open issues (52)"
+        "No commits in past 6 months despite last commit being recent (2026-01-30)",
+        "81 open issues with zero closed issues in past 6 months indicates no active issue triage",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests pull requests are not being reviewed or accepted",
+        "No releases since last commit, indicating no version bumps or maintenance releases",
+        "High open issue count relative to maintenance activity suggests backlog accumulation"
       ],
       "positive_signals": [
-        "Ten contributors active in the past six months"
+        "Recent commit date indicates some past activity"
       ],
-      "summary": "The package is minimally maintained with recent contributor activity but lacks recent code commits and pull requests."
+      "summary": "The project appears abandoned with a large backlog of unresolved issues and no active development, contributor engagement, or release activity in the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +252,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive but lacks clear marking of breaking changes and upgrade paths."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:53:43.345129+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

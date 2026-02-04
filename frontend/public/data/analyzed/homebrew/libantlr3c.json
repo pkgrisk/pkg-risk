@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 8,
+      "installation": 5,
       "quick_start": 2,
-      "examples": 7,
+      "examples": 4,
       "configuration": 3,
-      "troubleshooting": 4,
-      "overall": 5,
-      "summary": "The README provides a good introduction to ANTLR, but lacks clear and concise instructions for installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear and concise quick start guide"
+      "troubleshooting": 5,
+      "overall": 4,
+      "summary": "Verbose introductory text with scattered external links makes it difficult to quickly understand the package purpose and get started, though installation basics are present.",
+      "top_issue": "No quick start example showing actual code usage - just downloads a jar file and shows how to invoke the tool, but doesn't demonstrate what ANTLR grammars look like or how to use the generated parsers"
     },
     "security": {
       "overall_score": 7,
@@ -209,16 +209,20 @@
       "summary": "The code has some security concerns, including potential injection risks and inadequate input validation, but no critical secrets or sensitive information are exposed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Package availability on nuget.org",
-        "Build issues and non-deterministic behavior"
+        "Non-deterministic code generation (duplicate members, inconsistent builds)",
+        "Buffer/token stream bugs with incorrect output",
+        "C++ and C runtime errors (BOM detection, token handling)",
+        "NuGet package distribution issues",
+        "Compilation failures with modern JDK versions",
+        "Missing features (rulecatch for lexers)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some ongoing issues, but the project seems to be actively maintained with moderate responsiveness."
+      "abandonment_signals": true,
+      "summary": "ANTLR3 shows severe abandonment with unresponsive maintainers, numerous unfixed bugs across multiple runtimes (Java, C, C++), and issues dating back to 2013 with zero resolution."
     },
     "communication": {
       "helpfulness": 7,
@@ -234,21 +238,24 @@
       "summary": "The maintainer's responses are generally adequate but could benefit from more clarity, patience, and encouragement for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in past 6 months",
+        "74 open issues with no recent closure activity",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over 1 year ago (Feb 2024)",
+        "Unknown last release date suggests stagnation"
       ],
-      "positive_signals": [
-        "Recent release in April 2022",
-        "Active contributors (10) in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces challenges due to a lack of commits and merged PRs."
+      "positive_signals": [],
+      "summary": "libantlr3c is effectively abandoned with no maintenance activity, active contributors, or issue resolution for over a year."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:55:05.160481+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

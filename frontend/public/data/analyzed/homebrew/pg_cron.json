@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 9,
-      "configuration": 7,
-      "troubleshooting": 2,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 10,
+      "configuration": 5,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides clear and detailed information on how to use pg_cron, but lacks troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Excellent clarity and examples with strong quick-start guidance, but incomplete configuration instructions and minimal troubleshooting content.",
+      "top_issue": "Configuration section is incomplete (cuts off mid-sentence in postgresql.conf setup) and lacks details on required settings, permissions, and initial setup steps after installation"
     },
     "security": {
       "overall_score": 7,
@@ -196,16 +196,20 @@
       "summary": "The pg_cron codebase appears to be relatively secure, but lacks input validation and has potential buffer overrun issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "performance issues with the `cron.job_run_details` table",
-        "issues with pg_cron not working on monthly and weekly schedules"
+        "Critical crashes and segmentation faults in recent versions",
+        "Long-standing bugs unfixed for years (state machine hanging since 2018)",
+        "Performance degradation with large tables lacking proper indexes",
+        "Inconsistent behavior across platforms and PostgreSQL versions",
+        "Incorrect logging of job results hiding actual function returns",
+        "Difficulty stopping/uninstalling the extension cleanly"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some performance and functionality issues, but there are no clear signs of abandonment or extreme frustration."
+      "abandonment_signals": true,
+      "summary": "pg_cron shows signs of maintenance neglect with critical bugs unfixed for 6+ years, recent stability regressions, slow issue response times, and no recent substantive maintenance activity."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,17 +222,19 @@
       "summary": "The maintainer responses are clear, helpful, and technically sound, with a good balance of depth and patience."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Recent release but few merged PRs in the last 6 months"
+        "No commits in the past 6 months despite being the main repository",
+        "128 open issues with no recent activity or resolution",
+        "No closed issues in the past 6 months indicating lack of maintenance",
+        "No merged pull requests in the past 6 months suggesting no active development",
+        "No active contributors in the past 6 months"
       ],
       "positive_signals": [
-        "Regular commits in the past 6 months",
-        "Some recent merges of PRs"
+        "Last commit exists (2025-12-22), so repository is not completely abandoned"
       ],
-      "summary": "The package is maintained with regular updates and PR merges, but there are concerns about the high number of open issues."
+      "summary": "pg_cron appears stale with no maintenance activity for 6+ months, accumulating unaddressed issues and lacking contributor engagement despite having a recent commit."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -239,7 +245,10 @@
       "overall_score": 6,
       "summary": "The changelog lacks clear marking of breaking changes, migration guides, and proper categorization but is generally complete and somewhat understandable."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:20:53.937676+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

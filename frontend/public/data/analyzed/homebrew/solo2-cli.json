@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 8,
-      "quick_start": 4,
-      "examples": 7,
+      "installation": 7,
+      "quick_start": 5,
+      "examples": 6,
       "configuration": 3,
-      "troubleshooting": 2,
+      "troubleshooting": 5,
       "overall": 5,
-      "summary": "The documentation is somewhat clear and provides some examples, but lacks a quick start guide and troubleshooting information.",
-      "top_issue": "Lack of clear and concise getting started instructions for new users"
+      "summary": "Technical documentation that assumes significant hardware/firmware knowledge and lacks beginner-friendly explanations of what the tool actually does or why you'd use it.",
+      "top_issue": "Missing clear explanation of what Solo 2 is (hardware security key) and what problem this CLI solves - jumps immediately into technical modes and protocols without context for new users."
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,22 @@
       "summary": "The solo2-cli code has some security concerns, including potential injection risks and insufficient input validation, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "FIDO2 functionality issues",
-        "Build and installation problems"
+        "Build failures with newer Rust versions (1.79.0, 1.73)",
+        "Installation issues (missing dependencies, conda environments)",
+        "Hardware compatibility problems (USB-C firmware update failures)",
+        "Registration failures with major services (Microsoft, PayPal, Gandi, Internet Identity)",
+        "Credential length exceeding limits for passkey registration",
+        "Firmware/device locking and reset issues",
+        "Missing CLI features (FIDO PIN setting, FIDO2 disabling, PKCS#11 support)",
+        "OATH HOTP integration problems with password managers"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to recurring build/installation issues and FIDO2 functionality concerns, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The solo2-cli project shows signs of maintenance stagnation with multiple unresolved critical issues spanning 2+ years, slow maintainer response, accumulated build incompatibilities with newer Rust versions, and growing user frustration over missing features and hardware compatibility problems."
     },
     "communication": {
       "helpfulness": 7,
@@ -231,17 +237,18 @@
       "summary": "The maintainer provides technical insights but could be more welcoming and clearer in guiding new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "A high number of open issues (29)"
+        "No commits in past 6 months",
+        "35 open issues with no recent attention",
+        "No closed issues in past 6 months indicating lack of triage",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last release date unknown, suggesting no recent releases"
       ],
-      "positive_signals": [
-        "Seven contributors have been active in the past six months"
-      ],
-      "summary": "The package is currently receiving minimal maintenance with some contributor activity, but there are concerns about lack of code updates and issue resolution."
+      "positive_signals": [],
+      "summary": "solo2-cli shows clear signs of abandonment with zero maintenance activity over the past 6 months and accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +259,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks clear marking of breaking changes, migration guides, and proper categorization, making it incomplete and somewhat unclear."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:02:02.914083+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 5,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Well-structured README with clear purpose, comprehensive installation options, and good command references, though lacks inline examples and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues and configuration options are only mentioned via external book links rather than inline documentation"
     },
     "security": {
       "overall_score": 7,
@@ -207,15 +207,16 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unknown",
       "common_complaints": [
-        "msrv find on macos ignores rust versions on dependency"
+        "Missing dependencies in Docker image",
+        "Breaking changes in distribution"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The issue indicates a specific problem with the msrv tool's behavior across different operating systems, but there are no signs of significant frustration or abandonment."
+      "summary": "A critical Docker image deployment is broken due to missing `rustup` dependency, with limited community interaction visible but insufficient data to assess maintainer responsiveness."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,17 +229,20 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with users and providing technical depth where needed."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (78)",
-        "Low number of merged PRs in the past six months (36)"
+        "No commits in past 6 months despite last commit being recent (2026-01-31)",
+        "81 open issues with zero closed issues in past 6 months indicates no active issue triage",
+        "No merged PRs in past 6 months suggests no active development",
+        "Zero contributors active in past 6 months indicates no maintenance activity",
+        "Unknown last release date suggests poor release hygiene"
       ],
       "positive_signals": [
-        "Recent commit activity within the last six months",
-        "Some contributor activity over the past six months"
+        "Repository exists and is accessible",
+        "Has some community engagement indicated by 81 open issues"
       ],
-      "summary": "The package shows minimal maintenance with recent commits but a high issue count and low PR merge rate."
+      "summary": "cargo-msrv appears abandoned with no maintenance activity, issue resolution, or releases in at least 6 months despite having 81 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +253,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:56:25.215740+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

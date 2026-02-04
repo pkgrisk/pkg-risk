@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a clear introduction and installation instructions, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose, installation, and usage examples, but lacks troubleshooting guidance and detailed configuration scenarios.",
+      "top_issue": "No troubleshooting section for common issues like failed downloads, connection errors, or resume functionality"
     },
     "security": {
       "overall_score": 7,
@@ -214,16 +214,21 @@
       "summary": "The code has some security concerns, including potential SSRF attacks and lack of input validation, but no critical findings were discovered."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "does not support range request",
-        "file name too long"
+        "Range request support missing - blocks downloads from many servers",
+        "Arbitrary 4-connection limit with warning discourages legitimate use cases",
+        "File name handling issues (spaces, special characters, length limits)",
+        "No skip-if-exists feature for cached downloads",
+        "TLS certificate validation cannot be disabled"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with common issues around file naming and download functionality, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Performance improvements over wget demonstrated"
+      ],
+      "abandonment_signals": true,
+      "summary": "Pget shows signs of abandonment with multiple open issues spanning 2+ years, no maintainer responses, and unaddressed core functionality gaps (range requests, connection limits) that prevent widespread adoption."
     },
     "communication": {
       "helpfulness": 5,
@@ -239,20 +244,24 @@
       "summary": "The responses are adequate but could be more helpful and clearer, especially regarding technical details."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Multiple open issues and only one open PR"
+        "No commits in over 15 months (last commit October 2023)",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "12 open issues with no recent closure activity",
+        "No releases with unknown last release date",
+        "Complete stagnation across all maintenance indicators"
       ],
-      "positive_signals": [
-        "Recent release on 2023-09-15T00:29:16+00:00",
-        "Seven contributors active in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent activity but lacks ongoing development."
+      "positive_signals": [],
+      "summary": "This package appears to be abandoned with over 15 months of inactivity and no recent maintenance efforts."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:42:54.329898+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

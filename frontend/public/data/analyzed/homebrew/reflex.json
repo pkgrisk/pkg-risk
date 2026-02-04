@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 7,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 10,
       "examples": 9,
       "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and concise information about the package's functionality, usage, and configuration, but lacks troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent documentation with clear explanations and examples, but lacks troubleshooting guidance and the README appears truncated at the end.",
+      "top_issue": "No troubleshooting section for common issues (permissions, performance, edge cases) and the README is incomplete (cuts off mid-sentence at the ignored files section)"
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,19 @@
       "summary": "The reflex package has some security concerns, including potential command injection vulnerabilities and lack of input validation, but it does not expose sensitive information or have severe configuration issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "panic errors",
-        "Go version requirements"
+        "Installation and PATH issues (command not found errors)",
+        "Signal handling conflicts with graceful shutdown",
+        "Runtime crashes (nil pointer dereference, panic)",
+        "Dependency version conflicts and CVE vulnerabilities",
+        "Limited feature set (no multi-directory watching, no custom signal support)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some technical issues but overall the project seems to be actively maintained."
+      "abandonment_signals": true,
+      "summary": "Reflex shows poor community health with unresolved critical issues including security vulnerabilities, signal handling problems, and minimal maintainer engagement over several years."
     },
     "communication": {
       "helpfulness": 6,
@@ -232,17 +235,18 @@
       "summary": "The responses are generally adequate but lack consistency and could be more patient and welcoming."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months (last commit over 1 year ago)",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "Zero active contributors in past 6 months",
+        "28 open issues with no resolution activity",
+        "No releases in recent history"
       ],
-      "positive_signals": [
-        "Recent open issues and PRs indicate some level of community interest",
-        "Multiple contributors active in the past six months"
-      ],
-      "summary": "The package is in minimal maintenance with occasional contributions but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The reflex package shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement for over 6 months."
     },
     "changelog": null,
     "governance": {
@@ -252,7 +256,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:49:44.451792+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

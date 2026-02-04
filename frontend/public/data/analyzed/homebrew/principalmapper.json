@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 8,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its usage, but lacks detailed configuration documentation and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions with good examples, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like AWS credential problems, permission errors, or graph creation failures"
     },
     "security": {
       "overall_score": 7,
@@ -199,15 +199,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "performance issues",
-        "bugs related to permissions and policies"
+        "Python version compatibility issues (3.10, 3.11 - collections import errors)",
+        "Permission/credential handling errors with stack traces instead of graceful failures",
+        "Performance degradation on large AWS accounts",
+        "Tool crashes on edge cases (deprecated policies, permission boundaries)",
+        "Insufficient error handling for partial AWS permissions"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is negative due to multiple open bugs and performance complaints, but there are no clear signals of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of abandonment with multiple unresolved critical issues dating back to 2022, including fundamental Python compatibility problems that prevent the tool from running on current Python versions, and a lack of maintainer engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -220,18 +223,18 @@
       "summary": "The maintainer's responses are clear, helpful, and technically deep. They encourage new contributors without showing any signs of impatience or hostility."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "A high number of open issues"
+        "No commits in past 6 months despite last commit being August 2024",
+        "34 open issues with no recent activity or triage",
+        "No closed issues in past 6 months indicating no bug fixes or maintenance",
+        "Zero merged PRs in past 6 months suggesting no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release cycle has stalled"
       ],
-      "positive_signals": [
-        "Three contributors have been active in the past six months",
-        "There are open pull requests which indicate some level of community interest or contribution"
-      ],
-      "summary": "The package is in minimal maintenance with occasional contributions but faces significant issues and lack of updates."
+      "positive_signals": [],
+      "summary": "The project shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -242,7 +245,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized, clearly marks breaking changes, and provides a good breakdown of additions, changes, and removals. However, it lacks explicit migration guides for users upgrading from previous versions."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:17:55.829934+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

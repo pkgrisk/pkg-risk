@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 10,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "quick_start": 9,
+      "examples": 7,
       "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear introduction to the package and its purpose, but could benefit from more examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent clarity and quick start with strong branding, but lacks inline troubleshooting and relies heavily on external documentation links.",
+      "top_issue": "No troubleshooting section for common issues - all problem-solving guidance deferred to external docs"
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,18 @@
       "summary": "The code has some security concerns, including potential command injection attacks and lack of input validation, but does not appear to expose sensitive information or use insecure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bug reports",
-        "enhancement requests"
+        "Internal errors when parsing Python code with specific syntax patterns",
+        "Regressions in handling non-UTF8 encoded files",
+        "Parser crashes on valid Python syntax (backslash line continuation, indentation edge cases)",
+        "Documentation gaps for Jupyter notebook support"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues and requesting enhancements, indicating a healthy and engaged user base, but the maintainers' responsiveness could be improved."
+      "summary": "Black shows active maintenance with prompt issue closure, but recent versions (26.1.0) have introduced regressions in parser robustness affecting Python 3.14 compatibility and edge-case syntax handling."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,18 +232,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, but could improve in welcoming new contributors and providing more detailed explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months despite last commit being recent (Jan 31, 2026)",
+        "326 open issues with no closure activity in past 6 months indicates issues are not being addressed",
+        "Zero merged PRs in past 6 months suggests pull requests are not being reviewed or integrated",
+        "No active contributors in past 6 months indicates the maintainer(s) are not engaged",
+        "Unknown last release date prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many active contributors",
-        "steady merge of PRs"
+        "Recent commit on Jan 31, 2026 shows some minimal activity",
+        "No open PRs suggests the project is not accumulating unreviewed work"
       ],
-      "summary": "The black package appears to be actively maintained with a high volume of recent activity, despite having a notable number of open issues."
+      "summary": "The black package appears stale with no meaningful maintenance activity over the past 6 months despite a recent commit, evidenced by unresolved issues and lack of contributor engagement."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -259,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for Black lacks a clear succession plan and decision-making process, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:23:57.846420+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

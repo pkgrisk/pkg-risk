@@ -195,12 +195,12 @@
       "clarity": 8,
       "installation": 9,
       "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 2,
+      "examples": 5,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is generally well-structured and informative, but lacks clear troubleshooting guidance and could benefit from more concise quick start examples.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Well-structured README with excellent installation instructions and clear project purpose, but lacking concrete usage examples and troubleshooting guidance.",
+      "top_issue": "Missing concrete end-to-end examples showing actual commands with real flags for different cloud providers - the usage section is too abstract and the asciinema video link doesn't substitute for written examples."
     },
     "security": {
       "overall_score": 7,
@@ -228,15 +228,20 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "vsphere unsupported disk type",
-        "Import fails on vsphere when template/-s exist"
+        "Non-deterministic output (same command produces different results)",
+        "AWS region-specific failures (500 errors in certain regions like ca-central-1)",
+        "Dependency/cycle errors in generated Terraform configurations",
+        "Limited resource type support (missing aws_ecr_repository, aws_kms_key, aws_eks_addon)",
+        "vsphere import failures with templates and unsupported disk types",
+        "Lack of credential chain support (AWS SDK default chain)",
+        "Missing provider support (Huawei Cloud, OpenTofu)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with issues related to vSphere support and inconsistent output, indicating moderate maintainership but room for improvement."
+      "abandonment_signals": true,
+      "summary": "Terracognita shows signs of abandonment with zero maintainer engagement, accumulating unfixed bugs spanning 2+ years, critical reproducibility issues, and unresponded feature requests indicating a stalled project."
     },
     "communication": {
       "helpfulness": 8,
@@ -251,17 +256,19 @@
       "summary": "The maintainer provides detailed and helpful responses, though there are occasional instances where clarity could be improved for less technically-savvy users."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of community contribution or interest.",
-        "A large number of open issues (84) suggests potential bugs or feature requests that have not been addressed."
+        "No commits in the past 6 months despite being last updated September 2025",
+        "93 open issues with no recent activity or closure",
+        "Zero closed issues in the past 6 months indicating no maintenance",
+        "No active contributors in the past 6 months",
+        "No merged pull requests in the past 6 months",
+        "No recent releases",
+        "No open PRs suggesting lack of ongoing development"
       ],
-      "positive_signals": [
-        "Recent commits within the last year",
-        "Regular issue reporting by the community"
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces significant concerns due to a lack of merged PRs and numerous open issues."
+      "positive_signals": [],
+      "summary": "The terracognita package appears to be abandoned with no maintenance activity, issue resolution, or development over the past 6 months despite having a significant backlog of 93 open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -279,7 +286,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, which increases the risk if key maintainers leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:28:15.230415+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

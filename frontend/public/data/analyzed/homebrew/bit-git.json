@@ -185,14 +185,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 3,
       "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
+      "examples": 8,
+      "configuration": 4,
       "troubleshooting": 2,
       "overall": 6,
-      "summary": "The README provides a good overview of the package's features and examples, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and complete installation instructions"
+      "summary": "The README clearly explains what bit does and provides good usage examples, but lacks proper installation instructions and troubleshooting guidance.",
+      "top_issue": "Installation instructions are missing - the README says 'Click here for installation instructions' but provides no actual link or instructions, only mentioning homebrew installation buried in the changelog"
     },
     "security": {
       "overall_score": 7,
@@ -225,19 +225,19 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "completion issues",
-        "buggy commands"
+        "Shell completion/autocompletion broken on macOS and multiple shells (fish, zsh, hyper.is)",
+        "Command documentation out of sync with actual implementation ('complete' command deprecated but still documented)",
+        "Core commands not functioning as expected (bit init produces no output or files)",
+        "Terminal input buffer corruption with keyboard shortcuts (Alt+left/right)",
+        "Incomplete feature implementations and no response to user questions"
       ],
-      "praise_themes": [
-        "enhancement requests",
-        "new installation methods"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is actively contributing with both bug reports and enhancement suggestions, but there are ongoing issues that cause frustration."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The bit project shows critical signs of abandonment with numerous unresolved bugs dating back to 2020-2023, no maintainer responses to recent issues, outdated documentation, and core functionality failures that block basic user workflows."
     },
     "communication": {
       "helpfulness": 8,
@@ -250,17 +250,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They encourage new contributors while providing technical guidance."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "A significant number of open issues (30)"
+        "No commits in over 2 years (last commit February 2023)",
+        "Zero commits in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "Zero closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "32 open issues with no resolution activity",
+        "Unknown last release date suggests release infrastructure may be dormant"
       ],
-      "positive_signals": [
-        "Recent activity with contributors (10 active past 6 months)",
-        "One merged PR in the past six months"
-      ],
-      "summary": "The package is currently receiving minimal maintenance efforts, with recent contributor activity but a lack of commits and many open issues."
+      "positive_signals": [],
+      "summary": "This package is abandoned with no maintenance activity for over 2 years and accumulating unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -270,7 +272,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:53:25.099116+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

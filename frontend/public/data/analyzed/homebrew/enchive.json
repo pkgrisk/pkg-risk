@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The documentation is generally well-written and informative, but could benefit from more concise examples and troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise configuration instructions"
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 8,
+      "troubleshooting": 7,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, installation, and usage instructions, though configuration options could be more systematically organized.",
+      "top_issue": "Configuration options (--derive, --edit, --agent) are scattered throughout the usage section rather than consolidated in a dedicated configuration reference."
     },
     "security": {
       "overall_score": 7,
@@ -191,16 +191,18 @@
       "summary": "The code appears to have a moderate security posture with some potential issues related to input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "execution speed on openbsd 7.3",
-        "key derivation function is weak"
+        "Cryptographic implementation issues (ChaCha8 vs ChaCha20, weak KDF, MAC-then-Encrypt instead of Encrypt-then-MAC)",
+        "Performance problems on certain platforms (OpenBSD 5x slower)",
+        "Security concerns (file size leakage, key derivation weakness)",
+        "Long-standing unresolved issues (some open since 2018)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health appears neutral with some ongoing performance and security concerns, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is poor: multiple critical cryptographic security issues remain open and unaddressed for years, with minimal maintainer engagement and slow responsiveness."
     },
     "communication": {
       "helpfulness": 9,
@@ -213,20 +215,26 @@
       "summary": "The maintainer provides clear, helpful, and technically deep responses while maintaining a welcoming attitude."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs or closed issues in the past six months, indicating a lack of community engagement.",
-        "Last commit and release date are over two years old."
+        "No commits in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No closed issues in the past 6 months",
+        "No active contributors in the past 6 months",
+        "7 open issues with no recent resolution activity",
+        "Unknown last release date suggests infrequent releases"
       ],
       "positive_signals": [
-        "Only one open issue, suggesting that critical bugs may have been addressed.",
-        "One contributor has been active in the past six months."
+        "No open pull requests indicates no abandoned PRs piling up"
       ],
-      "summary": "The package is minimally maintained with occasional contributions but lacks recent activity and updates."
+      "summary": "The enchive project appears stale with no maintenance activity for at least 6 months despite having unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:24:08.622294+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -181,14 +181,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 8,
+      "installation": 7,
       "quick_start": 4,
       "examples": 2,
       "configuration": 5,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The documentation is detailed but lacks clear and concise examples, making it difficult for new users to quickly understand the package's usage.",
-      "top_issue": "Lack of clear and concise examples for common use cases"
+      "summary": "The README provides adequate build instructions but lacks clarity on what the libraries actually do, has no usage examples, and contains no troubleshooting guidance.",
+      "top_issue": "No explanation of what BSL, BDL, BAL, and BBL libraries contain or when to use them, and zero code examples showing how to actually use the libraries after building them"
     },
     "security": {
       "overall_score": 7,
@@ -199,16 +199,19 @@
       "summary": "The code appears to be generally secure with proper input handling and error reporting, but lacks validation for some parameters and may have insecure connection defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "link incompatibility issues",
-        "intermittent test failures"
+        "Intermittent test failures (timing-related, threading issues)",
+        "Build compatibility issues (MSVC /bigobj flag, compiler-specific problems)",
+        "Documentation outdated or incorrect",
+        "Vendored dependencies causing linking incompatibilities",
+        "Header inclusion order conflicts with other libraries"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to recurring link incompatibility and intermittent test failures, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "BDE shows signs of maintenance challenges with unresolved build compatibility issues, intermittent test failures, outdated documentation, and slow issue response\u2014particularly concerning given recent open issues from late 2024 and 2025 remaining unaddressed."
     },
     "communication": {
       "helpfulness": 7,
@@ -224,18 +227,24 @@
       "summary": "The maintainer provides useful information but could be more welcoming to new contributors and provide clearer explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (180)",
-        "Multiple contributors active in the past six months (20)",
-        "A significant number of merged PRs in the past six months (2)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (suggests inactive repository or stale mirror)",
+        "15 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicates no maintenance activity",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [],
+      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite a recent commit timestamp, suggesting either an inactive repository or a stale mirror."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:24:24.985135+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

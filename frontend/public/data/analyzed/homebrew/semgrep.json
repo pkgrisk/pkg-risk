@@ -173,29 +173,31 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to Semgrep, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 6,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions, but lacks concrete usage examples and detailed configuration documentation.",
+      "top_issue": "No actual code examples showing how to write or run Semgrep rules - jumps from installation directly to platform registration without demonstrating basic CLI usage patterns."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "crashes",
-        "parsing errors",
-        "incorrect error reporting"
+        "Taint propagation false negatives across multiple languages (PHP, Rust, Java)",
+        "Language-specific parsing issues (Java switch-case, array parameters, PHP qualified calls)",
+        "Variable tracking gaps (shadowing, reassignment, reference handling)",
+        "Dependency versioning constraints causing integration friction",
+        "Platform-specific bugs (Windows Unicode encoding)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The semgrep community is experiencing frustration with frequent crashes, parsing errors, and incorrect error reporting, with maintainers responding slowly to open issues."
+      "summary": "Semgrep shows healthy maintenance activity with responsive issue tracking, but users report systematic gaps in taint analysis and language parsing that suggest the analysis engine needs deeper refinement across multiple language backends."
     },
     "communication": {
       "helpfulness": 9,
@@ -208,16 +210,20 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and welcoming, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (575)",
-        "Recent last commit and release dates",
-        "Large number of merged PRs in the past 6 months (105)",
-        "Many active contributors in the past 6 months (35)"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent (2026-02-04)",
+        "Zero merged PRs in the past 6 months indicates no active development",
+        "Zero contributors active in the past 6 months",
+        "831 open issues with no closed issues in 6 months suggests issues are not being addressed",
+        "No recent release information available"
       ],
-      "summary": "The semgrep package appears to be actively maintained with frequent updates, a large number of contributors, and a high volume of pull requests being merged."
+      "positive_signals": [
+        "Recent commit timestamp (2026-02-04) may indicate some activity, though it's unclear if this is from the main project or a Homebrew formula update",
+        "Project exists and has some community engagement (831 open issues)"
+      ],
+      "summary": "The project appears stale with no active development, merged PRs, or contributor activity in the past 6 months, despite a recent commit timestamp that may be from Homebrew formula updates rather than core project development."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -235,7 +241,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The Semgrep project lacks a clear succession plan and decision-making process, but provides a contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:18:57.219781+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

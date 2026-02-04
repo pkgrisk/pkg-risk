@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 8,
+      "quick_start": 8,
+      "examples": 9,
       "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks a comprehensive troubleshooting section.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and examples with comprehensive installation options, but lacks troubleshooting guidance and some configuration details are deferred to external docs.",
+      "top_issue": "No troubleshooting section for common errors or issues users might encounter during setup or usage"
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,18 @@
       "summary": "The code appears to be generally secure, but some input validation and error handling improvements are recommended to prevent potential security issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs",
-        "unexpected behavior"
+        "Configuration parsing issues (invalid cog.toml handling, path normalization with ./)",
+        "Feature gaps in changelog generation (limited control over commit ranges, pre-release duplication)",
+        "Platform-specific bugs (Windows EDITOR variable handling)",
+        "Verification logic gaps (scope validation not enforced)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The cocogitto community is actively reporting and resolving bugs, indicating a healthy and maintained project."
+      "summary": "Cocogitto shows moderate health with active issue tracking and some closed bugs, but users face frustration with configuration edge cases, changelog generation limitations, and documentation accuracy that suggest the maintainers are responsive but the backlog of feature requests indicates unmet user needs."
     },
     "communication": {
       "helpfulness": 9,
@@ -230,18 +232,20 @@
       "summary": "The maintainer provides generally helpful and clear responses, but could improve in terms of patience and assuming user knowledge."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "open issues slightly outnumber closed issues in the past 6 months"
+        "No commits in past 6 months despite last commit being recent (2026-01-31)",
+        "58 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release date suggests no recent versioning"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "multiple active contributors",
-        "steady merge of PRs"
+        "Recent commit exists (2026-01-31) showing some minimal activity"
       ],
-      "summary": "The cocogitto package appears to be actively maintained with regular updates, a responsive community, and a steady stream of contributions."
+      "summary": "The project is effectively abandoned with no active maintenance, development, or issue resolution despite having a recent commit timestamp."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -259,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for Cocogitto lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:58:19.221352+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

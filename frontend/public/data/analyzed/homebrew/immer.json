@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
       "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the immer library, but lacks comprehensive documentation and troubleshooting guides.",
-      "top_issue": "Insufficient troubleshooting information"
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and quick-start with good installation options, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section and minimal documentation of configuration options or common problems"
     },
     "security": {
       "overall_score": 8,
@@ -201,16 +201,21 @@
       "summary": "The immer library appears to have a good security posture with no major injection risks or secrets exposure, but could benefit from improved input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build failures",
-        "type alignment issues"
+        "Memory alignment and layout violations causing segfaults with certain types (Eigen, aligned structures)",
+        "Compiler warnings treated as errors (-Werror) breaking builds on newer toolchains",
+        "UBSan errors indicating undefined behavior in template instantiation",
+        "API breaking changes between versions (forward declarations failing in master vs 0.8.1)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Interest in performance improvements (ClojureDart-style hash maps exploration)",
+        "Engagement with feature requests (incomplete types, compile-time size traits)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing frustration due to ongoing build and type alignment issues, but there are no clear signs of abandonment."
+      "summary": "Immer shows moderate community health with active engagement on complex technical issues, but struggles with memory safety edge cases and compiler compatibility that frustrate users, particularly those using advanced C++ features like SIMD libraries."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,20 +228,24 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs relative to open PRs"
+        "No commits in past 6 months despite last commit being recent (2026-01-29)",
+        "46 open issues with no resolution activity",
+        "Zero closed issues in past 6 months indicating no issue triage",
+        "No merged PRs in past 6 months showing no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "Recent commits and releases",
-        "Moderate contributor activity in the past six months"
-      ],
-      "summary": "The package is maintained but faces some challenges with issue resolution."
+      "positive_signals": [],
+      "summary": "immer is effectively abandoned with no maintenance activity over 6 months despite a recent repository update, leaving 46 open issues unresolved."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:42:05.378020+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -192,15 +192,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "quick_start": 8,
+      "examples": 7,
       "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides a good overview of the package, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent introduction and installation guidance with clear basic examples, but lacks troubleshooting documentation and the README appears cut off mid-sentence.",
+      "top_issue": "No troubleshooting section for common problems like permission errors, port conflicts, or hook execution failures, and the CORS headers section is incomplete."
     },
     "security": {
       "overall_score": 8,
@@ -227,19 +227,21 @@
       "summary": "The code has some potential security risks, including a low-risk JSON injection vulnerability and a medium-risk issue with the use of syscall.Setgid and syscall.Setuid functions, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "documentation issues",
-        "feature requests for improvements"
+        "Missing or incomplete documentation for templating functions (cat, credential, readFile)",
+        "Long-standing unresolved issues (streaming output request from 2018, null value handling from 2020)",
+        "Application reliability issues (webhook service getting stuck/frozen)",
+        "Lack of modern features (health checks for Kubernetes, JSON schema support)"
       ],
       "praise_themes": [
-        "active community engagement",
-        "open to new features and enhancements"
+        "Good foundational software design",
+        "Appreciation for open source contribution"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged with both positive contributions and some frustration around documentation and feature requests."
+      "abandonment_signals": true,
+      "summary": "The webhook project shows signs of maintenance stagnation with slow maintainer responsiveness, numerous open long-standing issues, incomplete documentation, and community members actively promoting a better-maintained fork."
     },
     "communication": {
       "helpfulness": 8,
@@ -252,17 +254,18 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They address technical questions with depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (91)",
-        "Low number of merged PRs in the past six months (4)"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 119 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over 3 weeks ago with no recent activity",
+        "High open issue count with no resolution activity"
       ],
-      "positive_signals": [
-        "Recent commit within the last year",
-        "Four contributors have been active in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns due to a high number of open issues."
+      "positive_signals": [],
+      "summary": "The webhook package shows clear signs of abandonment with zero activity across all metrics (commits, issue resolution, PRs, contributors) over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -272,7 +275,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, which increases the risk of losing momentum if key contributors leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:46:53.304433+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

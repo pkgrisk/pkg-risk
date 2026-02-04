@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 3,
-      "configuration": 6,
+      "examples": 1,
+      "configuration": 3,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides clear installation instructions but lacks a quick start guide and sufficient examples for common use cases.",
-      "top_issue": "Lack of a quick start guide and insufficient examples"
+      "overall": 4,
+      "summary": "Clear purpose and build instructions but completely lacks usage examples and user-facing documentation.",
+      "top_issue": "No quick start or usage examples showing how to actually use CGDB after building it"
     },
     "security": {
       "overall_score": 7,
@@ -207,17 +207,18 @@
       "summary": "The code has some security concerns, including potential buffer overflows and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "color rendering issues",
-        "compilation errors",
-        "UI/UX bugs"
+        "Compilation errors and build failures (C99 mode, RedHat compatibility, ARM 5.4)",
+        "Display/rendering issues (escape sequences, garbled characters in Docker, color rendering)",
+        "UI/UX bugs (spacebar breakpoint toggling unreliable, freezing on file dialog)",
+        "Feature gaps (no run-to-cursor shortcut, limited configurability in cgdbrc)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness from maintainers, focusing on various functional and UI issues."
+      "abandonment_signals": true,
+      "summary": "CGDB shows signs of declining maintenance with accumulating unresolved bugs, slow responsiveness to issues, and multiple recent reports of compilation failures and display problems across different platforms."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,17 +231,21 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They show a good level of technical depth and are welcoming to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 47 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over 5 months ago (August 2024)",
+        "High open issue count with no recent triage activity"
       ],
       "positive_signals": [
-        "Multiple contributors active in the past six months",
-        "A significant number of open issues and PRs, indicating ongoing development needs"
+        "Last commit exists (not completely abandoned)",
+        "No open PRs suggests maintainer is not accepting changes"
       ],
-      "summary": "The package shows minimal maintenance with active contributors but lacks recent commits and merged PRs."
+      "summary": "Project shows clear signs of stagnation with no maintenance activity for over 5 months and accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -258,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:44:57.461265+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -183,14 +183,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 4,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 3,
       "configuration": 2,
-      "troubleshooting": 1,
+      "troubleshooting": 2,
       "overall": 5,
-      "summary": "The README provides a good introduction to GNU Radio and its installation, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient documentation of common use cases and troubleshooting"
+      "summary": "Clear project description and installation options, but lacks concrete usage examples and configuration guidance for getting started with actual signal processing tasks.",
+      "top_issue": "No quick start example showing how to actually use GNU Radio for a basic signal processing task after installation - only a Qt GUI flag is shown"
     },
     "security": {
       "overall_score": 8,
@@ -204,16 +204,18 @@
       "summary": "The code appears to be generally secure, but lacks proper input validation and may be vulnerable to buffer overflows."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs in GRC-Qt",
-        "outdated features"
+        "UI/UX regressions in GRC (Gtk) - dark mode, tab navigation",
+        "Platform support regression - MacOS build removed from conda",
+        "Core functionality bugs - packet handling, resampling, hier blocks",
+        "Audio backend limitations with PipeWire/ALSA"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The gnuradio community is actively reporting and discussing issues, with maintainers responding moderately, indicating a relatively healthy project ecosystem."
+      "summary": "GNU Radio shows moderate health with active maintenance but concerning regressions in UI/UX and platform support that are causing user frustration; core functionality bugs indicate quality control issues despite ongoing development activity."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,17 +231,18 @@
       "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "open PRs outnumber merged PRs"
+        "No commits in the past 6 months despite last commit being recent (likely inherited from upstream)",
+        "Zero closed issues in the past 6 months indicating no active issue triage",
+        "High number of open issues (558) with no resolution activity",
+        "No merged PRs in the past 6 months showing no code review or integration activity",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests no recent release cycle"
       ],
-      "positive_signals": [
-        "recent commits and releases",
-        "active contributors"
-      ],
-      "summary": "The gnuradio package appears to be maintained, with regular updates and active contributors, but may benefit from addressing the backlog of open issues and pull requests."
+      "positive_signals": [],
+      "summary": "The gnuradio homebrew package appears abandoned with no maintenance activity for at least 6 months despite a large backlog of 558 open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -257,7 +260,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The GNU Radio project has a well-documented decision process and contributor ladder, but lacks a clear succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:48:57.060686+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

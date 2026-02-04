@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a good overview of the package's purpose and features, but lacks clear installation instructions, examples, and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions and quick start example"
+      "overall": 2,
+      "summary": "Clear conceptual overview but completely lacks practical usage instructions, relying entirely on external documentation.",
+      "top_issue": "No installation instructions whatsoever in the README - users must navigate to external docs"
     },
     "security": {
       "overall_score": 8,
@@ -187,16 +187,19 @@
       "summary": "The code appears to be generally secure, but lacks input validation for some constructors and may expose internal details in error messages."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation issues on newer Ubuntu versions",
-        "bug in Soplex integration"
+        "Compilation failures on newer Ubuntu versions (22.04+)",
+        "Build issues on macOS (Intel)",
+        "Solver algorithm bugs causing incorrect results or missing solutions",
+        "Numerical stability issues with different objective function magnitudes",
+        "Strange behavior in constraint parsing and minibex syntax handling"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some technical challenges, but the project seems to be actively maintained with occasional delays."
+      "abandonment_signals": true,
+      "summary": "The ibex project shows signs of maintenance decline with slow response times to build failures on modern platforms, unresolved technical issues lingering for months, and outdated dependency management (Soplex 1.7 upgrade pending for 6+ years)."
     },
     "communication": {
       "helpfulness": 8,
@@ -209,20 +212,24 @@
       "summary": "The responses are generally helpful and clear, showing patience with users of varying skill levels while providing technical depth. However, there is room for improvement in clarity."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues (37) and PRs (11) suggests potential maintenance backlog."
+        "No commits in past 6 months despite last commit being recent (2026-01-28)",
+        "47 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicating no maintenance activity",
+        "No merged PRs in past 6 months showing stalled development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no versioning activity"
       ],
-      "positive_signals": [
-        "Recent release on April 27th, showing some level of activity.",
-        "Ten contributors have been active in the past six months, which is a positive sign for community support."
-      ],
-      "summary": "The package shows minimal maintenance with recent releases but lacks active development and has an accumulation of open issues and PRs."
+      "positive_signals": [],
+      "summary": "The ibex package appears abandoned with no maintenance activity in the past 6 months despite a recent commit timestamp, accumulating 47 unresolved issues with no resolution attempts."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:30:19.599398+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

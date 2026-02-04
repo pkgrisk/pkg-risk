@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
       "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a good overview of the package's features and usage, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent README with clear purpose, comprehensive examples, and good quick start, but lacks inline troubleshooting and configuration details are offloaded to external docs.",
+      "top_issue": "No troubleshooting section for common issues - users must visit external docs or community chat for help with problems"
     },
     "security": {
       "overall_score": 7,
@@ -209,17 +209,19 @@
       "summary": "The code has some potential security issues related to path serialization and deserialization, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "performance issues with `bupstash get --pick`",
-        "restore issues with `bupstash serve`",
-        "database errors during operations"
+        "Performance issues with restore operations (--pick is extremely slow)",
+        "Critical bugs causing panics and restore failures (sqlite errors, file not found)",
+        "Limited restore functionality (no single file restore, no exclude flag)",
+        "Missing SSH URL options (port configuration)",
+        "Data integrity issues on repeated restores (ownership/permissions corruption)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some performance and functionality issues, but there are no clear signs of abandonment or significant praise."
+      "abandonment_signals": true,
+      "summary": "The bupstash project shows signs of abandonment with multiple critical unresolved bugs, no maintainer responses to issues, and performance problems that severely limit practical usability for backup restoration."
     },
     "communication": {
       "helpfulness": 7,
@@ -232,21 +234,24 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "High number of open issues and PRs"
+        "No commits in the past 6 months",
+        "137 open issues with no recent closure activity",
+        "No merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Last commit was over 1 year ago (February 2024)",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "Recent release in November 2022",
-        "Active contributors (10) in the past six months"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The project appears abandoned with no development activity, issue resolution, or contributor engagement for over 6 months despite a substantial backlog of open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:14:48.050207+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

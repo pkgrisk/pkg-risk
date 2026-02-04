@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "quick_start": 9,
+      "examples": 8,
       "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package and its installation, but lacks detailed examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and installation coverage with good usage examples, but lacks troubleshooting guidance and detailed configuration documentation.",
+      "top_issue": "No troubleshooting section for common issues like permission errors, interface selection problems, or what to do when no packets are captured"
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,22 @@
       "summary": "The code has some potential security risks related to input validation and error handling, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "TLS handshake message reassembly",
-        "Compilation issues on specific platforms"
+        "Build/compilation failures on specific platforms (Ubuntu 24.04, FreeBSD)",
+        "Missing TCP segment reassembly for TLS handshakes",
+        "Unexplained crashes when sniffing on loopback or 'any' interface",
+        "Lack of pcap file export functionality",
+        "Unknown link type errors with certain pcap files"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some technical challenges, but there's no clear sign of abandonment or severe dissatisfaction."
+      "praise_themes": [
+        "Interest in expanding protocol support (IEEE 802.11)",
+        "Appreciation for threaded architecture and seccomp security features"
+      ],
+      "abandonment_signals": true,
+      "summary": "The project shows signs of declining maintenance with slow issue response, unresolved compilation bugs across platforms, and fundamental missing features (TCP reassembly, pcap export) accumulating over 1-2 years without fixes."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,20 +239,24 @@
       "summary": "The maintainer's responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Open issues and PRs suggest ongoing problems that need attention."
+        "No commits in past 6 months despite last commit being from January 2025",
+        "19 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases available"
       ],
-      "positive_signals": [
-        "Contributors active in the past six months, showing some level of community involvement.",
-        "Recent release within the last year"
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent commits and has an accumulation of open issues and PRs."
+      "positive_signals": [],
+      "summary": "The sniffglue project appears abandoned with no maintenance activity for at least 6 months and a backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:40:31.175201+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

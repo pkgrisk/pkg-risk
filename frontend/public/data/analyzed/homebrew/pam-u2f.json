@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 9,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 7,
       "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and provides detailed information on installation, configuration, and usage, but lacks a clear quick start example and troubleshooting guidance.",
-      "top_issue": "Lack of a concise quick start example and insufficient troubleshooting documentation"
+      "overall": 6,
+      "summary": "Well-structured technical documentation with excellent installation coverage but lacks practical quick-start examples and troubleshooting guidance for first-time PAM module users.",
+      "top_issue": "Missing end-to-end setup walkthrough showing how to register a U2F device and test authentication after installation"
     },
     "security": {
       "overall_score": 5,
@@ -226,16 +226,19 @@
       "summary": "The code has several security concerns, including hardcoded secrets, potential injection risks, and inadequate input validation, which could lead to unauthorized access or data breaches."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "pam-u2f should avoid requesting PINs multiple times for the same device",
-        "pam_u2f hangs after waking up from suspend"
+        "Silent failures with poor error messages and debug output",
+        "Configuration file handling issues (formatting, permissions, lack of examples)",
+        "Multiple credential/passkey support problems",
+        "PIN prompt repetition and poor UX for multi-device scenarios",
+        "Hardware compatibility and locking issues (flock timeouts, device hangs)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some common issues reported, but no signs of abandonment."
+      "summary": "pam-u2f has moderate community engagement with technical issues around credential handling, configuration management, and hardware compatibility; maintainers appear responsive but the project needs better error messaging and documentation to reduce user friction."
     },
     "communication": {
       "helpfulness": 7,
@@ -248,20 +251,24 @@
       "summary": "Maintainer responses are generally clear and patient, with a good balance of technical depth and user-friendliness."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "A high number of open issues (12) suggests there may be unresolved problems that need attention."
+        "No commits in the past 6 months",
+        "21 open issues with no recent activity",
+        "No closed issues in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release date suggests stale release cycle"
       ],
-      "positive_signals": [
-        "Multiple contributors active over the past six months, which can indicate ongoing interest and support for the project.",
-        "One merged PR in the past six months, showing some level of activity to address or improve the package."
-      ],
-      "summary": "The package is being minimally maintained with occasional contributions but lacks recent updates and has a high number of unresolved issues."
+      "positive_signals": [],
+      "summary": "pam-u2f appears to be abandoned with no maintenance activity over the past 6 months despite 21 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:27:02.734988+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

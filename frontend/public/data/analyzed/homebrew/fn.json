@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 9,
-      "quick_start": 4,
-      "examples": 5,
-      "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is somewhat clear and provides good installation instructions, but lacks concise quick start examples and troubleshooting information.",
-      "top_issue": "Lack of concise quick start examples and troubleshooting information in the README"
+      "installation": 8,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "Installation is clear but the README is mostly a navigation hub to external resources, lacking any inline examples or quick-start code that shows what Fn actually does.",
+      "top_issue": "No inline quick-start example showing basic usage - users must click through to external quickstart guide to understand what the tool does or how to use it"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,19 @@
       "summary": "The code has some security concerns, including potential command injection and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "container creation errors",
-        "setup issues with Podman"
+        "Container runtime errors and initialization failures",
+        "Installation issues across different platforms (Ubuntu, WSL2, ARM)",
+        "Incompatibility with Podman as Docker alternative",
+        "Docker memory/swap limit configuration problems",
+        "Security vulnerabilities not being patched promptly"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and occasional frustration but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The Fn Project community shows significant health concerns with multiple unresolved infrastructure issues, slow maintainer response, outstanding security vulnerabilities, and no evidence of active development or community engagement."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,17 +231,17 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (104)",
-        "Low number of merged PRs in the past six months (5)"
+        "No commits in past 6 months despite last commit being recent (2026-01-19)",
+        "131 open issues with zero closed in past 6 months indicates unresponsive maintainers",
+        "No merged PRs in past 6 months suggests no active development or community engagement",
+        "Zero active contributors in past 6 months indicates complete lack of maintenance activity",
+        "Unknown last release suggests versioning/release process has stalled"
       ],
-      "positive_signals": [
-        "Recent commit and release dates",
-        "Some recent activity with two contributors"
-      ],
-      "summary": "The package shows minimal maintenance efforts with a high issue count."
+      "positive_signals": [],
+      "summary": "The fn package is abandoned with no maintenance activity for 6 months despite a large backlog of 131 unresolved issues and no response to pull requests."
     },
     "changelog": null,
     "governance": {
@@ -248,7 +251,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, which increases the risk if primary maintainers leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:24:51.175028+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

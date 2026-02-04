@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 8,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 2,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides some basic information, but lacks clear explanations and examples to help new users understand and use the package.",
-      "top_issue": "Lack of quick start guide, examples, and troubleshooting documentation"
+      "overall": 2,
+      "summary": "README provides basic project description but defers all practical information to external files without inline examples or quick start guidance.",
+      "top_issue": "No quick start or basic usage examples in main README - users must navigate multiple external files to understand how to actually use the library"
     },
     "security": {
       "overall_score": 8,
@@ -185,16 +185,19 @@
       "summary": "The provided code appears to be a set of tutorials and examples for the ALPS library, with no major security concerns identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "build issues",
-        "installation issues"
+        "Build failures with modern compiler versions (clang++18, g++13)",
+        "CMake compatibility issues across versions (3.12+)",
+        "Incomplete documentation for advanced features (vector observables)",
+        "Numerical instability (NaN results in edge cases)",
+        "Dependency exposure problems in user code compilation"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to open build and installation issues, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "ALPSCore shows signs of poor maintenance with unresolved build issues from 2018 onwards, slow response to user problems, and technical debt accumulating across compiler and build tool updates."
     },
     "communication": {
       "helpfulness": 7,
@@ -210,17 +213,18 @@
       "summary": "The maintainers provide useful information but could be more detailed and welcoming to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of active contribution.",
-        "Open issues and PRs suggest potential unresolved problems."
+        "No commits in the past 6 months",
+        "78 open issues with no recent activity to address them",
+        "No closed issues in the past 6 months",
+        "Zero merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests release infrastructure may be unmaintained"
       ],
-      "positive_signals": [
-        "Commits in the past six months indicate some level of activity.",
-        "Two contributors are still involved, which is better than none."
-      ],
-      "summary": "The package shows minimal maintenance with occasional commits but lacks recent contributions and has many open issues."
+      "positive_signals": [],
+      "summary": "The alpscore package shows clear signs of abandonment with no commits, issue resolution, or contributor activity in the past 6 months despite having a substantial backlog of 78 open issues."
     },
     "changelog": null,
     "governance": {
@@ -230,7 +234,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:38:35.910835+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

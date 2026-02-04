@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 3,
-      "summary": "The README provides a good introduction to the NATS Streaming Server, but lacks clear installation and usage instructions.",
-      "top_issue": "Lack of clear installation and quick start instructions"
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "Clear description and deprecation warning, but completely lacks installation instructions, usage examples, or any practical guidance for actually using the software.",
+      "top_issue": "No installation instructions whatsoever - users cannot determine how to install or run the server from this README alone"
     },
     "security": {
       "overall_score": 7,
@@ -213,19 +213,22 @@
       "summary": "The nats-streaming-server code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a well-structured and secure application."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Messages are not delivered to Consumers",
-        "Security issue in latest nats-streaming image"
+        "Messages not being delivered to consumers",
+        "Startup/recovery stuck or slow",
+        "Security vulnerabilities in Docker images",
+        "Missing clustering configuration support",
+        "Documentation broken or unavailable"
       ],
       "praise_themes": [
-        "Support for log compaction",
-        "Migration between persistence options (File Store and SQL Store)"
+        "Interest in operational simplicity compared to Kafka",
+        "Community engagement on feature requests"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with a mix of feature requests, bug reports, and security concerns, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community shows moderate engagement but maintainers are unresponsive to critical issues; several bugs remain unresolved for months, and the project appears to be in maintenance mode with limited active development."
     },
     "communication": {
       "helpfulness": 4,
@@ -241,17 +244,18 @@
       "summary": "The responses are generally adequate but show a lack of patience and welcoming attitude towards new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "High number of open issues (56)"
+        "No commits in past 6 months (last commit April 2024)",
+        "59 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "Recent release on 2023-11-17T22:21:05+00:00",
-        "Active contributors (10) in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent contributions but lacks active development and has a high number of unresolved issues."
+      "positive_signals": [],
+      "summary": "This package is abandoned with no maintenance activity for at least 6 months despite significant open issues requiring attention."
     },
     "changelog": null,
     "governance": {
@@ -261,7 +265,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes and multiple maintainers but lacks a succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:50:38.164071+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

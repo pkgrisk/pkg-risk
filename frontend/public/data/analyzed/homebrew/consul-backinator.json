@@ -186,13 +186,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 8,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 6,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally clear and well-structured, but lacks a concise quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section"
+      "overall": 5,
+      "summary": "Well-structured README with excellent installation coverage but lacks practical usage examples and troubleshooting guidance.",
+      "top_issue": "No concrete usage examples showing actual backup/restore commands with real parameters, making it difficult for users to get started quickly"
     },
     "security": {
       "overall_score": 5,
@@ -230,16 +230,22 @@
       "summary": "The consul-backinator package has several security concerns, including potential injection risks, inadequate input validation, and exposure of sensitive information, which require attention to ensure the security and integrity of the system."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "ACL token backup issues",
-        "S3 permission and bucket creation issues"
+        "ACL token backup failures with Consul 1.4+ (new ACL system incompatibility)",
+        "S3/Kubernetes service account permission issues",
+        "Unexpected bucket creation attempts despite permission restrictions",
+        "Permission denied errors during ACL and key restoration",
+        "Docker compatibility issues and binary extraction problems",
+        "Missing daemon/scheduling mode for container orchestration"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to recurring issues related to ACL tokens and S3 permissions, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Core functionality works well in basic standalone use cases"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows signs of abandonment with unresponsive maintainers, unresolved critical issues spanning 6+ years, particularly around Consul API compatibility and cloud storage integrations."
     },
     "communication": {
       "helpfulness": 7,
@@ -252,20 +258,23 @@
       "summary": "The maintainer's responses are generally helpful and clear, showing patience with repeated questions and a good level of technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Only one merged PR in the past six months"
+        "No commits in over 1 year (last commit Dec 2022)",
+        "No activity in past 6 months across all metrics",
+        "3 open issues with no resolution attempts",
+        "No merged PRs or releases in past 6 months",
+        "Zero active contributors in past 6 months"
       ],
-      "positive_signals": [
-        "Seven contributors active in the past six months",
-        "Recent open issues and pull requests indicate some level of community interest"
-      ],
-      "summary": "The package is receiving minimal maintenance with occasional contributions but lacks recent activity."
+      "positive_signals": [],
+      "summary": "This package is abandoned with over a year of inactivity and no maintenance effort despite open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:20:41.572769+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

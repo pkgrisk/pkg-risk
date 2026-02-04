@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
       "examples": 7,
       "configuration": 8,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The documentation is generally clear and comprehensive, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Excellent clarity and installation instructions with good VCS integration examples, but lacks troubleshooting guidance and could use more real-world usage scenarios.",
+      "top_issue": "No troubleshooting section - common issues like encoding errors, terminal compatibility, or performance with large files are not addressed"
     },
     "security": {
       "overall_score": 7,
@@ -194,18 +194,21 @@
       "summary": "The icdiff package has some security concerns, primarily related to input validation and potential error exposure, but no critical injection risks or hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Deprecation warnings",
-        "Unintended change detection"
+        "Python compatibility issues (deprecated codecs.open, Python 3.14 support)",
+        "Bugs with file handling (crash on unpacking, phantom diffs on large files, process substitution failures)",
+        "Unclear documentation and installation instructions",
+        "Unwanted 'smart' diff behavior with no way to disable it"
       ],
       "praise_themes": [
-        "Feature request for symlink compare scheme"
+        "Functional for core use case when it works",
+        "Actively packaged in multiple distributions (Homebrew, Nixpkgs)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied, but there are some minor issues and feature requests that could be addressed."
+      "abandonment_signals": true,
+      "summary": "icdiff shows signs of maintenance neglect with unresolved bugs and deprecation warnings, though the project remains minimally viable and packaged by downstream distributors."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,20 +221,26 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with users and a willingness to engage in technical discussions. However, there is room for improvement in welcoming new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low commit frequency in the past six months",
-        "Multiple open issues and PRs suggest potential unresolved problems"
+        "No commits in the past 6 months despite being in a git repository",
+        "25 open issues with no recent activity or resolution",
+        "No closed issues in the past 6 months indicating lack of issue triage",
+        "No merged PRs in the past 6 months suggesting no active development",
+        "No active contributors in the past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "At least one contributor has been active recently",
-        "Recent commits exist"
+        "Package exists and is available in homebrew"
       ],
-      "summary": "The package shows minimal maintenance with occasional updates but faces several unresolved issues."
+      "summary": "The icdiff package shows clear signs of abandonment with zero development activity, no issue resolution, and no contributor engagement over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:26:35.863489+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

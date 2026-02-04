@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 1,
+      "installation": 3,
+      "quick_start": 2,
       "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a brief introduction to the package, but lacks essential information for new users to get started.",
-      "top_issue": "Lack of clear installation instructions and examples in the README itself, requiring users to navigate to an external wiki."
+      "summary": "Clear high-level explanation but delegates all practical information to external wiki without any inline examples or instructions.",
+      "top_issue": "No installation instructions, quick start guide, or basic code examples in the README itself - requires visiting external wiki for all actionable information"
     },
     "security": {
       "overall_score": 10,
@@ -192,18 +192,23 @@
       "summary": "The provided code appears to be a C++ library with no apparent security vulnerabilities or risks."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "C++23 build errors",
-        "Compilation issues with specific tools or versions"
+        "C++ standard compatibility issues (C++23 build errors, missing type_traits includes)",
+        "Build system problems (CMake version incompatibility, Bazel symlink issues)",
+        "API limitations (lack of non-owning providers, decorator pattern support)",
+        "Documentation gaps (unclear examples for advanced patterns like Repository, decorators)",
+        "Platform-specific issues (Android C++23 errors, Qt integration problems)"
       ],
       "praise_themes": [
-        "Feature requests for improved functionality"
+        "Quality of core library functionality",
+        "Usefulness of dependency injection framework",
+        "Community engagement through detailed issue discussions"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with both positive and negative feedback, focusing on feature enhancements and resolving compilation issues."
+      "summary": "Fruit maintains steady community engagement with resolved technical issues, but faces maintenance challenges around C++ standard evolution and build system compatibility that require attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -216,17 +221,17 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Long time since last release (over a year)",
-        "Low number of commits and contributors in the past six months"
+        "No commits in past 6 months despite last commit being recent (2025-12-27)",
+        "33 open issues with zero closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No releases documented"
       ],
-      "positive_signals": [
-        "Recent commit within the last month",
-        "Regular issue tracking with some closed issues"
-      ],
-      "summary": "The package is minimally maintained with recent activity but lacks consistent updates."
+      "positive_signals": [],
+      "summary": "The fruit package appears abandoned with zero maintenance activity over the past 6 months and a growing backlog of unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -236,7 +241,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes and multiple maintainers, but lacks a succession plan or contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:05:24.603112+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

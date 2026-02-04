@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 4,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 5,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is clear and concise, but lacks a comprehensive quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section and limited configuration documentation"
+      "overall": 5,
+      "summary": "Clear purpose statement and installation steps, but lacks concrete usage examples and troubleshooting guidance.",
+      "top_issue": "No inline code examples showing actual API usage - users must find and read a separate file (minimal-example.c) to understand how to use the library"
     },
     "security": {
       "overall_score": 8,
@@ -190,16 +190,20 @@
       "summary": "The libebur128 library appears to be secure with no injection risks or secrets found, but has some input validation issues and potential for high memory usage due to default settings."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build failure with cmake 4",
-        "unexpected oversample rates in ebur128_init_resampler"
+        "Build compatibility issues (CMake 4 breaking changes)",
+        "Incorrect calculation results and edge cases (true peak returning junk values, NaN results)",
+        "Memory management bugs (out of memory in v1.2.6)",
+        "Performance limitations for large files",
+        "API usability and documentation gaps",
+        "Resampling logic producing unexpected oversample rates"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some technical issues but there are no signs of abandonment, and the maintainers have been moderately responsive to the reported problems."
+      "abandonment_signals": true,
+      "summary": "The libebur128 project shows signs of abandonment with critical unresolved bugs, no maintainer responses, outdated build system compatibility, and users expressing frustration with correctness and performance issues spanning years."
     },
     "communication": {
       "helpfulness": 9,
@@ -212,20 +216,26 @@
       "summary": "The maintainer's responses are clear, helpful, and demonstrate a high level of technical expertise while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6+ months (last commit June 2023)",
+        "No active contributors in past 6 months",
+        "High number of open issues (38) with no recent closure activity",
+        "No merged pull requests in past 6 months",
+        "No recent releases",
+        "Repository appears dormant with stale issue backlog"
       ],
       "positive_signals": [
-        "Recent open issues and PRs indicate some level of community interest",
-        "Multiple contributors active in the past six months"
+        "No new failing PRs suggests no breaking changes being attempted"
       ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent commits and merged PRs."
+      "summary": "libebur128 appears abandoned with over 8 months of inactivity, no issue resolution, and a growing unaddressed issue backlog."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:52:12.584794+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

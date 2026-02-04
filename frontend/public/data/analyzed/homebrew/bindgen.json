@@ -176,14 +176,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 2,
-      "quick_start": 8,
-      "examples": 7,
-      "configuration": 6,
+      "installation": 3,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 7,
       "troubleshooting": 3,
       "overall": 6,
-      "summary": "The README provides a clear introduction to the package and its purpose, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided"
+      "summary": "Excellent clarity and concept explanation with a clear example, but lacks installation instructions and troubleshooting guidance in the README itself.",
+      "top_issue": "No installation instructions provided - README immediately defers to external users guide without showing basic cargo/brew install commands"
     },
     "security": {
       "overall_score": 7,
@@ -216,18 +216,24 @@
       "summary": "The bindgen package has some potential security concerns, including possible code injection vulnerabilities and missing input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "build issues with msys2",
-        "lack of new releases"
+        "Long release cycle - no full release in ~6 months despite activity",
+        "Bugs introduced in recent PRs breaking existing functionality",
+        "Missing features for cross-language FFI compatibility (repr(C) for enums)",
+        "Library compatibility issues (libloading 0.9.0)",
+        "Build environment issues (msys2, libclang detection)",
+        "Incomplete array handling in nested packed structs"
       ],
       "praise_themes": [
-        "community engagement on open issues"
+        "Active development and merge activity",
+        "Tool generally works well for most use cases",
+        "Good documentation on workarounds once discovered"
       ],
       "abandonment_signals": false,
-      "summary": "The community is engaged but faces some build and release-related frustrations."
+      "summary": "Bindgen shows active development but suffers from slow release cycles, recent regressions, and unresolved feature requests, indicating moderate maintainer bandwidth constraints despite ongoing work."
     },
     "communication": {
       "helpfulness": 8,
@@ -240,15 +246,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage contributions."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "A significant number of merged PRs in the past six months",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2025-12-31)",
+        "549 open issues with no resolution activity",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release tracking has stopped"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [],
+      "summary": "bindgen appears to be abandoned with no maintenance activity in the past 6 months despite a recent commit timestamp that may indicate a stale repository state."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -266,7 +275,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a documented decision process, a contributor ladder, and indicates multiple maintainers but lacks a succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:26:10.774913+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

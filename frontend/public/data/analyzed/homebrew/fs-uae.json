@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
-      "installation": 6,
+      "clarity": 3,
+      "installation": 5,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
-      "troubleshooting": 1,
+      "troubleshooting": 2,
       "overall": 2,
-      "summary": "The README is confusing and lacks essential information for a new user to quickly understand and use the fs-uae package.",
-      "top_issue": "The documentation appears to be for WinUAE on Windows, not fs-uae on homebrew, making it unclear how to install or use the package."
+      "summary": "README provides Windows build instructions but completely fails to explain what FS-UAE does, lacks usage examples, and redirects to a missing file for actual documentation.",
+      "top_issue": "The README never explains what FS-UAE is or does - it immediately jumps to build instructions and defers to a referenced file (od-fs/README.md) that may not exist in the Homebrew context."
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,22 @@
       "summary": "The code appears to have some minor security concerns related to input validation and error handling, but overall it seems to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation issues on specific hardware",
-        "vsync problems"
+        "macOS fullscreen and mouse/titlebar issues (versions 3.2.35+)",
+        "VSync performance regressions in recent versions",
+        "Setup/configuration difficulties for new users",
+        "Platform-specific bugs (PowerPC compilation, Steam Deck launcher)",
+        "Keyboard mapping issues with non-English layouts"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to unresolved issues and occasional compilation problems, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Stable performance in older versions (3.1.66)",
+        "Generally functional emulation when properly configured"
+      ],
+      "abandonment_signals": true,
+      "summary": "FS-UAE shows signs of maintenance decline with recent versions introducing regressions, slow issue response times, and unresolved platform-specific bugs affecting users on modern hardware (M4 Macs, Steam Deck)."
     },
     "communication": {
       "helpfulness": 7,
@@ -222,17 +228,18 @@
       "summary": "The maintainer provides useful information but could improve clarity and detail, especially for less technical users."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (161)",
-        "Low number of merged PRs in the past 6 months (1)"
+        "No commits in past 6 months despite last commit being from September 2025",
+        "162 open issues with no resolution activity",
+        "Zero closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release date indicates release process has stalled"
       ],
-      "positive_signals": [
-        "Recent last commit and release dates",
-        "Moderate number of commits in the past 6 months (313)"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but a backlog of issues."
+      "positive_signals": [],
+      "summary": "fs-uae shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement for at least 6 months despite a large backlog of open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -243,7 +250,10 @@
       "overall_score": 1,
       "summary": "The changelog is incomplete, unclear, and lacks important sections such as breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:56:37.281533+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

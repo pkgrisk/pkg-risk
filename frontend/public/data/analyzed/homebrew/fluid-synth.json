@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 4,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 3,
-      "configuration": 5,
-      "troubleshooting": 1,
+      "examples": 2,
+      "configuration": 3,
+      "troubleshooting": 2,
       "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "summary": "Clear description of what FluidSynth does, but lacks actionable content with installation, usage examples, and troubleshooting all deferred to external wiki.",
+      "top_issue": "No installation instructions or quick start examples in README - everything redirected to wiki which creates friction for new users"
     },
     "security": {
       "overall_score": 8,
@@ -192,16 +192,22 @@
       "summary": "The FluidSynth codebase appears to be well-structured and secure, with no major injection risks or secrets exposure issues found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bugs",
-        "compatibility issues"
+        "Audio clipping and gain control issues",
+        "Platform-specific bugs (Windows DLS errors, WASAPI driver limitations)",
+        "Configuration path hardcoding",
+        "Missing testing infrastructure for some platforms"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Technical engagement with feature requests",
+        "Cross-platform development efforts",
+        "Detailed discussion of MIDI/audio specifications"
+      ],
       "abandonment_signals": false,
-      "summary": "The fluid-synth community is moderately active, with maintainers responding to issues and users reporting a mix of bugs and feature requests, indicating a relatively healthy but imperfect project."
+      "summary": "FluidSynth shows healthy community engagement with active issue triage, closed issues being resolved, and recent activity (Jan 2026), though some longstanding enhancement requests (Android testing from 2021) remain unaddressed."
     },
     "communication": {
       "helpfulness": 8,
@@ -217,16 +223,19 @@
       "summary": "The maintainer provides helpful and technically deep responses, but often lacks patience and clarity, which may discourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (185)",
-        "Recent last commit and release dates",
-        "Multiple contributors active in the past 6 months (15)",
-        "Effective issue and PR management (64 closed issues, 63 merged PRs)"
+      "concerns": [
+        "No commits in the past 6 months despite being a package in active use",
+        "23 open issues with no recent activity or resolution",
+        "No merged PRs in the past 6 months indicating no active development",
+        "No active contributors in the past 6 months",
+        "No recent releases to address bug fixes or improvements"
       ],
-      "summary": "The fluid-synth package appears to be actively maintained with frequent updates, a strong contributor base, and effective issue management."
+      "positive_signals": [
+        "Package exists in homebrew ecosystem suggesting some historical maintenance"
+      ],
+      "summary": "fluid-synth appears to be stale with no active development, unresolved issues, or contributor activity for at least 6 months."
     },
     "changelog": null,
     "governance": {
@@ -236,7 +245,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The FluidSynth project lacks a clear succession plan, decision-making process documentation, and a contributor ladder, but indicates multiple maintainers with merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T07:36:41.938165+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
