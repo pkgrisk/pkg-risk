@@ -180,8 +180,8 @@
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "The README lacks essential information, making it difficult for new users to get started with the daemonize package.",
-      "top_issue": "Missing installation instructions and lack of usage examples"
+      "summary": "Clear project description but completely lacks actionable documentation, redirecting users to external resources for everything important.",
+      "top_issue": "No actual installation instructions, usage examples, or configuration details in the README\u2014all critical information deferred to external web page and man page"
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,24 @@
       "summary": "The daemonize package has some security concerns, including potential injection risks and lack of input validation, but overall the code appears to be well-structured and follows good security practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "cross-compilation issues",
-        "output redirection to syslog"
+        "File descriptor handling issues (null_fd opened as O_WRONLY instead of O_RDWR)",
+        "Cross-compilation failures with Android/AArch64",
+        "PID file creation broken (-p flag creates zero-length file)",
+        "File descriptor closure problems breaking daemonization",
+        "Python command execution skipping in daemonized scripts",
+        "Build system issues (autoheader failures)",
+        "Integration with logging systems (syslog, logrotate)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "praise_themes": [
+        "Tool is useful and important for its core purpose",
+        "Works well in simple cases"
+      ],
+      "abandonment_signals": true,
+      "summary": "Daemonize shows severe abandonment with 11 open issues spanning 7+ years (oldest from 2017), critical unfixed bugs in core functionality (PID file handling, fd management), zero recent maintainer responses, and no activity indicating active development or bug triage."
     },
     "communication": {
       "helpfulness": 7,
@@ -233,17 +241,18 @@
       "summary": "The maintainer provides technical insights but could be more patient and welcoming to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest ongoing problems"
+        "No commits in past 6 months despite last commit being from March 2025",
+        "19 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicates no maintenance effort",
+        "No merged PRs in past 6 months suggests no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release indicates lack of version management"
       ],
-      "positive_signals": [
-        "Contributors are active, but only for issue management and PR reviews",
-        "Recent activity (issues and PRs) indicates some level of engagement"
-      ],
-      "summary": "The package is in minimal maintenance with recent issue and PR activity, but lacks new code contributions."
+      "positive_signals": [],
+      "summary": "The daemonize package appears abandoned with no maintenance activity, open issues, or commits for at least the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -254,7 +263,10 @@
       "overall_score": 6,
       "summary": "The changelog is mostly complete and clear, but lacks categorization, breaking change indicators, and upgrade paths."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:13:10.473361+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

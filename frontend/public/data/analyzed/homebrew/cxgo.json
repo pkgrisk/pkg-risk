@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 5,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package, but could benefit from more detailed examples and configuration documentation.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 7,
+      "overall": 8,
+      "summary": "Well-structured README with clear purpose and installation, though configuration details require external navigation and quick start could show actual output.",
+      "top_issue": "Configuration documentation is relegated to external links without inline examples of common customization options"
     },
     "security": {
       "overall_score": 5,
@@ -212,20 +212,17 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Type Information not passed down to callback",
-        "`cxgo` Mistranslates C Function Pointer causing Runtime Crash in Transpiled Go Code",
-        "`cxgo` Misses Declared Variables Inside `switch` Blocks in C",
-        "`cxgo` Fails to Translate `NULL` Function Pointer, Causing Invalid Function Conversion and Segmentation Fault",
-        "`cxgo` Fails to Preserve `const` for External Constant Variables",
-        "`cxgo` Incorrectly Converts Char Array Initialization, Causing Go Type Mismatch",
-        "`cxgo` Crashes When Translating `_Complex int` Type",
-        "`cxgo` Fails to Recognize `max_align_t` from `<stddef.h>`"
+        "Runtime crashes and segmentation faults from incorrect C-to-Go translations",
+        "Type system failures (function pointers, const preservation, complex numbers)",
+        "Code generation bugs missing declarations and mishandling edge cases",
+        "Missing language feature support (thread local storage, format specifiers)",
+        "No maintainer engagement on bug reports"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with the current state of `cxgo`, as evidenced by multiple open bugs and lack of resolution."
+      "abandonment_signals": true,
+      "summary": "The cxgo project shows signs of abandonment with numerous critical bugs (segfaults, type errors, missing features) spanning years with zero maintainer responses or engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,17 +235,21 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "Open issues and PRs suggest potential unresolved problems or feature requests."
+        "No commits in past 6 months despite last commit being recent (March 2025)",
+        "36 open issues with no recent resolutions",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests lack of versioning",
+        "High issue count relative to maintenance activity"
       ],
       "positive_signals": [
-        "Recent release indicates some level of activity.",
-        "Multiple contributors are still involved, even if not actively committing code."
+        "Last commit is relatively recent (March 2025)"
       ],
-      "summary": "The package is in minimal maintenance with recent releases but lacks active development."
+      "summary": "The cxgo project shows signs of abandonment with no maintenance activity over 6 months despite an open issue backlog, suggesting it is no longer actively maintained."
     },
     "changelog": null,
     "governance": {
@@ -258,7 +259,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks formal succession, decision-making, contributor path, and multiple maintainer indications, indicating a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:24:04.956964+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

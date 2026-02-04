@@ -175,28 +175,32 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 6,
-      "quick_start": 9,
-      "examples": 7,
+      "quick_start": 8,
+      "examples": 9,
       "configuration": 4,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its features, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Insufficient documentation for common problems and solutions"
+      "overall": 7,
+      "summary": "Excellent clarity and examples with strong quick-start code, but lacks standard installation instructions for end users and has minimal configuration/troubleshooting documentation.",
+      "top_issue": "Missing basic installation instructions - jumps directly to development setup with luarocks/Docker without explaining how regular users should install busted via Homebrew or other package managers"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "ffi compatibility issues",
-        "global isolation issues"
+        "Global isolation and namespace pollution issues breaking user code",
+        "Package.loaded clearing causing compatibility problems with libraries",
+        "FFI module compatibility across Lua versions (5.1, 5.2, 5.3, 5.4)",
+        "Documentation outdated (Gitter link broken)",
+        "CLI argument parsing issues in standalone mode",
+        "Test execution and isolation problems"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some specific issues, but there are no signs of abandonment or severe frustration."
+      "abandonment_signals": true,
+      "summary": "The project shows signs of reduced maintenance with slow response times, broken documentation links, and unresolved issues dating back years (2015-2017) alongside recent functionality gaps, indicating a declining but still partially active community."
     },
     "communication": {
       "helpfulness": 8,
@@ -209,17 +213,18 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months (3)",
-        "High number of open issues (57)"
+        "No commits in past 6 months despite last commit being recent (January 2026)",
+        "61 open issues with no recent activity",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months showing no development activity",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "Commits in the last six months (5)",
-        "Contributors active in the last six months (2)"
-      ],
-      "summary": "The package shows minimal maintenance with occasional commits and contributors, but a high issue count is concerning."
+      "positive_signals": [],
+      "summary": "The busted package appears abandoned with no maintenance activity over the past 6 months despite a recent commit date."
     },
     "changelog": null,
     "governance": {
@@ -229,7 +234,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:42:15.280625+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

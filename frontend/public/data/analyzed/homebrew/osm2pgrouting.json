@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks troubleshooting information and could benefit from more examples.",
-      "top_issue": "Lack of troubleshooting information"
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "Decent documentation with clear usage examples but incomplete installation instructions and minimal troubleshooting guidance.",
+      "top_issue": "Installation section lists dependencies twice without explaining the relationship, and apt-get commands only work on Debian/Ubuntu systems without alternatives for other platforms."
     },
     "security": {
       "overall_score": 8,
@@ -187,18 +187,18 @@
       "summary": "The code appears to be generally secure, but lacks proper input validation and sanitization, which could potentially lead to security issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build errors on specific environments",
-        "bugs in core functionality"
+        "Build configuration issues (CMake, libpq, Debian compatibility)",
+        "Data import and parsing errors (malformed OSM files, parsing failures)",
+        "Schema/compatibility issues (gid vs id column naming, pgRouting integration)",
+        "Crash bugs in core functionality (Relation::members_str, pedestrian config)"
       ],
-      "praise_themes": [
-        "enhancement suggestions for documentation and build processes"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to recurring build issues, but there are positive signs of engagement through enhancement suggestions."
+      "summary": "osm2pgrouting shows moderate community health with active issue tracking and some maintainer engagement, but build/integration friction and data handling bugs create user frustration."
     },
     "communication": {
       "helpfulness": 7,
@@ -211,17 +211,20 @@
       "summary": "Responses are generally clear and helpful, showing patience with repeated questions."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs relative to open PRs"
+        "No commits in past 6 months despite last commit being recent (2026-01-13)",
+        "75 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicating no maintenance work",
+        "No merged PRs in past 6 months showing stalled development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release process is inactive"
       ],
       "positive_signals": [
-        "Recent commit and release dates",
-        "Moderate number of contributors in the last six months"
+        "Recent commit exists (2026-01-13) showing some minimal activity"
       ],
-      "summary": "The package is maintained with recent activity, but there are concerns about unresolved issues and limited PR merging."
+      "summary": "The osm2pgrouting project appears abandoned with no meaningful maintenance activity over the past 6 months despite a large backlog of 75 unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -231,7 +234,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, which increases the risk of losing momentum if key contributors leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:53:21.531789+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

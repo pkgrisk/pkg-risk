@@ -165,15 +165,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
+      "quick_start": 7,
+      "examples": 6,
       "configuration": 8,
-      "troubleshooting": 5,
-      "overall": 7,
-      "summary": "The README provides a good overview of the jadx package, but could benefit from more concise and prominent quick start instructions.",
-      "top_issue": "Lack of clear and concise quick start example that showcases basic usage"
+      "troubleshooting": 7,
+      "overall": 8,
+      "summary": "Excellent clarity and installation instructions with comprehensive CLI options, but lacks concrete usage examples showing actual command execution.",
+      "top_issue": "No quick start example showing a complete command (e.g., 'jadx-gui myapp.apk' or 'jadx -d output input.apk') - just lists options without demonstrating basic usage"
     },
     "security": {
       "overall_score": 7,
@@ -200,16 +200,19 @@
       "summary": "The provided Java code has some security concerns, including potential code injection risks and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bugs",
-        "decompilation issues"
+        "Complex decompilation edge cases (constructor calls with illegal instructions before super/this)",
+        "Memory leaks with non-standard dex files",
+        "Export functionality bugs (missing inner classes, invalid file paths)",
+        "Script/plugin system limitations (external JAR imports failing)",
+        "Bytecode decoding errors with certain file formats"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The jadx community is experiencing frustration due to numerous open bugs and decompilation issues, with slow maintainer responsiveness."
+      "summary": "Active project with responsive maintainers addressing diverse technical challenges, but struggling with complex edge cases in decompilation logic and some regression issues in newer features."
     },
     "communication": {
       "helpfulness": 9,
@@ -222,18 +225,20 @@
       "summary": "The maintainer's responses are extremely helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintenance."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months",
+        "419 open issues with no activity to address them",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release infrastructure abandoned"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors",
-        "merged PRs"
+        "Repository still exists and has not been archived"
       ],
-      "summary": "The jadx package appears to be actively maintained with regular updates, fixes, and contributions from a sizable group of developers."
+      "summary": "The jadx project shows no maintenance activity for 6+ months with a large backlog of unaddressed issues, indicating the project is stale and likely abandoned."
     },
     "changelog": null,
     "governance": {
@@ -243,7 +248,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The jadx project lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:46:18.105506+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting section"
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "Excellent clarity on what the package does with basic installation covered, but lacks practical examples, configuration guidance, and troubleshooting help.",
+      "top_issue": "No configuration documentation\u2014users are shown how to install and start the server but not how to configure it for actual use cases like WebRTC or VoIP"
     },
     "security": {
       "overall_score": 7,
@@ -222,17 +222,22 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        " TURN server configuration issues",
-        "Load testing challenges",
-        "Kubernetes deployment difficulties"
+        "Configuration not being honored (use-auth-secret, TLS port listening)",
+        "Lack of operational documentation (certificate reload, load testing)",
+        "Missing database driver callbacks for production use cases",
+        "SSL certificate renewal workflow unclear"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community faces several common issues but maintains a neutral sentiment without significant frustration or abandonment signals."
+      "praise_themes": [
+        "Active production usage at scale (mesibo)",
+        "Community proposing pragmatic enhancements",
+        "Feature requests grounded in real-world deployment scenarios"
+      ],
+      "abandonment_signals": true,
+      "summary": "Coturn has production users submitting thoughtful feature requests, but slow maintainer responsiveness, stale issues (5+ years open), and unresolved configuration bugs suggest limited active maintenance."
     },
     "communication": {
       "helpfulness": 7,
@@ -245,15 +250,19 @@
       "summary": "The maintainer provides clear and technically sound responses, though there is room for more detailed explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the past six months",
-        "A significant number of merged PRs indicating ongoing development"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-29)",
+        "377 open issues with no closed issues in past 6 months indicates unaddressed backlog",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests pull requests are not being reviewed",
+        "Unknown last release date raises questions about release cadence"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit activity on 2026-01-29 suggests some level of ongoing attention"
+      ],
+      "summary": "The project appears stale with a large unresolved issue backlog, zero recent activity from contributors, and no evidence of active maintenance despite a very recent commit."
     },
     "changelog": null,
     "governance": {
@@ -263,7 +272,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, which increases the risk of losing progress if primary maintainers leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:09:40.185233+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -190,13 +190,13 @@
     "readme": {
       "clarity": 6,
       "installation": 8,
-      "quick_start": 5,
-      "examples": 7,
-      "configuration": 9,
+      "quick_start": 4,
+      "examples": 5,
+      "configuration": 3,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is detailed and comprehensive, but may be overwhelming for new users due to its complexity and lack of clear troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise troubleshooting section"
+      "overall": 5,
+      "summary": "Comprehensive build instructions for multiple TLS backends, but lacks clear explanation of what the library does, minimal usage examples, and no troubleshooting guidance.",
+      "top_issue": "No clear explanation of what ngtcp2 is used for or why someone would use it - just a quote and 'implements RFC9000 QUIC protocol' without context on use cases or library purpose"
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,17 @@
       "summary": "The code appears to have some minor security concerns related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "stream cleanup issues",
-        "rate limiting errors"
+        "Build system issues (MSVC OpenSSL check_symbol_exists unreliability)",
+        "Documentation outdated or unclear (wsslclient/wsslserver missing from builds)",
+        "Protocol implementation bugs (multipacket client HELO retransmit with incomplete crypto data)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The libngtcp2 community is moderately active with some reported issues, but maintainers are responsive and addressing problems in a timely manner."
+      "summary": "libngtcp2 shows moderate health with active bug reporting and some documentation gaps, but lacks visible maintainer engagement (0 comments on recent MSVC issue) and has unresolved protocol-level issues affecting real-world usage."
     },
     "communication": {
       "helpfulness": 8,
@@ -232,20 +233,27 @@
       "summary": "The maintainer provides generally helpful and technically deep responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive community."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (504)",
-        "Recent last commit (2025-12-26)",
-        "Frequent releases (last release on 2025-12-23)",
-        "Many merged PRs in the past 6 months (232)",
-        "Multiple active contributors in the past 6 months (13)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-01-27)",
+        "15 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicates lack of maintenance",
+        "No merged PRs in past 6 months suggests inactive development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests unclear versioning practices"
       ],
-      "summary": "The libngtcp2 package is actively maintained with frequent updates, releases, and a high level of community engagement."
+      "positive_signals": [
+        "Recent commit activity exists (though not within 6 months window)",
+        "Project has not been fully abandoned (some historical activity)"
+      ],
+      "summary": "The package shows signs of stagnation with no maintenance activity over the past 6 months despite recent commit history, indicating the project is in a stale or dormant state."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:50:14.729991+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

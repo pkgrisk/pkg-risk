@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
+      "clarity": 3,
       "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 1,
-      "summary": "The documentation is extremely lacking, making it difficult for users to understand and use the package.",
-      "top_issue": "Lack of detailed information about the package's purpose, installation, usage, and configuration."
+      "overall": 2,
+      "summary": "Extremely minimal README with only a one-line description and no practical information for users.",
+      "top_issue": "No installation instructions, usage examples, or any guidance on how to actually use the library"
     },
     "security": {
       "overall_score": 8,
@@ -199,16 +199,19 @@
       "summary": "The provided code snippet appears to be generally secure, with proper input validation and no obvious injection risks or secrets exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "SHA1 function internally uses SHA256",
-        "Lack of unit tests"
+        "RFC compliance violations (HTTP/1.1 framing, DNS NAPTR validation)",
+        "Missing input validation in constructors",
+        "Type coercion bugs (BinaryNumber length mismatches)",
+        "Silent error handling masking real issues",
+        "Edge cases not properly handled in parsing logic"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged but faces concerns about security practices and test coverage."
+      "abandonment_signals": true,
+      "summary": "Critical protocol compliance and validation bugs reported but not addressed, with only 1 of 6 recent issues resolved and zero maintainer engagement suggesting potential abandonment."
     },
     "communication": {
       "helpfulness": 6,
@@ -224,20 +227,24 @@
       "summary": "The maintainer's responses are generally adequate but lack consistency in communication and can be seen as somewhat unhelpful to new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of contributors",
-        "No recent release"
+        "No commits in past 6 months despite last commit being recent (2025-12-20)",
+        "26 open issues with no recent activity or triage",
+        "No closed issues in past 6 months indicating no bug fixes or maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release history may be stale"
       ],
-      "positive_signals": [
-        "Recent commits",
-        "Regular pull requests and merges"
-      ],
-      "summary": "The package is maintained with regular activity but could benefit from more contributor involvement."
+      "positive_signals": [],
+      "summary": "This project appears abandoned with no maintenance activity in the past 6 months despite a recent commit timestamp, accumulating unresolved issues without any engagement."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:07:34.534600+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

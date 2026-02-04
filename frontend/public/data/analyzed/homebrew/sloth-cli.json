@@ -191,14 +191,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 1,
-      "overall": 6,
-      "summary": "The README provides a clear introduction and quick start guide, but lacks installation instructions and troubleshooting documentation.",
-      "top_issue": "Installation instructions are incomplete and unclear."
+      "installation": 3,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "Clear introduction to what Sloth does with a good getting-started example, but critically missing installation instructions and troubleshooting guidance.",
+      "top_issue": "No installation instructions provided - README jumps directly to usage with 'sloth generate' command without explaining how to obtain or install the sloth binary"
     },
     "security": {
       "overall_score": 7,
@@ -225,16 +225,18 @@
       "summary": "The code has some security concerns, including potential injection risks, lack of input validation, and exposure of sensitive information through error messages."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Feature request for YAML configuration",
-        "Incorrect error budget calculation"
+        "Configuration limits (4MiB ConfigMap size in Kubernetes)",
+        "Feature gaps (missing plugin YAML file support, label cascading to alerts)",
+        "Alert timing issues (false positives during failovers)",
+        "Bug: generation failures create empty files"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged with some open issues, but there are no clear signs of frustration or abandonment."
+      "summary": "Healthy project with engaged maintainers addressing legitimate operational constraints; recent issues show active development but some feature requests indicate power users want better configuration ergonomics."
     },
     "communication": {
       "helpfulness": 7,
@@ -247,15 +249,19 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with repeated questions. However, there is room for deeper technical explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (169)",
-        "A significant number of merged PRs in the past six months (82)",
-        "Recent open and closed issues and PRs indicate ongoing activity"
+      "concerns": [
+        "No commits in past 6 months",
+        "13 open issues with no recent resolution",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last commit over 2 weeks ago with no follow-up activity",
+        "Unknown last release date suggests no recent version bump"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [],
+      "summary": "sloth-cli shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -273,7 +279,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:22:23.079887+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

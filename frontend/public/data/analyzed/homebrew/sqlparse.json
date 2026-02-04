@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
-      "examples": 7,
+      "installation": 10,
+      "quick_start": 10,
+      "examples": 8,
       "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks comprehensive examples and troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and quick start with clear examples, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common errors or edge cases, and configuration options (like reindent, keyword_case) are shown in examples but not systematically documented in the README"
     },
     "security": {
       "overall_score": 8,
@@ -210,12 +210,15 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "parsing issues",
-        "comment stripping problems"
+        "Formatting bugs (CREATE TABLE, comment stripping, tab/space conversion)",
+        "Statement splitting regression (v0.5.4 breaking change)",
+        "DoS protection causing silent failures",
+        "Missing type annotations and stubs",
+        "Edge cases with BEGIN...END blocks and IF keywords"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The sqlparse community is moderately active, with some users experiencing frustration due to parsing and comment stripping issues, but maintainers are responsive to reported bugs."
+      "summary": "sqlparse shows moderate maintenance activity with recent bug fixes, but community frustration is evident due to regressions in recent versions (0.5.4-0.5.5) and several unresolved formatting/parsing edge cases that impact dependent projects like DBT."
     },
     "communication": {
       "helpfulness": 9,
@@ -228,19 +231,20 @@
       "summary": "The maintainer's responses are extremely helpful, clear, patient, and welcoming, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low number of closed issues",
-        "high number of open issues",
-        "unknown last release"
+        "No commits in the past 6 months despite last commit being from December 2025",
+        "253 open issues with no recent activity or resolution",
+        "No closed issues in the past 6 months indicating lack of active maintenance",
+        "No merged PRs in the past 6 months suggesting pull requests are not being reviewed",
+        "Zero active contributors in the past 6 months",
+        "No recent releases available"
       ],
       "positive_signals": [
-        "recent commits",
-        "active contributors",
-        "merged PRs in the past 6 months"
+        "Package exists and was last updated relatively recently (December 2025)"
       ],
-      "summary": "The sqlparse package appears to be receiving some maintenance, but the low issue closure rate and high number of open issues raise concerns about its overall health."
+      "summary": "sqlparse shows clear signs of stagnation with no maintenance activity for 6+ months, a large backlog of unaddressed issues, and no contributor engagement."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -258,7 +262,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The sqlparse project lacks clear governance documentation, posing a high risk of bus factor and unclear paths for contributors or decision making."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:04:32.000160+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

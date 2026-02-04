@@ -159,7 +159,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "Clear purpose statement but entirely delegates installation, usage, and configuration details to external documentation.",
+      "top_issue": "No installation instructions in README - users must visit external website to learn how to install or use the package"
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [
@@ -186,30 +196,35 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "incompatibility issues",
-        "dependency conflicts"
+        "Installation failures on Linux (Debian/Ubuntu 24.04)",
+        "Build from source incompatibilities and library conflicts",
+        "Missing pre-built packages for supported platforms",
+        "File descriptor limits causing crashes in production workflows",
+        "Documentation outdated or not applicable to current versions"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The watchman community is experiencing frustration due to incompatibility issues and dependency conflicts, but maintainers are moderately responsive to resolving these problems."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with unresolved critical installation issues on Linux, slow maintainer response, and signals of project stagnation indicated by years-old unaddressed bugs and lack of recent package releases."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "No commits in past 6 months despite last commit being recent (suggests stale repository)",
+        "239 open issues with no recent activity to address them",
+        "Zero closed issues in past 6 months indicates no maintenance activity",
+        "No merged PRs in past 6 months shows development is halted",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many active contributors",
-        "steady merge of PRs"
+        "Repository exists and has a recent timestamp"
       ],
-      "summary": "The watchman package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+      "summary": "Watchman appears to be abandoned with no maintenance activity in the past 6 months despite a large backlog of open issues."
     },
     "changelog": null,
     "governance": {
@@ -219,7 +234,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The watchman project lacks a clear succession plan, decision-making process, and contributor ladder, but indicates multiple maintainers with merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:34:36.731838+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

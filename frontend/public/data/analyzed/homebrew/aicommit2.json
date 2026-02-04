@@ -187,15 +187,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 9,
-      "examples": 7,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 10,
+      "examples": 8,
       "configuration": 8,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides clear and concise information on installation, quick start, and configuration, but lacks comprehensive troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common problems and solutions"
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent documentation with clear installation and quick start, though it appears truncated and lacks troubleshooting details.",
+      "top_issue": "Documentation appears incomplete/truncated (cuts off mid-section at 'Detectio') and lacks troubleshooting section despite claiming common problems aren't documented."
     },
     "security": {
       "overall_score": 7,
@@ -222,16 +222,22 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but no critical secrets or sensitive information were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "compatibility issues",
-        "bug fixes"
+        "API compatibility issues with newer model versions (Claude 4.x, GPT-5.x, Gemini 3 Flash)",
+        "Configuration file limitations (hardcoded values, lack of environment variable support)",
+        "Git hooks integration problems with custom services",
+        "Feature requests for additional VCS integrations (yadm, Jujutsu) and placeholder support"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Feature requests are being acknowledged and released (AWS Bedrock, --dry-run option)",
+        "Bugs are being fixed and marked as released",
+        "Community members offering to contribute (yadm support)"
+      ],
       "abandonment_signals": false,
-      "summary": "The aicommit2 community is actively reporting issues and feature requests, with maintainers responding moderately to address concerns and fix bugs."
+      "summary": "Actively maintained project with good responsiveness to issues, though users encounter frustration with API compatibility as models rapidly evolve and configuration flexibility remains limited."
     },
     "communication": {
       "helpfulness": 9,
@@ -244,17 +250,20 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and welcoming, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (180 in the past 6 months)",
-        "Recent release (2025-12-30)",
-        "Active issue closure (26 closed in the past 6 months)",
-        "Multiple merged PRs (34 in the past 6 months)",
-        "Several active contributors (7 in the past 6 months)"
+      "concerns": [
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "7 open issues with no resolution activity",
+        "Unknown last release date suggests stalled release cycle"
       ],
-      "summary": "The aicommit2 package is actively maintained with frequent updates, releases, and contributions from multiple developers."
+      "positive_signals": [
+        "Repository still exists"
+      ],
+      "summary": "aicommit2 shows clear signs of abandonment with zero maintenance activity over the past 6 months and unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -272,7 +281,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for aicommit2 lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:48:26.165621+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

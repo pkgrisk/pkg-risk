@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
+      "clarity": 2,
       "installation": 1,
       "quick_start": 1,
       "examples": 1,
-      "configuration": 2,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "The documentation is lacking in essential areas, making it difficult for new users to understand and use the package.",
-      "top_issue": "No installation instructions or usage examples are provided."
+      "overall": 1,
+      "summary": "This README only lists changes from upstream and provides no explanation of what ldid does, how to install it, or how to use it.",
+      "top_issue": "Complete lack of basic information - no description of what ldid is, no installation instructions, no usage examples, only a changelog of modifications"
     },
     "security": {
       "overall_score": 8,
@@ -195,16 +195,21 @@
       "summary": "The code appears to be generally secure, but lacks input validation for certain parameters and may be vulnerable to path traversal attacks."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues with recent dependencies",
-        "ldid hanging due to entitlements"
+        "Compatibility issues with dependency updates (LibreSSL 4.0.0, libplist 2.5.0)",
+        "Entitlement parsing bugs causing hangs and assertion failures",
+        "Interoperability issues with Apple's codesign tool",
+        "Certificate/PKCS12 parsing errors with -K option"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Improvements over original ldid (better static binary handling)",
+        "Attempts to fix known bugs (dSYM signing, static binary support)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with build and functionality issues, but there are no clear signs of abandonment."
+      "summary": "Moderately active project with recent bug fixes but facing upstream dependency compatibility issues and some unresolved interoperability problems with Apple tooling."
     },
     "communication": {
       "helpfulness": 7,
@@ -217,20 +222,26 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing patience with repeated questions and a good level of technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in past 6 months despite last commit being recent (2026-02-01)",
+        "Zero merged PRs in past 6 months indicating no active development",
+        "Zero closed issues in past 6 months showing no issue triage or maintenance",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process is inactive",
+        "2 open issues with no recent attention"
       ],
       "positive_signals": [
-        "Recent release in January 2023",
-        "Active contributors (10) indicate some level of community or individual interest"
+        "Recent commit activity exists (2026-02-01), though this may be automated"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent commits and has open issues."
+      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite recent commit history, indicating either automated updates or stale repository state."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:11:33.630307+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

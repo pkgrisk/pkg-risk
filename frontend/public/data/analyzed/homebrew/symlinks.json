@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 5,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides a good introduction to the package, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting documentation and unclear configuration options"
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Clear and concise documentation that covers the basics well but lacks troubleshooting guidance and detailed configuration options.",
+      "top_issue": "No troubleshooting section for common errors like dangling links, permission issues, or what to do when conversion fails"
     },
     "security": {
       "overall_score": 7,
@@ -203,18 +203,23 @@
       "summary": "The symlinks.c code has some security concerns, including potential buffer overflow vulnerabilities and lack of input validation, but it does not appear to have any critical secrets or error exposure issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "relative symlinks issues",
-        "tool not working on Docker"
+        "Missing build configuration (no configure script, Makefile issues)",
+        "Symlink conversion features not implemented (relative to absolute conversion)",
+        "Tool breaks when operating on symlinked directories",
+        "Relative symlink handling causes issues during directory moves",
+        "Path shortening bugs in deep directory structures",
+        "No test/preview mode for destructive operations"
       ],
       "praise_themes": [
-        "useful for cross compilation"
+        "Tool is useful for cross-compilation workflows",
+        "Test/preview feature (-t flag) is appreciated"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some frustration around relative symlink handling and Docker compatibility, but overall the project seems to be actively maintained."
+      "abandonment_signals": true,
+      "summary": "The symlinks project shows severe abandonment with 10 open issues spanning 7+ years, no maintainer responses, unresolved critical build problems, and multiple feature requests indicating the tool's limitations in production environments."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,20 +232,24 @@
       "summary": "The maintainer provided clear, helpful, and patient responses with a good level of technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Multiple open issues and only one active contributor"
+        "No commits in over 4 years (last commit September 2021)",
+        "11 open issues with no recent resolution activity",
+        "Zero commits in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No releases recorded"
       ],
-      "positive_signals": [
-        "One open PR which could indicate ongoing development",
-        "Some recent activity with an open issue and PR"
-      ],
-      "summary": "The package shows minimal maintenance with limited recent activity."
+      "positive_signals": [],
+      "summary": "This project is abandoned with no development activity since 2021 and unresolved issues accumulating."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:22:09.308221+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

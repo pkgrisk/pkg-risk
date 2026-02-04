@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
+      "clarity": 3,
       "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 1,
-      "summary": "The README lacks essential information, making it difficult for new users to understand and use the package.",
-      "top_issue": "No installation instructions or usage examples are provided."
+      "overall": 2,
+      "summary": "Minimal README that only links to external documentation and announces maintenance mode, providing no practical information for users.",
+      "top_issue": "No installation instructions, usage examples, or basic information - entirely dependent on external documentation link"
     },
     "security": {
       "overall_score": 5,
@@ -208,16 +208,21 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "compatibility issues",
-        "memory leaks",
-        "crashes"
+        "Python 3.12+ compatibility issues (PyMutex, importlib changes, legacy setup.py)",
+        "Memory leaks in core functionality",
+        "Worker crashes and signal handling (SIGSEGV)",
+        "Segmentation faults on Python version upgrades",
+        "Module import errors with custom configurations",
+        "Daemon termination and hook execution failures",
+        "High memory consumption on certain system configurations",
+        "Deprecation warnings from pip for legacy build system"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The uWSGI community is experiencing frustration due to unresolved compatibility issues, memory leaks, and crashes, with slow maintainer responsiveness."
+      "abandonment_signals": true,
+      "summary": "Critical community health issues: uWSGI shows signs of abandonment with unresponsive maintainers, accumulating Python 3.12+ compatibility bugs, unresolved memory leaks, worker crashes, and issues dating back 6+ years without fixes, indicating a stagnant project struggling with modern Python versions."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,22 +235,26 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low issue closure rate",
-        "high number of open issues and PRs",
-        "unknown last release"
+        "No commits in the past 6 months",
+        "869 open issues with no recent resolution activity",
+        "No merged PRs in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release date",
+        "No closed issues in the past 6 months despite large issue backlog"
       ],
       "positive_signals": [
-        "recent commits",
-        "active contributors",
-        "merged PRs in the past 6 months"
+        "Repository still exists and is accessible"
       ],
-      "summary": "The uwsgi package appears to have some maintenance activity, but the low issue closure rate and high number of open issues and PRs suggest that it may not be adequately maintained."
+      "summary": "uwsgi shows clear signs of stagnation with no development activity, issue triage, or contributor engagement for at least 6 months despite a substantial backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:39:04.671753+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

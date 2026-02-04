@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 4,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions for users who are not compiling from source"
+      "quick_start": 3,
+      "examples": 4,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README provides a clear conceptual overview but lacks concrete installation instructions, working code examples, and troubleshooting guidance.",
+      "top_issue": "Installation instructions only reference another document (doc/rrdbuild.pod) rather than providing clear steps inline, and there are no executable quick-start examples showing actual RRDtool commands."
     },
     "security": {
       "overall_score": 7,
@@ -213,17 +213,20 @@
       "summary": "The code has some security concerns related to input validation, error handling, and potential command injection risks, but overall it appears to be well-structured and follows good coding practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "installation issues",
-        "bug fixes",
-        "feature requests"
+        "Performance issues with large datasets (slow startup with 500k-800k RRD files)",
+        "Y2038 timestamp overflow bug (32-bit time_t limit)",
+        "Graph rendering issues (autoscale Y-axis uninformative scales, blurry SVG)",
+        "Build/installation problems (compilation errors on Rocky Linux, missing Perl module on macOS)",
+        "Segmentation faults with certain command options",
+        "Daemon functionality gaps (lastupdate command incompatibility)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The rrdtool community is moderately active, with some users experiencing frustration due to installation issues and bug fixes, but maintainers are responsive to closed issues."
+      "abandonment_signals": true,
+      "summary": "RRDtool shows signs of declining maintenance with multiple unresolved critical bugs (Y2038, segfaults, performance), slow issue response, and stalled feature requests dating back to 2012."
     },
     "communication": {
       "helpfulness": 9,
@@ -236,21 +239,25 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low number of commits past 6 months",
-        "high number of open issues",
-        "infrequent releases"
+        "No commits in past 6 months despite last commit being relatively recent (January 2026)",
+        "182 open issues with zero closed in past 6 months indicates issues are not being addressed",
+        "Zero active contributors in past 6 months",
+        "No pull requests merged in past 6 months",
+        "Unknown last release date suggests release process may be stalled"
       ],
       "positive_signals": [
-        "recent commit activity",
-        "some issue and PR resolution"
+        "Repository still exists and has recent activity from outside the 6-month window"
       ],
-      "summary": "The rrdtool package appears to be receiving minimal maintenance, with some recent activity but a significant backlog of open issues and infrequent releases."
+      "summary": "rrdtool appears to be stale with no maintenance activity in the past 6 months despite a large backlog of 182 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:36:13.281347+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

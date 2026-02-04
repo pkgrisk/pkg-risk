@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 10,
+      "examples": 8,
       "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is clear and provides a good overview of the package, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problems and solutions documentation"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and installation coverage across multiple languages, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like database file permissions, connection errors, or platform-specific problems"
     },
     "security": {
       "overall_score": 7,
@@ -207,18 +207,19 @@
       "summary": "The code has some potential security issues, including injection risks and lack of input validation, but overall it appears to be well-structured and follows best practices for error handling and logging."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 9,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "crash after page cache is full",
-        "unrecognized subcommand 'read'"
+        "Data corruption and durability issues in MVCC implementation",
+        "Panics and crashes under concurrent workloads",
+        "Missing crash recovery specifications",
+        "Severe performance degradation with checkpointing enabled",
+        "Page cache staleness and transaction isolation violations"
       ],
-      "praise_themes": [
-        "good first issue"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health appears stable with moderate responsiveness and some open issues, but there are no significant complaints or praises."
+      "summary": "Active maintainers are rapidly identifying and documenting critical data integrity and crash recovery bugs in the MVCC feature, suggesting either a new feature rollout with serious issues or a recent refactor that introduced multiple durability and concurrency problems."
     },
     "communication": {
       "helpfulness": 7,
@@ -231,15 +232,18 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (1000)",
-        "A significant number of merged PRs in the past six months (271)",
-        "Multiple contributors active in the past six months (23)"
+      "concerns": [
+        "No commits in past 6 months despite recent activity timestamp",
+        "518 open issues with no closure activity in 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release tracking may be broken or abandoned",
+        "High issue count relative to maintenance activity indicates backlog is not being managed"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [],
+      "summary": "The turso package appears abandoned with no maintenance activity in 6+ months despite a large open issue backlog."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -257,7 +261,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a documented decision process and contributor path, but lacks a succession plan, indicating medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:04:32.208367+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

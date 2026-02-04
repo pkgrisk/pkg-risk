@@ -163,15 +163,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
+      "examples": 7,
       "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package and its features, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and installation docs with good quick start, but lacks troubleshooting guidance and deeper usage examples.",
+      "top_issue": "No troubleshooting section - users won't know how to debug common issues like plugin installation failures, rule configuration problems, or linting errors"
     },
     "security": {
       "overall_score": 5,
@@ -204,16 +204,20 @@
       "summary": "The code has several security concerns, including command injection vulnerabilities and hardcoded secrets, which need to be addressed to ensure the security of the application."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "parsing errors",
-        "feature requests"
+        "Error handling could be improved - tool stops on first error instead of collecting all issues",
+        "Configuration management lacks ability to reuse/include common settings across files",
+        "Dependency on deprecated cryptographic libraries (openpgp) limiting modern key support"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Security-conscious (adding attestation and checksum verification)",
+        "Community engagement on technical improvements"
+      ],
       "abandonment_signals": false,
-      "summary": "The tflint community is actively engaged with maintainers, reporting issues and requesting features, indicating a healthy and responsive project ecosystem."
+      "summary": "TFLint shows moderate health with active maintenance on security and feature requests, though some design decisions (deprecated crypto, error handling) indicate ongoing technical debt that slows community satisfaction."
     },
     "communication": {
       "helpfulness": 9,
@@ -229,16 +233,20 @@
       "summary": "The maintainer's responses are generally helpful, clear, and technically sound, but could benefit from a more welcoming tone and occasional elaboration for newer users."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (84 in the last 6 months)",
-        "Regular issue closure (19 closed issues in the last 6 months)",
-        "Active PR merging (78 merged PRs in the last 6 months)",
-        "Recent release (last release was within the last 6 months)"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent",
+        "28 open issues with no recent activity or resolution",
+        "No closed issues in the past 6 months indicating lack of issue triage",
+        "No merged PRs in the past 6 months suggesting no active development",
+        "No active contributors in the past 6 months",
+        "Unknown last release date indicates stalled release cycle"
       ],
-      "summary": "The tflint package appears to be actively maintained with frequent updates, issue resolution, and a strong contributor presence."
+      "positive_signals": [
+        "Recent commit activity as of February 2026 suggests the project was updated recently"
+      ],
+      "summary": "The tflint project appears abandoned despite recent git activity, with zero development activity (commits, PRs, issues resolved) over the past 6 months and a growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -249,7 +257,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and clearly marks breaking changes, but lacks explicit migration guides for users to follow."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:06:26.957783+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

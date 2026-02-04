@@ -184,15 +184,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 7,
       "examples": 9,
       "configuration": 4,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides a good introduction to the Janet programming language and its features, but lacks clear configuration and troubleshooting documentation.",
-      "top_issue": "Lack of comprehensive troubleshooting guide"
+      "summary": "Excellent clarity and examples with strong installation guidance, but lacks configuration details and troubleshooting information.",
+      "top_issue": "No configuration documentation for runtime settings, environment variables, or customization options beyond build-time flags"
     },
     "security": {
       "overall_score": 7,
@@ -219,16 +219,22 @@
       "summary": "The code has some potential security vulnerabilities, including a possible buffer overflow and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "OS-specific issues",
-        "Compile errors"
+        "Threading and data sharing limitations (copying data between threads, unavailable features in threads)",
+        "Async/event loop bugs (ev/cancel not working properly, ev/select reviving fibers)",
+        "Language feature gaps (no static stdin reading without threads)",
+        "Security vulnerabilities (heap-buffer-overflow bugs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active bug fixing and issue resolution",
+        "Community engagement with detailed technical discussions",
+        "Language design thoughtfulness (comparisons to Go/Guile for threading models)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing some OS-specific bugs and compile errors, but the issues are not strongly negative or positive."
+      "summary": "Janet shows healthy maintainer engagement with active bug fixing and feature discussion, but faces frustration around threading limitations, async/event-loop reliability, and recent security vulnerabilities that need addressing."
     },
     "communication": {
       "helpfulness": 8,
@@ -241,15 +247,17 @@
       "summary": "The responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (160)",
-        "Multiple merged pull requests in the past six months (36)",
-        "Recent open and closed issues and PRs indicate ongoing development"
+      "concerns": [
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 47 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package janet shows signs of active maintenance with a high frequency of contributions."
+      "positive_signals": [],
+      "summary": "Janet appears to be abandoned with no development activity, issue resolution, or community engagement for at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -267,7 +275,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:41:05.338188+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

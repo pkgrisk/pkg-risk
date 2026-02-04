@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "clarity": 7,
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is detailed but lacks clarity and troubleshooting information, making it challenging for new users to quickly understand the package's purpose and resolve common issues.",
-      "top_issue": "Lack of troubleshooting information"
+      "summary": "Comprehensive installation guide with platform-specific instructions but lacks configuration details, troubleshooting help, and clear explanation of what burp actually does.",
+      "top_issue": "No introduction explaining what burp is or what problem it solves - jumps directly into installation without context"
     },
     "security": {
       "overall_score": 7,
@@ -213,17 +213,23 @@
       "summary": "The provided code has some security concerns, including potential injection risks and lack of input validation, but overall it seems to follow good practices for error handling and secrets management."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "burp fails cert validation with OpenSSL 3.0",
-        "OpenSSL 3 support",
-        "backup taking several days to complete"
+        "OpenSSL 3.0 compatibility issues",
+        "Performance problems with large file counts",
+        "Missing API for querying backup information",
+        "System dependency assumptions (hostname command)",
+        "VSS/Windows compatibility issues",
+        "Configuration inflexibility"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active, but there are ongoing issues that could benefit from more attention and resolution."
+      "praise_themes": [
+        "Effective deduplication functionality",
+        "Reliable backup restoration"
+      ],
+      "abandonment_signals": true,
+      "summary": "Burp shows signs of moderate maintenance with unresolved critical issues (OpenSSL 3 support, performance) and user concerns about active development status, indicating potential community health concerns."
     },
     "communication": {
       "helpfulness": 7,
@@ -236,17 +242,18 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with users."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low commit frequency in the past six months",
-        "High number of open issues"
+        "No commits in past 6 months despite last commit being recent (2025-12-24)",
+        "77 open issues with no recent closure activity",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release - suggests release process has stalled",
+        "No pull request activity suggests community contributions not being accepted"
       ],
-      "positive_signals": [
-        "Recent release",
-        "Active contributor"
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns due to a lack of commits and many unresolved issues."
+      "positive_signals": [],
+      "summary": "The burp package appears abandoned with no development activity, issue resolution, or community engagement over the past 6 months despite having a large backlog of open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -257,7 +264,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks clear marking of breaking changes, migration guides, and proper categorization, making it difficult for users to understand and follow the updates."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:23:16.670278+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

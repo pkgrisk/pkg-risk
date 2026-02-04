@@ -170,7 +170,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 3,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "README provides good high-level clarity about what RNP is but defers all practical information to external documentation links without showing any inline content.",
+      "top_issue": "No inline installation instructions, quick start code, or examples - users must click through multiple links to get started, creating friction and uncertainty about complexity"
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [
@@ -195,16 +205,24 @@
       "summary": "The code has some security concerns related to input validation and error handling, but no critical secrets or injection risks were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "crash due to uninitialized variable",
-        "import key failure with unknown packet number"
+        "Uninitialized variables causing crashes",
+        "Key import failures with unknown packet types",
+        "Signature/algorithm mismatch warnings",
+        "Platform compatibility issues (32-bit, Hurd, PowerPC)",
+        "Test failures with time-based expirations",
+        "Missing release artifacts"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active bug reporting with detailed reproduction cases",
+        "Engagement with reproducible builds community",
+        "Security-conscious (proper release signing)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate responsiveness from maintainers and some common issues reported."
+      "summary": "RNP maintains moderate health with active bug reporting and some fixes, but unresolved platform compatibility issues and lingering algorithmic validation warnings suggest maintenance gaps in non-standard architectures."
     },
     "communication": {
       "helpfulness": 8,
@@ -217,17 +235,18 @@
       "summary": "Responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (246)",
-        "Low number of merged PRs in the past six months (4)"
+        "No commits in past 6 months despite last commit being from December 2025",
+        "261 open issues with no recent activity or triage",
+        "Zero closed issues in past 6 months indicating no maintenance effort",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release suggests release history is not being maintained"
       ],
-      "positive_signals": [
-        "Recent commit and release dates",
-        "Moderate number of commits in the past six months (17)"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but a backlog of issues."
+      "positive_signals": [],
+      "summary": "rnp shows clear signs of abandonment with zero maintenance activity over the past 6 months and a large backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -238,7 +257,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:19:39.211341+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

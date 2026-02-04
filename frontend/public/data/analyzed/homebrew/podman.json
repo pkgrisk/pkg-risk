@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The Podman README provides a good overview of the package's features and scope, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear and concise installation instructions and quick start guide"
+      "examples": 1,
+      "configuration": 4,
+      "troubleshooting": 5,
+      "overall": 4,
+      "summary": "Excellent high-level overview and architecture description, but critically lacking concrete installation steps, usage examples, and quick-start guidance in the README itself.",
+      "top_issue": "No installation instructions or quick-start examples in the README - users are only given links to external documentation without any inline guidance"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,17 @@
       "summary": "The code has some security concerns, including potential command injection attacks and lack of input validation, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs",
-        "compatibility issues"
+        "Missing dependencies in podman-machine (git not included)",
+        "Proxy configuration not respected in build ADD steps",
+        "API hangs and performance issues with high-volume container operations"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The podman community is experiencing frustration due to numerous open bugs and compatibility issues, with slow maintainer responsiveness."
+      "summary": "Podman shows moderate community health with active issue tracking and closure, but recurring platform-specific bugs (Windows/macOS) and performance concerns under high load suggest areas needing attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,16 +227,20 @@
       "summary": "The maintainer's responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to make the community more inclusive."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (923)",
-        "Large number of contributors active in the past 6 months (96)",
-        "Recent last commit and release dates",
-        "Significant number of merged PRs in the past 6 months (247)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-04)",
+        "1056 open issues with zero closed in past 6 months indicates no issue triage",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No releases in past 6 months",
+        "High issue count suggests backlog is not being addressed"
       ],
-      "summary": "The podman package appears to be actively maintained with a high volume of recent commits, releases, and contributor activity."
+      "positive_signals": [
+        "Last commit timestamp is recent (2026-02-04)"
+      ],
+      "summary": "Podman appears abandoned with no development activity, issue resolution, or contributor engagement in the past 6 months despite a large backlog of 1056 open issues."
     },
     "changelog": null,
     "governance": {
@@ -245,7 +250,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "low",
       "summary": "The Podman project has a well-documented governance structure with a clear contributor ladder, decision-making process, and succession plan in place."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:49:08.499188+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

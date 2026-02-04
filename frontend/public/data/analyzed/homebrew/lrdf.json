@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 6,
       "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "The documentation is very brief and lacks essential information for new users to get started.",
-      "top_issue": "Lack of installation instructions, examples, and usage documentation"
+      "summary": "Minimal README provides basic project description but completely lacks practical usage information, installation steps, or any code examples.",
+      "top_issue": "No installation instructions or usage examples whatsoever - users cannot actually use the library based on this documentation."
     },
     "security": {
       "overall_score": 7,
@@ -187,16 +187,19 @@
       "summary": "The lrdf package has some security concerns, including potential input validation issues and error exposure, but no critical injection risks or secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "test suite issues",
-        "license clarity"
+        "Test suite crashes (core dumps and segfaults)",
+        "Build system issues (autotools, symlinks, missing m4 directory)",
+        "Outdated/incorrect dependency declarations (raptor.h vs raptor2.h, version mismatch in pkg-config)",
+        "Licensing ambiguity and GPL/OpenSSL compatibility concerns",
+        "Type safety issues (const char* vs char*)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness and common complaints about test failures and licensing, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows severe abandonment with 9 open issues spanning 6+ years, no maintainer engagement, critical bugs unresolved (test failures, core dumps), and infrastructure problems that suggest the codebase is no longer actively maintained."
     },
     "communication": {
       "helpfulness": 7,
@@ -212,17 +215,17 @@
       "summary": "The maintainer is generally adequate in addressing issues but could improve clarity and depth, especially for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Multiple open issues and no recent PR activity"
+        "No commits in over 7 years (last commit January 2018)",
+        "No activity in the past 6 months across all metrics",
+        "7 open issues with no resolution or engagement",
+        "No releases, no merged PRs, no contributor activity",
+        "Complete stagnation indicates project is no longer maintained"
       ],
-      "positive_signals": [
-        "Recent contributors (past six months)",
-        "A release exists, though it is older"
-      ],
-      "summary": "The package shows minimal maintenance with some recent contributor activity but lacks active development."
+      "positive_signals": [],
+      "summary": "This project is abandoned with no maintenance activity since 2018 and zero engagement on open issues or pull requests."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -233,7 +236,10 @@
       "overall_score": 1,
       "summary": "The changelog is extremely lacking in detail and clarity, offering no useful information for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:07:04.241701+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

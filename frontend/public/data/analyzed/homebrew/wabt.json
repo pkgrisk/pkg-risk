@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 8,
+      "troubleshooting": 5,
+      "overall": 6,
+      "summary": "Excellent clarity on what the toolkit does and comprehensive feature documentation, but lacks practical usage examples and quick-start guidance for the actual tools.",
+      "top_issue": "No basic usage examples showing how to actually use the core tools (wat2wasm, wasm2wat, etc.) after installation - users can build it but won't know how to run simple commands"
     },
     "security": {
       "overall_score": 8,
@@ -195,15 +195,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "wasm-decompile issues",
-        "lack of documentation"
+        "Critical memory safety bugs in wasm-decompile (heap-use-after-free, heap-buffer-overflow, segmentation faults)",
+        "Official release binaries missing WASI support despite being compiled in",
+        "wasm-decompile producing incorrect decompilation results",
+        "CI/build infrastructure failures (macOS sigaltstack errors)",
+        "Documentation/website issues (404 on official docs)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The wabt community is experiencing frustration due to numerous open issues, particularly with wasm-decompile, and a perceived lack of responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with multiple unresolved critical security vulnerabilities in core tools (especially wasm-decompile), missing features in official binaries, slow maintainer response, and infrastructure issues suggesting the project may be under-resourced or abandoned."
     },
     "communication": {
       "helpfulness": 8,
@@ -219,21 +222,24 @@
       "summary": "The maintainer's responses are generally helpful, clear, and welcoming, but could improve with more patience and guidance for new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "No commits in past 6 months despite last commit being recent (Jan 2026)",
+        "206 open issues with no recent activity or closure",
+        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
+        "No merged PRs in past 6 months showing no feature development or contributions accepted",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release infrastructure may be broken"
       ],
-      "positive_signals": [
-        "recent commits and releases",
-        "active contributors",
-        "steady merge rate of PRs"
-      ],
-      "summary": "The wabt package appears to be maintained with regular updates, active contributors, and a steady flow of merged pull requests, despite having a significant number of open issues and PRs."
+      "positive_signals": [],
+      "summary": "The wabt package appears abandoned with no maintenance activity for 6+ months despite a large backlog of 206 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:00:39.378034+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

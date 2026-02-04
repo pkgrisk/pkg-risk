@@ -186,14 +186,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 8,
+      "installation": 5,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
+      "examples": 1,
+      "configuration": 4,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is somewhat clear but lacks a quick start guide and troubleshooting information.",
-      "top_issue": "Lack of a concise quick start example to get new users started with the package."
+      "overall": 3,
+      "summary": "Documentation heavily relies on external files with no direct examples, making it difficult for new users to quickly understand what Squashfs does or how to use it.",
+      "top_issue": "No description of what Squashfs is or what problems it solves - just links to other documentation files"
     },
     "security": {
       "overall_score": 7,
@@ -204,16 +204,19 @@
       "summary": "The code appears to be generally secure with no major injection risks or secrets exposure, but could benefit from improved input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and regressions",
-        "feature requests"
+        "Critical bugs in recent releases (4.7.3, 4.7.4) causing segfaults and corrupted images",
+        "File deduplication failures with large files",
+        "Compatibility issues with older C libraries (musl, uClibc-ng)",
+        "Missing features for modern use cases (pipe to stdout, reusable compressed blocks)",
+        "Regression issues breaking existing functionality"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The squashfs community is active, with maintainers responding to issues and feature requests in a timely manner, but users are experiencing some frustration due to bugs and unimplemented features."
+      "summary": "Squashfs maintains active development with regular bug fixes and feature engagement, but recent versions have introduced regressions and critical bugs affecting production use, indicating potential quality control issues despite maintainer responsiveness."
     },
     "communication": {
       "helpfulness": 9,
@@ -226,16 +229,19 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (238)",
-        "Recent last commit (2025-12-11)",
-        "Active contributors (5) in the past 6 months",
-        "Regularly merged PRs (5) and closed issues (17) in the past 6 months"
+      "concerns": [
+        "No commits in past 6 months despite recent activity date",
+        "26 open issues with no closed issues in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
-      "summary": "The squashfs package appears to be actively maintained with frequent commits, recent updates, and active contributors."
+      "positive_signals": [
+        "Repository still exists and has some open issues reported"
+      ],
+      "summary": "The squashfs package appears stale with no maintenance activity over the past 6 months despite having 26 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -246,7 +252,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and comprehensive, but lacks explicit breaking change markers and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:10:57.922471+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

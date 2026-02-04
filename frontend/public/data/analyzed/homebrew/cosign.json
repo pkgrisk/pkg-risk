@@ -161,14 +161,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 9,
+      "installation": 7,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the cosign package and its usage, but lacks detailed configuration and troubleshooting documentation.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose and good quick start examples, but lacks comprehensive configuration documentation and troubleshooting guidance.",
+      "top_issue": "Configuration options are barely documented (only mentioned as existing, not explained), and there's virtually no troubleshooting section despite the complexity of keyless signing workflows."
     },
     "security": {
       "overall_score": 5,
@@ -194,16 +194,17 @@
       "summary": "The code has several security concerns, including command injection vulnerabilities and lack of input validation, which can be exploited by attackers to gain unauthorized access or execute malicious commands."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "issues with private signing and verification workflow",
-        "regression bugs in new versions"
+        "Configuration fragmentation - OIDC parameters required as CLI flags despite signingConfig file",
+        "Air-gapped environment support gaps - users struggling with offline deployments",
+        "Authentication complexity - need for simpler docker config.json support for private registries"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with unresolved issues and regression bugs, indicating a need for more active maintainer engagement to address these concerns."
+      "summary": "Cosign has active community engagement with balanced feature requests and operational issues; users are invested enough to report problems and request improvements, suggesting healthy adoption despite moderate complexity complaints."
     },
     "communication": {
       "helpfulness": 9,
@@ -216,17 +217,20 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (197)",
-        "Recent last commit (2025-12-29)",
-        "Frequent releases (last release on 2025-12-10)",
-        "Many merged PRs in the past 6 months (194)",
-        "Multiple active contributors (18) in the past 6 months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-03)",
+        "299 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release history is unavailable"
       ],
-      "summary": "The cosign package appears to be actively maintained with frequent updates, releases, and a high level of community engagement."
+      "positive_signals": [
+        "Recent commit activity exists (2026-02-03)"
+      ],
+      "summary": "The project appears abandoned with no ongoing maintenance activity, though a recent commit suggests either a final release or automated sync."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -244,7 +248,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The Cosign project lacks a clear succession plan, decision-making process documentation, and indication of multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:15:32.382628+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

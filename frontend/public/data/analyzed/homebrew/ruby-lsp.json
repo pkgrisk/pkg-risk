@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 7,
       "quick_start": 4,
-      "examples": 2,
-      "configuration": 1,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks detailed installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear and complete installation instructions and examples"
+      "summary": "Clear purpose statement with good installation guidance for VS Code, but lacks concrete usage examples, configuration details, and troubleshooting information in the README itself (relegating everything to external docs).",
+      "top_issue": "No quick start example showing actual usage - users must navigate to external documentation to understand what the LSP does or how to verify it's working"
     },
     "security": {
       "overall_score": 7,
@@ -203,16 +203,20 @@
       "summary": "The code has some potential security issues, including injection risks and input validation concerns, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug fixes",
-        "feature requests"
+        "LSP crashes and method errors (NoMethodError on process_message)",
+        "Syntax highlighting broken in recent versions",
+        "Test discovery functionality broken",
+        "Performance degradation with test-unit reporter",
+        "Custom Ruby command configuration broken in 0.10.0",
+        "Feature limitations (sticky scroll in ERB, custom test commands)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The ruby-lsp community is moderately active with a mix of open and closed issues, indicating a need for more maintainer engagement to address user concerns."
+      "summary": "Ruby LSP shows moderate maintainer engagement with active bug reports and feature requests, but recent releases (0.26.5, 0.10.0) have introduced regressions causing user frustration with core functionality like test discovery, syntax highlighting, and configuration handling."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,16 +232,20 @@
       "summary": "The maintainer's responses are generally helpful and clear, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (229)",
-        "Recent last commit (2026-01-02)",
-        "Large number of merged PRs in the past 6 months (138)",
-        "Multiple active contributors in the past 6 months (21)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-03)",
+        "118 open issues with no activity suggests backlog is not being triaged",
+        "Zero closed issues in past 6 months indicates no bug fixes or maintenance work",
+        "No merged PRs in past 6 months shows no feature development or community contributions being integrated",
+        "Zero active contributors in past 6 months indicates project team has become inactive",
+        "Unknown last release date suggests release process may be stalled"
       ],
-      "summary": "The ruby-lsp package is actively maintained with frequent commits, a large number of merged PRs, and multiple active contributors."
+      "positive_signals": [
+        "Recent commit timestamp suggests repository exists and may receive occasional updates"
+      ],
+      "summary": "The ruby-lsp project appears abandoned with no maintenance activity for 6+ months despite having 118 unresolved issues and no active contributors."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +255,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the ruby-lsp package lacks clear plans for succession, decision making, contributor advancement, and multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:52:51.341544+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

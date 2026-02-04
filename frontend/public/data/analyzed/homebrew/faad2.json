@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 2,
+      "clarity": 6,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides some basic information about the package, but lacks clear installation instructions and usage examples.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "overall": 2,
+      "summary": "README clearly states what the package is (AAC decoder) but provides no installation, usage, or practical documentation beyond directory structure and license information.",
+      "top_issue": "No installation instructions, usage examples, or any guidance on how to actually use the decoder beyond mentioning a command line frontend exists"
     },
     "security": {
       "overall_score": 7,
@@ -202,16 +202,19 @@
       "summary": "The FAAD2 decoder has some security concerns, including potential injection risks and lack of input validation, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "decoding issues",
-        "format support"
+        "Security vulnerabilities (buffer overflows, crashes from crafted data)",
+        "Output format issues (WAV stdout compatibility problems)",
+        "Audio quality problems (distorted sound decoding)",
+        "Missing codec support (xHE-AAC, MPEG-DASH)",
+        "Specification compliance errors"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The faad2 community is moderately active, with some users experiencing frustration due to decoding issues and format support limitations, but the maintainers are responsive to reported problems."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with critical security bugs, minimal maintainer engagement, unanswered feature requests spanning 5+ years, and no active development momentum."
     },
     "communication": {
       "helpfulness": 9,
@@ -224,20 +227,26 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low number of commits",
-        "unaddressed open issues"
+        "No commits in the past 6 months despite last commit being from October 2025",
+        "11 open issues with no activity or resolution",
+        "No closed issues in the past 6 months indicating lack of maintenance",
+        "No merged pull requests in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release date suggests release process may be abandoned"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors"
+        "Project exists and has some historical activity (last commit recorded)"
       ],
-      "summary": "The faad2 package receives occasional updates and has active contributors, but its maintenance is limited due to a low volume of commits and unaddressed open issues."
+      "summary": "The faad2 project appears stale with complete inactivity over the past 6 months despite having unresolved open issues, indicating the maintainers are not actively managing the repository."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:23:02.739769+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

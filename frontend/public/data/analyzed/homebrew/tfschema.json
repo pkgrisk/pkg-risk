@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good installation instructions, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "quick_start": 10,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent quick start and clear purpose with comprehensive installation options, but lacks troubleshooting guidance and configuration examples could be more detailed.",
+      "top_issue": "No troubleshooting section for common errors like provider binary not found, plugin protocol issues, or authentication failures with Terraform/OpenTofu providers"
     },
     "security": {
       "overall_score": 7,
@@ -213,15 +213,17 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but no hardcoded secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Dynamic library issues"
+        "Dependency on internal Terraform packages limiting forward compatibility",
+        "Build issues with dynamic linking after Go version upgrades",
+        "Unclear support strategy for OpenTF fork"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is engaged with a specific issue, but the overall sentiment remains neutral."
+      "abandonment_signals": true,
+      "summary": "The project shows moderate health with open architectural issues that limit future compatibility, unresolved questions about emerging fork support, and build problems that haven't been rapidly addressed despite known solutions."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,17 +236,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth while maintaining a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Only one release since the last commit, suggesting infrequent releases."
+        "No commits in past 6 months despite last commit being April 2025",
+        "No closed issues in past 6 months indicating no active bug fixes",
+        "No merged PRs in past 6 months showing no feature development",
+        "Zero active contributors in past 6 months",
+        "4 open issues with no resolution activity",
+        "Unknown last release indicates version stagnation"
       ],
-      "positive_signals": [
-        "Seven contributors active in the past six months, which indicates some level of community involvement and interest.",
-        "Two open PRs, showing that there is ongoing work to improve the package."
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits or updates."
+      "positive_signals": [],
+      "summary": "tfschema appears to be an abandoned project with no maintenance activity for at least 6 months and unresolved issues accumulating."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -255,7 +258,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks migration guides for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:05:06.796859+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

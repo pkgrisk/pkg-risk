@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 10,
       "quick_start": 7,
-      "examples": 6,
+      "examples": 5,
       "configuration": 8,
       "troubleshooting": 4,
       "overall": 7,
-      "summary": "The documentation is generally clear and well-structured, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Excellent installation coverage and clear purpose, but lacks practical usage examples and troubleshooting guidance beyond basic setup.",
+      "top_issue": "Only one basic usage example (config validate) is shown; most users will need more practical examples of common CircleCI CLI workflows like running local builds, working with orbs, or managing contexts."
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,19 @@
       "summary": "The code has some security concerns, including potential SQL injection risks and inadequate input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "validation errors",
-        "installation issues"
+        "Local configuration execution lacks support for certain features",
+        "File system handling issues (XDG directory compliance)",
+        "Docker image caching/pulling problems",
+        "Configuration validation errors with pipeline variables",
+        "Git version compatibility issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with unresolved bugs and installation problems, indicating a need for more active maintainer engagement."
+      "summary": "The circleci CLI shows moderate community engagement with a mix of unresolved bugs and some closed issues, indicating active but potentially understaffed maintenance with reasonable issue tracking but inconsistent resolution timelines."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,17 +232,17 @@
       "summary": "The maintainer responses are generally helpful, clear, patient, and welcoming, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no closed issues in the past 6 months",
-        "high number of open issues"
+        "Zero commits in past 6 months despite recent last commit date (likely from homebrew formula update, not upstream)",
+        "139 open issues with zero closed in past 6 months indicates complete lack of issue triage",
+        "No active contributors in past 6 months",
+        "Zero merged PRs in past 6 months shows no development activity",
+        "Unknown last release suggests no versioning/release management"
       ],
-      "positive_signals": [
-        "recent commits and releases",
-        "active contributors and merged PRs"
-      ],
-      "summary": "The package appears to be stale due to a lack of issue resolution, despite recent activity from contributors and releases."
+      "positive_signals": [],
+      "summary": "The circleci package appears to be completely abandoned with no upstream maintenance activity, open issues, or contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -249,7 +252,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the CircleCI package lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-04T12:14:25.652736+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",
