@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a clear and detailed explanation of the package's functionality, installation, and configuration, but lacks concise quick start examples and troubleshooting guidance.",
-      "top_issue": "Lack of concise troubleshooting section"
+      "configuration": 8,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent documentation with clear architecture explanation and comprehensive installation/configuration options, though troubleshooting could be more thorough.",
+      "top_issue": "Limited troubleshooting section - only covers basic test cases (random noise, WAV file) and Raspberry Pi setup, missing common sync issues, network problems, or audio backend failures."
     },
     "security": {
       "overall_score": 7,
@@ -226,16 +226,22 @@
       "summary": "The code has some potential security issues, including a lack of input validation and potential SQL injection vulnerabilities, but overall it seems to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "TCP stream sources accumulate orphaned connections",
-        "Url parser doesn't handle ipv6 addresses properly"
+        "Installation and compatibility issues",
+        "TCP/stream management bugs",
+        "Build failures on specific platforms (Raspberry Pi, outdated distributions)",
+        "Hardware/system integration problems (suspend crashes, mixer UI sync)",
+        "Discovery service failures with newer versions"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Feature requests show engaged community",
+        "Active ecosystem (ESP32 client ports, PipeWire integration attempts)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is moderately active, with open issues related to functionality and feature requests, but no clear signs of frustration or abandonment."
+      "summary": "Snapcast shows moderate community health with active feature requests and recent bug reports, but maintainers respond slowly to issues and some bugs persist across multiple versions (discovery failures, port release issues)."
     },
     "communication": {
       "helpfulness": 7,
@@ -248,17 +254,20 @@
       "summary": "The maintainer responses are generally clear and patient, though could benefit from more technical depth in explanations."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being from December 2025",
+        "103 open issues with no recent closure activity",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests no recent version releases"
       ],
       "positive_signals": [
-        "Recent commits and releases",
-        "Multiple contributors active in the past six months"
+        "Repository still exists and hasn't been archived",
+        "Open issues indicate some user engagement/interest"
       ],
-      "summary": "The package is maintained but faces some concerns with unresolved issues and low PR merge activity."
+      "summary": "Snapcast appears to be in a stale maintenance state with no development activity over the past 6 months despite a high volume of unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -268,7 +277,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision process but lacks a clear succession plan or contributor ladder, indicating medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T05:59:07.319042+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

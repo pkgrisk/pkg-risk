@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to Doltgres and its installation, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Excellent README with clear concept explanation, comprehensive installation and quick start, but light on configuration details and troubleshooting guidance.",
+      "top_issue": "Configuration options are mentioned (config.yaml, DOLTGRES_DATA_DIR) but not documented; troubleshooting section is missing entirely despite being beta software"
     },
     "security": {
       "overall_score": 7,
@@ -207,18 +207,18 @@
       "summary": "The doltgres package has some security concerns related to input validation and potential injection risks, but overall it appears to be relatively secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "bug reports",
-        "feature requests"
+        "Critical bugs causing server panics (nil pointer dereference)",
+        "Missing PostgreSQL feature support (expression indexes, ENUM defaults)",
+        "Configuration bugs in Docker entrypoint ignoring environment variables",
+        "Migration compatibility issues with SQLx extended query protocol"
       ],
-      "praise_themes": [
-        "positive engagement with the community"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is engaged and showing interest in both bug fixes and feature enhancements, but there are some unresolved issues that could benefit from more timely responses."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Community health is poor with multiple critical bugs, zero maintainer responses to newly filed issues, and significant PostgreSQL compatibility gaps blocking production adoption."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,15 +231,19 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with new contributors while maintaining a good level of technical detail."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (629)",
-        "A significant number of merged PRs in the past six months (90)",
-        "Multiple contributors active in the past six months (16)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-12)",
+        "88 open issues with no closed issues in past 6 months indicates lack of issue triage",
+        "No merged PRs in past 6 months shows no active development or contribution acceptance",
+        "Zero active contributors in past 6 months",
+        "No release information available, unclear if project even has release cycle"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Recent commit timestamp suggests repository still exists and hasn't been deleted"
+      ],
+      "summary": "Project appears abandoned with no maintenance activity, issue resolution, or contribution acceptance in the past 6 months despite having 88 unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -249,7 +253,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents a clear decision-making process and indicates multiple maintainers, but lacks formal succession planning or a contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T05:59:59.201662+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
