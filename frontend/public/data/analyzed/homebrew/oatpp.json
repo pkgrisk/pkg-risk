@@ -184,14 +184,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
+      "installation": 7,
+      "quick_start": 6,
       "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a good overview of the Oat++ framework, but installation and configuration instructions could be more detailed.",
-      "top_issue": "Lack of clear step-by-step installation instructions for different platforms"
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Excellent examples and clear purpose, but lacks quick-start code snippets, configuration details, and troubleshooting guidance.",
+      "top_issue": "No immediate runnable quick-start example - the code snippets shown require significant context and setup that isn't explained in the README"
     },
     "security": {
       "overall_score": 8,
@@ -202,16 +202,21 @@
       "summary": "The oatpp package appears to be generally secure, but lacks explicit input validation and may have insecure default configurations for SSL verification."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "RTTI requirement",
-        "Integration with parent project"
+        "Critical security vulnerabilities (stack overflow, NULL pointer dereference)",
+        "Expired SSL certificate on project homepage (recurring issue)",
+        "Request timeout functionality not working",
+        "Thread affinity errors on low-core systems",
+        "Test infrastructure issues (getaddrinfo failures)",
+        "Compilation and linking errors",
+        "Lack of modern C++ features and RTTI requirements"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active, but there are open issues related to RTTI and integration that may indicate some frustration."
+      "abandonment_signals": true,
+      "summary": "The oatpp project shows signs of maintenance neglect with unresolved critical security vulnerabilities, repeated infrastructure failures (expired SSL certificate), and slow/minimal maintainer engagement on important issues."
     },
     "communication": {
       "helpfulness": 9,
@@ -224,17 +229,18 @@
       "summary": "Maintainer responses are clear, helpful, and patient. Technical depth is appropriate, and the maintainer encourages new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of commits in the past six months (5)",
-        "High number of open issues (269)"
+        "No commits in past 6 months despite last commit being from November 2025",
+        "331 open issues with no recent closure activity",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No recent releases",
+        "Large backlog of unresolved issues suggests project is not actively maintained"
       ],
-      "positive_signals": [
-        "Recent release (2024-12-01)",
-        "Some recent PR activity (2 merged in the past six months)"
-      ],
-      "summary": "The package shows minimal maintenance with occasional updates and contributions, but a high number of open issues is a concern."
+      "positive_signals": [],
+      "summary": "oatpp shows clear signs of abandonment with zero maintenance activity over the past 6 months and a large growing issue backlog."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +250,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear succession plans, decision-making processes, and paths for contributors to become maintainers, indicating a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T06:02:48.394117+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

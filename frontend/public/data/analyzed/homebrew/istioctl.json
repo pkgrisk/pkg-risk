@@ -180,12 +180,12 @@
       "clarity": 8,
       "installation": 2,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks clear installation and quick start instructions, making it difficult for new users to get started.",
-      "top_issue": "Lack of clear installation instructions"
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "Clear high-level description of what Istio is, but completely lacks installation instructions, quick start guides, and practical examples in the README itself.",
+      "top_issue": "No installation instructions whatsoever - users must navigate to external documentation to learn how to actually install and use istioctl"
     },
     "security": {
       "overall_score": 7,
@@ -227,13 +227,16 @@
       "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Istio Gateway issues",
-        "ambient mode problems",
-        "logging and debugging difficulties"
+        "Configuration validation gaps (invalid VirtualService specs accepted)",
+        "Incomplete documentation (HTTP/3 enablement, metrics scraping)",
+        "Helm chart schema limitations (missing 'enabled' field support)",
+        "Feature gaps (dynamic routing based on headers)",
+        "CNI and environment-specific deployment issues",
+        "Envoy integration inconsistencies (header removal, DC flags)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The Istio community is experiencing frustration with various technical issues, particularly with Istio Gateway and ambient mode, and is awaiting more responsive support from maintainers."
+      "abandonment_signals": true,
+      "summary": "Community health is concerning with all 10 recent issues marked as stale, minimal engagement (1-4 comments each), no visible maintainer responses, and unresolved feature requests and bugs suggesting slow or unresponsive project maintenance."
     },
     "communication": {
       "helpfulness": 8,
@@ -249,16 +252,20 @@
       "summary": "The maintainers provide technically detailed and somewhat helpful responses, but could improve in terms of clarity, patience, and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (587)",
-        "Large number of merged PRs in the past 6 months (268)",
-        "Recent last release (2025-12-22)",
-        "Many active contributors in the past 6 months (92)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being today (2026-02-11) - indicates stale repository data or inactive main branch",
+        "494 open issues with no closed issues in past 6 months indicates backlog accumulation and lack of triage",
+        "Zero merged PRs in past 6 months shows no active development or community contribution acceptance",
+        "No active contributors in past 6 months",
+        "Unknown last release - no version information available",
+        "No open PRs suggests community has stopped submitting contributions"
       ],
-      "summary": "The istioctl package appears to be actively maintained with frequent updates, a high volume of contributions, and recent releases."
+      "positive_signals": [
+        "Repository exists and has historical activity (494 open issues indicates past usage)"
+      ],
+      "summary": "istioctl appears abandoned with no maintenance activity over 6 months despite large open issue backlog, zero contributor engagement, and no recent releases."
     },
     "changelog": null,
     "governance": {
@@ -268,7 +275,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for istioctl lacks a clear succession plan and indicates a single maintainer, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T06:01:21.877291+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

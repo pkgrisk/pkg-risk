@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 7,
       "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a clear introduction to the AWS CDK and its usage, but could benefit from more detailed configuration and troubleshooting documentation.",
-      "top_issue": "Lack of comprehensive troubleshooting guide"
+      "troubleshooting": 8,
+      "overall": 8,
+      "summary": "Excellent README with clear purpose, installation, and quick-start guide, though configuration options and advanced examples could be more comprehensive.",
+      "top_issue": "Configuration documentation is minimal - relies heavily on external links rather than showing common configuration patterns in the README itself"
     },
     "security": {
       "overall_score": 8,
@@ -200,13 +200,20 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error exposure that should be addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
-      "common_complaints": [],
-      "praise_themes": [],
+      "common_complaints": [
+        "Missing feature parity with CloudFormation (grants.json generation, ComputeResource tags)",
+        "Documentation and configuration clarity (cross-region pipeline behavior)",
+        "Version support lag (EKS v1.35 not yet supported)"
+      ],
+      "praise_themes": [
+        "Sandbox build output improvements appreciated",
+        "Active feature request process with 'good first issue' labels"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health of the aws-cdk project appears stable, with moderate maintainer responsiveness and no major complaints or praise themes evident in the provided issues."
+      "summary": "AWS CDK shows moderate community health with active feature requests, responsive maintainers (issues resolved/closed), and some frustration around CloudFormation feature parity gaps and documentation, but no signs of project abandonment."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,19 +229,20 @@
       "summary": "The maintainer responses are generally helpful and clear, but could improve with more personalized feedback and technical depth to better support contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "Zero commits in past 6 months despite last commit being today (data inconsistency suggests stale/unreliable data)",
+        "2617 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "large number of active contributors",
-        "high rate of merged PRs"
+        "Repository exists and has historical commits"
       ],
-      "summary": "The aws-cdk package appears to be actively maintained with a high volume of recent activity, despite some concerns regarding the number of open issues and PRs."
+      "summary": "The aws-cdk package appears abandoned with no maintenance activity over 6 months despite conflicting last commit timestamp, indicating either data integrity issues or genuine project stagnation."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +252,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The aws-cdk project has a well-documented decision process and contributor ladder, but lacks a clear succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T06:00:53.092676+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

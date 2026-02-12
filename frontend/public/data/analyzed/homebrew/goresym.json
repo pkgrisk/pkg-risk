@@ -178,14 +178,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 5,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is generally clear but lacks comprehensive installation instructions, examples, and troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting information"
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose, solid installation/usage instructions, but lacks troubleshooting guidance for common errors.",
+      "top_issue": "No troubleshooting section for common errors like unsupported binary formats, parsing failures, or what to do when type extraction fails"
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,21 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but it does not appear to have any critical vulnerabilities that would allow for immediate exploitation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs",
-        "missing features"
+        "Parser failures with recent Go versions (1.26, 1.20)",
+        "Binary parsing edge cases (missing pclntab, moduledata detection)",
+        "Missing features (version display, strings extraction)",
+        "Incomplete type/field metadata extraction"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Project marked with 'good first issue' labels suggesting community involvement",
+        "Technical depth appreciated (reverse engineering focus)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "summary": "Project shows active maintenance with recent issue triage and closed tickets, but struggles with Go version compatibility and edge-case binary parsing that require sustained technical focus."
     },
     "communication": {
       "helpfulness": 8,
@@ -236,20 +241,24 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with new contributors but raise concerns about the use of LLMs."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Recent commits are few and far between, with the last commit being over a year ago.",
-        "The number of open issues is relatively high compared to merged PRs."
+        "No commits in past 6 months despite last commit being recent (2026-01-13)",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "Zero closed issues in past 6 months shows no issue triage or maintenance",
+        "12 open issues with no activity suggests unaddressed bugs",
+        "No active contributors in past 6 months",
+        "Unknown last release date indicates poor release management"
       ],
-      "positive_signals": [
-        "There have been recent contributions from multiple contributors in the past six months.",
-        "Some issues and PRs have been addressed recently."
-      ],
-      "summary": "The package shows minimal maintenance with occasional updates but faces some concerns regarding issue resolution."
+      "positive_signals": [],
+      "summary": "Repository is abandoned with no maintenance activity or issue resolution in the past 6 months despite having unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T06:04:35.405054+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

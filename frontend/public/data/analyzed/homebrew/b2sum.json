@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a good overview of the package's contents, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and quick start examples"
+      "summary": "README provides clear structural overview of the codebase but completely lacks installation instructions, usage examples, or any practical guidance for end users.",
+      "top_issue": "No installation or build instructions whatsoever - users have no guidance on how to compile or use b2sum"
     },
     "security": {
       "overall_score": 8,
@@ -191,16 +191,22 @@
       "summary": "The b2sum tool has a good security posture with no injection risks or secrets found, but it could improve its input validation and error handling to prevent potential issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "lack of versioning for the latest HEAD",
-        "performance concerns with AVX2 implementation"
+        "Lack of version tags for dependency management and CVE tracking",
+        "Long gaps between updates (2+ years since last activity mentioned)",
+        "No response to feature requests like AVX2 integration",
+        "Unclear maintenance status of blake2.net implementation list"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, but there are open issues related to versioning and performance that could benefit from more attention."
+      "praise_themes": [
+        "Well-designed cryptographic algorithm",
+        "Community interest in improvements and compatibility",
+        "Multiple independent implementation efforts"
+      ],
+      "abandonment_signals": true,
+      "summary": "The BLAKE2 reference implementation shows signs of maintenance decline with slow responsiveness to open issues, missing version tags critical for supply chain tools, and 2+ year update gaps, though the core algorithm remains technically sound and generates academic interest."
     },
     "communication": {
       "helpfulness": 8,
@@ -213,21 +219,24 @@
       "summary": "The maintainer provides clear, technical explanations and is patient with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "No merged PRs in the past six months",
-        "Many open issues and PRs"
+        "No commits in over 2 years (last commit February 2023)",
+        "28 open issues with no resolution activity",
+        "Zero closed issues in the past 6 months",
+        "No merged pull requests in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No recent release activity"
       ],
-      "positive_signals": [
-        "Ten contributors are still active",
-        "There are open PRs that could improve the package"
-      ],
-      "summary": "The package shows signs of minimal maintenance with active contributors but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The b2sum package is abandoned with no maintenance activity for over 2 years and a growing backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T06:04:17.932519+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

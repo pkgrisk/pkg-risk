@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 8,
       "quick_start": 2,
-      "examples": 6,
+      "examples": 1,
       "configuration": 4,
       "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides detailed installation instructions and a comprehensive overview of the package, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+      "overall": 4,
+      "summary": "Well-structured README with excellent installation coverage but critically missing quick-start examples and actual usage code snippets.",
+      "top_issue": "No quick-start example or basic usage code - the README lists API components but shows zero code examples of how to actually use the library"
     },
     "security": {
       "overall_score": 5,
@@ -212,16 +212,19 @@
       "summary": "The code has some security concerns, including potential injection risks and unvalidated input data, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "outdated dependencies",
-        "build issues"
+        "Lack of releases (4 years since last release)",
+        "Build system issues (CMake incompatibilities, outdated dependency options)",
+        "Critical bugs in core functionality (buffer overflow in ziflist_new)",
+        "Dependency management problems (FTP.GNU.ORG downtime, libcurl deprecated options)",
+        "Platform-specific compilation errors (pthread declarations)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The czmq community is experiencing some frustration with build issues and outdated dependencies, but maintainers are moderately responsive to reported problems."
+      "abandonment_signals": true,
+      "summary": "CZMQ shows signs of stagnation with a 4-year release drought, unresolved critical bugs, and slow maintainer engagement leaving users frustrated with build failures and stability issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,19 +240,19 @@
       "summary": "The maintainer provides technically sound responses, but often lacks patience and clarity, which may hinder new contributors' ability to resolve issues."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low issue closure rate",
-        "old last release",
-        "relatively low commit activity"
+        "No commits in past 6 months despite last commit being recent (January 2026)",
+        "41 open issues with no recent closure activity",
+        "No merged PRs in past 6 months indicating stalled development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process may be broken"
       ],
       "positive_signals": [
-        "recent commits",
-        "active contributors",
-        "merged PRs in the past 6 months"
+        "Recent last commit shows repository is not completely abandoned"
       ],
-      "summary": "The czmq package appears to be receiving minimal maintenance with some recent activity, but concerns around issue closure and release frequency exist."
+      "summary": "The czmq project appears stale with no development activity, issue resolution, or releases in the past 6 months despite a recent commit, indicating the repository may be dormant or in maintenance limbo."
     },
     "changelog": null,
     "governance": {
@@ -259,7 +262,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The CZMQ project lacks a clear succession plan, contributor ladder, and multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T06:03:23.918292+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

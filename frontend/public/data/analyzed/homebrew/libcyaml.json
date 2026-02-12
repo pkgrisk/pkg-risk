@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
+      "installation": 7,
+      "quick_start": 3,
       "examples": 6,
       "configuration": 4,
-      "troubleshooting": 1,
+      "troubleshooting": 2,
       "overall": 5,
-      "summary": "The documentation is clear and comprehensive, but lacks a quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a quick start guide or basic usage example to help new users get started quickly."
+      "summary": "Clear overview and building instructions, but lacks inline quick-start examples and troubleshooting guidance.",
+      "top_issue": "No quick-start code example showing basic YAML-to-C-struct usage in the README itself"
     },
     "security": {
       "overall_score": 7,
@@ -189,15 +189,17 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Discrepancy in Error Messages: INT vs UINT out of range"
+        "Critical memory safety bugs (heap corruption, integer overflow)",
+        "Inconsistent error messages",
+        "Unresolved issues with incomplete fixes"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is reporting issues, but the project seems to be receiving moderate attention from maintainers."
+      "abandonment_signals": true,
+      "summary": "libcyaml shows signs of poor maintenance with critical memory safety vulnerabilities, slow response times, and open issues remaining unresolved for extended periods."
     },
     "communication": {
       "helpfulness": 7,
@@ -210,17 +212,18 @@
       "summary": "The maintainer's responses are generally helpful and clear, showing patience with repeated questions and providing technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Low number of contributors (only 1 active)"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "15 open issues with no triage activity",
+        "Unknown last release date suggests poor release practices"
       ],
-      "positive_signals": [
-        "Recent commit within the last year",
-        "Regular issue reporting"
-      ],
-      "summary": "The package is minimally maintained with recent activity but lacks contribution diversity."
+      "positive_signals": [],
+      "summary": "libcyaml appears abandoned with no maintenance activity, open issues, or releases in the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -231,7 +234,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears complete, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T06:02:13.450595+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
