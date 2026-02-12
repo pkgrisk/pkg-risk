@@ -186,15 +186,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 6,
       "quick_start": 7,
-      "examples": 9,
+      "examples": 8,
       "configuration": 5,
       "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package's features and architecture, but installation and troubleshooting instructions could be improved.",
-      "top_issue": "Lack of clear and comprehensive installation instructions for non-brew users"
+      "overall": 7,
+      "summary": "Excellent clarity and architecture explanation, but lacks inline installation instructions, configuration details, and troubleshooting guidance in the main README.",
+      "top_issue": "Installation instructions defer entirely to external links without showing any actual commands or steps in the README itself"
     },
     "security": {
       "overall_score": 7,
@@ -205,18 +205,19 @@
       "summary": "The code appears to be generally secure, but there are some potential issues related to input validation and default configuration settings that should be reviewed and addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "stolon-keeper deadlock with Postgres",
-        "Support for newer postgres versions"
+        "Recovery failures after system degradation (network issues, OOM crashes, full disk)",
+        "Timeout and configuration issues (PostgreSQL shutdown, keep-alive parameters)",
+        "Parameter settings not taking effect in certain deployment scenarios",
+        "Lack of support for newer PostgreSQL versions (16, 17)",
+        "Poor connection recovery in Kubernetes environments (15-minute delays)"
       ],
-      "praise_themes": [
-        "enhancement requests for compatibility and functionality"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is actively raising issues, but there are no signs of abandonment or high frustration levels."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Stolon shows concerning health with multiple unresolved critical bugs, zero maintainer engagement on recent issues, and no visible active development or response to user concerns."
     },
     "communication": {
       "helpfulness": 7,
@@ -229,18 +230,19 @@
       "summary": "Responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "High number of open issues and PRs"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "152 open issues with no triage activity",
+        "Last commit was over 7 months ago",
+        "Unknown last release date suggests lack of versioning"
       ],
-      "positive_signals": [
-        "Recent activity with contributors",
-        "Regular issue reporting"
-      ],
-      "summary": "The package is in minimal maintenance with occasional contributor activity but lacks recent code updates."
+      "positive_signals": [],
+      "summary": "Stolon shows clear signs of abandonment with zero maintenance activity over the past 6 months and a large backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +253,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:43:38.951226+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

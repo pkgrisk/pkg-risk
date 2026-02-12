@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 6,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides a good introduction to the package and its purpose, but lacks clear examples and troubleshooting guidance.",
-      "top_issue": "Lack of quick start example or basic usage instructions in the README"
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "README clearly states what BEDOPS is but entirely delegates installation details, usage examples, and all practical information to external documentation links.",
+      "top_issue": "No quick start example or basic usage demonstration in the README\u2014users must navigate to external docs to see even a single command example."
     },
     "security": {
       "overall_score": 7,
@@ -215,19 +215,25 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bug in bam2bed with extended cigar operations",
-        "issues with Bioconda installation on osx-arm64",
-        "starchcat double-free error"
+        "Extended CIGAR format support missing (bam2bed incompatibility)",
+        "Build configuration issues (megarow/float128 not passed through scripts)",
+        "Test suite failures and error-checking tests passing unexpectedly",
+        "Platform-specific installation problems (osx-arm64)",
+        "Data corruption and signature verification bugs",
+        "Memory errors (double-free in starchcat)",
+        "Incorrect output from core operations (--partition producing wrong segments)"
       ],
       "praise_themes": [
-        "appreciation for the software and documentation"
+        "Appreciation for tool development and maintenance",
+        "Recognition of clear documentation",
+        "Acknowledgment of developer effort"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate frustration due to open bugs and issues. There are some praises for the software and documentation, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Bedops shows signs of decline with multiple open bugs (some dating to 2022), slow maintainer responsiveness, unresolved feature requests, and new regression bugs in recent versions (2.4.42) suggesting potential abandonment or resource constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -240,17 +246,20 @@
       "summary": "The maintainer responses are generally clear, helpful, and patient, with a good level of technical depth and a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Only one merged PR in the past six months, suggesting limited community contribution and maintenance."
+        "No commits in past 6 months despite last commit being in April 2025",
+        "22 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicates no bug fixes or maintenance",
+        "No merged PRs in past 6 months shows no feature development or contributions",
+        "No active contributors in past 6 months suggests project is dormant",
+        "Unknown last release date - unable to determine if releases are still being made"
       ],
       "positive_signals": [
-        "Four contributors active in the past six months, showing some level of ongoing engagement.",
-        "Recent activity with an open issue count, indicating that there is still user interaction and need for support."
+        "Project has some community engagement evidenced by open issues"
       ],
-      "summary": "The package shows minimal maintenance with recent contributions but lacks recent development or updates."
+      "summary": "bedops appears to be a stale project with no active development, maintenance, or issue resolution over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -261,7 +270,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:00:18.059777+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

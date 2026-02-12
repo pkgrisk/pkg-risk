@@ -236,15 +236,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "configuration": 5,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is clear and provides a good quick start, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section"
+      "summary": "Excellent clarity and quick start with detailed installation options, but lacks configuration examples and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section addressing common errors like port conflicts, import issues, or deployment problems"
     },
     "security": {
       "overall_score": 8,
@@ -268,18 +268,17 @@
       "summary": "The uvicorn package has some potential security concerns related to input validation and default configurations, but overall it appears to be a secure library with no critical findings."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Ctrl+C in terminal broken on windows",
-        "How to restrict permissions for Unix socket?"
+        "Type mismatch bugs in ProxyHeadersMiddleware with newer dependencies",
+        "Long-standing issues ignored for over a year",
+        "Improper handling of X-Forwarded-For headers with ports"
       ],
-      "praise_themes": [
-        "Add support for trailers"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active, with some open issues and discussions, but responsiveness from maintainers could be improved."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Uvicorn shows concerning signs of slow maintenance with unresolved proxy header issues lingering for 12+ months and recent gunicorn compatibility bugs, indicating potential maintenance burden."
     },
     "communication": {
       "helpfulness": 7,
@@ -296,15 +295,19 @@
       "summary": "The maintainer's responses are adequate but could benefit from more clarity, helpfulness, and a welcoming approach."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "High number of merged PRs in the past six months",
-        "Regular issue closure"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-02)",
+        "No merged PRs in past 6 months indicating no active development",
+        "Zero active contributors in past 6 months",
+        "84 open issues with no recent closure activity (0 closed past 6 months)",
+        "No releases recorded, suggesting deployment/versioning has stopped"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit activity exists (2026-02-02), though appears to be a one-time update"
+      ],
+      "summary": "uvicorn shows signs of abandonment with zero development activity, contributor engagement, or issue resolution over the past 6 months despite having 84 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -315,7 +318,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:47:43.548805+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

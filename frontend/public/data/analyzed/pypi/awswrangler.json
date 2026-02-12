@@ -187,15 +187,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is clear and provides a good quick start, but lacks comprehensive configuration options and troubleshooting guides.",
-      "top_issue": "Lack of troubleshooting section"
+      "quick_start": 10,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and quick-start examples with comprehensive AWS service coverage, but lacks troubleshooting guidance and configuration details in the README itself.",
+      "top_issue": "No troubleshooting section or common error scenarios documented in the README"
     },
     "security": {
       "overall_score": 7,
@@ -221,17 +221,18 @@
       "summary": "The code has some security concerns, including potential SQL injection risks and insufficient input validation, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "AWSLambda layer availability",
-        "Module import errors with Ray extras",
-        "Athena query failures"
+        "API limitations requiring workarounds (credential refresh, DescribeTable calls)",
+        "Feature gaps in existing functionality (bootstrap arguments, partition handling)",
+        "Integration issues with AWS service updates (managed query result storage)",
+        "Documentation clarity issues (mode argument behavior)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing some issues, particularly around AWS Lambda layers and module imports, but overall the project seems to be actively maintained."
+      "summary": "awswrangler shows moderate community health with responsive maintenance but scattered unresolved feature requests and bugs spanning credential handling, DynamoDB efficiency, EMR configuration, and Athena compatibility."
     },
     "communication": {
       "helpfulness": 2,
@@ -247,15 +248,20 @@
       "summary": "The maintainer's responses are adequate but lack depth and clear explanations, showing signs of repetitive issues."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "High number of merged PRs in the past six months",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-09)",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months indicating no triage activity",
+        "36 open issues with no recent resolution activity",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit exists (though appears to be isolated)"
+      ],
+      "summary": "Project appears abandoned with no maintenance activity, contributor engagement, or issue triage in the past 6 months despite an open issue backlog."
     },
     "changelog": null,
     "governance": {
@@ -265,7 +271,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, which increases the risk if key contributors leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:52:44.446363+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

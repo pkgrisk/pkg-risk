@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The README provides a good introduction to the package and its installation, but lacks clear examples and troubleshooting guidance.",
-      "top_issue": "Lack of quick start example and troubleshooting documentation"
+      "summary": "Clear purpose and installation, but lacks usage examples, configuration details, and troubleshooting guidance.",
+      "top_issue": "No basic usage example showing how to actually run pyflakes on a Python file after installation"
     },
     "security": {
       "overall_score": 8,
@@ -205,18 +205,24 @@
       "summary": "The pyflakes package has some security concerns, including the use of eval() and lack of input validation, but overall it appears to be a relatively secure package."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "deprecation warnings",
-        "incorrectly identified global variables"
+        "False positives for global declarations (F824) with mutable objects",
+        "False positives for unused variables with assignment expressions (walrus operator)",
+        "Setuptools deprecation warnings in build process",
+        "Missing detection of use-before-assignment (parity with pylint)",
+        "False positive F542 warnings for template strings without placeholders",
+        "Perceived dismissive attitude from maintainer towards user concerns"
       ],
       "praise_themes": [
-        "fast and effective tool for catching programming blunders"
+        "Fast execution compared to other linters",
+        "Effective at catching common programming errors",
+        "Useful for automated checking workflows"
       ],
       "abandonment_signals": false,
-      "summary": "The community is generally neutral with some frustration over specific issues, but the project seems to be actively maintained."
+      "summary": "Active project with real bugs being reported and mostly addressed, but recent regression in version 3.3.0+ causing false positives with global declarations is creating frustration; maintainer communication style has drawn some community criticism but issues are being resolved."
     },
     "communication": {
       "helpfulness": 4,
@@ -233,21 +239,26 @@
       "summary": "The maintainer's responses are often unhelpful, unclear, and lacking in patience, with a hostile communication style that may discourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "A high number of open issues (44)",
-        "Only two merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being from June 2025",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months indicating stalled development",
+        "60 open issues with no recent resolution activity",
+        "Unknown last release date suggests release cycle has stopped",
+        "No closed issues in past 6 months indicates lack of maintenance"
       ],
       "positive_signals": [
-        "Ten contributors have been active in the past six months",
-        "There is an ongoing pull request process"
+        "No open PRs suggests maintainers are not accepting new contributions"
       ],
-      "summary": "The package shows minimal maintenance with some recent activity but a lack of commits and unresolved issues."
+      "summary": "Pyflakes appears to be in a stale state with no active maintenance, development, or issue resolution activity over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:52:06.620841+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

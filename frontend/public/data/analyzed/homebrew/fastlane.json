@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 2,
-      "troubleshooting": 6,
-      "overall": 4,
-      "summary": "The README provides a clear introduction to the fastlane package, but lacks essential information on installation, usage, and configuration.",
-      "top_issue": "Lack of detailed installation instructions and examples in the README, with most documentation redirected to an external site."
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 4,
+      "overall": 3,
+      "summary": "Clear purpose statement but all documentation is externalized to docs.fastlane.tools, leaving the README essentially empty.",
+      "top_issue": "No installation instructions, quick start, examples, or configuration docs in README\u2014everything redirects to external docs site"
     },
     "security": {
       "overall_score": 5,
@@ -211,31 +211,36 @@
       "summary": "The code has a high risk of code injection vulnerabilities and potential exposure of sensitive information due to lack of input validation, but it does not expose error messages or stack traces."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "provisioning profile issues",
-        "certificate problems"
+        "Dependency vulnerability issues (faraday, jwt) remaining unresolved for months",
+        "Xcode compatibility problems (altool detection, deprecated command names)",
+        "Data type regressions breaking CI pipelines (non-integer build numbers)",
+        "Upload failures and timeout issues (firebase_app_distribution, gym)",
+        "Regression bugs that require verbose flags to work"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The fastlane community is active and responsive, with users experiencing some frustration due to provisioning profile and certificate issues, but overall the project appears healthy."
+      "abandonment_signals": true,
+      "summary": "Fastlane shows declining health with unresolved security vulnerabilities, accumulating compatibility issues with newer Xcode versions, and recent regressions suggesting insufficient testing or review capacity."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "No commits in past 6 months despite last commit being recent (2026-02-10)",
+        "871 open issues with no activity or closure",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests versioning/release infrastructure may be abandoned"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many active contributors"
+        "Recent commit activity (2026-02-10) suggests repository may not be completely archived",
+        "Zero open PRs indicates no pending work queue"
       ],
-      "summary": "The fastlane package appears to be actively maintained with regular updates, a large contributor base, and a recent release, despite having a significant number of open issues and PRs."
+      "summary": "Project appears stale with no development activity, issue resolution, or releases over 6 months despite a recent commit timestamp that may indicate repository retention rather than active maintenance."
     },
     "changelog": null,
     "governance": {
@@ -245,7 +250,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The fastlane project has a well-documented decision process and contributor ladder, but lacks a clear succession plan, indicating a medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:10:02.035943+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 10,
-      "quick_start": 8,
+      "clarity": 10,
+      "installation": 9,
+      "quick_start": 9,
       "examples": 9,
-      "configuration": 7,
-      "troubleshooting": 6,
-      "overall": 8,
-      "summary": "The README provides clear and concise information about the package, its installation, and usage, but could benefit from more troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "configuration": 8,
+      "troubleshooting": 7,
+      "overall": 9,
+      "summary": "Excellent documentation with clear purpose, comprehensive installation options, strong examples, and good technical depth, though troubleshooting section appears incomplete.",
+      "top_issue": "The troubleshooting content cuts off abruptly mid-sentence in the 'When do you need to run as sudo?' section, leaving critical permission/security information incomplete."
     },
     "security": {
       "overall_score": 7,
@@ -196,16 +196,22 @@
       "summary": "The code appears to have some potential security issues related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Invalid argument error on macOS",
-        "Issues with profiling numpy"
+        "Failed to find python version from target process (recurring across multiple Python versions: 3.9, 3.11, 3.14)",
+        "Platform-specific failures (Windows, Alpine Linux, macOS, CachyOS)",
+        "Native flag profiling errors (os threadid, binary arch selection issues)",
+        "Python version compatibility gaps (3.14 support missing)",
+        "OS-level errors (Invalid argument errors on macOS)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some open issues and complaints but no signs of abandonment."
+      "praise_themes": [
+        "Interest in the project's flame graph generation capabilities",
+        "Appreciation for the tool concept"
+      ],
+      "abandonment_signals": true,
+      "summary": "py-spy shows signs of maintenance abandonment with persistent, unresolved issues across multiple Python versions and platforms, no recent maintainer engagement on open tickets, and critical compatibility gaps for newer Python releases."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,15 +224,18 @@
       "summary": "The maintainer responses are clear, helpful, and demonstrate a high level of technical depth. The communication is patient and welcoming."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "A high number of merged PRs in the past six months",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "No commits in past 6 months despite repository being active",
+        "226 open issues with no recent resolution activity",
+        "No merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "No recent releases",
+        "Last commit was over a week ago with no follow-up activity"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "py-spy appears abandoned with zero development activity over the past 6 months despite a large backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -237,7 +246,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:29:23.768922+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

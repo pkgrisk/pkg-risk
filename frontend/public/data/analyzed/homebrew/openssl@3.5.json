@@ -167,15 +167,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 3,
       "examples": 6,
       "configuration": 5,
       "troubleshooting": 4,
       "overall": 6,
-      "summary": "The README provides a comprehensive overview of the OpenSSL project, but lacks clear and concise instructions for getting started with basic usage.",
-      "top_issue": "Lack of a quick start guide or example usage in the main README file"
+      "summary": "Well-structured README with excellent clarity and organization but lacks immediate quick-start examples and practical usage guidance for new users.",
+      "top_issue": "No quick-start example showing basic usage - README focuses on project structure and documentation links rather than providing an immediate 'hello world' code snippet for common tasks like encrypting data or creating certificates"
     },
     "security": {
       "overall_score": 7,
@@ -210,32 +210,36 @@
       "summary": "The code has some minor security concerns related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "regressions",
-        "bugs"
+        "Missing TLS close_notify functionality in s_server",
+        "Typedef redefinition errors on RHEL 6",
+        "Missing Camellia GCM cipher support",
+        "Unrelated feature request (port visibility)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The OpenSSL community is actively reporting and discussing issues, with maintainers showing moderate responsiveness to bugs and feature requests."
+      "abandonment_signals": true,
+      "summary": "OpenSSL shows concerning health signals with long-standing open issues (some 4-6 years old), minimal maintainer engagement, and what appears to be an off-topic issue suggesting poor triage practices."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "No commits in past 6 months despite last commit being very recent (2026-02-12)",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "1618 open issues with no resolution activity",
+        "No releases recorded",
+        "Stale repository with no maintenance activity despite recent timestamp"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "large number of active contributors",
-        "high number of merged PRs"
+        "Very recent last commit timestamp (2026-02-12) suggests repository may still exist"
       ],
-      "summary": "The openssl package is actively maintained with frequent updates, a large contributor base, and a recent release, despite having a significant number of open issues and pull requests."
+      "summary": "OpenSSL@3.5 appears abandoned with no maintenance activity despite high issue count and a recent commit timestamp that may be inconsistent with actual maintenance status."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -253,7 +257,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The OpenSSL project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:15:20.850549+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

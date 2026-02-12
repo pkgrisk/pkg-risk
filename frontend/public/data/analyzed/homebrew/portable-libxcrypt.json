@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
+      "examples": 1,
+      "configuration": 6,
       "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The documentation is thorough and detailed, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package."
+      "overall": 5,
+      "summary": "Well-written library documentation that explains purpose and configuration clearly, but lacks practical usage examples and quick-start code for developers integrating the library.",
+      "top_issue": "No code examples showing how to actually use the crypt() functions in a program - only build/configure documentation"
     },
     "security": {
       "overall_score": 7,
@@ -188,16 +188,18 @@
       "summary": "The code has some security concerns, including potential input validation issues and use of an insecure hash algorithm, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "compilation issues with specific compiler versions and flags",
-        "linking errors with certain linkers"
+        "Compilation failures with different compiler versions (GCC 11+, Clang on macOS)",
+        "Linker compatibility issues (LLD, version script symbol resolution)",
+        "Platform-specific test failures (PowerPC, Debian 7 with old GCC)",
+        "Documentation gaps and unclear behavior in man pages"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is facing consistent compilation and linking issues, but the project seems to have active maintenance as evidenced by closed issues."
+      "summary": "libxcrypt shows signs of active maintenance with bugs being addressed and closed, though current open issues indicate ongoing compilation and platform-specific challenges that may affect downstream users."
     },
     "communication": {
       "helpfulness": 8,
@@ -210,17 +212,19 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being in December 2025",
+        "34 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases",
+        "High issue count suggests accumulating problems without fixes"
       ],
-      "positive_signals": [
-        "Recent commits and releases within the last year",
-        "Moderate number of contributors active in the past six months"
-      ],
-      "summary": "The package is maintained with recent activity, but there are concerns about unresolved issues and low PR merge rate."
+      "positive_signals": [],
+      "summary": "portable-libxcrypt appears to be abandoned with no maintenance activity for at least 6 months and a growing backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -231,7 +235,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it incomplete for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:08:13.476962+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

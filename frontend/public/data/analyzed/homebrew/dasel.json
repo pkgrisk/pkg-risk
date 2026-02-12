@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 8,
-      "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is clear and provides a good introduction to the package, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Lack of detailed configuration documentation and troubleshooting guides"
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and quick start with strong examples, but lacks inline configuration details and troubleshooting guidance (relying heavily on external docs).",
+      "top_issue": "No troubleshooting section for common errors or edge cases; users must navigate to external documentation for help"
     },
     "security": {
       "overall_score": 6,
@@ -217,15 +217,18 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and errors",
-        "breaking changes"
+        "Major breaking changes in v3 (lost features: man page generation, shell completion)",
+        "v3 documentation incomplete and confusing (missing flags, no CLI examples)",
+        "XML/CSV output broken or reordered columns",
+        "Array handling regressions (v2 functionality lost in v3)",
+        "Parser bugs (TOML subtables, empty CDATA crashes, JSON to CSV conversion)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The dasel community is experiencing frustration due to bugs, breaking changes, and some unaddressed issues, but the maintainers are moderately responsive."
+      "summary": "Active project with recent releases, but v3 migration introduced significant regressions and documentation gaps causing user frustration; maintainers are responsive to critical bugs but the incomplete v3 launch has eroded confidence."
     },
     "communication": {
       "helpfulness": 9,
@@ -238,15 +241,20 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and welcoming, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent last commit and release",
-        "High number of commits in the past 6 months",
-        "Active contributors and merged PRs"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-11)",
+        "39 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "No merged PRs in past 6 months showing no development activity",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release cycle has stalled"
       ],
-      "summary": "The dasel package appears to be actively maintained with recent updates, a high volume of commits, and active contributors."
+      "positive_signals": [
+        "Project exists and was updated recently (within days)"
+      ],
+      "summary": "The dasel project appears abandoned despite a recent commit timestamp; the lack of any commit, issue resolution, or contributor activity over 6 months combined with 39 unresolved issues indicates the repository is no longer actively maintained."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -264,7 +272,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for Dasel lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:03:04.042402+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

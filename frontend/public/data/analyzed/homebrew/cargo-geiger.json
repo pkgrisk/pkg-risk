@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 2,
+      "quick_start": 8,
+      "examples": 5,
+      "configuration": 3,
       "troubleshooting": 4,
       "overall": 6,
-      "summary": "The README provides a clear overview of the package's purpose and installation, but lacks detailed examples and configuration documentation.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "summary": "Excellent clarity and installation instructions, but lacks detailed examples, configuration documentation, and comprehensive troubleshooting guidance.",
+      "top_issue": "No documentation of command-line options, output interpretation, or configuration possibilities beyond basic usage"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,18 @@
       "summary": "The cargo-geiger code has some security concerns, including lack of input validation and potential error exposure, but it does not seem to have any critical vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Tests relying on deprecated Cargo APIs",
-        "Internal assertion failures during scanning"
+        "Test suite relies on deprecated Cargo APIs that will break",
+        "Unresolved runtime panics during package scanning",
+        "Build compatibility issues with Rust version updates",
+        "Docker build performance problems"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness, facing issues related to test stability and internal errors."
+      "abandonment_signals": true,
+      "summary": "cargo-geiger shows signs of maintenance challenges with 2 open critical issues (deprecated test APIs and runtime panics) unresolved since late 2025, suggesting declining maintainer engagement despite past responsiveness to build issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,17 +225,20 @@
       "summary": "The responses are clear, helpful, and patient, with a good balance of technical detail."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months suggests limited community contribution or interest.",
-        "High number of open issues and PRs indicates potential maintenance backlog."
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 52 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "52 open issues accumulating without resolution",
+        "No recent releases"
       ],
       "positive_signals": [
-        "Recent commits and releases indicate some level of activity.",
-        "Three contributors are active, which is better than no contributors"
+        "Repository still exists (not deleted)"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges with unaddressed issues and PRs."
+      "summary": "cargo-geiger appears abandoned with zero maintenance activity over the past 6 months and 52 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -251,7 +256,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision-making process but lacks a clear succession plan or contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:17:52.383363+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -177,12 +177,12 @@
       "clarity": 8,
       "installation": 6,
       "quick_start": 4,
-      "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 2,
+      "examples": 5,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is mostly clear and provides good examples, but installation instructions are incomplete and troubleshooting information is lacking.",
-      "top_issue": "Lack of comprehensive installation instructions and troubleshooting guides"
+      "summary": "Clear purpose and good configuration examples, but lacks concrete usage examples and troubleshooting guidance with many sections migrated to external docs.",
+      "top_issue": "No quick start example showing actual mydumper/myloader commands - installation and usage sections only link to external documentation without inline examples"
     },
     "security": {
       "overall_score": 5,
@@ -209,16 +209,23 @@
       "summary": "The code has some security concerns, including potential SQL injection risks and lack of input validation, but no critical secrets or sensitive information exposure was found."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and crashes",
-        "incompatibility issues"
+        "Performance regressions in recent versions",
+        "Compatibility issues with MySQL 8.4+",
+        "Data corruption/duplicate key errors on restore",
+        "Threading/multithreading regressions",
+        "Incompatible flag combinations not validated",
+        "Duplicate rows when splitting dumps"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active feature development (AWS replication testing)",
+        "Enhancement requests being considered"
+      ],
       "abandonment_signals": false,
-      "summary": "The mydumper community is experiencing frustration due to unresolved bugs, incompatibility issues, and slow maintainer responsiveness."
+      "summary": "mydumper has an engaged community reporting critical bugs (data integrity, performance) with moderate maintainer attention, but recent regressions and unresolved issues indicate quality control concerns."
     },
     "communication": {
       "helpfulness": 9,
@@ -234,19 +241,27 @@
       "summary": "The maintainer provides generally helpful and clear responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent last commit and release",
-        "High number of commits in the past 6 months",
-        "Active issue and PR resolution",
-        "Multiple contributors active in the past 6 months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-11)",
+        "49 open issues with no recent closures",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "No response to community engagement (open issues unaddressed)"
       ],
-      "summary": "The mydumper package appears to be actively maintained with frequent updates, commits, and resolutions of issues and pull requests."
+      "positive_signals": [
+        "Recent commit activity (within last day) suggests repository still exists",
+        "No open pull requests indicates no pending work"
+      ],
+      "summary": "Project appears abandoned with stale issues and no maintenance activity despite a recent commit timestamp that may indicate automated activity."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:14:04.788221+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

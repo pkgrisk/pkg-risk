@@ -181,14 +181,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation is informative but lacks clear installation instructions, quick start examples, and troubleshooting guides.",
-      "top_issue": "Lack of a clear quick start guide or basic usage example"
+      "overall": 3,
+      "summary": "Clear overview of what the codec does and its features, but lacks actionable installation steps, usage examples, and any configuration or troubleshooting guidance in the README itself.",
+      "top_issue": "No installation instructions or basic usage examples in the README - only links to external INSTALL and WIKI docs that users must navigate to separately"
     },
     "security": {
       "overall_score": 7,
@@ -215,33 +215,43 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "performance issues with multi-threading",
-        "missing dependencies in package",
-        "bugs with decompression and command line options"
+        "Missing dependencies in release packages (DLLs, shared libraries)",
+        "Build system issues (missing CMakeLists.txt, compilation failures)",
+        "Performance regressions in v20 (multi-threaded decoding slowdowns)",
+        "API complexity and correctness issues (DCI compliance, MCT handling, memory management)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Single-frame decoding speed improvements in v20",
+        "Functionality works well for basic single-tile use cases"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration due to performance, dependency, and bug-related issues, but maintainers are actively addressing these concerns."
+      "summary": "Grok maintains moderate community engagement with closed issues showing responsiveness, but users report frustration with packaging/dependency problems, build complexity, and v20 performance regressions that suggest incomplete testing of multi-threaded scenarios."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No contributors active in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months despite package being active",
+        "No issue activity (open or closed) in past 6 months",
+        "No PR activity (open or merged) in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests lack of versioning/releases"
       ],
       "positive_signals": [
-        "Recent commit and release dates within the last month"
+        "Repository exists with recent GitHub activity timestamp"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks current contributor engagement."
+      "summary": "Package appears abandoned with zero development activity, issue engagement, or releases over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:06:25.177792+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

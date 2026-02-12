@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 4,
-      "quick_start": 6,
-      "examples": 5,
-      "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is clear about the package's purpose and features, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are incomplete and point to a separate file (INSTALL.md) without providing any details in the README itself."
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Clear purpose and excellent conceptual overview, but relies heavily on external documentation files for practical details.",
+      "top_issue": "No troubleshooting guidance in main README and configuration options only mentioned via external filter file example"
     },
     "security": {
       "overall_score": 7,
@@ -195,19 +195,22 @@
       "summary": "The code has some security concerns, including potential SQL injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "schema alteration issues",
-        "missing release versions"
+        "Schema synchronization bugs (ordering, expressions, collation)",
+        "Cross-database compatibility issues (MySQL/PostgreSQL/MariaDB)",
+        "Performance problems (idle workers, hanging processes)",
+        "Release management and documentation gaps",
+        "Edge case handling (NULL values, ENUM types, UUID sorting)"
       ],
       "praise_themes": [
-        "works well for migration",
-        "good project overall"
+        "Core functionality works well for standard use cases",
+        "Generally effective for database migrations"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the project's functionality but faces some ongoing issues with schema alterations and missing releases."
+      "abandonment_signals": true,
+      "summary": "Kitchen Sync shows declining maintenance with multiple unresolved bugs spanning 2+ years, slow response times, and release management issues, though the tool remains functional for basic database synchronization tasks."
     },
     "communication": {
       "helpfulness": 8,
@@ -220,17 +223,18 @@
       "summary": "Maintainer responses are generally helpful and clear, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "Open issues and PRs suggest potential unresolved problems or feature requests."
+        "No commits in past 6 months despite last commit being from April 2025",
+        "5 open issues with no recent activity",
+        "Zero closed issues in past 6 months indicating no issue triage",
+        "No merged PRs in past 6 months showing stalled development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process is dormant"
       ],
-      "positive_signals": [
-        "Recent activity with both a commit and release on April 15, 2025.",
-        "Ten contributors are still involved, which is positive for maintaining the package."
-      ],
-      "summary": "The package shows minimal maintenance with recent contributions but lacks active development in the past six months."
+      "positive_signals": [],
+      "summary": "kitchen-sync appears abandoned with no development activity, issue resolution, or contributor engagement in at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -241,7 +245,10 @@
       "overall_score": 6,
       "summary": "The changelog is comprehensive but lacks clear categorization, marking of breaking changes, and upgrade guidance."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:03:59.796064+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

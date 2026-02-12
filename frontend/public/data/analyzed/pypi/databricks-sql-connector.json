@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 7,
       "configuration": 6,
-      "troubleshooting": 2,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "The documentation is clear and provides a good quick start, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Excellent clarity and quick start, but lacks comprehensive configuration documentation and troubleshooting guidance.",
+      "top_issue": "Missing authentication configuration details (OAuth, PAT, service principals) and error handling/troubleshooting section"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,19 @@
       "summary": "The code has some security concerns, including potential SQL injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "`databricks.sql.exc.RequestError` issues",
-        "Syntax errors in SQL compilation"
+        "Authentication and connection issues",
+        "Dependency version constraints (pandas, thrift)",
+        "Breaking changes between versions (2.9.3 vs 3.0.1)",
+        "Sporadic runtime errors from telemetry subsystem",
+        "Configuration requirements (staging_allowed_local_path)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing some ongoing issues, but the project seems to be actively maintained with moderate responsiveness."
+      "summary": "The databricks-sql-connector community shows moderate health with active issue reporting and some responsiveness, but faces friction from breaking version changes, authentication complications, and unresolved dependency constraints that warrant attention."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,17 +231,20 @@
       "summary": "Responses are generally clear and helpful, showing a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (84) compared to merged PRs in the past 6 months (59)",
-        "Low number of closed issues and merged PRs in the past 6 months"
+        "No commits in past 6 months despite last commit being recent (2026-02-09)",
+        "131 open issues with no resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests outdated versioning"
       ],
       "positive_signals": [
-        "Recent activity with a commit on 2026-01-09",
-        "Multiple contributors active in the past 6 months (11)"
+        "Recent commit timestamp suggests repo still exists"
       ],
-      "summary": "The package shows minimal maintenance efforts despite recent commits and multiple contributors."
+      "summary": "The repository appears abandoned with no maintenance activity for 6+ months despite having 131 unresolved issues and no active development."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +262,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision-making process but lacks a succession plan and clear contributor ladder, posing medium risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:52:01.069587+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

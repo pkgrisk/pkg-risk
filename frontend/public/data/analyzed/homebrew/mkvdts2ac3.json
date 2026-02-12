@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is well-structured and provides clear instructions for installation, usage, and configuration, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 10,
+      "configuration": 9,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, comprehensive examples, and detailed configuration options, but lacks troubleshooting guidance for common errors.",
+      "top_issue": "No troubleshooting section for common errors (ffmpeg failures, corrupt DTS tracks, insufficient disk space, permission issues)"
     },
     "security": {
       "overall_score": 5,
@@ -213,18 +213,21 @@
       "summary": "The mkvdts2ac3.sh script has several security concerns, including potential command injection risks and lack of input validation, which could be exploited by an attacker to gain unauthorized access or execute malicious commands."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "multiple mkv files",
-        "DTS audio not detected"
+        "Script fails to detect DTS audio in some files",
+        "AC3 track detection issues (AC3 vs AC-3 format mismatch)",
+        "Missing features (recursive folder processing, language selection, TrueHD support)",
+        "Audio playback problems (silent segments after conversion)",
+        "Parsing and detection errors"
       ],
       "praise_themes": [
-        "recursive folder option added"
+        "Script functionality was appreciated when working"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally neutral with some open issues and one feature request that has been addressed."
+      "abandonment_signals": true,
+      "summary": "Severely neglected project with 10+ year old unresolved issues, zero maintainer engagement, and critical bugs like AC3 detection failures that persist despite available pull request fixes."
     },
     "communication": {
       "helpfulness": 7,
@@ -237,17 +240,18 @@
       "summary": "The responses are generally helpful and clear, showing a good level of patience and technical depth."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "High number of open issues and PRs"
+        "No commits in over 4 years (last commit August 2021)",
+        "42 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No releases tracked"
       ],
-      "positive_signals": [
-        "Nine contributors active in the past six months"
-      ],
-      "summary": "The package is stale with no recent activity, but has a community that remains engaged."
+      "positive_signals": [],
+      "summary": "This package is abandoned with stale codebase, unresolved issues, and no maintenance activity for over 4 years."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -258,7 +262,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clarity and completeness, with no breaking changes or migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:25:12.434850+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 4,
+      "installation": 7,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation is mostly focused on the project's structure and contributing guidelines, but lacks clear explanations of the package's functionality and usage.",
-      "top_issue": "Lack of a clear and concise introduction to the package's purpose and basic usage."
+      "overall": 3,
+      "summary": "This README is primarily a meta-document about the contrib repository itself rather than documentation for the specific requests instrumentation package, lacking any usage examples or configuration guidance.",
+      "top_issue": "No package-specific documentation - this is a generic repository README that doesn't explain what the requests instrumentation does, how to use it, or provide any code examples for instrumenting requests"
     },
     "security": {
       "overall_score": 8,
@@ -191,17 +191,18 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error exposure that should be addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Instrument description conflict when using Java and Phyton on the same otel-collector"
+        "Missing trace data in OpenAI Agents instrumentation (system prompts not captured)",
+        "Incorrect serialization of tool calls in output messages",
+        "pkg_resources deprecation causing runtime failures in Python 3.12",
+        "Dead documentation links"
       ],
-      "praise_themes": [
-        "Add sanic instrumentation"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with a mix of feature requests and bug reports, showing both positive engagement and some technical challenges."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Community health is poor: 4 open bugs with zero maintainer responses (0 comments each), including critical runtime issues and data loss bugs in new GenAI instrumentation, suggesting inadequate maintenance of this growing instrumentation package."
     },
     "communication": {
       "helpfulness": 8,
@@ -214,14 +215,22 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors active in the last six months"
+      "concerns": [
+        "Zero commits in past 6 months despite last commit date being recent (2026-02-11)",
+        "784 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicating no active maintenance",
+        "Zero merged PRs in past 6 months showing no development activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release infrastructure may be broken",
+        "Large backlog of unresolved issues suggests maintainer disengagement"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Project has existed long enough to accumulate contributor history",
+        "Repository still accessible and not deleted"
+      ],
+      "summary": "This package appears abandoned despite a recent timestamp, with no maintenance activity, zero issue resolution, and a large unresolved issue backlog over 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -239,7 +248,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project has documented decision-making processes and a contributor path but lacks a succession plan, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:51:48.779013+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

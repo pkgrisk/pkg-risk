@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 3,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "The README lacks essential information for new users, such as installation instructions and usage examples.",
-      "top_issue": "Insufficient installation instructions and lack of quick start or example usage"
+      "overall": 3,
+      "summary": "Clear about what PyPy is, but provides almost no actionable documentation\u2014just links to external sites.",
+      "top_issue": "No installation instructions, usage examples, or quick start guide in the README itself\u2014entirely relies on external documentation"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,21 @@
       "summary": "The PyPy interpreter has some potential security vulnerabilities, including a possible code injection risk and lack of input validation, but overall it appears to be relatively secure."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Fatal RPython error: AssertionError",
-        "PyPy 3.11 incompatibility"
+        "Performance regressions (I/O writing 5-18x slower in 3.11 vs 3.10)",
+        "Missing feature implementations (time.monotonic_ns, PEP 695, PEP 701)",
+        "Behavioral discrepancies with CPython (Unicode handling, string methods)",
+        "cpyext/extension compatibility issues"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Overall gratitude for PyPy's speed advantages over CPython",
+        "Long-term user loyalty despite concerns"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing significant issues, particularly with RPython errors and PyPy 3.11 compatibility, indicating a need for more active maintenance."
+      "summary": "PyPy shows moderate community health with active issue reporting but concerns about performance regressions, slow feature parity with CPython versions, and extension compatibility that require maintainer attention."
     },
     "communication": {
       "helpfulness": 7,
@@ -226,20 +231,24 @@
       "summary": "The maintainer provides useful information but could improve clarity and patience with new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low merged PRs compared to open PRs"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 758 open issues",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "High number of unresolved issues suggests accumulation without maintenance",
+        "Last commit over 6 months ago indicates project stagnation"
       ],
-      "positive_signals": [
-        "Recent commits in the last year",
-        "Some contributor activity in the past six months"
-      ],
-      "summary": "The package is maintained but faces challenges with issue resolution and PR merging."
+      "positive_signals": [],
+      "summary": "pypy3.9 shows clear signs of abandonment with zero maintenance activity over 6 months and a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:09:56.283534+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

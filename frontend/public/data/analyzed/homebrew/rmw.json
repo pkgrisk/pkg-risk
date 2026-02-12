@@ -182,14 +182,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 3,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 4,
       "overall": 5,
-      "summary": "The README provides detailed installation instructions and some configuration information, but lacks a clear quick start guide and sufficient examples.",
-      "top_issue": "Lack of a concise quick start example to help new users understand the basic usage of the package."
+      "summary": "Clear description and installation options, but critically missing inline usage examples and configuration guidance.",
+      "top_issue": "No quick start example showing basic usage (how to move files to trash, restore them, or purge old items) - all usage information is external links only"
     },
     "security": {
       "overall_score": 7,
@@ -218,14 +218,16 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "rmw issues with btrfs subvolumes",
-        "test failures on specific systems"
+        "Cross-filesystem operations failing (btrfs subvolumes, bind mounts)",
+        "Test failures on specific architectures (ARM)",
+        "Locale-dependent test failures",
+        "Silent failures with no error output"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration due to ongoing issues with `rmw` and test failures, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is concerning with multiple unresolved critical issues, no recent maintainer engagement, and clear architectural limitations around filesystem operations that remain unfixed."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,17 +240,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in past 6 months despite last commit being in future (data anomaly)",
+        "Zero active contributors in past 6 months",
+        "11 open issues with no recent activity to address them",
+        "No merged PRs in past 6 months indicates no ongoing development",
+        "No releases recorded, suggesting project is not actively versioned",
+        "No closed issues in 6 months despite open issue queue"
       ],
-      "positive_signals": [
-        "Recent commit activity within the last year",
-        "Regular issue and PR management"
-      ],
-      "summary": "The package is maintained with recent commits and active contributors, but there are concerns about the pace of resolving issues."
+      "positive_signals": [],
+      "summary": "The rmw project shows clear signs of abandonment with zero development activity, contributors, or issue resolution over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -258,7 +261,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and clear contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:42:38.173655+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

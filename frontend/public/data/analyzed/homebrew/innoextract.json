@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
+      "examples": 4,
+      "configuration": 9,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks troubleshooting information and could benefit from more examples.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Excellent clarity and build documentation with comprehensive configuration options, but lacks practical usage examples and troubleshooting guidance.",
+      "top_issue": "Very limited usage examples - only shows basic extraction command with no examples of common use cases, filtering, multi-file installers, or handling different installer types mentioned in the introduction."
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,23 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "innoextract not working with newer InnoSetup versions",
-        "checksum mismatches and extraction issues"
+        "Lack of releases - latest v1.9 is ~4 years old despite dev versions supporting newer Inno Setup versions",
+        "Support for newer Inno Setup versions (6.3+) incomplete or broken",
+        "Multi-file installer extraction issues (setup.bin files not extracted)",
+        "Checksum mismatches and data corruption during extraction",
+        "Format/compatibility issues with recent installer versions"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The innoextract community is experiencing some frustration due to unresolved issues and slow maintainer responsiveness, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Functional for older GOG installers and stable releases",
+        "Developer responsiveness when engaged (some issues resolved)",
+        "Request for library extraction functionality shows community interest in the project"
+      ],
+      "abandonment_signals": true,
+      "summary": "Mixed community health with moderate frustration; project suffers from stale releases (4-year gap) and incomplete support for newer Inno Setup versions, though active development exists and some issues receive attention."
     },
     "communication": {
       "helpfulness": 9,
@@ -233,18 +240,18 @@
       "summary": "The maintainer provides detailed and helpful responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "large number of open issues (54) with few recent closures (2)",
-        "infrequent release updates (last release over 4 years ago)"
+        "No commits in past 6 months despite last commit being recent",
+        "64 open issues with no recent activity or resolution",
+        "Zero closed issues in past 6 months indicates no maintenance",
+        "No merged PRs in past 6 months shows no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests tracking issues"
       ],
-      "positive_signals": [
-        "some contributors are still active (6 in the past 6 months)",
-        "recently merged PR (1) indicates some level of community engagement"
-      ],
-      "summary": "The innoextract package appears to be stale, with minimal recent activity and a large backlog of open issues, despite some residual community engagement."
+      "positive_signals": [],
+      "summary": "innoextract is abandoned with no maintenance activity, unresolved issues accumulating, and no active contributors or development."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -262,7 +269,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for innoextract lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:08:24.124997+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

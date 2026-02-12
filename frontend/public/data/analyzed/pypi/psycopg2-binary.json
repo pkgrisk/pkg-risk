@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 5,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its features, but lacks concrete examples and troubleshooting guidance.",
-      "top_issue": "Lack of quick start example or code snippet demonstrating basic usage"
+      "overall": 5,
+      "summary": "Clear introduction and installation instructions, but completely lacks code examples showing how to actually use the library to connect to databases or execute queries.",
+      "top_issue": "No quick start code example showing basic usage (connecting to database, executing queries) - users must navigate to external documentation to see any actual code"
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,21 @@
       "summary": "The provided code snippets from the psycopg2-binary package appear to be generally secure, but lack explicit input validation and may have some platform-specific concerns."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "code ambiguity",
-        "legacy build mechanism"
+        "Library bundling causing namespace conflicts and segfaults",
+        "Build system deprecation warnings (legacy setup.py)",
+        "Wheel compatibility issues with newer Python versions",
+        "Missing logging functionality with LoggingConnection",
+        "Context management conflicts with autocommit property",
+        "Encoding mismatches on Windows",
+        "Postgres notices written to stderr during connection"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints about code clarity and legacy build mechanisms, but no signs of abandonment."
+      "summary": "psycopg2 shows moderate community health with responsive maintainers addressing issues, but faces growing technical debt around modern Python support, build tooling, and library bundling practices."
     },
     "communication": {
       "helpfulness": 7,
@@ -222,21 +227,26 @@
       "summary": "The maintainer provides technical insights but can be less welcoming and sometimes dismissive, especially regarding feature requests."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Open issues are higher than merged PRs",
-        "Last release date is unknown"
+        "No commits in past 6 months despite package being in use",
+        "21 open issues with no recent resolution activity",
+        "No merged PRs in past 6 months indicates no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release cycle has stalled"
       ],
       "positive_signals": [
-        "Commits past 6 months: 32",
-        "Merged PRs past 6 months: 7",
-        "Contributors active past 6 months: 4"
+        "Package still has some maintenance activity (21 open issues tracked)",
+        "Recent commit activity exists (last commit Feb 2, 2026)"
       ],
-      "summary": "The package shows signs of regular maintenance but has some concerns regarding open issues and the lack of a recent release."
+      "summary": "psycopg2-binary shows signs of stalled maintenance with no recent commits, merged PRs, or contributor activity over the past 6 months despite having unresolved open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:54:26.742051+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

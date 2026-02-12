@@ -166,14 +166,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 8,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 2,
-      "configuration": 4,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The documentation is lacking in examples and troubleshooting, but provides clear installation instructions.",
-      "top_issue": "Insufficient examples and no troubleshooting section"
+      "summary": "Brief README provides basic building instructions but completely lacks usage examples, API documentation, and practical guidance.",
+      "top_issue": "No code examples or API documentation showing how to actually use the library after installation (ARN parsing, profile reading, etc.)"
     },
     "security": {
       "overall_score": 7,
@@ -184,30 +184,33 @@
       "summary": "The provided code appears to be a custom regex implementation with some input validation, but it lacks comprehensive error handling and may expose internal details in error messages."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "ABI stability",
-        "regression issues"
+        "Lack of ABI stability and SONAME versioning causing consumer breakage",
+        "Recent release introduced regression breaking downstream tests",
+        "Insufficient library maturity for production use"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health of the aws-c-sdkutils project appears to be neutral, with some open issues and regression problems, but maintainers are moderately responsive."
+      "summary": "Community is frustrated with unstable ABI practices and recent regressions, but maintainers appear to be monitoring issues despite slow response times."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low commit activity",
-        "no closed issues in the past 6 months"
+        "No commits in the past 6 months despite being a core AWS SDK utility",
+        "No merged pull requests or closed issues in 6 months indicates minimal activity",
+        "2 open issues unresolved",
+        "No active contributors in the past 6 months"
       ],
       "positive_signals": [
-        "recent commit within the past 6 months",
-        "recent release within the past 6 months"
+        "Last commit is relatively recent (August 2025)",
+        "Repository still exists and is not completely abandoned"
       ],
-      "summary": "The package appears to be minimally maintained with some recent activity, but overall engagement and issue resolution are low."
+      "summary": "aws-c-sdkutils is stale with no development activity for 6+ months, unresolved issues, and no contributor engagement despite being a core AWS SDK component."
     },
     "changelog": null,
     "governance": {
@@ -217,7 +220,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the aws-c-sdkutils package lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:24:29.388152+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

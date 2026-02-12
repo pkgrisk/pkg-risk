@@ -177,30 +177,35 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 6,
       "examples": 7,
-      "configuration": 8,
+      "configuration": 7,
       "troubleshooting": 5,
       "overall": 7,
-      "summary": "The documentation is comprehensive and detailed, but could benefit from a clearer quick start guide and more prominent troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to get new users up and running quickly"
+      "summary": "Comprehensive documentation with clear purpose and installation, but lacks inline quick-start examples and troubleshooting guidance in the main README.",
+      "top_issue": "No quick-start example in the README itself - users must navigate to separate documentation files to see actual usage examples of creating or managing partitions"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "partition_data_proc and run_maintenance handling of infinity timestamps",
-        "unclear source for long-lasting LOCK on `run_maintenance_proc`"
+        "Interval/partition configuration edge cases (4 months, 7 days vs 1 week equivalence)",
+        "Timestamp handling issues causing constraint violations",
+        "Lock contention and long-running maintenance procedures",
+        "Premake parameter not respecting user input",
+        "Partition data not being moved out of DEFAULT partition"
       ],
       "praise_themes": [
-        "feature request for future improvements"
+        "Issues being marked as confirmed and scheduled for fixes",
+        "Active feature implementation (MAINTAIN privilege support, infinity timestamp handling)",
+        "Responsive to bug reports with labels indicating triage"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, but there are ongoing issues that require attention and clarification."
+      "summary": "pg_partman shows active maintenance with confirmed bug fixes and feature development, but users face recurring frustrations with interval configuration edge cases, timestamp handling regressions in newer versions, and performance/locking issues in production environments."
     },
     "communication": {
       "helpfulness": 7,
@@ -213,17 +218,20 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing patience with repeated questions."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "\u8f83\u591a\u7684\u672a\u89e3\u51b3\u95ee\u9898",
-        "\u8fd1\u671f\u5408\u5e76\u7684PR\u8f83\u5c11"
+        "No commits in past 6 months despite last commit being recent (2026-02-09)",
+        "52 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date indicates release tracking gap"
       ],
       "positive_signals": [
-        "\u6700\u8fd1\u6709\u65b0\u7684\u63d0\u4ea4\u548c\u53d1\u5e03",
-        "\u6d3b\u8dc3\u8d21\u732e\u8005\u6570\u91cf\u9002\u4e2d"
+        "Recent last commit date suggests repository still exists"
       ],
-      "summary": "\u9879\u76ee\u867d\u7136\u5b58\u5728\u4e00\u4e9b\u95ee\u9898\uff0c\u4f46\u603b\u4f53\u4e0a\u662f\u7ef4\u62a4\u4e2d\u7684\u3002"
+      "summary": "pg_partman appears abandoned with 6 months of inactivity despite recent repository timestamp, indicating the project is no longer maintained."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -234,7 +242,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks explicit migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:10:14.394721+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

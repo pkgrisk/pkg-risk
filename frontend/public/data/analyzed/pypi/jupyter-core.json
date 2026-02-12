@@ -217,15 +217,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 5,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is detailed but focused on development setup and contributor guidelines, lacking clear explanations for end-users.",
-      "top_issue": "Lack of a clear quick start guide or examples for basic usage"
+      "clarity": 5,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "README is entirely focused on development/contribution setup with no user-facing documentation, installation instructions, or usage examples.",
+      "top_issue": "No user documentation whatsoever - explains what it is but provides zero installation or usage guidance for end users"
     },
     "security": {
       "overall_score": 7,
@@ -252,16 +252,18 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and inadequate input validation, but overall it appears to follow best practices for secrets handling and error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "pip dependency in tests",
-        "venv creation issues with Python 3.13"
+        "Missing dependencies in test extras (pip not included)",
+        "Python 3.13/3.14 compatibility issues (free-threading, pywin32)",
+        "Platform-specific bugs (Windows venv issues)",
+        "Path handling edge cases causing file operations to fail"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively addressing issues, but there are some ongoing frustrations with test dependencies and venv compatibility."
+      "summary": "jupyter-core shows moderate health with active maintenance addressing Python 3.13+ compatibility and dependency issues, though some user-facing bugs remain unresolved and test infrastructure could be improved."
     },
     "communication": {
       "helpfulness": 7,
@@ -277,15 +279,21 @@
       "summary": "The maintainer provides useful information but could be more welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past six months",
-        "Multiple contributors active in the recent period",
-        "A healthy number of merged PRs indicating community engagement"
+      "concerns": [
+        "No commits in past 6 months despite last commit on 2026-02-02",
+        "31 open issues with no recent activity to address them",
+        "Zero closed issues in past 6 months indicates no maintenance activity",
+        "No merged PRs in past 6 months suggests no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date raises concerns about version management"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Repository exists and has some historical activity",
+        "No abandoned repositories typically have commits or recent releases"
+      ],
+      "summary": "jupyter-core appears stale with no maintenance activity in the past 6 months despite having 31 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -303,7 +311,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The package has documented decision-making but lacks a succession plan and contributor ladder, posing medium risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:49:36.283559+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -227,14 +227,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 2,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation and usage instructions.",
-      "top_issue": "Lack of clear installation and quick start instructions"
+      "summary": "Clear purpose statement but lacks practical installation instructions, code examples, and any troubleshooting guidance.",
+      "top_issue": "No installation instructions or basic usage examples - README only links to external docs without showing how to actually use the library"
     },
     "security": {
       "overall_score": 7,
@@ -267,16 +267,22 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows best practices for OAuth 2.0 implementation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "type checking",
-        "bug in signed_token_generator"
+        "Type checking enforcement inconsistency (mypy/pyright/pyflakes producing vastly different error counts)",
+        "Feature requests languishing for years without implementation (OIDC support since 2018, RFC7591 since 2019)",
+        "Documentation-to-implementation gaps (JWT claims handling not matching docs)",
+        "CI/CD security best practices not followed (Trusted Publishing misconfiguration)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is engaged with open discussions and bug reports, but there's a moderate level of frustration regarding unresolved issues."
+      "praise_themes": [
+        "Community engagement on architectural decisions (type checking discussion)",
+        "Willingness to improve error messaging (Content-Type clarity)",
+        "Open to contributions (labeled issues as 'Contributor Friendly')"
+      ],
+      "abandonment_signals": true,
+      "summary": "oauthlib shows moderate maintenance activity with engaged contributors but concerning delays on important feature requests (years without OIDC/RFC7591 support) and unresolved technical debt in type checking, suggesting the project may be in sustained-but-stretched maintenance mode."
     },
     "communication": {
       "helpfulness": 8,
@@ -289,20 +295,27 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being recent",
+        "101 open issues with no activity or closure in past 6 months",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date makes version currency unclear",
+        "High issue count suggests potential backlog of unresolved problems"
       ],
       "positive_signals": [
-        "Recent commit activity",
-        "Regular contributor activity"
+        "Recent commit exists (2026-01-31), showing some minimal activity",
+        "Project has not been completely abandoned (still has presence)"
       ],
-      "summary": "The package shows signs of maintenance but faces some concerns with unresolved issues and low PR merge rate."
+      "summary": "oauthlib appears stale with no development activity, merged PRs, or issue resolution in the past 6 months despite a recent commit, indicating the project is no longer actively maintained."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:54:20.121292+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

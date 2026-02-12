@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 2,
-      "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is detailed but dense, making it difficult for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of a clear and concise quick start guide or example usage section"
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 3,
+      "examples": 4,
+      "configuration": 6,
+      "troubleshooting": 5,
+      "overall": 6,
+      "summary": "Comprehensive installation guide with excellent build instructions but lacks a simple quick-start example showing end-to-end usage before diving into details.",
+      "top_issue": "No quick example showing how to actually use NRPE to monitor something - jumps straight from installation to detailed configuration without demonstrating basic functionality"
     },
     "security": {
       "overall_score": 5,
@@ -207,16 +207,19 @@
       "summary": "The code has several security concerns, including high-risk injection vulnerabilities and lack of input validation, which could lead to potential attacks and data breaches."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "allowed_hosts configuration issues",
-        "SSL certificate validation"
+        "SSL/TLS certificate validation and security (CN validation, CRL support)",
+        "Configuration parsing bugs (CIDR notation, MAX_INPUT_BUFFER limits)",
+        "Platform compatibility issues (Solaris, AIX, Fedora)",
+        "Build/compilation failures with various configurations",
+        "Command execution issues (systemctl, seteuid permissions)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to unresolved and open issues, particularly around allowed_hosts and SSL certificates."
+      "abandonment_signals": true,
+      "summary": "NRPE community health is poor, with multiple unresolved critical security and functionality issues dating back years, no visible maintainer engagement, and accumulating platform compatibility problems."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,18 +232,18 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "No merged PRs in the past six months",
-        "Last release is far in the future"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 51 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases recorded",
+        "Last commit over 2 months ago with no recent activity"
       ],
-      "positive_signals": [
-        "10 contributors active in the past six months",
-        "46 open issues, indicating community interest and need for maintenance"
-      ],
-      "summary": "The package shows minimal maintenance activity but has recent contributor engagement."
+      "positive_signals": [],
+      "summary": "The nrpe package appears to be abandoned with no maintenance activity, commits, or issue resolution for at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -258,7 +261,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:29:22.671862+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

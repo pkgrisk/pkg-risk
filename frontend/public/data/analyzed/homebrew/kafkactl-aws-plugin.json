@@ -167,7 +167,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 1,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 1,
+      "summary": "README contains only AsciiDoc include directives without any actual content, making it completely unusable for understanding or using the package.",
+      "top_issue": "The README is a stub that references external files (azure/README.adoc and aws/README.adoc) which are not included, providing zero information about the package's purpose, installation, or usage."
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [
@@ -190,16 +200,17 @@
       "summary": "The code appears to be generally secure, but there are some areas that require improvement, such as input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "AWS plugin stays running in the background after every kafkactl execution",
-        "AWS: Kafkactl unable to find plugin"
+        "Plugin process management issues (background processes accumulating)",
+        "AWS profile name case sensitivity bug",
+        "Plugin discovery/installation problems"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with persistent background processes and plugin availability issues, but maintainers are actively addressing these problems."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of maintenance neglect with unresolved critical bugs (process leaks, case sensitivity) and slow issue resolution despite community requests for new features."
     },
     "communication": {
       "helpfulness": 7,
@@ -212,20 +223,26 @@
       "summary": "Responses are generally clear and helpful, showing a good level of patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs or closed issues in the past six months, indicating limited community engagement.",
-        "Only one contributor active in the last six months."
+        "No commits in past 6 months despite last commit being 2025-07-16",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "2 open issues with no resolution activity",
+        "Unknown last release date suggests release tracking is unavailable or stale"
       ],
       "positive_signals": [
-        "Recent commit and release dates suggest some level of activity.",
-        "Three commits in the past six months indicate occasional updates."
+        "Repository still exists (not deleted)"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but limited community engagement."
+      "summary": "The kafkactl-aws-plugin appears abandoned with zero maintenance activity over the past 6 months despite an apparent recent commit timestamp that may be incorrect or misleading."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:00:55.186882+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

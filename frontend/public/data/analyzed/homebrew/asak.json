@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 6,
       "quick_start": 7,
       "examples": 6,
-      "configuration": 2,
-      "troubleshooting": 3,
+      "configuration": 3,
+      "troubleshooting": 4,
       "overall": 6,
-      "summary": "The README provides a good introduction to the package and its installation, but lacks comprehensive documentation on configuration and troubleshooting.",
-      "top_issue": "Lack of detailed configuration documentation"
+      "summary": "Clear purpose and basic usage but lacks comprehensive installation guidance, configuration documentation, and troubleshooting support.",
+      "top_issue": "Installation instructions are incomplete and system-specific (JACK requirement only mentioned for Ubuntu/Mint, no guidance for macOS/Windows users, and step 2 just runs --help without explaining what to do next)"
     },
     "security": {
       "overall_score": 6,
@@ -201,16 +201,19 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but does not appear to expose sensitive information or have hardcoded secrets."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "CI is broken",
-        "doesn't work on linux (brew)"
+        "Linux compatibility issues (ALSA library errors, device compatibility)",
+        "Cross-platform crashes (Windows silence on playback, macOS index out of bounds)",
+        "CI/CD pipeline failures and maintenance",
+        "Broken installation on Linux (cargo install failures)",
+        "Missing features (MP3 support, device listing, monitoring with fx)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health appears stable with some ongoing issues and feature requests, but there are open CI problems that need attention."
+      "abandonment_signals": true,
+      "summary": "The asak project shows signs of declining maintenance with multiple unresolved critical platform-specific bugs, broken CI, unfilled feature requests, and lack of recent engagement from maintainers."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,20 +226,24 @@
       "summary": "Maintainer responses are generally helpful and patient, though could improve in technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Only one merged PR in the past six months, suggesting limited community contribution and maintenance."
+        "No commits in past 6 months despite last commit being in May 2025",
+        "12 open issues with no activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests poor release practices"
       ],
-      "positive_signals": [
-        "Seven contributors active in the past six months, which shows some level of community involvement.",
-        "Recent open issues and pull requests indicate that there is still ongoing need for support or improvement."
-      ],
-      "summary": "The package appears to be minimally maintained with recent activity from a few contributors but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The asak package shows clear signs of abandonment with no maintenance activity for at least 6 months despite accumulating unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:10:06.290217+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

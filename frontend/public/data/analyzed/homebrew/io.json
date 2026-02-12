@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
+      "quick_start": 8,
+      "examples": 8,
       "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides clear installation instructions and some examples, but lacks comprehensive documentation on configuration and troubleshooting.",
-      "top_issue": "Insufficient troubleshooting guidance"
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent clarity and installation instructions, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section and configuration documentation is minimal (only mentions CMAKE flags without explaining Io-specific configuration options)"
     },
     "security": {
       "overall_score": 5,
@@ -207,16 +207,20 @@
       "summary": "The codebase has several security concerns, including high-risk injection vulnerabilities and inadequate input validation, which could lead to serious security breaches."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build issues on specific architectures",
-        "runtime errors"
+        "Architecture-specific build failures (ARM/Apple Silicon/PowerPC)",
+        "Platform-specific compilation errors (Windows/MinGW/MSVC)",
+        "Segmentation faults and crashes in REPL",
+        "Stale codebase not compatible with modern compiler toolchains"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing multiple build and runtime issues, but the maintainers are actively addressing them."
+      "praise_themes": [
+        "Users appreciate the language and thank maintainers"
+      ],
+      "abandonment_signals": true,
+      "summary": "The Io language shows signs of abandonment with unresolved multi-year issues across multiple platforms, no maintainer responses, and fundamental architecture incompatibilities with modern systems."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,17 +233,18 @@
       "summary": "Maintainer responses are clear, helpful, and encouraging to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Last release is from 2019, indicating a long gap without updates.",
-        "Open issues are high at 61, suggesting potential unresolved problems."
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 63 open issues",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "Last commit over 6 months ago (November 2025)"
       ],
-      "positive_signals": [
-        "Commits in the past six months: 8",
-        "Merged PRs in the past six months: 4"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent releases and has a high number of open issues."
+      "positive_signals": [],
+      "summary": "This package shows no signs of active maintenance with zero activity across all metrics (commits, issue resolution, PRs, contributors) over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -249,7 +254,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "low",
       "summary": "The documentation provides a clear path for contributors to become maintainers and documents the decision-making process, but lacks an explicit succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:22:01.318728+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

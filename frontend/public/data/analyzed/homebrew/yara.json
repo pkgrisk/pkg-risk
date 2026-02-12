@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 2,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 3,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 3,
+      "troubleshooting": 1,
       "overall": 5,
-      "summary": "The README provides a good introduction to YARA, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided in the README."
+      "summary": "Excellent explanation of what YARA does with a clear example, but completely missing installation instructions, configuration details, and troubleshooting guidance.",
+      "top_issue": "No installation instructions whatsoever - users cannot determine how to install YARA from this README"
     },
     "security": {
       "overall_score": 7,
@@ -196,16 +196,19 @@
       "summary": "The code has some security concerns related to input validation and error handling, but no critical injection risks or secrets exposure were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bugs",
-        "compatibility issues"
+        "Regular expression engine limitations (regex fiber limits, scan limits causing rule matching failures)",
+        "Memory safety issues (heap buffer overflows, memory leaks)",
+        "Platform-specific bugs (Windows symlink handling, wolfi-os crashes, OpenSSL compatibility)",
+        "Documentation gaps (unclear variable types, incomplete module documentation)",
+        "Backward compatibility concerns (undocumented constant changes breaking existing rules)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The yara community is active and responsive, with maintainers addressing various bugs and compatibility issues in a timely manner."
+      "summary": "YARA maintains active issue resolution across security-critical bugs and feature requests, though ongoing regex engine constraints and memory safety issues indicate architectural limitations affecting user reliability."
     },
     "communication": {
       "helpfulness": 8,
@@ -221,20 +224,26 @@
       "summary": "The maintainer provides clear and technically detailed explanations, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "low ratio of closed issues to open issues"
+        "Zero commits in past 6 months despite being a popular security tool",
+        "172 open issues with no recent activity or triage",
+        "No merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months",
+        "No releases in at least 6 months"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors in the past 6 months"
+        "Last commit was recent (2026-02-10), suggesting repository is not completely abandoned",
+        "Project exists and has historical maintenance record"
       ],
-      "summary": "The yara package appears to be maintained, with recent activity and active contributors, but may benefit from addressing the large number of open issues."
+      "summary": "Yara shows clear signs of stalled development with zero commits, PRs, or contributor activity over 6 months despite 172 open issues, indicating the project is in maintenance limbo."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:06:17.332476+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

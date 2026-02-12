@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The documentation provides a good overview of the package's features, but lacks clear installation and usage instructions.",
-      "top_issue": "Lack of clear installation and quick start instructions"
+      "summary": "Excellent conceptual clarity but completely lacks practical usage examples, installation instructions, or any code snippets in the README.",
+      "top_issue": "No installation instructions or basic usage example - README only describes features but shows zero code, forcing users to read external documentation to get started"
     },
     "security": {
       "overall_score": 7,
@@ -209,16 +209,21 @@
       "summary": "The code has some potential security issues, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bugs in async library discovery",
-        "compatibility issues with other libraries"
+        "Backend-specific bugs (asyncio SocketStream exception handling, Lock from thread errors)",
+        "Compatibility issues with new Python versions (3.15.0a5 test regressions)",
+        "Breaking changes and API removals (create_queue removal, process API changes)",
+        "Keyboard interrupt handling in pytest fixtures"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Feature requests for API improvements (connectors, process enhancements)",
+        "Active issue resolution (bugs marked as closed)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is reporting bugs but not expressing significant frustration or dissatisfaction, indicating a generally neutral sentiment."
+      "summary": "AnyIO shows healthy maintainer engagement with timely bug fixes and active development, but users face frustration with backend-specific quirks, breaking changes, and compatibility challenges as the library matures."
     },
     "communication": {
       "helpfulness": 7,
@@ -231,18 +236,27 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent activity with a commit and release on 2026-01-06",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "No commits in the past 6 months despite last commit being recent (Feb 9, 2026)",
+        "No merged PRs in the past 6 months indicates no active development",
+        "No contributors active in the past 6 months",
+        "No closed issues in the past 6 months showing lack of issue triage",
+        "74 open issues with no recent resolution activity",
+        "Unknown last release date prevents assessment of release cadence"
       ],
-      "summary": "The package is actively maintained with recent commits, releases, and contributions."
+      "positive_signals": [
+        "Repository has recent activity (last commit Feb 9, 2026)",
+        "No open PRs suggests maintainers may be blocking contributions or merging is paused"
+      ],
+      "summary": "Package appears stale with no active development, issue resolution, or release activity over the past 6 months despite a recent commit timestamp."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:48:28.242911+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

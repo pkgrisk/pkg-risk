@@ -192,15 +192,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 9,
+      "installation": 4,
       "quick_start": 6,
       "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package's features and use cases, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions"
+      "configuration": 3,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Excellent clarity and ecosystem overview with strong external documentation links, but README itself lacks concrete installation steps, configuration details, and troubleshooting guidance.",
+      "top_issue": "No installation instructions in README - users must click through to external docs to learn how to actually install the package"
     },
     "security": {
       "overall_score": 7,
@@ -226,16 +226,18 @@
       "summary": "The code has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or severe error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 6,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "serialization problems",
-        "UI issues"
+        "UI performance issues with large workflow lists causing high memory usage",
+        "Controller issues with Kubernetes 1.27+ compatibility and ConfigMap watching",
+        "API server transient errors not handled gracefully for workflow retries",
+        "CronWorkflow execution timing and missed execution assumptions"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The Argo community is actively reporting and discussing various technical issues, with maintainers responding moderately, indicating a neutral sentiment and moderate frustration level."
+      "summary": "Argo Workflows maintains moderate community health with active issue tracking but mixed severity problems ranging from UI performance degradation to upstream Kubernetes compatibility challenges requiring band-aid solutions."
     },
     "communication": {
       "helpfulness": 8,
@@ -248,19 +250,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "No commits in past 6 months despite last commit being recent (2026-02-12)",
+        "1372 open issues with zero closed in past 6 months indicates no issue triage",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release - no versioned releases available",
+        "High issue count suggests unaddressed backlog"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many active contributors",
-        "high number of merged PRs"
+        "Recent activity timestamp exists (2026-02-12)"
       ],
-      "summary": "The argo package appears to be actively maintained with a high volume of recent activity, despite having a large number of open issues and PRs."
+      "summary": "The package appears abandoned with no development activity, issue resolution, or release management for at least 6 months despite a recent timestamp anomaly."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -278,7 +281,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The Argo project has multiple maintainers and a clear contributor ladder, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:22:51.377391+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

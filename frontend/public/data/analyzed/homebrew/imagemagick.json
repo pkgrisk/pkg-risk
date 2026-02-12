@@ -185,14 +185,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided in the README."
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 4,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "Excellent high-level overview and feature list, but completely lacks installation instructions, quick start examples, and troubleshooting guidance.",
+      "top_issue": "No installation instructions whatsoever - users cannot determine how to install or run ImageMagick from this README"
     },
     "security": {
       "overall_score": 8,
@@ -203,16 +203,18 @@
       "summary": "The provided ImageMagick code appears to be relatively secure with no major injection risks or secrets exposure, but input validation and potential buffer overflow vulnerabilities require attention."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and regressions",
-        "compatibility issues"
+        "Security vulnerabilities not fully patched (CVE-2016-7524)",
+        "Feature parity issues between commands (magick vs mogrify -fuzz behavior)",
+        "Buffer overflows and memory safety issues (PCX, DCM, YUV coders)",
+        "Missing modern font support (variable fonts)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The ImageMagick community is actively addressing various technical issues and compatibility problems, with maintainers responding promptly to user reports."
+      "summary": "Active ImageMagick community with responsive maintainers addressing security and stability issues, though some technical debt and edge cases remain unresolved."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,20 +230,27 @@
       "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (283 in the past 6 months)",
-        "Recent last commit (within the past month)",
-        "Active issue closure (209 closed issues in the past 6 months)",
-        "Multiple contributors active recently (11 in the past 6 months)",
-        "Recent release (within the past month)"
+      "concerns": [
+        "Zero commits in past 6 months despite active issue tracker",
+        "No closed issues in past 6 months indicating no bug fixes or releases",
+        "No merged PRs in past 6 months showing no development activity",
+        "Zero active contributors in past 6 months",
+        "97 open issues suggest unaddressed maintenance backlog",
+        "Unknown last release date indicates lack of versioning clarity"
       ],
-      "summary": "The imagemagick package appears to be actively maintained with frequent updates, commits, and issue closures."
+      "positive_signals": [
+        "Repository still exists and is accessible",
+        "Open issues indicate the project is at least being monitored for problem reports"
+      ],
+      "summary": "The imagemagick homebrew package appears abandoned with no commits, merged PRs, or closed issues in the past 6 months despite a substantial backlog of open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:12:12.968699+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

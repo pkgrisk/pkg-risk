@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 4,
       "installation": 2,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides some basic information but lacks essential details on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and examples in the README itself, instead redirecting to an external wiki."
+      "overall": 2,
+      "summary": "README provides only a high-level overview with no actionable content, deferring everything to external wiki links.",
+      "top_issue": "No installation instructions, usage examples, or quick start in the README itself - users must navigate to external wiki for all practical information"
     },
     "security": {
       "overall_score": 7,
@@ -209,15 +209,18 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build issues with CMake 4+",
-        "buffer overflow errors",
-        "infinite loops on certain platforms"
+        "Build failures with newer CMake versions (4+)",
+        "Buffer overflows and heap corruption on certain architectures (s390x, ARM, ppc64el)",
+        "Infinite loops in filter tool on non-x86 platforms",
+        "Missing export headers and compilation issues",
+        "Data corruption and truncation in split/output files",
+        "Incorrect random sampling skewed towards small chromosomes"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The community health is negative due to multiple open and unresolved issues, slow maintainer responsiveness, and signs of potential abandonment."
+      "summary": "BAMtools shows significant abandonment with critical unaddressed bugs (buffer overflows, infinite loops on ARM/s390x), build incompatibilities with modern CMake, and zero maintainer engagement on issues spanning 8+ years with no responses or activity."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,20 +233,23 @@
       "summary": "The maintainer responses are generally helpful and clear, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues (62) and PRs (10) suggests potential maintenance backlog."
+        "No commits in past 6 months despite last commit being May 2025",
+        "72 open issues with no recent activity or resolution",
+        "Zero merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "No releases recorded, suggesting stalled release cycle"
       ],
-      "positive_signals": [
-        "Recent activity with both an issue and release on May 18, 2025.",
-        "Active contributors in the past six months (10)"
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks ongoing development."
+      "positive_signals": [],
+      "summary": "bamtools is effectively abandoned with no maintenance activity for at least 6 months and a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:36:27.073847+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -164,15 +164,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 10,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is generally clear and provides a good quick start guide, but could benefit from more examples and troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 7,
+      "overall": 8,
+      "summary": "Excellent documentation with clear motivation, comprehensive installation options, and detailed quick start examples, though configuration details require checking external manual.",
+      "top_issue": "Configuration documentation is mostly deferred to external manual file rather than included inline"
     },
     "security": {
       "overall_score": 7,
@@ -199,16 +199,19 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and insufficient input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "permission issues",
-        "networking problems"
+        "Permission and capability issues (/proc/pid/ns/net, /dev/net/tun access)",
+        "Network functionality bugs (socket leaks, 100% CPU usage, general protection faults)",
+        "DNS resolution problems",
+        "Missing features (IPv6 CIDR support, dynamic port allocation)",
+        "Configuration edge cases (symlink handling in NixOS, path-based config issues)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The slirp4netns community is experiencing some frustration with ongoing issues, but maintainers are moderately responsive and there are no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is concerning with slow maintainer response times, unresolved bugs dating back years, and several open issues suggesting the project may not be actively maintained despite ongoing user reliance on it."
     },
     "communication": {
       "helpfulness": 9,
@@ -221,22 +224,24 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing technical depth and encouraging new contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unaddressed open issues",
-        "no merged PRs or closed issues in the past 6 months"
+        "No commits in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "49 open issues with no closure activity",
+        "No releases recorded",
+        "Last commit over 7 months ago"
       ],
-      "positive_signals": [
-        "recent release",
-        "last commit relatively recent",
-        "multiple contributors"
-      ],
-      "summary": "The package appears to be stale due to a lack of recent commits, unaddressed open issues, and no merged PRs, despite having a recent release and multiple contributors."
+      "positive_signals": [],
+      "summary": "slirp4netns appears to be abandoned with no development activity, maintenance, or community engagement in at least the past 6 months despite having a substantial backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:31:29.350101+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

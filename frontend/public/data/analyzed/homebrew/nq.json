@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 7,
       "examples": 9,
       "configuration": 7,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a good overview of the package's functionality and usage, but could benefit from more concise language and troubleshooting guidance.",
-      "top_issue": "Lack of clear troubleshooting section or common error handling"
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent documentation with clear explanations and practical examples, though it could benefit from a more prominent quick-start section and basic troubleshooting guidance.",
+      "top_issue": "No quick-start section at the top\u2014users must read several paragraphs before seeing actual usage commands in the Examples section"
     },
     "security": {
       "overall_score": 7,
@@ -203,19 +203,23 @@
       "summary": "The nq program has some security concerns, including potential command injection vulnerabilities and lack of input validation, but it does not appear to expose sensitive information or use insecure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "output visibility across users",
-        "batching and serialization issues"
+        "Multi-user isolation issues - users can see each other's job output",
+        "Version mismatch between package managers and upstream (Ubuntu stuck on 0.3 vs current 0.5)",
+        "Documentation accuracy problems (manpage incorrect)",
+        "Performance issues under load (many queued jobs causing CPU spin locks)",
+        "Feature limitations (no concurrent job execution, no priority queues)"
       ],
       "praise_themes": [
-        "useful for managing GPU access",
-        "works well for serializing single jobs"
+        "Core functionality works well for single-user use cases",
+        "Lightweight and effective for basic job queuing",
+        "Generally positive reception of the tool's core concept"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied with nq's core functionality but faces challenges with output visibility and job batching, indicating moderate frustration."
+      "abandonment_signals": true,
+      "summary": "The nq project shows signs of dormancy with slow maintainer responsiveness, unresolved multi-user issues present since 2021-2024, outdated package manager versions, and a mix of closed issues (some resolved, some seemingly abandoned) alongside growing user feature requests and bugs."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,20 +232,27 @@
       "summary": "Responses are generally helpful and clear, showing a good level of technical depth but could be more welcoming."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs or releases in the past six months",
-        "Only one contributor active in the last six months"
+        "No commits in past 6 months despite last commit being from October 2025",
+        "4 open issues with no recent resolution activity",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No recent releases",
+        "Zero closed issues in past 6 months indicates no maintenance activity"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Two commits in the past six months"
+        "Project exists and has some historical activity",
+        "No indication of explicit abandonment or archival"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent contributions and releases."
+      "summary": "The nq project appears stale with no maintenance activity for at least 6 months, unresolved open issues, and no active contributors despite relatively recent last commit date."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:18:32.667136+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -184,13 +184,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 4,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is generally clear and comprehensive, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting information"
+      "summary": "Clear purpose and excellent installation docs, but lacks inline examples and troubleshooting guidance, relying heavily on external wiki links.",
+      "top_issue": "No quick start example showing basic usage without flags, and common use cases/troubleshooting require navigating to external wiki pages"
     },
     "security": {
       "overall_score": 7,
@@ -216,16 +216,21 @@
       "summary": "The sngrep code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure program."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "crash",
-        "compilation issues"
+        "Build failures (missing sng_strncpy declaration, compilation errors on newer GCC/Fedora/Rocky/AlmaLinux)",
+        "Security vulnerabilities and memory safety issues (heap OOB read in RTCP parser, segfaults with HEP v3)",
+        "HEP protocol handling bugs (incorrect save format, crashes when using -E flag)",
+        "Configuration issues (savepath not respecting $HOME, libpcap detection problems)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is negative due to frequent crashes and compilation issues, though there are no clear signs of abandonment."
+      "praise_themes": [
+        "Tool functionality is valued ('exceptionally useful tool')",
+        "Active user community reporting issues"
+      ],
+      "abandonment_signals": true,
+      "summary": "The sngrep project shows signs of maintenance strain with multiple unresolved build failures across Linux distributions, critical security vulnerabilities left open, and slow response times to user reports, indicating potential abandonment or severely under-resourced maintenance."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,18 +243,24 @@
       "summary": "The maintainer provides clear and helpful responses, showing patience with repeated questions and a welcoming attitude towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged pull requests in the past six months",
-        "Regular issue tracking and resolution"
+      "concerns": [
+        "No commits in past 6 months despite last commit in January 2026",
+        "73 open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [],
+      "summary": "sngrep appears to be abandoned with complete lack of maintenance activity over the past 6 months despite having significant open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:01:52.903669+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

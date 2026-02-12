@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 4,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a good introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and quick start examples"
+      "overall": 2,
+      "summary": "The README provides only a high-level description and links to external documentation, with no installation instructions, examples, or usage guidance.",
+      "top_issue": "No installation instructions or basic usage examples in the README - users must navigate to external documentation to understand how to install or use the package"
     },
     "security": {
       "overall_score": 7,
@@ -211,15 +211,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "memory leak",
-        "TLS configuration issues"
+        "Memory leaks (Redis and anycable-go process itself)",
+        "Redis connectivity issues (authentication, Sentinel, TLS)",
+        "Configuration not being respected (port binding)",
+        "Broadcast delivery failures",
+        "Version regressions and bugs (1.6.8 whisper mode)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration due to persistent memory leaks and TLS configuration issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with critical production issues (memory leaks, broadcast failures) remaining open for months, apparent slow maintainer response, and recent version regressions creating user frustration."
     },
     "communication": {
       "helpfulness": 8,
@@ -232,14 +235,18 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past six months",
-        "Multiple contributors are actively involved"
+      "concerns": [
+        "No commits in past 6 months despite last commit being 2 days ago (timestamp inconsistency suggests stale data)",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "Unknown last release date",
+        "5 open issues with no activity"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [],
+      "summary": "The project appears abandoned with no maintenance activity, contributor engagement, or issue resolution in the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -257,7 +264,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks details on succession, decision-making, contributor paths, and indicates a single maintainer."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:40:51.796555+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

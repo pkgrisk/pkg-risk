@@ -187,14 +187,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 6,
-      "examples": 7,
+      "installation": 3,
+      "quick_start": 7,
+      "examples": 6,
       "configuration": 4,
-      "troubleshooting": 3,
+      "troubleshooting": 2,
       "overall": 5,
-      "summary": "The documentation is clear and provides a good introduction to the PEGTL library, but lacks detailed installation instructions and troubleshooting guides.",
-      "top_issue": "Lack of clear installation instructions for users"
+      "summary": "Clear conceptual introduction with good code examples, but lacks concrete installation instructions and troubleshooting guidance in the main README.",
+      "top_issue": "No installation instructions provided - README only links to documentation without showing basic setup steps like include paths or CMake integration"
     },
     "security": {
       "overall_score": 8,
@@ -205,16 +205,19 @@
       "summary": "The provided PEGTL code appears to be secure, with no obvious injection risks or secrets exposure, but could benefit from explicit input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "compatibility issues",
-        "license management"
+        "Compiler compatibility issues (GCC, Clang, MSVC, Apple Clang)",
+        "Standard library changes breaking PEGTL (libc++ char_traits)",
+        "Documentation gaps and missing features (lazy quantifiers, trace verbosity)",
+        "License inconsistency between releases and git repository",
+        "UTF-8 handling limitations (column counting treats bytes not characters)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some ongoing compatibility and license management issues, but the maintainers are actively addressing them."
+      "abandonment_signals": true,
+      "summary": "PEGTL shows signs of maintenance fatigue with unresolved compiler compatibility issues, an unresolved license discrepancy across releases, and delayed feature releases despite community requests."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,20 +230,26 @@
       "summary": "The maintainer responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, which could indicate a lack of active development.",
-        "Only one contributor has been active in the last six months."
+        "No commits in past 6 months despite last commit being recent (2026-01-10)",
+        "No closed issues in past 6 months indicating inactive issue resolution",
+        "No merged PRs in past 6 months suggesting no active development",
+        "Zero active contributors in past 6 months",
+        "5 open issues with no recent activity or closure"
       ],
       "positive_signals": [
-        "Recent open issues and PRs suggest some level of community engagement or need for updates.",
-        "A recent release indicates that at least some maintenance is being performed, even if infrequently."
+        "Recent commit activity exists (though over 1 month old)",
+        "No open pull requests to indicate abandoned state"
       ],
-      "summary": "The package shows signs of minimal maintenance with occasional contributions but no recent development activity."
+      "summary": "The pegtl package shows signs of stagnation with no maintenance activity for over a month despite recent commit history, zero contributor engagement, and unresolved open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:33:48.038643+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

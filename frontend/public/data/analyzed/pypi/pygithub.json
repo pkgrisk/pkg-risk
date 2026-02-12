@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 10,
       "quick_start": 9,
       "examples": 6,
-      "configuration": 7,
+      "configuration": 5,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The PyGitHub README provides a clear introduction and installation instructions, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Excellent clarity and quick start, but lacks comprehensive examples, configuration details, and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like rate limiting, authentication errors, or API pagination"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,18 @@
       "summary": "The PyGithub package has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a secure library."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bug reports",
-        "feature requests"
+        "Missing API endpoints (workflow jobs, issue transfer, auto-merge)",
+        "Outdated/vulnerable dependencies (urllib3-2.6.0)",
+        "Lack of enterprise features (team-sync endpoints)",
+        "API versioning not supported despite GitHub's versioned APIs"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues and feature requests, but there are no clear signs of frustration or abandonment."
+      "abandonment_signals": true,
+      "summary": "PyGithub shows signs of maintenance neglect with unresponded feature requests spanning years, accumulating API gaps as GitHub evolves, and unresolved security dependency issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,15 +230,19 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent activity with a commit on January 6, 2026",
-        "Multiple contributors active over the last six months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (Feb 2026)",
+        "379 open issues with zero closed in past 6 months indicates no triage or fixes",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests no review or integration activity",
+        "Unknown last release date suggests versioning/release process may be stalled"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Recent commit timestamp (Feb 2026) shows repository exists and is accessible"
+      ],
+      "summary": "PyGithub is effectively abandoned with no active maintenance despite recent timestamp, evidenced by complete absence of commits, issue resolution, PR merging, and contributor activity over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -246,7 +252,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes and multiple maintainers, but lacks a succession plan or contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:49:26.985793+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -183,13 +183,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 8,
-      "configuration": 7,
+      "quick_start": 3,
+      "examples": 7,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a good overview of the package and its features, but lacks clear troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting documentation"
+      "overall": 6,
+      "summary": "Comprehensive installation guide and feature list, but lacks quick-start code examples and practical configuration guidance.",
+      "top_issue": "No inline code examples showing actual regex usage - just references to external API docs and sample files"
     },
     "security": {
       "overall_score": 8,
@@ -200,16 +200,19 @@
       "summary": "The Oniguruma regular expression library appears to be well-structured and secure, but lacks explicit input validation for user-provided data."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "regex pattern inconsistencies",
-        "crashes and segmentation faults"
+        "Unicode case folding behavior inconsistencies with flags",
+        "Character match length expansion with case-insensitive flag",
+        "Performance issues with character classes and quantifiers",
+        "Segmentation faults and memory safety issues (SIGSEGV, SIGILL, AddressSanitizer crashes)",
+        "Edge case handling of invalid byte sequences and escape sequences"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The oniguruma community is actively reporting and discussing issues, with maintainers responding moderately, indicating a neutral sentiment and moderate frustration level."
+      "summary": "Oniguruma shows moderate maintenance activity with technical bug reports being addressed, but community frustration exists around Unicode flag semantics, performance edge cases, and memory safety issues that suggest the project would benefit from more active architectural improvements."
     },
     "communication": {
       "helpfulness": 6,
@@ -227,16 +230,18 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "no closed issues or merged PRs in the past 6 months"
+        "No commits in past 6 months despite last commit being from April 2025",
+        "No merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "4 open issues unresolved with no recent activity",
+        "No closed issues in past 6 months suggesting issues are not being addressed"
       ],
       "positive_signals": [
-        "recent release within the past year",
-        "10 contributors active in the past 6 months"
+        "Repository still exists and has some historical activity"
       ],
-      "summary": "The oniguruma package appears to be stale due to a lack of recent commits, issue closures, or PR merges, despite having a recent release and active contributors."
+      "summary": "The oniguruma package shows signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -247,7 +252,10 @@
       "overall_score": 5,
       "summary": "The changelog appears comprehensive but lacks clear categorization, migration guides, and explicit breaking change markers, making it somewhat difficult to understand for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:29:18.305819+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

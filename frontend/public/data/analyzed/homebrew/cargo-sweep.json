@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is clear and provides a good quick start, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "examples": 9,
+      "configuration": 8,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Well-structured README with clear motivation, installation, and practical examples covering multiple use cases, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common errors like permission issues, missing rustup, or what to do if sweep removes too much/too little"
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,20 @@
       "summary": "The code has some security concerns, including lack of input validation and potential for unintended file deletions, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "incomplete cleaning",
-        "outdated dependencies"
+        "Core functionality broken on Linux (sweep -s/-f not working)",
+        "Incremental directory not cleaned properly",
+        "Incomplete artifact removal despite flags",
+        "Access time tracking issues on Windows",
+        "Incompatibility with newer Rust versions (1.85+)",
+        "Limited support for non-standard Rust toolchains"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The cargo-sweep community is active with open issues and feature requests, but maintainer responsiveness appears slow, indicating a need for more engagement to address user concerns."
+      "abandonment_signals": true,
+      "summary": "cargo-sweep shows signs of stagnation with multiple unresolved bugs dating back to 2018, zero recent maintainer engagement, and 12 open issues including critical functionality failures on Linux."
     },
     "communication": {
       "helpfulness": 9,
@@ -228,19 +232,18 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and welcoming, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low commit frequency",
-        "unaddressed open issues",
-        "no recent issue closures"
+        "No commits in past 6 months despite last commit being in November 2025",
+        "28 open issues with no recent activity or resolution",
+        "No closed issues in past 6 months indicating lack of maintenance",
+        "No merged PRs in past 6 months suggesting no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests releases may be outdated or unmaintained"
       ],
-      "positive_signals": [
-        "recent releases",
-        "active contributors",
-        "merged PRs in the past 6 months"
-      ],
-      "summary": "The package receives some maintenance with recent commits and releases, but the lack of issue closures and low commit frequency raise concerns about its overall health."
+      "positive_signals": [],
+      "summary": "cargo-sweep appears to be abandoned with no maintenance activity, open issues, or development in the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -258,7 +261,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for cargo-sweep lacks a clear succession plan, decision-making process, and contributor ladder, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:03:06.916340+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

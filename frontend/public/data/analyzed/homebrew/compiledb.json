@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
       "examples": 9,
       "configuration": 6,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides good examples, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Excellent clarity and examples with good quick start, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common errors (make failures, permission issues, empty database output, path resolution problems)"
     },
     "security": {
       "overall_score": 7,
@@ -219,16 +219,20 @@
       "summary": "The code has some security concerns related to input validation and potential shell injection attacks, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "parser limitations",
-        "missing support for specific build systems and file types"
+        "Parser doesn't support non-standard make commands or wrappers",
+        "Fails to recognize modern file extensions (.cppm for C++20 modules)",
+        "Cannot parse compiler-generated response files (@file syntax)",
+        "Doesn't handle various compiler toolchain outputs (MinGW, clang, TI armcl, Eclipse CDT)",
+        "Generates empty compilation databases for many valid use cases",
+        "Poor command-line interface (confusing error messages)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The community is experiencing frustration with the project's limited parser capabilities, but there are no clear signs of active development or maintenance."
+      "summary": "The project shows critical abandonment signals with unresponsive maintainers, multiple open issues spanning 5+ years with zero resolutions, and users explicitly questioning if the project is still maintained."
     },
     "communication": {
       "helpfulness": 8,
@@ -241,20 +245,26 @@
       "summary": "Maintainer responses are generally helpful, clear, and patient. There is a mix of depth in technical explanations but room for improvement."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues (44) suggests potential unresolved problems."
+        "No commits in past 6 months despite last commit being recent (2025-03-23)",
+        "Zero closed issues in past 6 months indicating no active issue triage",
+        "Zero merged PRs in past 6 months showing no active development",
+        "Zero active contributors in past 6 months",
+        "High number of open issues (60) with no resolution activity",
+        "Unknown last release date suggests release process is stalled"
       ],
       "positive_signals": [
-        "Recent release and last commit dates suggest some level of activity.",
-        "Multiple contributors are still involved, which is positive for maintenance."
+        "Recent commit exists (March 2025), though appears to be outlier"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks active development in the past six months."
+      "summary": "The project appears abandoned with no maintenance activity over the past 6 months despite a single recent commit, 60 unresolved issues, and no active contributors or merged PRs."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:29:23.404407+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

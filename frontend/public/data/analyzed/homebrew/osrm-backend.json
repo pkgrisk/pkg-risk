@@ -184,15 +184,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and provides a good introduction to the package, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent README with clear purpose, comprehensive Docker quick-start, and multiple installation paths, though configuration details and troubleshooting are minimal.",
+      "top_issue": "Limited troubleshooting guidance - only mentions Docker daemon permission issue, no coverage of common routing/data processing problems or performance tuning"
     },
     "security": {
       "overall_score": 8,
@@ -203,16 +203,18 @@
       "summary": "The provided code appears to be a C++ implementation of the OSRM backend with no major security concerns, but some potential issues with input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "partition step issues",
-        "route accuracy and variable handling"
+        "OSM data interpretation issues (sidewalks, turn restrictions, living streets)",
+        "Build system failures (ESM/CommonJS conflicts in documentation)",
+        "Silent failures and hangs in data processing tools (osrm-extract, osrm-partition)",
+        "Docker image access issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some common issues but there hasn't been significant frustration or signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows moderate maintenance activity with several critical bugs unresolved for years (oldest issue from 2015), recent documentation build failures, and resource handling issues that suggest the maintainer team may be overextended or losing focus on some areas."
     },
     "communication": {
       "helpfulness": 7,
@@ -225,17 +227,18 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low merged PRs compared to open PRs"
+        "No commits in past 6 months despite last commit being recent (2026-02-06)",
+        "443 open issues with no recent activity or triage",
+        "Zero closed issues in past 6 months indicating no active maintenance",
+        "No merged PRs in past 6 months suggesting stalled development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests version tracking breakdown"
       ],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Regular contributor activity"
-      ],
-      "summary": "The package is maintained with recent activity but faces challenges with issue resolution and PR merging."
+      "positive_signals": [],
+      "summary": "osrm-backend appears abandoned with high issue load and zero maintenance activity over the past 6 months despite a recent commit timestamp."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -253,7 +256,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents decision-making processes and contributor paths but lacks a formal succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:45:31.524262+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

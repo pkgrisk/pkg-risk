@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 9,
-      "quick_start": 5,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides detailed installation and usage instructions, but lacks a clear introduction to the package's purpose and has limited troubleshooting information.",
-      "top_issue": "Lack of clear introduction to the package's purpose and limited troubleshooting information"
+      "clarity": 10,
+      "installation": 10,
+      "quick_start": 10,
+      "examples": 9,
+      "configuration": 9,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity, installation, and quick start with comprehensive editor integration, but lacks troubleshooting guidance for common issues.",
+      "top_issue": "No troubleshooting section for common problems like formatting errors, unsupported Ruby syntax, or conflicts with other formatters"
     },
     "security": {
       "overall_score": 7,
@@ -200,16 +200,17 @@
       "summary": "The code has some minor security concerns related to input validation and error handling, but overall it appears to be secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "formatting issues",
-        "crashes/panics"
+        "Non-idempotent formatting (issues repeat formatting)",
+        "Heredoc formatting bugs (nested and bare heredocs)",
+        "Paren elision formatting issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The rubyfmt community is experiencing some formatting and stability issues, but maintainers are moderately responsive to user reports."
+      "abandonment_signals": true,
+      "summary": "rubyfmt shows signs of abandonment with multiple critical formatting bugs (non-idempotent output, heredoc failures) remaining unfixed for years despite being closed issues, indicating potential lack of active maintenance."
     },
     "communication": {
       "helpfulness": 9,
@@ -222,16 +223,20 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub issue and pull request discussions."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (167)",
-        "Recent last commit and release dates (2026-01-03)",
-        "Active issue and PR management (23 closed issues, 166 merged PRs)",
-        "Multiple active contributors (4) in the past 6 months"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (2026-02-04)",
+        "Zero active contributors in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "Zero closed issues in past 6 months indicating no maintenance activity",
+        "5 open issues with no resolution activity",
+        "No releases available"
       ],
-      "summary": "The rubyfmt package appears to be actively maintained with frequent updates, active issue management, and multiple contributors."
+      "positive_signals": [
+        "Repository exists and has a recent commit timestamp"
+      ],
+      "summary": "This package is effectively abandoned with no maintenance activity over the past 6 months despite recent repository timestamp, indicating stalled development and unaddressed user issues."
     },
     "changelog": null,
     "governance": {
@@ -241,7 +246,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the homebrew package 'rubyfmt' lacks a clear plan for succession, decision making, and contributor advancement, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:12:50.372112+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

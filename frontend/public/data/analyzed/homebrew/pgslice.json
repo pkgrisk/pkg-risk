@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is generally clear and provides a good overview of the package's functionality, but could benefit from more troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "quick_start": 9,
+      "examples": 10,
+      "configuration": 8,
+      "troubleshooting": 6,
+      "overall": 9,
+      "summary": "Excellent documentation with clear step-by-step instructions and extensive SQL examples, though troubleshooting guidance could be more comprehensive.",
+      "top_issue": "Lacks dedicated troubleshooting section for common errors like partition conflicts, fill failures, or rollback procedures when something goes wrong mid-process"
     },
     "security": {
       "overall_score": 5,
@@ -214,19 +214,22 @@
       "summary": "The code has several security concerns, including SQL injection vulnerabilities and lack of input validation, which could lead to unauthorized access or data tampering."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Handling inserts/updates",
-        "Partitioning support"
+        "Missing data handling during migration (inserts/updates/deletes while filling)",
+        "Limited partitioning options (only time-based, no list/hash partitioning)",
+        "Foreign key constraints not handled during swap",
+        "Append-only table assumption limiting real-world usage"
       ],
       "praise_themes": [
-        "Solutions proposed by the community",
-        "Interest in new features"
+        "Clean, well-designed codebase",
+        "Gem solves a specific problem very well",
+        "Active discussion around improvements"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with open issues, but there are ongoing concerns about handling updates and partitioning that haven't been addressed yet."
+      "summary": "pgslice has an engaged community discussing real production use cases, but users are hitting edge cases (data sync, foreign keys, partition types) that the maintainer hasn't prioritized, indicating moderate health with room for improvement."
     },
     "communication": {
       "helpfulness": 7,
@@ -239,17 +242,18 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No recent releases",
-        "Few contributors"
+        "No commits in past 6 months despite being in active use",
+        "No merged PRs in past 6 months indicating no maintenance activity",
+        "No active contributors in past 6 months",
+        "4 open issues with no recent closure or resolution",
+        "Last commit over 1 month ago with no follow-up activity",
+        "Unknown last release date suggests release history may be outdated"
       ],
-      "positive_signals": [
-        "Recent commits",
-        "Regular PR activity"
-      ],
-      "summary": "The package is maintained with regular updates and PRs, but lacks recent releases and has few active contributors."
+      "positive_signals": [],
+      "summary": "pgslice appears to be abandoned with zero maintenance activity over the past 6 months and accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -260,7 +264,10 @@
       "overall_score": 6,
       "summary": "The changelog clearly marks breaking changes but lacks migration guides and detailed categorization, making it somewhat difficult to understand for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:07:22.812651+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

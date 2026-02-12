@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
+      "quick_start": 8,
+      "examples": 8,
       "configuration": 6,
-      "troubleshooting": 5,
-      "overall": 7,
-      "summary": "The README provides a good overview of the package and its usage, but could benefit from more detailed configuration and troubleshooting documentation.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "troubleshooting": 7,
+      "overall": 8,
+      "summary": "Excellent clarity and installation instructions with solid examples, but configuration details are light and mostly deferred to external documentation.",
+      "top_issue": "Configuration options are mentioned but not documented inline\u2014users must visit external docs to understand parameters like skip_utf8_validation, reconnect delays, and callback signatures."
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,20 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "race condition in WebSocketApp",
-        "connection dropping",
-        "reconnection issues"
+        "Thread safety issues and race conditions in WebSocketApp",
+        "Connection stability and unexpected disconnections",
+        "WebSocketApp lifecycle management (close/reconnect hanging)",
+        "API inconsistencies (on_error receiving non-Exception objects)",
+        "Environmental variable handling edge cases"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with the library, particularly around race conditions and connection stability, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Appreciation for library maintenance and effort"
+      ],
+      "abandonment_signals": true,
+      "summary": "The websocket-client library shows signs of maintenance debt with recurring unresolved thread safety issues, poor connection stability, and slow maintainer response times, indicating declining community health."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,17 +239,21 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Open issues are higher than closed ones",
-        "Few merged PRs in the past six months"
+        "No commits in past 6 months despite last commit being recent (2026-01-27)",
+        "32 open issues with no recent resolution activity",
+        "No closed issues in past 6 months indicating lack of issue triage",
+        "No merged PRs in past 6 months showing no active development",
+        "Zero contributors active in past 6 months",
+        "Unknown last release date suggests release process is inactive"
       ],
       "positive_signals": [
-        "Commits past 6 months: 13",
-        "Contributors active past 6 months: 3"
+        "Recent commit exists (2026-01-27) showing some project presence",
+        "No abandoned pull requests accumulating"
       ],
-      "summary": "The package is maintained with regular commits and contributors, but there are more open issues than closed ones."
+      "summary": "The websocket-client package shows signs of stagnation with no development activity, issue resolution, or releases in the past 6 months despite a recent commit, indicating it is in a stale maintenance state."
     },
     "changelog": null,
     "governance": {
@@ -255,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:51:11.401144+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
+      "clarity": 8,
       "installation": 2,
-      "quick_start": 4,
-      "examples": 8,
-      "configuration": 5,
-      "troubleshooting": 7,
-      "overall": 5,
-      "summary": "The README provides a clear warning about the package's deprecation and offers migration guidance, but lacks clear installation instructions and a concise quick start guide.",
-      "top_issue": "Lack of clear installation instructions"
+      "quick_start": 3,
+      "examples": 5,
+      "configuration": 3,
+      "troubleshooting": 6,
+      "overall": 4,
+      "summary": "README is crystal clear about the project being sunset but fails to provide actual installation or usage instructions for users who still need to use it.",
+      "top_issue": "No installation instructions whatsoever - the README focuses entirely on sunset notice and migration, with only external links for getting started"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,19 @@
       "summary": "The cdktf codebase has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "vulnerabilities",
-        "publishing issues"
+        "Security vulnerabilities not being addressed promptly (CVE-2025-64756, brace-expansion)",
+        "Pre-built provider packages failing to publish to package repositories (Maven Central, NuGet)",
+        "Memory/performance issues with cdktf synth command",
+        "Missing feature exposure in constructs (LogicAppWorkflow workflow_definition)",
+        "Long-standing bugs not resolved (pipenv issue from 2022 still open)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The cdktf community is experiencing a mix of frustration and engagement, with maintainers responding moderately to issues, but struggling with vulnerabilities and publishing problems."
+      "abandonment_signals": true,
+      "summary": "CDKTF shows signs of maintenance strain with unresolved security vulnerabilities, broken release pipelines for multiple language ecosystems, and a years-old bug still marked as backlog, indicating slow responsiveness to community issues."
     },
     "communication": {
       "helpfulness": 9,
@@ -224,17 +227,18 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "low commit frequency",
-        "large number of open issues",
-        "low contributor activity"
+        "No commits in the past 6 months despite being a major infrastructure tool",
+        "392 open issues with no closure activity in past 6 months",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests outdated release information"
       ],
       "positive_signals": [
-        "recent release within the last year",
-        "some merged PRs in the last 6 months"
+        "Project exists and has historical commit activity (last commit December 2025)"
       ],
-      "summary": "The cdktf package appears to be stale due to low maintenance activity, despite some recent updates."
+      "summary": "cdktf is in stale maintenance status with no development activity, PR merges, or issue resolution in the past 6 months despite having a significant backlog of 392 open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -252,7 +256,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for the cdktf package provides a clear decision-making process and contributor ladder, but lacks a succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:14:11.407066+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

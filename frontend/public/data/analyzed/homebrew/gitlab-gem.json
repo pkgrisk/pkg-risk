@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 9,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and provides clear instructions, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent documentation with clear examples for both library and CLI usage, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues like authentication errors, rate limits, or connection problems"
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,23 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "upload issues",
-        "outdated releases"
+        "API methods not aligned with GitLab's current API (outdated REST API endpoints)",
+        "Missing support for newer GitLab features (Work Items API, Custom Fields, Project Integrations)",
+        "Pagination/parameter handling limitations (merge request commits, resource label events)",
+        "HTTP method bugs in API wrappers (PUT vs POST for edit_group_hook)",
+        "Delayed release cycle (users requesting new releases for dependency updates)",
+        "Incomplete or unclear documentation for configuration"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with some open issues and a mix of questions, enhancements, and bug reports, indicating a neutral sentiment and moderate maintainer responsiveness."
+      "praise_themes": [
+        "General appreciation for the gem's functionality ('awesome gem')",
+        "Community members willing to contribute solutions"
+      ],
+      "abandonment_signals": true,
+      "summary": "The gitlab-gem project shows signs of slow maintenance with outdated API coverage, unresolved bugs dating back years, and limited responsiveness to feature requests, indicating potential abandonment or very low activity levels."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,18 +240,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, making the project a welcoming place for contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "relatively low number of closed issues",
-        "small number of active contributors"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "11 open issues with no resolution activity",
+        "Last commit is over 2 months old (from December 2025)"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active merging of PRs",
-        "presence of recent contributor activity"
+        "Last commit exists (not completely dead repository)"
       ],
-      "summary": "The gitlab-gem package appears to be maintained with regular updates, but may benefit from more issue resolution and community engagement."
+      "summary": "gitlab-gem is abandoned with no maintenance activity for at least 6 months and accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -262,7 +271,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a clear succession plan, decision-making process documentation, and multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:45:52.116788+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

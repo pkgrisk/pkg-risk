@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides a good overview of the package's features, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise troubleshooting section"
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Well-structured README with excellent clarity on purpose and features, but delegates most practical details to external documentation.",
+      "top_issue": "No troubleshooting information in the README; users must navigate to external docs for common problems and solutions."
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,21 @@
       "summary": "The code has some potential security concerns, including unvalidated input and lack of validation for certain flags, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "connection issues",
-        "maintenance and scheduling problems"
+        "Application startup/connection failures (mmap errors, UI not launching, LAN repo initialization hangs)",
+        "Resource management issues (excessive logging, RAM usage warnings needed)",
+        "Configuration and documentation clarity (authentication, SMTP/TLS options)",
+        "Performance concerns (slow repo sync for large repositories)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Core functionality works well when operational (backup reliability)",
+        "User appreciation for overall product quality"
+      ],
       "abandonment_signals": false,
-      "summary": "The kopia community is experiencing frustration with ongoing issues related to connection stability, maintenance, and scheduling, with a perceived lack of responsiveness from maintainers."
+      "summary": "Kopia has moderate community health with active maintenance and helpful user feedback, but struggles with stability issues in edge cases (startup failures, LAN connectivity) and usability gaps (logging verbosity, unclear documentation) that create frustration despite strong core functionality."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,17 +240,20 @@
       "summary": "The maintainer's responses are generally helpful, clear, and technically sound, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (199)",
-        "Recent last commit (2025-12-15)",
-        "Frequent releases (last release on 2025-12-02)",
-        "Many merged PRs in the past 6 months (198)",
-        "Multiple active contributors in the past 6 months (12)"
+      "concerns": [
+        "No commits in past 6 months despite last commit being recent (Feb 2026)",
+        "739 open issues with no resolution activity",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No releases documented"
       ],
-      "summary": "The kopia package appears to be actively maintained with frequent updates, releases, and a strong contributor base."
+      "positive_signals": [
+        "Repository still exists with recent last commit timestamp"
+      ],
+      "summary": "Package appears abandoned with no maintenance activity over 6 months despite a large backlog of 739 unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -255,7 +263,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The Kopia project has a well-documented decision-making process and contributor ladder, but lacks a clear succession plan in case the primary maintainer leaves."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:43:03.075558+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

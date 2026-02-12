@@ -184,15 +184,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of quick start guide or basic usage example"
+      "overall": 3,
+      "summary": "The README provides a clear high-level description of the library's purpose but completely lacks any code examples, usage instructions, or practical guidance for getting started.",
+      "top_issue": "No quick start guide or code examples showing how to actually use the library - users must read external documentation to write even a single line of code"
     },
     "security": {
       "overall_score": 8,
@@ -206,18 +206,21 @@
       "summary": "The code appears to be generally secure, but lacks input validation for array dimensions and data types, which could lead to potential security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "segfault and error issues with OpenCL and different array types",
-        "broken tests in various test suites"
+        "Platform-specific bugs (Mac/OpenCL segfaults with different data types)",
+        "Multiple broken tests across clustering, matrix, and feature modules",
+        "Floating-point precision issues in numerical algorithms"
       ],
       "praise_themes": [
-        "availability on Homebrew"
+        "Well-designed C API that's easy to use",
+        "Good ecosystem expansion (Ruby bindings created)",
+        "Package availability on package managers (Homebrew)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with some ongoing issues but also positive feedback."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of stagnation with 5 unaddressed bugs/test failures from January 2021 and no maintainer responses, though community engagement remains positive with third-party contributions like Ruby bindings and Homebrew integration."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,18 +233,18 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "No merged PRs in the past six months",
-        "Last release was over two years ago"
+        "No commits for over 4 years (last commit September 2021)",
+        "20 open issues with no activity or resolution",
+        "Zero closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases available"
       ],
-      "positive_signals": [
-        "10 contributors active in the past six months",
-        "Multiple open issues and pull requests indicating some level of community interest"
-      ],
-      "summary": "The package is likely being minimally maintained with occasional contributions, but lacks recent activity."
+      "positive_signals": [],
+      "summary": "This package is abandoned with no maintenance activity since 2021 and unresolved issues accumulating."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +255,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks breaking changes and migration guides, making it somewhat incomplete and unclear for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:00:20.834115+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

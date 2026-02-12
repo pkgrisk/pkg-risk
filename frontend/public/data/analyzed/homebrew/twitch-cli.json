@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 6,
       "installation": 9,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The documentation is clear and comprehensive for installation, but lacks a quick start guide and troubleshooting information.",
-      "top_issue": "Lack of a concise quick start example to get new users started with the package"
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 5,
+      "summary": "Excellent installation instructions but lacks concrete usage examples, leaving users unclear about what the CLI actually does or how to use it for common tasks.",
+      "top_issue": "No quick start example showing actual CLI usage - the README only shows the abstract format 'twitch <product> <action>' without demonstrating a single real command that a user could run to understand what the tool does"
     },
     "security": {
       "overall_score": 7,
@@ -221,18 +221,21 @@
       "summary": "The Twitch CLI codebase has some potential security risks, including SQL injection vulnerabilities and insufficient input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bugs",
-        "unavailable events on mock server"
+        "CLI panics and corrupts JSON output (version checker bug)",
+        "Platform-specific bugs (Windows extension command unknown, Linux executable permissions)",
+        "Missing or broken event simulation features",
+        "Limited customization for testing scenarios"
       ],
       "praise_themes": [
-        "feature requests for improvements"
+        "Tool is appreciated and well-regarded by users",
+        "Community willing to contribute improvements"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively requesting features and reporting bugs, but there's a moderate level of frustration due to unresponsive issues."
+      "abandonment_signals": true,
+      "summary": "Community is engaged with feature requests and bug reports, but slow maintainer response times and unresolved critical bugs (JSON corruption, platform compatibility) indicate potential maintenance concerns."
     },
     "communication": {
       "helpfulness": 8,
@@ -245,17 +248,21 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with the contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Open issues and PRs suggest potential problems that need attention."
+        "No commits in past 6 months despite last commit on 2025-01-11",
+        "26 open issues with no recent resolution activity",
+        "Zero closed issues in past 6 months indicating no bug fixes",
+        "No merged PRs in past 6 months suggesting inactive development",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests release process may be abandoned"
       ],
       "positive_signals": [
-        "Contributors active in the past six months, showing some level of community involvement.",
-        "Recent release in July 2024, suggesting periodic maintenance"
+        "Repository still exists and is not archived",
+        "Some historical activity indicates project was once maintained"
       ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent development or updates."
+      "summary": "The twitch-cli package appears stale with no development activity, issue resolution, or releases in at least 6 months despite accumulating open issues."
     },
     "changelog": null,
     "governance": {
@@ -265,7 +272,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision-making process but lacks a succession plan or contributor ladder, indicating medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:26:58.764080+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

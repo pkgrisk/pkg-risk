@@ -176,26 +176,28 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 4,
-      "quick_start": 2,
-      "examples": 3,
-      "configuration": 2,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a good introduction to the LLVM project, but lacks clear installation instructions and usage examples.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "summary": "Clear project description but lacks practical usage guidance, relegating all installation/usage details to external documentation.",
+      "top_issue": "No installation instructions in README - only links to external docs, and zero quick-start examples or basic usage demonstrations"
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "BOLT compatibility issues"
+        "Correctness issues (miscompilation, wrong code generation at optimization levels)",
+        "Regression bugs between versions",
+        "Debugger deadlocking/hanging on platform-specific code"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with a single open issue related to BOLT compatibility, indicating some maintenance activity but slow responsiveness from maintainers."
+      "summary": "Active project with quality concerns: one critical open miscompilation bug with recent engagement, one closed regression, and a long-standing debugger issue suggesting maintenance gaps in certain subsystems despite overall project activity."
     },
     "communication": {
       "helpfulness": 6,
@@ -211,16 +213,19 @@
       "summary": "The maintainer's responses are technically sound but often lack clarity and patience, which may discourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (1000)",
-        "Large number of contributors active in the past 6 months (338)",
-        "Recent last commit (2026-01-02) and last release (2025-12-16)",
-        "Significant number of merged PRs in the past 6 months (272)"
+      "concerns": [
+        "No commits in past 6 months despite recent last commit timestamp",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "Extremely high open issues count (34,580) with no resolution activity",
+        "No releases recorded",
+        "Timestamp anomaly suggests stale/incorrect data"
       ],
-      "summary": "The llvm package is actively maintained with frequent commits, releases, and a large contributor base."
+      "positive_signals": [],
+      "summary": "LLVM@16 shows no maintenance activity over 6 months with massive unresolved issue backlog, indicating the project is abandoned or severely neglected."
     },
     "changelog": null,
     "governance": {
@@ -230,7 +235,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for llvm@16 lacks a clear succession plan and decision-making process, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:44:12.015835+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

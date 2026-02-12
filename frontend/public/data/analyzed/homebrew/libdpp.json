@@ -187,15 +187,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 7,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 5,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 6,
       "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the library, but some sections could be improved for better usability.",
-      "top_issue": "Lack of detailed troubleshooting documentation"
+      "summary": "Excellent clarity and quick start with a working code example, but lacks detailed configuration documentation and comprehensive troubleshooting guidance.",
+      "top_issue": "Configuration options (sharding, caching, voice settings, etc.) are mentioned as features but not documented in the README, requiring users to visit external docs"
     },
     "security": {
       "overall_score": 8,
@@ -208,16 +208,18 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed to ensure the security of the application."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "thread management issues",
-        "Windows support with CMake"
+        "Windows/CMake build and installation issues",
+        "Configuration flag inconsistencies (DPP_USE_EXTERNAL_JSON not respected)",
+        "Thread safety and data race concerns",
+        "Linker errors with vcpkg on Windows"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is negative due to unresolved bugs and open issues, though maintainers have been moderately responsive."
+      "summary": "libdpp shows moderate community health with active issue resolution, but Windows platform support and build system reliability are significant pain points affecting users."
     },
     "communication": {
       "helpfulness": 7,
@@ -230,15 +232,19 @@
       "summary": "The maintainer provided clear and helpful responses, though some could be more detailed. The tone is welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (58)",
-        "A large number of merged PRs in the past six months (55)",
-        "Multiple contributors active in the past six months (17)"
+      "concerns": [
+        "No commits in past 6 months despite repository existing",
+        "Zero merged PRs in past 6 months indicating no active development",
+        "No active contributors in past 6 months",
+        "No closed issues in past 6 months suggesting lack of maintenance attention",
+        "3 open issues with no recent resolution activity"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Repository still has some activity (last commit 3 days ago suggests recent touch)"
+      ],
+      "summary": "libdpp appears stale with no meaningful development activity over the past 6 months, though the recent commit timestamp warrants verification of actual update frequency."
     },
     "changelog": null,
     "governance": {
@@ -248,7 +254,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:41:27.670734+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

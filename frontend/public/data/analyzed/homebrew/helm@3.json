@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 6,
       "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The Helm README provides a good introduction to the package and its installation, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common use cases and troubleshooting scenarios"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and installation instructions with strong external documentation links, but lacks inline examples and troubleshooting guidance.",
+      "top_issue": "No inline usage examples or troubleshooting section - README delegates everything to external docs without showing any actual Helm commands or common error solutions"
     },
     "security": {
       "overall_score": 7,
@@ -197,7 +197,21 @@
       "critical_findings": [],
       "summary": "The provided code has some security concerns related to input validation and potential injection risks, but no critical findings were identified."
     },
-    "sentiment": null,
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Inconsistent behavior between chart templating in main and dependent charts",
+        "Dry-run mode doesn't properly validate conflicts and errors",
+        "Unnecessary fields being added to Chart.yaml during packaging",
+        "External dependency workarounds blocking cleanup",
+        "Installation script pointing to outdated version"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "Helm community shows moderate health with active issue reporting and some maintainer engagement, but issues span from critical functionality gaps (SSA validation, templating bugs) to maintenance debt (external dependency workarounds), suggesting resource constraints rather than abandonment."
+    },
     "communication": {
       "helpfulness": 8,
       "clarity": 9,
@@ -209,16 +223,21 @@
       "summary": "The maintainer responses are generally helpful, clear, and welcoming, but could improve in providing technical depth and handling repeated questions with patience."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (623)",
-        "Recent last commit (2025-12-28) and last release (2025-12-13)",
-        "Large number of merged PRs in the past 6 months (246)",
-        "Many contributors active in the past 6 months (66)"
+      "concerns": [
+        "No commits in past 6 months despite being a critical infrastructure tool",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "No closed issues in past 6 months suggests lack of issue triage",
+        "403 open issues with no recent resolution activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date raises questions about release cadence"
       ],
-      "summary": "The helm@3 package is actively maintained with frequent commits, releases, and a large contributor base."
+      "positive_signals": [
+        "Recent commit activity on 2026-02-11 shows some minimal engagement",
+        "Helm is a widely-used project that may rely on automated release processes"
+      ],
+      "summary": "Helm@3 shows signs of staleness with zero development activity over 6 months despite a large backlog of open issues, though the very recent commit suggests possible sporadic maintenance."
     },
     "changelog": null,
     "governance": {
@@ -228,7 +247,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The Helm project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:18:57.721921+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

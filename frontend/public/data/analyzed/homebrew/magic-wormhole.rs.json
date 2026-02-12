@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 4,
-      "quick_start": 6,
-      "examples": 5,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation provides a good overview of the package's features and capabilities, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions for users who are not familiar with Rust or cargo"
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "Clear project description with good feature comparison, but critically missing installation instructions, usage examples, and any troubleshooting guidance for end users.",
+      "top_issue": "No installation instructions provided - users must figure out how to install from Homebrew, cargo, or binaries on their own"
     },
     "security": {
       "overall_score": 8,
@@ -192,17 +192,19 @@
       "summary": "The code appears to be generally secure, but some input validation issues and potential misuses of certain flags could lead to security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "async-std has been discontinued",
-        "rustls-pemfile is unmaintained",
-        "number_prefix crate is unmaintained"
+        "Critical bugs in core functionality (Windows file transfer deadlock)",
+        "Incompatibility with original Python implementation (directory transfer format)",
+        "Multiple unmaintained dependencies (async-std, paste, rustls-pemfile, number_prefix)",
+        "Active security vulnerabilities in dependencies (time crate DoS, bytes integer overflow)",
+        "Duplicate logging output in debug mode"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The community health is neutral with moderate responsiveness, but there are signs of abandonment due to the discontinuation and lack of maintenance for several dependencies."
+      "summary": "Project shows signs of declining health with multiple unresolved critical bugs, unresponsive maintainers, and an accumulation of unmaintained dependencies creating security and compatibility risks."
     },
     "communication": {
       "helpfulness": 8,
@@ -215,17 +217,20 @@
       "summary": "Maintainer responses are generally clear and helpful, showing a good level of patience and technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (35)",
-        "Low number of merged PRs in the past six months (11)"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "44 open issues with no activity",
+        "No recent release"
       ],
       "positive_signals": [
-        "Recent commit activity within the last year",
-        "Multiple contributors active in the past six months"
+        "Repository exists with some historical commits"
       ],
-      "summary": "The package shows minimal maintenance with recent commits and active contributors, but a high number of unresolved issues is a concern."
+      "summary": "This project shows clear signs of abandonment with zero maintenance activity over the past 6 months and a substantial backlog of unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -236,7 +241,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-structured and clearly marks breaking changes, but lacks explicit migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:35:19.513954+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

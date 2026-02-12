@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 10,
+      "quick_start": 8,
       "examples": 9,
       "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and concise information about the package's functionality, installation, and usage, but lacks troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent clarity and installation coverage with strong examples, but lacks troubleshooting guidance and comprehensive configuration documentation.",
+      "top_issue": "No troubleshooting section for common issues like clipboard tool dependencies, terminal compatibility, or regex pattern debugging"
     },
     "security": {
       "overall_score": 7,
@@ -210,19 +210,21 @@
       "summary": "The yank package has some security concerns, including potential command injection and lack of input validation, but overall it appears to be a relatively secure implementation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Help documentation",
-        "Clipboard utility dependency"
+        "Clipboard integration limitations (xsel dependency, X11/Wayland incompatibility, headless server issues)",
+        "Display/pagination bugs (results limited to visible terminal lines, first page only)",
+        "Delimiter parsing issues (newline delimiter treated as two delimiters)",
+        "Missing features (help text, --select-1 option, interactive delimiter setting)"
       ],
       "praise_themes": [
-        "Feature request for more detailed help",
-        "Cross-platform compatibility"
+        "Tool is appreciated and well-received ('Great tool, really enjoying it')",
+        "Cross-platform capability recognized"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally engaged, with both positive feedback and constructive criticism, but there are recurring issues related to help documentation and clipboard utility dependencies."
+      "abandonment_signals": true,
+      "summary": "Yank has an engaged but frustrated community dealing with platform-specific clipboard integration issues and pagination bugs; the maintainer addresses most issues but leaves some feature requests unresolved, with 2 open issues unanswered since 2019-2021 suggesting moderate maintenance activity."
     },
     "communication": {
       "helpfulness": 7,
@@ -238,16 +240,18 @@
       "summary": "The maintainer provides useful information but could be more proactive in engaging with and encouraging new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Last release was over a year ago"
+        "No commits in over 16 months (last commit October 2022)",
+        "Zero commits in past 6 months",
+        "No merged PRs or releases in past 6 months",
+        "No active contributors in past 6 months",
+        "Open issues present with no recent activity",
+        "Unknown last release date suggests no recent versioning"
       ],
-      "positive_signals": [
-        "10 contributors active in the past six months"
-      ],
-      "summary": "The package has some recent contributor activity but lacks recent code updates and releases."
+      "positive_signals": [],
+      "summary": "The yank package shows clear signs of abandonment with no development activity for over 16 months and no active maintainers addressing open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -258,7 +262,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks clear categorization, breaking changes, migration guides, and appears incomplete, making it difficult for users to understand the changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:39:29.097172+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

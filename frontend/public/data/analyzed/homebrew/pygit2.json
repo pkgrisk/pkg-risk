@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides some basic information, but lacks clear installation instructions, usage examples, and troubleshooting guidance.",
-      "top_issue": "Lack of a quick start guide or example code to help new users understand how to use the package."
+      "overall": 3,
+      "summary": "Clear purpose statement but lacks any inline documentation, directing users to external links for all essential information.",
+      "top_issue": "No quick start example or basic usage code in the README; users must navigate to external documentation to understand how to use the library"
     },
     "security": {
       "overall_score": 8,
@@ -208,16 +208,19 @@
       "summary": "The pygit2/index.py file appears to have some potential security risks, including injection risks and lack of input validation, but overall it seems to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "lack of features",
-        "compatibility issues"
+        "Missing feature implementations (rebase, git push --mirror)",
+        "Platform-specific issues (PyPy, ARM, MacOS arm64)",
+        "Documentation inaccuracies and unclear requirements",
+        "Build configuration and performance concerns",
+        "Critical bugs (NULL pointer dereference, threading issues)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The pygit2 community is moderately active, with some open issues and feature requests, but no clear signs of abandonment or extreme frustration."
+      "abandonment_signals": true,
+      "summary": "pygit2 shows signs of maintenance struggle with old unresolved feature requests (2017-2018), critical security bugs pending fix, platform compatibility issues, and slow/minimal maintainer engagement despite active issue reporting."
     },
     "communication": {
       "helpfulness": 9,
@@ -230,17 +233,18 @@
       "summary": "The maintainer responses are generally helpful, clear, patient, and technically sound, creating a positive environment for contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "unknown last release"
+        "No commits in past 6 months despite last commit being recent (2026-02-10)",
+        "209 open issues with no activity",
+        "Zero closed issues in past 6 months indicating no active issue triage",
+        "No merged PRs in past 6 months suggesting no active development",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests release process has stalled"
       ],
-      "positive_signals": [
-        "frequent commits in the past 6 months",
-        "active contributors and merged PRs"
-      ],
-      "summary": "The pygit2 package appears to be maintained, with regular commits and active contributors, but has a high number of open issues and an unknown last release date."
+      "positive_signals": [],
+      "summary": "pygit2 appears abandoned with no development activity, issue triage, or contributor engagement despite a recent commit date."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -251,7 +255,10 @@
       "overall_score": 7,
       "summary": "The changelog is comprehensive and clear, but lacks categorization and migration guides, making it somewhat difficult to navigate for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-02-12T09:37:34.049351+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
