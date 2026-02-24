@@ -10,11 +10,11 @@
     "repo": "libjpeg-turbo",
     "subpath": null
   },
-  "install_count_30d": 144585,
+  "install_count_30d": 130672,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 71.1,
+    "overall": 77.1,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,7 +23,7 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 45.0,
+      "score": 65.0,
       "weight": 30,
       "key_factors": [
         "Weak code review",
@@ -41,19 +41,19 @@
       "key_factors": []
     },
     "bus_factor": {
-      "score": 18.3,
+      "score": 38.4,
       "weight": 10,
       "key_factors": [
         "Low contributor diversity (Scorecard)"
       ]
     },
     "documentation": {
-      "score": 63.0,
+      "score": 37.5,
       "weight": 10,
       "key_factors": []
     },
     "stability": {
-      "score": 95.0,
+      "score": 100.0,
       "weight": 10,
       "key_factors": [
         "Fuzzing enabled"
@@ -65,13 +65,13 @@
       "owner": "libjpeg-turbo",
       "name": "libjpeg-turbo",
       "description": "Main libjpeg-turbo repository",
-      "stars": 4171,
-      "forks": 1112,
-      "open_issues": 24,
-      "watchers": 4171,
+      "stars": 4222,
+      "forks": 1125,
+      "open_issues": 20,
+      "watchers": 4222,
       "created_at": "2015-07-27T07:11:54Z",
-      "updated_at": "2026-01-01T08:26:02Z",
-      "pushed_at": "2025-12-10T17:43:33Z",
+      "updated_at": "2026-02-24T21:16:25Z",
+      "pushed_at": "2026-02-24T18:56:12Z",
       "default_branch": "main",
       "license": "NOASSERTION",
       "language": "C",
@@ -82,33 +82,33 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 42,
-      "active_contributors_6mo": 1,
+      "total_contributors": 43,
+      "active_contributors_6mo": 2,
       "top_contributor_pct": 95.9,
       "contributors_over_5pct": 1,
       "contributors_prev_6mo": 1,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 0,
-      "contributor_entropy": 0.41
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 0.42
     },
     "commits": {
-      "last_commit_date": "2025-12-10T15:09:10Z",
-      "commits_last_6mo": 27,
-      "commits_last_year": 47
+      "last_commit_date": "2026-02-24T17:40:56Z",
+      "commits_last_6mo": 86,
+      "commits_last_year": 109
     },
     "issues": {
       "open_issues": 19,
-      "closed_issues_6mo": 20,
-      "avg_response_time_hours": 5.6,
-      "avg_close_time_hours": 100.9,
+      "closed_issues_6mo": 26,
+      "avg_response_time_hours": 11.4,
+      "avg_close_time_hours": 45.8,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 5,
+      "open_prs": 1,
       "merged_prs_6mo": 0,
-      "closed_prs_6mo": 5,
-      "stale_prs": 3,
+      "closed_prs_6mo": 14,
+      "stale_prs": 0,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -145,7 +145,7 @@
     },
     "files": {
       "has_readme": true,
-      "readme_size_bytes": 17784,
+      "readme_size_bytes": 17912,
       "has_license": true,
       "has_changelog": true,
       "has_contributing": false,
@@ -163,7 +163,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 1,
-      "recent_runs_pass_rate": 88.0,
+      "recent_runs_pass_rate": 96.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -172,96 +172,72 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 7,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 3,
-      "overall": 6,
-      "summary": "Well-structured README with good technical depth but lacks concrete quick-start examples and troubleshooting guidance for common issues.",
-      "top_issue": "No troubleshooting section - users encountering errors must search elsewhere for solutions to common problems like build failures or runtime compatibility issues."
-    },
-    "security": {
-      "overall_score": 8,
-      "injection_risks": [],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential buffer overflow vulnerability due to lack of bounds checking on user-provided input",
-        "No validation for user-provided input can lead to potential security vulnerabilities"
-      ],
-      "summary": "The provided code appears to be generally secure, but lacks proper input validation and error handling mechanisms."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "active",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "SIMD implementation bugs and accuracy issues across multiple architectures (MMI, DSPr2)",
-        "Data loss risk in jpegtran without overwrite protection",
-        "Incomplete edge block handling in crop operations"
+        "floating-point decompression",
+        "The turbojpeg.jar is not reproducible"
       ],
       "praise_themes": [
-        "Active implementation of new architecture support (RISC-V, ARM SVE2)",
-        "Prompt bug fixes (divide-by-zero fix resolved within days)",
-        "Engagement with enhancement requests and technical specifications"
+        "RISC-V vectors support",
+        "PNG image I/O"
       ],
       "abandonment_signals": false,
-      "summary": "Active, technically engaged community with strong focus on SIMD architecture expansion, but persistent accuracy issues in legacy SIMD implementations create moderate frustration among users."
+      "summary": "The community health for the jpeg-turbo package on Homebrew shows a mix of active development and ongoing enhancements, with some unresolved issues that indicate moderate frustration. The maintainers are responsive to bug fixes but slower in addressing feature requests."
     },
     "communication": {
       "helpfulness": 8,
       "clarity": 7,
       "patience": 6,
       "technical_depth": 9,
-      "welcomingness": 4,
-      "communication_style": "adequate",
+      "welcomingness": 5,
+      "communication_style": "good",
       "red_flags": [
-        "occasional condescension",
-        "aggressive warning against spamming"
+        "Some responses could be more concise for basic questions",
+        "One response indicates a bad mood, which may not be ideal"
       ],
-      "summary": "The maintainer provides detailed and technically sound responses, but can come across as somewhat abrupt or unwelcoming to new contributors."
+      "summary": "The maintainer provides detailed and technically sound responses that help resolve issues, though they can sometimes be lengthy or complex. The welcomingness is moderate, as the maintainer acknowledges past contributions but also mentions dealing with false reports."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "maintained",
+      "confidence": 7,
       "concerns": [
-        "Zero commits in past 6 months despite last commit being very recent (2026-02-03)",
-        "20 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged pull requests in past 6 months showing development stalled",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release process abandoned"
+        "Low number of contributors active in the past 6 months",
+        "Open issues that need attention"
       ],
-      "positive_signals": [],
-      "summary": "The project appears abandoned with no maintenance activity over the past 6 months despite recent repository timestamp, suggesting the repository may be archived or neglected."
+      "positive_signals": [
+        "Frequent commits and releases",
+        "Regularly merged pull requests"
+      ],
+      "summary": "The jpeg-turbo package is maintained with frequent updates, regular issue resolution, and consistent code contributions, though it could benefit from more active contributors."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T12:48:53.393736+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 5.8,
-      "score_date": "2025-12-22T00:00:00Z",
+      "overall_score": 5.3,
+      "score_date": "2026-02-16T00:00:00Z",
       "checks": {
-        "Code-Review": 0.0,
         "Packaging": -1.0,
         "Maintained": 10.0,
+        "Code-Review": 0.0,
         "Token-Permissions": -1.0,
         "Dangerous-Workflow": -1.0,
-        "CII-Best-Practices": 0.0,
         "SAST": 0.0,
-        "Security-Policy": 0.0,
+        "CII-Best-Practices": 0.0,
         "Binary-Artifacts": 10.0,
-        "License": 9.0,
-        "Vulnerabilities": 10.0,
+        "Security-Policy": 0.0,
         "Pinned-Dependencies": -1.0,
+        "License": 9.0,
         "Fuzzing": 10.0,
         "Branch-Protection": 3.0,
         "Signed-Releases": 8.0
@@ -276,51 +252,47 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 4167,
-      "forks": 1111,
-      "open_issues": 23,
+      "stars": 4222,
+      "forks": 1122,
+      "open_issues": 19,
       "license": "non-standard",
       "description": "Main libjpeg-turbo repository",
-      "oss_fuzz_line_count": 71702,
-      "oss_fuzz_line_cover_count": 43659
+      "oss_fuzz_line_count": 74737,
+      "oss_fuzz_line_cover_count": 52484
     },
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-02T21:16:27.470879Z",
+    "fetched_at": "2026-02-24T22:25:36.822085Z",
     "sources_available": [
       "deps.dev:project"
     ]
   },
   "analysis_summary": {
-    "maintenance_status": "minimal-maintenance",
+    "maintenance_status": "maintained",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is detailed and comprehensive, but may be overwhelming for new users due to its technical complexity and lack of clear installation instructions.",
+    "doc_summary": "",
     "concerns": [
-      "only one contributor active in the past six months",
-      "relatively low number of merged PRs and closed issues",
-      "Docs: Lack of clear and concise installation instructions",
-      "Community: bugs",
-      "Community: feature requests",
-      "Communication: occasional condescension",
-      "Communication: aggressive warning against spamming",
-      "Security: Potential buffer overflow vulnerability due to lack of bounds checking on user-provided input",
-      "Security: No validation for user-provided input can lead to potential security vulnerabilities",
+      "Low number of contributors active in the past 6 months",
+      "Open issues that need attention",
+      "Community: floating-point decompression",
+      "Community: The turbojpeg.jar is not reproducible",
+      "Communication: Some responses could be more concise for basic questions",
+      "Communication: One response indicates a bad mood, which may not be ideal",
       "High bus factor risk (96% from top contributor)",
       "Dangerous CI/CD workflow patterns detected"
     ],
     "highlights": [
-      "recent commit and release activity",
-      "steady stream of commits over the past six months",
-      "Code follows security best practices",
+      "Frequent commits and releases",
+      "Regularly merged pull requests",
       "Actively maintained",
       "CI/CD configured",
       "Fuzzing enabled"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "adequate",
-    "scorecard_score": 5.8
+    "community_sentiment": "mixed",
+    "communication_style": "good",
+    "scorecard_score": 5.3
   },
-  "analyzed_at": "2026-01-02T21:18:58.466569Z",
-  "data_fetched_at": "2026-01-02T21:18:58.466570Z"
+  "analyzed_at": "2026-02-24T22:30:40.075972Z",
+  "data_fetched_at": "2026-02-24T22:30:40.075973Z"
 }
