@@ -10,11 +10,11 @@
     "repo": "highway",
     "subpath": null
   },
-  "install_count_30d": 43774,
+  "install_count_30d": 43140,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 84.1,
+    "overall": 85.6,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,9 +23,10 @@
     "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 75.0,
+      "score": 85.0,
       "weight": 30,
       "key_factors": [
+        "Weak code review",
         "Weak branch protection"
       ]
     },
@@ -35,24 +36,24 @@
       "key_factors": []
     },
     "community": {
-      "score": 90.0,
+      "score": 95.0,
       "weight": 15,
       "key_factors": []
     },
     "bus_factor": {
-      "score": 77.1,
+      "score": 92.3,
       "weight": 10,
       "key_factors": [
         "Low contributor diversity (Scorecard)"
       ]
     },
     "documentation": {
-      "score": 53.5,
+      "score": 25.0,
       "weight": 10,
       "key_factors": []
     },
     "stability": {
-      "score": 100.0,
+      "score": 91.0,
       "weight": 10,
       "key_factors": [
         "Pinned dependencies"
@@ -64,13 +65,13 @@
       "owner": "google",
       "name": "highway",
       "description": "Performance-portable, length-agnostic SIMD with runtime dispatch",
-      "stars": 5234,
-      "forks": 397,
-      "open_issues": 58,
-      "watchers": 5234,
+      "stars": 5339,
+      "forks": 407,
+      "open_issues": 60,
+      "watchers": 5339,
       "created_at": "2019-09-06T12:41:23Z",
-      "updated_at": "2026-01-02T05:11:19Z",
-      "pushed_at": "2026-01-02T11:34:56Z",
+      "updated_at": "2026-02-24T17:03:21Z",
+      "pushed_at": "2026-02-25T13:26:11Z",
       "default_branch": "master",
       "license": "NOASSERTION",
       "language": "C++",
@@ -97,32 +98,32 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 97,
-      "active_contributors_6mo": 22,
-      "top_contributor_pct": 50.0,
+      "total_contributors": 101,
+      "active_contributors_6mo": 25,
+      "top_contributor_pct": 49.6,
       "contributors_over_5pct": 3,
-      "contributors_prev_6mo": 20,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 17,
-      "contributor_entropy": 2.76
+      "contributors_prev_6mo": 9,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 19,
+      "contributor_entropy": 2.79
     },
     "commits": {
-      "last_commit_date": "2025-12-18T16:56:38Z",
-      "commits_last_6mo": 229,
-      "commits_last_year": 517
+      "last_commit_date": "2026-02-24T17:02:03Z",
+      "commits_last_6mo": 192,
+      "commits_last_year": 300
     },
     "issues": {
-      "open_issues": 43,
-      "closed_issues_6mo": 73,
-      "avg_response_time_hours": 10.3,
-      "avg_close_time_hours": 48.0,
+      "open_issues": 40,
+      "closed_issues_6mo": 41,
+      "avg_response_time_hours": 47.7,
+      "avg_close_time_hours": 520.2,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 15,
-      "merged_prs_6mo": 136,
-      "closed_prs_6mo": 148,
+      "open_prs": 20,
+      "merged_prs_6mo": 122,
+      "closed_prs_6mo": 138,
       "stale_prs": 10,
       "avg_merge_time_hours": null
     },
@@ -137,7 +138,7 @@
     "security": {
       "has_security_md": false,
       "has_security_policy": false,
-      "signed_commits_pct": 10.0,
+      "signed_commits_pct": 16.0,
       "has_dependabot": true,
       "has_codeql": false,
       "has_security_ci": true,
@@ -178,7 +179,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 6,
-      "recent_runs_pass_rate": 82.0,
+      "recent_runs_pass_rate": 55.3,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -187,106 +188,72 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 3,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 4,
-      "summary": "Well-written conceptual overview with strong motivation and architecture coverage, but critically lacks installation instructions, quick-start code examples, and practical getting-started guidance.",
-      "top_issue": "No installation instructions whatsoever - README links to documentation but provides no guidance on how to actually install or integrate Highway into a project (package managers, build systems, compiler flags, dependencies)"
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "hwy/abort.cc",
-          "line": 73,
-          "severity": "low",
-          "description": "Use of vsnprintf with user-controlled format string, but the input is validated and sanitized before use."
-        },
-        {
-          "file": "hwy/abort.cc",
-          "line": 104,
-          "severity": "low",
-          "description": "Use of fprintf with user-controlled format string, but the input is validated and sanitized before use."
-        }
-      ],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential buffer overflow vulnerability in vsnprintf"
-      ],
-      "summary": "The provided code has some security concerns related to input validation and potential buffer overflow vulnerabilities, but overall it appears to be well-structured and secure."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 3,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Platform-specific build issues (RISC-V, Emscripten/WASM)",
-        "Performance concerns with CPU microcode (GDS mitigation on Skylake-Tigerlake)",
-        "Compiler flag propagation challenges in build systems (CMake FetchContent)"
+        "Compilation error on s390x architecture",
+        "Request for raising C++ language requirement"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Healthy project with engaged users reporting technical platform compatibility and performance optimization issues; one issue was resolved, indicating active maintenance."
+      "summary": "The community health of the highway package shows mixed sentiment with some frustration over compilation issues and a discussion about updating the C++ standard. Maintainer responsiveness is moderate, as there are ongoing discussions without immediate resolutions."
     },
     "communication": {
-      "helpfulness": 9,
-      "clarity": 8,
+      "helpfulness": 8,
+      "clarity": 7,
       "patience": 9,
-      "technical_depth": 9,
+      "technical_depth": 8,
       "welcomingness": 8,
-      "communication_style": "exemplary",
-      "red_flags": [],
-      "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
+      "communication_style": "good",
+      "red_flags": [
+        "Some responses are brief and could be more detailed for complex issues",
+        "One response mentions internal users without much context"
+      ],
+      "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary and encourage new contributors, though some could benefit from additional detail."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [
-        "No commits in past 6 months despite last commit being from January 2026",
-        "54 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance activity",
-        "No merged pull requests in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process may also be stalled"
+      "concerns": [],
+      "positive_signals": [
+        "High number of commits in the past 6 months",
+        "Regularly merged pull requests",
+        "Frequent releases"
       ],
-      "positive_signals": [],
-      "summary": "The highway package appears to be stale with no maintenance activity in the past 6 months, accumulating unresolved issues without active development or contributor engagement."
+      "summary": "The package 'highway' is actively maintained with a high frequency of commits, regular merging of pull requests, and frequent releases."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T12:57:01.621575+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 6.6,
-      "score_date": "2025-12-22T00:00:00Z",
+      "overall_score": 6.0,
+      "score_date": "2026-02-16T00:00:00Z",
       "checks": {
-        "CII-Best-Practices": 0.0,
-        "Code-Review": 4.0,
+        "Code-Review": 2.0,
         "Maintained": 10.0,
+        "CII-Best-Practices": 0.0,
         "Token-Permissions": 0.0,
-        "Packaging": -1.0,
-        "License": 9.0,
         "Dangerous-Workflow": 10.0,
-        "Branch-Protection": -1.0,
-        "Signed-Releases": 8.0,
-        "Fuzzing": 0.0,
-        "Vulnerabilities": 10.0,
+        "Packaging": -1.0,
         "Binary-Artifacts": 10.0,
-        "Security-Policy": 10.0,
+        "License": 9.0,
+        "Fuzzing": 0.0,
         "Pinned-Dependencies": 8.0,
+        "Signed-Releases": 8.0,
+        "Branch-Protection": -1.0,
+        "Security-Policy": 10.0,
         "SAST": 0.0
       },
-      "code_review_score": 4.0,
+      "code_review_score": 2.0,
       "maintained_score": 10.0,
       "branch_protection_score": -1.0,
       "dangerous_workflow_score": 10.0,
@@ -296,9 +263,9 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 5234,
-      "forks": 397,
-      "open_issues": 58,
+      "stars": 5339,
+      "forks": 407,
+      "open_issues": 59,
       "license": "non-standard",
       "description": "Performance-portable, length-agnostic SIMD with runtime dispatch",
       "oss_fuzz_line_count": null,
@@ -307,7 +274,7 @@
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-03T00:05:24.642732Z",
+    "fetched_at": "2026-02-25T14:04:06.143419Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -315,27 +282,25 @@
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "The README provides a good overview of the package's purpose and features, but lacks clear installation instructions and troubleshooting guidance.",
+    "doc_summary": "",
     "concerns": [
-      "Docs: Lack of clear installation instructions for Homebrew",
-      "Community: compilation issues",
-      "Community: feature requests",
-      "Security: Potential buffer overflow vulnerability in vsnprintf",
+      "Community: Compilation error on s390x architecture",
+      "Community: Request for raising C++ language requirement",
+      "Communication: Some responses are brief and could be more detailed for complex issues",
+      "Communication: One response mentions internal users without much context",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (229)",
-      "Recent last commit (2025-12-18)",
-      "Active issue and PR management (73 closed issues, 136 merged PRs)",
-      "Multiple active contributors (22) in the past 6 months",
-      "Excellent maintainer communication",
+      "High number of commits in the past 6 months",
+      "Regularly merged pull requests",
+      "Frequent releases",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "exemplary",
-    "scorecard_score": 6.6
+    "community_sentiment": "mixed",
+    "communication_style": "good",
+    "scorecard_score": 6.0
   },
-  "analyzed_at": "2026-01-03T00:08:04.862923Z",
-  "data_fetched_at": "2026-01-03T00:08:04.862924Z"
+  "analyzed_at": "2026-02-25T14:09:08.546401Z",
+  "data_fetched_at": "2026-02-25T14:09:08.546403Z"
 }

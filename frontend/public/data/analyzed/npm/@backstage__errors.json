@@ -1,8 +1,8 @@
 {
   "ecosystem": "npm",
-  "name": "@backstage/codemods",
-  "description": "A collection of codemods for Backstage projects",
-  "version": "0.1.54",
+  "name": "@backstage/errors",
+  "description": "Common utilities for error handling within Backstage",
+  "version": "1.2.7",
   "homepage": "https://backstage.io",
   "repository": {
     "platform": "github",
@@ -10,12 +10,12 @@
     "repo": "backstage",
     "subpath": null
   },
-  "install_count_30d": 5594,
+  "install_count_30d": 1905106,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 85.5,
-    "grade": "B",
+    "overall": 90.3,
+    "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
@@ -23,7 +23,7 @@
     "confidence_factors": [],
     "project_age_band": "mature",
     "security": {
-      "score": 83.0,
+      "score": 100.0,
       "weight": 30,
       "key_factors": [
         "Code review practices",
@@ -50,7 +50,7 @@
       ]
     },
     "documentation": {
-      "score": 32.5,
+      "score": 30.0,
       "weight": 10,
       "key_factors": []
     },
@@ -73,7 +73,7 @@
       "watchers": 32677,
       "created_at": "2020-01-24T22:39:49Z",
       "updated_at": "2026-02-25T14:17:12Z",
-      "pushed_at": "2026-02-25T14:25:19Z",
+      "pushed_at": "2026-02-25T14:42:09Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "TypeScript",
@@ -175,7 +175,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 81.2,
+      "recent_runs_pass_rate": 75.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -184,35 +184,8 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 9,
-      "installation": 2,
-      "quick_start": 1,
-      "examples": 2,
-      "configuration": 1,
-      "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README clearly explains Backstage but lacks specific details for @backstage/codemods.",
-      "top_issue": "Missing installation and usage instructions for the codemods package."
-    },
-    "security": {
-      "overall_score": 4,
-      "injection_risks": [
-        {
-          "file": ".storybook/main.ts",
-          "line": 43,
-          "severity": "medium",
-          "description": "Use of eval() for defining process polyfills could pose injection risks if not properly sanitized."
-        }
-      ],
-      "input_validation_score": 2,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential injection risk through eval() usage in .storybook/main.ts.",
-        "Lack of input validation across the codebase."
-      ],
-      "summary": "The code exhibits potential security risks primarily from eval() usage and insufficient input validation, warranting further review and remediation."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 5,
@@ -222,30 +195,31 @@
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @backstage/codemods package shows a negative sentiment due to an open bug report indicating that module federation is breaking the frontend, with moderate maintainer responsiveness as evidenced by comments on the issue."
+      "summary": "The community health for the @backstage/errors package shows a negative sentiment due to an open bug report indicating issues with module federation, though there are no signs of abandonment and the frustration level is moderate."
     },
     "communication": {
-      "helpfulness": 8,
-      "clarity": 7,
-      "patience": 9,
-      "technical_depth": 6,
-      "welcomingness": 8,
+      "helpfulness": 7,
+      "clarity": 8,
+      "patience": 6,
+      "technical_depth": 5,
+      "welcomingness": 9,
       "communication_style": "good",
       "red_flags": [
-        "Some responses do not provide detailed explanations for changeset requirements, which might confuse new contributors."
+        "Some responses are brief and could be more detailed, especially for complex issues.",
+        "There is a lack of technical explanation behind some decisions."
       ],
-      "summary": "The maintainer responses are generally helpful and clear, showing patience with repeated questions. They encourage new contributors but could benefit from more technical depth in explaining the rationale behind certain decisions."
+      "summary": "The maintainer responses are generally helpful and clear, encouraging new contributors while maintaining a good balance between brevity and detail. However, they could benefit from providing more technical explanations and addressing repeated questions with additional patience."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [
-        "High number of open issues and PRs which might indicate a backlog or complexity in the codebase."
+        "High number of open issues and PRs which might indicate a backlog or complexity in the package."
       ],
       "positive_signals": [
-        "Frequent commits, regular releases, and multiple contributors actively working on the project."
+        "Frequent commits, regular releases, and active contributors over the past six months."
       ],
-      "summary": "The package @backstage/codemods is actively maintained with frequent activity, recent releases, and a large number of contributors. However, there are concerns about the high number of open issues and PRs which might suggest a backlog."
+      "summary": "The @backstage/errors package is actively maintained with frequent updates and contributions, but it has a significant number of open issues and PRs that may need attention."
     },
     "changelog": null,
     "governance": {
@@ -280,103 +254,199 @@
       "installs_runtime": false
     },
     "tarball": {
-      "tarball_url": "https://registry.npmjs.org/@backstage/codemods/-/codemods-0.1.54.tgz",
-      "tarball_size_bytes": 10479,
-      "file_count": 16,
+      "tarball_url": "https://registry.npmjs.org/@backstage/errors/-/errors-1.2.7.tgz",
+      "tarball_size_bytes": 12767,
+      "file_count": 32,
       "files": [
         {
           "path": "CHANGELOG.md",
-          "size_bytes": 11924,
+          "size_bytes": 7261,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "README.md",
-          "size_bytes": 1535,
+          "size_bytes": 218,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "bin/backstage-codemods",
-          "size_bytes": 1013,
-          "is_executable": true,
-          "is_binary": false
-        },
-        {
-          "path": "dist/action.cjs.js",
-          "size_bytes": 1246,
+          "path": "dist/errors/CustomErrorBase.cjs.js",
+          "size_bytes": 956,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/action.cjs.js.map",
-          "size_bytes": 3385,
+          "path": "dist/errors/CustomErrorBase.cjs.js.map",
+          "size_bytes": 2883,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/codemods.cjs.js",
-          "size_bytes": 359,
+          "path": "dist/errors/CustomErrorBase.esm.js",
+          "size_bytes": 919,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/codemods.cjs.js.map",
-          "size_bytes": 1297,
+          "path": "dist/errors/CustomErrorBase.esm.js.map",
+          "size_bytes": 2851,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/errors.cjs.js",
-          "size_bytes": 655,
+          "path": "dist/errors/ResponseError.cjs.js",
+          "size_bytes": 1972,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/errors.cjs.js.map",
-          "size_bytes": 1664,
+          "path": "dist/errors/ResponseError.cjs.js.map",
+          "size_bytes": 4364,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/ResponseError.esm.js",
+          "size_bytes": 1936,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/ResponseError.esm.js.map",
+          "size_bytes": 4300,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/assertion.cjs.js",
+          "size_bytes": 937,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/assertion.cjs.js.map",
+          "size_bytes": 3450,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/assertion.esm.js",
+          "size_bytes": 893,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/assertion.esm.js.map",
+          "size_bytes": 3447,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/common.cjs.js",
+          "size_bytes": 1488,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/common.cjs.js.map",
+          "size_bytes": 4047,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/common.esm.js",
+          "size_bytes": 1089,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/errors/common.esm.js.map",
+          "size_bytes": 3990,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.cjs.js",
-          "size_bytes": 1921,
+          "size_bytes": 1267,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.cjs.js.map",
-          "size_bytes": 4109,
+          "size_bytes": 120,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/package.json.cjs.js",
-          "size_bytes": 112,
+          "path": "dist/index.d.ts",
+          "size_bytes": 8604,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/package.json.cjs.js.map",
-          "size_bytes": 106,
+          "path": "dist/index.esm.js",
+          "size_bytes": 606,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/index.esm.js.map",
+          "size_bytes": 98,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/serialization/error.cjs.js",
+          "size_bytes": 1078,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/serialization/error.cjs.js.map",
+          "size_bytes": 3897,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/serialization/error.esm.js",
+          "size_bytes": 1015,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/serialization/error.esm.js.map",
+          "size_bytes": 3881,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/serialization/response.cjs.js",
+          "size_bytes": 950,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/serialization/response.cjs.js.map",
+          "size_bytes": 3783,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/serialization/response.esm.js",
+          "size_bytes": 913,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/serialization/response.esm.js.map",
+          "size_bytes": 3781,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "package.json",
-          "size_bytes": 1372,
-          "is_executable": false,
-          "is_binary": false
-        },
-        {
-          "path": "transforms/core-imports.js",
-          "size_bytes": 8202,
-          "is_executable": false,
-          "is_binary": false
-        },
-        {
-          "path": "transforms/extension-names.js",
-          "size_bytes": 2780,
+          "size_bytes": 1241,
           "is_executable": false,
           "is_binary": false
         }
@@ -390,8 +460,8 @@
       "risk_score": 0
     },
     "version_diff": {
-      "current_version": "0.1.54",
-      "previous_version": "0.0.0-nightly-20260217031303",
+      "current_version": "1.2.7",
+      "previous_version": "0.0.0-nightly-20250114022708",
       "comparison_available": true,
       "files_added": [],
       "files_removed": [],
@@ -474,15 +544,15 @@
       "oss_fuzz_line_cover_count": null
     },
     "dependency_graph": {
-      "direct_count": 5,
-      "transitive_count": 153,
+      "direct_count": 2,
+      "transitive_count": 1,
       "vulnerable_direct": 0,
       "vulnerable_transitive": 0,
-      "max_depth": 9
+      "max_depth": 2
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-02-25T14:32:17.031873Z",
+    "fetched_at": "2026-02-25T14:44:37.492940Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -492,19 +562,16 @@
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md, Dependabot enabled",
-    "doc_summary": "The README clearly explains Backstage but lacks specific details for @backstage/codemods.",
+    "doc_summary": "",
     "concerns": [
-      "High number of open issues and PRs which might indicate a backlog or complexity in the codebase.",
-      "Docs: Missing installation and usage instructions for the codemods package.",
+      "High number of open issues and PRs which might indicate a backlog or complexity in the package.",
       "Community: Module federation breaks frontend",
-      "Communication: Some responses do not provide detailed explanations for changeset requirements, which might confuse new contributors.",
-      "Security: Potential injection risk through eval() usage in .storybook/main.ts.",
-      "Security: Lack of input validation across the codebase.",
-      "Security: The code exhibits potential security risks primarily from eval() usage and insufficient input validation, warranting further review and remediation.",
+      "Communication: Some responses are brief and could be more detailed, especially for complex issues.",
+      "Communication: There is a lack of technical explanation behind some decisions.",
       "Dangerous CI/CD workflow patterns detected"
     ],
     "highlights": [
-      "Frequent commits, regular releases, and multiple contributors actively working on the project.",
+      "Frequent commits, regular releases, and active contributors over the past six months.",
       "Actively maintained",
       "CI/CD configured",
       "SAST enabled"
@@ -513,8 +580,8 @@
     "communication_style": "good",
     "supply_chain_risk": "low",
     "scorecard_score": 6.5,
-    "dependency_count": 158
+    "dependency_count": 3
   },
-  "analyzed_at": "2026-02-25T14:37:09.627206Z",
-  "data_fetched_at": "2026-02-25T14:37:09.627208Z"
+  "analyzed_at": "2026-02-25T14:49:47.923535Z",
+  "data_fetched_at": "2026-02-25T14:49:47.923537Z"
 }
