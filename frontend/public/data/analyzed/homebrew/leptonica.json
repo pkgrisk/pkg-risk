@@ -10,20 +10,20 @@
     "repo": "leptonica",
     "subpath": null
   },
-  "install_count_30d": 66022,
+  "install_count_30d": 27910,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 77.5,
-    "grade": "C",
+    "overall": 81.3,
+    "grade": "B",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "approved",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 65.0,
+      "score": 90.0,
       "weight": 30,
       "key_factors": [
         "Weak code review",
@@ -32,12 +32,12 @@
       ]
     },
     "maintenance": {
-      "score": 93.32853255223993,
+      "score": 88.44712652390412,
       "weight": 25,
       "key_factors": []
     },
     "community": {
-      "score": 92.0,
+      "score": 82.0,
       "weight": 15,
       "key_factors": []
     },
@@ -49,12 +49,12 @@
       ]
     },
     "documentation": {
-      "score": 40.5,
+      "score": 36.0,
       "weight": 10,
       "key_factors": []
     },
     "stability": {
-      "score": 100.0,
+      "score": 95.0,
       "weight": 10,
       "key_factors": [
         "Fuzzing enabled"
@@ -66,13 +66,13 @@
       "owner": "DanBloomberg",
       "name": "leptonica",
       "description": "Leptonica is an open source library containing software that is broadly useful for image processing and image analysis applications. The official github repository for Leptonica is: danbloomberg/leptonica.  See leptonica.org for more documentation.",
-      "stars": 2006,
-      "forks": 424,
-      "open_issues": 68,
-      "watchers": 2006,
+      "stars": 2026,
+      "forks": 428,
+      "open_issues": 70,
+      "watchers": 2026,
       "created_at": "2016-01-13T17:20:02Z",
-      "updated_at": "2026-01-02T13:41:33Z",
-      "pushed_at": "2026-01-01T17:44:20Z",
+      "updated_at": "2026-02-24T14:34:13Z",
+      "pushed_at": "2026-02-04T19:16:55Z",
       "default_branch": "master",
       "license": "NOASSERTION",
       "language": "C",
@@ -90,26 +90,26 @@
       "contributors_prev_6mo": 3,
       "contributor_trend": "stable",
       "first_time_contributors_6mo": 2,
-      "contributor_entropy": 2.23
+      "contributor_entropy": 2.22
     },
     "commits": {
-      "last_commit_date": "2026-01-01T17:41:22Z",
-      "commits_last_6mo": 15,
-      "commits_last_year": 40
+      "last_commit_date": "2026-02-04T19:15:17Z",
+      "commits_last_6mo": 17,
+      "commits_last_year": 37
     },
     "issues": {
-      "open_issues": 65,
-      "closed_issues_6mo": 5,
-      "avg_response_time_hours": 3.4,
-      "avg_close_time_hours": 4670.3,
+      "open_issues": 67,
+      "closed_issues_6mo": 6,
+      "avg_response_time_hours": 3.6,
+      "avg_close_time_hours": 3934.0,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
       "open_prs": 3,
       "merged_prs_6mo": 2,
-      "closed_prs_6mo": 3,
-      "stale_prs": 2,
+      "closed_prs_6mo": 2,
+      "stale_prs": 3,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -123,7 +123,7 @@
     "security": {
       "has_security_md": false,
       "has_security_policy": false,
-      "signed_commits_pct": 18.0,
+      "signed_commits_pct": 17.0,
       "has_dependabot": false,
       "has_codeql": true,
       "has_security_ci": true,
@@ -164,7 +164,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 6,
-      "recent_runs_pass_rate": 80.0,
+      "recent_runs_pass_rate": 68.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -174,113 +174,86 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 4,
+      "clarity": 9,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 3,
-      "configuration": 1,
+      "examples": 5,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "Well-organized feature overview with strong clarity on capabilities, but critically lacks quick start code examples, build instructions, and any configuration or troubleshooting guidance.",
-      "top_issue": "No quick start code showing how to actually use the library - a new user knows what Leptonica can do but has no idea how to write even a single line of code with it."
+      "overall": 5,
+      "summary": "The README is comprehensive regarding features and applications but lacks in providing installation alternatives, basic usage examples, configuration guidance, and troubleshooting information.",
+      "top_issue": "Lack of a quick start example."
     },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "src/classapp.c",
-          "line": 123,
-          "severity": "low",
-          "description": "Use of snprintf() with user-controlled input (rootname) may lead to buffer overflow, but the buffer size is fixed and checked."
-        },
-        {
-          "file": "src/classapp.c",
-          "line": 156,
-          "severity": "low",
-          "description": "Use of snprintf() with user-controlled input (rootname) may lead to buffer overflow, but the buffer size is fixed and checked."
-        }
-      ],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential buffer overflow vulnerability in snprintf() usage",
-        "Lack of input validation for directory existence and accessibility"
-      ],
-      "summary": "The code has some potential security issues, including a low-risk buffer overflow vulnerability and lack of input validation, but overall it appears to be well-structured and secure."
-    },
+    "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Build system issues (lib vs lib64 paths, CMake configuration)",
-        "File format compatibility (PBM whitespace handling, xpdf integration)",
-        "Algorithm precision limitations (angle deskewing resolution)",
-        "Platform-specific crashes (aarch64 with new toolchains)",
-        "Lack of modern format support (JXL/JPEG XL)",
-        "Incomplete error handling (infinite loops in TIFF reading)",
-        "Poor documentation (incomplete wiki, ambiguous CMake options)"
+        "Regression issues with file paths",
+        "Crashes on specific architectures"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Leptonica shows signs of slow maintenance with accumulating technical debt, unresolved platform issues, and feature requests aging 2+ years without response, though basic functionality remains stable."
+      "praise_themes": [
+        "Resolution of infinite loop issue",
+        "Active community engagement in solving problems"
+      ],
+      "abandonment_signals": false,
+      "summary": "The leptonica project shows a mix of active maintenance and ongoing issues, with some unresolved regressions and crashes reported, but also evidence of community involvement and problem resolution."
     },
     "communication": {
-      "helpfulness": 9,
-      "clarity": 8,
-      "patience": 9,
-      "technical_depth": 9,
-      "welcomingness": 8,
-      "communication_style": "exemplary",
-      "red_flags": [],
-      "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source project maintainers."
+      "helpfulness": 7,
+      "clarity": 6,
+      "patience": 5,
+      "technical_depth": 8,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Some responses could be perceived as dismissive of user concerns, especially regarding the handling of double quotes in filenames.",
+        "There is a lack of encouragement for new contributors beyond acknowledging their contributions."
+      ],
+      "summary": "The maintainer responses provide detailed technical explanations and address specific issues with some helpfulness, but they can sometimes come across as dismissive or lacking in patience towards repeated questions."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in the past 6 months",
-        "No closed issues in the past 6 months despite 70 open issues",
-        "No merged PRs in the past 6 months",
-        "No active contributors in the past 6 months",
-        "High number of unresolved issues (70) with no recent activity",
-        "Unknown last release date suggests lack of versioning discipline"
+        "High number of open issues (67) and relatively low activity in terms of merged PRs (2) over the past six months."
       ],
       "positive_signals": [
-        "Repository still exists and is accessible"
+        "Regular commits (17) and releases (last release on 2025-12-24)."
       ],
-      "summary": "Leptonica is in stale maintenance status with no development activity for 6+ months and a growing backlog of unresolved issues."
+      "summary": "The leptonica package shows minimal maintenance with regular commits but a high number of unresolved issues, indicating that while there is some activity, it may not be sufficient to address all outstanding problems."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T12:58:12.349671+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 5.0,
-      "score_date": "2025-12-22T00:00:00Z",
+      "overall_score": 5.6,
+      "score_date": "2026-02-16T00:00:00Z",
       "checks": {
-        "Maintained": 4.0,
-        "Packaging": -1.0,
+        "Maintained": 10.0,
         "Dangerous-Workflow": 10.0,
         "Code-Review": 0.0,
+        "Packaging": -1.0,
         "CII-Best-Practices": 0.0,
         "Token-Permissions": 0.0,
-        "Binary-Artifacts": 10.0,
         "Security-Policy": 0.0,
-        "Vulnerabilities": 10.0,
         "License": 9.0,
+        "Vulnerabilities": 10.0,
+        "Binary-Artifacts": 10.0,
         "Signed-Releases": 0.0,
+        "Branch-Protection": -1.0,
         "Pinned-Dependencies": 0.0,
         "Fuzzing": 10.0,
-        "Branch-Protection": -1.0,
         "SAST": 10.0
       },
       "code_review_score": 0.0,
-      "maintained_score": 4.0,
+      "maintained_score": 10.0,
       "branch_protection_score": -1.0,
       "dangerous_workflow_score": 10.0,
       "token_permissions_score": 0.0,
@@ -289,18 +262,18 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 2002,
-      "forks": 424,
-      "open_issues": 69,
+      "stars": 2025,
+      "forks": 428,
+      "open_issues": 70,
       "license": "non-standard",
       "description": "Leptonica is an open source library containing software that is broadly useful for image processing and image analysis applications. The official github repository for Leptonica is: danbloomberg/leptonica.  See leptonica.org for more documentation.",
-      "oss_fuzz_line_count": 195332,
-      "oss_fuzz_line_cover_count": 52448
+      "oss_fuzz_line_count": 195625,
+      "oss_fuzz_line_cover_count": 52484
     },
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-02T22:45:08.652152Z",
+    "fetched_at": "2026-02-25T07:48:51.766172Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -308,29 +281,26 @@
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",
     "security_summary": "No issues",
-    "doc_summary": "The README provides a comprehensive overview of the Leptonica library's features and capabilities, but lacks clear installation instructions for all platforms and a quick start guide.",
+    "doc_summary": "The README is comprehensive regarding features and applications but lacks in providing installation alternatives, basic usage examples, configuration guidance, and troubleshooting information.",
     "concerns": [
-      "low number of closed issues",
-      "small number of contributors",
-      "Docs: Lack of clear and concise installation instructions for Homebrew",
-      "Community: bugs and technical issues",
-      "Community: lack of support for certain features or formats",
-      "Security: Potential buffer overflow vulnerability in snprintf() usage",
-      "Security: Lack of input validation for directory existence and accessibility",
+      "High number of open issues (67) and relatively low activity in terms of merged PRs (2) over the past six months.",
+      "Docs: Lack of a quick start example.",
+      "Community: Regression issues with file paths",
+      "Community: Crashes on specific architectures",
+      "Communication: Some responses could be perceived as dismissive of user concerns, especially regarding the handling of double quotes in filenames.",
+      "Communication: There is a lack of encouragement for new contributors beyond acknowledging their contributions.",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "recent commits",
-      "active contributors in the past 6 months",
-      "Excellent maintainer communication",
+      "Regular commits (17) and releases (last release on 2025-12-24).",
       "CI/CD configured",
       "Fuzzing enabled",
       "SAST enabled"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "exemplary",
-    "scorecard_score": 5.0
+    "community_sentiment": "mixed",
+    "communication_style": "adequate",
+    "scorecard_score": 5.6
   },
-  "analyzed_at": "2026-01-02T22:47:49.504086Z",
-  "data_fetched_at": "2026-01-02T22:47:49.504087Z"
+  "analyzed_at": "2026-02-25T07:53:53.643704Z",
+  "data_fetched_at": "2026-02-25T07:53:53.643706Z"
 }
