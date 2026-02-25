@@ -1,8 +1,8 @@
 {
   "ecosystem": "npm",
-  "name": "@backstage/plugin-catalog-backend-module-azure",
-  "description": "A Backstage catalog backend module that helps integrate towards Azure",
-  "version": "0.3.14",
+  "name": "@backstage/plugin-app-backend",
+  "description": "A Backstage backend plugin that serves the Backstage frontend app",
+  "version": "0.5.11",
   "homepage": "https://backstage.io",
   "repository": {
     "platform": "github",
@@ -10,7 +10,7 @@
     "repo": "backstage",
     "subpath": null
   },
-  "install_count_30d": 33298,
+  "install_count_30d": 389141,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
@@ -18,7 +18,7 @@
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
-    "update_urgency": "low",
+    "update_urgency": "high",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "mature",
@@ -73,7 +73,7 @@
       "watchers": 32677,
       "created_at": "2020-01-24T22:39:49Z",
       "updated_at": "2026-02-25T15:58:23Z",
-      "pushed_at": "2026-02-25T16:16:44Z",
+      "pushed_at": "2026-02-25T16:31:54Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "TypeScript",
@@ -146,11 +146,28 @@
       "has_sigstore": false,
       "has_sbom": false,
       "has_reproducible_builds": false,
-      "known_cves": 0,
+      "known_cves": 1,
       "vulnerable_deps": 0,
       "cve_history": {
-        "total_cves": 0,
-        "cves": [],
+        "total_cves": 1,
+        "cves": [
+          {
+            "id": "GHSA-qc4v-xq2m-65wc",
+            "summary": "Unexpected visibility of environment variable configurations in @backstage/plugin-app-backend",
+            "severity": "MODERATE",
+            "cvss_score": null,
+            "published_date": "2024-10-03T16:51:24Z",
+            "fixed_version": "0.3.75",
+            "patch_release_date": null,
+            "days_to_patch": null,
+            "references": [
+              "https://github.com/backstage/backstage/security/advisories/GHSA-qc4v-xq2m-65wc",
+              "https://nvd.nist.gov/vuln/detail/CVE-2024-47762",
+              "https://github.com/backstage/backstage/commit/323e6129073c5cb4cc106a1239eaec31a129554f",
+              "https://github.com/backstage/backstage"
+            ]
+          }
+        ],
         "avg_days_to_patch": null,
         "has_unpatched": false
       }
@@ -175,7 +192,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 81.0,
+      "recent_runs_pass_rate": 92.9,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -187,17 +204,16 @@
     "readme": null,
     "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Support for rotating Postgres password / managed identities"
+        "Support for rotating Postgres password / managed identities",
+        "Improve filter in catalog graph"
       ],
-      "praise_themes": [
-        "Improvement suggestions for catalog graph"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health shows a mix of constructive feedback and improvement suggestions, with some open issues indicating areas needing attention. Maintainer responsiveness seems slow, but there are no clear signs of abandonment."
+      "summary": "The community is actively suggesting improvements and features, with moderate engagement from maintainers. There are no signs of abandonment, but the frustration level is slightly elevated due to open issues without recent updates."
     },
     "communication": {
       "helpfulness": 7,
@@ -207,21 +223,21 @@
       "welcomingness": 9,
       "communication_style": "good",
       "red_flags": [
-        "Some responses are brief and could be more detailed, especially regarding the 'why' behind decisions.",
-        "A few responses mention missing changesets without providing additional guidance on how to resolve them."
+        "Some responses are brief and could be more detailed for complex issues.",
+        "Lack of technical depth in some explanations."
       ],
-      "summary": "The maintainer responses are generally helpful and welcoming, with clear instructions for adding changesets. However, they could benefit from more technical depth in explaining decision-making processes."
+      "summary": "The maintainer responses are generally helpful, clear, and welcoming to new contributors. However, they sometimes lack technical depth and can be brief, which might not fully address complex issues."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [
-        "High number of open issues and PRs which might indicate a backlog or complexity in the codebase."
+        "High number of open issues and PRs which might indicate some backlog or complexity in handling them."
       ],
       "positive_signals": [
         "Frequent commits, regular releases, and active contributors over the past six months."
       ],
-      "summary": "The package is actively maintained with frequent updates, regular releases, and an active community contributing to it."
+      "summary": "The package @backstage/plugin-app-backend is actively maintained with frequent updates, a steady flow of contributions, and recent releases. However, it has a significant number of open issues and PRs that could indicate some management challenges."
     },
     "changelog": null,
     "governance": {
@@ -256,139 +272,181 @@
       "installs_runtime": false
     },
     "tarball": {
-      "tarball_url": "https://registry.npmjs.org/@backstage/plugin-catalog-backend-module-azure/-/plugin-catalog-backend-module-azure-0.3.14.tgz",
-      "tarball_size_bytes": 23311,
-      "file_count": 22,
+      "tarball_url": "https://registry.npmjs.org/@backstage/plugin-app-backend/-/plugin-app-backend-0.5.11.tgz",
+      "tarball_size_bytes": 28171,
+      "file_count": 29,
       "files": [
         {
           "path": "CHANGELOG.md",
-          "size_bytes": 73608,
+          "size_bytes": 66927,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "README.md",
-          "size_bytes": 315,
+          "size_bytes": 1129,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "config.d.ts",
-          "size_bytes": 3167,
-          "is_executable": false,
-          "is_binary": false
-        },
-        {
-          "path": "dist/alpha.cjs.js",
-          "size_bytes": 349,
-          "is_executable": false,
-          "is_binary": false
-        },
-        {
-          "path": "dist/alpha.cjs.js.map",
-          "size_bytes": 896,
-          "is_executable": false,
-          "is_binary": false
-        },
-        {
-          "path": "dist/alpha.d.ts",
-          "size_bytes": 198,
+          "size_bytes": 1861,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.cjs.js",
-          "size_bytes": 869,
+          "size_bytes": 214,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.cjs.js.map",
-          "size_bytes": 110,
+          "size_bytes": 101,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.d.ts",
-          "size_bytes": 2923,
+          "size_bytes": 293,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/lib/azure.cjs.js",
-          "size_bytes": 1755,
+          "path": "dist/lib/assets/StaticAssetsStore.cjs.js",
+          "size_bytes": 3652,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/lib/azure.cjs.js.map",
-          "size_bytes": 5166,
+          "path": "dist/lib/assets/StaticAssetsStore.cjs.js.map",
+          "size_bytes": 8525,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/module/catalogModuleAzureDevOpsEntityProvider.cjs.js",
-          "size_bytes": 1545,
+          "path": "dist/lib/assets/createStaticAssetMiddleware.cjs.js",
+          "size_bytes": 1000,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/module/catalogModuleAzureDevOpsEntityProvider.cjs.js.map",
-          "size_bytes": 3209,
+          "path": "dist/lib/assets/createStaticAssetMiddleware.cjs.js.map",
+          "size_bytes": 3120,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/processors/AzureDevOpsDiscoveryProcessor.cjs.js",
-          "size_bytes": 3385,
+          "path": "dist/lib/assets/findStaticAssets.cjs.js",
+          "size_bytes": 867,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/processors/AzureDevOpsDiscoveryProcessor.cjs.js.map",
-          "size_bytes": 8724,
+          "path": "dist/lib/assets/findStaticAssets.cjs.js.map",
+          "size_bytes": 1819,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureBlobStorageEntityProvider.cjs.js",
-          "size_bytes": 5889,
+          "path": "dist/lib/config/injectConfig.cjs.js",
+          "size_bytes": 542,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureBlobStorageEntityProvider.cjs.js.map",
-          "size_bytes": 12874,
+          "path": "dist/lib/config/injectConfig.cjs.js.map",
+          "size_bytes": 1723,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureDevOpsEntityProvider.cjs.js",
-          "size_bytes": 5184,
+          "path": "dist/lib/config/injectConfigIntoHtml.cjs.js",
+          "size_bytes": 1818,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureDevOpsEntityProvider.cjs.js.map",
-          "size_bytes": 11016,
+          "path": "dist/lib/config/injectConfigIntoHtml.cjs.js.map",
+          "size_bytes": 3935,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/config.cjs.js",
-          "size_bytes": 2254,
+          "path": "dist/lib/config/injectConfigIntoStatic.cjs.js",
+          "size_bytes": 1696,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/config.cjs.js.map",
-          "size_bytes": 5334,
+          "path": "dist/lib/config/injectConfigIntoStatic.cjs.js.map",
+          "size_bytes": 3595,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/lib/config/readFrontendConfig.cjs.js",
+          "size_bytes": 1418,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/lib/config/readFrontendConfig.cjs.js.map",
+          "size_bytes": 3222,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/lib/headers.cjs.js",
+          "size_bytes": 409,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/lib/headers.cjs.js.map",
+          "size_bytes": 1084,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/service/appPlugin.cjs.js",
+          "size_bytes": 1997,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/service/appPlugin.cjs.js.map",
+          "size_bytes": 4419,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/service/router.cjs.js",
+          "size_bytes": 6964,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/service/router.cjs.js.map",
+          "size_bytes": 15642,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "migrations/20211229105307_init.js",
+          "size_bytes": 2074,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "migrations/20240113144027_assets-namespace.js",
+          "size_bytes": 2173,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "package.json",
-          "size_bytes": 2254,
+          "size_bytes": 2482,
           "is_executable": false,
           "is_binary": false
         }
@@ -402,15 +460,15 @@
         {
           "pattern_type": "url_literal",
           "severity": "low",
-          "location": "dist/lib/azure.cjs.js",
-          "matched_content": "\"https://almsearch.dev.azure.com\"",
+          "location": "dist/lib/config/injectConfigIntoHtml.cjs.js",
+          "matched_content": "\"http://localhost:7007\"",
           "description": "Hardcoded URL in string"
         }
       ],
       "risk_score": 0
     },
     "version_diff": {
-      "current_version": "0.3.14",
+      "current_version": "0.5.11",
       "previous_version": "0.0.0-nightly-20260217031303",
       "comparison_available": true,
       "files_added": [],
@@ -455,8 +513,8 @@
       {
         "pattern_type": "url_literal",
         "severity": "low",
-        "location": "dist/lib/azure.cjs.js",
-        "matched_content": "\"https://almsearch.dev.azure.com\"",
+        "location": "dist/lib/config/injectConfigIntoHtml.cjs.js",
+        "matched_content": "\"http://localhost:7007\"",
         "description": "Hardcoded URL in string"
       }
     ],
@@ -502,15 +560,15 @@
       "oss_fuzz_line_cover_count": null
     },
     "dependency_graph": {
-      "direct_count": 8,
-      "transitive_count": 260,
+      "direct_count": 16,
+      "transitive_count": 253,
       "vulnerable_direct": 0,
       "vulnerable_transitive": 0,
-      "max_depth": 9
+      "max_depth": 8
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-02-25T16:30:06.914553Z",
+    "fetched_at": "2026-02-25T16:54:35.708796Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -519,13 +577,14 @@
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
-    "security_summary": "has SECURITY.md, Dependabot enabled",
+    "security_summary": "1 known CVEs, has SECURITY.md, Dependabot enabled",
     "doc_summary": "",
     "concerns": [
-      "High number of open issues and PRs which might indicate a backlog or complexity in the codebase.",
+      "High number of open issues and PRs which might indicate some backlog or complexity in handling them.",
       "Community: Support for rotating Postgres password / managed identities",
-      "Communication: Some responses are brief and could be more detailed, especially regarding the 'why' behind decisions.",
-      "Communication: A few responses mention missing changesets without providing additional guidance on how to resolve them.",
+      "Community: Improve filter in catalog graph",
+      "Communication: Some responses are brief and could be more detailed for complex issues.",
+      "Communication: Lack of technical depth in some explanations.",
       "Dangerous CI/CD workflow patterns detected"
     ],
     "highlights": [
@@ -534,12 +593,12 @@
       "CI/CD configured",
       "SAST enabled"
     ],
-    "community_sentiment": "mixed",
+    "community_sentiment": "neutral",
     "communication_style": "good",
     "supply_chain_risk": "low",
     "scorecard_score": 6.5,
-    "dependency_count": 268
+    "dependency_count": 269
   },
-  "analyzed_at": "2026-02-25T16:35:11.377608Z",
-  "data_fetched_at": "2026-02-25T16:35:11.377610Z"
+  "analyzed_at": "2026-02-25T16:59:39.706661Z",
+  "data_fetched_at": "2026-02-25T16:59:39.706663Z"
 }

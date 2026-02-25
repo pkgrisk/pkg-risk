@@ -1,8 +1,8 @@
 {
   "ecosystem": "npm",
-  "name": "@backstage/plugin-catalog-backend-module-azure",
-  "description": "A Backstage catalog backend module that helps integrate towards Azure",
-  "version": "0.3.14",
+  "name": "@backstage/plugin-catalog-backend-module-msgraph",
+  "description": "A Backstage catalog backend module that helps integrate towards Microsoft Graph",
+  "version": "0.9.0",
   "homepage": "https://backstage.io",
   "repository": {
     "platform": "github",
@@ -10,7 +10,7 @@
     "repo": "backstage",
     "subpath": null
   },
-  "install_count_30d": 33298,
+  "install_count_30d": 72610,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
@@ -73,7 +73,7 @@
       "watchers": 32677,
       "created_at": "2020-01-24T22:39:49Z",
       "updated_at": "2026-02-25T15:58:23Z",
-      "pushed_at": "2026-02-25T16:16:44Z",
+      "pushed_at": "2026-02-25T16:31:54Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "TypeScript",
@@ -175,7 +175,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 81.0,
+      "recent_runs_pass_rate": 90.5,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -191,46 +191,44 @@
       "frustration_level": 4,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Support for rotating Postgres password / managed identities"
+        "Support for rotating Postgres password / managed identities",
+        "Improve filter in catalog graph"
       ],
-      "praise_themes": [
-        "Improvement suggestions for catalog graph"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health shows a mix of constructive feedback and improvement suggestions, with some open issues indicating areas needing attention. Maintainer responsiveness seems slow, but there are no clear signs of abandonment."
+      "summary": "The community health shows mixed sentiment with ongoing feature requests and suggestions, but limited activity and responsiveness from maintainers."
     },
     "communication": {
       "helpfulness": 7,
-      "clarity": 6,
-      "patience": 8,
-      "technical_depth": 5,
-      "welcomingness": 9,
+      "clarity": 8,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 10,
       "communication_style": "good",
       "red_flags": [
-        "Some responses are brief and could be more detailed, especially regarding the 'why' behind decisions.",
-        "A few responses mention missing changesets without providing additional guidance on how to resolve them."
+        "Some responses are brief and could be more detailed, especially for complex issues."
       ],
-      "summary": "The maintainer responses are generally helpful and welcoming, with clear instructions for adding changesets. However, they could benefit from more technical depth in explaining decision-making processes."
+      "summary": "The maintainer responses are generally helpful, clear, patient, and welcoming to new contributors. However, they sometimes lack technical depth in explaining the 'why' behind decisions."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [
-        "High number of open issues and PRs which might indicate a backlog or complexity in the codebase."
+        "High number of open issues and PRs which could indicate a backlog or complexity in the codebase."
       ],
       "positive_signals": [
-        "Frequent commits, regular releases, and active contributors over the past six months."
+        "Frequent commits, regular releases, and multiple contributors actively working on the project over the past six months."
       ],
-      "summary": "The package is actively maintained with frequent updates, regular releases, and an active community contributing to it."
+      "summary": "The package is actively maintained with frequent updates, active contributors, and recent releases, though it has a significant number of open issues and PRs that may need attention."
     },
     "changelog": null,
     "governance": {
       "has_succession_plan": false,
       "decision_process_documented": false,
       "contributor_ladder_exists": true,
-      "indicates_multiple_maintainers": true,
+      "indicates_multiple_maintainers": false,
       "bus_factor_risk": "medium",
-      "summary": "The documentation outlines a path for contributors to become maintainers and indicates multiple people with merge rights, but lacks details on succession planning and decision-making processes."
+      "summary": "The documentation outlines a path for contributors to become maintainers but lacks details on succession planning, decision-making processes, and indicates a single maintainer with merge rights."
     },
     "llm_provider": null,
     "llm_model": null,
@@ -256,31 +254,31 @@
       "installs_runtime": false
     },
     "tarball": {
-      "tarball_url": "https://registry.npmjs.org/@backstage/plugin-catalog-backend-module-azure/-/plugin-catalog-backend-module-azure-0.3.14.tgz",
-      "tarball_size_bytes": 23311,
-      "file_count": 22,
+      "tarball_url": "https://registry.npmjs.org/@backstage/plugin-catalog-backend-module-msgraph/-/plugin-catalog-backend-module-msgraph-0.9.0.tgz",
+      "tarball_size_bytes": 51421,
+      "file_count": 30,
       "files": [
         {
           "path": "CHANGELOG.md",
-          "size_bytes": 73608,
+          "size_bytes": 78094,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "README.md",
-          "size_bytes": 315,
+          "size_bytes": 8711,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "config.d.ts",
-          "size_bytes": 3167,
+          "size_bytes": 13164,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/alpha.cjs.js",
-          "size_bytes": 349,
+          "size_bytes": 379,
           "is_executable": false,
           "is_binary": false
         },
@@ -298,97 +296,145 @@
         },
         {
           "path": "dist/index.cjs.js",
-          "size_bytes": 869,
+          "size_bytes": 2269,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.cjs.js.map",
-          "size_bytes": 110,
+          "size_bytes": 125,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.d.ts",
-          "size_bytes": 2923,
+          "size_bytes": 23837,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/lib/azure.cjs.js",
-          "size_bytes": 1755,
+          "path": "dist/microsoftGraph/client.cjs.js",
+          "size_bytes": 9526,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/lib/azure.cjs.js.map",
-          "size_bytes": 5166,
+          "path": "dist/microsoftGraph/client.cjs.js.map",
+          "size_bytes": 20574,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/module/catalogModuleAzureDevOpsEntityProvider.cjs.js",
-          "size_bytes": 1545,
+          "path": "dist/microsoftGraph/config.cjs.js",
+          "size_bytes": 6136,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/module/catalogModuleAzureDevOpsEntityProvider.cjs.js.map",
-          "size_bytes": 3209,
+          "path": "dist/microsoftGraph/config.cjs.js.map",
+          "size_bytes": 16270,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/processors/AzureDevOpsDiscoveryProcessor.cjs.js",
-          "size_bytes": 3385,
+          "path": "dist/microsoftGraph/constants.cjs.js",
+          "size_bytes": 658,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/processors/AzureDevOpsDiscoveryProcessor.cjs.js.map",
-          "size_bytes": 8724,
+          "path": "dist/microsoftGraph/constants.cjs.js.map",
+          "size_bytes": 1540,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureBlobStorageEntityProvider.cjs.js",
-          "size_bytes": 5889,
+          "path": "dist/microsoftGraph/defaultTransformers.cjs.js",
+          "size_bytes": 2895,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureBlobStorageEntityProvider.cjs.js.map",
-          "size_bytes": 12874,
+          "path": "dist/microsoftGraph/defaultTransformers.cjs.js.map",
+          "size_bytes": 7111,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureDevOpsEntityProvider.cjs.js",
-          "size_bytes": 5184,
+          "path": "dist/microsoftGraph/helper.cjs.js",
+          "size_bytes": 422,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureDevOpsEntityProvider.cjs.js.map",
-          "size_bytes": 11016,
+          "path": "dist/microsoftGraph/helper.cjs.js.map",
+          "size_bytes": 1770,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/config.cjs.js",
-          "size_bytes": 2254,
+          "path": "dist/microsoftGraph/org.cjs.js",
+          "size_bytes": 1589,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/config.cjs.js.map",
-          "size_bytes": 5334,
+          "path": "dist/microsoftGraph/org.cjs.js.map",
+          "size_bytes": 4645,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/microsoftGraph/read.cjs.js",
+          "size_bytes": 11618,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/microsoftGraph/read.cjs.js.map",
+          "size_bytes": 27309,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/module/catalogModuleMicrosoftGraphOrgEntityProvider.cjs.js",
+          "size_bytes": 2984,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/module/catalogModuleMicrosoftGraphOrgEntityProvider.cjs.js.map",
+          "size_bytes": 7290,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/processors/MicrosoftGraphOrgEntityProvider.cjs.js",
+          "size_bytes": 9014,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/processors/MicrosoftGraphOrgEntityProvider.cjs.js.map",
+          "size_bytes": 21978,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/processors/MicrosoftGraphOrgReaderProcessor.cjs.js",
+          "size_bytes": 3511,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/processors/MicrosoftGraphOrgReaderProcessor.cjs.js.map",
+          "size_bytes": 8104,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "package.json",
-          "size_bytes": 2254,
+          "size_bytes": 2385,
           "is_executable": false,
           "is_binary": false
         }
@@ -402,15 +448,15 @@
         {
           "pattern_type": "url_literal",
           "severity": "low",
-          "location": "dist/lib/azure.cjs.js",
-          "matched_content": "\"https://almsearch.dev.azure.com\"",
+          "location": "dist/microsoftGraph/config.cjs.js",
+          "matched_content": "\"https://graph.microsoft.com/v1.0\"",
           "description": "Hardcoded URL in string"
         }
       ],
       "risk_score": 0
     },
     "version_diff": {
-      "current_version": "0.3.14",
+      "current_version": "0.9.0",
       "previous_version": "0.0.0-nightly-20260217031303",
       "comparison_available": true,
       "files_added": [],
@@ -455,8 +501,8 @@
       {
         "pattern_type": "url_literal",
         "severity": "low",
-        "location": "dist/lib/azure.cjs.js",
-        "matched_content": "\"https://almsearch.dev.azure.com\"",
+        "location": "dist/microsoftGraph/config.cjs.js",
+        "matched_content": "\"https://graph.microsoft.com/v1.0\"",
         "description": "Hardcoded URL in string"
       }
     ],
@@ -502,15 +548,15 @@
       "oss_fuzz_line_cover_count": null
     },
     "dependency_graph": {
-      "direct_count": 8,
-      "transitive_count": 260,
+      "direct_count": 11,
+      "transitive_count": 214,
       "vulnerable_direct": 0,
       "vulnerable_transitive": 0,
-      "max_depth": 9
+      "max_depth": 7
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-02-25T16:30:06.914553Z",
+    "fetched_at": "2026-02-25T16:36:05.733140Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -522,14 +568,14 @@
     "security_summary": "has SECURITY.md, Dependabot enabled",
     "doc_summary": "",
     "concerns": [
-      "High number of open issues and PRs which might indicate a backlog or complexity in the codebase.",
+      "High number of open issues and PRs which could indicate a backlog or complexity in the codebase.",
       "Community: Support for rotating Postgres password / managed identities",
-      "Communication: Some responses are brief and could be more detailed, especially regarding the 'why' behind decisions.",
-      "Communication: A few responses mention missing changesets without providing additional guidance on how to resolve them.",
+      "Community: Improve filter in catalog graph",
+      "Communication: Some responses are brief and could be more detailed, especially for complex issues.",
       "Dangerous CI/CD workflow patterns detected"
     ],
     "highlights": [
-      "Frequent commits, regular releases, and active contributors over the past six months.",
+      "Frequent commits, regular releases, and multiple contributors actively working on the project over the past six months.",
       "Actively maintained",
       "CI/CD configured",
       "SAST enabled"
@@ -538,8 +584,8 @@
     "communication_style": "good",
     "supply_chain_risk": "low",
     "scorecard_score": 6.5,
-    "dependency_count": 268
+    "dependency_count": 225
   },
-  "analyzed_at": "2026-02-25T16:35:11.377608Z",
-  "data_fetched_at": "2026-02-25T16:35:11.377610Z"
+  "analyzed_at": "2026-02-25T16:41:09.550908Z",
+  "data_fetched_at": "2026-02-25T16:41:09.550910Z"
 }

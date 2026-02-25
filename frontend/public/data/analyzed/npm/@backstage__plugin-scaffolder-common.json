@@ -1,8 +1,8 @@
 {
   "ecosystem": "npm",
-  "name": "@backstage/plugin-catalog-backend-module-azure",
-  "description": "A Backstage catalog backend module that helps integrate towards Azure",
-  "version": "0.3.14",
+  "name": "@backstage/plugin-scaffolder-common",
+  "description": "Common functionalities for the scaffolder, to be shared between scaffolder and scaffolder-backend plugin",
+  "version": "1.7.6",
   "homepage": "https://backstage.io",
   "repository": {
     "platform": "github",
@@ -10,7 +10,7 @@
     "repo": "backstage",
     "subpath": null
   },
-  "install_count_30d": 33298,
+  "install_count_30d": 635874,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
@@ -73,7 +73,7 @@
       "watchers": 32677,
       "created_at": "2020-01-24T22:39:49Z",
       "updated_at": "2026-02-25T15:58:23Z",
-      "pushed_at": "2026-02-25T16:16:44Z",
+      "pushed_at": "2026-02-25T16:31:54Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "TypeScript",
@@ -175,7 +175,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 30,
-      "recent_runs_pass_rate": 81.0,
+      "recent_runs_pass_rate": 91.5,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -187,17 +187,16 @@
     "readme": null,
     "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Support for rotating Postgres password / managed identities"
+        "Support for rotating Postgres password / managed identities",
+        "Improve filter in catalog graph"
       ],
-      "praise_themes": [
-        "Improvement suggestions for catalog graph"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health shows a mix of constructive feedback and improvement suggestions, with some open issues indicating areas needing attention. Maintainer responsiveness seems slow, but there are no clear signs of abandonment."
+      "summary": "The community is actively suggesting improvements and features, but there are no clear signs of frustration or abandonment. Maintainer responsiveness seems moderate as issues remain open with some engagement."
     },
     "communication": {
       "helpfulness": 7,
@@ -207,21 +206,21 @@
       "welcomingness": 9,
       "communication_style": "good",
       "red_flags": [
-        "Some responses are brief and could be more detailed, especially regarding the 'why' behind decisions.",
-        "A few responses mention missing changesets without providing additional guidance on how to resolve them."
+        "Some responses are brief and could be more detailed",
+        "Lack of technical depth in some explanations"
       ],
-      "summary": "The maintainer responses are generally helpful and welcoming, with clear instructions for adding changesets. However, they could benefit from more technical depth in explaining decision-making processes."
+      "summary": "The maintainer responses are generally helpful, clear, and welcoming to new contributors. However, they sometimes lack technical depth and can be brief, which might not fully address complex issues."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [
-        "High number of open issues and PRs which might indicate a backlog or complexity in the codebase."
+        "High number of open issues and PRs which might indicate a backlog or complexity in the project."
       ],
       "positive_signals": [
-        "Frequent commits, regular releases, and active contributors over the past six months."
+        "Frequent commits, regular releases, and multiple contributors actively working on the package over the past six months."
       ],
-      "summary": "The package is actively maintained with frequent updates, regular releases, and an active community contributing to it."
+      "summary": "The @backstage/plugin-scaffolder-common package is actively maintained with frequent updates and contributions, though it has a significant backlog of open issues and PRs."
     },
     "changelog": null,
     "governance": {
@@ -230,7 +229,7 @@
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
-      "summary": "The documentation outlines a path for contributors to become maintainers and indicates multiple people with merge rights, but lacks details on succession planning and decision-making processes."
+      "summary": "The documentation outlines a clear path for contributors to become maintainers and indicates multiple people with merge rights, but lacks details on succession planning and decision-making processes."
     },
     "llm_provider": null,
     "llm_model": null,
@@ -256,139 +255,229 @@
       "installs_runtime": false
     },
     "tarball": {
-      "tarball_url": "https://registry.npmjs.org/@backstage/plugin-catalog-backend-module-azure/-/plugin-catalog-backend-module-azure-0.3.14.tgz",
-      "tarball_size_bytes": 23311,
-      "file_count": 22,
+      "tarball_url": "https://registry.npmjs.org/@backstage/plugin-scaffolder-common/-/plugin-scaffolder-common-1.7.6.tgz",
+      "tarball_size_bytes": 26419,
+      "file_count": 37,
       "files": [
         {
           "path": "CHANGELOG.md",
-          "size_bytes": 73608,
+          "size_bytes": 24058,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "README.md",
-          "size_bytes": 315,
+          "size_bytes": 148,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "config.d.ts",
-          "size_bytes": 3167,
+          "path": "dist/ScaffolderClient.cjs.js",
+          "size_bytes": 8103,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/ScaffolderClient.cjs.js.map",
+          "size_bytes": 19158,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/ScaffolderClient.esm.js",
+          "size_bytes": 7809,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/ScaffolderClient.esm.js.map",
+          "size_bytes": 19055,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/Template.v1beta3.schema.json.cjs.js",
+          "size_bytes": 9894,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/Template.v1beta3.schema.json.cjs.js.map",
+          "size_bytes": 502,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/Template.v1beta3.schema.json.esm.js",
+          "size_bytes": 9730,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/Template.v1beta3.schema.json.esm.js.map",
+          "size_bytes": 493,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/TemplateEntityV1beta3.cjs.js",
+          "size_bytes": 740,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/TemplateEntityV1beta3.cjs.js.map",
+          "size_bytes": 6092,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/TemplateEntityV1beta3.esm.js",
+          "size_bytes": 617,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/TemplateEntityV1beta3.esm.js.map",
+          "size_bytes": 6050,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/alpha.cjs.js",
-          "size_bytes": 349,
+          "size_bytes": 1179,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/alpha.cjs.js.map",
-          "size_bytes": 896,
+          "size_bytes": 112,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/alpha.d.ts",
-          "size_bytes": 198,
+          "size_bytes": 4096,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/alpha.esm.js",
+          "size_bytes": 466,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/alpha.esm.js.map",
+          "size_bytes": 93,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.cjs.js",
-          "size_bytes": 869,
+          "size_bytes": 426,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.cjs.js.map",
-          "size_bytes": 110,
+          "size_bytes": 102,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "dist/index.d.ts",
-          "size_bytes": 2923,
+          "size_bytes": 19875,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/lib/azure.cjs.js",
-          "size_bytes": 1755,
+          "path": "dist/index.esm.js",
+          "size_bytes": 206,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/lib/azure.cjs.js.map",
-          "size_bytes": 5166,
+          "path": "dist/index.esm.js.map",
+          "size_bytes": 94,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/module/catalogModuleAzureDevOpsEntityProvider.cjs.js",
-          "size_bytes": 1545,
+          "path": "dist/permissions.cjs.js",
+          "size_bytes": 2942,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/module/catalogModuleAzureDevOpsEntityProvider.cjs.js.map",
-          "size_bytes": 3209,
+          "path": "dist/permissions.cjs.js.map",
+          "size_bytes": 5908,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/processors/AzureDevOpsDiscoveryProcessor.cjs.js",
-          "size_bytes": 3385,
+          "path": "dist/permissions.esm.js",
+          "size_bytes": 2257,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/processors/AzureDevOpsDiscoveryProcessor.cjs.js.map",
-          "size_bytes": 8724,
+          "path": "dist/permissions.esm.js.map",
+          "size_bytes": 5868,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureBlobStorageEntityProvider.cjs.js",
-          "size_bytes": 5889,
+          "path": "dist/schema/openapi/generated/apis/Api.client.cjs.js",
+          "size_bytes": 8284,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureBlobStorageEntityProvider.cjs.js.map",
-          "size_bytes": 12874,
+          "path": "dist/schema/openapi/generated/apis/Api.client.cjs.js.map",
+          "size_bytes": 19545,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureDevOpsEntityProvider.cjs.js",
-          "size_bytes": 5184,
+          "path": "dist/schema/openapi/generated/apis/Api.client.esm.js",
+          "size_bytes": 7288,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/AzureDevOpsEntityProvider.cjs.js.map",
-          "size_bytes": 11016,
+          "path": "dist/schema/openapi/generated/apis/Api.client.esm.js.map",
+          "size_bytes": 19442,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/config.cjs.js",
-          "size_bytes": 2254,
+          "path": "dist/schema/openapi/generated/pluginId.cjs.js",
+          "size_bytes": 117,
           "is_executable": false,
           "is_binary": false
         },
         {
-          "path": "dist/providers/config.cjs.js.map",
-          "size_bytes": 5334,
+          "path": "dist/schema/openapi/generated/pluginId.cjs.js.map",
+          "size_bytes": 843,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/schema/openapi/generated/pluginId.esm.js",
+          "size_bytes": 94,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/schema/openapi/generated/pluginId.esm.js.map",
+          "size_bytes": 841,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "package.json",
-          "size_bytes": 2254,
+          "size_bytes": 2502,
           "is_executable": false,
           "is_binary": false
         }
@@ -402,15 +491,36 @@
         {
           "pattern_type": "url_literal",
           "severity": "low",
-          "location": "dist/lib/azure.cjs.js",
-          "matched_content": "\"https://almsearch.dev.azure.com\"",
+          "location": "dist/Template.v1beta3.schema.json.cjs.js",
+          "matched_content": "\"http://json-schema.org/draft-07/schema\"",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "dist/Template.v1beta3.schema.json.cjs.js",
+          "matched_content": "\"https://github.com/my-org/my-new-repo\"",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "dist/Template.v1beta3.schema.json.esm.js",
+          "matched_content": "\"http://json-schema.org/draft-07/schema\"",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "dist/Template.v1beta3.schema.json.esm.js",
+          "matched_content": "\"https://github.com/my-org/my-new-repo\"",
           "description": "Hardcoded URL in string"
         }
       ],
       "risk_score": 0
     },
     "version_diff": {
-      "current_version": "0.3.14",
+      "current_version": "1.7.6",
       "previous_version": "0.0.0-nightly-20260217031303",
       "comparison_available": true,
       "files_added": [],
@@ -455,8 +565,29 @@
       {
         "pattern_type": "url_literal",
         "severity": "low",
-        "location": "dist/lib/azure.cjs.js",
-        "matched_content": "\"https://almsearch.dev.azure.com\"",
+        "location": "dist/Template.v1beta3.schema.json.cjs.js",
+        "matched_content": "\"http://json-schema.org/draft-07/schema\"",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "dist/Template.v1beta3.schema.json.cjs.js",
+        "matched_content": "\"https://github.com/my-org/my-new-repo\"",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "dist/Template.v1beta3.schema.json.esm.js",
+        "matched_content": "\"http://json-schema.org/draft-07/schema\"",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "dist/Template.v1beta3.schema.json.esm.js",
+        "matched_content": "\"https://github.com/my-org/my-new-repo\"",
         "description": "Hardcoded URL in string"
       }
     ],
@@ -502,15 +633,15 @@
       "oss_fuzz_line_cover_count": null
     },
     "dependency_graph": {
-      "direct_count": 8,
-      "transitive_count": 260,
+      "direct_count": 11,
+      "transitive_count": 110,
       "vulnerable_direct": 0,
       "vulnerable_transitive": 0,
-      "max_depth": 9
+      "max_depth": 7
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-02-25T16:30:06.914553Z",
+    "fetched_at": "2026-02-25T16:52:34.962539Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -522,24 +653,25 @@
     "security_summary": "has SECURITY.md, Dependabot enabled",
     "doc_summary": "",
     "concerns": [
-      "High number of open issues and PRs which might indicate a backlog or complexity in the codebase.",
+      "High number of open issues and PRs which might indicate a backlog or complexity in the project.",
       "Community: Support for rotating Postgres password / managed identities",
-      "Communication: Some responses are brief and could be more detailed, especially regarding the 'why' behind decisions.",
-      "Communication: A few responses mention missing changesets without providing additional guidance on how to resolve them.",
+      "Community: Improve filter in catalog graph",
+      "Communication: Some responses are brief and could be more detailed",
+      "Communication: Lack of technical depth in some explanations",
       "Dangerous CI/CD workflow patterns detected"
     ],
     "highlights": [
-      "Frequent commits, regular releases, and active contributors over the past six months.",
+      "Frequent commits, regular releases, and multiple contributors actively working on the package over the past six months.",
       "Actively maintained",
       "CI/CD configured",
       "SAST enabled"
     ],
-    "community_sentiment": "mixed",
+    "community_sentiment": "neutral",
     "communication_style": "good",
     "supply_chain_risk": "low",
     "scorecard_score": 6.5,
-    "dependency_count": 268
+    "dependency_count": 121
   },
-  "analyzed_at": "2026-02-25T16:35:11.377608Z",
-  "data_fetched_at": "2026-02-25T16:35:11.377610Z"
+  "analyzed_at": "2026-02-25T16:57:39.012468Z",
+  "data_fetched_at": "2026-02-25T16:57:39.012470Z"
 }
