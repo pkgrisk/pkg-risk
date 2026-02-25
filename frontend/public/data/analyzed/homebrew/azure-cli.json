@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "azure-cli",
   "description": "Microsoft Azure CLI 2.0",
-  "version": "2.81.0",
+  "version": "2.83.0",
   "homepage": "https://docs.microsoft.com/cli/azure/overview",
   "repository": {
     "platform": "github",
@@ -10,11 +10,11 @@
     "repo": "azure-cli",
     "subpath": null
   },
-  "install_count_30d": 29655,
+  "install_count_30d": 29834,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 81.8,
+    "overall": 88.0,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,7 +23,7 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 72.0,
+      "score": 100.0,
       "weight": 30,
       "key_factors": [
         "Code review practices",
@@ -31,12 +31,12 @@
       ]
     },
     "maintenance": {
-      "score": 95.1,
+      "score": 94.82853255223993,
       "weight": 25,
       "key_factors": []
     },
     "community": {
-      "score": 94.0,
+      "score": 100.0,
       "weight": 15,
       "key_factors": []
     },
@@ -48,7 +48,7 @@
       ]
     },
     "documentation": {
-      "score": 55.0,
+      "score": 25.0,
       "weight": 10,
       "key_factors": []
     },
@@ -63,13 +63,13 @@
       "owner": "Azure",
       "name": "azure-cli",
       "description": "Azure Command-Line Interface",
-      "stars": 4403,
-      "forks": 3310,
-      "open_issues": 3898,
-      "watchers": 4403,
+      "stars": 4458,
+      "forks": 3346,
+      "open_issues": 3919,
+      "watchers": 4458,
       "created_at": "2016-02-04T00:21:51Z",
-      "updated_at": "2026-01-03T00:06:58Z",
-      "pushed_at": "2026-01-02T07:56:31Z",
+      "updated_at": "2026-02-25T19:46:38Z",
+      "pushed_at": "2026-02-25T02:20:52Z",
       "default_branch": "dev",
       "license": "MIT",
       "language": "Python",
@@ -84,23 +84,23 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 412,
-      "active_contributors_6mo": 114,
-      "top_contributor_pct": 9.0,
+      "total_contributors": 411,
+      "active_contributors_6mo": 98,
+      "top_contributor_pct": 8.9,
       "contributors_over_5pct": 4,
-      "contributors_prev_6mo": 127,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 65,
-      "contributor_entropy": 6.43
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 98,
+      "contributor_entropy": 6.45
     },
     "commits": {
-      "last_commit_date": "2026-01-02T07:56:30Z",
-      "commits_last_6mo": 315,
-      "commits_last_year": 827
+      "last_commit_date": "2026-02-24T07:18:01Z",
+      "commits_last_6mo": 300,
+      "commits_last_year": 300
     },
     "issues": {
-      "open_issues": 219,
-      "closed_issues_6mo": 67,
+      "open_issues": 208,
+      "closed_issues_6mo": 54,
       "avg_response_time_hours": 0.0,
       "avg_close_time_hours": 118.0,
       "good_first_issue_count": 0,
@@ -108,16 +108,16 @@
     },
     "prs": {
       "open_prs": 300,
-      "merged_prs_6mo": 248,
+      "merged_prs_6mo": 239,
       "closed_prs_6mo": 300,
-      "stale_prs": 244,
+      "stale_prs": 226,
       "avg_merge_time_hours": null
     },
     "releases": {
-      "total_releases": 199,
+      "total_releases": 201,
       "releases_last_year": 16,
-      "last_release_date": "2025-12-17T02:40:11Z",
-      "latest_version": "azure-cli-2.66.2",
+      "last_release_date": "2026-02-03T03:43:40Z",
+      "latest_version": "azure-cli-2.83.0",
       "has_signed_releases": false,
       "prerelease_ratio": 0.06
     },
@@ -165,7 +165,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 13,
-      "recent_runs_pass_rate": 30.0,
+      "recent_runs_pass_rate": 60.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -174,98 +174,58 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 9,
-      "installation": 9,
-      "quick_start": 8,
-      "examples": 9,
-      "configuration": 7,
-      "troubleshooting": 8,
-      "overall": 8,
-      "summary": "Comprehensive, well-structured documentation with excellent examples and clear installation guidance, though some sections are primarily external links.",
-      "top_issue": "Configuration documentation relies heavily on external links rather than providing inline reference for common settings"
-    },
-    "security": {
-      "overall_score": 6,
-      "injection_risks": [
-        {
-          "file": "src/azure-cli/azure/cli/__main__.py",
-          "line": 123,
-          "severity": "high",
-          "description": "The subprocess.call function is used with shell=True, which can lead to command injection vulnerabilities if user input is not properly sanitized."
-        },
-        {
-          "file": "src/azure-cli/azure/cli/__main__.py",
-          "line": 134,
-          "severity": "high",
-          "description": "The subprocess.call function is used with shell=True, which can lead to command injection vulnerabilities if user input is not properly sanitized."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Command injection vulnerabilities in the subprocess.call function.",
-        "Lack of input validation for user input passed to the subprocess.call function."
-      ],
-      "summary": "The code has several security concerns, including command injection vulnerabilities and lack of input validation, which can lead to unintended behavior or security breaches if not properly addressed."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "API response inconsistencies (snake_case vs camelCase)",
-        "Authentication failures (az login issues)",
-        "Documentation errors and incomplete examples",
-        "Feature gaps requiring workarounds",
-        "Storage command failures with unclear error messages"
+        "2.83.0 Fails to cache logins for non-ARM resources",
+        "AzCopy Download is Broken Due to Dead MSFT Link"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Azure CLI maintains active maintainer engagement with auto-assignment and issue triage, but users report inconsistent API behaviors, authentication problems, and documentation gaps that indicate quality control challenges."
+      "summary": "The community health of the azure-cli (homebrew) package shows mixed sentiment with ongoing issues related to authentication and installation, indicating moderate frustration and a need for more active maintainer involvement."
     },
     "communication": null,
     "maintenance": {
-      "status": "abandoned",
+      "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [
-        "No commits in past 6 months despite last commit being very recent (2026-01-27)",
-        "3876 open issues with zero closed in past 6 months indicates no active issue triage",
-        "Zero active contributors in past 6 months",
-        "No merged pull requests in past 6 months",
-        "Unknown last release date suggests release process has stalled"
-      ],
+      "concerns": [],
       "positive_signals": [
-        "Recent commit activity (though appears to be isolated)"
+        "High number of recent commits (300 in the past 6 months)",
+        "Frequent releases (last release on 2026-02-03)",
+        "Active contributors (98 active in the past 6 months)"
       ],
-      "summary": "The package appears abandoned with no meaningful maintenance activity over the past 6 months despite a recent commit timestamp."
+      "summary": "The azure-cli package is actively maintained with a high number of recent commits, frequent releases, and an active community of contributors."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-27T01:01:15.091742+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 3.8,
-      "score_date": "2025-12-22T00:00:00Z",
+      "overall_score": 4.1,
+      "score_date": "2026-02-16T00:00:00Z",
       "checks": {
-        "Maintained": 10.0,
-        "CII-Best-Practices": 0.0,
         "Code-Review": 10.0,
+        "Maintained": 10.0,
         "Packaging": -1.0,
-        "Dangerous-Workflow": 10.0,
         "Security-Policy": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Dangerous-Workflow": 10.0,
         "Token-Permissions": 0.0,
         "License": 10.0,
         "Signed-Releases": 0.0,
-        "Branch-Protection": 1.0,
-        "SAST": 0.0,
         "Binary-Artifacts": 0.0,
-        "Vulnerabilities": 0.0,
+        "Branch-Protection": 1.0,
         "Fuzzing": 0.0,
+        "SAST": 0.0,
+        "Vulnerabilities": 4.0,
         "Pinned-Dependencies": 0.0
       },
       "code_review_score": 10.0,
@@ -278,9 +238,9 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 4402,
-      "forks": 3310,
-      "open_issues": 3896,
+      "stars": 4456,
+      "forks": 3342,
+      "open_issues": 3912,
       "license": "MIT",
       "description": "Azure Command-Line Interface",
       "oss_fuzz_line_count": null,
@@ -289,7 +249,7 @@
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-03T01:43:03.976143Z",
+    "fetched_at": "2026-02-25T21:14:09.340441Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -297,31 +257,22 @@
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "The README provides a comprehensive overview of the Azure CLI, but installation instructions and quick start examples could be more prominent and easily accessible.",
+    "doc_summary": "",
     "concerns": [
-      "high number of open issues",
-      "high number of open PRs",
-      "Docs: Installation instructions are not directly provided in the README, instead linking to an external guide.",
-      "Community: bug fixes",
-      "Community: feature requests",
-      "Security: Command injection vulnerabilities in the subprocess.call function.",
-      "Security: Lack of input validation for user input passed to the subprocess.call function.",
-      "Security: The subprocess.call function is used with shell=True, which can lead to command injection vulnerabilities if user input is not properly sanitized.",
-      "Security: The subprocess.call function is used with shell=True, which can lead to command injection vulnerabilities if user input is not properly sanitized.",
-      "Low OpenSSF Scorecard: 3.8/10",
+      "Community: 2.83.0 Fails to cache logins for non-ARM resources",
+      "Community: AzCopy Download is Broken Due to Dead MSFT Link",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "frequent commits",
-      "recent release",
-      "large number of active contributors",
-      "steady merge of PRs",
+      "High number of recent commits (300 in the past 6 months)",
+      "Frequent releases (last release on 2026-02-03)",
+      "Active contributors (98 active in the past 6 months)",
       "Actively maintained",
       "CI/CD configured"
     ],
     "community_sentiment": "mixed",
-    "scorecard_score": 3.8
+    "scorecard_score": 4.1
   },
-  "analyzed_at": "2026-01-03T01:45:14.929958Z",
-  "data_fetched_at": "2026-01-03T01:45:14.929959Z"
+  "analyzed_at": "2026-02-25T21:19:20.213599Z",
+  "data_fetched_at": "2026-02-25T21:19:20.213601Z"
 }
