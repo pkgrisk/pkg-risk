@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "kubernetes-cli",
   "description": "Kubernetes command-line interface",
-  "version": "1.35.0",
+  "version": "1.35.1",
   "homepage": "https://kubernetes.io/docs/reference/kubectl/",
   "repository": {
     "platform": "github",
@@ -10,11 +10,11 @@
     "repo": "kubernetes",
     "subpath": null
   },
-  "install_count_30d": 53392,
+  "install_count_30d": 49079,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 87.2,
+    "overall": 85.8,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,7 +23,7 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 82.0,
+      "score": 85.0,
       "weight": 30,
       "key_factors": [
         "Code review practices",
@@ -50,7 +50,7 @@
       ]
     },
     "documentation": {
-      "score": 55.5,
+      "score": 33.0,
       "weight": 10,
       "key_factors": []
     },
@@ -67,13 +67,13 @@
       "owner": "kubernetes",
       "name": "kubernetes",
       "description": "Production-Grade Container Scheduling and Management",
-      "stars": 119608,
-      "forks": 42082,
-      "open_issues": 2551,
-      "watchers": 119608,
+      "stars": 120755,
+      "forks": 42544,
+      "open_issues": 2660,
+      "watchers": 120755,
       "created_at": "2014-06-06T22:56:04Z",
-      "updated_at": "2026-01-02T20:01:51Z",
-      "pushed_at": "2025-12-31T01:48:34Z",
+      "updated_at": "2026-02-25T08:14:20Z",
+      "pushed_at": "2026-02-25T07:23:41Z",
       "default_branch": "master",
       "license": "Apache-2.0",
       "language": "Go",
@@ -90,46 +90,46 @@
     },
     "contributors": {
       "total_contributors": 348,
-      "active_contributors_6mo": 141,
-      "top_contributor_pct": 28.9,
+      "active_contributors_6mo": 60,
+      "top_contributor_pct": 29.2,
       "contributors_over_5pct": 1,
-      "contributors_prev_6mo": 10,
+      "contributors_prev_6mo": 4,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 134,
-      "contributor_entropy": 6.14
+      "first_time_contributors_6mo": 57,
+      "contributor_entropy": 6.13
     },
     "commits": {
-      "last_commit_date": "2025-12-31T01:48:34Z",
-      "commits_last_6mo": 979,
-      "commits_last_year": 1000
+      "last_commit_date": "2026-02-25T07:23:41Z",
+      "commits_last_6mo": 295,
+      "commits_last_year": 300
     },
     "issues": {
-      "open_issues": 92,
-      "closed_issues_6mo": 59,
-      "avg_response_time_hours": 0.0,
-      "avg_close_time_hours": 23.3,
-      "good_first_issue_count": 0,
+      "open_issues": 88,
+      "closed_issues_6mo": 52,
+      "avg_response_time_hours": 1.8,
+      "avg_close_time_hours": 38.2,
+      "good_first_issue_count": 2,
       "regression_issue_count": 0
     },
     "prs": {
       "open_prs": 300,
-      "merged_prs_6mo": 200,
+      "merged_prs_6mo": 214,
       "closed_prs_6mo": 300,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
     "releases": {
       "total_releases": 500,
-      "releases_last_year": 62,
-      "last_release_date": "2025-12-17T20:01:55Z",
-      "latest_version": "v1.35.0",
+      "releases_last_year": 57,
+      "last_release_date": "2026-02-10T19:03:38Z",
+      "latest_version": "v1.35.1",
       "has_signed_releases": false,
       "prerelease_ratio": 0.31
     },
     "security": {
       "has_security_md": false,
       "has_security_policy": false,
-      "signed_commits_pct": 63.0,
+      "signed_commits_pct": 66.0,
       "has_dependabot": false,
       "has_codeql": false,
       "has_security_ci": false,
@@ -170,7 +170,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 2,
-      "recent_runs_pass_rate": 83.3,
+      "recent_runs_pass_rate": 74.0,
       "has_tests_workflow": false,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -179,89 +179,51 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 9,
-      "installation": 3,
-      "quick_start": 2,
-      "examples": 1,
-      "configuration": 1,
-      "troubleshooting": 4,
-      "overall": 3,
-      "summary": "Excellent clarity on what Kubernetes is, but severely lacking practical usage instructions for the CLI tool itself.",
-      "top_issue": "This is the Kubernetes core project README, not kubernetes-cli documentation - it shows how to build K8s from source but provides no information on installing or using kubectl (the CLI), which is what Homebrew users actually need."
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "cmd/cloud-controller-manager/main.go",
-          "line": 34,
-          "severity": "medium",
-          "description": "The cloudConfig.CloudConfigFile variable is used to initialize the cloud provider, but its value comes from an external configuration file. If this file can be tampered with or contains user-controlled data, it may lead to command injection vulnerabilities."
-        },
-        {
-          "file": "cmd/import-boss/main.go",
-          "line": 63,
-          "severity": "low",
-          "description": "The pflag.Parse() function is used to parse command-line flags. While this is a common and safe practice, it's essential to ensure that the parsed flags are properly validated and sanitized before use."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The code has some potential security concerns related to input validation and command injection risks, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "neutral",
+      "frustration_level": 3,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Performance issues (CPU usage from iptables configuration)",
-        "Network connectivity and routing problems (LoadBalancer service issues, Tailscale VPN timeouts)",
-        "Pod lifecycle management issues (deletion after restart with mounted secrets/configmaps)",
-        "CEL validation rule cost budgeting constraints blocking legitimate use cases"
+        "Omitting patch version in go directives"
       ],
       "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Kubernetes maintains moderate community health with responsive maintainers, but shows concerning patterns of stale/rotten issues, minimal engagement on several open problems, and a mix of critical bugs alongside feature requests that lack active prioritization."
+      "abandonment_signals": false,
+      "summary": "The community health appears neutral with a moderate level of engagement from maintainers. There is one open issue regarding the omission of patch versions in Go directives, indicating some interest in modernizing the project's build configuration."
     },
     "communication": {
       "helpfulness": 8,
-      "clarity": 9,
-      "patience": 7,
-      "technical_depth": 6,
-      "welcomingness": 8,
-      "communication_style": "good",
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 5,
+      "welcomingness": 4,
+      "communication_style": "adequate",
       "red_flags": [
-        "lack of human interaction",
-        "over-reliance on automated responses"
+        "Lack of detailed explanations for 'why' behind decisions",
+        "Some responses cut off or are incomplete"
       ],
-      "summary": "The maintainer responses are generally helpful and clear, but could benefit from more human interaction and technical depth to fully support contributors."
+      "summary": "The maintainer responses provide clear instructions on how to rerun failed tests and list the necessary approvals, but they lack depth in explaining the reasons behind certain requirements and could be more welcoming to new contributors."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [
-        "Zero commits in the past 6 months despite active issue tracking",
-        "2528 open issues with no recent closures indicate unaddressed backlog",
-        "No merged PRs in past 6 months suggests no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date prevents assessment of release cadence"
-      ],
+      "concerns": [],
       "positive_signals": [
-        "Issues are still being tracked and reported",
-        "Recent activity on repository (last commit 2026-01-14) shows some monitoring"
+        "High number of recent commits (295 in the past 6 months)",
+        "Frequent releases (last release on 2026-02-10)",
+        "Active contributors (60 active in the past 6 months)"
       ],
-      "summary": "kubernetes-cli is in stale maintenance status with no development activity, unresolved issues, and unmerged PRs indicating the project is not actively maintained."
+      "summary": "The kubernetes-cli package is actively maintained with a high number of recent commits, frequent releases, and an active community of contributors."
     },
     "changelog": {
       "breaking_changes_marked": false,
       "has_migration_guides": false,
-      "well_categorized": false,
-      "appears_complete": true,
-      "clarity_score": 2,
-      "overall_score": 3,
-      "summary": "The changelog appears to be a list of links to individual changelogs, but lacks clear marking of breaking changes, migration guides, and categorization."
+      "well_categorized": true,
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 6,
+      "summary": "The changelog is well-categorized but lacks breaking changes and migration guides, making it less user-friendly."
     },
     "governance": {
       "has_succession_plan": false,
@@ -269,33 +231,32 @@
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
-      "summary": "The governance documentation for the kubernetes-cli package lacks a clear succession plan and decision-making process, posing a high bus factor risk."
+      "summary": "The provided documentation does not address succession planning, decision-making processes, or multiple maintainers. It only mentions a path for contributors to become maintainers through the Kubernetes community guidelines."
     },
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T15:59:45.523619+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 7.7,
-      "score_date": "2025-12-22T00:00:00Z",
+      "overall_score": 7.6,
+      "score_date": "2026-02-16T00:00:00Z",
       "checks": {
         "Code-Review": 10.0,
         "Maintained": 10.0,
         "Packaging": -1.0,
+        "Token-Permissions": -1.0,
+        "Security-Policy": 10.0,
+        "Dangerous-Workflow": -1.0,
         "CII-Best-Practices": 5.0,
         "License": 10.0,
-        "Dangerous-Workflow": -1.0,
-        "Token-Permissions": -1.0,
-        "Branch-Protection": -1.0,
         "Signed-Releases": -1.0,
-        "Security-Policy": 10.0,
-        "SAST": 0.0,
+        "Branch-Protection": -1.0,
         "Fuzzing": 10.0,
         "Binary-Artifacts": 10.0,
-        "Pinned-Dependencies": 0.0,
-        "Vulnerabilities": 8.0
+        "SAST": 0.0,
+        "Pinned-Dependencies": 0.0
       },
       "code_review_score": 10.0,
       "maintained_score": 10.0,
@@ -307,9 +268,9 @@
       "cii_badge": true
     },
     "project_metrics": {
-      "stars": 119537,
-      "forks": 42060,
-      "open_issues": 2548,
+      "stars": 120684,
+      "forks": 42521,
+      "open_issues": 2654,
       "license": "Apache-2.0",
       "description": "Production-Grade Container Scheduling and Management",
       "oss_fuzz_line_count": 106112,
@@ -318,7 +279,7 @@
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-02T23:06:42.710898Z",
+    "fetched_at": "2026-02-25T09:41:16.201168Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -326,33 +287,29 @@
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "The README provides a good introduction to Kubernetes, but lacks clear installation instructions and examples for common use cases.",
+    "doc_summary": "",
     "concerns": [
-      "Docs: Lack of clear installation instructions and quick start guide",
-      "Community: permanent and transient errors",
-      "Community: image pull failures",
-      "Communication: lack of human interaction",
-      "Communication: over-reliance on automated responses",
+      "Community: Omitting patch version in go directives",
+      "Communication: Lack of detailed explanations for 'why' behind decisions",
+      "Communication: Some responses cut off or are incomplete",
       "Governance: High bus factor risk identified",
       "Dangerous CI/CD workflow patterns detected",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (979)",
-      "Recent last commit (2025-12-31)",
-      "Frequent releases (last release on 2025-12-17)",
-      "Large number of contributors active in the past 6 months (141)",
-      "Steady issue and PR resolution rate",
+      "High number of recent commits (295 in the past 6 months)",
+      "Frequent releases (last release on 2026-02-10)",
+      "Active contributors (60 active in the past 6 months)",
       "Actively maintained",
       "CI/CD configured",
-      "OpenSSF Scorecard: 7.7/10",
+      "OpenSSF Scorecard: 7.6/10",
       "Has CII Best Practices badge",
       "Fuzzing enabled"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "good",
-    "scorecard_score": 7.7
+    "communication_style": "adequate",
+    "scorecard_score": 7.6
   },
-  "analyzed_at": "2026-01-02T23:10:00.775491Z",
-  "data_fetched_at": "2026-01-02T23:10:00.775492Z"
+  "analyzed_at": "2026-02-25T09:46:25.561466Z",
+  "data_fetched_at": "2026-02-25T09:46:25.561468Z"
 }
