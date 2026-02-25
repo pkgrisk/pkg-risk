@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "git",
   "description": "Distributed revision control system",
-  "version": "2.52.0",
+  "version": "2.53.0",
   "homepage": "https://git-scm.com",
   "repository": {
     "platform": "github",
@@ -10,14 +10,14 @@
     "repo": "git",
     "subpath": null
   },
-  "install_count_30d": 140560,
+  "install_count_30d": 122034,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 76.6,
-    "grade": "C",
+    "overall": 84.3,
+    "grade": "B",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "approved",
     "update_urgency": "low",
     "confidence": "medium",
     "confidence_factors": [
@@ -25,7 +25,7 @@
     ],
     "project_age_band": "legacy",
     "security": {
-      "score": 56.0,
+      "score": 80.0,
       "weight": 30,
       "key_factors": [
         "Weak code review",
@@ -55,7 +55,7 @@
       "key_factors": []
     },
     "stability": {
-      "score": 78.0,
+      "score": 83.0,
       "weight": 10,
       "key_factors": [
         "Fuzzing enabled"
@@ -67,13 +67,13 @@
       "owner": "git",
       "name": "git",
       "description": "Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.",
-      "stars": 58364,
-      "forks": 27268,
-      "open_issues": 324,
-      "watchers": 58364,
+      "stars": 59310,
+      "forks": 27561,
+      "open_issues": 345,
+      "watchers": 59310,
       "created_at": "2008-07-23T14:21:26Z",
-      "updated_at": "2026-01-02T21:04:01Z",
-      "pushed_at": "2026-01-01T15:49:56Z",
+      "updated_at": "2026-02-25T09:39:35Z",
+      "pushed_at": "2026-02-24T23:43:13Z",
       "default_branch": "master",
       "license": "NOASSERTION",
       "language": "C",
@@ -89,18 +89,18 @@
     },
     "contributors": {
       "total_contributors": 425,
-      "active_contributors_6mo": 63,
+      "active_contributors_6mo": 45,
       "top_contributor_pct": 37.9,
       "contributors_over_5pct": 2,
       "contributors_prev_6mo": 0,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 63,
+      "first_time_contributors_6mo": 45,
       "contributor_entropy": 5.05
     },
     "commits": {
-      "last_commit_date": "2025-12-29T08:43:28Z",
-      "commits_last_6mo": 997,
-      "commits_last_year": 1000
+      "last_commit_date": "2026-02-20T18:28:05Z",
+      "commits_last_6mo": 300,
+      "commits_last_year": 300
     },
     "issues": {
       "open_issues": 0,
@@ -113,7 +113,7 @@
     "prs": {
       "open_prs": 300,
       "merged_prs_6mo": 0,
-      "closed_prs_6mo": 57,
+      "closed_prs_6mo": 72,
       "stale_prs": 235,
       "avg_merge_time_hours": null
     },
@@ -168,11 +168,11 @@
     },
     "ci": {
       "has_github_actions": true,
-      "workflow_count": 8,
+      "workflow_count": 10,
       "recent_runs_pass_rate": 50.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
-      "has_security_workflow": false,
+      "has_security_workflow": true,
       "has_release_workflow": false,
       "has_multi_platform": true
     }
@@ -180,83 +180,66 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 4,
-      "quick_start": 6,
-      "examples": 3,
-      "configuration": 2,
-      "troubleshooting": 1,
+      "installation": 6,
+      "quick_start": 5,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 3,
       "overall": 5,
-      "summary": "Clear project description but relies heavily on external documentation files and man pages rather than providing inline guidance.",
-      "top_issue": "Installation instructions are deferred to a separate INSTALL file, and there are no examples of actual git commands in the README itself."
+      "summary": "The README provides essential information and resources but lacks explicit installation instructions, quick start examples, configuration details, and troubleshooting.",
+      "top_issue": "Lack of explicit installation instructions and quick start examples."
     },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "merge-ort-wrappers.c",
-          "line": 123,
-          "severity": "medium",
-          "description": "The function get_ref() uses deref_tag() which can potentially lead to a path traversal vulnerability if the input is not properly sanitized."
-        },
-        {
-          "file": "apply.h",
-          "line": 245,
-          "severity": "low",
-          "description": "The function parse_git_diff_header() does not seem to have any obvious injection risks, but it's always good to validate user input when parsing headers."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential path traversal vulnerability in get_ref() function.",
-        "Missing input validation for 'prefix' parameter in init_apply_state()."
-      ],
-      "summary": "The code has some potential security issues, including a possible path traversal vulnerability and missing input validation, but overall it seems to be well-structured and secure."
-    },
+    "security": null,
     "sentiment": null,
-    "communication": null,
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 9,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "good",
+      "red_flags": [
+        "Some responses could be more detailed for complex issues",
+        "Lack of specific guidance in some cases"
+      ],
+      "summary": "The maintainer responses are generally helpful, clear, and patient. They encourage new contributors but sometimes lack deep technical explanations for complex issues."
+    },
     "maintenance": {
-      "status": "stale",
+      "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-13)",
-        "328 open issues with no activity suggests backlog is not being addressed",
-        "Zero closed issues in past 6 months indicates no bug fixes or maintenance",
-        "No merged PRs in past 6 months shows no active development or code review",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process may be stalled"
-      ],
+      "concerns": [],
       "positive_signals": [
-        "Recent commit activity (2026-01-13) suggests the repository still exists and has some activity"
+        "High number of commits in the past 6 months",
+        "No open issues, indicating no unresolved problems",
+        "Active contributors"
       ],
-      "summary": "The git package appears stale with no maintenance activity over the past 6 months despite a recent commit, suggesting the project may have been abandoned or is in hibernation."
+      "summary": "The package is actively maintained with a high volume of recent commits and active contributors, and there are no open issues."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T15:36:07.701400+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 5.7,
-      "score_date": "2025-12-22T00:00:00Z",
+      "overall_score": 5.2,
+      "score_date": "2026-02-16T00:00:00Z",
       "checks": {
-        "Maintained": 10.0,
-        "Code-Review": 0.0,
         "Security-Policy": 10.0,
-        "Packaging": -1.0,
+        "Code-Review": 0.0,
         "Dangerous-Workflow": 10.0,
-        "License": 9.0,
-        "CII-Best-Practices": 2.0,
+        "Packaging": -1.0,
+        "Maintained": 10.0,
         "Token-Permissions": 0.0,
-        "Branch-Protection": 0.0,
-        "Signed-Releases": -1.0,
+        "CII-Best-Practices": 2.0,
+        "License": 9.0,
         "SAST": 0.0,
+        "Signed-Releases": -1.0,
         "Binary-Artifacts": 10.0,
         "Fuzzing": 10.0,
-        "Vulnerabilities": 10.0,
+        "Branch-Protection": 0.0,
         "Pinned-Dependencies": 0.0
       },
       "code_review_score": 0.0,
@@ -269,18 +252,18 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 58362,
-      "forks": 27267,
-      "open_issues": 323,
+      "stars": 59300,
+      "forks": 27560,
+      "open_issues": 345,
       "license": "non-standard",
       "description": "Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.",
-      "oss_fuzz_line_count": 124322,
-      "oss_fuzz_line_cover_count": 2499
+      "oss_fuzz_line_count": 124837,
+      "oss_fuzz_line_cover_count": 2510
     },
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-02T21:19:42.187712Z",
+    "fetched_at": "2026-02-25T10:28:36.705330Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -288,25 +271,24 @@
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "The documentation is comprehensive but lacks clear and concise instructions for new users, making it difficult to quickly get started with the package.",
+    "doc_summary": "The README provides essential information and resources but lacks explicit installation instructions, quick start examples, configuration details, and troubleshooting.",
     "concerns": [
-      "high number of open PRs",
-      "unknown last release",
-      "Docs: Lack of a clear quick start guide or basic usage example",
-      "Security: Potential path traversal vulnerability in get_ref() function.",
-      "Security: Missing input validation for 'prefix' parameter in init_apply_state().",
+      "Docs: Lack of explicit installation instructions and quick start examples.",
+      "Communication: Some responses could be more detailed for complex issues",
+      "Communication: Lack of specific guidance in some cases",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "frequent commits",
-      "many active contributors",
-      "no open issues",
+      "High number of commits in the past 6 months",
+      "No open issues, indicating no unresolved problems",
+      "Active contributors",
       "Actively maintained",
       "CI/CD configured",
       "Fuzzing enabled"
     ],
-    "scorecard_score": 5.7
+    "communication_style": "good",
+    "scorecard_score": 5.2
   },
-  "analyzed_at": "2026-01-02T21:21:19.633702Z",
-  "data_fetched_at": "2026-01-02T21:21:19.633703Z"
+  "analyzed_at": "2026-02-25T10:33:40.159207Z",
+  "data_fetched_at": "2026-02-25T10:33:40.159209Z"
 }

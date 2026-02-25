@@ -1,0 +1,943 @@
+{
+  "ecosystem": "npm",
+  "name": "@azure/core-auth",
+  "description": "Provides low-level interfaces and helper methods for authentication in Azure SDK",
+  "version": "1.10.1",
+  "homepage": "https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/core/core-auth/README.md",
+  "repository": {
+    "platform": "github",
+    "owner": "Azure",
+    "repo": "azure-sdk-for-js",
+    "subpath": null
+  },
+  "install_count_30d": 46204730,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 87.9,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "high",
+    "confidence_factors": [],
+    "project_age_band": "legacy",
+    "security": {
+      "score": 100.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Proper token permissions"
+      ]
+    },
+    "maintenance": {
+      "score": 95.1,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
+    },
+    "documentation": {
+      "score": 40.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 56.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "Azure",
+      "name": "azure-sdk-for-js",
+      "description": "This repository is for active development of the Azure SDK for JavaScript (NodeJS & Browser). For consumers of the SDK we recommend visiting our public developer docs at https://docs.microsoft.com/javascript/azure/ or our versioned developer docs at https://azure.github.io/azure-sdk-for-js. ",
+      "stars": 2277,
+      "forks": 1342,
+      "open_issues": 703,
+      "watchers": 2277,
+      "created_at": "2017-10-25T18:44:09Z",
+      "updated_at": "2026-02-25T02:34:47Z",
+      "pushed_at": "2026-02-25T10:08:45Z",
+      "default_branch": "main",
+      "license": "MIT",
+      "language": "TypeScript",
+      "topics": [
+        "azure",
+        "azure-sdk",
+        "browser",
+        "hacktoberfest",
+        "javascript",
+        "nodejs",
+        "typescript"
+      ],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 397,
+      "active_contributors_6mo": 39,
+      "top_contributor_pct": 17.3,
+      "contributors_over_5pct": 3,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 39,
+      "contributor_entropy": 5.64
+    },
+    "commits": {
+      "last_commit_date": "2026-02-25T02:34:41Z",
+      "commits_last_6mo": 300,
+      "commits_last_year": 300
+    },
+    "issues": {
+      "open_issues": 163,
+      "closed_issues_6mo": 30,
+      "avg_response_time_hours": 14.9,
+      "avg_close_time_hours": 38.6,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 142,
+      "merged_prs_6mo": 245,
+      "closed_prs_6mo": 300,
+      "stale_prs": 26,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 500,
+      "releases_last_year": 500,
+      "last_release_date": "2026-02-25T01:06:14Z",
+      "latest_version": "@azure/ai-projects_2.0.0-beta.5",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.54
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": false,
+      "has_snyk": false,
+      "has_renovate": false,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 8657,
+      "has_license": true,
+      "has_changelog": false,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": true,
+      "has_governance": false,
+      "has_docs_dir": true,
+      "has_examples_dir": true,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 10,
+      "recent_runs_pass_rate": 6.5,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": false,
+      "has_release_workflow": true,
+      "has_multi_platform": false
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": null,
+    "sentiment": {
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Large code size and memory footprint of Azure SQL Management SDK",
+        "Redundant management samples publication"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community is raising concerns about the efficiency and redundancy in the package, indicating a need for improvements but no signs of abandonment."
+    },
+    "communication": {
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 5,
+      "welcomingness": 7,
+      "communication_style": "good",
+      "red_flags": [
+        "Some responses are brief and could be more detailed",
+        "Repetitive instructions without additional context"
+      ],
+      "summary": "The maintainer responses provide helpful guidance but could benefit from increased clarity, technical depth, and patience in handling repeated questions."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Frequent commits (300 in the past 6 months)",
+        "Regular releases",
+        "High number of merged PRs (245 in the past 6 months)",
+        "Active contributors (39 in the past 6 months)"
+      ],
+      "summary": "The package @azure/core-auth is actively maintained with frequent commits, regular releases, and a high volume of active contributions."
+    },
+    "changelog": null,
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "medium",
+      "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, but lacks details on succession planning and indicates only one maintainer with merge rights."
+    },
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": {
+    "lifecycle_scripts": {
+      "has_preinstall": false,
+      "has_postinstall": false,
+      "has_prepare": false,
+      "has_prepublish": false,
+      "has_install": false,
+      "scripts": {},
+      "suspicious_patterns": [],
+      "risk_score": 0,
+      "risk_factors": [],
+      "has_obfuscation": false,
+      "has_network_calls": false,
+      "has_file_system_access": false,
+      "has_process_spawn": false,
+      "has_credential_access": false,
+      "has_env_access": false,
+      "installs_runtime": false
+    },
+    "tarball": {
+      "tarball_url": "https://registry.npmjs.org/@azure/core-auth/-/core-auth-1.10.1.tgz",
+      "tarball_size_bytes": 14062,
+      "file_count": 92,
+      "files": [
+        {
+          "path": "LICENSE",
+          "size_bytes": 1074,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureKeyCredential.js",
+          "size_bytes": 978,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureKeyCredential.js",
+          "size_bytes": 1134,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureKeyCredential.js",
+          "size_bytes": 978,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureKeyCredential.js",
+          "size_bytes": 978,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureNamedKeyCredential.js",
+          "size_bytes": 1922,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureNamedKeyCredential.js",
+          "size_bytes": 2146,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureNamedKeyCredential.js",
+          "size_bytes": 1922,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureNamedKeyCredential.js",
+          "size_bytes": 1922,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureSASCredential.js",
+          "size_bytes": 1634,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureSASCredential.js",
+          "size_bytes": 1833,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureSASCredential.js",
+          "size_bytes": 1634,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureSASCredential.js",
+          "size_bytes": 1634,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/index.js",
+          "size_bytes": 382,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/index.js",
+          "size_bytes": 1690,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/index.js",
+          "size_bytes": 382,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/index.js",
+          "size_bytes": 382,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/keyCredential.js",
+          "size_bytes": 460,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/keyCredential.js",
+          "size_bytes": 580,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/keyCredential.js",
+          "size_bytes": 460,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/keyCredential.js",
+          "size_bytes": 460,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/tokenCredential.js",
+          "size_bytes": 1303,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/tokenCredential.js",
+          "size_bytes": 1478,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/tokenCredential.js",
+          "size_bytes": 1303,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/tokenCredential.js",
+          "size_bytes": 1303,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/tracing.js",
+          "size_bytes": 121,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/tracing.js",
+          "size_bytes": 187,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/tracing.js",
+          "size_bytes": 121,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/tracing.js",
+          "size_bytes": 121,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/package.json",
+          "size_bytes": 23,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/package.json",
+          "size_bytes": 25,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/package.json",
+          "size_bytes": 23,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/package.json",
+          "size_bytes": 23,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "package.json",
+          "size_bytes": 3529,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/tsdoc-metadata.json",
+          "size_bytes": 330,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureKeyCredential.js.map",
+          "size_bytes": 1598,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureKeyCredential.js.map",
+          "size_bytes": 1609,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureKeyCredential.js.map",
+          "size_bytes": 1598,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureKeyCredential.js.map",
+          "size_bytes": 1598,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureNamedKeyCredential.js.map",
+          "size_bytes": 3438,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureNamedKeyCredential.js.map",
+          "size_bytes": 3431,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureNamedKeyCredential.js.map",
+          "size_bytes": 3438,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureNamedKeyCredential.js.map",
+          "size_bytes": 3438,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureSASCredential.js.map",
+          "size_bytes": 2778,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureSASCredential.js.map",
+          "size_bytes": 2771,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureSASCredential.js.map",
+          "size_bytes": 2778,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureSASCredential.js.map",
+          "size_bytes": 2778,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/index.js.map",
+          "size_bytes": 1041,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/index.js.map",
+          "size_bytes": 1023,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/index.js.map",
+          "size_bytes": 1041,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/index.js.map",
+          "size_bytes": 1041,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/keyCredential.js.map",
+          "size_bytes": 1037,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/keyCredential.js.map",
+          "size_bytes": 1021,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/keyCredential.js.map",
+          "size_bytes": 1037,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/keyCredential.js.map",
+          "size_bytes": 1037,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/tokenCredential.js.map",
+          "size_bytes": 5409,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/tokenCredential.js.map",
+          "size_bytes": 5433,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/tokenCredential.js.map",
+          "size_bytes": 5409,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/tokenCredential.js.map",
+          "size_bytes": 5409,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/tracing.js.map",
+          "size_bytes": 1143,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/tracing.js.map",
+          "size_bytes": 1144,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/tracing.js.map",
+          "size_bytes": 1143,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/tracing.js.map",
+          "size_bytes": 1143,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 3112,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureKeyCredential.d.ts",
+          "size_bytes": 840,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureKeyCredential.d.ts",
+          "size_bytes": 840,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureKeyCredential.d.ts",
+          "size_bytes": 840,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureKeyCredential.d.ts",
+          "size_bytes": 840,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureNamedKeyCredential.d.ts",
+          "size_bytes": 1668,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureNamedKeyCredential.d.ts",
+          "size_bytes": 1668,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureNamedKeyCredential.d.ts",
+          "size_bytes": 1668,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureNamedKeyCredential.d.ts",
+          "size_bytes": 1668,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/azureSASCredential.d.ts",
+          "size_bytes": 1372,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/azureSASCredential.d.ts",
+          "size_bytes": 1372,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/azureSASCredential.d.ts",
+          "size_bytes": 1372,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/azureSASCredential.d.ts",
+          "size_bytes": 1372,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/index.d.ts",
+          "size_bytes": 576,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/index.d.ts",
+          "size_bytes": 576,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/index.d.ts",
+          "size_bytes": 576,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/index.d.ts",
+          "size_bytes": 576,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/keyCredential.d.ts",
+          "size_bytes": 474,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/keyCredential.d.ts",
+          "size_bytes": 474,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/keyCredential.d.ts",
+          "size_bytes": 474,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/keyCredential.d.ts",
+          "size_bytes": 474,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/tokenCredential.d.ts",
+          "size_bytes": 4014,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/tokenCredential.d.ts",
+          "size_bytes": 4014,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/tokenCredential.d.ts",
+          "size_bytes": 4014,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/tokenCredential.d.ts",
+          "size_bytes": 4014,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/browser/tracing.d.ts",
+          "size_bytes": 846,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/commonjs/tracing.d.ts",
+          "size_bytes": 846,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/esm/tracing.d.ts",
+          "size_bytes": 846,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "dist/react-native/tracing.d.ts",
+          "size_bytes": 846,
+          "is_executable": false,
+          "is_binary": false
+        }
+      ],
+      "files_not_in_repo": [],
+      "suspicious_files": [],
+      "has_native_code": false,
+      "has_minified_js": false,
+      "minified_files": [],
+      "suspicious_patterns": [],
+      "risk_score": 0
+    },
+    "version_diff": {
+      "current_version": "1.10.1",
+      "previous_version": "1.10.1-alpha.20250904.2",
+      "comparison_available": true,
+      "files_added": [],
+      "files_removed": [],
+      "files_modified": [],
+      "scripts_changed": false,
+      "scripts_added": [],
+      "dependencies_added": [],
+      "dependencies_removed": [],
+      "size_change_bytes": 0,
+      "size_change_percent": 0.0,
+      "is_major_bump": false,
+      "is_minor_bump": false,
+      "is_patch_bump": false,
+      "version_jump_suspicious": false,
+      "days_since_previous": null,
+      "published_without_repo_commits": false,
+      "risk_score": 0,
+      "risk_factors": []
+    },
+    "publishing": {
+      "has_provenance": false,
+      "provenance_verified": false,
+      "publisher_username": "microsoft1es",
+      "publisher_is_listed_maintainer": true,
+      "maintainer_count": 2,
+      "maintainers": [
+        "azure-sdk",
+        "microsoft1es"
+      ],
+      "recent_maintainer_change": false,
+      "new_maintainers": [],
+      "first_publish_by_user": false,
+      "publish_frequency_anomaly": false,
+      "risk_score": 10,
+      "risk_factors": []
+    },
+    "overall_risk_score": 10,
+    "risk_level": "low",
+    "all_suspicious_patterns": [],
+    "critical_findings": [],
+    "behavioral_flags": []
+  },
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.9,
+      "score_date": "2026-02-16T00:00:00Z",
+      "checks": {
+        "Code-Review": 10.0,
+        "Maintained": 10.0,
+        "Packaging": -1.0,
+        "CII-Best-Practices": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "License": 10.0,
+        "Token-Permissions": 9.0,
+        "Security-Policy": 10.0,
+        "Signed-Releases": -1.0,
+        "Branch-Protection": 5.0,
+        "Binary-Artifacts": 9.0,
+        "SAST": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Fuzzing": 0.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 5.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 9.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 2275,
+      "forks": 1341,
+      "open_issues": 699,
+      "license": "MIT",
+      "description": "This repository is for active development of the Azure SDK for JavaScript (NodeJS & Browser). For consumers of the SDK we recommend visiting our public developer docs at https://docs.microsoft.com/javascript/azure/ or our versioned developer docs at https://azure.github.io/azure-sdk-for-js. ",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": {
+      "direct_count": 3,
+      "transitive_count": 6,
+      "vulnerable_direct": 0,
+      "vulnerable_transitive": 0,
+      "max_depth": 5
+    },
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-25T10:19:27.109054Z",
+    "sources_available": [
+      "deps.dev:version",
+      "deps.dev:dependencies",
+      "deps.dev:project"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "has SECURITY.md",
+    "doc_summary": "",
+    "concerns": [
+      "Community: Large code size and memory footprint of Azure SQL Management SDK",
+      "Community: Redundant management samples publication",
+      "Communication: Some responses are brief and could be more detailed",
+      "Communication: Repetitive instructions without additional context"
+    ],
+    "highlights": [
+      "Frequent commits (300 in the past 6 months)",
+      "Regular releases",
+      "High number of merged PRs (245 in the past 6 months)",
+      "Active contributors (39 in the past 6 months)",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "mixed",
+    "communication_style": "good",
+    "supply_chain_risk": "low",
+    "scorecard_score": 6.9,
+    "dependency_count": 9
+  },
+  "analyzed_at": "2026-02-25T10:24:36.776711Z",
+  "data_fetched_at": "2026-02-25T10:24:36.776713Z"
+}
