@@ -10,20 +10,20 @@
     "repo": "mbedtls",
     "subpath": null
   },
-  "install_count_30d": 44627,
+  "install_count_30d": 9092,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 82.3,
+    "overall": 89.5,
     "grade": "B",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "approved",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 66.0,
+      "score": 90.0,
       "weight": 30,
       "key_factors": []
     },
@@ -58,13 +58,13 @@
       "owner": "Mbed-TLS",
       "name": "mbedtls",
       "description": "An open source, portable, easy to use, readable and flexible TLS library, and reference implementation of the PSA Cryptography API. Releases are on a varying cadence, typically around 3 - 6 months between releases.",
-      "stars": 6371,
-      "forks": 2824,
-      "open_issues": 1571,
-      "watchers": 6371,
+      "stars": 6488,
+      "forks": 2841,
+      "open_issues": 1583,
+      "watchers": 6488,
       "created_at": "2012-11-14T13:13:13Z",
-      "updated_at": "2026-01-02T21:44:46Z",
-      "pushed_at": "2026-01-02T21:44:42Z",
+      "updated_at": "2026-02-25T12:12:55Z",
+      "pushed_at": "2026-02-24T10:08:30Z",
       "default_branch": "development",
       "license": "NOASSERTION",
       "language": "C",
@@ -81,33 +81,33 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 332,
-      "active_contributors_6mo": 14,
+      "total_contributors": 333,
+      "active_contributors_6mo": 13,
       "top_contributor_pct": 19.7,
       "contributors_over_5pct": 5,
-      "contributors_prev_6mo": 13,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 4,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 13,
       "contributor_entropy": 4.67
     },
     "commits": {
-      "last_commit_date": "2026-01-02T20:14:58Z",
-      "commits_last_6mo": 559,
-      "commits_last_year": 1000
+      "last_commit_date": "2026-02-24T08:36:39Z",
+      "commits_last_6mo": 298,
+      "commits_last_year": 300
     },
     "issues": {
-      "open_issues": 219,
-      "closed_issues_6mo": 110,
-      "avg_response_time_hours": 4.3,
-      "avg_close_time_hours": 119.5,
+      "open_issues": 208,
+      "closed_issues_6mo": 97,
+      "avg_response_time_hours": 55.5,
+      "avg_close_time_hours": 339.9,
       "good_first_issue_count": 4,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 296,
-      "merged_prs_6mo": 131,
-      "closed_prs_6mo": 167,
-      "stale_prs": 274,
+      "open_prs": 300,
+      "merged_prs_6mo": 122,
+      "closed_prs_6mo": 149,
+      "stale_prs": 275,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -173,88 +173,50 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 7,
+      "installation": 6,
       "quick_start": 4,
-      "examples": 2,
-      "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "Well-structured technical documentation that explains build requirements thoroughly but lacks practical usage examples and quick-start code.",
-      "top_issue": "No code examples showing how to actually use the library for common tasks like TLS connections or certificate handling - only build/configuration instructions"
+      "examples": 5,
+      "configuration": 9,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "The README provides clear and detailed technical information but lacks user-friendly sections like quick start examples and troubleshooting guides.",
+      "top_issue": "Lack of a dedicated installation section and absence of usage examples."
     },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "programs/x509/cert_app.c",
-          "line": 234,
-          "severity": "medium",
-          "description": "Potential command injection risk through 'server_port' parameter, which is converted to an integer using atoi(). However, the input is not validated for potential malicious characters."
-        },
-        {
-          "file": "programs/x509/cert_app.c",
-          "line": 245,
-          "severity": "medium",
-          "description": "Potential command injection risk through 'debug_level' parameter, which is converted to an integer using atoi(). However, the input is not validated for potential malicious characters."
-        },
-        {
-          "file": "programs/x509/cert_app.c",
-          "line": 256,
-          "severity": "medium",
-          "description": "Potential command injection risk through 'permissive' parameter, which is converted to an integer using atoi(). However, the input is not validated for potential malicious characters."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential command injection risks through various parameters",
-        "Lack of validation for certain input parameters"
-      ],
-      "summary": "The code has some security concerns, including potential command injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
-    },
+    "security": null,
     "sentiment": {
-      "sentiment": "mixed",
+      "sentiment": "neutral",
       "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Build system issues (cmake with ENABLE_PROGRAMS=OFF failing)",
-        "API compatibility concerns between major versions (4.x breaking changes)",
-        "Need for better invariant testing in public key contexts"
+        "Lack of available fields in structures",
+        "Code complexity due to non-uniform PK contexts"
       ],
       "praise_themes": [
-        "Proactive refactoring and code simplification efforts",
-        "Attention to internal invariants and consistency",
-        "Engagement with downstream library users (lighttpd integration request)"
+        "Efforts to simplify code by leveraging new invariants"
       ],
       "abandonment_signals": false,
-      "summary": "Active, well-maintained cryptographic library with ongoing modernization efforts, showing good engagement with issues though some recent build system edge cases need attention."
+      "summary": "The community health for mbedtls@3 is neutral, with moderate activity and some identified areas for improvement in structure management and code simplification."
     },
     "communication": {
-      "helpfulness": 9,
-      "clarity": 8,
+      "helpfulness": 8,
+      "clarity": 7,
       "patience": 9,
-      "technical_depth": 9,
+      "technical_depth": 8,
       "welcomingness": 8,
-      "communication_style": "exemplary",
+      "communication_style": "good",
       "red_flags": [],
-      "summary": "The maintainers' responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source project maintenance."
+      "summary": "The maintainer responses are helpful, clear, and patient, providing technical depth to justify decisions while encouraging new contributors."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "actively-maintained",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite being a security-critical library",
-        "1567 open issues with no recent resolutions",
-        "Zero closed issues in past 6 months indicates no active maintenance",
-        "No merged PRs in past 6 months suggests no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date raises uncertainty about version currency"
+        "High number of open issues and PRs which could indicate a backlog or complexity in handling contributions."
       ],
       "positive_signals": [
-        "Recent commit activity on 2026-02-03 suggests some repository access",
-        "Project still has an open PR queue indicating not completely abandoned"
+        "Frequent commits, regular releases, and active contributors over the past six months."
       ],
-      "summary": "mbedtls@3 shows clear signs of stale maintenance with zero development activity over 6 months and a large backlog of unresolved issues, posing potential risks for a security-critical library."
+      "summary": "The package mbedtls@3 is actively maintained with frequent updates, regular releases, and an active community of contributors. However, there is a significant number of open issues and pull requests that may need attention."
     },
     "changelog": null,
     "governance": {
@@ -263,28 +225,28 @@
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
-      "summary": "The project has a well-documented decision process and contributor ladder, but lacks a clear succession plan, indicating a moderate bus factor risk."
+      "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T07:39:03.485756+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": null,
     "project_metrics": {
-      "stars": 6361,
-      "forks": 2821,
-      "open_issues": 1574,
+      "stars": 6471,
+      "forks": 2839,
+      "open_issues": 1578,
       "license": "non-standard",
       "description": "An open source, portable, easy to use, readable and flexible TLS library, and reference implementation of the PSA Cryptography API. Releases are on a varying cadence, typically around 3 - 6 months between releases.",
-      "oss_fuzz_line_count": 65421,
-      "oss_fuzz_line_cover_count": 20336
+      "oss_fuzz_line_count": 65432,
+      "oss_fuzz_line_cover_count": 20348
     },
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-03T00:01:37.245604Z",
+    "fetched_at": "2026-02-25T12:53:35.656628Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -292,32 +254,26 @@
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "The README provides detailed information on building and configuring the Mbed TLS library, but lacks a clear quick start guide and troubleshooting section.",
+    "doc_summary": "The README provides clear and detailed technical information but lacks user-friendly sections like quick start examples and troubleshooting guides.",
     "concerns": [
-      "high number of open issues",
-      "high number of open PRs",
-      "Docs: Lack of a concise quick start example to help new users get started with the library",
-      "Community: errors in parsing encrypted keys",
-      "Community: outdated code style",
-      "Security: Potential command injection risks through various parameters",
-      "Security: Lack of validation for certain input parameters"
+      "High number of open issues and PRs which could indicate a backlog or complexity in handling contributions.",
+      "Docs: Lack of a dedicated installation section and absence of usage examples.",
+      "Community: Lack of available fields in structures",
+      "Community: Code complexity due to non-uniform PK contexts"
     ],
     "highlights": [
-      "frequent commits in the past 6 months",
-      "recent contributors",
-      "regularly merged PRs",
-      "Excellent maintainer communication",
+      "Frequent commits, regular releases, and active contributors over the past six months.",
       "Actively maintained",
       "OSS-Fuzz coverage: 31%"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "exemplary",
+    "communication_style": "good",
     "forge_metrics": {
-      "stars": 6361,
-      "forks": 2821,
-      "open_issues": 1574
+      "stars": 6471,
+      "forks": 2839,
+      "open_issues": 1578
     }
   },
-  "analyzed_at": "2026-01-03T00:04:51.162729Z",
-  "data_fetched_at": "2026-01-03T00:04:51.162730Z"
+  "analyzed_at": "2026-02-25T12:58:43.982976Z",
+  "data_fetched_at": "2026-02-25T12:58:43.982977Z"
 }
