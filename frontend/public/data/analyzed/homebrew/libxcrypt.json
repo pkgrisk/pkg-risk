@@ -10,11 +10,11 @@
     "repo": "libxcrypt",
     "subpath": null
   },
-  "install_count_30d": 33603,
+  "install_count_30d": 65667,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 79.6,
+    "overall": 74.0,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,17 +23,17 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 80.0,
+      "score": 86.0,
       "weight": 30,
       "key_factors": []
     },
     "maintenance": {
-      "score": 72.72239726836438,
+      "score": 58.045857615879875,
       "weight": 25,
       "key_factors": []
     },
     "community": {
-      "score": 97.0,
+      "score": 87.0,
       "weight": 15,
       "key_factors": []
     },
@@ -43,7 +43,7 @@
       "key_factors": []
     },
     "documentation": {
-      "score": 57.5,
+      "score": 35.0,
       "weight": 10,
       "key_factors": []
     },
@@ -58,12 +58,12 @@
       "owner": "besser82",
       "name": "libxcrypt",
       "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
-      "stars": 224,
-      "forks": 66,
-      "open_issues": 33,
-      "watchers": 224,
+      "stars": 232,
+      "forks": 67,
+      "open_issues": 35,
+      "watchers": 232,
       "created_at": "2015-05-12T17:57:11Z",
-      "updated_at": "2025-12-10T22:08:54Z",
+      "updated_at": "2026-02-21T14:29:42Z",
       "pushed_at": "2025-12-10T22:08:51Z",
       "default_branch": "develop",
       "license": "LGPL-2.1",
@@ -87,10 +87,10 @@
     "commits": {
       "last_commit_date": "2025-12-10T13:03:54Z",
       "commits_last_6mo": 23,
-      "commits_last_year": 51
+      "commits_last_year": 31
     },
     "issues": {
-      "open_issues": 22,
+      "open_issues": 23,
       "closed_issues_6mo": 7,
       "avg_response_time_hours": 808.9,
       "avg_close_time_hours": 6224.8,
@@ -98,15 +98,15 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 11,
+      "open_prs": 12,
       "merged_prs_6mo": 5,
       "closed_prs_6mo": 5,
-      "stale_prs": 9,
+      "stale_prs": 10,
       "avg_merge_time_hours": null
     },
     "releases": {
       "total_releases": 16,
-      "releases_last_year": 4,
+      "releases_last_year": 3,
       "last_release_date": "2025-11-10T17:33:39Z",
       "latest_version": "v4.5.2",
       "has_signed_releases": true,
@@ -156,7 +156,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 6,
-      "recent_runs_pass_rate": 80.0,
+      "recent_runs_pass_rate": 84.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -165,67 +165,54 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 9,
-      "installation": 7,
-      "quick_start": 2,
-      "examples": 1,
-      "configuration": 8,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "Excellent technical overview and configuration documentation, but completely lacks usage examples and practical code snippets for developers.",
-      "top_issue": "No code examples showing how to actually use the crypt() functions in a program - this is a library with zero usage documentation beyond function names."
-    },
+    "readme": null,
     "security": {
-      "overall_score": 8,
+      "overall_score": 6,
       "injection_risks": [],
       "input_validation_score": 8,
       "secrets_found": [],
       "critical_findings": [
-        "Use of MD4 hash algorithm which is considered insecure for cryptographic purposes",
-        "DES encryption algorithm used in alg-des.c is also considered insecure"
+        "Insecure use of outdated cryptographic algorithms (MD4 and DES)"
       ],
-      "summary": "The code has some security concerns, including the use of insecure hash and encryption algorithms, but overall it appears to be well-structured and follows good security practices."
+      "summary": "The code has no injection risks or exposed secrets but uses insecure cryptographic algorithms."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 4,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Compilation failures with modern compiler versions (GCC 11+, Clang)",
-        "Linker compatibility issues (LLD version script failures)",
-        "Platform-specific build problems (macOS, Debian 7, PowerPC)",
-        "Test suite failures on certain architectures"
+        "Compilation fails with specific compilers and linkers",
+        "Issues in man pages"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "libxcrypt shows moderate health with resolved historical issues, active bug reporting across multiple platforms, and some unresolved compilation and testing problems that suggest maintenance gaps in cross-platform support."
+      "summary": "The community health of the libxcrypt project shows a mix of active issue reporting and some resolved issues, indicating moderate maintainer responsiveness but also ongoing challenges with compilation across different environments."
     },
     "communication": {
-      "helpfulness": 9,
-      "clarity": 8,
-      "patience": 9,
-      "technical_depth": 9,
-      "welcomingness": 8,
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 8,
+      "welcomingness": 9,
       "communication_style": "good",
-      "red_flags": [],
-      "summary": "The maintainer responses are generally helpful, clear, patient, and technically sound, creating a welcoming environment for contributors."
+      "red_flags": [
+        "Some responses are brief and could be more detailed for complex issues",
+        "Lack of response from some contributors can delay issue resolution"
+      ],
+      "summary": "The maintainer responses are generally helpful, clear, and welcoming to new contributors. They provide technical depth in explanations but could benefit from more detailed responses to complex issues and quicker follow-ups with contributors."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "maintained",
+      "confidence": 7,
       "concerns": [
-        "No commits in the past 6 months despite being a security-critical cryptography library",
-        "33 open issues with no recent activity or resolution",
-        "Zero closed issues in the past 6 months indicating no maintenance response",
-        "No merged PRs in the past 6 months showing no development activity",
-        "No active contributors in the past 6 months",
-        "Unknown last release date suggests release infrastructure may be dormant"
+        "High number of open issues and PRs",
+        "Few contributors active in the past six months"
       ],
       "positive_signals": [
-        "Project exists and was previously maintained (has commit history before 6 months)"
+        "Regular commits and releases",
+        "Some merged PRs indicating responsiveness to contributions"
       ],
-      "summary": "libxcrypt appears to be abandoned with no maintenance activity for at least 6 months, representing a significant risk for a security-critical cryptography library."
+      "summary": "The libxcrypt package shows signs of maintenance with regular updates, but has a backlog of open issues and pull requests, which may indicate some delays in addressing community feedback."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -234,20 +221,20 @@
       "appears_complete": true,
       "clarity_score": 8,
       "overall_score": 7,
-      "summary": "The changelog is well-structured and comprehensive, but lacks clear markings for breaking changes and migration guides."
+      "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T12:40:56.250533+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": null,
     "project_metrics": {
-      "stars": 224,
-      "forks": 65,
-      "open_issues": 32,
+      "stars": 232,
+      "forks": 67,
+      "open_issues": 34,
       "license": "LGPL-2.1",
       "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
       "oss_fuzz_line_count": null,
@@ -256,7 +243,7 @@
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-03T01:10:56.610792Z",
+    "fetched_at": "2026-02-25T17:35:52.833322Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -264,31 +251,30 @@
   "analysis_summary": {
     "maintenance_status": "maintained",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is thorough and detailed, but lacks a clear quick start guide and troubleshooting section.",
+    "doc_summary": "",
     "concerns": [
-      "relatively low number of contributors",
-      "open issues outnumber closed ones in the past 6 months",
-      "Docs: Lack of a concise quick start example to help new users get started with the library.",
-      "Community: compilation issues",
-      "Community: versioning problems",
-      "Security: Use of MD4 hash algorithm which is considered insecure for cryptographic purposes",
-      "Security: DES encryption algorithm used in alg-des.c is also considered insecure"
+      "High number of open issues and PRs",
+      "Few contributors active in the past six months",
+      "Community: Compilation fails with specific compilers and linkers",
+      "Community: Issues in man pages",
+      "Communication: Some responses are brief and could be more detailed for complex issues",
+      "Communication: Lack of response from some contributors can delay issue resolution",
+      "Security: Insecure use of outdated cryptographic algorithms (MD4 and DES)"
     ],
     "highlights": [
-      "recent commits and releases",
-      "active merging of PRs",
-      "Code follows security best practices",
+      "Regular commits and releases",
+      "Some merged PRs indicating responsiveness to contributions",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "neutral",
+    "community_sentiment": "mixed",
     "communication_style": "good",
     "forge_metrics": {
-      "stars": 224,
-      "forks": 65,
-      "open_issues": 32
+      "stars": 232,
+      "forks": 67,
+      "open_issues": 34
     }
   },
-  "analyzed_at": "2026-01-03T01:13:51.981419Z",
-  "data_fetched_at": "2026-01-03T01:13:51.981420Z"
+  "analyzed_at": "2026-02-25T17:40:56.321839Z",
+  "data_fetched_at": "2026-02-25T17:40:56.321841Z"
 }
