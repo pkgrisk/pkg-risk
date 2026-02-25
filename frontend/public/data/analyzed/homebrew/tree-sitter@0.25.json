@@ -10,11 +10,11 @@
     "repo": "tree-sitter",
     "subpath": null
   },
-  "install_count_30d": 26370,
+  "install_count_30d": 13480,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 80.7,
+    "overall": 87.8,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,7 +23,7 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 75.0,
+      "score": 100.0,
       "weight": 30,
       "key_factors": [
         "Code review practices"
@@ -35,24 +35,24 @@
       "key_factors": []
     },
     "community": {
-      "score": 98.0,
+      "score": 100.0,
       "weight": 15,
       "key_factors": []
     },
     "bus_factor": {
-      "score": 53.8,
+      "score": 69.2,
       "weight": 10,
       "key_factors": [
         "Low contributor diversity (Scorecard)"
       ]
     },
     "documentation": {
-      "score": 35.0,
+      "score": 23.0,
       "weight": 10,
       "key_factors": []
     },
     "stability": {
-      "score": 96.0,
+      "score": 86.0,
       "weight": 10,
       "key_factors": []
     }
@@ -62,13 +62,13 @@
       "owner": "tree-sitter",
       "name": "tree-sitter",
       "description": "An incremental parsing system for programming tools",
-      "stars": 23206,
-      "forks": 2312,
-      "open_issues": 118,
-      "watchers": 23206,
+      "stars": 23915,
+      "forks": 2427,
+      "open_issues": 130,
+      "watchers": 23915,
       "created_at": "2013-11-06T06:16:00Z",
-      "updated_at": "2026-01-03T00:33:02Z",
-      "pushed_at": "2025-12-31T19:37:17Z",
+      "updated_at": "2026-02-25T21:40:51Z",
+      "pushed_at": "2026-02-25T16:55:45Z",
       "default_branch": "master",
       "license": "MIT",
       "language": "Rust",
@@ -87,47 +87,47 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 314,
-      "active_contributors_6mo": 33,
-      "top_contributor_pct": 58.2,
+      "total_contributors": 325,
+      "active_contributors_6mo": 28,
+      "top_contributor_pct": 57.1,
       "contributors_over_5pct": 3,
-      "contributors_prev_6mo": 59,
-      "contributor_trend": "declining",
-      "first_time_contributors_6mo": 23,
-      "contributor_entropy": 2.97
+      "contributors_prev_6mo": 2,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 26,
+      "contributor_entropy": 3.03
     },
     "commits": {
-      "last_commit_date": "2025-12-29T19:12:25Z",
-      "commits_last_6mo": 369,
-      "commits_last_year": 685
+      "last_commit_date": "2026-02-24T19:14:39Z",
+      "commits_last_6mo": 297,
+      "commits_last_year": 300
     },
     "issues": {
-      "open_issues": 103,
-      "closed_issues_6mo": 76,
-      "avg_response_time_hours": 29.3,
-      "avg_close_time_hours": 26.6,
-      "good_first_issue_count": 5,
+      "open_issues": 110,
+      "closed_issues_6mo": 71,
+      "avg_response_time_hours": 6.2,
+      "avg_close_time_hours": 13.3,
+      "good_first_issue_count": 4,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 15,
-      "merged_prs_6mo": 237,
+      "open_prs": 20,
+      "merged_prs_6mo": 226,
       "closed_prs_6mo": 300,
-      "stale_prs": 4,
+      "stale_prs": 7,
       "avg_merge_time_hours": null
     },
     "releases": {
-      "total_releases": 93,
-      "releases_last_year": 15,
-      "last_release_date": "2025-12-13T12:53:48Z",
-      "latest_version": "v0.26.3",
+      "total_releases": 96,
+      "releases_last_year": 14,
+      "last_release_date": "2026-02-25T17:08:23Z",
+      "latest_version": "v0.26.6",
       "has_signed_releases": false,
-      "prerelease_ratio": 0.02
+      "prerelease_ratio": 0.03
     },
     "security": {
       "has_security_md": false,
       "has_security_policy": false,
-      "signed_commits_pct": 1.0,
+      "signed_commits_pct": 4.0,
       "has_dependabot": true,
       "has_codeql": false,
       "has_security_ci": true,
@@ -167,8 +167,8 @@
     },
     "ci": {
       "has_github_actions": true,
-      "workflow_count": 15,
-      "recent_runs_pass_rate": 80.0,
+      "workflow_count": 18,
+      "recent_runs_pass_rate": 54.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -177,66 +177,44 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 1,
-      "quick_start": 1,
-      "examples": 1,
-      "configuration": 1,
-      "troubleshooting": 1,
-      "overall": 2,
-      "summary": "Clear project description but completely lacks installation instructions, usage examples, and any practical getting-started content.",
-      "top_issue": "No installation instructions whatsoever - users must navigate to external documentation to learn how to install or use the tool"
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "crates/xtask/src/main.rs",
-          "line": 246,
-          "severity": "medium",
-          "description": "The `Command::new(\"git\").args([\"commit\", \"-m\", msg])` line is vulnerable to command injection if the `msg` variable contains user-controlled input."
-        },
-        {
-          "file": "crates/xtask/src/main.rs",
-          "line": 239,
-          "severity": "medium",
-          "description": "The `Command::new(\"git\").args([\"add\", path])` line is vulnerable to command injection if the `path` variable contains user-controlled input."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential command injection vulnerabilities in the `create_commit` function",
-        "Lack of input validation and sanitization"
-      ],
-      "summary": "The code has some potential security risks, including command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "glibc compatibility constraints for older Linux systems",
-        "query pattern matching edge cases with quantifiers"
+        "CLI: more control over language bindings",
+        "type `GrammarSchema` does not match the data returned by `grammar`"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Healthy community with active issue resolution; users report compatibility needs and edge case bugs that are being addressed systematically."
+      "summary": "The community health for tree-sitter@0.25 on Homebrew shows a mix of issues being addressed and new ones emerging, with moderate frustration levels and some unresolved complaints."
     },
-    "communication": null,
-    "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
-      "concerns": [
-        "No commits in the past 6 months despite last commit being from 2 days ago suggests repository is inactive",
-        "127 open issues with 0 closed in past 6 months indicates issues are not being addressed",
-        "No active contributors in past 6 months",
-        "No merged PRs in past 6 months shows no development activity",
-        "Unknown last release date suggests release process is stalled"
+    "communication": {
+      "helpfulness": 6,
+      "clarity": 5,
+      "patience": 7,
+      "technical_depth": 6,
+      "welcomingness": 8,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Some responses are brief and could be more detailed",
+        "One response indicates confusion about a pull request"
       ],
-      "positive_signals": [],
-      "summary": "The repository appears abandoned with zero maintenance activity over the past 6 months despite a large backlog of unresolved issues."
+      "summary": "The maintainer provides helpful information but could improve clarity and detail in some areas. They handle repeated or basic questions with patience and encourage new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Frequent commits (297 in the past 6 months)",
+        "Regular issue resolution (71 closed issues in the past 6 months)",
+        "Active pull requests and merges (20 open PRs, 226 merged in the past 6 months)",
+        "Recent release (2026-02-25)"
+      ],
+      "summary": "The package tree-sitter@0.25 is actively maintained with frequent commits, regular issue resolution, active pull requests and merges, and recent releases."
     },
     "changelog": null,
     "governance": {
@@ -245,35 +223,34 @@
       "contributor_ladder_exists": false,
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
-      "summary": "The governance documentation for tree-sitter@0.25 lacks clear plans for succession, decision making, contributor advancement, and multiple maintainers, posing a high bus factor risk."
+      "summary": "The governance documentation for the homebrew package 'tree-sitter@0.25' does not provide information on succession, decision-making processes, a path from contributor to maintainer, or multiple maintainers, indicating high bus factor risk."
     },
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T09:23:26.517858+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 5.4,
-      "score_date": "2025-12-22T00:00:00Z",
+      "overall_score": 5.0,
+      "score_date": "2026-02-16T00:00:00Z",
       "checks": {
-        "Code-Review": 10.0,
         "Maintained": 10.0,
-        "CII-Best-Practices": 0.0,
+        "Code-Review": 8.0,
         "Dangerous-Workflow": 10.0,
-        "License": 10.0,
+        "CII-Best-Practices": 0.0,
         "Binary-Artifacts": 10.0,
         "Token-Permissions": 0.0,
+        "License": 10.0,
         "Fuzzing": 0.0,
-        "Security-Policy": 0.0,
-        "Packaging": 10.0,
-        "Branch-Protection": 5.0,
         "Pinned-Dependencies": 1.0,
+        "Security-Policy": 0.0,
+        "Branch-Protection": 5.0,
+        "Packaging": 10.0,
         "Signed-Releases": 0.0,
-        "SAST": 0.0,
-        "Vulnerabilities": 8.0
+        "SAST": 0.0
       },
-      "code_review_score": 10.0,
+      "code_review_score": 8.0,
       "maintained_score": 10.0,
       "branch_protection_score": 5.0,
       "dangerous_workflow_score": 10.0,
@@ -283,9 +260,9 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 23143,
-      "forks": 2297,
-      "open_issues": 120,
+      "stars": 23911,
+      "forks": 2426,
+      "open_issues": 130,
       "license": "MIT",
       "description": "An incremental parsing system for programming tools",
       "oss_fuzz_line_count": null,
@@ -294,7 +271,7 @@
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-03T02:13:42.176764Z",
+    "fetched_at": "2026-02-25T21:45:40.379906Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -302,26 +279,26 @@
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "The README provides a good overview of the package's purpose and features, but lacks clear installation instructions, usage examples, and troubleshooting guidance.",
+    "doc_summary": "",
     "concerns": [
-      "Docs: Lack of clear installation instructions and quick start guide",
-      "Community: export symbols missing on Windows",
-      "Community: formatting issues",
-      "Governance: High bus factor risk identified",
-      "Security: Potential command injection vulnerabilities in the `create_commit` function",
-      "Security: Lack of input validation and sanitization"
+      "Community: CLI: more control over language bindings",
+      "Community: type `GrammarSchema` does not match the data returned by `grammar`",
+      "Communication: Some responses are brief and could be more detailed",
+      "Communication: One response indicates confusion about a pull request",
+      "Governance: High bus factor risk identified"
     ],
     "highlights": [
-      "High number of commits in the past 6 months (369)",
-      "Recent last commit (2025-12-29) and last release (2025-12-13)",
-      "Large number of merged PRs in the past 6 months (237)",
-      "Multiple active contributors in the past 6 months (33)",
+      "Frequent commits (297 in the past 6 months)",
+      "Regular issue resolution (71 closed issues in the past 6 months)",
+      "Active pull requests and merges (20 open PRs, 226 merged in the past 6 months)",
+      "Recent release (2026-02-25)",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "neutral",
-    "scorecard_score": 5.4
+    "community_sentiment": "mixed",
+    "communication_style": "adequate",
+    "scorecard_score": 5.0
   },
-  "analyzed_at": "2026-01-03T02:15:46.012892Z",
-  "data_fetched_at": "2026-01-03T02:15:46.012893Z"
+  "analyzed_at": "2026-02-25T21:50:44.352781Z",
+  "data_fetched_at": "2026-02-25T21:50:44.352782Z"
 }
