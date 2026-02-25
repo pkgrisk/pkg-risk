@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "mise",
   "description": "Polyglot runtime manager (asdf rust clone)",
-  "version": "2025.12.13",
+  "version": "2026.2.20",
   "homepage": "https://mise.jdx.dev/",
   "repository": {
     "platform": "github",
@@ -10,11 +10,11 @@
     "repo": "mise",
     "subpath": null
   },
-  "install_count_30d": 46443,
+  "install_count_30d": 75764,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 93.5,
+    "overall": 91.0,
     "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,9 +23,9 @@
     "confidence_factors": [
       "Limited issue history"
     ],
-    "project_age_band": "established",
+    "project_age_band": "mature",
     "security": {
-      "score": 96.0,
+      "score": 100.0,
       "weight": 30,
       "key_factors": []
     },
@@ -40,17 +40,17 @@
       "key_factors": []
     },
     "bus_factor": {
-      "score": 73.84,
+      "score": 74.56,
       "weight": 10,
       "key_factors": []
     },
     "documentation": {
-      "score": 77.0,
+      "score": 35.0,
       "weight": 10,
       "key_factors": []
     },
     "stability": {
-      "score": 96.0,
+      "score": 100.0,
       "weight": 10,
       "key_factors": []
     }
@@ -60,13 +60,13 @@
       "owner": "jdx",
       "name": "mise",
       "description": "dev tools, env vars, task runner",
-      "stars": 22668,
-      "forks": 785,
-      "open_issues": 49,
-      "watchers": 22668,
+      "stars": 25014,
+      "forks": 901,
+      "open_issues": 37,
+      "watchers": 25014,
       "created_at": "2023-01-09T14:44:21Z",
-      "updated_at": "2026-01-02T23:03:47Z",
-      "pushed_at": "2026-01-02T09:31:36Z",
+      "updated_at": "2026-02-25T15:10:36Z",
+      "pushed_at": "2026-02-25T15:37:08Z",
       "default_branch": "main",
       "license": "MIT",
       "language": "Rust",
@@ -77,19 +77,19 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 395,
-      "active_contributors_6mo": 138,
-      "top_contributor_pct": 63.5,
+      "total_contributors": 450,
+      "active_contributors_6mo": 45,
+      "top_contributor_pct": 62.8,
       "contributors_over_5pct": 2,
       "contributors_prev_6mo": 0,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 138,
-      "contributor_entropy": 2.98
+      "first_time_contributors_6mo": 45,
+      "contributor_entropy": 3.07
     },
     "commits": {
-      "last_commit_date": "2026-01-02T09:23:38Z",
-      "commits_last_6mo": 1000,
-      "commits_last_year": 1000
+      "last_commit_date": "2026-02-25T12:35:50Z",
+      "commits_last_6mo": 300,
+      "commits_last_year": 300
     },
     "issues": {
       "open_issues": 0,
@@ -100,17 +100,17 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 23,
-      "merged_prs_6mo": 281,
+      "open_prs": 11,
+      "merged_prs_6mo": 268,
       "closed_prs_6mo": 300,
       "stale_prs": 0,
       "avg_merge_time_hours": null
     },
     "releases": {
-      "total_releases": 472,
-      "releases_last_year": 192,
-      "last_release_date": "2025-12-30T19:04:59Z",
-      "latest_version": "v2025.12.13",
+      "total_releases": 500,
+      "releases_last_year": 203,
+      "last_release_date": "2026-02-25T02:25:32Z",
+      "latest_version": "v2026.2.20",
       "has_signed_releases": true,
       "prerelease_ratio": 0.0
     },
@@ -140,7 +140,7 @@
     },
     "files": {
       "has_readme": true,
-      "readme_size_bytes": 5834,
+      "readme_size_bytes": 6241,
       "has_license": true,
       "has_changelog": true,
       "has_contributing": true,
@@ -157,8 +157,8 @@
     },
     "ci": {
       "has_github_actions": true,
-      "workflow_count": 28,
-      "recent_runs_pass_rate": 58.0,
+      "workflow_count": 26,
+      "recent_runs_pass_rate": 93.8,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": false,
@@ -167,67 +167,33 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 9,
-      "examples": 10,
-      "configuration": 9,
-      "troubleshooting": 6,
-      "overall": 8,
-      "summary": "The documentation is well-structured and provides a clear overview of the package's functionality, but troubleshooting information could be more comprehensive.",
-      "top_issue": "Lack of detailed troubleshooting guides and solutions for common problems"
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "src/main.rs",
-          "line": 34,
-          "severity": "medium",
-          "description": "The use of `std::env::args()` and `Cli::run(&args)` could potentially lead to command injection if the input is not properly sanitized."
-        },
-        {
-          "file": "src/aqua/aqua_registry_wrapper.rs",
-          "line": 63,
-          "severity": "medium",
-          "description": "The use of `Git::clone()` with user-provided registry URL could potentially lead to command injection if the input is not properly sanitized."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential command injection vulnerabilities in src/main.rs and src/aqua/aqua_registry_wrapper.rs"
-      ],
-      "summary": "The code has some potential security concerns, including command injection risks and lack of input validation, but overall it appears to be well-structured and secure."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": null,
     "communication": {
       "helpfulness": 8,
       "clarity": 7,
       "patience": 6,
-      "technical_depth": 9,
-      "welcomingness": 5,
-      "communication_style": "adequate",
+      "technical_depth": 8,
+      "welcomingness": 7,
+      "communication_style": "good",
       "red_flags": [
-        "brief responses",
-        "lack of explanations for some comments"
+        "Some responses are brief and could be more detailed for complex issues",
+        "One response is threatening ('do that again and you're banned')"
       ],
-      "summary": "The maintainer provides generally helpful and technically sound responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive environment for contributors."
+      "summary": "The maintainer provides helpful and technically sound feedback, with clear explanations. However, some responses could benefit from more detail, and there's a concerning threat in one of the comments."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [
-        "high number of open PRs"
-      ],
+      "concerns": [],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "large number of active contributors",
-        "no open issues"
+        "Frequent commits (300 in the past 6 months)",
+        "Regular releases",
+        "High number of merged PRs (268 in the past 6 months)",
+        "Active contributors (45 in the past 6 months)"
       ],
-      "summary": "The mise package appears to be actively maintained with a high volume of recent commits, merges, and contributor activity."
+      "summary": "The package 'mise' is actively maintained with frequent commits, regular releases, a high volume of merged pull requests, and an active community of contributors."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -236,24 +202,27 @@
       "appears_complete": true,
       "clarity_score": 8,
       "overall_score": 7,
-      "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
+      "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
     "governance": {
       "has_succession_plan": false,
-      "decision_process_documented": true,
+      "decision_process_documented": false,
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
-      "summary": "The governance documentation for the homebrew package 'mise' lacks a succession plan and indicates a single maintainer, posing a high bus factor risk."
-    }
+      "summary": "The governance documentation for the 'mise' package does not address succession planning, decision-making processes, or multiple maintainers. It only outlines a path from contributor to maintainer, indicating a high bus factor risk."
+    },
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": null,
   "aggregator_data": {
     "scorecard": null,
     "project_metrics": {
-      "stars": 22518,
-      "forks": 780,
-      "open_issues": 42,
+      "stars": 24756,
+      "forks": 889,
+      "open_issues": 36,
       "license": "MIT",
       "description": "dev tools, env vars, task runner",
       "oss_fuzz_line_count": null,
@@ -262,7 +231,7 @@
     "dependency_graph": null,
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-02T23:49:22.836915Z",
+    "fetched_at": "2026-02-25T15:44:17.473003Z",
     "sources_available": [
       "deps.dev:project"
     ]
@@ -270,30 +239,27 @@
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "has SECURITY.md",
-    "doc_summary": "The documentation is well-structured and provides a clear overview of the package's functionality, but troubleshooting information could be more comprehensive.",
+    "doc_summary": "",
     "concerns": [
-      "high number of open PRs",
-      "Docs: Lack of detailed troubleshooting guides and solutions for common problems",
-      "Communication: brief responses",
-      "Communication: lack of explanations for some comments",
-      "Governance: High bus factor risk identified",
-      "Security: Potential command injection vulnerabilities in src/main.rs and src/aqua/aqua_registry_wrapper.rs"
+      "Communication: Some responses are brief and could be more detailed for complex issues",
+      "Communication: One response is threatening ('do that again and you're banned')",
+      "Governance: High bus factor risk identified"
     ],
     "highlights": [
-      "frequent commits",
-      "recent release",
-      "large number of active contributors",
-      "no open issues",
+      "Frequent commits (300 in the past 6 months)",
+      "Regular releases",
+      "High number of merged PRs (268 in the past 6 months)",
+      "Active contributors (45 in the past 6 months)",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "communication_style": "adequate",
+    "communication_style": "good",
     "forge_metrics": {
-      "stars": 22518,
-      "forks": 780,
-      "open_issues": 42
+      "stars": 24756,
+      "forks": 889,
+      "open_issues": 36
     }
   },
-  "analyzed_at": "2026-01-02T23:52:02.816035Z",
-  "data_fetched_at": "2026-01-02T23:52:02.816036Z"
+  "analyzed_at": "2026-02-25T15:49:23.531366Z",
+  "data_fetched_at": "2026-02-25T15:49:23.531368Z"
 }
