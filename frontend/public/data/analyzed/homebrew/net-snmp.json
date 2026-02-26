@@ -10,11 +10,11 @@
     "repo": "net-snmp",
     "subpath": null
   },
-  "install_count_30d": 14095,
+  "install_count_30d": 12498,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 72.1,
+    "overall": 78.0,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,28 +23,42 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 70.0,
-      "weight": 30
+      "score": 90.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "SAST enabled (Scorecard)",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 85.32853255223993,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 55.0,
-      "weight": 15
+      "score": 65.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 78.8,
-      "weight": 10
+      "score": 83.9,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
-      "score": 51.5,
-      "weight": 10
+      "score": 35.0,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 85.0,
-      "weight": 10
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,13 +66,13 @@
       "owner": "net-snmp",
       "name": "net-snmp",
       "description": "A SNMP application library, tools and daemon",
-      "stars": 436,
-      "forks": 268,
-      "open_issues": 349,
-      "watchers": 436,
+      "stars": 451,
+      "forks": 283,
+      "open_issues": 360,
+      "watchers": 451,
       "created_at": "2018-04-09T19:19:27Z",
-      "updated_at": "2025-12-30T12:13:24Z",
-      "pushed_at": "2025-12-29T21:42:14Z",
+      "updated_at": "2026-02-25T10:01:31Z",
+      "pushed_at": "2026-02-24T23:24:56Z",
       "default_branch": "master",
       "license": "NOASSERTION",
       "language": "C",
@@ -69,33 +83,33 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 129,
-      "active_contributors_6mo": 10,
-      "top_contributor_pct": 48.6,
+      "total_contributors": 131,
+      "active_contributors_6mo": 13,
+      "top_contributor_pct": 48.7,
       "contributors_over_5pct": 3,
-      "contributors_prev_6mo": 16,
-      "contributor_trend": "declining",
-      "first_time_contributors_6mo": 6,
-      "contributor_entropy": 2.35
+      "contributors_prev_6mo": 13,
+      "contributor_trend": "stable",
+      "first_time_contributors_6mo": 10,
+      "contributor_entropy": 2.36
     },
     "commits": {
-      "last_commit_date": "2025-12-29T21:42:11Z",
-      "commits_last_6mo": 110,
-      "commits_last_year": 352
+      "last_commit_date": "2026-02-24T23:11:45Z",
+      "commits_last_6mo": 144,
+      "commits_last_year": 294
     },
     "issues": {
-      "open_issues": 284,
-      "closed_issues_6mo": 13,
-      "avg_response_time_hours": 40.0,
-      "avg_close_time_hours": 51.6,
+      "open_issues": 280,
+      "closed_issues_6mo": 15,
+      "avg_response_time_hours": 42.4,
+      "avg_close_time_hours": 34.7,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 17,
-      "merged_prs_6mo": 14,
-      "closed_prs_6mo": 20,
-      "stale_prs": 15,
+      "open_prs": 21,
+      "merged_prs_6mo": 20,
+      "closed_prs_6mo": 33,
+      "stale_prs": 13,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -150,7 +164,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 4,
-      "recent_runs_pass_rate": 82.0,
+      "recent_runs_pass_rate": 64.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": true,
@@ -159,118 +173,132 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 3,
-      "installation": 2,
-      "quick_start": 1,
-      "examples": 2,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 2,
-      "summary": "This README is primarily a navigation document that redirects users to other files and external resources rather than providing actionable information directly.",
-      "top_issue": "No quick start example or basic usage demonstration - users cannot learn what the package does or how to use it from this README alone"
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "apps/snmpnetstat/main.c",
-          "line": 246,
-          "severity": "medium",
-          "description": "Potential command injection risk in optProc function when handling -CR option with user-provided argument"
-        },
-        {
-          "file": "apps/snmpnetstat/main.c",
-          "line": 270,
-          "severity": "low",
-          "description": "Use of atoi function to convert user-provided string to integer, which may lead to potential issues if input is not validated properly"
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential command injection risk in optProc function",
-        "Lack of validation for address family and protocol name"
-      ],
-      "summary": "The code has some security concerns, including potential command injection risks and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Critical security vulnerabilities (heap buffer overflows in AgentX)",
-        "Regression in command-line argument parsing between versions",
-        "Broken functionality (3DES support, NVMe disk monitoring)",
-        "Build/compilation issues with modern dependencies (OpenSSL 3.0)",
-        "SNMPv3 protocol compliance issues (EngineBoot counter not persisting)"
+        "Session reuse broken in 5.9.5",
+        "Heap buffer over-read in `usm_process_in_msg()`"
       ],
       "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Net-SNMP shows signs of declining maintenance with multiple critical security vulnerabilities remaining open for weeks, unresolved regressions impacting users, and slow responsiveness to issues."
+      "abandonment_signals": false,
+      "summary": "The community health of the net-snmp package on Homebrew is negative due to open issues with significant bugs and a lack of recent activity from maintainers, indicating frustration among users."
     },
     "communication": {
       "helpfulness": 8,
       "clarity": 7,
-      "patience": 9,
-      "technical_depth": 6,
-      "welcomingness": 8,
+      "patience": 6,
+      "technical_depth": 8,
+      "welcomingness": 9,
       "communication_style": "good",
-      "red_flags": [],
-      "summary": "The maintainer responses are generally helpful, clear, and patient, providing a positive experience for contributors, but sometimes lack technical depth in their explanations."
+      "red_flags": [
+        "Some responses are brief and could be more detailed for complex issues",
+        "A few responses assume a high level of familiarity with the codebase"
+      ],
+      "summary": "The maintainer responses are generally helpful, clear, and welcoming to contributors. They provide technical depth in explaining decisions but sometimes lack detail or patience with repeated questions."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 9,
+      "status": "maintained",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-14)",
-        "358 open issues with no closed issues in past 6 months indicates unaddressed problems",
-        "Zero active contributors in past 6 months shows no ongoing development activity",
-        "No merged PRs in past 6 months suggests pull requests are not being reviewed or integrated",
-        "Unknown last release date prevents assessment of release cadence"
+        "High number of open issues (280) which may indicate unresolved problems",
+        "Unknown last release date, making it unclear when the latest stable version was published"
       ],
       "positive_signals": [
-        "Repository still exists and has not been archived",
-        "Recent commit activity (2026-01-14) suggests repository was touched recently"
+        "Frequent commits in the past 6 months (144)",
+        "Active contributors (13) and merged PRs (20) over the same period"
       ],
-      "summary": "net-snmp appears stale with no meaningful maintenance activity over the past 6 months despite high issue volume, indicating the project is likely no longer actively developed."
+      "summary": "The net-snmp package is considered maintained due to frequent updates and active contributions, though it has a high number of open issues and an unclear release schedule."
     },
     "changelog": {
       "breaking_changes_marked": false,
       "has_migration_guides": false,
       "well_categorized": true,
-      "appears_complete": true,
-      "clarity_score": 8,
-      "overall_score": 7,
-      "summary": "The changelog is well-structured and comprehensive, but lacks clear markings for breaking changes and migration guides."
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 6,
+      "summary": "The changelog is well-categorized but lacks clarity and completeness, with no breaking changes or migration guides."
     },
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T22:10:36.030383+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 5.1,
+      "score_date": "2026-02-16T00:00:00Z",
+      "checks": {
+        "Code-Review": 2.0,
+        "Maintained": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "Packaging": -1.0,
+        "CII-Best-Practices": 0.0,
+        "Token-Permissions": 0.0,
+        "Security-Policy": 0.0,
+        "License": 9.0,
+        "Binary-Artifacts": 10.0,
+        "Signed-Releases": -1.0,
+        "Branch-Protection": 0.0,
+        "Fuzzing": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "SAST": 7.0
+      },
+      "code_review_score": 2.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": true,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 450,
+      "forks": 281,
+      "open_issues": 361,
+      "license": "non-standard",
+      "description": "A SNMP application library, tools and daemon",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T00:23:18.608796Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "maintained",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is comprehensive but lacks clear and concise information for new users, making it difficult to quickly understand the package's functionality.",
+    "doc_summary": "",
     "concerns": [
-      "high number of open issues",
-      "unknown last release",
-      "Docs: Lack of a clear and concise introduction or quick start guide that allows new users to understand the package's purpose and basic usage within a short time frame.",
-      "Community: breaking changes",
-      "Community: library compatibility issues",
-      "Security: Potential command injection risk in optProc function",
-      "Security: Lack of validation for address family and protocol name"
+      "High number of open issues (280) which may indicate unresolved problems",
+      "Unknown last release date, making it unclear when the latest stable version was published",
+      "Community: Session reuse broken in 5.9.5",
+      "Community: Heap buffer over-read in `usm_process_in_msg()`",
+      "Communication: Some responses are brief and could be more detailed for complex issues",
+      "Communication: A few responses assume a high level of familiarity with the codebase",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "recent commits and active contributors",
-      "steady merge of PRs",
+      "Frequent commits in the past 6 months (144)",
+      "Active contributors (13) and merged PRs (20) over the same period",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "Fuzzing enabled",
+      "SAST enabled"
     ],
     "community_sentiment": "negative",
-    "communication_style": "good"
+    "communication_style": "good",
+    "scorecard_score": 5.1
   },
-  "analyzed_at": "2025-12-31T18:01:30.678466Z",
-  "data_fetched_at": "2025-12-31T18:01:30.678468Z"
+  "analyzed_at": "2026-02-26T00:28:20.825879Z",
+  "data_fetched_at": "2026-02-26T00:28:20.825880Z"
 }
