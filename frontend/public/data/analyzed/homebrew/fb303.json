@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "fb303",
   "description": "Thrift functions for querying information from a service",
-  "version": "2025.12.29.00",
+  "version": "2026.01.12.00",
   "homepage": "https://github.com/facebook/fb303",
   "repository": {
     "platform": "github",
@@ -10,12 +10,12 @@
     "repo": "fb303",
     "subpath": null
   },
-  "install_count_30d": 15144,
+  "install_count_30d": 8322,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 68.2,
-    "grade": "D",
+    "overall": 75.8,
+    "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "low",
@@ -23,28 +23,34 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 58.0,
-      "weight": 30
+      "score": 80.0,
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
-      "score": 74.82853255223993,
-      "weight": 25
+      "score": 81.1,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 93.0,
-      "weight": 15
+      "score": 98.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 80.0,
-      "weight": 10
+      "score": 85.0,
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
-      "score": 31.0,
-      "weight": 10
+      "score": 13.0,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 70.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +58,13 @@
       "owner": "facebook",
       "name": "fb303",
       "description": "fb303 is a core set of thrift functions that provide a common mechanism for querying stats and other information from a service.",
-      "stars": 86,
-      "forks": 59,
-      "open_issues": 18,
-      "watchers": 86,
+      "stars": 92,
+      "forks": 62,
+      "open_issues": 19,
+      "watchers": 92,
       "created_at": "2016-08-05T20:18:48Z",
-      "updated_at": "2025-12-30T17:33:25Z",
-      "pushed_at": "2025-12-30T17:33:21Z",
+      "updated_at": "2026-02-25T17:35:44Z",
+      "pushed_at": "2026-02-25T17:35:39Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "C++",
@@ -69,19 +75,19 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 213,
-      "active_contributors_6mo": 26,
-      "top_contributor_pct": 11.0,
+      "total_contributors": 222,
+      "active_contributors_6mo": 30,
+      "top_contributor_pct": 10.6,
       "contributors_over_5pct": 4,
-      "contributors_prev_6mo": 31,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 20,
-      "contributor_entropy": 6.01
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 30,
+      "contributor_entropy": 6.08
     },
     "commits": {
-      "last_commit_date": "2025-12-30T17:31:11Z",
+      "last_commit_date": "2026-02-25T17:32:18Z",
       "commits_last_6mo": 300,
-      "commits_last_year": 584
+      "commits_last_year": 300
     },
     "issues": {
       "open_issues": 6,
@@ -92,9 +98,9 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 12,
+      "open_prs": 13,
       "merged_prs_6mo": 0,
-      "closed_prs_6mo": 3,
+      "closed_prs_6mo": 2,
       "stale_prs": 12,
       "avg_merge_time_hours": null
     },
@@ -150,7 +156,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 1,
-      "recent_runs_pass_rate": 94.0,
+      "recent_runs_pass_rate": 86.0,
       "has_tests_workflow": false,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -159,108 +165,99 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good overview of the package's functionality, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are incomplete and unclear."
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "fb303/detail/QuantileStatWrappers-inl.h",
-          "line": 24,
-          "severity": "low",
-          "description": "Potential for format string injection in keyFormat, but it's not directly user-controlled."
-        }
-      ],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential for format string injection in keyFormat.",
-        "Lack of input validation on function arguments."
-      ],
-      "summary": "The code has some security concerns, including potential format string injection and lack of input validation, but no critical issues were found related to secrets handling or error exposure."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
       "sentiment": "neutral",
-      "frustration_level": 4,
+      "frustration_level": 3,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "build issues",
-        "dependency problems"
+        "`add_fbthrift_library` should add include path for prefix"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health of the fb303 project appears to be neutral, with a single open issue indicating some maintenance activity but slow responsiveness from maintainers."
+      "summary": "The community health of the fb303 package on Homebrew is neutral, with a single open issue indicating a minor build configuration problem. The frustration level is low, and there are no signs of abandonment, but the maintainer responsiveness appears to be slow."
     },
     "communication": {
-      "helpfulness": 7,
-      "clarity": 8,
-      "patience": 6,
-      "technical_depth": 5,
-      "welcomingness": 4,
+      "helpfulness": 6,
+      "clarity": 5,
+      "patience": 7,
+      "technical_depth": 4,
+      "welcomingness": 6,
       "communication_style": "adequate",
       "red_flags": [
-        "brief or dismissive responses",
-        "lack of detailed explanations"
+        "Some responses are brief and could be more detailed",
+        "Lack of technical depth in some explanations"
       ],
-      "summary": "The maintainer's responses are generally helpful and clear, but sometimes brief and lacking in technical depth, which may not be welcoming to new contributors."
+      "summary": "The maintainer responses provide a mix of helpful information and suggestions, but they vary in clarity and depth. They show patience with repeated questions and encourage contributions, though there's room for improvement in providing detailed explanations."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
-      "concerns": [
-        "no recent closed issues",
-        "low merged PRs compared to open PRs"
-      ],
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
       "positive_signals": [
-        "high commit activity past 6 months",
-        "many active contributors past 6 months"
+        "High number of recent commits (300 in the past 6 months)",
+        "Active contributors (30 active in the past 6 months)"
       ],
-      "summary": "The package appears to be maintained with regular commits and multiple active contributors, but may benefit from improved issue and PR management."
+      "summary": "The package fb303 is actively maintained with a high volume of recent commits and an active community of contributors."
     },
     "changelog": null,
     "governance": {
       "has_succession_plan": false,
       "decision_process_documented": false,
-      "contributor_ladder_exists": false,
+      "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
-      "summary": "The governance documentation for fb303 lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+      "summary": "The documentation does not address succession planning, decision-making processes, or multiple maintainers, indicating a high bus factor risk and no clear path from contributor to maintainer."
+    },
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 92,
+      "forks": 62,
+      "open_issues": 19,
+      "license": "Apache-2.0",
+      "description": "fb303 is a core set of thrift functions that provide a common mechanism for querying stats and other information from a service.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T07:14:31.855232Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
-    "maintenance_status": "maintained",
+    "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "The README provides a good overview of the package's functionality, but lacks clear installation instructions and troubleshooting guidance.",
+    "doc_summary": "",
     "concerns": [
-      "no recent closed issues",
-      "low merged PRs compared to open PRs",
-      "Docs: Installation instructions are incomplete and unclear.",
-      "Community: build issues",
-      "Community: dependency problems",
-      "Communication: brief or dismissive responses",
-      "Communication: lack of detailed explanations",
-      "Governance: High bus factor risk identified",
-      "Security: Potential for format string injection in keyFormat.",
-      "Security: Lack of input validation on function arguments."
+      "Community: `add_fbthrift_library` should add include path for prefix",
+      "Communication: Some responses are brief and could be more detailed",
+      "Communication: Lack of technical depth in some explanations",
+      "Governance: High bus factor risk identified"
     ],
     "highlights": [
-      "high commit activity past 6 months",
-      "many active contributors past 6 months",
+      "High number of recent commits (300 in the past 6 months)",
+      "Active contributors (30 active in the past 6 months)",
       "Actively maintained",
       "CI/CD configured"
     ],
     "community_sentiment": "neutral",
-    "communication_style": "adequate"
+    "communication_style": "adequate",
+    "forge_metrics": {
+      "stars": 92,
+      "forks": 62,
+      "open_issues": 19
+    }
   },
-  "analyzed_at": "2025-12-31T17:33:54.621532Z",
-  "data_fetched_at": "2025-12-31T17:33:54.621533Z"
+  "analyzed_at": "2026-02-26T07:19:34.961257Z",
+  "data_fetched_at": "2026-02-26T07:19:34.961259Z"
 }

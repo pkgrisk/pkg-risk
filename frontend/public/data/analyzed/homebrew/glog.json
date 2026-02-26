@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "glog",
   "description": "Application-level logging library",
-  "version": "0.6.0",
+  "version": "0.7.1",
   "homepage": "https://google.github.io/glog/stable/",
   "repository": {
     "platform": "github",
@@ -10,11 +10,11 @@
     "repo": "glog",
     "subpath": null
   },
-  "install_count_30d": 9807,
+  "install_count_30d": 10514,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 59.9,
+    "overall": 57.0,
     "grade": "F",
     "percentile": null,
     "risk_tier": "prohibited",
@@ -23,28 +23,43 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 100.0,
-      "weight": 30
+      "score": 95.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "SAST enabled (Scorecard)",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
       "score": 0.0,
-      "weight": 25
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 65.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 85.0,
-      "weight": 10
+      "score": 75.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)",
+        "Project may be unmaintained (Scorecard)"
+      ]
     },
     "documentation": {
-      "score": 51.5,
-      "weight": 10
+      "score": 42.5,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 65.0,
-      "weight": 10
+      "score": 70.0,
+      "weight": 10,
+      "key_factors": [
+        "Fuzzing enabled"
+      ]
     }
   },
   "github_data": {
@@ -52,12 +67,12 @@
       "owner": "google",
       "name": "glog",
       "description": "C++ implementation of the Google logging module",
-      "stars": 7353,
-      "forks": 2104,
+      "stars": 7359,
+      "forks": 2102,
       "open_issues": 47,
-      "watchers": 7353,
+      "watchers": 7359,
       "created_at": "2015-02-23T06:55:48Z",
-      "updated_at": "2025-12-31T09:56:21Z",
+      "updated_at": "2026-02-25T18:26:43Z",
       "pushed_at": "2025-05-17T11:51:44Z",
       "default_branch": "master",
       "license": "BSD-3-Clause",
@@ -73,7 +88,7 @@
       "active_contributors_6mo": 10,
       "top_contributor_pct": 41.9,
       "contributors_over_5pct": 3,
-      "contributors_prev_6mo": 3,
+      "contributors_prev_6mo": 1,
       "contributor_trend": "declining",
       "first_time_contributors_6mo": 0,
       "contributor_entropy": 3.75
@@ -81,7 +96,7 @@
     "commits": {
       "last_commit_date": "2025-03-31T09:05:22Z",
       "commits_last_6mo": 0,
-      "commits_last_year": 6
+      "commits_last_year": 2
     },
     "issues": {
       "open_issues": 36,
@@ -111,7 +126,7 @@
       "has_security_policy": false,
       "signed_commits_pct": 100.0,
       "has_dependabot": true,
-      "has_codeql": true,
+      "has_codeql": false,
       "has_security_ci": true,
       "has_snyk": false,
       "has_renovate": false,
@@ -159,98 +174,128 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 1,
-      "examples": 1,
-      "configuration": 1,
-      "troubleshooting": 1,
-      "overall": 2,
-      "summary": "Clear project description but completely lacks actionable documentation, relying entirely on external links.",
-      "top_issue": "No installation instructions, usage examples, or troubleshooting guidance in the README itself\u2014users must navigate to external documentation for any practical information."
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The code appears to be generally secure, but some minor issues with input validation and error handling were found."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "API deprecation warnings without clear migration guidance",
-        "Compilation issues on specific platforms (ARM64, CUDA 12.6, Windows)",
-        "Log file size limit enforcement not working correctly",
-        "Performance issues with posix_fadvise blocking on Linux",
-        "Incomplete or vague issue documentation"
+        "failed build on arm64",
+        "cuda12.6 compilation error"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Add Colorized Log Level Output with Optional Feature Flag"
+      ],
       "abandonment_signals": false,
-      "summary": "glog shows moderate community health with active issue tracking but inconsistent maintainer engagement; users report legitimate technical bugs alongside low-effort complaints, suggesting the project is maintained but not aggressively prioritizing all reported issues."
+      "summary": "The community health for the glog package shows a mix of active issue reporting and some resolved issues, indicating moderate engagement but also frustration over specific build errors. The maintainer seems to respond moderately to issues."
     },
     "communication": {
       "helpfulness": 6,
       "clarity": 7,
       "patience": 4,
-      "technical_depth": 8,
+      "technical_depth": 5,
       "welcomingness": 3,
       "communication_style": "adequate",
       "red_flags": [
-        "closing issues due to lack of response",
-        "locking conversations",
-        "dismissiveness"
+        "Lack of detailed explanations for complex issues",
+        "Closing issues without sufficient information or resolution",
+        "Locking conversations due to spamming"
       ],
-      "summary": "The maintainer responses are generally informative but often come across as abrupt and unwelcoming, which may deter new contributors."
+      "summary": "The maintainer responses are generally clear and provide helpful guidance, but they lack depth in explaining technical decisions and can be impatient with repeated or basic questions. New contributors are not explicitly encouraged."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being from May 2025",
-        "47 open issues with no recent activity or closure",
-        "Zero closed issues in past 6 months indicating no bug fixes",
-        "No merged PRs in past 6 months showing no feature or maintenance work",
-        "No active contributors in past 6 months",
-        "Unknown last release suggests possible version/release tracking issues"
+        "No commits in the past 6 months",
+        "Open issues without resolution for over a year",
+        "Low number of merged PRs"
       ],
       "positive_signals": [
-        "Project exists and has some history (evidenced by last commit date)"
+        "Regular contributor activity",
+        "Recent release"
       ],
-      "summary": "The glog package appears abandoned with no maintenance activity, issue resolution, or contributor engagement over the past 6 months despite a substantial backlog of 47 open issues."
+      "summary": "The package glog shows minimal maintenance with recent contributions and releases, but lacks recent commits and has unresolved open issues."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T07:05:06.646979+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.8,
+      "score_date": "2026-02-16T00:00:00Z",
+      "checks": {
+        "Code-Review": 2.0,
+        "Maintained": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Packaging": -1.0,
+        "Dangerous-Workflow": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Token-Permissions": 0.0,
+        "Pinned-Dependencies": 0.0,
+        "Fuzzing": 10.0,
+        "License": 10.0,
+        "Signed-Releases": -1.0,
+        "Security-Policy": 10.0,
+        "Branch-Protection": 0.0,
+        "SAST": 7.0
+      },
+      "code_review_score": 2.0,
+      "maintained_score": 0.0,
+      "branch_protection_score": 0.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": true,
+      "sast_enabled": true,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 7359,
+      "forks": 2102,
+      "open_issues": 47,
+      "license": "BSD-3-Clause",
+      "description": "C++ implementation of the Google logging module",
+      "oss_fuzz_line_count": 867,
+      "oss_fuzz_line_cover_count": 808
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T06:56:20.151237Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
-    "maintenance_status": "stale",
+    "maintenance_status": "minimal-maintenance",
     "security_summary": "Dependabot enabled",
-    "doc_summary": "The documentation is clear about the package's deprecation and alternatives, but lacks essential information for users who still want to use it.",
+    "doc_summary": "",
     "concerns": [
-      "no commits in the past 6 months",
-      "unaddressed open issues and PRs",
-      "lack of recent releases",
-      "Docs: Lack of installation, usage, and troubleshooting instructions",
-      "Community: compilation errors",
-      "Community: log cleaning issues",
-      "Communication: closing issues due to lack of response",
-      "Communication: locking conversations"
+      "No commits in the past 6 months",
+      "Open issues without resolution for over a year",
+      "Low number of merged PRs",
+      "Community: failed build on arm64",
+      "Community: cuda12.6 compilation error",
+      "Communication: Lack of detailed explanations for complex issues",
+      "Communication: Closing issues without sufficient information or resolution",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "recently active contributors",
-      "one merged PR in the past 6 months",
-      "CI/CD configured"
+      "Regular contributor activity",
+      "Recent release",
+      "CI/CD configured",
+      "Fuzzing enabled",
+      "SAST enabled"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "adequate"
+    "community_sentiment": "mixed",
+    "communication_style": "adequate",
+    "scorecard_score": 4.8
   },
-  "analyzed_at": "2025-12-31T20:06:05.648878Z",
-  "data_fetched_at": "2025-12-31T20:06:05.648881Z"
+  "analyzed_at": "2026-02-26T07:01:23.596285Z",
+  "data_fetched_at": "2026-02-26T07:01:23.596286Z"
 }
