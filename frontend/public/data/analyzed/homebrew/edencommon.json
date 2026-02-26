@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "edencommon",
   "description": "Shared library for Watchman and Eden projects",
-  "version": "2025.12.29.00",
+  "version": "2026.01.12.00",
   "homepage": "https://github.com/facebookexperimental/edencommon",
   "repository": {
     "platform": "github",
@@ -10,11 +10,11 @@
     "repo": "edencommon",
     "subpath": null
   },
-  "install_count_30d": 12712,
+  "install_count_30d": 8019,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 75.9,
+    "overall": 74.5,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
@@ -25,28 +25,34 @@
     ],
     "project_age_band": "mature",
     "security": {
-      "score": 78.0,
-      "weight": 30
+      "score": 80.0,
+      "weight": 30,
+      "key_factors": []
     },
     "maintenance": {
-      "score": 89.73102123738798,
-      "weight": 25
+      "score": 91.6,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 93.0,
-      "weight": 15
+      "score": 78.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 85.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     },
     "documentation": {
-      "score": 16.0,
-      "weight": 10
+      "score": 14.5,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 60.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -59,8 +65,8 @@
       "open_issues": 2,
       "watchers": 13,
       "created_at": "2021-10-11T18:58:19Z",
-      "updated_at": "2025-12-24T17:33:44Z",
-      "pushed_at": "2025-12-29T16:04:25Z",
+      "updated_at": "2026-02-25T17:35:53Z",
+      "pushed_at": "2026-02-25T17:35:50Z",
       "default_branch": "main",
       "license": "MIT",
       "language": "C++",
@@ -71,19 +77,19 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 92,
-      "active_contributors_6mo": 26,
-      "top_contributor_pct": 15.9,
+      "total_contributors": 101,
+      "active_contributors_6mo": 31,
+      "top_contributor_pct": 14.5,
       "contributors_over_5pct": 4,
-      "contributors_prev_6mo": 25,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 17,
-      "contributor_entropy": 5.25
+      "contributors_prev_6mo": 10,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 26,
+      "contributor_entropy": 5.41
     },
     "commits": {
-      "last_commit_date": "2025-12-24T17:31:23Z",
-      "commits_last_6mo": 231,
-      "commits_last_year": 430
+      "last_commit_date": "2026-02-25T17:32:18Z",
+      "commits_last_6mo": 236,
+      "commits_last_year": 300
     },
     "issues": {
       "open_issues": 2,
@@ -152,7 +158,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 3,
-      "recent_runs_pass_rate": 56.0,
+      "recent_runs_pass_rate": 64.0,
       "has_tests_workflow": false,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -162,97 +168,113 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 7,
+      "clarity": 8,
       "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "Brief description clarifies purpose but provides no practical usage information, installation steps, or examples.",
-      "top_issue": "No installation instructions whatsoever despite being a library that users need to integrate into their projects"
+      "summary": "The documentation is very minimal and lacks essential details on installation, usage, and troubleshooting.",
+      "top_issue": "Installation instructions are completely missing."
     },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The code appears to be generally secure, but some potential issues with input validation and error handling were identified."
-    },
+    "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "unresponsive",
+      "sentiment": "negative",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Test failures in sandboxed build environments",
-        "Compiler compatibility issues (GCC 13)"
+        "Some tests fail when building as another user",
+        "Test PathFuncs.move_or_copy fails on GCC 13"
       ],
       "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Low community engagement with unresolved technical issues and no maintainer responses, suggesting potential project dormancy or deprioritization."
+      "abandonment_signals": false,
+      "summary": "The community health of the edencommon package is negative due to open issues with no recent activity, indicating potential frustration among users and a lack of maintainer responsiveness."
     },
     "communication": {
-      "helpfulness": 8,
-      "clarity": 7,
-      "patience": 9,
-      "technical_depth": 6,
+      "helpfulness": 7,
+      "clarity": 6,
+      "patience": 8,
+      "technical_depth": 5,
       "welcomingness": 9,
       "communication_style": "good",
-      "red_flags": [],
-      "summary": "The maintainer responses are generally helpful, clear, patient, and welcoming, providing a positive experience for contributors."
+      "red_flags": [
+        "Some responses are brief and could be more detailed",
+        "Lack of specific technical explanations for CI failures"
+      ],
+      "summary": "The maintainer provides helpful and welcoming responses, but some answers lack depth and clarity, especially regarding technical issues like CI failures."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [
-        "No commits in the past 6 months despite being 1 day old at time of last commit",
-        "No closed issues in the past 6 months indicating lack of maintenance activity",
-        "No merged PRs in the past 6 months showing no active development",
-        "No active contributors in the past 6 months",
-        "2 open issues without resolution"
-      ],
+      "concerns": [],
       "positive_signals": [
-        "Recent commit activity (1 day ago) suggests some minimal attention",
-        "Repository still has some maintenance (not completely abandoned)"
+        "High number of commits in the past 6 months (236)",
+        "Multiple contributors active in the past 6 months (31)",
+        "Merged PRs in the past 6 months (8)"
       ],
-      "summary": "Package appears stale with no meaningful maintenance activity for 6 months despite a recent commit, indicating the project is not actively developed."
+      "summary": "The package edencommon is actively maintained with frequent commits, multiple active contributors, and regular merging of pull requests."
     },
     "changelog": null,
     "governance": {
       "has_succession_plan": false,
       "decision_process_documented": false,
-      "contributor_ladder_exists": false,
-      "indicates_multiple_maintainers": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
-      "summary": "The governance documentation for edencommon lacks a clear succession plan, decision-making process, and contributor ladder, posing a high bus factor risk."
+      "summary": "The governance documentation for edencommon does not address succession planning, decision-making processes, or multiple maintainers. It provides a path from contributor to maintainer through pull requests and CLA submission but lacks comprehensive guidance on how the project is managed if the primary maintainer leaves."
     },
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T14:35:00.218569+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": {
+      "stars": 13,
+      "forks": 17,
+      "open_issues": 2,
+      "license": "MIT",
+      "description": "Shared library for Watchman and Eden projects. ",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T02:59:00.976872Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is lacking in key areas, making it difficult for new users to get started.",
+    "doc_summary": "The documentation is very minimal and lacks essential details on installation, usage, and troubleshooting.",
     "concerns": [
-      "unknown last release",
-      "low closed issues past 6 months",
-      "Docs: No installation instructions or usage examples are provided.",
-      "Community: test failures",
-      "Community: compatibility issues",
+      "Docs: Installation instructions are completely missing.",
+      "Community: Some tests fail when building as another user",
+      "Community: Test PathFuncs.move_or_copy fails on GCC 13",
+      "Communication: Some responses are brief and could be more detailed",
+      "Communication: Lack of specific technical explanations for CI failures",
       "Governance: High bus factor risk identified"
     ],
     "highlights": [
-      "high commit activity past 6 months",
-      "multiple active contributors",
-      "recent commits",
+      "High number of commits in the past 6 months (236)",
+      "Multiple contributors active in the past 6 months (31)",
+      "Merged PRs in the past 6 months (8)",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "good"
+    "community_sentiment": "negative",
+    "communication_style": "good",
+    "forge_metrics": {
+      "stars": 13,
+      "forks": 17,
+      "open_issues": 2
+    }
   },
-  "analyzed_at": "2025-12-31T18:44:13.669235Z",
-  "data_fetched_at": "2025-12-31T18:44:13.669237Z"
+  "analyzed_at": "2026-02-26T03:04:02.942758Z",
+  "data_fetched_at": "2026-02-26T03:04:02.942760Z"
 }
