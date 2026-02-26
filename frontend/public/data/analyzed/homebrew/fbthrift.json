@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "fbthrift",
   "description": "Facebook's branch of Apache Thrift, including a new C++ server",
-  "version": "2025.12.29.00",
+  "version": "2026.01.12.00",
   "homepage": "https://github.com/facebook/fbthrift",
   "repository": {
     "platform": "github",
@@ -10,41 +10,52 @@
     "repo": "fbthrift",
     "subpath": null
   },
-  "install_count_30d": 15782,
+  "install_count_30d": 8273,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 78.4,
-    "grade": "C",
+    "overall": 81.5,
+    "grade": "B",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "approved",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 78.0,
-      "weight": 30
+      "score": 90.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Proper token permissions"
+      ]
     },
     "maintenance": {
-      "score": 77.1,
-      "weight": 25
+      "score": 83.1,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 88.0,
-      "weight": 15
+      "score": 98.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 100.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
-      "score": 40.5,
-      "weight": 10
+      "score": 15.0,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 85.0,
-      "weight": 10
+      "score": 80.0,
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +63,13 @@
       "owner": "facebook",
       "name": "fbthrift",
       "description": "Facebook's branch of Apache Thrift, including a new C++ server.",
-      "stars": 2672,
-      "forks": 625,
+      "stars": 2678,
+      "forks": 629,
       "open_issues": 49,
-      "watchers": 2672,
+      "watchers": 2678,
       "created_at": "2013-07-02T18:15:51Z",
-      "updated_at": "2025-12-31T01:41:25Z",
-      "pushed_at": "2025-12-31T01:41:21Z",
+      "updated_at": "2026-02-26T03:18:34Z",
+      "pushed_at": "2026-02-26T03:18:30Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "C++",
@@ -70,18 +81,18 @@
     },
     "contributors": {
       "total_contributors": 237,
-      "active_contributors_6mo": 56,
+      "active_contributors_6mo": 28,
       "top_contributor_pct": 9.2,
       "contributors_over_5pct": 6,
       "contributors_prev_6mo": 0,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 56,
-      "contributor_entropy": 5.82
+      "first_time_contributors_6mo": 28,
+      "contributor_entropy": 5.83
     },
     "commits": {
-      "last_commit_date": "2025-12-31T01:38:24Z",
-      "commits_last_6mo": 1000,
-      "commits_last_year": 1000
+      "last_commit_date": "2026-02-26T03:15:27Z",
+      "commits_last_6mo": 300,
+      "commits_last_year": 300
     },
     "issues": {
       "open_issues": 44,
@@ -94,8 +105,8 @@
     "prs": {
       "open_prs": 5,
       "merged_prs_6mo": 1,
-      "closed_prs_6mo": 14,
-      "stale_prs": 3,
+      "closed_prs_6mo": 12,
+      "stale_prs": 5,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -132,7 +143,7 @@
     },
     "files": {
       "has_readme": true,
-      "readme_size_bytes": 7116,
+      "readme_size_bytes": 9641,
       "has_license": true,
       "has_changelog": false,
       "has_contributing": true,
@@ -149,9 +160,9 @@
     },
     "ci": {
       "has_github_actions": true,
-      "workflow_count": 4,
-      "recent_runs_pass_rate": 88.0,
-      "has_tests_workflow": false,
+      "workflow_count": 7,
+      "recent_runs_pass_rate": 60.0,
+      "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": false,
       "has_release_workflow": false,
@@ -159,97 +170,128 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 1,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 4,
-      "summary": "Clear high-level explanation but lacks practical quick-start examples and troubleshooting guidance for users to actually use the package.",
-      "top_issue": "No quick-start example showing how to write a .thrift file, generate code, and create a basic client/server"
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [],
-      "summary": "The code appears to be generally secure, but lacks input validation and error handling mechanisms that could potentially lead to security vulnerabilities."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Compilation failures with CMake and undefined references",
-        "Clang/GCC compatibility issues with generated code",
-        "Schema bundling errors at runtime",
-        "Build system dependency issues (pip, pex)"
+        "Compilation with CMake Failure",
+        "Error when using Clang16 + GCC13.2"
       ],
       "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "fbthrift shows signs of maintenance neglect with multiple unresolved critical build/compilation issues, zero comments on most issues, and no visible maintainer engagement despite issues dating back months."
+      "abandonment_signals": false,
+      "summary": "The community health for the fbthrift package on Homebrew is mixed, with some open issues indicating compilation problems and a lack of recent activity from maintainers."
     },
     "communication": {
-      "helpfulness": 9,
-      "clarity": 8,
-      "patience": 9,
-      "technical_depth": 8,
-      "welcomingness": 9,
-      "communication_style": "exemplary",
-      "red_flags": [],
-      "summary": "The maintainer responses are highly helpful, clear, patient, and welcoming, providing a positive experience for contributors."
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 7,
+      "welcomingness": 7,
+      "communication_style": "good",
+      "red_flags": [
+        "Some responses are brief and could be more detailed, especially for complex issues.",
+        "A few responses assume some level of familiarity with the project or tools."
+      ],
+      "summary": "The maintainer responses are generally helpful and clear, providing technical depth where necessary. They encourage new contributors but could benefit from more detailed explanations in some cases."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last activity on 2026-01-14",
-        "49 open issues with no recent activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date"
+        "Low number of merged PRs and closed issues in the past 6 months",
+        "Last release was in 2020"
       ],
-      "positive_signals": [],
-      "summary": "fbthrift shows no maintenance activity over the past 6 months with a growing backlog of unresolved issues and no contributor engagement."
+      "positive_signals": [
+        "Frequent commits (300) in the past 6 months",
+        "Active contributors (28) in the past 6 months"
+      ],
+      "summary": "The package fbthrift shows signs of minimal maintenance with frequent recent commits and active contributors, but it has a low rate of merging PRs and closing issues, and its last release was several years ago."
     },
     "changelog": null,
     "governance": {
       "has_succession_plan": false,
       "decision_process_documented": false,
-      "contributor_ladder_exists": false,
+      "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
-      "summary": "The fbthrift project lacks a clear succession plan and decision-making process, but indicates multiple maintainers with merge rights."
+      "summary": "The documentation outlines a clear path for contributions and indicates multiple maintainers, but lacks details on succession planning and decision-making processes."
     },
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T15:05:24.949958+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.6,
+      "score_date": "2026-02-16T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Code-Review": 9.0,
+        "CII-Best-Practices": 0.0,
+        "License": 10.0,
+        "Dangerous-Workflow": 10.0,
+        "Signed-Releases": -1.0,
+        "Packaging": -1.0,
+        "Branch-Protection": 3.0,
+        "Token-Permissions": 9.0,
+        "Security-Policy": 9.0,
+        "SAST": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Fuzzing": 0.0,
+        "Pinned-Dependencies": 0.0
+      },
+      "code_review_score": 9.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 3.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 9.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 2678,
+      "forks": 629,
+      "open_issues": 49,
+      "license": "Apache-2.0",
+      "description": "Facebook's branch of Apache Thrift, including a new C++ server.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T04:08:11.481590Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
-    "maintenance_status": "stale",
+    "maintenance_status": "minimal-maintenance",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is thorough but lacks a clear quick start guide and troubleshooting section.",
+    "doc_summary": "",
     "concerns": [
-      "last release was over 5 years ago",
-      "very few closed issues and merged PRs in the past 6 months",
-      "Docs: Lack of a concise quick start example to get new users started with the package.",
-      "Community: compilation issues",
-      "Community: undefined references"
+      "Low number of merged PRs and closed issues in the past 6 months",
+      "Last release was in 2020",
+      "Community: Compilation with CMake Failure",
+      "Community: Error when using Clang16 + GCC13.2",
+      "Communication: Some responses are brief and could be more detailed, especially for complex issues.",
+      "Communication: A few responses assume some level of familiarity with the project or tools."
     ],
     "highlights": [
-      "high number of commits in the past 6 months",
-      "many active contributors in the past 6 months",
-      "Excellent maintainer communication",
+      "Frequent commits (300) in the past 6 months",
+      "Active contributors (28) in the past 6 months",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "negative",
-    "communication_style": "exemplary"
+    "community_sentiment": "mixed",
+    "communication_style": "good",
+    "scorecard_score": 6.6
   },
-  "analyzed_at": "2025-12-31T17:16:57.000812Z",
-  "data_fetched_at": "2025-12-31T17:16:57.000812Z"
+  "analyzed_at": "2026-02-26T04:13:14.902548Z",
+  "data_fetched_at": "2026-02-26T04:13:14.902550Z"
 }

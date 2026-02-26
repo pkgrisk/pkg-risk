@@ -1,0 +1,940 @@
+{
+  "ecosystem": "npm",
+  "name": "@graphql-tools/prisma-loader",
+  "description": "A set of utils for faster development of GraphQL tools",
+  "version": "9.0.1",
+  "homepage": "https://github.com/ardatan/graphql-tools-prisma-loader#readme",
+  "repository": {
+    "platform": "github",
+    "owner": "ardatan",
+    "repo": "graphql-tools-prisma-loader",
+    "subpath": null
+  },
+  "install_count_30d": 15385502,
+  "data_availability": "available",
+  "unavailable_reason": null,
+  "scores": {
+    "overall": 86.6,
+    "grade": "B",
+    "percentile": null,
+    "risk_tier": "approved",
+    "update_urgency": "low",
+    "confidence": "medium",
+    "confidence_factors": [
+      "Very new package (<6 months)",
+      "Limited issue history"
+    ],
+    "project_age_band": "new",
+    "security": {
+      "score": 100.0,
+      "weight": 30,
+      "key_factors": []
+    },
+    "maintenance": {
+      "score": 87.55856907540218,
+      "weight": 25,
+      "key_factors": []
+    },
+    "community": {
+      "score": 100.0,
+      "weight": 15,
+      "key_factors": []
+    },
+    "bus_factor": {
+      "score": 67.2,
+      "weight": 10,
+      "key_factors": []
+    },
+    "documentation": {
+      "score": 30.0,
+      "weight": 10,
+      "key_factors": []
+    },
+    "stability": {
+      "score": 100.0,
+      "weight": 10,
+      "key_factors": []
+    }
+  },
+  "github_data": {
+    "repo": {
+      "owner": "ardatan",
+      "name": "graphql-tools-prisma-loader",
+      "description": "GraphQL Tools Prisma Loader",
+      "stars": 0,
+      "forks": 0,
+      "open_issues": 19,
+      "watchers": 0,
+      "created_at": "2025-09-23T11:05:12Z",
+      "updated_at": "2026-02-24T02:53:31Z",
+      "pushed_at": "2026-02-26T02:00:47Z",
+      "default_branch": "master",
+      "license": "MIT",
+      "language": "TypeScript",
+      "topics": [],
+      "is_archived": false,
+      "is_fork": false,
+      "has_discussions": false,
+      "is_deprecated": false
+    },
+    "contributors": {
+      "total_contributors": 3,
+      "active_contributors_6mo": 3,
+      "top_contributor_pct": 77.0,
+      "contributors_over_5pct": 2,
+      "contributors_prev_6mo": 0,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 3,
+      "contributor_entropy": 0.9
+    },
+    "commits": {
+      "last_commit_date": "2026-02-24T02:53:27Z",
+      "commits_last_6mo": 135,
+      "commits_last_year": 135
+    },
+    "issues": {
+      "open_issues": 1,
+      "closed_issues_6mo": 0,
+      "avg_response_time_hours": null,
+      "avg_close_time_hours": null,
+      "good_first_issue_count": 0,
+      "regression_issue_count": 0
+    },
+    "prs": {
+      "open_prs": 18,
+      "merged_prs_6mo": 107,
+      "closed_prs_6mo": 109,
+      "stale_prs": 13,
+      "avg_merge_time_hours": null
+    },
+    "releases": {
+      "total_releases": 2,
+      "releases_last_year": 2,
+      "last_release_date": "2025-09-23T12:09:47Z",
+      "latest_version": "v9.0.1",
+      "has_signed_releases": false,
+      "prerelease_ratio": 0.0
+    },
+    "security": {
+      "has_security_md": true,
+      "has_security_policy": false,
+      "signed_commits_pct": 100.0,
+      "has_dependabot": false,
+      "has_codeql": false,
+      "has_security_ci": true,
+      "has_snyk": false,
+      "has_renovate": true,
+      "has_trivy": false,
+      "has_semgrep": false,
+      "slsa_level": null,
+      "has_sigstore": false,
+      "has_sbom": false,
+      "has_reproducible_builds": false,
+      "known_cves": 0,
+      "vulnerable_deps": 0,
+      "cve_history": {
+        "total_cves": 0,
+        "cves": [],
+        "avg_days_to_patch": null,
+        "has_unpatched": false
+      }
+    },
+    "files": {
+      "has_readme": true,
+      "readme_size_bytes": 272,
+      "has_license": true,
+      "has_changelog": true,
+      "has_contributing": true,
+      "has_code_of_conduct": false,
+      "has_codeowners": false,
+      "has_governance": false,
+      "has_docs_dir": false,
+      "has_examples_dir": false,
+      "has_tests_dir": false,
+      "has_ci_config": true,
+      "has_issue_templates": true,
+      "has_pr_template": true,
+      "has_funding": false
+    },
+    "ci": {
+      "has_github_actions": true,
+      "workflow_count": 3,
+      "recent_runs_pass_rate": 82.0,
+      "has_tests_workflow": true,
+      "has_lint_workflow": true,
+      "has_security_workflow": true,
+      "has_release_workflow": true,
+      "has_multi_platform": true
+    }
+  },
+  "llm_assessments": {
+    "readme": null,
+    "security": {
+      "overall_score": 7,
+      "injection_risks": [
+        {
+          "file": "src/prisma-yml/Environment.ts",
+          "line": 148,
+          "severity": "high",
+          "description": "Use of yaml.load allows arbitrary JavaScript execution via YAML. Use safeLoad instead."
+        }
+      ],
+      "input_validation_score": 8,
+      "secrets_found": [],
+      "critical_findings": [
+        "Unsafe YAML deserialization vulnerability in parseGlobalRC method"
+      ],
+      "summary": "The code has a critical injection risk due to unsafe YAML parsing which could allow remote code execution."
+    },
+    "sentiment": {
+      "sentiment": "neutral",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Dependency Dashboard"
+      ],
+      "praise_themes": [],
+      "abandonment_signals": false,
+      "summary": "The community health for @graphql-tools/prisma-loader appears neutral with a moderate level of maintainer responsiveness. The only issue is related to dependency management, indicating that while there might be some maintenance needed, there are no significant complaints or abandonment signals."
+    },
+    "communication": {
+      "helpfulness": 5,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 3,
+      "welcomingness": 4,
+      "communication_style": "adequate",
+      "red_flags": [
+        "Repetitive messages without additional context or troubleshooting steps",
+        "Lack of technical explanation for the issue"
+      ],
+      "summary": "The responses provide clear instructions but lack depth and patience in handling repeated issues, and do not encourage new contributors."
+    },
+    "maintenance": {
+      "status": "actively-maintained",
+      "confidence": 9,
+      "concerns": [],
+      "positive_signals": [
+        "Frequent commits in the past 6 months",
+        "Regular releases",
+        "High number of merged PRs"
+      ],
+      "summary": "The package @graphql-tools/prisma-loader is actively maintained with frequent commits, regular releases, and a high volume of merged pull requests."
+    },
+    "changelog": {
+      "breaking_changes_marked": true,
+      "has_migration_guides": false,
+      "well_categorized": false,
+      "appears_complete": false,
+      "clarity_score": 7,
+      "overall_score": 5,
+      "summary": "The changelog marks breaking changes and includes some categorization, but lacks migration guides, is not well-categorized, and appears incomplete."
+    },
+    "governance": {
+      "has_succession_plan": false,
+      "decision_process_documented": true,
+      "contributor_ladder_exists": true,
+      "indicates_multiple_maintainers": false,
+      "bus_factor_risk": "medium",
+      "summary": "The governance documentation for '@graphql-tools/prisma-loader' provides a detailed process for contributing and decision-making but lacks information on succession planning and indicates a single maintainer, posing moderate bus factor risk."
+    },
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": {
+    "lifecycle_scripts": {
+      "has_preinstall": false,
+      "has_postinstall": false,
+      "has_prepare": false,
+      "has_prepublish": false,
+      "has_install": false,
+      "scripts": {},
+      "suspicious_patterns": [],
+      "risk_score": 0,
+      "risk_factors": [],
+      "has_obfuscation": false,
+      "has_network_calls": false,
+      "has_file_system_access": false,
+      "has_process_spawn": false,
+      "has_credential_access": false,
+      "has_env_access": false,
+      "installs_runtime": false
+    },
+    "tarball": {
+      "tarball_url": "https://registry.npmjs.org/@graphql-tools/prisma-loader/-/prisma-loader-9.0.1.tgz",
+      "tarball_size_bytes": 22313,
+      "file_count": 76,
+      "files": [
+        {
+          "path": "LICENSE",
+          "size_bytes": 1071,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/Cluster.d.cts",
+          "size_bytes": 1809,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/errors/ClusterNotFound.d.cts",
+          "size_bytes": 86,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/errors/ClusterNotSet.d.cts",
+          "size_bytes": 72,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/types/common.d.cts",
+          "size_bytes": 64,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/constants.d.cts",
+          "size_bytes": 200,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/Environment.d.cts",
+          "size_bytes": 1310,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/utils/getProxyAgent.d.cts",
+          "size_bytes": 238,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/index.d.cts",
+          "size_bytes": 664,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/index.d.cts",
+          "size_bytes": 669,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/Output.d.cts",
+          "size_bytes": 549,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/utils/parseEndpoint.d.cts",
+          "size_bytes": 311,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/prisma-json-schema.d.cts",
+          "size_bytes": 922,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/PrismaDefinition.d.cts",
+          "size_bytes": 2029,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/types/rc.d.cts",
+          "size_bytes": 401,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/errors/StageNotFound.d.cts",
+          "size_bytes": 85,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/Variables.d.cts",
+          "size_bytes": 1250,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/yaml.d.cts",
+          "size_bytes": 331,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/utils/yamlComment.d.cts",
+          "size_bytes": 381,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/Cluster.js",
+          "size_bytes": 8356,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/Cluster.js",
+          "size_bytes": 7982,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/errors/ClusterNotFound.js",
+          "size_bytes": 332,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/errors/ClusterNotFound.js",
+          "size_bytes": 185,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/errors/ClusterNotSet.js",
+          "size_bytes": 329,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/errors/ClusterNotSet.js",
+          "size_bytes": 188,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/types/common.js",
+          "size_bytes": 0,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/types/common.js",
+          "size_bytes": 0,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/constants.js",
+          "size_bytes": 576,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/constants.js",
+          "size_bytes": 320,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/Environment.js",
+          "size_bytes": 9197,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/Environment.js",
+          "size_bytes": 8722,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/utils/getProxyAgent.js",
+          "size_bytes": 3339,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/utils/getProxyAgent.js",
+          "size_bytes": 3086,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/index.js",
+          "size_bytes": 2616,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/index.js",
+          "size_bytes": 2189,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/index.js",
+          "size_bytes": 2404,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/index.js",
+          "size_bytes": 530,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/Output.js",
+          "size_bytes": 760,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/Output.js",
+          "size_bytes": 593,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/utils/parseEndpoint.js",
+          "size_bytes": 2723,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/utils/parseEndpoint.js",
+          "size_bytes": 2553,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/prisma-json-schema.js",
+          "size_bytes": 0,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/prisma-json-schema.js",
+          "size_bytes": 0,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/PrismaDefinition.js",
+          "size_bytes": 12165,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/PrismaDefinition.js",
+          "size_bytes": 11569,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/types/rc.js",
+          "size_bytes": 0,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/types/rc.js",
+          "size_bytes": 0,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/errors/StageNotFound.js",
+          "size_bytes": 417,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/errors/StageNotFound.js",
+          "size_bytes": 276,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/Variables.js",
+          "size_bytes": 10687,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/Variables.js",
+          "size_bytes": 10304,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/yaml.js",
+          "size_bytes": 1133,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/yaml.js",
+          "size_bytes": 872,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/prisma-yml/utils/yamlComment.js",
+          "size_bytes": 1736,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "esm/prisma-yml/utils/yamlComment.js",
+          "size_bytes": 1462,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "cjs/package.json",
+          "size_bytes": 19,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "package.json",
+          "size_bytes": 1829,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 272,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/Cluster.d.ts",
+          "size_bytes": 1808,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/errors/ClusterNotFound.d.ts",
+          "size_bytes": 86,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/errors/ClusterNotSet.d.ts",
+          "size_bytes": 72,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/types/common.d.ts",
+          "size_bytes": 64,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/constants.d.ts",
+          "size_bytes": 200,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/Environment.d.ts",
+          "size_bytes": 1306,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/utils/getProxyAgent.d.ts",
+          "size_bytes": 238,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/index.d.ts",
+          "size_bytes": 664,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/index.d.ts",
+          "size_bytes": 657,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/Output.d.ts",
+          "size_bytes": 549,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/utils/parseEndpoint.d.ts",
+          "size_bytes": 311,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/prisma-json-schema.d.ts",
+          "size_bytes": 922,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/PrismaDefinition.d.ts",
+          "size_bytes": 2022,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/types/rc.d.ts",
+          "size_bytes": 401,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/errors/StageNotFound.d.ts",
+          "size_bytes": 85,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/Variables.d.ts",
+          "size_bytes": 1248,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/yaml.d.ts",
+          "size_bytes": 328,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "typings/prisma-yml/utils/yamlComment.d.ts",
+          "size_bytes": 381,
+          "is_executable": false,
+          "is_binary": false
+        }
+      ],
+      "files_not_in_repo": [],
+      "suspicious_files": [],
+      "has_native_code": false,
+      "has_minified_js": false,
+      "minified_files": [],
+      "suspicious_patterns": [
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "cjs/prisma-yml/constants.js",
+          "matched_content": "'https://api.cloud.prisma.sh'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "cjs/prisma-yml/constants.js",
+          "matched_content": "'https://eu1.prisma.sh'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "cjs/prisma-yml/constants.js",
+          "matched_content": "'https://us1.prisma.sh'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "esm/prisma-yml/constants.js",
+          "matched_content": "'https://api.cloud.prisma.sh'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "esm/prisma-yml/constants.js",
+          "matched_content": "'https://eu1.prisma.sh'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "esm/prisma-yml/constants.js",
+          "matched_content": "'https://us1.prisma.sh'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "cjs/prisma-yml/Environment.js",
+          "matched_content": "'https://api.cloud.prisma.sh'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "esm/prisma-yml/Environment.js",
+          "matched_content": "'https://api.cloud.prisma.sh'",
+          "description": "Hardcoded URL in string"
+        }
+      ],
+      "risk_score": 0
+    },
+    "version_diff": {
+      "current_version": "9.0.1",
+      "previous_version": "9.0.1-alpha-20250923120853-9b200bb414d0fe046042b4885e5901070659d00b",
+      "comparison_available": true,
+      "files_added": [],
+      "files_removed": [],
+      "files_modified": [],
+      "scripts_changed": false,
+      "scripts_added": [],
+      "dependencies_added": [],
+      "dependencies_removed": [],
+      "size_change_bytes": 0,
+      "size_change_percent": 0.0,
+      "is_major_bump": false,
+      "is_minor_bump": false,
+      "is_patch_bump": false,
+      "version_jump_suspicious": false,
+      "days_since_previous": null,
+      "published_without_repo_commits": false,
+      "risk_score": 0,
+      "risk_factors": []
+    },
+    "publishing": {
+      "has_provenance": false,
+      "provenance_verified": false,
+      "publisher_username": "ardatan",
+      "publisher_is_listed_maintainer": true,
+      "maintainer_count": 5,
+      "maintainers": [
+        "dotansimha",
+        "urigo",
+        "ardatan",
+        "enisdenjo",
+        "theguild-bot"
+      ],
+      "recent_maintainer_change": false,
+      "new_maintainers": [],
+      "first_publish_by_user": false,
+      "publish_frequency_anomaly": false,
+      "risk_score": 10,
+      "risk_factors": []
+    },
+    "overall_risk_score": 10,
+    "risk_level": "low",
+    "all_suspicious_patterns": [
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "cjs/prisma-yml/constants.js",
+        "matched_content": "'https://api.cloud.prisma.sh'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "cjs/prisma-yml/constants.js",
+        "matched_content": "'https://eu1.prisma.sh'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "cjs/prisma-yml/constants.js",
+        "matched_content": "'https://us1.prisma.sh'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "esm/prisma-yml/constants.js",
+        "matched_content": "'https://api.cloud.prisma.sh'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "esm/prisma-yml/constants.js",
+        "matched_content": "'https://eu1.prisma.sh'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "esm/prisma-yml/constants.js",
+        "matched_content": "'https://us1.prisma.sh'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "cjs/prisma-yml/Environment.js",
+        "matched_content": "'https://api.cloud.prisma.sh'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "esm/prisma-yml/Environment.js",
+        "matched_content": "'https://api.cloud.prisma.sh'",
+        "description": "Hardcoded URL in string"
+      }
+    ],
+    "critical_findings": [],
+    "behavioral_flags": []
+  },
+  "aggregator_data": {
+    "scorecard": null,
+    "project_metrics": null,
+    "dependency_graph": {
+      "direct_count": 16,
+      "transitive_count": 64,
+      "vulnerable_direct": 0,
+      "vulnerable_transitive": 0,
+      "max_depth": 5
+    },
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T04:18:20.889244Z",
+    "sources_available": [
+      "deps.dev:version",
+      "deps.dev:dependencies"
+    ]
+  },
+  "analysis_summary": {
+    "maintenance_status": "actively-maintained",
+    "security_summary": "has SECURITY.md",
+    "doc_summary": "",
+    "concerns": [
+      "Community: Dependency Dashboard",
+      "Communication: Repetitive messages without additional context or troubleshooting steps",
+      "Communication: Lack of technical explanation for the issue",
+      "Security: Unsafe YAML deserialization vulnerability in parseGlobalRC method",
+      "Security: Use of yaml.load allows arbitrary JavaScript execution via YAML. Use safeLoad instead."
+    ],
+    "highlights": [
+      "Frequent commits in the past 6 months",
+      "Regular releases",
+      "High number of merged PRs",
+      "Breaking changes clearly marked in changelog",
+      "Actively maintained",
+      "CI/CD configured"
+    ],
+    "community_sentiment": "neutral",
+    "communication_style": "adequate",
+    "supply_chain_risk": "low",
+    "dependency_count": 80
+  },
+  "analyzed_at": "2026-02-26T04:23:23.326228Z",
+  "data_fetched_at": "2026-02-26T04:23:23.326230Z"
+}
