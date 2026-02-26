@@ -2,7 +2,7 @@
   "ecosystem": "homebrew",
   "name": "mongosh",
   "description": "MongoDB Shell to connect, configure, query, and work with your MongoDB database",
-  "version": "2.5.10",
+  "version": "2.7.0",
   "homepage": "https://github.com/mongodb-js/mongosh",
   "repository": {
     "platform": "github",
@@ -10,12 +10,12 @@
     "repo": "mongosh",
     "subpath": null
   },
-  "install_count_30d": 14190,
+  "install_count_30d": 13484,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 84.4,
-    "grade": "B",
+    "overall": 91.0,
+    "grade": "A",
     "percentile": null,
     "risk_tier": "approved",
     "update_urgency": "low",
@@ -25,28 +25,39 @@
     ],
     "project_age_band": "mature",
     "security": {
-      "score": 70.0,
-      "weight": 30
+      "score": 100.0,
+      "weight": 30,
+      "key_factors": [
+        "Proper token permissions",
+        "SAST enabled (Scorecard)"
+      ]
     },
     "maintenance": {
-      "score": 94.29010123725925,
-      "weight": 25
+      "score": 95.8,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
       "score": 100.0,
-      "weight": 15
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 90.0,
-      "weight": 10
+      "score": 95.0,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
-      "score": 58.0,
-      "weight": 10
+      "score": 25.0,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -54,13 +65,13 @@
       "owner": "mongodb-js",
       "name": "mongosh",
       "description": "The MongoDB Shell",
-      "stars": 377,
-      "forks": 82,
-      "open_issues": 25,
-      "watchers": 377,
+      "stars": 381,
+      "forks": 87,
+      "open_issues": 10,
+      "watchers": 381,
       "created_at": "2019-10-03T01:13:03Z",
-      "updated_at": "2025-12-28T03:37:39Z",
-      "pushed_at": "2025-12-28T03:37:35Z",
+      "updated_at": "2026-02-25T12:19:59Z",
+      "pushed_at": "2026-02-25T16:59:31Z",
       "default_branch": "main",
       "license": "Apache-2.0",
       "language": "TypeScript",
@@ -80,18 +91,18 @@
     },
     "contributors": {
       "total_contributors": 56,
-      "active_contributors_6mo": 19,
+      "active_contributors_6mo": 15,
       "top_contributor_pct": 26.6,
       "contributors_over_5pct": 5,
-      "contributors_prev_6mo": 14,
+      "contributors_prev_6mo": 9,
       "contributor_trend": "growing",
-      "first_time_contributors_6mo": 10,
-      "contributor_entropy": 3.34
+      "first_time_contributors_6mo": 9,
+      "contributor_entropy": 3.35
     },
     "commits": {
-      "last_commit_date": "2025-12-28T03:37:33Z",
-      "commits_last_6mo": 207,
-      "commits_last_year": 511
+      "last_commit_date": "2026-02-25T12:19:54Z",
+      "commits_last_6mo": 245,
+      "commits_last_year": 300
     },
     "issues": {
       "open_issues": 0,
@@ -102,24 +113,24 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 25,
-      "merged_prs_6mo": 108,
-      "closed_prs_6mo": 122,
-      "stale_prs": 15,
+      "open_prs": 10,
+      "merged_prs_6mo": 135,
+      "closed_prs_6mo": 159,
+      "stale_prs": 7,
       "avg_merge_time_hours": null
     },
     "releases": {
-      "total_releases": 140,
-      "releases_last_year": 14,
-      "last_release_date": "2025-11-28T10:54:18Z",
-      "latest_version": "v2.5.10",
+      "total_releases": 142,
+      "releases_last_year": 13,
+      "last_release_date": "2026-02-12T12:14:59Z",
+      "latest_version": "v2.7.0",
       "has_signed_releases": true,
       "prerelease_ratio": 0.01
     },
     "security": {
       "has_security_md": false,
       "has_security_policy": false,
-      "signed_commits_pct": 57.0,
+      "signed_commits_pct": 56.0,
       "has_dependabot": false,
       "has_codeql": true,
       "has_security_ci": true,
@@ -159,7 +170,7 @@
     },
     "ci": {
       "has_github_actions": true,
-      "workflow_count": 14,
+      "workflow_count": 15,
       "recent_runs_pass_rate": 78.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
@@ -169,116 +180,112 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 9,
-      "installation": 9,
-      "quick_start": 8,
-      "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 4,
-      "overall": 8,
-      "summary": "Excellent clarity and installation guidance with comprehensive CLI documentation, but lacks troubleshooting section and could use more practical usage examples beyond local development.",
-      "top_issue": "No troubleshooting section for common runtime issues (connection problems, authentication errors, compatibility issues)"
-    },
-    "security": {
-      "overall_score": 5,
-      "injection_risks": [
-        {
-          "file": "packages/arg-parser/src/arg-mapper.ts",
-          "line": 123,
-          "severity": "medium",
-          "description": "Potential SQL injection risk through user-controlled input in 'setUrlParam' function"
-        },
-        {
-          "file": "packages/arg-parser/src/arg-mapper.ts",
-          "line": 143,
-          "severity": "low",
-          "description": "User-controlled input in 'setAuthMechPropNonUrl' function may lead to template injection"
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [
-        {
-          "file": "packages/arg-parser/src/arg-mapper.ts",
-          "line": 123,
-          "type": "AWS access key ID"
-        },
-        {
-          "file": "packages/arg-parser/src/arg-mapper.ts",
-          "line": 124,
-          "type": "AWS secret access key"
-        }
-      ],
-      "critical_findings": [
-        "Potential SQL injection risk",
-        "Hardcoded AWS credentials"
-      ],
-      "summary": "The code has several security concerns, including potential SQL injection risks, hardcoded secrets, and insufficient input validation, which require immediate attention to prevent potential attacks."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": null,
     "communication": {
       "helpfulness": 8,
-      "clarity": 9,
-      "patience": 7,
-      "technical_depth": 8,
-      "welcomingness": 6,
-      "communication_style": "good",
+      "clarity": 7,
+      "patience": 5,
+      "technical_depth": 9,
+      "welcomingness": 3,
+      "communication_style": "adequate",
       "red_flags": [
-        "dismissiveness towards some contributors",
-        "borderline hostility towards perceived spam"
+        "Some responses are dismissive of contributors, particularly those who seem to be making automated or uninformed contributions.",
+        "Lack of detailed explanations for some issues that could benefit from more clarity."
       ],
-      "summary": "The maintainers provide clear and technically sound responses, but can be dismissive or hostile towards contributors they perceive as unhelpful or spammy."
+      "summary": "The maintainer responses provide technical depth and helpfulness in addressing issues, but they can be unclear at times and lack patience with repeated or basic questions. The communication style is adequate overall, though there are instances of hostility towards contributors who do not understand the codebase."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [
-        "No commits in past 6 months despite last commit being today (likely stale data)",
-        "21 open issues with no recent activity",
-        "No closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date indicates missing release history"
+      "concerns": [],
+      "positive_signals": [
+        "Frequent commits (245 in the last 6 months)",
+        "Regular releases",
+        "Active contributors (15 in the last 6 months)"
       ],
-      "positive_signals": [],
-      "summary": "Package appears abandoned with no maintenance activity, active issues, or contributor engagement over the past 6 months."
+      "summary": "The package mongosh is actively maintained with frequent commits, regular releases, and an active community of contributors."
     },
     "changelog": null,
     "governance": {
       "has_succession_plan": false,
       "decision_process_documented": false,
-      "contributor_ladder_exists": false,
+      "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": false,
-      "bus_factor_risk": "high",
-      "summary": "The governance documentation for the mongosh package lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
+      "bus_factor_risk": "medium",
+      "summary": "The documentation outlines a clear path for contributions but lacks details on succession planning, decision-making processes, and indicates a single maintainer with merge rights, posing moderate bus factor risk."
     },
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T12:20:35.953135+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.6,
+      "score_date": "2026-02-16T00:00:00Z",
+      "checks": {
+        "Dangerous-Workflow": 10.0,
+        "Packaging": -1.0,
+        "CII-Best-Practices": 0.0,
+        "Code-Review": 5.0,
+        "Maintained": 10.0,
+        "Token-Permissions": 9.0,
+        "Security-Policy": 0.0,
+        "Binary-Artifacts": 9.0,
+        "License": 10.0,
+        "Fuzzing": 0.0,
+        "Branch-Protection": 5.0,
+        "Signed-Releases": 8.0,
+        "SAST": 10.0,
+        "Pinned-Dependencies": 2.0
+      },
+      "code_review_score": 5.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": 5.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 9.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": true,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 381,
+      "forks": 87,
+      "open_issues": 12,
+      "license": "Apache-2.0",
+      "description": "The MongoDB Shell",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T05:00:45.919322Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "The README provides clear installation instructions and a comprehensive list of CLI options, but lacks concise examples and troubleshooting guidance.",
+    "doc_summary": "",
     "concerns": [
-      "Open PRs are relatively high at 25",
-      "Docs: Insufficient troubleshooting documentation",
-      "Communication: dismissiveness towards some contributors",
-      "Communication: borderline hostility towards perceived spam",
-      "Governance: High bus factor risk identified",
-      "Security: Potential SQL injection risk",
-      "Security: Hardcoded AWS credentials"
+      "Communication: Some responses are dismissive of contributors, particularly those who seem to be making automated or uninformed contributions.",
+      "Communication: Lack of detailed explanations for some issues that could benefit from more clarity."
     ],
     "highlights": [
-      "Frequent commits",
-      "Recent release",
-      "Multiple active contributors",
-      "No open issues",
+      "Frequent commits (245 in the last 6 months)",
+      "Regular releases",
+      "Active contributors (15 in the last 6 months)",
       "Actively maintained",
-      "CI/CD configured"
+      "CI/CD configured",
+      "SAST enabled"
     ],
-    "communication_style": "good"
+    "communication_style": "adequate",
+    "scorecard_score": 6.6
   },
-  "analyzed_at": "2025-12-31T17:58:21.484864Z",
-  "data_fetched_at": "2025-12-31T17:58:21.484865Z"
+  "analyzed_at": "2026-02-26T05:05:48.526504Z",
+  "data_fetched_at": "2026-02-26T05:05:48.526506Z"
 }

@@ -10,41 +10,53 @@
     "repo": "ompi",
     "subpath": null
   },
-  "install_count_30d": 13754,
+  "install_count_30d": 4172,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 78.8,
-    "grade": "C",
+    "overall": 85.5,
+    "grade": "B",
     "percentile": null,
-    "risk_tier": "conditional",
+    "risk_tier": "approved",
     "update_urgency": "low",
     "confidence": "high",
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 62.0,
-      "weight": 30
+      "score": 90.0,
+      "weight": 30,
+      "key_factors": [
+        "Code review practices",
+        "Proper token permissions",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 91.32853255223993,
-      "weight": 25
+      "score": 91.6,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 98.0,
-      "weight": 15
+      "score": 93.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
       "score": 95.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
-      "score": 39.0,
-      "weight": 10
+      "score": 33.0,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
-      "score": 93.0,
-      "weight": 10
+      "score": 88.0,
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +64,13 @@
       "owner": "open-mpi",
       "name": "ompi",
       "description": "Open MPI main development repository",
-      "stars": 2496,
-      "forks": 939,
-      "open_issues": 817,
-      "watchers": 2496,
+      "stars": 2532,
+      "forks": 947,
+      "open_issues": 804,
+      "watchers": 2532,
       "created_at": "2014-09-16T16:08:30Z",
-      "updated_at": "2025-12-30T17:13:27Z",
-      "pushed_at": "2025-12-30T17:13:22Z",
+      "updated_at": "2026-02-25T19:57:07Z",
+      "pushed_at": "2026-02-25T14:15:54Z",
       "default_branch": "main",
       "license": "NOASSERTION",
       "language": "C",
@@ -76,33 +88,33 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 298,
+      "total_contributors": 303,
       "active_contributors_6mo": 37,
-      "top_contributor_pct": 31.1,
-      "contributors_over_5pct": 4,
-      "contributors_prev_6mo": 35,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 17,
-      "contributor_entropy": 4.22
+      "top_contributor_pct": 20.6,
+      "contributors_over_5pct": 5,
+      "contributors_prev_6mo": 5,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 33,
+      "contributor_entropy": 4.86
     },
     "commits": {
-      "last_commit_date": "2025-12-30T17:13:22Z",
-      "commits_last_6mo": 223,
-      "commits_last_year": 507
+      "last_commit_date": "2026-02-25T14:15:54Z",
+      "commits_last_6mo": 289,
+      "commits_last_year": 300
     },
     "issues": {
-      "open_issues": 222,
-      "closed_issues_6mo": 88,
-      "avg_response_time_hours": 16.2,
-      "avg_close_time_hours": 74.7,
+      "open_issues": 237,
+      "closed_issues_6mo": 41,
+      "avg_response_time_hours": 3.4,
+      "avg_close_time_hours": 146.6,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 102,
-      "merged_prs_6mo": 161,
-      "closed_prs_6mo": 181,
-      "stale_prs": 73,
+      "open_prs": 79,
+      "merged_prs_6mo": 242,
+      "closed_prs_6mo": 268,
+      "stale_prs": 61,
       "avg_merge_time_hours": null
     },
     "releases": {
@@ -116,7 +128,7 @@
     "security": {
       "has_security_md": false,
       "has_security_policy": false,
-      "signed_commits_pct": 64.0,
+      "signed_commits_pct": 63.0,
       "has_dependabot": false,
       "has_codeql": false,
       "has_security_ci": false,
@@ -156,8 +168,8 @@
     },
     "ci": {
       "has_github_actions": true,
-      "workflow_count": 16,
-      "recent_runs_pass_rate": 100.0,
+      "workflow_count": 20,
+      "recent_runs_pass_rate": 92.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -166,108 +178,118 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 1,
-      "examples": 1,
-      "configuration": 1,
-      "troubleshooting": 1,
-      "overall": 2,
-      "summary": "The README provides a good introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and examples"
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "ompi/tools/mpirun/main.c",
-          "line": 123,
-          "severity": "medium",
-          "description": "The execv function is used with user-controlled input (full_prterun_path), which could potentially lead to command injection if the path is not properly sanitized."
-        },
-        {
-          "file": "ompi/tools/mpirun/main.c",
-          "line": 145,
-          "severity": "low",
-          "description": "The setenv function is used with user-controlled input (opal_prefix), but it's unlikely to cause significant harm as it only sets an environment variable."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential command injection vulnerability in the execv function call",
-        "Lack of input validation for environment variables"
-      ],
-      "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but no critical secrets or sensitive information exposure was found."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "environment variable issues",
-        "compatibility problems"
+        "Float128 quad precision mods are not in new OpenMPI release",
+        "coll/acoll: Segfault in multi-node Allreduce with MPI_IN_PLACE"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The open-mpi community is moderately active, with some users experiencing technical difficulties and awaiting resolutions, but no signs of abandonment or extreme frustration."
+      "summary": "The community health of the open-mpi project on Homebrew is mixed, with some issues remaining unresolved and a moderate level of frustration expressed by users. There are no clear signs of praise or abandonment."
     },
     "communication": {
-      "helpfulness": 8,
-      "clarity": 7,
-      "patience": 6,
-      "technical_depth": 9,
-      "welcomingness": 5,
+      "helpfulness": 7,
+      "clarity": 6,
+      "patience": 5,
+      "technical_depth": 8,
+      "welcomingness": 4,
       "communication_style": "adequate",
       "red_flags": [
-        "dismissiveness of old issues",
-        "lack of detailed explanations for newcomers"
+        "Some responses are brief and could be more helpful",
+        "Lack of clear instructions for new contributors"
       ],
-      "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
+      "summary": "The maintainer responses provide technical insights and address specific issues, but they sometimes lack clarity and patience in handling repeated or basic questions. They encourage contributions indirectly but do not explicitly welcome new contributors."
     },
     "maintenance": {
       "status": "actively-maintained",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "High number of open issues and PRs which could indicate some unresolved problems or a backlog."
       ],
       "positive_signals": [
-        "frequent commits in the past 6 months",
-        "large number of merged PRs",
-        "many active contributors"
+        "Frequent commits, regular merging of PRs, and multiple contributors in the past six months show active engagement."
       ],
-      "summary": "The open-mpi package appears to be actively maintained with a high volume of recent activity, despite having a significant number of open issues and PRs."
+      "summary": "The package is actively maintained with frequent updates and contributions, but there are a significant number of open issues and pull requests that may need attention."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 6.4,
+      "score_date": "2026-02-16T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Code-Review": 10.0,
+        "CII-Best-Practices": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "Security-Policy": 0.0,
+        "Packaging": -1.0,
+        "Signed-Releases": -1.0,
+        "License": 9.0,
+        "Token-Permissions": 9.0,
+        "Branch-Protection": -1.0,
+        "Fuzzing": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 10.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 9.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 2530,
+      "forks": 946,
+      "open_issues": 803,
+      "license": "non-standard",
+      "description": "Open MPI main development repository",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T05:23:08.351006Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
     "security_summary": "No issues",
-    "doc_summary": "The README provides a good introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
+    "doc_summary": "",
     "concerns": [
-      "high number of open issues",
-      "high number of open PRs",
-      "Docs: Lack of clear installation instructions and examples",
-      "Community: environment variable issues",
-      "Community: compatibility problems",
-      "Communication: dismissiveness of old issues",
-      "Communication: lack of detailed explanations for newcomers",
-      "Security: Potential command injection vulnerability in the execv function call",
-      "Security: Lack of input validation for environment variables"
+      "High number of open issues and PRs which could indicate some unresolved problems or a backlog.",
+      "Community: Float128 quad precision mods are not in new OpenMPI release",
+      "Community: coll/acoll: Segfault in multi-node Allreduce with MPI_IN_PLACE",
+      "Communication: Some responses are brief and could be more helpful",
+      "Communication: Lack of clear instructions for new contributors",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "frequent commits in the past 6 months",
-      "large number of merged PRs",
-      "many active contributors",
+      "Frequent commits, regular merging of PRs, and multiple contributors in the past six months show active engagement.",
       "Actively maintained",
       "CI/CD configured"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "adequate"
+    "community_sentiment": "mixed",
+    "communication_style": "adequate",
+    "scorecard_score": 6.4
   },
-  "analyzed_at": "2025-12-31T18:11:16.127467Z",
-  "data_fetched_at": "2025-12-31T18:11:16.127467Z"
+  "analyzed_at": "2026-02-26T05:28:13.835146Z",
+  "data_fetched_at": "2026-02-26T05:28:13.835148Z"
 }
