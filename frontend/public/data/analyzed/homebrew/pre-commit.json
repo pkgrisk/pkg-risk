@@ -10,11 +10,11 @@
     "repo": "pre-commit",
     "subpath": null
   },
-  "install_count_30d": 13494,
+  "install_count_30d": 8076,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 76.3,
+    "overall": 72.0,
     "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,28 +23,39 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 64.0,
-      "weight": 30
+      "score": 75.0,
+      "weight": 30,
+      "key_factors": [
+        "Weak code review",
+        "Weak branch protection"
+      ]
     },
     "maintenance": {
-      "score": 100.0,
-      "weight": 25
+      "score": 95.24817647224748,
+      "weight": 25,
+      "key_factors": []
     },
     "community": {
-      "score": 92.0,
-      "weight": 15
+      "score": 72.0,
+      "weight": 15,
+      "key_factors": []
     },
     "bus_factor": {
-      "score": 48.84,
-      "weight": 10
+      "score": 28.8,
+      "weight": 10,
+      "key_factors": [
+        "Low contributor diversity (Scorecard)"
+      ]
     },
     "documentation": {
-      "score": 34.0,
-      "weight": 10
+      "score": 20.0,
+      "weight": 10,
+      "key_factors": []
     },
     "stability": {
       "score": 100.0,
-      "weight": 10
+      "weight": 10,
+      "key_factors": []
     }
   },
   "github_data": {
@@ -52,13 +63,13 @@
       "owner": "pre-commit",
       "name": "pre-commit",
       "description": "A framework for managing and maintaining multi-language pre-commit hooks.",
-      "stars": 14759,
-      "forks": 909,
-      "open_issues": 31,
-      "watchers": 14759,
+      "stars": 15068,
+      "forks": 932,
+      "open_issues": 30,
+      "watchers": 15068,
       "created_at": "2014-03-13T00:39:38Z",
-      "updated_at": "2025-12-31T11:55:04Z",
-      "pushed_at": "2025-12-22T21:55:48Z",
+      "updated_at": "2026-02-26T04:49:39Z",
+      "pushed_at": "2026-02-24T22:26:26Z",
       "default_branch": "main",
       "license": "MIT",
       "language": "Python",
@@ -75,38 +86,38 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 134,
-      "active_contributors_6mo": 6,
+      "total_contributors": 133,
+      "active_contributors_6mo": 3,
       "top_contributor_pct": 80.9,
       "contributors_over_5pct": 2,
-      "contributors_prev_6mo": 5,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 4,
-      "contributor_entropy": 1.73
+      "contributors_prev_6mo": 7,
+      "contributor_trend": "declining",
+      "first_time_contributors_6mo": 1,
+      "contributor_entropy": 1.72
     },
     "commits": {
       "last_commit_date": "2025-12-22T21:55:46Z",
-      "commits_last_6mo": 65,
-      "commits_last_year": 94
+      "commits_last_6mo": 52,
+      "commits_last_year": 81
     },
     "issues": {
-      "open_issues": 21,
-      "closed_issues_6mo": 80,
-      "avg_response_time_hours": 1.2,
-      "avg_close_time_hours": 1.2,
+      "open_issues": 20,
+      "closed_issues_6mo": 70,
+      "avg_response_time_hours": 1.0,
+      "avg_close_time_hours": 1.5,
       "good_first_issue_count": 2,
       "regression_issue_count": 0
     },
     "prs": {
       "open_prs": 10,
-      "merged_prs_6mo": 30,
-      "closed_prs_6mo": 48,
+      "merged_prs_6mo": 25,
+      "closed_prs_6mo": 41,
       "stale_prs": 8,
       "avg_merge_time_hours": null
     },
     "releases": {
       "total_releases": 116,
-      "releases_last_year": 6,
+      "releases_last_year": 5,
       "last_release_date": "2025-12-16T21:18:45Z",
       "latest_version": "v4.5.1",
       "has_signed_releases": false,
@@ -156,7 +167,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 2,
-      "recent_runs_pass_rate": 78.0,
+      "recent_runs_pass_rate": 72.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -165,86 +176,59 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 6,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is very brief and lacks essential information for new users to get started with the package.",
-      "top_issue": "Lack of installation instructions, quick start guide, examples, configuration details, and troubleshooting information."
-    },
-    "security": {
-      "overall_score": 8,
-      "injection_risks": [
-        {
-          "file": "pre_commit/main.py",
-          "line": 123,
-          "severity": "low",
-          "description": "The `os.system` function is not used, but the `subprocess` module is imported in other files. However, the `argparse` library is used to parse user input which reduces the risk of injection attacks."
-        },
-        {
-          "file": "pre_commit/main.py",
-          "line": 246,
-          "severity": "low",
-          "description": "The `os.path.abspath` function is used to get the absolute path of a file, but it does not execute any system commands with user input."
-        }
-      ],
-      "input_validation_score": 8,
-      "secrets_found": [],
-      "critical_findings": [
-        "Lack of input validation for some options",
-        "Potential for path traversal attacks if the '--config' option is not properly validated"
-      ],
-      "summary": "The pre-commit package has a good security posture, but there are some potential issues with input validation and error exposure that should be addressed."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "performance issues",
-        "feature requests"
+        "fails pulling hooks from sha1 repos with `init.defaultobjectformat=sha256`",
+        "Child hook processes not terminated on KeyboardInterrupt (orphaned after Ctrl+C)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Support for non-git VCS implementations",
+        "Feature idea: implicit type tags based on file extension"
+      ],
       "abandonment_signals": false,
-      "summary": "The pre-commit community is active, but users are experiencing frustration with performance issues and feature gaps, while maintainers respond moderately to issues."
+      "summary": "The community health of the pre-commit package is mixed, with a moderate level of frustration and responsiveness. Common complaints include issues with SHA256 compatibility and orphaned processes, while there are also suggestions for new features that indicate ongoing engagement."
     },
     "communication": {
       "helpfulness": 6,
       "clarity": 7,
-      "patience": 2,
+      "patience": 4,
       "technical_depth": 8,
-      "welcomingness": 1,
-      "communication_style": "poor",
+      "welcomingness": 3,
+      "communication_style": "adequate",
       "red_flags": [
-        "aggressive tone",
-        "dismissiveness",
-        "accusations of AI-generated content"
+        "repeated mentions of searching for duplicates",
+        "some responses are dismissive or curt",
+        "lack of encouragement for new contributors"
       ],
-      "summary": "The maintainer's responses are technically sound but often come across as abrasive, dismissive, and unwelcoming to new contributors."
+      "summary": "The maintainer responses provide technical depth and clarity but could be more patient and welcoming, especially towards repeated or basic questions."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases",
-        "High number of closed issues and merged PRs",
-        "Multiple active contributors"
+      "status": "maintained",
+      "confidence": 8,
+      "concerns": [
+        "Low number of contributors active in the past 6 months",
+        "Moderate number of open issues"
       ],
-      "summary": "The pre-commit package appears to be actively maintained with frequent updates, a high issue closure rate, and multiple active contributors."
+      "positive_signals": [
+        "Frequent commits and releases",
+        "Active issue resolution with closed issues outnumbering open ones",
+        "Open PRs being merged regularly"
+      ],
+      "summary": "The pre-commit package is maintained with frequent updates, regular issue resolution, and active merging of pull requests, though the low number of contributors may be a concern."
     },
     "changelog": {
-      "breaking_changes_marked": true,
+      "breaking_changes_marked": false,
       "has_migration_guides": false,
       "well_categorized": true,
       "appears_complete": true,
       "clarity_score": 8,
       "overall_score": 7,
-      "summary": "The changelog is well-structured and easy to follow, but could benefit from more detailed migration guides for breaking changes."
+      "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
     "governance": {
       "has_succession_plan": false,
@@ -252,37 +236,85 @@
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
-      "summary": "The pre-commit project lacks a clear succession plan, decision-making process documentation, and multiple maintainers, posing a high bus factor risk."
-    }
+      "summary": "The documentation does not address succession planning, decision-making processes, or multiple maintainers. It provides a path for contributors to become more involved but lacks comprehensive governance details."
+    },
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
+  },
+  "supply_chain": null,
+  "aggregator_data": {
+    "scorecard": {
+      "overall_score": 4.5,
+      "score_date": "2026-02-16T00:00:00Z",
+      "checks": {
+        "Maintained": 10.0,
+        "Code-Review": 0.0,
+        "Dangerous-Workflow": 10.0,
+        "Token-Permissions": 0.0,
+        "Packaging": -1.0,
+        "CII-Best-Practices": 0.0,
+        "Binary-Artifacts": 10.0,
+        "Fuzzing": 0.0,
+        "License": 10.0,
+        "Pinned-Dependencies": 0.0,
+        "Signed-Releases": 0.0,
+        "Branch-Protection": -1.0,
+        "Security-Policy": 10.0,
+        "SAST": 0.0
+      },
+      "code_review_score": 0.0,
+      "maintained_score": 10.0,
+      "branch_protection_score": -1.0,
+      "dangerous_workflow_score": 10.0,
+      "token_permissions_score": 0.0,
+      "fuzzing_enabled": false,
+      "sast_enabled": false,
+      "cii_badge": false
+    },
+    "project_metrics": {
+      "stars": 15064,
+      "forks": 931,
+      "open_issues": 31,
+      "license": "MIT",
+      "description": "A framework for managing and maintaining multi-language pre-commit hooks.",
+      "oss_fuzz_line_count": null,
+      "oss_fuzz_line_cover_count": null
+    },
+    "dependency_graph": null,
+    "slsa_attestation": false,
+    "slsa_level": null,
+    "fetched_at": "2026-02-26T05:45:23.934551Z",
+    "sources_available": [
+      "deps.dev:project"
+    ]
   },
   "analysis_summary": {
-    "maintenance_status": "actively-maintained",
+    "maintenance_status": "maintained",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is very brief and lacks essential information for new users to get started with the package.",
+    "doc_summary": "",
     "concerns": [
-      "Docs: Lack of installation instructions, quick start guide, examples, configuration details, and troubleshooting information.",
-      "Community: performance issues",
-      "Community: feature requests",
-      "Communication: The maintainer's responses are technically sound but often come across as abrasive, dismissive, and unwelcoming to new contributors.",
-      "Communication: aggressive tone",
-      "Communication: dismissiveness",
+      "Low number of contributors active in the past 6 months",
+      "Moderate number of open issues",
+      "Community: fails pulling hooks from sha1 repos with `init.defaultobjectformat=sha256`",
+      "Community: Child hook processes not terminated on KeyboardInterrupt (orphaned after Ctrl+C)",
+      "Communication: repeated mentions of searching for duplicates",
+      "Communication: some responses are dismissive or curt",
       "Governance: High bus factor risk identified",
-      "Security: Lack of input validation for some options",
-      "Security: Potential for path traversal attacks if the '--config' option is not properly validated",
-      "High bus factor risk (81% from top contributor)"
+      "High bus factor risk (81% from top contributor)",
+      "Weak branch protection settings"
     ],
     "highlights": [
-      "Recent commits and releases",
-      "High number of closed issues and merged PRs",
-      "Multiple active contributors",
-      "Breaking changes clearly marked in changelog",
-      "Code follows security best practices",
+      "Frequent commits and releases",
+      "Active issue resolution with closed issues outnumbering open ones",
+      "Open PRs being merged regularly",
       "Actively maintained",
       "CI/CD configured"
     ],
     "community_sentiment": "mixed",
-    "communication_style": "poor"
+    "communication_style": "adequate",
+    "scorecard_score": 4.5
   },
-  "analyzed_at": "2025-12-31T18:21:03.862067Z",
-  "data_fetched_at": "2025-12-31T18:21:03.862067Z"
+  "analyzed_at": "2026-02-26T05:50:26.704296Z",
+  "data_fetched_at": "2026-02-26T05:50:26.704298Z"
 }
