@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "examples": 6,
+      "configuration": 7,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "The README provides a good introduction to the package and its features, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Well-structured README covering installation and basic usage for a niche C/Fortran plotting library, but lacks troubleshooting guidance and deeper API examples.",
+      "top_issue": "No troubleshooting section for common build/runtime failures (e.g., missing cairo/X11, linker errors), which are likely pain points for the target audience."
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,24 @@
       "summary": "The provided code snippet appears to be generally secure, with proper input validation and no obvious injection risks or secrets exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "PNG output differs from classic PGPLOT",
-        "Documentation contains a large amount of HTTP links"
+        "Documentation issues (dead links, HTTP instead of HTTPS)",
+        "PNG output incompatibility with original PGPLOT",
+        "Window resizing and redraw problems",
+        "Unicode handling in Fortran strings",
+        "Installation/packaging path conventions",
+        "Test failures (test-giza-xw)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active, with some open issues and no clear signs of abandonment."
+      "praise_themes": [
+        "Active distribution packaging efforts (Fedora, MacPorts, Debian)",
+        "Integration attempts in real-world scientific software (NASA, PRESTO)",
+        "Professional issue tracking and collaboration"
+      ],
+      "abandonment_signals": true,
+      "summary": "Giza maintains active adoption in scientific computing but shows signs of slow maintenance, with several critical bugs (PNG rendering, window redraw) and documentation issues languishing open for 2+ years despite integration efforts from distribution maintainers."
     },
     "communication": {
       "helpfulness": 8,
@@ -219,17 +227,19 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs compared to open issues",
-        "No recent releases"
+        "16 open issues with zero closed in past 6 months",
+        "No commits recorded in past 6 months despite recent Feb 5 commit",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release - no version tracking visibility"
       ],
       "positive_signals": [
-        "Regular commits in the past six months",
-        "Three contributors have been active recently"
+        "Recent commit activity on 2026-02-05 indicates repository is not completely dormant"
       ],
-      "summary": "The package is maintained with regular updates and contributions, but there are concerns about the pace of issue resolution and lack of new releases."
+      "summary": "Package is stale with accumulating unresolved issues and no sustained maintenance activity, though a recent isolated commit suggests minimal ongoing care."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -240,7 +250,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:20:21.542020+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

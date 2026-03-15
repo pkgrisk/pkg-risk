@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 7,
       "configuration": 4,
-      "troubleshooting": 5,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The README provides a good introduction to the package, but lacks detailed documentation and examples for advanced use cases.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "summary": "Well-written README that clearly explains the tool's purpose and covers basic usage with good examples, but lacks configuration documentation and substantive troubleshooting guidance.",
+      "top_issue": "No configuration documentation (e.g., typeshare.toml options, serde integration details) and troubleshooting section just redirects to GitHub issues rather than addressing common problems."
     },
     "security": {
       "overall_score": 7,
@@ -211,18 +211,23 @@
       "summary": "The code has some potential security concerns, including a possible path traversal vulnerability and lack of thorough input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "lack of maintainer responsiveness",
-        "PRs being ignored"
+        "Maintainers only merge PRs from 1Password developers, ignoring community contributions",
+        "No communication about typeshare2 development direction",
+        "Inconsistent serde attribute handling (rename_all)",
+        "Parsing errors with complex Rust types (associated constants in arrays)",
+        "Missing feature: TypeScript union types for simple enums"
       ],
       "praise_themes": [
-        "usefulness of the crate"
+        "Best-of-breed tool for sharing Rust types across languages",
+        "Valuable crate for the community",
+        "Well-designed concept"
       ],
       "abandonment_signals": true,
-      "summary": "The project faces moderate frustration due to perceived lack of maintenance and PR neglect, but is still seen as useful."
+      "summary": "Community appreciates typeshare's utility but expresses serious concerns about slow maintainer responsiveness, ignored PRs, and lack of transparency regarding the mysterious typeshare2 development."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,17 +240,20 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs in the past six months compared to open PRs",
-        "No new releases in the past six months"
+        "Zero commits in past 6 months contradicts recent timestamp",
+        "88 open issues with zero closed in 6 months",
+        "No PR activity or merges in 6 months",
+        "No active contributors for 6 months",
+        "Unknown release schedule suggests no versioning cadence"
       ],
       "positive_signals": [
-        "Recent commits within the last six months",
-        "Some level of contributor activity"
+        "Repository still exists with a commit timestamp from today",
+        "No open PRs indicate project isn't accumulating new attempted contributions"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks new releases and active contributions."
+      "summary": "Repository appears to be in stale maintenance status with a significant backlog of unaddressed issues and no meaningful activity over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +264,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it less user-friendly."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:24:00.828482+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

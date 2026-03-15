@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally well-structured and provides a good overview of the package, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting information"
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Well-structured README with strong model support tables and Docker-first setup, but troubleshooting is absent and configuration options are not fully documented.",
+      "top_issue": "No troubleshooting section \u2014 common problems like CUDA/driver issues, model loading failures, or auth errors with gated models are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,18 @@
       "summary": "The code has some security concerns, including potential injection risks, lack of input validation, and exposure of sensitive information, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "hardcoded batch processing channel capacity",
-        "lack of ARM64 images"
+        "Model support requests (voyage-4-nano, jina-embeddings-v3)",
+        "Performance/startup time issues with CUDA variants",
+        "Configuration limitations for resource-constrained deployments (spot instances)",
+        "Docker image version/content mismatches"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged with some feature requests and issues, but no clear signs of frustration or abandonment."
+      "summary": "Active project with responsive maintainers on recent issues, but backlog of complex feature requests (17+ months old) suggests capacity constraints rather than abandonment."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,17 +236,20 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 8,
       "concerns": [
-        "High number of open issues",
-        "More PRs are open than merged in the past six months"
+        "176 open issues with no closures in past 6 months",
+        "No commits for 6 months before recent isolated commit",
+        "No merged pull requests in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date",
+        "No issue triage or management activity"
       ],
       "positive_signals": [
-        "Recent commits in the last month",
-        "Regular contribution from multiple contributors"
+        "Very recent commit (2 days ago)"
       ],
-      "summary": "The package is maintained with recent activity, but there are concerns about issue resolution and PR management."
+      "summary": "Package is abandoned with massive unresolved issue backlog; recent commit appears to be isolated activity rather than resumed maintenance."
     },
     "changelog": null,
     "governance": {
@@ -254,7 +259,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project has a documented contributor path and decision-making process but lacks a succession plan, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:52:50.735492+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

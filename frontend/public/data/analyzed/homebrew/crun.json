@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 5,
       "configuration": 4,
-      "troubleshooting": 1,
+      "troubleshooting": 3,
       "overall": 5,
-      "summary": "The documentation is detailed and provides good installation instructions, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start guide to help new users get started with the package."
+      "summary": "Good high-level description and multi-distro build instructions, but lacks quick-start usage examples and configuration documentation for typical end users.",
+      "top_issue": "No quick-start guide showing how to actually use crun after installation \u2014 the README jumps straight to building from source with no basic usage examples for new users."
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,17 @@
       "summary": "The code has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or sensitive information exposure was found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and errors",
-        "inconsistent behavior"
+        "errno/error handling bugs in C code (multiple issues with incorrect state checking after function calls)",
+        "Hook system edge cases and behavioral inconsistencies",
+        "runc compatibility issues (behavioral differences)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The crun community is experiencing some technical issues, but there are no clear signs of abandonment or extreme frustration."
+      "summary": "Moderate project health: active bug reporting with recent issues, evidence of maintenance through closed issues and engagement, but newest reports (3/14-3/15) lack responses; focus is on technical correctness rather than feature requests."
     },
     "communication": {
       "helpfulness": 9,
@@ -227,16 +228,20 @@
       "summary": "The maintainer responses are generally helpful, clear, patient, and technically sound, creating a welcoming environment for contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (226)",
-        "Recent last commit and release dates (2025-12-22)",
-        "Large number of merged PRs in the past 6 months (71)",
-        "Multiple active contributors in the past 6 months (21)"
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "53 open issues with zero closed in past 6 months indicates issue accumulation without triage",
+        "No active contributors in past 6 months despite open issues",
+        "Zero commits to homebrew formula in past 6 months despite recent upstream activity",
+        "No releases tracked; unclear when last stable version was published",
+        "No PR activity suggests no external contributions or maintainer engagement"
       ],
-      "summary": "The crun package appears to be actively maintained with frequent updates, a large number of contributors, and a high volume of pull requests being addressed."
+      "positive_signals": [
+        "Very recent upstream commit (2026-03-11) indicates some project activity",
+        "Project still exists and receives occasional updates"
+      ],
+      "summary": "Project shows signs of minimal maintenance with a recent commit but significant issue backlog, no contributor activity, and untracked releases."
     },
     "changelog": null,
     "governance": {
@@ -246,7 +251,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The crun project lacks a clear succession plan, decision-making process documentation, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:49:52.185489+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

@@ -170,14 +170,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 7,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting information"
+      "overall": 6,
+      "summary": "Solid build/install documentation with good CMake flag coverage, but lacks API usage examples, troubleshooting guidance, and defers too much to external example files.",
+      "top_issue": "No troubleshooting section and no inline code examples for actually using the library \u2014 users are just pointed to the examples directory without explanation."
     },
     "security": {
       "overall_score": 6,
@@ -210,17 +210,21 @@
       "summary": "The code has some security concerns, including hardcoded credentials and potential format string vulnerabilities, but overall it appears to be well-structured and follows good coding practices."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "connection issues",
-        "crashes",
-        "lack of features"
+        "Network failure handling (hangs, timeouts)",
+        "Platform-specific bugs (Windows compilation)",
+        "Missing API features (frame inspection, parameter exposure)",
+        "State handling and error reporting gaps"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Stable and reliable in production use",
+        "Well-functioning core functionality"
+      ],
       "abandonment_signals": true,
-      "summary": "The rabbitmq-c community appears to be struggling with a lack of maintainer responsiveness, numerous unresolved issues, and a general sense of frustration among users."
+      "summary": "Project has loyal production users but is experiencing stalled maintenance with numerous unresolved issues spanning years (2018-2026) and zero engagement on recent feature requests."
     },
     "communication": {
       "helpfulness": 9,
@@ -233,18 +237,20 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low commit activity",
-        "unaddressed open issues",
-        "lack of recent releases"
+        "No commits for 8 months (last commit July 2025)",
+        "122 open issues with zero closures in past 6 months",
+        "No active contributors in 6 months",
+        "Zero merged PRs or activity in past 6 months",
+        "No recent releases",
+        "Large backlog indicating unaddressed maintenance debt"
       ],
       "positive_signals": [
-        "recent commit within the last 6 months",
-        "some merged PRs in the last 6 months"
+        "Repository still exists with commit history"
       ],
-      "summary": "The rabbitmq-c package appears to be stale due to low maintenance activity and a large number of unaddressed open issues."
+      "summary": "The package is abandoned with no maintenance activity, active contributors, or issue resolution for 8 months despite 122 open issues."
     },
     "changelog": null,
     "governance": {
@@ -254,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for rabbitmq-c lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:05:55.269661+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

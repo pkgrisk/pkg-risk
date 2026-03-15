@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
-      "quick_start": 7,
+      "installation": 9,
+      "quick_start": 8,
       "examples": 8,
       "configuration": 9,
       "troubleshooting": 9,
-      "overall": 8,
-      "summary": "The README is well-structured and provides a clear overview of the package's functionality, but could benefit from more concise language and additional examples.",
-      "top_issue": "Some sections, such as 'Types of unused code' and 'Handling false positives', are dense with information and may be overwhelming for new users."
+      "overall": 9,
+      "summary": "Exceptionally well-documented with clear purpose, comprehensive usage examples, thorough false-positive handling strategies, and complete configuration reference.",
+      "top_issue": "The pre-commit integration example is cut off mid-sentence, leaving that section incomplete."
     },
     "security": {
       "overall_score": 7,
@@ -202,16 +202,19 @@
       "summary": "The vulture package has some security concerns, including potential injection risks and input validation issues, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Inline ignoring",
-        "False negative detection"
+        "False positives in legitimate code (while True loops, NumPy analysis)",
+        "Missing inline ignore feature (# vulture: ignore comments)",
+        "Unused parameters in @override methods flagged incorrectly",
+        "Lack of structured output formats (JSON, SARIF)",
+        "Poor compatibility with modern Python (PEP 695, PEP 758)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged with open issues, but there are unresolved complaints about core functionality."
+      "summary": "Moderate community health with active but potentially overwhelmed maintainers; real bugs and false positives frustrate users while many issues remain unaddressed despite recent engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -224,17 +227,20 @@
       "summary": "The maintainer responses are clear, helpful, and encouraging to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs in the past six months suggests limited community contribution or interest.",
-        "A high number of open issues (42) indicates potential unresolved problems."
+        "57 open issues with zero closed in past 6 months",
+        "No active contributors in past 6 months despite issue backlog",
+        "No merged PRs or commits in past 6 months",
+        "Last release date unknown - unclear when stable version was published",
+        "Data contradiction: recent commit (11 days ago) contradicts zero commits metric"
       ],
       "positive_signals": [
-        "Recent commits and releases within the last year indicate some level of activity.",
-        "Three contributors are actively involved, which is better than no activity."
+        "Very recent commit activity (11 days ago) suggests not completely abandoned",
+        "No open PRs indicates low complexity of managing external contributions"
       ],
-      "summary": "The package shows minimal maintenance with occasional updates but faces concerns due to a high number of unresolved issues."
+      "summary": "Project appears stale with significant unaddressed issue backlog and no active development or releases tracked, though a recent commit prevents full abandonment classification."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -252,7 +258,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:33:43.706514+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

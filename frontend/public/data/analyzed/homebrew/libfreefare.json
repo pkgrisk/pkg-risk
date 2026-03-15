@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 6,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is thorough in some areas, such as installation and feature support, but lacks clear examples and troubleshooting guidance.",
-      "top_issue": "Lack of a quick start guide or simple usage example to help new users get started with the library."
+      "examples": 2,
+      "configuration": 3,
+      "troubleshooting": 4,
+      "overall": 4,
+      "summary": "The README covers installation and supported hardware well but lacks any API usage examples or quick-start code, making it difficult for developers to get started.",
+      "top_issue": "No code examples or API usage demonstrations \u2014 a library README with zero usage snippets leaves developers with no guidance on how to actually use the API."
     },
     "security": {
       "overall_score": 5,
@@ -216,16 +216,20 @@
       "summary": "The code has several security concerns, including potential memory leaks, lack of input validation, and use of insecure defaults, but no critical injection risks or secrets exposure were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "API breaking changes",
-        "Library limitations"
+        "Crypto/MAC communication errors (CRYPTO_ERROR, INTEGRITY_ERROR) with DESFire files",
+        "Write/read data failures with DESFire cards",
+        "Lack of support for newer card types (NTAG 424, DESFire EV2/EV3, Lite)",
+        "Breaking API changes without major version bump",
+        "Hardware compatibility issues (ARM endianness, key diversification bugs)",
+        "NDA restrictions preventing implementation of new features"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged but faces issues with API stability and library functionality."
+      "abandonment_signals": true,
+      "summary": "The libfreefare project shows severe abandonment with 10+ year-old unresolved issues, zero maintainer responses to recent bugs (2024-2025), only 2 closed issues, and users implementing their own workarounds\u2014indicating a dead or dormant codebase."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,18 +242,20 @@
       "summary": "The maintainer's responses are clear, helpful, and encouraging to new contributors. They provide technical depth and address issues thoroughly."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "A high number of open issues (37)",
-        "Only one merged PR in the past six months"
+        "No commits in the past 6 months",
+        "No active contributors in the past 6 months",
+        "48 open issues with zero closure in the past 6 months",
+        "No merged pull requests in the past 6 months",
+        "Unknown last release date indicating lack of versioning activity"
       ],
       "positive_signals": [
-        "Ten contributors have been active in the past six months",
-        "There are open pull requests, indicating some level of community interest"
+        "Repository still exists and is accessible",
+        "Open issues indicate some user engagement/awareness"
       ],
-      "summary": "The package is minimally maintained with occasional contributions but faces significant issues and a lack of recent activity."
+      "summary": "The project is abandoned with zero development activity, contributor engagement, or issue resolution over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -260,7 +266,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clarity and completeness, with no breaking changes or migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:45:17.662424+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 2,
+      "clarity": 4,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides some useful links, but lacks clear and concise information for new users to quickly understand and start using the package.",
-      "top_issue": "Lack of clear and concise information in the README itself, with most details relegated to external wiki pages."
+      "overall": 2,
+      "summary": "The README is essentially a placeholder that redirects all documentation to an external wiki, providing no actual content inline.",
+      "top_issue": "No content in the README itself \u2014 installation, usage, examples, and configuration all require visiting an external wiki link."
     },
     "security": {
       "overall_score": 7,
@@ -188,19 +188,22 @@
       "summary": "The breseq codebase appears to have some security concerns, including lack of input validation and potential for null pointer dereferences, but no critical injection risks or secrets exposure were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "documentation discrepancies",
-        "file handling issues"
+        "Documentation inconsistencies (command-line vs wiki discrepancies)",
+        "Data output inconsistencies (TSV headers vary, evidence discrepancies between formats)",
+        "Mutation detection failures (missed knockouts, coverage issues)",
+        "Build/configuration issues (static zlib linking problems)",
+        "File handling errors (truncated BAM files, samtools failures)"
       ],
       "praise_themes": [
-        "user support and engagement",
-        "tool functionality"
+        "Tool quality and usefulness",
+        "Community interest in pipeline integration (nf-core modules requested)"
       ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some common complaints, but active user engagement suggests ongoing development."
+      "summary": "Actively maintained project with engaged users who appreciate the tool but struggle with documentation gaps, output inconsistencies, and some detection edge cases; moderate maintainer responsiveness with several issues stalled for months despite user engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -213,17 +216,20 @@
       "summary": "The maintainer responses are clear, helpful, and patient, with a good level of technical depth. They encourage new contributors effectively."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of commits and PRs in the past six months",
-        "No recent releases"
+        "37 open issues with zero closures in past 6 months",
+        "No commits or merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "Unresolved issues accumulating without triage"
       ],
       "positive_signals": [
-        "Recent activity (last commit on 2025-11-17)",
-        "Single active contributor over the last six months"
+        "Last commit is relatively recent (November 2025, ~4 months old)",
+        "No open pull requests"
       ],
-      "summary": "The package shows minimal maintenance with occasional updates but lacks recent releases and contributions."
+      "summary": "The project shows no active maintenance with zero commits, closed issues, and merged PRs in the past 6 months, while accumulating 37 open issues without resolution."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -234,7 +240,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:51:28.375534+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -173,27 +173,33 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 3,
       "quick_start": 4,
-      "examples": 6,
-      "configuration": 3,
+      "examples": 2,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks detailed installation and troubleshooting instructions.",
-      "top_issue": "Lack of clear installation instructions"
+      "overall": 3,
+      "summary": "The README clearly describes what Pyright is but defers almost all practical documentation to external links, leaving users without inline guidance.",
+      "top_issue": "No inline installation instructions, examples, or configuration details \u2014 everything is offloaded to external documentation links."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "type checking issues",
-        "bug reports"
+        "Type checking accuracy issues (NewType, TypeDict, Union resolution)",
+        "Performance regressions and hangs (CPU saturation with recursive TypeAlias)",
+        "LSP performance issues (slow semantic completion)",
+        "Variable type tracking bugs in loops",
+        "Configuration inheritance in monorepos"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being actively closed and resolved",
+        "Maintainers engage in detailed discussions on complex type system problems"
+      ],
       "abandonment_signals": false,
-      "summary": "The pyright community is actively reporting and discussing type checking issues and bugs, with maintainers responding moderately to address these concerns."
+      "summary": "Pyright has active maintenance with steady issue resolution, but several critical unresolved bugs including type checking regressions and a serious CPU saturation issue suggest moderate community friction and incomplete triage."
     },
     "communication": {
       "helpfulness": 9,
@@ -209,16 +215,20 @@
       "summary": "The maintainer provides thorough and technically sound explanations, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (90 in the past 6 months)",
-        "High issue closure rate (208 closed issues in the past 6 months)",
-        "Regular releases (last release within the past 2 months)",
-        "Active contributor base (11 contributors in the past 6 months)"
+      "status": "stale",
+      "confidence": 7,
+      "concerns": [
+        "231 open issues with zero closed in past 6 months",
+        "Zero commits in past 6 months despite recent commit date",
+        "No active contributors in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "Unknown last release date",
+        "No issue triage or maintenance activity"
       ],
-      "summary": "The pyright package appears to be actively maintained with a high volume of commits, issue closures, and releases, indicating a healthy and engaged development community."
+      "positive_signals": [
+        "Very recent commit on 2026-03-13"
+      ],
+      "summary": "Project appears stale with extensive unaddressed backlog; recent commit is an anomaly amid otherwise absent maintenance activity."
     },
     "changelog": null,
     "governance": {
@@ -228,7 +238,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for pyright lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:33:11.246188+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

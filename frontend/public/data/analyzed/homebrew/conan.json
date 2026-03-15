@@ -169,14 +169,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 4,
+      "installation": 6,
+      "quick_start": 3,
+      "examples": 2,
       "configuration": 3,
       "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is clear and well-structured, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient examples for common use cases"
+      "overall": 4,
+      "summary": "The README is well-written for contributors/maintainers but almost entirely omits end-user documentation, deferring to external docs for actual usage.",
+      "top_issue": "No quick-start or usage examples for end users \u2014 the README only covers developer setup from source, not how to actually use Conan to manage C++ dependencies."
     },
     "security": {
       "overall_score": 7,
@@ -203,16 +203,23 @@
       "summary": "The Conan package has some security concerns, including potential code and command injection vulnerabilities, but overall its security score is moderate."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "difficulty with package management",
-        "issues with conan upload and Artifactory integration"
+        "CMake configuration and property handling complexity",
+        "Package ID mode customization limitations",
+        "Build system integration challenges (cross-compilation, compiler flags)",
+        "Toolchain identification and distinction",
+        "Inconsistent behavior between standard and build requirement contexts"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The Conan community is actively seeking help and reporting issues, but maintainers are moderately responsive, indicating a relatively healthy but imperfect ecosystem."
+      "praise_themes": [
+        "Community actively reports issues with detailed descriptions",
+        "Most issues receive responses and are eventually resolved",
+        "Recent bug fixes demonstrate active maintenance"
+      ],
+      "abandonment_signals": true,
+      "summary": "Conan shows moderate community health with active bug fixing, but concerning abandonment of several feature requests and questions from 2022-2023 that remain unresolved, including one explicitly marked 'staled'."
     },
     "communication": {
       "helpfulness": 8,
@@ -225,20 +232,26 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a good experience for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (253)",
-        "Recent last commit (2025-12-29)",
-        "Frequent releases (last release on 2025-12-15)",
-        "Large number of merged PRs in the past 6 months (228)",
-        "Multiple active contributors in the past 6 months (24)"
+      "status": "stale",
+      "confidence": 7,
+      "concerns": [
+        "681 open issues with zero closures in past 6 months indicates severe backlog and no active issue triage",
+        "No commits recorded in past 6 months despite recent timestamp",
+        "Zero active contributors in past 6 months signals team disengagement",
+        "No merged PRs in 6 months indicates development has stalled",
+        "Unknown last release makes it impossible to assess version stability"
       ],
-      "summary": "The conan package appears to be actively maintained with frequent updates, releases, and a large number of contributors."
+      "positive_signals": [
+        "A commit was made today (2026-03-15), suggesting some minimal recent activity",
+        "Zero open PRs prevents PR queue accumulation"
+      ],
+      "summary": "The package appears stale with a massive unresolved issue backlog, no development activity over 6 months, and only today's isolated commit suggesting possible maintenance is not occurring."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:31:33.377682+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

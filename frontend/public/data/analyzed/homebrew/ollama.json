@@ -181,35 +181,53 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 8,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Excellent getting-started experience with clear installation, quick examples, and broad ecosystem coverage, but lacks configuration documentation and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section or configuration reference \u2014 common issues like GPU setup, model storage paths, or API authentication are entirely undocumented."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "qwen3.5:35b errors",
-        "inconsistent outputs with fixed seed and temperature",
-        "model compatibility issues"
+        "Significant performance degradation vs llama.cpp (15-20 tok/s vs 100 tok/s, 32 tok/s vs 53 tok/s)",
+        "GPU acceleration failures and CPU fallback (NVIDIA, AMD ROCm, Intel Arc)",
+        "Model metadata loading errors and missing fallback handling",
+        "Hardware compatibility issues across platforms (Apple Metal, AMD ROCm gfx support, Intel Arc Vulkan)"
       ],
       "praise_themes": [
-        "active community discussions on feature requests",
-        "detailed issue reporting"
+        "Detailed benchmarking data and troubleshooting provided by users",
+        "Community sharing working workarounds (Strix Halo ROCm guide with 40 tok/s solution)",
+        "Users documenting steps and providing actionable information"
       ],
       "abandonment_signals": false,
-      "summary": "The community health of the ollama project is mixed, with active discussions around both bug reports and feature requests. While there are several open issues indicating some frustration, users provide detailed information which can be helpful for maintainers."
+      "summary": "Moderate health with active community engagement, but persistent performance optimization gaps vs competitors and slow maintainer response on critical acceleration issues spanning multiple hardware platforms."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of recent commits (299 in the past 6 months)",
-        "Frequent releases (last release on 2026-02-24)",
-        "Active community engagement with numerous contributors (47 active in the past 6 months) and pull requests (300 open, 232 merged in the past 6 months)"
+      "concerns": [
+        "Zero commits in past 6 months despite recent last commit timestamp",
+        "Zero merged PRs and zero closed issues in past 6 months indicates no development or triage activity",
+        "No active contributors for past 6 months",
+        "Massive backlog of 2651 open issues with no resolution",
+        "Unknown last release makes it unclear if users can get updates",
+        "Zero pull requests suggests community contributions may be discouraged or ignored"
       ],
-      "summary": "The package ollama is actively maintained with frequent commits, regular releases, and strong community involvement."
+      "positive_signals": [
+        "Very recent last commit timestamp suggests repository still exists",
+        "No open PRs may indicate PR workflow is not stuck in limbo"
+      ],
+      "summary": "Repository appears abandoned or in deep maintenance hiatus with no development, issue triage, or contributor activity for 6+ months despite having thousands of unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -220,9 +238,9 @@
       "bus_factor_risk": "high",
       "summary": "The governance documentation for Ollama outlines a clear decision-making process and contribution guidelines but lacks succession planning, a path from contributor to maintainer, and indicates a single point of control with no mention of multiple maintainers."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:49:30.398452+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is detailed but dense, making it difficult for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of a clear and concise quick start section or example usage"
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README thoroughly documents features and build instructions but lacks any usage examples or quick-start guide showing how to actually scan a host.",
+      "top_issue": "No basic usage example (e.g., `sslscan example.com`) \u2014 a new user has no idea how to run the tool after installing it."
     },
     "security": {
       "overall_score": 6,
@@ -191,16 +191,23 @@
       "summary": "The provided code snippet appears to be a list of TLS cipher suites, but lacks input validation and may be using insecure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "issues with TLS protocol detection",
-        "problems with certificate parsing"
+        "Post-quantum cryptography support lacking (MLKEM, hybrid algorithms)",
+        "TLS 1.3 modern cipher/group combinations not fully tested",
+        "Build system doesn't respect parallel make flags (-jN)",
+        "TLS detection accuracy issues (detection bypasses, fallback SCSV)",
+        "Certificate parsing and output formatting bugs"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Tool has active, engaged users submitting specific technical requests",
+        "Issues are well-documented with examples and test cases",
+        "Some discussion engagement on complex topics (13 comments on colour coding)"
+      ],
       "abandonment_signals": false,
-      "summary": "The sslscan community is actively reporting issues and seeking support, but the maintainer's responsiveness is moderate, indicating a relatively healthy but not overly vibrant community."
+      "summary": "Active user base with legitimate post-quantum cryptography feature gaps, but inconsistent maintainer responsiveness leaves some issues (including 2-year-old bug reports) unresolved alongside recent closed issues."
     },
     "communication": {
       "helpfulness": 9,
@@ -213,20 +220,25 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and technically sound, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "no closed issues in the past 6 months",
-        "large number of open issues"
+        "60 open issues with zero resolutions in past 6 months indicates unresolved backlog",
+        "No active contributors for 6 months suggests maintainer disengagement",
+        "No merged pull requests in past 6 months despite open issues",
+        "Unknown release schedule and no recent release information",
+        "Single recent commit (Nov 2025) appears isolated with no sustained development"
       ],
       "positive_signals": [
-        "recent commits and release",
-        "active contributors in the past 6 months"
+        "Last commit within 3.5 months (Nov 2025) shows some recent activity"
       ],
-      "summary": "The sslscan package appears to have some maintenance activity, but the lack of issue resolution and large number of open issues raises concerns about its overall health."
+      "summary": "sslscan is stale with minimal active maintenance: despite one recent commit, there are no ongoing code contributions, issue resolution, or community engagement for 6 months, leaving 60 issues unaddressed."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:55:46.627571+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

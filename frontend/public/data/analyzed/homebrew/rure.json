@@ -187,14 +187,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 7,
       "quick_start": 9,
       "examples": 9,
       "configuration": 7,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, with many examples and usage instructions, but lacks detailed troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Well-structured README with multiple practical examples covering common use cases, though it's primarily a Rust crate README repurposed for a C FFI library (rure), which may confuse Homebrew users.",
+      "top_issue": "The README is for the Rust `regex` crate, not the `rure` C library that Homebrew installs \u2014 users expecting C FFI documentation will find no installation or usage instructions for the actual Homebrew package."
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,23 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "API to get size of compiled regex",
-        "Compiling some unicode regexes is 2.5x slower"
+        "Long-standing feature requests without implementation (lazy_regex macro from 2020, JIT from 2017)",
+        "Unanswered technical questions about regex semantics and behavior",
+        "Packaging/distribution bugs left unaddressed for extended periods",
+        "Lack of compile-time DFA serialization capabilities"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Bug fixes are addressed and closed (zero repetition panic resolved)",
+        "Issues eventually get closed and resolved",
+        "Technical questions receive community engagement",
+        "Active maintenance of regex behavior"
+      ],
       "abandonment_signals": false,
-      "summary": "The community seems generally neutral with moderate frustration over performance and API issues, but no clear signs of abandonment."
+      "summary": "The regex project shows moderate health with evidence of active maintenance (bugs fixed, issues closed), but inconsistent responsiveness leaves some technical questions and bugs unanswered for weeks to months."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,17 +234,19 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical insights while encouraging new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Few merged PRs in the past six months",
-        "No new releases since 2018-05-01"
+        "Zero commits in the past 6 months despite 56 open issues",
+        "Zero closed issues in the past 6 months indicating no active triage",
+        "Zero merged PRs and zero active contributors in past 6 months",
+        "Last release is unknown/undocumented",
+        "Large backlog of 56 unresolved open issues with no maintenance activity"
       ],
       "positive_signals": [
-        "Active contributors in the past six months",
-        "Recent commits and issue activity"
+        "Very recent last commit timestamp (2026-02-24, 19 days ago)"
       ],
-      "summary": "The package shows signs of maintenance but may benefit from increased contribution frequency."
+      "summary": "Project appears abandoned with zero maintenance activity over the past 6 months, a large issue backlog, and no active contributors despite a recent commit timestamp."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -248,7 +257,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears complete, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:48:54.763154+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

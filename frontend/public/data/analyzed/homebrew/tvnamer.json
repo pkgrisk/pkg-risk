@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 4,
+      "configuration": 8,
+      "troubleshooting": 5,
       "overall": 8,
-      "summary": "The README provides clear and concise information on installing, using, and configuring the tvnamer package, but lacks detailed troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common problems and solutions"
+      "summary": "Well-structured README with clear purpose, multiple installation options, detailed CLI examples, and good configuration docs, but lacks a dedicated troubleshooting section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like TVDB API failures, unrecognized filename formats, or auth errors are not addressed."
     },
     "security": {
       "overall_score": 6,
@@ -213,16 +213,20 @@
       "summary": "The tvnamer package has some security concerns, including a hardcoded API key and potential path traversal attacks, but overall it appears to be relatively secure with proper configuration and user input validation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "filename pattern configuration",
-        "dvd order functionality"
+        "DVD order functionality broken with uppercase parameters",
+        "Years in filenames misinterpreted as season numbers",
+        "Filename pattern configuration is inflexible and poorly documented",
+        "Verbose/debug logging insufficient for troubleshooting",
+        "Extended versions and alternative orderings not properly supported",
+        "OS-specific filename validation issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with open issues, but there are recurring complaints about filename handling and DVD order support."
+      "abandonment_signals": true,
+      "summary": "tvnamer shows critical abandonment signals with over a decade of unresolved issues, recent 2024 bug reports receiving zero maintainer engagement, and sporadic community activity suggesting the project is no longer actively maintained."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,18 +239,18 @@
       "summary": "The responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with the community."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 10,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "Last commit was ~4.8 years ago (May 2021)",
+        "Zero commits in past 6 months",
+        "43 open issues with no recent attention",
+        "No releases recorded",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months"
       ],
-      "positive_signals": [
-        "Ten contributors are still active",
-        "There are open PRs which indicate some level of community interest or contribution"
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "tvnamer is abandoned with no maintenance activity in nearly 5 years and 43 unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -264,7 +268,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:35:03.182260+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

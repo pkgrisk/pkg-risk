@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides clear and detailed installation instructions, but lacks a concise quick start example and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "quick_start": 8,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Well-structured documentation with clear installation options, quick start examples, and good coverage of GitHub Actions integration, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like false positives, suppressing findings, or build integration problems are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -226,16 +226,18 @@
       "summary": "The gosec package has some security concerns, including potential command injection vulnerabilities and hardcoded secrets, but overall it appears to be a well-structured and secure piece of software."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "false positives",
-        "detection issues"
+        "False positives in taint analysis rules (G118, G120)",
+        "Infinite hang on packages with heavy exec.Command usage",
+        "Panic in recent versions (2.24.7)",
+        "Confusion about proper rule remediation patterns"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The gosec community is moderately active with some open issues and a mix of enhancement requests, bug reports, and false positive complaints, indicating a neutral sentiment."
+      "summary": "Active maintenance with recent issue resolution, but users report frustration with false positives and regressions (panics, hangs) introduced in recent versions, indicating quality control concerns."
     },
     "communication": {
       "helpfulness": 8,
@@ -248,15 +250,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a good experience for contributors, but could improve in technical depth and clarity."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases",
-        "High number of merged PRs and closed issues",
-        "Multiple active contributors"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months despite recent commit today",
+        "Zero merged PRs in past 6 months",
+        "Zero closed issues in past 6 months",
+        "No active contributors for 6 months",
+        "Unknown last release version",
+        "1 open issue with no engagement"
       ],
-      "summary": "The gosec package appears to be actively maintained with frequent updates, a high volume of pull requests, and a sizable team of active contributors."
+      "positive_signals": [
+        "Very recent commit activity (today)"
+      ],
+      "summary": "Project exhibits stagnation with zero activity metrics across 6 months, though a today's commit suggests possible recent revival or automated activity."
     },
     "changelog": null,
     "governance": {
@@ -266,7 +273,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The gosec project lacks a clear succession plan, decision-making process documentation, and multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:11:48.248371+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

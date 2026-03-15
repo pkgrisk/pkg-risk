@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks concrete examples and detailed instructions for installation, configuration, and troubleshooting.",
-      "top_issue": "Lack of clear and concise installation instructions and quick start example"
+      "overall": 3,
+      "summary": "The README clearly describes what Lune is but defers almost all practical documentation to an external website, leaving the README itself nearly useless for getting started.",
+      "top_issue": "No installation instructions, code examples, or usage guidance in the README \u2014 everything is redirected to an external docs site with no fallback content."
     },
     "security": {
       "overall_score": 5,
@@ -205,16 +205,22 @@
       "summary": "The lune package has several security concerns, including code injection risks and potential unauthorized access to internal state, which need to be addressed to ensure the security of the application."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Feature requests and improvements",
-        "Documentation issues"
+        "Property type handling gaps (SetAttribute, SharedString, Attributes)",
+        "Bytecode serialization and encoding issues (invalid UTF-8 conversion)",
+        "Module/require resolution problems in built binaries",
+        "Roblox API compatibility gaps and missing feature support",
+        "Character input/CJK rendering inconsistencies"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "REPL implementation is solid (mentioned positively in CJK issue discussion)",
+        "Community contributions happening (e.g., rustyline integration PR)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, but there are ongoing issues and feature requests that suggest moderate frustration."
+      "summary": "Active but capacity-constrained: recent issues receive engagement and PRs are in progress, but several unresolved bugs from mid-2025 and older remain open with minimal maintainer interaction."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,15 +233,21 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the last six months",
-        "A moderate number of open issues, which is typical for actively developed projects"
+      "concerns": [
+        "Zero commits in past 6 months despite last commit being recent (Oct 2025)",
+        "84 unresolved open issues with zero issue closure activity",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release date indicates release process stalled",
+        "Complete absence of any maintenance activity across all metrics"
       ],
-      "summary": "The package lune appears to be actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Project has historical commit activity",
+        "Repository still exists and is accessible"
+      ],
+      "summary": "The lune package shows no maintenance activity for 6+ months with 84 open issues and zero contributor engagement, indicating the project is abandoned."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -253,7 +265,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "low",
       "summary": "The documentation provides a clear path for contributors and indicates multiple maintainers, but lacks a succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:55:29.395517+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

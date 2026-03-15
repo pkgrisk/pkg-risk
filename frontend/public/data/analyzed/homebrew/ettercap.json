@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 6,
+      "clarity": 7,
+      "installation": 5,
+      "quick_start": 2,
+      "examples": 4,
+      "configuration": 3,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides a good overview of the package, but lacks concise quick start instructions and troubleshooting guidance.",
-      "top_issue": "Lack of concise quick start instructions and troubleshooting section"
+      "overall": 4,
+      "summary": "The README provides good technical depth on attack mechanics but lacks practical usage examples and defers most instructions to external man pages and files.",
+      "top_issue": "No quick start or usage examples \u2014 users are told to read man pages instead of seeing a single working command"
     },
     "security": {
       "overall_score": 7,
@@ -207,18 +207,20 @@
       "summary": "The code has some potential security risks, including the use of system calls and lack of input validation, but no explicit injection vulnerabilities or secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "sprintf buffer overflow error",
-        "0 hosts added on the latest version"
+        "Security vulnerabilities (heap buffer overflow, sprintf buffer overflow)",
+        "Core feature malfunction (0 hosts added issue)",
+        "Build compatibility problems (cmake-4)",
+        "Delayed releases and git tags for distro packages"
       ],
       "praise_themes": [
-        "request for git tag update"
+        "Appreciation for improvements and changes"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active with some open issues, but overall sentiment remains neutral."
+      "abandonment_signals": true,
+      "summary": "Mixed community health with legitimate technical engagement but serious concerns: multiple unresolved security vulnerabilities, 40% spam/off-topic issues suggesting poor moderation, slow response times, and lack of visible maintenance effort."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,17 +233,19 @@
       "summary": "The maintainer responses are clear, helpful, and patient, with a good balance of technical depth and user-friendliness."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Last release is from 2020, indicating a long gap without updates.",
-        "Open issues are high at 123, suggesting potential unresolved bugs or features."
+        "125 open issues with zero closed in past 6 months",
+        "Zero commits in past 6 months despite reported recent activity",
+        "No active contributors in past 6 months",
+        "No merged PRs or pull request activity in past 6 months",
+        "No tracked releases"
       ],
       "positive_signals": [
-        "Commits past 6 months: 12, showing some level of activity.",
-        "Contributors active past 6 months: 5, indicating community involvement."
+        "One commit in past 6 days (though inconsistent with '0 commits past 6 months' metric)"
       ],
-      "summary": "The package shows minimal maintenance with recent commits but an outdated release and a high number of open issues."
+      "summary": "Project is effectively abandoned with 125 unresolved issues, zero maintenance activity, and no contributors for 6+ months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +256,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears complete, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:05:30.665651+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -175,26 +175,29 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 7,
       "examples": 6,
       "configuration": 2,
-      "troubleshooting": 1,
+      "troubleshooting": 2,
       "overall": 5,
-      "summary": "The documentation provides a good introduction to Erlang and OTP, but lacks comprehensive examples and troubleshooting guides.",
-      "top_issue": "Lack of troubleshooting section and configuration documentation"
+      "summary": "The README provides a solid introduction and basic Hello World example, but lacks configuration documentation and troubleshooting guidance, and delegates most content to external links.",
+      "top_issue": "No configuration or troubleshooting documentation \u2014 common setup issues (e.g., build dependencies, OTP version selection, environment variables) are not addressed."
     },
     "security": null,
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 3,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Copy button on documentation code examples produces unusable code"
+        "Type specification accuracy issues (spec vs implementation mismatch)",
+        "Memory corruption and double free bugs in production systems",
+        "Security vulnerabilities (zlib CVE-2026-3381) sitting open without response",
+        "Runtime behavior failures (anonymous native records in erl_eval)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is expressing frustration with a specific issue, but there are no signs of abandonment."
+      "summary": "Active team engagement with some issues, but critical vulnerabilities and memory corruption bugs are open without timely response, indicating either resource constraints or complex issues requiring deeper investigation."
     },
     "communication": {
       "helpfulness": 8,
@@ -207,15 +210,19 @@
       "summary": "Maintainers provide clear, helpful, and patient responses with technical depth, encouraging new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (298)",
-        "A significant number of merged PRs in the past six months (245)",
-        "Multiple contributors active in the past six months (34)"
+      "concerns": [
+        "520 open issues with zero closed in past 6 months",
+        "Zero commits in past 6 months despite active issues",
+        "Zero active contributors in past 6 months",
+        "No merged PRs or open PRs in past 6 months",
+        "Unknown last release date indicates stalled releases"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "One recent commit on 2026-03-14 (though isolated and insufficient for active maintenance)"
+      ],
+      "summary": "Package is abandoned with massive unresolved issue backlog and no meaningful maintenance activity; the recent commit does not indicate active development."
     },
     "changelog": null,
     "governance": {
@@ -225,7 +232,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, which increases the risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:02:55.253098+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

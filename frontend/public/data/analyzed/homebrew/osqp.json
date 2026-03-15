@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 2,
-      "troubleshooting": 6,
-      "overall": 4,
-      "summary": "The README provides a clear description of the package's purpose, but lacks detailed installation and usage instructions.",
-      "top_issue": "Lack of clear installation instructions and quick start examples"
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 3,
+      "overall": 3,
+      "summary": "The README clearly explains what OSQP does mathematically but defers all practical guidance to an external website, leaving the README itself nearly useless for getting started.",
+      "top_issue": "No installation instructions, code examples, or quick start guide \u2014 everything is offloaded to osqp.org"
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,21 @@
       "summary": "The provided code appears to be a low-risk, well-structured C library with no apparent security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Version upgrade issues",
-        "Build and installation problems"
+        "Critical memory safety bug (SIGSEGV under memory pressure)",
+        "Regression between v0.6.2 and v1.0.0 causing convergence failures",
+        "Build system limitations (FetchContent blocking distro packaging)",
+        "Missing platform support (Windows ARM64, Python 3.14 wheels)",
+        "Installation issues (qdldl headers/libs conflicts)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some version-related issues but the complaints are not severe enough to indicate abandonment."
+      "praise_themes": [
+        "Community contributions (external .NET interface binding)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is concerning with multiple critical bugs and infrastructure issues receiving minimal or no maintainer response despite active user reporting."
     },
     "communication": {
       "helpfulness": 9,
@@ -219,17 +224,20 @@
       "summary": "The responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "122 open issues with zero closures in past 6 months",
+        "Zero commits in past 6 months despite recent activity",
+        "No merged pull requests or contribution activity",
+        "No active maintainers or contributors",
+        "Unknown last release date",
+        "Complete lack of issue triage or maintenance"
       ],
       "positive_signals": [
-        "Recent commit activity",
-        "Regular issue and PR management"
+        "Recent commit activity 2 months ago suggests project was previously maintained"
       ],
-      "summary": "The package shows minimal maintenance with recent commits but a backlog of unresolved issues."
+      "summary": "osqp is abandoned with no maintenance activity for 6+ months and 122 unresolved issues requiring immediate attention."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -240,7 +248,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clarity and completeness, with no clear marking of breaking changes or migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:06:55.677431+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

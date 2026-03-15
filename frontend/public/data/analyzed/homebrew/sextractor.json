@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 4,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks detailed installation, usage, and troubleshooting instructions.",
-      "top_issue": "Lack of explicit installation instructions for homebrew"
+      "clarity": 6,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README is essentially a placeholder that only identifies the project and points to external resources, providing no actionable documentation.",
+      "top_issue": "No installation instructions, usage examples, or configuration documentation \u2014 the README delegates everything to external links."
     },
     "security": {
       "overall_score": 5,
@@ -200,16 +200,23 @@
       "summary": "The SExtractor package has some security concerns, including potential buffer overflows and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation issues",
-        "missing binaries"
+        "Build/compilation failures across multiple platforms (Debian, Intel compiler, gcc, clang)",
+        "Dependency issues (deprecated ATLAS package, missing libraries)",
+        "Binary installation problems in package managers",
+        "Functional bugs in core features (pixel stack overflow, segmentation numbering mismatches)",
+        "Missing/disabled features (multithreading, SIP projection support)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to ongoing compilation and binary placement issues, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Some issues do get resolved (GCC 10 compatibility fixed)",
+        "Users provide detailed technical reports",
+        "Professional/academic user base (Steward Observatory)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is concerning: 9 of 12 issues remain open with minimal engagement, including long-stale feature requests (2021-2022) and recent zero-response issues (2025), while build compatibility and packaging problems persist across multiple platforms suggesting unmaintained infrastructure."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,17 +229,19 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth while also being welcoming to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or bug fixes.",
-        "Only one merged PR in the past six months, suggesting limited community contribution and maintenance."
+        "Zero commits, merged PRs, and closed issues over past 6 months indicates complete project stagnation",
+        "33 open issues with no resolution suggests maintainers are unresponsive to user-reported problems",
+        "Unknown release history indicates lack of versioning discipline or public communication",
+        "Zero active contributors suggests loss of project momentum and community engagement"
       ],
       "positive_signals": [
-        "6 contributors active in the past six months, showing some level of community engagement.",
-        "Regular issue reporting by users indicates that the package is still being used."
+        "Project exists with documented commit history, not completely dead",
+        "Zero open PRs prevents accumulation of abandoned contributions"
       ],
-      "summary": "The package shows minimal maintenance with occasional contributions but no recent development or updates."
+      "summary": "Project is stale and effectively abandoned, with over 6 months of complete inactivity despite 33 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -243,7 +252,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks structure and clarity, with no clear categorization or indication of breaking changes. It also does not provide migration guides for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:00:27.648747+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

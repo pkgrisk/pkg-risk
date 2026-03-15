@@ -185,14 +185,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 4,
       "quick_start": 2,
-      "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 1,
-      "overall": 6,
-      "summary": "The documentation is clear and comprehensive, but lacks a quick start guide and troubleshooting information.",
-      "top_issue": "Lack of a quick start guide and troubleshooting section"
+      "examples": 2,
+      "configuration": 3,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README gives a clear high-level overview but defers almost all substantive content to external documents, leaving the README itself nearly content-free beyond an introduction.",
+      "top_issue": "No quick start, examples, or inline instructions \u2014 everything is offloaded to separate doc files that a reader must navigate to, making the README a table of contents rather than useful documentation."
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,24 @@
       "summary": "The code has some security concerns, including potential shell injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "installation issues",
-        "outdated package versions"
+        "Broken hardware compatibility (Trezor Safe 7 support unclear)",
+        "GPG decryption failures with newer GnuPG versions (v2.5.17)",
+        "Breaking changes with trezor dependency updates (v0.20.0)",
+        "Python 3.13 compatibility issues requiring major version bump",
+        "trezor-gpg init command broken",
+        "Unsigned releases on PyPI (critical security concern for a security tool)",
+        "Hardware communication errors and status code failures"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant frustration with outdated package versions and installation issues, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Tool is appreciated when functional (users describe as 'awesome')",
+        "Community is respectful and patient despite issues"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project exhibits concerning under-maintenance patterns: recent critical bugs (Feb-Mar 2026) remain unresolved with minimal engagement, dependency updates break core functionality, security best practices (signed releases) unaddressed since Sept 2024, and hardware compatibility questions go unanswered."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,20 +242,25 @@
       "summary": "The maintainer responses are clear, helpful, and patient, with a good balance of technical depth and user-friendliness."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 8,
       "concerns": [
-        "Low commit frequency in the past six months",
-        "High number of open issues and PRs"
+        "Zero commits in past 6 months despite 83 open issues",
+        "No closed issues or merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "Significant unresolved issue backlog with no triage activity"
       ],
       "positive_signals": [
-        "Recent release within a year",
-        "Active contributor"
+        "Recent commit on 2026-03-01 (14 days ago) suggests some minimal activity"
       ],
-      "summary": "The package is minimally maintained with occasional updates but faces several unresolved issues."
+      "summary": "Project appears abandoned with no maintenance activity for 6 months and substantial unresolved issues, despite a recent outlier commit."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:39:07.956762+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

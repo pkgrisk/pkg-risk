@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "quick_start": 7,
+      "examples": 5,
+      "configuration": 6,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "The README provides clear and detailed information on installation, configuration, and usage, but lacks comprehensive troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Well-structured README with excellent cross-platform build instructions, but light on API usage examples and troubleshooting guidance.",
+      "top_issue": "No C API usage examples \u2014 the library's primary interface is undocumented beyond a reference to other projects and a single plistutil CLI example."
     },
     "security": {
       "overall_score": 7,
@@ -187,15 +187,19 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "stack overflows",
-        "buffer overflows",
-        "integer overflows"
+        "Multiple NULL pointer dereference vulnerabilities",
+        "Unchecked malloc() calls without null verification",
+        "Integer overflow vulnerabilities in size calculations",
+        "Heap buffer overflows from malformed input",
+        "Stack overflow on deeply nested structures",
+        "Recent regression breaking dependent projects (idevicerestore)",
+        "Missing input validation in critical functions"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The libplist community is experiencing a high volume of unresolved security issues and bugs, indicating a need for more active maintenance and responsiveness from project maintainers."
+      "summary": "Critical C library with severe security vulnerabilities (9 of 12 issues) discovered through recent audits and fuzzing campaigns, indicating serious quality and memory-safety concerns despite responsive issue closure."
     },
     "communication": {
       "helpfulness": 9,
@@ -211,20 +215,27 @@
       "summary": "The maintainer provides helpful and technically deep responses, but could improve in terms of clarity and welcomingness for new contributors."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "stale",
       "confidence": 8,
       "concerns": [
-        "relatively low number of closed issues",
-        "low number of merged PRs"
+        "0 commits in past 6 months despite 31 open issues",
+        "31 unresolved open issues with no recent closure activity",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months indicating no community contributions",
+        "Unknown last release date - version status unclear",
+        "Zero closed issues in past 6 months despite backlog"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors"
+        "Recent commit activity 18 days ago suggests not completely abandoned",
+        "No open PRs to review suggests maintainer isn't overwhelmed"
       ],
-      "summary": "The libplist package appears to be maintained, with recent activity and active contributors, but could improve issue resolution and community engagement."
+      "summary": "libplist shows signs of staleness with no development activity over 6 months and a growing backlog of 31 unresolved issues, though a recent commit suggests it hasn't been fully abandoned."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:45:49.380272+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "maintained",

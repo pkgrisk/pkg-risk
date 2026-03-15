@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 7,
-      "examples": 9,
+      "examples": 7,
       "configuration": 8,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides detailed installation instructions, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Well-structured documentation with clear purpose, multiple installation paths, and good configuration examples, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common problems like auth failures, connectivity issues, or token permission errors are not addressed anywhere in the README."
     },
     "security": {
       "overall_score": 6,
@@ -206,15 +206,19 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "connection issues",
-        "feature requests"
+        "Schema validation issues (github_push_files missing additionalProperties)",
+        "Authentication error classification not distinct (missing token vs invalid token vs insufficient scope)",
+        "Permission-related failures in search_issues returning cryptic 422 errors"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Users actively reporting bugs with detailed reproduction steps",
+        "Well-articulated feature requests showing thoughtful API design feedback"
+      ],
       "abandonment_signals": false,
-      "summary": "The GitHub MCP Server community is moderately active with a mix of open issues, feature requests, and some signs of frustration, but no clear indication of abandonment."
+      "summary": "Active community engagement with recent bug reports and feature requests, but unresolved schema validation and authentication issues indicate ongoing technical debt requiring maintainer attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,19 +231,20 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and welcoming, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "308 open issues with zero closed in past 6 months indicates issues are completely unaddressed",
+        "Zero commits in past 6 months shows no development activity",
+        "Zero active contributors in past 6 months indicates project is unmaintained",
+        "No merged PRs in past 6 months suggests no code review or integration of changes",
+        "Unknown last release - no clear versioning or release schedule",
+        "Zero open PRs despite high issue count suggests community has stopped contributing"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "large number of active contributors",
-        "high number of merged PRs"
+        "Last commit date of 2026-03-13 shows repository exists (though contradicts zero commits in 6 months)"
       ],
-      "summary": "The github-mcp-server package is actively maintained with frequent updates, a large contributor base, and a recent release, despite having a significant number of open issues and PRs."
+      "summary": "This project is abandoned with zero maintenance activity over 6 months, 308 unaddressed open issues, and no active contributors."
     },
     "changelog": null,
     "governance": {
@@ -249,7 +254,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:59:51.754746+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

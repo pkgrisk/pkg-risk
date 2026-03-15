@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 8,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
+      "examples": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is clear and well-structured, but lacks a quick start guide and troubleshooting information.",
-      "top_issue": "Lack of a quick start example to demonstrate basic usage"
+      "overall": 4,
+      "summary": "The README covers installation well across platforms but provides no usage examples, quick start, or configuration guidance, deferring entirely to external documentation.",
+      "top_issue": "No quick start or usage examples \u2014 a new user has no idea how to actually run a build after installing."
     },
     "security": {
       "overall_score": 7,
@@ -185,16 +185,18 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Litani init fails with Python 3.11",
-        "Terminating Litani is not reliable"
+        "Signal termination unreliable - SIGTERM doesn't cleanly kill subprocesses (2022-05-19, still open)",
+        "Performance degradation with large builds >100k jobs (2022-04-11, still open)",
+        "Command-line argument length limits break large job configurations (2022-05-03, still open)",
+        "Python version compatibility issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health appears stable, but there are ongoing issues that require attention."
+      "abandonment_signals": true,
+      "summary": "Project is maintained but under-resourced: some work completed, but critical reliability/performance issues from 2022 remain unaddressed for 1-2+ years, indicating deprioritization or resource constraints."
     },
     "communication": {
       "helpfulness": 7,
@@ -210,17 +212,19 @@
       "summary": "The maintainer responses are generally adequate but could benefit from more detailed explanations and encouragement for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "High number of open issues (25)"
+        "No commits for 6+ months despite being 2+ years since last activity",
+        "28 open issues with zero closure in past 6 months",
+        "No active contributors or PR activity",
+        "Unknown/missing release information",
+        "No response to community bug reports"
       ],
       "positive_signals": [
-        "Recent release on 2023-06-12T19:28:57+00:00",
-        "Multiple contributors active in the past six months"
+        "Users still reporting issues (indicates prior adoption)"
       ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent commits and has a high number of unresolved issues."
+      "summary": "litani is abandoned with no maintenance activity, unaddressed bug reports, and no release history."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -238,7 +242,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:40:44.849089+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -172,28 +172,30 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 6,
       "examples": 7,
-      "configuration": 9,
+      "configuration": 8,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and detailed information on installation, configuration, and usage of the scalariform package, but lacks a concise quick start example and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section to help users resolve common issues."
+      "overall": 6,
+      "summary": "Well-structured docs covering installation and configuration with good examples, but lacks troubleshooting guidance and a concise quick-start section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like Java version conflicts, classpath problems, or formatter errors are entirely undocumented."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Scala XML library version mismatch",
-        "Outdated build tools and dependencies"
+        "Parser crashes on valid Scala syntax (trailing commas, underscores, string interpolation)",
+        "Severely outdated dependencies (sbt 1.2.8 vs 1.10.0, Scala 2.13.0 vs 2.13.14, scala-xml 1.x vs 2.x)",
+        "Configuration options not working as documented (useUnicodeArrows)",
+        "Parser error messages lack line/character number information"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of abandonment or high frustration levels."
+      "abandonment_signals": true,
+      "summary": "Scalariform shows clear signs of abandonment with multiple unresolved parser bugs spanning 10+ years, severely lagging dependencies, and minimal maintainer engagement on recent issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -206,18 +208,19 @@
       "summary": "The maintainer responses are clear, helpful, and encouraging to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 10,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "A high number of open issues"
+        "Zero commits in past 6 months",
+        "67 unresolved open issues with no triage",
+        "No merged PRs in past 6 months",
+        "No active contributors",
+        "Last commit 10+ months ago (2024-05-11)",
+        "Unknown release status",
+        "No recent issue resolution activity"
       ],
-      "positive_signals": [
-        "Recent contributors (past six months)",
-        "Regular issue reporting by community"
-      ],
-      "summary": "The package is minimally maintained with recent contributor activity but lacks active development."
+      "positive_signals": [],
+      "summary": "Scalariform is abandoned with zero maintenance activity for 10+ months, accumulating 67 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -228,7 +231,10 @@
       "overall_score": 5,
       "summary": "The changelog is mostly complete but lacks clarity, categorization, and explicit marking of breaking changes or migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:03:23.053000+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

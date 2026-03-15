@@ -178,29 +178,33 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
-      "quick_start": 10,
-      "examples": 6,
-      "configuration": 5,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 5,
+      "configuration": 3,
       "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README is clear and provides a good quick start, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Lack of detailed examples for common use cases."
+      "overall": 6,
+      "summary": "Strong intro with a clear quick-start example, but relies heavily on external docs for installation details, configuration, and troubleshooting.",
+      "top_issue": "Configuration and advanced usage are not documented in the README at all \u2014 users are pointed to external docs with no inline guidance."
     },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "x509 error parsing asn1 value: ParseError",
-        "More relaxed RFC 5280 checks (Windows MDM related)"
+        "Regressions in recent versions (46.0.5) breaking downstream projects (Ansible)",
+        "Overly strict RFC parsing breaking real-world Windows MDM certificates",
+        "Long-standing API design issues unresolved for years (ChaCha20 since 2023)",
+        "Breaking changes from security patches without clear migration path"
       ],
       "praise_themes": [
-        "declarative ASN.1 API for Cryptography"
+        "Active development of new cryptographic algorithms (HPKE expansion)",
+        "Rapid response to reported issues with status labeling",
+        "Strong adoption in production systems (Ansible, enterprise MDM)"
       ],
       "abandonment_signals": false,
-      "summary": "The community health of the cryptography package on Homebrew is mixed, with some users reporting parsing errors and requesting more relaxed checks, while there are also discussions about improving the API design."
+      "summary": "Healthy but volatile project with active development and rapid responses, but recent security patches introduced regressions affecting critical downstream users, indicating tension between security hardening and backward compatibility."
     },
     "communication": {
       "helpfulness": 7,
@@ -216,21 +220,28 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary and encourage new contributors, though some could benefit from additional detail."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months",
-        "Regularly merged pull requests",
-        "Multiple contributors active"
+      "status": "stale",
+      "confidence": 7,
+      "concerns": [
+        "Zero commits in past 6 months despite active last commit timestamp",
+        "58 open issues with no resolution activity (0 closed issues in 6 months)",
+        "No merged PRs or code review activity in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Last release date unknown",
+        "No open PRs suggests contributions not being accepted or processed"
       ],
-      "summary": "The cryptography package is actively maintained with frequent commits, regular merging of pull requests, and multiple active contributors."
+      "positive_signals": [
+        "Last commit timestamp is recent (2026-03-15)",
+        "Repository still has tracking data (not fully abandoned)",
+        "No open PRs indicates a clean state or stabilized codebase"
+      ],
+      "summary": "Package appears stale with no development activity over 6 months, though recent commit metadata suggests possible data collection issues requiring verification."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:02:35.550564+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

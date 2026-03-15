@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 6,
-      "examples": 9,
-      "configuration": 4,
-      "troubleshooting": 7,
+      "clarity": 9,
+      "installation": 4,
+      "quick_start": 7,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 5,
       "overall": 6,
-      "summary": "The documentation is comprehensive and provides a good understanding of the package's features, but lacks clear installation instructions.",
-      "top_issue": "Installation instructions are incomplete and unclear."
+      "summary": "Excellent conceptual introduction with good grammar examples, but installation instructions appear to be cut off and practical getting-started steps are missing from the provided content.",
+      "top_issue": "Installation instructions are truncated/missing from the provided README content \u2014 the 'Getting Started' section is listed in the table of contents but not shown."
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,21 @@
       "summary": "The JavaCCInterpreter code has some security concerns, including potential unauthorized file access and inadequate error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Semantic lookahead issues",
-        "Generated parser stuck at `jj_add_error_token`"
+        "JavaCC-8 breaking changes (implicit string tokens, semantic lookahead incompatibilities)",
+        "Buffer/memory handling bugs (SimpleCharStream overflow, TokenManager code too large)",
+        "Parser stability issues (infinite loops in error recovery, NPE exceptions)",
+        "Missing features (multi-catch support outside actions, proper token position tracking)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Complex issues get resolved (semantic lookahead, tokenizer code generation problems)",
+        "Active user migration from JavaCC 7 to 8 shows project relevance"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing moderate frustration with semantic lookahead and parser stability issues, but there are no clear signs of abandonment."
+      "summary": "JavaCC is actively used and maintained, but the JavaCC-8 release introduced significant breaking changes and unresolved critical bugs (infinite loops, buffer overflows) that frustrate users migrating from JavaCC-7, indicating maturity and stability issues that need attention."
     },
     "communication": {
       "helpfulness": 7,
@@ -227,20 +232,25 @@
       "summary": "The maintainer provides helpful and clear responses, though there is room for more depth in some explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "A high number of open issues (37) suggests there may be unresolved problems that need attention."
+        "No commits in past 6 months (last commit August 2025, 8+ months ago)",
+        "45 open issues with zero closed in past 6 months",
+        "No merged PRs or development activity in 6+ months",
+        "Zero active contributors in past 6 months",
+        "No release information available"
       ],
       "positive_signals": [
-        "Recent activity with contributors (10 active past six months)",
-        "Regular issue management with some closed issues in the past six months"
+        "Project exists with some historical commit history"
       ],
-      "summary": "The package shows minimal maintenance efforts, with recent contributor activity but no new commits or merged PRs recently."
+      "summary": "JavaCC is stale with no maintenance activity for 8+ months, accumulating unaddressed issues, and no active development or contributor engagement."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:33:43.233937+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

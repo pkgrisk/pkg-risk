@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 7,
       "quick_start": 9,
       "examples": 8,
       "configuration": 7,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and easy to follow, but could benefit from more detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Well-structured documentation with a clear purpose statement, solid quickstart, and detailed usage examples for both server and client sides.",
+      "top_issue": "No configure script or dependency list for compilation \u2014 users must discover missing build deps (like `check` for tests) on their own."
     },
     "security": {
       "overall_score": 6,
@@ -214,18 +214,23 @@
       "summary": "The iodine package has several security concerns, including potential injection risks and lack of input validation, but no hardcoded secrets or critical error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Docker support",
-        "TAP version compatibility issues"
+        "Platform-specific bugs (Windows TAP compatibility, macOS raw UDP sockets)",
+        "Connection stability and keep-alive issues",
+        "DNS tunneling not working in certain network configurations",
+        "Unclear documentation for advanced setups",
+        "Slow release cycle and version management"
       ],
       "praise_themes": [
-        "Hacktoberfest contributions"
+        "Respect for project maintainer and effort",
+        "Community interest in contributing (Docker support proposal)",
+        "Project longevity and established functionality"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged with some common technical issues, but overall the project seems to be actively maintained."
+      "abandonment_signals": true,
+      "summary": "Project shows mixed health with active recent issue reporting but concerning maintenance gaps\u2014several critical issues remain unresolved for 3-4 years (macOS raw sockets since 2022, Windows TAP since 2021), a release request is pending unanswered, and while some issues close with minimal engagement, others accumulate significant discussion without resolution."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,17 +243,21 @@
       "summary": "The maintainer provides clear and technically deep responses, though there is room for more patience in handling repeated questions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "No commits in 6 months (last commit ~180 days ago)",
+        "No active contributors in 6 months",
+        "20 open issues with zero resolution activity",
+        "No merged PRs in 6 months",
+        "Unknown last release date",
+        "No response to community engagement despite open issues"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Some contributor activity in the past six months"
+        "Project exists and had a commit 6 months ago (not completely abandoned)",
+        "Open issues indicate past usage"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges with unresolved issues and low PR merge rate."
+      "summary": "The iodine package appears stale with complete development inactivity over the past 6 months, accumulating unresolved issues while receiving no maintenance attention."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -259,7 +268,10 @@
       "overall_score": 6,
       "summary": "The changelog is comprehensive but lacks clear categorization, marking of breaking changes, and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:38:46.589700+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

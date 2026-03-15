@@ -175,28 +175,33 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "installation": 7,
+      "quick_start": 8,
       "examples": 6,
       "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is clear and provides good installation instructions, but lacks sufficient examples, configuration details, and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "The README provides a solid introduction with a working Hello World example and multiple installation options, but lacks configuration documentation and troubleshooting guidance.",
+      "top_issue": "No configuration or troubleshooting documentation \u2014 common issues like OTP version conflicts, PATH setup, or build failures are not addressed."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug in resolver behavior",
-        "HTTPC content-length issue",
-        "500 error handling"
+        "Memory safety issues (double free in tcache)",
+        "Type specification bugs causing dialyzer warnings",
+        "Language feature bugs (anonymous records in erl_eval)",
+        "Vendor vulnerability tracking (zlib CVE-2026-3381)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Mature vulnerability tracking and SBOM processes",
+        "Professional bug reporting with detailed reproduction steps",
+        "Technical engagement visible in comments on critical issues"
+      ],
       "abandonment_signals": false,
-      "summary": "The issues are evenly distributed between bugs and feature requests, with moderate responsiveness from maintainers."
+      "summary": "Active, mature project managing serious technical issues (memory corruption, CVEs) with documented processes, showing moderate maintainer engagement but slow response to recent vulnerability notifications."
     },
     "communication": {
       "helpfulness": 8,
@@ -209,14 +214,18 @@
       "summary": "The responses are clear, helpful, and patient. They provide technical depth without being overly complex."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors active in the past six months"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "520 open issues with zero closures in past 6 months indicates issues are not being addressed",
+        "Zero contributor activity in the past 6 months despite high issue backlog",
+        "No merged PRs or pull request activity in the past 6 months",
+        "Unknown last release date suggests unclear version lifecycle"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Very recent commit on 2026-03-14 indicates some level of activity"
+      ],
+      "summary": "Package exhibits stale maintenance patterns with a massive unaddressed issue backlog, zero contributor activity, and no PR engagement over 6 months, despite a recent commit."
     },
     "changelog": null,
     "governance": {
@@ -226,7 +235,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, which increases the risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:54:53.160873+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

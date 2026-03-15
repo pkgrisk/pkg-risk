@@ -169,15 +169,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 6,
       "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides many examples, but installation instructions are incomplete and troubleshooting information is lacking.",
-      "top_issue": "Lack of comprehensive troubleshooting guide"
+      "examples": 7,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The README covers the broader Rattler library well but provides minimal documentation for rattler-index specifically, which is the homebrew package in question.",
+      "top_issue": "rattler-index (the actual homebrew package) is only mentioned once in a brief component list with no dedicated installation, usage, or configuration instructions."
     },
     "security": {
       "overall_score": 7,
@@ -210,16 +210,17 @@
       "summary": "The code has some potential security issues, including injection risks and secrets handling, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Parsing channel names with channel_alias containing path segments",
-        "rattler_repodata_gateway access denied on windows when persisting temporary repodata.json"
+        "Silent bugs causing data loss (pattern specs silently dropped, Ord contract violations)",
+        "Missing platform/architecture support (FreeBSD arm64/i386)",
+        "Incomplete Python API bindings (missing WhlPackageRecord)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing issues, but there are no signs of abandonment yet."
+      "summary": "Active project with recent issue reports and some resolution history, but several critical unaddressed bugs including potential data structure corruption warrant attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -232,15 +233,20 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "A significant number of merged PRs in the past six months (254)",
-        "Multiple contributors active in the past six months (30)"
+      "concerns": [
+        "173 open issues with zero closed in past 6 months indicates unaddressed backlog",
+        "Zero commits in the past 6 months shows no development activity",
+        "Zero active contributors for past 6 months suggests abandoned by maintainers",
+        "Zero merged PRs indicates no community contributions being integrated",
+        "Unknown release cycle with no recent releases"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Repository still exists and was updated today",
+        "No recent deprecation notice"
+      ],
+      "summary": "Repository is stale with massive open issue backlog (173) and zero maintenance activity for 6 months despite existing code."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -258,7 +264,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:59:29.715820+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

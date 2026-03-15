@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and easy to follow, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Well-structured README that clearly explains a focused tool with good examples and installation options, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common failure modes like missing AWS credentials, wrong region, or permission errors on KMS keys are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -209,16 +209,21 @@
       "summary": "The code has several security concerns, including command injection vulnerabilities and potential injection attacks, but does not expose sensitive information or use insecure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "CVE-2024-24790 vulnerability in Go lang runtime",
-        "Docker image for 1.5.5?"
+        "Critical CVE in Go runtime (1+ year unfixed)",
+        "Docker image releases not pushed (6+ months pending)",
+        "STDERR/STDOUT bug open for 4+ years",
+        "ARM64 build support delayed"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and a request for Docker images, but no clear signs of abandonment."
+      "praise_themes": [
+        "Active daily usage by teams",
+        "Responsive to feature suggestions (whitespace warning)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Users love the project but maintainers show inconsistent engagement\u2014some features are implemented while critical security issues and release infrastructure requests languish unresolved for 1-4 years, indicating resource constraints or declining maintenance focus."
     },
     "communication": {
       "helpfulness": 8,
@@ -232,16 +237,19 @@
     },
     "maintenance": {
       "status": "minimal-maintenance",
-      "confidence": 7,
+      "confidence": 6,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "7 open issues accumulating with zero closed in past 6 months",
+        "No merged PRs or commits in reported 6-month window despite recent activity",
+        "No active contributors in past 6 months",
+        "Last release date unknown - unclear versioning strategy",
+        "Possible data inconsistency between 'last commit 17 days ago' and '0 commits past 6 months'"
       ],
       "positive_signals": [
-        "Recent release on February 6, 2024",
-        "Ten contributors active in the past six months"
+        "Very recent commit (2026-02-26, 17 days ago)",
+        "No open pull requests requiring review"
       ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent code updates."
+      "summary": "Project shows sporadic activity with a recent commit but stagnant issue resolution and no contributor engagement over the past 6 months, indicating minimal ongoing maintenance."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +260,10 @@
       "overall_score": 6,
       "summary": "The changelog lacks clear marking of breaking changes, migration guides, and proper categorization but is generally clear and comprehensive."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:46:21.055381+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

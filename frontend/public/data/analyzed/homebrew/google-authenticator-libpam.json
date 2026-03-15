@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 6,
       "examples": 7,
       "configuration": 9,
-      "troubleshooting": 5,
+      "troubleshooting": 7,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but could benefit from more concise language and additional troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise troubleshooting section"
+      "summary": "Comprehensive reference documentation covering all module options and edge cases, but lacks a cohesive quick-start walkthrough that ties the steps together end-to-end.",
+      "top_issue": "No complete end-to-end example showing the full setup flow (install \u2192 run google-authenticator \u2192 configure PAM \u2192 test login) in one place; steps are scattered across sections."
     },
     "security": {
       "overall_score": 7,
@@ -207,18 +207,22 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "compilation errors",
-        "permission issues"
+        "Broken Google chart URL generator (reported 2019, 2023, 2026 - persists for 7 years)",
+        "Verification code mismatches between library and authenticator apps",
+        "Permission denied errors when updating secret files",
+        "Compilation failures on various Linux distributions (RHEL, AlmaLinux)",
+        "Outdated package versions in Ubuntu repositories (based on 2016 fork)"
       ],
       "praise_themes": [
-        "enhancement suggestions"
+        "Appreciation for project maintenance and continued support",
+        "Recognition as critical infrastructure for SSH two-factor authentication"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness from maintainers and common complaints about compilation and permission issues, but there are also enhancement suggestions that indicate ongoing interest in the project."
+      "abandonment_signals": true,
+      "summary": "Project exhibits concerning maintenance patterns with a critical bug recurring across 7 years, no releases since 2019, and multiple unresolved feature requests, indicating slow/minimal active development despite occasional issue closures."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,17 +235,21 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with repeated questions. There is a good balance of technical depth and encouragement for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "Zero commits in past 6 months despite 62 open issues",
+        "No active contributors in past 6 months",
+        "Zero closed issues in past 6 months - backlog not being addressed",
+        "No merged PRs in past 6 months - pull requests not being processed",
+        "Last release unknown - unclear deployment status",
+        "62 open issues accumulating without resolution"
       ],
       "positive_signals": [
-        "Commits have been made recently",
-        "Some contributors are still active"
+        "Recent commit activity 16 days ago suggests repository not completely abandoned",
+        "No open PRs blocking contributors"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges due to a backlog of issues."
+      "summary": "Repository is stale with zero maintenance activity over the past 6 months despite a large backlog of open issues, though minimal recent commit history suggests it hasn't been fully abandoned."
     },
     "changelog": null,
     "governance": {
@@ -251,7 +259,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:45:40.532535+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

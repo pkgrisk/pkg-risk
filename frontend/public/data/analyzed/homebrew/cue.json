@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides a good introduction to the CUE package, but lacks concrete examples and troubleshooting guidance.",
-      "top_issue": "Lack of quick start example and troubleshooting documentation"
+      "overall": 4,
+      "summary": "The README clearly describes the project and points to external docs well, but lacks any inline examples, quick-start code, or troubleshooting guidance.",
+      "top_issue": "No inline quick-start example or code snippet \u2014 new users must navigate to an external site before seeing any actual usage."
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,22 @@
       "summary": "The code has some security concerns, including potential injection risks and error exposure, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and panics",
-        "feature requests"
+        "Performance regression (57% memory increase in v0.16.0)",
+        "Long-standing formatting bugs (cue fix/fmt indentation)",
+        "Spec deviations (parser allows disallowed literals)",
+        "Kubernetes/container integration issues (auth fallbacks, CRD generation)",
+        "Unresolved feature requests aging 5+ years (XML encoding)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The CUE community is active, with maintainers responding to issues and users reporting bugs and requesting features, indicating a healthy and engaged ecosystem."
+      "praise_themes": [
+        "Clear issue labeling and triage system",
+        "Some critical issues resolved (2 closed fmt issues shown)"
+      ],
+      "abandonment_signals": true,
+      "summary": "CUE shows mixed health with recent critical bug activity but concerning backlog of 2-5 year old open issues, spec deviations, and minimal engagement on some reports."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,17 +237,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and technically sound, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (727)",
-        "Recent last commit (2026-01-02)",
-        "Active issue closure (237 closed issues in the past 6 months)",
-        "Multiple merged PRs in the past 6 months (15)",
-        "Recent last release (2025-12-30)"
+      "status": "minimal-maintenance",
+      "confidence": 8,
+      "concerns": [
+        "893 open issues with zero closed in past 6 months indicates severe issue backlog and no triage",
+        "Zero commits in past 6 months suggests dormant codebase despite recent last commit timestamp",
+        "No active contributors in past 6 months - no development activity",
+        "Zero merged pull requests in past 6 months - no feature development or maintenance",
+        "Unknown last release - unclear versioning and release cadence"
       ],
-      "summary": "The cue package appears to be actively maintained with frequent commits, recent releases, and active issue closure."
+      "positive_signals": [
+        "Very recent commit timestamp (2026-03-14) suggests possible recent maintenance window",
+        "Zero open PRs may indicate PRs are reviewed, though lack of merged PRs contradicts active maintenance"
+      ],
+      "summary": "The package appears stale with minimal maintenance despite a recent commit, evidenced by massive unaddressed issue backlog (893 open), zero issue closure, and zero development activity over six months."
     },
     "changelog": null,
     "governance": {
@@ -251,7 +260,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The CUE project has a documented decision process and multiple maintainers, but lacks a clear succession plan and contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:34:51.266958+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

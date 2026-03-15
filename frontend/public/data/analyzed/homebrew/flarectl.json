@@ -178,13 +178,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 8,
-      "overall": 8,
-      "summary": "The documentation is comprehensive and well-structured, but may require some time to fully understand due to the complexity of the subject matter.",
-      "top_issue": "Lack of clear configuration documentation"
+      "quick_start": 8,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Well-structured Go SDK documentation with clear installation, solid examples covering pagination and request options, but lacking any troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common errors (auth failures, rate limits, API errors) are not addressed anywhere in the README."
     },
     "security": {
       "overall_score": 7,
@@ -216,16 +216,18 @@
       "summary": "The code has some potential security issues, including a possible path traversal vulnerability and lack of input validation, but no critical secrets exposure or dangerous defaults were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "API response structure issues",
-        "Missing or incomplete SDK functionality"
+        "Regression: custom_origin_server field missing in v6 SDK",
+        "SDK panics on deserialization (empty Placement object)",
+        "File upload API errors with subdirectory paths",
+        "Documentation too large to render on GitHub"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing moderate frustration with missing and incomplete SDK features, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is concerning: multiple critical bugs (panics, regressions) remain open for 1-5 months with minimal maintainer engagement, particularly the unresponded panic issue, though one documentation issue was resolved."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,16 +240,19 @@
       "summary": "The responses are clear, helpful, and patient, with a good level of technical depth."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (1000)",
-        "Recent last commit and release date",
-        "Multiple contributors active in the past six months (8)",
-        "A significant number of merged PRs in the past six months (17)"
+      "status": "stale",
+      "confidence": 7,
+      "concerns": [
+        "Zero activity for past 6 months (no merged PRs, closed issues, or active contributors)",
+        "10 unresolved open issues with no closure activity",
+        "Last release unknown (likely significantly outdated)",
+        "No merged PRs or resolved issues in 6 months indicates no maintenance attention"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Very recent commit (2 days ago) suggests possible revival or single maintenance touch",
+        "No open pull requests indicates maintainer isn't leaving reviews hanging"
+      ],
+      "summary": "The project appears stale with 6 months of inactivity despite a recent commit, accumulating open issues without resolution, and an unknown release date."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -265,7 +270,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear information on succession, decision-making, contributor paths, and multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:20:05.900783+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

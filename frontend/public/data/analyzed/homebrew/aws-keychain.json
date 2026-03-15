@@ -169,14 +169,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 6,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 2,
+      "examples": 8,
+      "configuration": 3,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The documentation is clear and concise, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section and limited configuration documentation"
+      "summary": "Clear and concise README with good examples, but undermined by an unmaintained status notice, manual symlink-only install instructions, and no troubleshooting or configuration guidance.",
+      "top_issue": "The package is explicitly abandoned (author recommends aws-vault instead), which severely limits the value of any documentation it contains."
     },
     "security": {
       "overall_score": 8,
@@ -187,18 +187,22 @@
       "summary": "The aws-keychain-completion.bash script appears to be secure with no major security concerns, but could benefit from additional input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "aws-keychain rm breaks the app",
-        "Keychain file extension change in macOS Sierra"
+        "macOS compatibility issues (Sierra keychain file extension change)",
+        "Command behavior bugs (rm command leaving orphaned entries)",
+        "Missing features (bash completion, password changing support)",
+        "Security concern (AWS tokens visible in ps output)"
       ],
       "praise_themes": [
-        "Thank you for this tool."
+        "Simplicity and elegance of the tool",
+        "Solves a specific problem very well",
+        "Good fit for Homebrew ecosystem"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the tool but faces some issues related to functionality and compatibility."
+      "abandonment_signals": true,
+      "summary": "Project appears dormant with all issues from 2014-2017; community appreciated the tool's simplicity but unresolved macOS compatibility and feature requests suggest limited ongoing maintenance."
     },
     "communication": {
       "helpfulness": 7,
@@ -214,16 +218,17 @@
       "summary": "The maintainer provides useful information and alternatives, but could be more direct in addressing specific issues."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Last release was over seven years ago"
+        "No commits since 2017 (8+ years of inactivity)",
+        "Zero activity in past 6 months across all metrics",
+        "No active contributors",
+        "Last release date unknown, likely from 2017 or earlier",
+        "No recent response to issues or pull requests"
       ],
-      "positive_signals": [
-        "Contributors active past 6 months"
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commit and release history."
+      "positive_signals": [],
+      "summary": "aws-keychain is abandoned with no commits or maintenance activity for nearly 9 years."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -234,7 +239,10 @@
       "overall_score": 7,
       "summary": "The changelog is clear about breaking changes and provides migration guidance, but lacks proper categorization."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T22:14:47.694624+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
