@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides clear and detailed information on installation, usage, and examples, but lacks comprehensive troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common problems and solutions for troubleshooting"
+      "configuration": 4,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Exceptionally well-documented tool with clear purpose, multiple installation paths, and rich usage examples across pre-commit hooks, GitHub Actions, NPM, and Node API.",
+      "top_issue": "Configuration options are barely documented \u2014 `action-validator -h` is the only reference, with no listing of flags/options in the README itself."
     },
     "security": {
       "overall_score": 7,
@@ -201,19 +201,24 @@
       "summary": "The code has some security concerns related to input validation and potential injection vulnerabilities, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "paths wildcard validation",
-        "performance issues"
+        "Validation too restrictive for valid GitHub Actions patterns (cron schedules, glob patterns)",
+        "Performance degradation with many gitignored files (15+ seconds vs 195ms)",
+        "Missing validation for composite action output step IDs",
+        "YAML references and anchors not properly handled",
+        "Lacks auto-discovery of workflow files"
       ],
       "praise_themes": [
-        "tool functionality",
-        "community support"
+        "Described as 'awesome tool' by multiple users",
+        "Prevents pushing faulty workflows to production",
+        "Effective as a git hook and CI validation",
+        "Solves real workflow pain points"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is engaged with both praise and constructive feedback, but there are ongoing issues that require attention."
+      "abandonment_signals": true,
+      "summary": "Active user appreciation exists, but maintenance appears delegated to community through 'pr-welcome' labels, with critical issues unresolved for 2+ years and emerging performance problems creating user friction."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,15 +231,18 @@
       "summary": "The maintainer responses are generally clear and helpful, showing a good level of technical depth and patience with contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (65)",
-        "Recent open and closed issues and PRs indicate ongoing development",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "No commits in past 6 months despite last commit 3 months ago",
+        "26 open issues with zero closures in past 6 months",
+        "No merged PRs or active contributors in past 6 months",
+        "Unknown last release indicates missing or outdated releases"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Repository still exists with some recent commit history"
+      ],
+      "summary": "Project is stale with no maintenance activity for at least 6 months and accumulating unaddressed issues."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +252,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks formal documentation for succession, decision-making, and contributor paths to maintainer roles."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:55:23.953431+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

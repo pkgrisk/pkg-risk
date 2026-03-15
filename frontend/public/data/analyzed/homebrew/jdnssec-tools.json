@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "clarity": 7,
+      "installation": 8,
+      "quick_start": 5,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README covers installation well across three distribution methods but lacks practical usage examples, configuration documentation, and troubleshooting guidance.",
+      "top_issue": "No examples of actual tool usage beyond a help flag (-h), leaving users with no guidance on common DNSSEC operations like signing a zone."
     },
     "security": {
       "overall_score": 7,
@@ -200,16 +200,19 @@
       "summary": "The code has some minor security concerns related to input validation and error handling, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "performance issues",
-        "exit code handling"
+        "Error handling failures (exit codes return 0 on exceptions)",
+        "File I/O edge cases (non-existent files marked as success)",
+        "Performance regressions (ECDSA 20x slower than RSA)",
+        "DNSSEC parsing edge cases (CAA records, bad base64)",
+        "Regression from version 0.15 to 0.20"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some performance and exit code handling issues, but overall the project seems to be actively maintained."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of abandonment with multiple critical bugs unfixed since 2012-2018, sporadic recent activity (2024-2025), zero maintainer engagement visible in issue threads, and no response pattern established."
     },
     "communication": {
       "helpfulness": 7,
@@ -222,20 +225,26 @@
       "summary": "The maintainer's responses are generally clear and helpful, though could provide more technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in past 6 months despite recent commit date suggesting data inconsistency",
+        "4 open issues with no recent resolutions",
+        "No contributors active in past 6 months",
+        "Unknown last release version",
+        "No merged PRs in past 6 months"
       ],
       "positive_signals": [
-        "Contributors active in the past six months",
-        "Recent release on April 8, 2024"
+        "Recent commit on 2026-02-19 indicates some activity",
+        "No open pull requests suggests clean state"
       ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent commits and has open issues."
+      "summary": "Package appears stale with minimal recent maintenance activity; 4 unresolved issues and no contributor engagement in past 6 months indicate low maintenance despite a recent commit."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:18:16.401344+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

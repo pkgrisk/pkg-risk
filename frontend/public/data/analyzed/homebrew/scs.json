@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 2,
+      "clarity": 7,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of installation instructions and quick start examples"
+      "overall": 2,
+      "summary": "The README is a near-empty stub that identifies the package but defers all useful content to external documentation.",
+      "top_issue": "No installation instructions, usage examples, or quick start \u2014 the README is essentially just a logo, badges, and a link to external docs."
     },
     "security": {
       "overall_score": 8,
@@ -200,17 +200,20 @@
       "summary": "The SuiteSparse_config.c code appears to have a low risk of security vulnerabilities, but lacks input validation and has some potential issues with error handling and default configurations."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "dependency issues"
+        "Inconsistent solver behavior (warm_start returning different results on same instance)",
+        "Build/compilation issues (CUDA dependency, BLAS/LAPACK compatibility)",
+        "Memory safety concerns (undefined behavior detected via Valgrind)"
       ],
       "praise_themes": [
-        "positive feedback from users"
+        "High-quality numerical solver recognized as 'amazing'",
+        "Active development and recent releases (3.2.9)"
       ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some dependency-related frustrations, but overall positive user sentiment."
+      "summary": "SCS demonstrates moderate health with responsiveness to most issues, but the unaddressed warm_start bug (4 days open, 0 comments) and memory safety issue raise concerns about issue triage and code review rigor."
     },
     "communication": {
       "helpfulness": 9,
@@ -223,20 +226,25 @@
       "summary": "The maintainer responses are clear, helpful, and encouraging to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (43)",
-        "Low number of merged PRs in the past six months (24)"
+        "45 open issues with zero closed in past 6 months indicates issues are accumulating without resolution",
+        "No commits in past 6 months despite recent commit timestamp suggests last commit may be automated/tag only",
+        "Zero active contributors in 6 months with zero merged PRs indicates no active development",
+        "Unknown release history suggests no formal release process or abandonment of versioning",
+        "No response to community engagement (issues pile up, PRs not reviewed)"
       ],
       "positive_signals": [
-        "Recent commits and releases within the last month",
-        "Four contributors have been active in the past six months"
+        "Recent commit on 2026-02-19 suggests some minimal automated maintenance or final update"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges due to a backlog of issues."
+      "summary": "The scs package appears abandoned with a large accumulating issue backlog, no active contributors, and no development activity despite a recent timestamp that likely represents an automated update rather than genuine maintenance."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:20:16.902108+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

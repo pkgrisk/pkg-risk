@@ -161,14 +161,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
+      "installation": 7,
+      "quick_start": 5,
+      "examples": 4,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides detailed installation instructions, but lacks a concise quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section to help users resolve common issues."
+      "overall": 5,
+      "summary": "Well-structured introduction and build instructions for a C++ QUIC library, but lacks practical usage examples, API documentation, and troubleshooting guidance.",
+      "top_issue": "No code examples showing how to actually use the library in an application \u2014 the README describes what it does and how to build it, but not how to integrate it."
     },
     "security": {
       "overall_score": 8,
@@ -179,16 +179,18 @@
       "summary": "The provided code appears to be generally secure, but lacks input validation for peer addresses and socket options, and has a potential issue with signal handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 6,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "compilation issues",
-        "QUIC protocol implementation bugs"
+        "RFC 9000 protocol compliance violations (PATH_CHALLENGE, CRYPTO retransmission)",
+        "Critical packet handling bugs (duplicated packet numbers, coalesced packets)",
+        "Build compatibility issues with newer compilers",
+        "Community access barriers (broken Slack link)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The mvfst community is experiencing moderate frustration due to unresolved compilation and QUIC protocol implementation issues, but maintainers are somewhat responsive."
+      "summary": "Project shows concerning patterns with multiple critical RFC compliance bugs from interop testing remaining unaddressed for weeks with zero engagement, despite evidence of past maintenance activity."
     },
     "communication": {
       "helpfulness": 9,
@@ -201,18 +203,19 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low rate of issue closure",
-        "very low rate of PR merges",
-        "unknown last release"
+        "Zero commits in past 6 months despite 45 open issues",
+        "No active contributors in past 6 months",
+        "45 unaddressed open issues with zero closed in 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown release date indicates long absence of releases"
       ],
       "positive_signals": [
-        "high commit activity past 6 months",
-        "large number of active contributors"
+        "Recent commit timestamp suggests possible snapshot recency (though no commit activity in 6 months)"
       ],
-      "summary": "The package appears to be stale due to low issue closure and PR merge rates, despite high commit activity and a large contributor base."
+      "summary": "mvfst is abandoned with no maintenance activity for 6 months, 45 unaddressed issues, and zero contributor engagement."
     },
     "changelog": null,
     "governance": {
@@ -222,7 +225,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for MVFST lacks a clear succession plan, decision-making process, and contributor ladder, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:46:23.267244+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

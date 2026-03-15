@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 5,
-      "configuration": 7,
-      "troubleshooting": 4,
+      "installation": 8,
+      "quick_start": 7,
+      "examples": 4,
+      "configuration": 3,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is generally clear and well-structured, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive examples for common use cases"
+      "summary": "The README gives a solid high-level overview and basic usage, but defers most detail to external docs with minimal inline examples or configuration guidance.",
+      "top_issue": "Configuration and examples are almost entirely outsourced to linked docs rather than shown inline, leaving users with little to work from without following external links."
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,22 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "dependency management issues",
-        "publishing and versioning bugs"
+        "Workspace dependency ordering issues (publishing wrong crate first)",
+        "Workspace dry-run failures with path dependencies",
+        "Platform-specific crashes (macOS segfault)",
+        "Private registry support gaps",
+        "Accidental execution in workspace subdirectories"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some common issues, but the project seems to be actively maintained with moderate responsiveness."
+      "praise_themes": [
+        "Feature requests are considered and closed/resolved",
+        "Issues receive community engagement and discussion"
+      ],
+      "abandonment_signals": true,
+      "summary": "Moderate community health with inconsistent responsiveness\u2014some issues resolved quickly but critical bugs like the recent macOS segfault (Jan 31) remain unaddressed for 6+ weeks, and workspace-related issues persist without clear resolution paths."
     },
     "communication": {
       "helpfulness": 6,
@@ -236,15 +242,20 @@
       "summary": "The maintainer's responses are generally clear and technically sound but could be more patient and encouraging."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged pull requests in the past six months",
-        "Regular issue closure"
+      "status": "minimal-maintenance",
+      "confidence": 8,
+      "concerns": [
+        "60 open issues with no closures in past 6 months",
+        "No commits in past 6 months except single recent commit",
+        "Zero active contributors in past 6 months",
+        "No merged PRs or release activity in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit activity 2 days ago indicates some ongoing work",
+        "Repository is not archived"
+      ],
+      "summary": "Cargo-release shows minimal maintenance with severe issue backlog accumulation and sporadic activity after extended dormancy."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -262,7 +273,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision process and indicates multiple maintainers, but lacks a succession plan or contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:46:52.518140+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

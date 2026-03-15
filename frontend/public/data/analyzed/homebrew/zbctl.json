@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 5,
       "installation": 2,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is mostly clear and provides some useful examples, but lacks installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions for the zbctl package"
+      "quick_start": 4,
+      "examples": 5,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README focuses on the Go client library rather than zbctl itself, leaving CLI users without installation steps, usage examples, or command reference.",
+      "top_issue": "No installation instructions for zbctl via Homebrew, and CLI documentation is only referenced via an external link rather than included inline."
     },
     "security": {
       "overall_score": 7,
@@ -201,15 +201,17 @@
       "summary": "The code has some security concerns, including potential injection risks and insecure defaults, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "old zbctl versions are not in github releases page"
+        "Missing or undocumented features (ModifyProcessInstance API)",
+        "Critical data loss bug with streaming-enabled workers unaddressed",
+        "Outdated/missing releases breaking downstream CI tools"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with a minor complaint about missing version history."
+      "abandonment_signals": true,
+      "summary": "Community health is poor: critical bugs receive no engagement, user support questions go unanswered, and dependency management has stalled since mid-2024."
     },
     "communication": {
       "helpfulness": 7,
@@ -222,20 +224,25 @@
       "summary": "Responses are generally clear and helpful, though could provide more context on 'why' certain decisions were made."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
+      "status": "stale",
       "confidence": 7,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues and PRs"
+        "32 open issues with 0 closed in past 6 months indicates issues are not being addressed",
+        "0 active contributors in past 6 months despite open issues",
+        "No merged PRs in past 6 months suggests no active development or community contributions",
+        "Unknown last release indicates possible neglected release process",
+        "Disconnect between 'commits past 6 months: 0' and recent commit 4 days ago suggests data inconsistency"
       ],
       "positive_signals": [
-        "Recent commit activity",
-        "Regular issue reporting"
+        "Recent commit activity (2026-03-11) indicates some level of maintenance"
       ],
-      "summary": "The package shows minimal maintenance with recent commits but a backlog of unmerged pull requests and issues."
+      "summary": "Despite a recent commit, the absence of issue resolution, contributor activity, and PR merges over 6 months indicates the project is stale or abandoned with minimal active maintenance."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:25:41.468799+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

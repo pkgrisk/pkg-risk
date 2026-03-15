@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 2,
+      "clarity": 7,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of installation instructions and examples"
+      "overall": 2,
+      "summary": "The README is essentially a stub that defers all documentation to an external website, providing almost no useful information in the file itself.",
+      "top_issue": "All documentation is offloaded to an external URL with no inline installation, usage, or configuration instructions."
     },
     "security": {
       "overall_score": 7,
@@ -218,16 +218,22 @@
       "summary": "The code has some potential security risks, including command injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Xcode stuck when launching the app",
-        "Breakpoint issues in Xcode"
+        "Xcode version compatibility issues (15.0, 15.1, 16.0, 16.2)",
+        "Debugging functionality failures (breakpoints not working, variables not expanding)",
+        "Performance hangs in real/large projects",
+        "Plugin conflicts with JetBrains Kotlin Multiplatform plugin",
+        "Attribute errors in LLDB integration"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some common issues, particularly with breakpoints and app launch stalling, but there are no signs of abandonment."
+      "praise_themes": [
+        "Works reliably in demo/sample projects",
+        "Debugging works in some simple scenarios"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community is frustrated by recurring Xcode compatibility breaks and unresolved debugging issues; recent activity shows maintenance but the most critical open issue (performance hang, Oct 2025) remains unanswered with zero engagement."
     },
     "communication": {
       "helpfulness": 7,
@@ -240,17 +246,20 @@
       "summary": "The maintainer responses are generally clear and helpful, showing patience with repeated questions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "Only one contributor has been active in the last six months."
+        "No commits in past 6 months (last commit 11 months ago)",
+        "2 open issues with zero activity addressing them",
+        "No active contributors in past 6 months",
+        "No merged PRs or development activity",
+        "Unknown or missing release information"
       ],
       "positive_signals": [
-        "The package was recently released and updated on April 15, 2025.",
-        "There are open issues that may indicate ongoing need or feedback from users."
+        "Repository exists with commit history",
+        "Repository was active at one point (April 2025)"
       ],
-      "summary": "The package is minimally maintained with recent updates but lacks active development in the past six months."
+      "summary": "Project is stale with no maintenance activity for 11 months, unaddressed open issues, and no active contributors."
     },
     "changelog": null,
     "governance": {
@@ -260,7 +269,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, which increases the risk of losing critical knowledge if primary maintainers leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:27:27.018098+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

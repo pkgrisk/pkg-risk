@@ -175,28 +175,32 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 9,
-      "examples": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
+      "examples": 4,
       "configuration": 2,
       "troubleshooting": 1,
-      "overall": 6,
-      "summary": "The README provides a clear introduction and basic usage example, but lacks detailed documentation on configuration and troubleshooting.",
-      "top_issue": "Insufficient documentation on configuration options and troubleshooting common problems"
+      "overall": 5,
+      "summary": "The README excels at quickly communicating what Tart is and getting users started, but lacks depth on configuration, advanced usage examples, and troubleshooting.",
+      "top_issue": "No configuration documentation or troubleshooting guidance \u2014 users hitting issues are simply redirected to external docs and discussions."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "VM startup issues",
-        "Performance degradation"
+        "Mounting/shared directory failures (virtiofs, hidden directories)",
+        "DNS not configured in new VMs by default",
+        "Homebrew tap integration issues preventing updates via Brewfile",
+        "VM startup failures on mac2.metal EC2 with newer macOS images"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some ongoing issues with VM startup and performance, but the overall sentiment remains neutral without significant praise or signs of abandonment."
+      "praise_themes": [
+        "Functional enough for CI/automated testing workflows"
+      ],
+      "abandonment_signals": true,
+      "summary": "Mixed health: most issues are resolved promptly, but one critical bug (Mac2.metal VM boot failures) has remained open for 5+ months with 27 comments, signaling potential maintainer capacity constraints or technical difficulty with that specific issue."
     },
     "communication": {
       "helpfulness": 8,
@@ -209,15 +213,21 @@
       "summary": "The responses are clear, helpful, and patient, with a good balance of technical depth and user-friendliness."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the last six months",
-        "A healthy number of merged pull requests in the recent period"
+      "status": "stale",
+      "confidence": 6,
+      "concerns": [
+        "Zero contributors active in past 6 months despite 37 open issues",
+        "No commits merged in past 6 months (data inconsistency with recent commit date)",
+        "No closed issues in past 6 months - issues not being triaged or resolved",
+        "No merged pull requests in past 6 months",
+        "No recorded releases",
+        "Large unaddressed issue backlog indicates abandoned maintenance"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Very recent commit activity (9 days ago)",
+        "No stalled pull requests waiting for review"
+      ],
+      "summary": "Project is stale with no meaningful maintenance activity over 6 months, though a recent commit suggests sporadic irregular work rather than complete abandonment."
     },
     "changelog": null,
     "governance": {
@@ -227,7 +237,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:31:01.570344+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

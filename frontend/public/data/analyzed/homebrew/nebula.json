@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 5,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The README provides a good introduction to Nebula and its features, but could benefit from more concise language and additional troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting documentation"
+      "summary": "Well-structured README with clear purpose, multi-platform installation, and a solid step-by-step getting started guide, but lacks configuration details and troubleshooting content.",
+      "top_issue": "No troubleshooting section \u2014 common issues like firewall/NAT problems, certificate errors, or lighthouse connectivity failures are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,18 @@
       "summary": "The code has some potential security issues, including a possible YAML injection vulnerability and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "connection issues",
-        "configuration problems"
+        "Critical production instability - random node failures and handshake timeouts causing cluster partitioning",
+        "Feature limitations - BGP/OSPF routing fails over Nebula overlay despite unsafe network configuration",
+        "Configuration reload incomplete - UnsafeNetworks changes don't properly reinitialize firewall and SNAT",
+        "Security vulnerability - unpatched DoS in SSH management interface via synchronous handshake blocking"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The nebula community is experiencing frustration with ongoing connection and configuration issues, despite moderate maintainer responsiveness."
+      "abandonment_signals": true,
+      "summary": "Deteriorating health: critical stability bugs and unpatched security vulnerabilities remain open for weeks with zero maintainer responses, directly impacting production Kubernetes deployments."
     },
     "communication": {
       "helpfulness": 9,
@@ -228,16 +230,19 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source project maintenance."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (58 in the past 6 months)",
-        "Recent release (2025-12-04)",
-        "Active issue and PR management (41 issues closed, 64 PRs merged in the past 6 months)",
-        "Multiple active contributors (10 in the past 6 months)"
+      "status": "minimal-maintenance",
+      "confidence": 8,
+      "concerns": [
+        "131 open issues with zero resolutions in past 6 months",
+        "No commits, closed issues, or merged PRs in past 6 months despite recent commit",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests no versioned releases"
       ],
-      "summary": "The nebula package appears to be actively maintained with frequent updates, releases, and engagement from multiple contributors."
+      "positive_signals": [
+        "One very recent commit on 2026-03-12 indicates repository is not completely abandoned",
+        "Repository remains accessible and exists"
+      ],
+      "summary": "Package exhibits minimal maintenance with large unresolved backlog and dormant contributor base despite a single recent commit."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -248,7 +253,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and easy to follow, but lacks explicit migration guides for breaking changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:24:54.699665+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

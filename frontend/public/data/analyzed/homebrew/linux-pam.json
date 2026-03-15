@@ -160,15 +160,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 4,
+      "clarity": 4,
+      "installation": 6,
+      "quick_start": 2,
       "examples": 2,
       "configuration": 3,
-      "troubleshooting": 5,
-      "overall": 5,
-      "summary": "The documentation is somewhat clear but lacks concise examples and troubleshooting information.",
-      "top_issue": "Lack of clear, concise examples for common use cases"
+      "troubleshooting": 4,
+      "overall": 3,
+      "summary": "Minimal build instructions for developers compiling from source, with no explanation of what PAM is or how to actually use it as a library.",
+      "top_issue": "No explanation of what Linux-PAM does or how to integrate it into applications \u2014 assumes readers already know the purpose and use cases."
     },
     "security": {
       "overall_score": 7,
@@ -192,17 +192,19 @@
       "summary": "The code has some minor security concerns related to input validation and error handling, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "security vulnerabilities",
-        "configuration issues",
-        "compatibility problems"
+        "Default security configurations too restrictive (pam_faillock deny=3)",
+        "Core features not working reliably in modern distributions (pam_timestamp)",
+        "Missing modern security features (Argon2 password hashing)",
+        "Documentation issues and typos in man pages",
+        "Installation/build system not honoring prefix directories"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The linux-pam community is active, but maintainers are slow to respond to issues, and users are experiencing frustration with security vulnerabilities, configuration issues, and compatibility problems."
+      "abandonment_signals": true,
+      "summary": "Community shows mixed health with some recent activity (closed issues, security responses) but multiple long-standing unresolved feature requests (2018-2020) and reports of broken functionality, indicating moderate maintenance capacity with accumulated backlog."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,17 +220,19 @@
       "summary": "The maintainer provides technically sound responses, but often comes across as dismissive and unhelpful to users with basic questions or issues."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "abandoned",
       "confidence": 8,
       "concerns": [
-        "high number of open issues",
-        "open PRs outnumber merged PRs"
+        "161 open issues with zero closed in past 6 months indicates issue triage has stopped",
+        "No commits in past 6 months despite recent commit timestamp suggests data inconsistency or abandoned branch",
+        "Zero active contributors in past 6 months",
+        "No pull request activity (open or merged) in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors"
+        "One recent commit on 2026-02-18 suggests minimal ongoing activity"
       ],
-      "summary": "The linux-pam package appears to be maintained, with regular updates and active contributors, but may benefit from addressing the backlog of open issues and PRs."
+      "summary": "linux-pam appears abandoned with stale issue backlog (161 unresolved), no active contributors, and negligible maintenance activity despite a recent commit."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -239,7 +243,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and comprehensive, but lacks explicit breaking change markers and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:08:40.457947+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "maintained",

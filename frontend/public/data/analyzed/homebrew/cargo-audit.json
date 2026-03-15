@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 6,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation provides a good overview of the project and its components, but lacks clear installation instructions, usage examples, and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "overall": 2,
+      "summary": "This is a monorepo index README that only lists crates with brief descriptions but provides no installation instructions, usage examples, or documentation for cargo-audit specifically.",
+      "top_issue": "No installation instructions, usage examples, or any practical guidance for cargo-audit \u2014 the README is just a monorepo table of contents."
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,16 @@
       "summary": "The code has some security concerns related to potential injection risks, lack of input validation, and error handling issues, but no critical secrets or sensitive information were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Support for CVSS:4.0",
-        "Handling of deleted crates in advisories"
+        "Internal workspace crates incorrectly audited when names collide with external crates.io crates",
+        "Copyright assignment clarity needed for licensing/packaging purposes"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively addressing issues, but there are ongoing complaints about handling new features and edge cases."
+      "abandonment_signals": true,
+      "summary": "Community health is mixed with a critical unfixed crate name collision bug open for 6 years and minimal maintainer engagement on functionality requests."
     },
     "communication": {
       "helpfulness": 7,
@@ -235,18 +235,26 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with repeated notifications."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (110)",
-        "Significant number of merged PRs in the past six months (69)",
-        "Multiple contributors active in the past six months (13)"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "121 open issues with zero closed in past 6 months indicates issues are not being triaged or addressed",
+        "Zero active contributors in past 6 months suggests no one is actively maintaining the project",
+        "No merged PRs in past 6 months indicates no active development or maintenance workflow",
+        "Unknown last release date - no recent release to users despite open issues",
+        "Significant disconnect between recent commit (2 days ago) and zero recorded activity in past 6 months suggests sporadic, non-maintenance activity"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "A commit was made 2 days ago, indicating the repository is not completely abandoned",
+        "Zero open PRs suggests the project is not accumulating unreviewed work"
+      ],
+      "summary": "cargo-audit appears stale with a substantial unaddressed issue backlog, no contributor activity for 6+ months, and sporadic commit history despite recent activity."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:25:56.747740+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

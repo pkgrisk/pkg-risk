@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 2,
-      "troubleshooting": 1,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 2,
       "overall": 6,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks detailed configuration and troubleshooting documentation.",
-      "top_issue": "Lack of configuration and troubleshooting documentation"
+      "summary": "Excellent first impression with a clear concept and working quick-start example, but documentation depth is minimal with no configuration reference or troubleshooting guidance beyond an external link.",
+      "top_issue": "No inline documentation for configuration options, flags, or common problems \u2014 users are redirected to an external site for anything beyond the basic example."
     },
     "security": {
       "overall_score": 5,
@@ -211,18 +211,22 @@
       "summary": "The code has several security concerns, including potential shell injection attacks and lack of input validation, which could lead to unauthorized access or data breaches."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "regression issues",
-        "lack of documentation"
+        "Documentation gaps (cache location, cargo requirement, external modules)",
+        "Platform compatibility issues (Nix integration regression)",
+        "Signal handling (Ctrl+C propagation to child processes)",
+        "Main function detection is brittle and fails with string literals",
+        "Limited feature support (Cargo.lock, output binaries, feature flags in cargo-deps)"
       ],
       "praise_themes": [
-        "IDE support requested"
+        "User appreciation for the tool",
+        "Active engagement with feature requests"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some frustration over open issues and lack of clear documentation, but there are no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Rust-script shows mixed community health with engaged users reporting bugs and requesting features, but slow maintainer responsiveness and several open issues from 2020-2023 indicate limited active development momentum."
     },
     "communication": {
       "helpfulness": 9,
@@ -235,17 +239,17 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth where needed and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months indicates limited community contribution.",
-        "High number of open issues suggests potential unresolved problems."
+        "No commits for 7+ months (last commit August 2025)",
+        "37 open issues with zero resolution in past 6 months",
+        "Zero active contributors for 6+ months",
+        "No merged PRs or PR activity in past 6 months",
+        "No recent releases tracked"
       ],
-      "positive_signals": [
-        "Recent commit and release dates indicate some level of activity.",
-        "Single contributor is actively maintaining the package."
-      ],
-      "summary": "The package shows minimal maintenance with recent activity but faces concerns due to low community contribution and high issue count."
+      "positive_signals": [],
+      "summary": "Project is abandoned with no development, contributor, or maintenance activity for over 6 months despite a significant backlog of unaddressed issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +260,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clarity on breaking changes and upgrade paths."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:45:54.681282+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

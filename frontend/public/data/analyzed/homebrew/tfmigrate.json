@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
       "examples": 8,
-      "configuration": 9,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and detailed explanation of the package's purpose, features, and usage, but lacks troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "configuration": 8,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, detailed getting-started sandbox, and comprehensive configuration coverage, though troubleshooting guidance is minimal.",
+      "top_issue": "No dedicated troubleshooting section \u2014 common errors, state corruption scenarios, and recovery steps are absent."
     },
     "security": {
       "overall_score": 7,
@@ -223,18 +223,22 @@
       "summary": "The tfmigrate package has some security concerns, including potential injection risks and hardcoded secrets, but overall it seems to be following good practices for error handling and input validation."
     },
     "sentiment": {
-      "sentiment": "positive",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Feature requests not addressed promptly"
+        "Tool too strict: treats output-only terraform changes as migration failures",
+        "Missing feature to mark migrations as applied for new workspaces",
+        "Cannot have multiple migrations per file",
+        "Requires passing config option on every command invocation",
+        "Limited terragrunt integration and history support"
       ],
       "praise_themes": [
-        "Tool usefulness",
-        "Community engagement"
+        "Tool is useful and appreciated for managing multiple terraform workspaces",
+        "Clear, constructive feature requests from engaged users"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is engaged and finds the tool useful, but there are unaddressed feature requests causing some frustration."
+      "abandonment_signals": true,
+      "summary": "Active user base appreciates the tool but is blocked by missing features and behavioral limitations; maintainer responsiveness appears slow with multiple feature requests from January 2025 still unresolved as of March 2026."
     },
     "communication": {
       "helpfulness": 7,
@@ -247,17 +251,20 @@
       "summary": "The responses are generally clear and helpful, though there is room for more detailed explanations in some cases."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of community contribution.",
-        "Zero closed issues in the past six months, which might suggest that reported issues are not being addressed."
+        "Zero commits in the past 6 months despite last commit ~2.5 months ago",
+        "23 open issues with zero closed in past 6 months - issues accumulating",
+        "No active contributors or merged PRs in past 6 months",
+        "No recent releases",
+        "No maintainer activity or issue/PR responses"
       ],
       "positive_signals": [
-        "Recent commits and releases within the last month",
-        "Some level of contributor activity with one active contributor over the past six months"
+        "Repository has not been deleted",
+        "One commit exists within 6-month lookback window (Dec 2025)"
       ],
-      "summary": "The package shows minimal maintenance efforts with recent activity but lacks community contribution and issue resolution."
+      "summary": "tfmigrate is effectively stale with no maintenance activity for 6+ months and 23 unaddressed open issues indicating abandonment."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -268,7 +275,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:24:38.806244+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

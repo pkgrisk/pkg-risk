@@ -164,14 +164,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 4,
-      "summary": "The README provides a good overview of the Apache Arrow project, but lacks clear installation and usage instructions.",
-      "top_issue": "Lack of clear installation instructions for Homebrew"
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README provides a solid high-level overview of Apache Arrow's purpose and components, but contains zero installation instructions, usage examples, or practical guidance for getting started.",
+      "top_issue": "No installation instructions or usage examples whatsoever \u2014 the README reads as a project overview/landing page rather than actionable documentation for users wanting to use the library."
     },
     "security": {
       "overall_score": 5,
@@ -203,13 +203,20 @@
       "summary": "The provided Apache Arrow code has some security concerns, including hardcoded credentials and disabled encryption by default, but does not appear to have any significant injection risks."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 2,
-      "maintainer_responsiveness": "active",
-      "common_complaints": [],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The apache-arrow community appears to be healthy, with active maintainers and a low frustration level among users, although there are some open issues that need attention."
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Missing feature implementations (DictionaryArray converters, aggregate functions)",
+        "Inconsistent API support across languages and components (C++, Python, R)",
+        "Documentation gaps and clarity issues"
+      ],
+      "praise_themes": [
+        "Welcoming to contributors (good-first-issue labels)",
+        "Some issues being resolved and closed"
+      ],
+      "abandonment_signals": true,
+      "summary": "Apache Arrow shows recent engagement with new feature requests but has substantial technical debt, with multiple enhancement issues from 2022-2023 marked as stale and remaining unresolved."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,19 +229,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing technical depth and a good communication style, but could improve in welcoming new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
+      "status": "abandoned",
+      "confidence": 8,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "3371 open issues with zero resolution in past 6 months",
+        "No active contributors for 6+ months",
+        "No pull requests merged in past 6 months",
+        "No issues closed in past 6 months",
+        "Unknown last release date",
+        "Recent commit contradicts 6-month inactivity (data anomaly suggests sporadic/automated activity)"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "large number of active contributors",
-        "steady merge of PRs"
+        "Recent commit 2 days ago suggests some minimal automated or sporadic activity"
       ],
-      "summary": "The apache-arrow package appears to be actively maintained with a high volume of recent activity, despite having a significant number of open issues and pull requests."
+      "summary": "Project appears abandoned with massive unresolved issue backlog (3371) and zero contributor engagement despite a recent commit."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +252,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The Apache Arrow project has a clear contributor ladder and multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:19:12.546258+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

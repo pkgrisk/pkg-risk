@@ -164,14 +164,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 8,
-      "quick_start": 4,
-      "examples": 5,
-      "configuration": 7,
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 3,
+      "configuration": 4,
       "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is detailed but dense, making it difficult for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of clear and concise quick start guide or examples for common use cases"
+      "overall": 4,
+      "summary": "The README is detailed about the VMR architecture and contribution model but is primarily developer/contributor documentation, not end-user documentation for the Homebrew-installed dotnet SDK.",
+      "top_issue": "The README describes the internal source repository (VMR), not the .NET SDK itself \u2014 a Homebrew user installing 'dotnet' gets no quick-start, usage examples, or basic configuration guidance relevant to their context."
     },
     "security": {
       "overall_score": 7,
@@ -198,16 +198,18 @@
       "summary": "The codebase exhibits moderate security risks, primarily related to potential injection vulnerabilities and insufficient input validation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 2,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Operational Issues",
-        "NuGet errors"
+        "Build pipeline infrastructure failures (disk space, dotnet detection)",
+        "Intermittent/flaky test failures requiring reruns",
+        "Environment-specific issues (Alpine container compatibility)",
+        "CI/CD reliability degradation"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health of the dotnet homebrew package appears to be stable with active maintainers, but users are experiencing operational issues that need attention."
+      "summary": "Multiple recent build infrastructure and pipeline failures are impacting reliability, with moderate community engagement on documentation but core infrastructure issues remain unresolved."
     },
     "communication": {
       "helpfulness": 6,
@@ -224,19 +226,20 @@
       "summary": "The maintainer's responses are clear and provide some helpful information, but lack depth, patience, and a welcoming tone, relying heavily on automated messages and FAQ links."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "relatively low ratio of closed issues to open issues",
-        "high number of open PRs"
+        "No commits in past 6 months despite 192 open issues",
+        "Zero closed issues in past 6 months indicates no issue triage",
+        "No merged PRs in 6 months suggests no active development",
+        "No contributors active in past 6 months",
+        "Last release date unknown - possible long gap since last release"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "large number of active contributors",
-        "high number of merged PRs"
+        "Recent commit timestamp (2026-03-15) may indicate some maintenance activity",
+        "Active issue reporting suggests users are still monitoring the package"
       ],
-      "summary": "The dotnet package appears to be actively maintained with a high volume of commits, releases, and contributor activity, despite some concerns around issue and PR management."
+      "summary": "Package appears stale with no meaningful maintenance activity over 6 months despite high open issue count, though a recent commit timestamp raises uncertainty about the true activity level."
     },
     "changelog": null,
     "governance": {
@@ -246,7 +249,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the homebrew package 'dotnet' lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:19:13.237513+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

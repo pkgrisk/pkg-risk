@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 7,
-      "configuration": 4,
+      "clarity": 7,
+      "installation": 5,
+      "quick_start": 3,
+      "examples": 6,
+      "configuration": 3,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks a clear and concise quick start guide, making it difficult for new users to get started quickly.",
-      "top_issue": "Lack of a simple and straightforward quick start example"
+      "overall": 4,
+      "summary": "The README explains the concept and motivation well but lacks inline code examples, making it hard to get started without visiting external documentation.",
+      "top_issue": "No inline quick-start code \u2014 users must navigate to external architecture overview or example repos before writing a single line of lager code."
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,18 @@
       "summary": "The code has some security concerns, including potential SQL injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation errors",
-        "missing notifications"
+        "Dependency incompatibilities (immer 0.9.0, catch2 versions)",
+        "Compiler errors (MSVC C2440, type conversion issues)",
+        "Memory safety bugs (ASAN use-after-return)",
+        "Type system limitations (non-ref conversion, mutable lambdas)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to open issues and occasional compilation errors, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is concerning: a critical MSVC compiler bug remains unresolved after 4+ years with 24 comments, multiple recent bugs opened with zero maintainer engagement, and pending maintenance work (catch2 update) suggests the project is losing maintenance momentum."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,20 +236,26 @@
       "summary": "The maintainer responses are clear, helpful, and demonstrate a high level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Few contributors (only 2 active in the past 6 months)",
-        "No recent releases"
+        "Zero commits in past 6 months despite recent commit history",
+        "36 open issues with no closures in 6 months - issues are accumulating",
+        "No active contributors in the past 6 months",
+        "No merged PRs in past 6 months - community contributions not incorporated",
+        "Unknown last release date - no clear versioning strategy"
       ],
       "positive_signals": [
-        "Commits and PR activity within the last 6 months",
-        "Some open issues and PRs indicate community interest"
+        "Recent commit on 2026-02-25 suggests minimal residual activity",
+        "No open PRs indicates abandoned code is not piling up"
       ],
-      "summary": "The package shows minimal maintenance with occasional updates but lacks recent releases."
+      "summary": "Lager is a stale project with 36 unresolved issues and no development activity, closed issues, or active contributors over the past 6 months, despite a recent isolated commit."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:57:21.803412+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

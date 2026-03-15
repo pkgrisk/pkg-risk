@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 4,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The README provides a good introduction to the package, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Lack of comprehensive documentation for common use cases and troubleshooting"
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README provides a decent overview but relies heavily on external docs links that may be broken or outdated, with almost no inline examples or configuration guidance.",
+      "top_issue": "Critical documentation (installation, quick start, configuration) is offloaded to external links rather than included in the README, leaving users with nothing actionable if those links are unavailable."
     },
     "security": {
       "overall_score": 7,
@@ -219,30 +219,35 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 9,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "security issues",
-        "lack of new releases",
-        "unresolved bugs"
+        "No releases in 7+ years (v0.16.0 from May 2018)",
+        "Critical security vulnerability unresolved (REST API authorization bypass)",
+        "Failover to alternative nodes not working with HA clusters",
+        "Bugs on arm64 architecture",
+        "Poor error messages and documentation"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The community health is poor due to unresolved security and functionality issues, lack of updates, and slow responsiveness from maintainers."
+      "summary": "confd exhibits severe abandonment with a critical unresolved security vulnerability, no releases in 7+ years, and multiple unaddressed bug reports and feature requests dating back to 2023."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the last six months"
+        "No commits for 8+ months",
+        "180 open issues with zero closed in 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs for 6+ months",
+        "Unknown last release date suggests poor release cadence"
       ],
       "positive_signals": [
-        "Recent open issues and PRs indicate some level of community interest",
-        "Multiple contributors are still active"
+        "Project has historical activity",
+        "Clean PR queue (no abandoned pull requests)"
       ],
-      "summary": "The package is in minimal maintenance with occasional contributions but lacks recent activity."
+      "summary": "The confd package is stale with no maintenance activity for 6+ months and a large unaddressed issue backlog."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -260,7 +265,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a clear decision-making process and contributor path, but relies heavily on a single primary maintainer."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:03:31.524983+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

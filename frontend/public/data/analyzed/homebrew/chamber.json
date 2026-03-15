@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "installation": 7,
+      "quick_start": 5,
       "examples": 8,
       "configuration": 7,
-      "troubleshooting": 2,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section to help users resolve common issues."
+      "summary": "Well-structured docs with good command examples and migration guides, but lacks a concise quick-start flow and troubleshooting section.",
+      "top_issue": "No quick-start walkthrough that takes a user from install to first working secret in one place; authentication, KMS setup, and usage are spread across separate sections with no end-to-end example."
     },
     "security": {
       "overall_score": 7,
@@ -203,16 +203,18 @@
       "summary": "The provided code seems to follow good security practices, but there are some potential issues with input validation and error handling that should be addressed to improve the overall security of the system."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 2,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "security vulnerabilities",
-        "warning messages"
+        "Case sensitivity bug in read command",
+        "Security vulnerabilities (CVE-2025-47906)",
+        "Excessive warnings on intentional variable overwrites",
+        "Dotenv format incompatibility with Ruby Dotenv >=3"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The chamber community appears to be moderately active with responsive maintainers, but users are encountering issues with security vulnerabilities and warning messages."
+      "abandonment_signals": true,
+      "summary": "Project shows selective responsiveness with security issues addressed but functional bugs and compatibility issues lingering unresponded for weeks, indicating resource constraints or deprioritization."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,17 +230,20 @@
       "summary": "The maintainer responses are generally helpful and clear, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 7,
       "concerns": [
-        "low issue closure rate",
-        "high number of open issues and PRs"
+        "32 open issues with zero closed in past 6 months indicates no active maintenance",
+        "No commits reported in past 6 months despite Feb 6 commit (data inconsistency)",
+        "Zero contributor activity in past 6 months",
+        "No PR activity or reviews in past 6 months",
+        "Unknown release schedule suggests neglected release process"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors in the past 6 months"
+        "Recent commit on 2026-02-06 shows minimal activity",
+        "No open PRs suggest the project isn't actively accepting contributions"
       ],
-      "summary": "The chamber package appears to be receiving minimal maintenance with some recent activity, but concerns around issue and PR management remain."
+      "summary": "The chamber package is effectively abandoned with 32 unresolved issues and no maintainer engagement over 6 months, despite a recent unexplained commit."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +261,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for Chamber provides a clear decision-making process, but lacks a succession plan and a defined contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:47:36.161977+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

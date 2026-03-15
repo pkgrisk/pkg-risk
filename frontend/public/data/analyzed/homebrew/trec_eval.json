@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
+      "quick_start": 5,
+      "examples": 4,
+      "configuration": 3,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package's functionality and usage, but installation instructions are brief and troubleshooting information is lacking.",
-      "top_issue": "Lack of clear and comprehensive troubleshooting documentation"
+      "overall": 4,
+      "summary": "Minimal, terse documentation aimed at TREC community insiders that provides just enough to get started but lacks depth for new users unfamiliar with information retrieval evaluation.",
+      "top_issue": "No explanation of input file formats (qrels, results file) or how to obtain/create them, making it nearly impossible for newcomers to actually use the tool."
     },
     "security": {
       "overall_score": 7,
@@ -195,16 +195,19 @@
       "summary": "The code has some security concerns related to input validation and error exposure, but no critical injection risks or secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Cannot open files bigger than 2GB",
-        "Segfault from no topic overlap"
+        "File size limitations (>2GB not supported)",
+        "Feature requests unaddressed (MRR@k from 2021)",
+        "Command-line option bugs (-c flag not working)",
+        "Segmentation faults on invalid input",
+        "Precision/type issues with float vs double"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness and a few unresolved issues."
+      "abandonment_signals": true,
+      "summary": "Project shows selective maintenance with most historical bugs fixed but two significant open issues (file size limitation since Apr 2025, feature request since 2021) suggesting declining momentum or deprioritization."
     },
     "communication": {
       "helpfulness": 8,
@@ -220,14 +223,18 @@
       "status": "minimal-maintenance",
       "confidence": 7,
       "concerns": [
-        "No commits in the past six months",
-        "Only one merged PR in the past six months"
+        "No commits in past 6 months despite recent activity",
+        "Zero active contributors in past 6 months",
+        "4 open issues with no recent resolution",
+        "No PR activity or merged contributions in 6 months",
+        "Unknown last release - no formal release history"
       ],
       "positive_signals": [
-        "Three contributors have been active in the past six months",
-        "There are open issues and a recent release"
+        "Recent commit activity (6 days ago)",
+        "Repository still accessible",
+        "Issues are tracked"
       ],
-      "summary": "The package is receiving minimal maintenance with occasional contributions but lacks recent activity."
+      "summary": "Package shows sporadic maintenance with a recent commit but prolonged dormancy, unaddressed open issues, and no active contributor engagement."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -238,7 +245,10 @@
       "overall_score": 5,
       "summary": "The changelog lacks clear marking of breaking changes, migration guides, and proper categorization but is relatively complete and understandable."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:06:41.433936+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

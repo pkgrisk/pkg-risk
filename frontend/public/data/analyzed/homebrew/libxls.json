@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 2,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 4,
       "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is generally clear and provides a good introduction to the library, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Lack of detailed configuration documentation"
+      "summary": "Well-structured README with a clear purpose, good C API example, and basic installation steps, but lacks configuration docs and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section or documentation of common errors, encoding options, or configuration parameters beyond the bare minimum."
     },
     "security": {
       "overall_score": 8,
@@ -193,16 +193,19 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 9,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "security issues",
-        "uninitialized memory use",
-        "stack buffer overflow"
+        "Security vulnerabilities (uninitialized memory, buffer overflow in formula parser)",
+        "Data corruption and precision loss in cell value parsing",
+        "Character encoding issues (UTF-8 locale failures, non-English path handling)",
+        "Code quality issues (includes in namespaces, missing include guards, circular includes)",
+        "API naming conflicts (xls function name collision)",
+        "Overly complex build system"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is negative due to multiple open security and functionality issues, though there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "libxls shows critical abandonment: multiple unpatched security vulnerabilities (use-of-uninitialized-memory, stack overflow) with zero maintainer engagement spanning 14+ months, combined with data corruption bugs and pervasive code quality issues, indicating the project is no longer actively maintained."
     },
     "communication": {
       "helpfulness": 7,
@@ -218,20 +221,24 @@
       "summary": "The maintainer provides technically sound explanations but could be more patient and welcoming, especially with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of commits in the past six months (only 2)",
-        "High number of open issues (19)"
+        "No commits in past 6 months (last commit 7+ months ago)",
+        "28 open issues with zero resolution in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs or PR activity in past 6 months",
+        "Unknown last release date",
+        "No apparent maintainer engagement"
       ],
-      "positive_signals": [
-        "Recent release on December 26, 2024",
-        "Two contributors have been active in the past six months"
-      ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns due to a high number of open issues."
+      "positive_signals": [],
+      "summary": "libxls shows clear signs of abandonment with no development activity, unresolved issues, and no active maintainers for over 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:35:10.978170+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

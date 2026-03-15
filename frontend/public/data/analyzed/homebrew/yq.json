@@ -189,27 +189,33 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
+      "installation": 9,
       "quick_start": 9,
-      "examples": 10,
-      "configuration": 7,
+      "examples": 8,
+      "configuration": 4,
       "troubleshooting": 6,
       "overall": 8,
-      "summary": "The README is comprehensive and well-structured, providing clear instructions for installation and usage with ample examples. However, it lacks a dedicated troubleshooting section.",
-      "top_issue": "No dedicated troubleshooting section for common issues."
+      "summary": "Excellent README with clear purpose, comprehensive installation options, and solid practical examples, let down only by sparse coverage of flags/configuration options.",
+      "top_issue": "No documentation of command-line flags and options (e.g., -i, -o, -n, -P) beyond what's incidentally shown in examples."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "parsing errors",
-        "segmentation fault on specific architectures"
+        "TOML format/conversion issues (multiple bugs across versions)",
+        "Unresolved bugs spanning months to years (oldest from Oct 2024)",
+        "Platform-specific failures (Windows NULL byte issue)",
+        "Missing env variable functionality"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health of the yq (homebrew) package shows a mix of open issues with parsing and segmentation faults, indicating some frustration among users. There are no clear signs of praise or abandonment, but the slow response from maintainers is noted."
+      "praise_themes": [
+        "Well-documented, specific bug reports",
+        "Constructive feature requests with clear rationale",
+        "Users recognize tool value and follow proper procedures"
+      ],
+      "abandonment_signals": true,
+      "summary": "yq shows concerning signs of abandonment: multiple bugs from Oct 2024 onward remain unresolved with zero-to-minimal maintainer engagement, despite users submitting well-documented issues, while unmaintained dependencies (10-year-old logging library) and recent CVEs go unaddressed."
     },
     "communication": {
       "helpfulness": 8,
@@ -225,15 +231,20 @@
       "summary": "The maintainer provides helpful and generally clear responses, shows some patience with repeated questions, offers technical explanations where appropriate, and encourages new contributors. However, there is room for more detailed answers in some cases."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (170 in the past 6 months)",
-        "Regular releases",
-        "Active contributors (15 in the past 6 months)"
+      "concerns": [
+        "Zero commits in past 6 months despite 260 open issues",
+        "No active contributors for 6+ months",
+        "Large backlog of 260 unresolved issues with no triage activity",
+        "Zero merged PRs in past 6 months",
+        "Zero closed issues in past 6 months indicating no maintenance",
+        "Unknown last release date"
       ],
-      "summary": "The package yq is actively maintained with frequent commits, regular releases, and an active community of contributors."
+      "positive_signals": [
+        "Repository still exists and accessible"
+      ],
+      "summary": "The yq package appears abandoned with zero development, issue resolution, or contributor activity over the past 6 months, despite maintaining a large backlog of 260 open issues."
     },
     "changelog": null,
     "governance": {
@@ -244,9 +255,9 @@
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the homebrew package 'yq' outlines a clear decision-making process and contribution guidelines but lacks succession planning, a path from contributor to maintainer, and indicates a single point of control with no mention of multiple maintainers."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:42:25.347793+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

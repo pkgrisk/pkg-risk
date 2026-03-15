@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "configuration": 6,
+      "troubleshooting": 7,
+      "overall": 8,
+      "summary": "Comprehensive, well-structured documentation with clear usage, abundant examples, and multi-platform installation instructions.",
+      "top_issue": "Configuration options (e.g., environment variables, clipboard timeout customization) are not documented beyond what appears in installation steps."
     },
     "security": {
       "overall_score": 5,
@@ -209,16 +209,21 @@
       "summary": "The pass-otp package has several security concerns, including a high-risk injection vulnerability and potential for error exposure, but it also has some good practices in place, such as proper validation of certain inputs."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "pass-otp fails on second device",
-        "Is this project still maintained?"
+        "Critical bugs left unresolved for 3-5+ years (bash 5.2.2 HOTP malformation, base32 decoding failures)",
+        "Missing feature support (Microsoft/Duo OTP formats, custom counter arguments, line selection)",
+        "Bash completion installation issues and inconsistent behavior",
+        "Project maintenance and active development status unclear"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Tool is useful and appreciated by users",
+        "Community interest in continued development (Gentoo packager, feature requesters)"
+      ],
       "abandonment_signals": true,
-      "summary": "The community expresses concerns about the project's maintenance and functionality, but there are no clear signs of active development or significant issues."
+      "summary": "Project is in critical maintenance crisis: the original maintainer explicitly seeks a new owner after switching to BitWarden, with 2+ year-old merged PRs and multiple unresolved bugs spanning 3-5 years, though some community engagement persists around requested features."
     },
     "communication": {
       "helpfulness": 7,
@@ -234,17 +239,19 @@
       "summary": "The maintainer's responses are generally adequate but could be more detailed and encouraging for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "A high number of open issues (46) suggests there are unresolved problems that need attention."
+        "No commits in the past 6+ months (last commit was ~7 months ago)",
+        "64 open issues with zero closed in past 6 months",
+        "Zero merged pull requests in past 6 months",
+        "No active contributors",
+        "No recent releases"
       ],
       "positive_signals": [
-        "Contributors active in the past six months (10 contributors)",
-        "Regular PR activity with some merged PRs (14 open, 4 merged in the past six months)"
+        "Repository still exists and is accessible"
       ],
-      "summary": "The package is minimally maintained with occasional contributions but lacks recent updates and has a high number of unresolved issues."
+      "summary": "pass-otp is a stale project with no development activity, unaddressed issue backlog, and no active maintainers."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -255,7 +262,10 @@
       "overall_score": 7,
       "summary": "The changelog is clear about breaking changes and provides migration guides, but lacks proper categorization."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:53:02.709335+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

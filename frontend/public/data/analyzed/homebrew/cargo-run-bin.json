@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 8,
       "configuration": 9,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is well-structured and provides clear installation instructions, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "overall": 8,
+      "summary": "Excellent documentation covering the core concept, multiple installation paths, and detailed configuration reference, but lacks any troubleshooting or FAQ section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like cache invalidation, version conflicts, or CI setup problems are undocumented."
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,23 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of thorough input validation, but no critical secrets or sensitive information are exposed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Support for alternative registries",
-        "Issues with the test suite"
+        "Alternative registries not supported",
+        "Cargo/cargo-binstall ecosystem compatibility issues (recent binstall 1.16.7+ regression)",
+        "Deprecated test infrastructure causing future breakage",
+        "Stale shims remain after config removal",
+        "Binary cache keyed by Rust version causes unnecessary reinstalls",
+        "Package-to-binary name mapping limitations"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Appreciates core concept and collective power of cargo-run-bin ecosystem",
+        "Tool works well for intended use cases when dependencies align"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged, but there are open issues that could benefit from more attention and resolution."
+      "summary": "cargo-run-bin is a valued but fragile ecosystem integration tool showing moderate maintenance\u2014recent bugs (Feb 2026) and deprecated code remain unresolved, yet closed issues indicate active fixing, suggesting maintainers respond eventually but lack proactive pace."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,17 +241,20 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of commits in the past six months",
-        "Single open PR"
+        "No commits in the past 6 months despite 9 open issues",
+        "No active contributors for 6 months",
+        "No issues closed or PRs merged recently",
+        "Unknown last release date",
+        "Growing backlog of unresolved issues"
       ],
       "positive_signals": [
-        "Regular issue closure",
-        "Recent release"
+        "Last commit was relatively recent (3 months ago)",
+        "Project exists and has issue tracking"
       ],
-      "summary": "The package is maintained with occasional updates and issue resolution, but could benefit from more frequent contributions."
+      "summary": "Package is stale with no maintenance activity for 6 months and growing unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -255,7 +265,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears complete, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T21:36:35.136689+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
