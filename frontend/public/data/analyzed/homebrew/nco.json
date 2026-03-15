@@ -181,15 +181,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package's capabilities and examples, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided in the README."
+      "clarity": 7,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 2,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README provides a decent conceptual overview and operator reference table, but contains no installation instructions, usage examples, or troubleshooting guidance \u2014 just links to external docs.",
+      "top_issue": "No installation instructions or quick-start examples; users must follow external links to learn how to actually use any of the 14 operators."
     },
     "security": {
       "overall_score": 7,
@@ -210,16 +210,23 @@
       "summary": "The NCO package has some security concerns, including potential injection risks and error exposure, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "regression issues",
-        "license inconsistencies"
+        "Regressions in core functionality (ncdiff producing non-zero differences, ncclimo behavior changes)",
+        "Incorrect CF compliance checking (time_bnds monotonicity false warnings)",
+        "Build and compilation issues across platforms (OpenBSD, CMake configuration)",
+        "Feature bugs and inconsistencies (IDW option ignored due to internal naming mismatch)",
+        "Documentation and license reference errors"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Successful compatibility testing with new dependencies (netCDF 4.10.0)",
+        "Active community engagement on complex issues (6+ comments on vertical interpolation issue)",
+        "Cross-platform porting efforts by community members"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "summary": "NCO maintains moderate community health with active issue resolution, but recent regressions and lingering open issues suggest maintenance capacity constraints affecting quality assurance."
     },
     "communication": {
       "helpfulness": 8,
@@ -232,17 +239,20 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "44 open issues with zero closed in 6 months",
+        "Zero merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date",
+        "Contradiction: zero commits in past 6 months but recent commit on 2026-03-11"
       ],
       "positive_signals": [
-        "Recent commits and releases within the last year",
-        "Active contributors"
+        "Very recent commit (4 days ago)",
+        "No stalled pull requests"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges with unresolved issues."
+      "summary": "Project is stale with unresolved issues and no maintainer engagement, despite a single recent commit suggesting sporadic rather than active maintenance."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -253,7 +263,10 @@
       "overall_score": 5,
       "summary": "The changelog is partially clear and marks breaking changes, but lacks migration guides, categorization, and completeness."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:38:10.670881+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

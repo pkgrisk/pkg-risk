@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
       "examples": 8,
       "configuration": 6,
-      "troubleshooting": 4,
+      "troubleshooting": 5,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but could benefit from more troubleshooting guidance and clearer configuration instructions.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Well-structured README with clear getting-started flow and practical CLI examples, but configuration and troubleshooting sections are thin or cut off.",
+      "top_issue": "Configuration section appears truncated mid-sentence, and troubleshooting is limited to brief inline notes rather than a dedicated section covering common failure modes."
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,18 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it seems to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "connection issues",
-        "build failures"
+        "Force-closing channels without proper HTLC handling",
+        "Performance degradation due to unoptimized queries",
+        "Build/test infrastructure failures",
+        "API inconsistencies across versions"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some technical issues, but maintainers are actively addressing them."
+      "abandonment_signals": true,
+      "summary": "Project shows active recent development but concerning maintenance gaps: a critical build test failure unresolved for 5 months, critical channel-closing bugs with 10+ comments, and new performance issues suggest resource constraints or prioritization challenges affecting user confidence."
     },
     "communication": {
       "helpfulness": 9,
@@ -235,15 +237,19 @@
       "summary": "Maintainer responses are clear, helpful, and technically sound, with a focus on resolving issues efficiently."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (297)",
-        "A significant number of merged PRs in the past six months (235)",
-        "Recent activity with a commit and release within the last month"
+      "status": "abandoned",
+      "confidence": 7,
+      "concerns": [
+        "283 open issues with zero closed in past 6 months indicates ignored bug reports and feature requests",
+        "Zero commits in past 6 months despite recent single commit (data inconsistency suggests stalled development)",
+        "No active contributors for 6+ months",
+        "Zero merged PRs in past 6 months",
+        "Last release unknown - unclear what version is current"
       ],
-      "summary": "The package is actively maintained with frequent contributions and releases."
+      "positive_signals": [
+        "Single recent commit dated 2026-03-13 (though uncontextualized without commit message)"
+      ],
+      "summary": "Project is effectively abandoned with accumulated backlog of 283 unresolved issues, no recent development activity, and zero contributor engagement despite sporadic recent commits."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -254,7 +260,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:34:25.234979+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

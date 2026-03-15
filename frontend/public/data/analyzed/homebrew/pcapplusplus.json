@@ -197,15 +197,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package and its features, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose, multiple installation options, and a solid quick-start example, but lacks configuration docs, troubleshooting guidance, and more diverse usage examples.",
+      "top_issue": "No troubleshooting section or configuration documentation \u2014 users hitting build/integration issues or needing to configure DPDK/PF_RING have nowhere to turn in the README."
     },
     "security": {
       "overall_score": 7,
@@ -218,16 +218,16 @@
       "summary": "The code appears to be generally secure, but lacks input validation and may have potential buffer overflow issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "SIP detection logic",
-        "RawPacket ownership semantics"
+        "Compression level mapping bug (zstd range mismatch)",
+        "Performance regression in recent commits"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but the project seems to be receiving moderate responsiveness from maintainers."
+      "summary": "Project shows active development with recent bug reports, but limited community engagement and unresolved technical issues (compression mapping, performance) suggest moderate maintenance levels."
     },
     "communication": {
       "helpfulness": 8,
@@ -240,15 +240,20 @@
       "summary": "The maintainer's responses are clear, patient, and deeply technical while also being welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent activity with a commit on 2025-12-01",
-        "Multiple contributors active in the past six months"
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "49 open issues with zero closed in 6 months\u2014issues are not being triaged or addressed",
+        "Zero commits in past 6 months despite recent last commit date indicates potential data anomaly or stalled repository",
+        "No active contributors in 6 months",
+        "Zero merged PRs in past 6 months",
+        "Unknown last release\u2014unclear if any stable version exists"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Repository still exists with a recent commit timestamp (2026-03-09)",
+        "No active maintainers blocking access (repository not deleted)"
+      ],
+      "summary": "pcapplusplus appears abandoned with a growing backlog of unaddressed issues and no meaningful development or maintenance activity in six months."
     },
     "changelog": null,
     "governance": {
@@ -258,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:00:45.644513+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

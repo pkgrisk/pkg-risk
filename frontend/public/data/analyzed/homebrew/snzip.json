@@ -171,13 +171,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and provides clear instructions, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Well-structured documentation with comprehensive installation options and good usage examples covering multiple formats and platforms.",
+      "top_issue": "Troubleshooting is minimal \u2014 only one specific Hadoop error is addressed, with no guidance for common issues like missing snappy library, permission errors, or format detection failures."
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,20 @@
       "summary": "The provided C code for snzip package has some minor security concerns related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Invalid data during decompression",
-        "Unsupported file format handling"
+        "Format compatibility issues (raw format not recognized, framing2 unsupported features)",
+        "Decompression failures and CRC validation errors",
+        "Build/compilation difficulties and missing documentation",
+        "Hadoop ecosystem compatibility problems",
+        "Concatenated file format handling limitations",
+        "Outdated documentation with dead binary download links"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some ongoing issues and open questions, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Severe abandonment: multiple critical bugs remain unresolved for 5-7 years, recent issues (2023-2024) receive zero responses, and project shows no active maintenance despite ongoing user problems with core decompression functionality."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,17 +227,19 @@
       "summary": "The maintainer's responses are clear, patient, and technically deep, effectively addressing the issues while encouraging new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in past 6 months (last commit ~11 months ago)",
+        "7 open issues with zero resolution activity in past 6 months",
+        "No active contributors for 6+ months",
+        "No merged PRs or releases in past 6 months",
+        "Complete inactivity across all maintenance indicators"
       ],
       "positive_signals": [
-        "Contributors are still active, which indicates some level of interest",
-        "Recent closed issue suggests that there has been some engagement with reported problems"
+        "Package remains accessible on Homebrew"
       ],
-      "summary": "The package is in minimal maintenance status with occasional contributions but lacks recent commits and has open issues."
+      "summary": "Package is abandoned with no development activity, issue resolution, or contributor engagement for 6+ months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -244,7 +250,10 @@
       "overall_score": 5,
       "summary": "The changelog lacks clear categorization, breaking change indicators, and migration guides, but it is relatively complete."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:06:53.501081+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

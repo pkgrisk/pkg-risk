@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good examples, but installation instructions are incomplete and troubleshooting information is lacking.",
-      "top_issue": "Lack of comprehensive installation instructions and troubleshooting guides"
+      "installation": 4,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "VecCore has a solid conceptual introduction and a good SIMD example, but lacks installation steps, configuration guidance, and any troubleshooting content.",
+      "top_issue": "No installation instructions are provided \u2014 the README lists prerequisites (CMake, compilers, optional SIMD libraries) but never explains how to actually build or install VecCore itself."
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,21 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure implementation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "compilation issues with newer compilers",
-        "inconsistent behavior between SIMD and scalar versions"
+        "Apple Clang compiler compatibility issues (-fexperimental-library flag required)",
+        "SIMD implementation correctness - Mandelbrot benchmark produces different output than scalar version",
+        "Build configuration issues with optional SIMD backends",
+        "Documentation gaps - unclear how to use runtime-chosen implementations"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively addressing issues, but there are ongoing problems with compiler compatibility and SIMD functionality."
+      "praise_themes": [
+        "Integration with major downstream projects (ROOT math library)",
+        "Issues that do get reported receive some engagement and closure"
+      ],
+      "abandonment_signals": true,
+      "summary": "Mixed health with moderate engagement: recent issues (Nov 2024) have minimal response, an open correctness bug remains unresolved with low engagement, though some issues do get closed and the project is actively used by major libraries."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,20 +233,26 @@
       "summary": "The maintainer's responses are clear, helpful, and demonstrate a good level of patience and technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Only one contributor has been active in the last six months"
+        "No commits in the past 6 months",
+        "Zero active contributors in past 6 months",
+        "Open issues remain unresolved",
+        "No recent releases",
+        "No pull request activity"
       ],
       "positive_signals": [
-        "Recent release on 2024-11-22T14:24:35+00:00",
-        "Ten contributors have been involved at some point"
+        "Repository still exists",
+        "Recent commit history (last commit November 2024)"
       ],
-      "summary": "The package is minimally maintained with recent activity but lacks current contributions."
+      "summary": "The veccore package shows clear signs of abandonment with no development activity, contributors, or maintenance in the past 6 months despite open unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:13:19.147697+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 9,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The documentation is detailed and provides many examples, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions"
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 5,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README excels at describing features and tool parameters in detail but critically lacks installation instructions, setup steps, and quick-start examples.",
+      "top_issue": "No installation instructions or getting-started guide \u2014 a new user cannot actually set up and run the server based on this README alone."
     },
     "security": {
       "overall_score": 7,
@@ -219,16 +219,19 @@
       "summary": "The code has some security concerns, including potential injection risks, insufficient input validation, and hardcoded secrets, but overall it appears to be well-structured and follows best practices for logging and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "API call limitations",
-        "Rendering issues"
+        "Recent versions (1.2.2, 1.2.3) introduced regressions requiring user downgrade",
+        "Startup failures: timeouts, rate limiting, and fatal errors on transient network failures",
+        "Error handling bug: conversations_add_message returns false failure despite succeeding",
+        "No retry logic for transient initialization failures",
+        "Security vulnerability: DM content can chain to public channel sends without approval gates"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no signs of abandonment or significant frustration."
+      "abandonment_signals": true,
+      "summary": "Project shows active user adoption but critical maintenance gaps: 5 open issues (2+ security/regression severity) since 2026-03-02 with zero maintainer responses, recent versions contain bugs forcing user downgrades, and unaddressed security audit findings suggest slow or absent maintenance."
     },
     "communication": {
       "helpfulness": 7,
@@ -241,18 +244,25 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing a good level of technical depth and patience with contributors. However, there is room for improvement in the clarity of some explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (153)",
-        "Multiple merged pull requests in the past six months (36)",
-        "Recent open and closed issues and PRs indicate ongoing development"
+      "concerns": [
+        "No commits for past 6 months except 1 commit 3 days ago",
+        "56 open issues with zero closed issues past 6 months",
+        "No merged pull requests in past 6 months",
+        "Zero active contributors past 6 months",
+        "No release information available"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Single commit 3 days ago suggests possible revival attempt"
+      ],
+      "summary": "Project is abandoned with significant unaddressed issue backlog; single recent commit is insufficient to indicate active maintenance."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:26:52.822540+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

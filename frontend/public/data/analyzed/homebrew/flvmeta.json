@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation is detailed but lacks clear installation instructions, quick start examples, and troubleshooting guides.",
-      "top_issue": "Lack of a quick start guide with basic usage examples"
+      "overall": 3,
+      "summary": "The README describes features well but defers all practical guidance to external files, leaving users with no actionable usage instructions.",
+      "top_issue": "No usage examples or command syntax shown \u2014 users have no idea how to actually run the tool after installing it."
     },
     "security": {
       "overall_score": 7,
@@ -196,17 +196,16 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "heap-use-after-free",
-        "heap-buffer-overflow",
-        "unaddressable accesses",
-        "memory allocation failure",
-        "SEGV"
+        "Memory safety issues (heap buffer overflows, use-after-free, NULL pointer dereferences)",
+        "Crash bugs (SEGVs with various inputs)",
+        "Undefined behavior in core functionality",
+        "Build/linker issues (missing libm dependency)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is negative due to multiple reported bugs and issues, though maintainers have been active in addressing them."
+      "abandonment_signals": true,
+      "summary": "Project exhibits poor community health with a pattern of serious memory safety bugs spanning 13 years, minimal maintainer engagement (open feature request from 2013 with zero comments), and inconsistent activity levels suggesting maintenance-mode-only operation."
     },
     "communication": {
       "helpfulness": 8,
@@ -219,17 +218,20 @@
       "summary": "The maintainer responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and a single open PR"
+        "Zero commits in past 6 months despite activity claims",
+        "Zero active contributors in past 6 months",
+        "5 open issues with no resolution activity",
+        "No merged PRs or closed issues in past 6 months",
+        "Unknown last release date suggests very outdated version",
+        "No maintainer engagement despite open issues"
       ],
       "positive_signals": [
-        "Last release was recent for its package type (2019)",
-        "Six contributors active in the past six months"
+        "Last commit timestamp from 15 days ago suggests some recent activity"
       ],
-      "summary": "The package shows minimal maintenance with occasional contributions but lacks recent activity."
+      "summary": "Project is stale with no meaningful maintenance activity over 6 months, unresolved issues accumulating, and no active contributors or releases."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -240,7 +242,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:30:56.971296+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

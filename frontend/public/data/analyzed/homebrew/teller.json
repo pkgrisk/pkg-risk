@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
       "examples": 9,
       "configuration": 8,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides a good overview of the package's features, but installation instructions are incomplete and troubleshooting information is lacking.",
-      "top_issue": "Lack of troubleshooting information"
+      "summary": "Well-structured README with excellent feature coverage and examples, but lacks troubleshooting guidance and has an incomplete YAML export section.",
+      "top_issue": "No troubleshooting section exists, and the YAML export section is explicitly marked 'XXX TODO: rewrite' indicating incomplete documentation."
     },
     "security": {
       "overall_score": 6,
@@ -209,19 +209,22 @@
       "summary": "The Teller CLI has several security concerns, including potential command injection vulnerabilities and lack of input validation and sanitization, which could lead to unintended behavior or security breaches."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "compilation issues",
-        "lack of updates"
+        "Compilation/build errors on multiple versions (hyper_rustls API changes)",
+        "Deprecated OpenSSL 1.1.1 dependency blocking Linux users",
+        "Loss of features in v2.0 (1Password support removed from v1)",
+        "Hashicorp Vault integration gaps (namespace support, mount name parsing)",
+        "No updates for 5+ months despite Teller 2.0 Rust rewrite"
       ],
       "praise_themes": [
-        "feature requests for additional providers",
-        "announcements and goals for Teller 2.0"
+        "Ambitious technical vision (Rust rewrite)",
+        "User engagement with feature requests"
       ],
       "abandonment_signals": true,
-      "summary": "The community is actively requesting features but faces frustration due to compilation issues and lack of recent updates."
+      "summary": "The teller project shows critical abandonment signals: CNCF filed a health check questioning active maintenance, build failures block compilation, key dependencies are deprecated (OpenSSL 1.1.1), and the project has stalled for 5+ months with unresolved issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,17 +237,20 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth where appropriate and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "0 commits in past 6 months despite 49 open issues requiring triage",
+        "49 open issues with zero closed in past 6 months indicates no maintenance engagement",
+        "No active contributors for 6+ months",
+        "No merged pull requests in past 6 months suggests no development activity",
+        "Unknown last release date may indicate broken release process"
       ],
       "positive_signals": [
-        "Recent release on 2024-05-20T10:36:43+00:00",
-        "Active contributors (10) in the past six months"
+        "Repository still exists and is not deleted",
+        "Last commit exists, though appears stale relative to issue backlog"
       ],
-      "summary": "The package is minimally maintained with recent activity but lacks recent commits and merged PRs."
+      "summary": "The teller package shows clear signs of abandonment with zero maintenance activity (no commits, merged PRs, or issue closure) over 6+ months while accumulating 49 unaddressed issues."
     },
     "changelog": null,
     "governance": {
@@ -254,7 +260,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has documented decision-making processes but lacks a succession plan and clear contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:38:39.880823+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

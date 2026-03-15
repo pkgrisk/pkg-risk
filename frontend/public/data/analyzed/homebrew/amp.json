@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 2,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "The README provides a brief introduction to the package, but lacks essential documentation for installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and examples"
+      "summary": "The README provides a brief, clear description but defers nearly all useful documentation to an external website, leaving the README itself nearly empty.",
+      "top_issue": "No installation instructions, usage examples, or configuration docs \u2014 everything is delegated to amp.rs with no inline content."
     },
     "security": {
       "overall_score": 7,
@@ -211,18 +211,17 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Windows compatibility issues",
-        "Outdated documentation"
+        "Platform compatibility issues (Windows build failures with Termion)",
+        "Missing standard editor features (LSP support, multi-line editing/commenting)",
+        "Navigation efficiency (PageDown doesn't work as expected)"
       ],
-      "praise_themes": [
-        "Feature requests for improvements in usability and ergonomics"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is actively suggesting features and improvements, but there are ongoing issues with Windows support and outdated documentation that could lead to frustration."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Small active user base with polite engagement, but maintainer is slow to address even 'accepted' feature requests (LSP support open since 2018) and previously closed features are being re-requested (elastic tabstops 2018\u21922025), indicating stalled development."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,17 +234,19 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of active contributions.",
-        "A high number of open issues (91) suggests potential unresolved problems."
+        "92 open issues with no resolution activity in 6 months",
+        "No merged pull requests or issue closures in 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown release history",
+        "Recent commit contradicts 0 commits in 6-month metric"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Regular issue reporting"
+        "Recent commit on 2026-02-26 suggests minimal ongoing activity"
       ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns due to a lack of PR contributions and numerous open issues."
+      "summary": "Package appears stale with no maintenance activity (issue resolution, PR merges, contributors) in 6 months despite a recent isolated commit and 92 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +257,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:14:32.099335+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

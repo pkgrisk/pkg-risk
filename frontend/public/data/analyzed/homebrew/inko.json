@@ -174,13 +174,13 @@
     "readme": {
       "clarity": 8,
       "installation": 4,
-      "quick_start": 6,
+      "quick_start": 7,
       "examples": 7,
-      "configuration": 2,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The README provides a good introduction to the Inko language, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are not provided in the README, instead redirecting users to an external guide."
+      "summary": "The README gives a solid high-level overview with good code examples but defers nearly all practical details (installation, configuration, troubleshooting) to external documentation.",
+      "top_issue": "Installation instructions are just a link to external docs with no inline steps, leaving users unable to get started without leaving the README."
     },
     "security": {
       "overall_score": 7,
@@ -206,19 +206,21 @@
       "summary": "The code has some potential security issues, including a lack of input validation and potential for denial-of-service attacks, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "performance issues",
-        "buggy signal handling"
+        "Compiler crashes and memory safety issues (type arguments, double free, segmentation faults)",
+        "Performance concerns (memory usage during compilation, network latency)",
+        "Type system edge cases with ownership and mutation rules"
       ],
       "praise_themes": [
-        "feature requests for optimization",
-        "contribution opportunities"
+        "Openness to community contributions (multiple 'accepting contributions' labels)",
+        "Systematic bug tracking and resolution (many issues marked closed)",
+        "High engagement on critical issues (109 comments on Hetzner issue)"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaged with both feature requests and bug reports, but there are some performance and reliability concerns."
+      "summary": "Inko is an actively maintained project with recent issue activity (March 2026) and systematic bug fixes, but faces ongoing challenges with compiler robustness and performance optimization."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,14 +233,19 @@
       "summary": "The maintainer provides detailed and helpful responses, clearly explains the reasoning behind decisions, and encourages new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 8,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (146)",
-        "Recent activity with merged PRs (8 in the past six months)"
+      "concerns": [
+        "82 open issues with zero closed in past 6 months indicates issues are not being triaged or resolved",
+        "No commits, PRs, releases, or active contributors in past 6 months despite recent activity",
+        "Unknown last release suggests no versioned releases in available history",
+        "Zero open PRs combined with zero merged PRs suggests lack of contribution activity"
       ],
-      "summary": "The package is actively maintained with recent contributions and commits."
+      "positive_signals": [
+        "Very recent commit on 2026-03-13 shows repository is not completely dormant",
+        "No indication of archived or deleted state"
+      ],
+      "summary": "Project shows signs of abandonment with a large unresolved issue backlog and no maintenance activity over 6 months, despite a recent single commit."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -256,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear information on succession, decision-making, contributor paths, and multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:08:40.355466+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

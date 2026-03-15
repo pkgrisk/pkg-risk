@@ -183,14 +183,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 5,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides a good introduction to InfluxDB, but lacks clear quick start examples and troubleshooting guidance.",
-      "top_issue": "Lack of concise quick start example and troubleshooting documentation"
+      "overall": 3,
+      "summary": "The README clearly describes what InfluxDB is and its use cases, but defers almost all practical content\u2014installation, configuration, examples, and troubleshooting\u2014to external documentation links.",
+      "top_issue": "No quick-start example or minimal working code snippet; users must leave the README entirely to learn how to run or use the database."
     },
     "security": {
       "overall_score": 7,
@@ -216,32 +216,40 @@
       "summary": "The codebase exhibits some security concerns, including potential command injection risks and lack of explicit input validation, but does not contain any critical secrets or severe vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "configuration issues",
-        "query performance"
+        "Data corruption and WAL failures after unclean shutdowns",
+        "Missing aarch64 package distributions (404 errors)",
+        "Compatibility issues with older CPUs (pre-Haswell) and ARM architectures",
+        "Memory exhaustion (OOM) with fixed-size allocations on wide time-range data",
+        "S3-compatible object store compatibility gaps (Backblaze B2)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively engaged with the maintainers, who are responsive to issues and feature requests, indicating a healthy project ecosystem."
+      "praise_themes": [
+        "Community actively requesting v3 support for edge devices (Raspberry Pi)",
+        "Maintainers label beginner-friendly issues (good-first-issue tags)",
+        "Transparent communication about breaking changes (Docker latest tag)",
+        "Healthy discussion engagement on feature requests (20+ comments)"
+      ],
+      "abandonment_signals": true,
+      "summary": "InfluxDB shows active v3 development with strong community engagement on features, but critical bug reports (data corruption, OOM memory issues) receive zero maintainer comments, indicating potential response/triage gaps on severity-critical issues."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
+      "status": "abandoned",
+      "confidence": 8,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "2139 open issues with zero closed in past 6 months - massive unresolved backlog",
+        "Zero commits in past 6 months - no active development",
+        "Zero merged PRs in past 6 months - contributions not being accepted",
+        "Zero active contributors in past 6 months - no maintenance activity",
+        "Last release unknown - unclear when official versions are published"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many merged PRs",
-        "multiple active contributors"
+        "Recent commit timestamp (3 days ago) suggests some upstream activity, though disconnected from formula maintenance"
       ],
-      "summary": "The influxdb package appears to be actively maintained with regular updates, a strong contributor base, and a high volume of pull requests being addressed."
+      "summary": "InfluxDB homebrew formula is abandoned - despite a recent upstream commit, there are zero commits/PRs/contributors/issue resolutions in 6 months with a massive backlog of 2139 open issues."
     },
     "changelog": null,
     "governance": {
@@ -251,7 +259,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The InfluxDB project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:42:10.888140+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

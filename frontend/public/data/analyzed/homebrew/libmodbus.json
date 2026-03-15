@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 2,
       "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks a quick start guide and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section and configuration documentation"
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README provides a solid overview and multi-platform installation instructions but lacks code examples, API usage demonstrations, and troubleshooting guidance.",
+      "top_issue": "No code examples showing actual Modbus API usage \u2014 a new user has no idea how to use the library after installation."
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,22 @@
       "summary": "The libmodbus code appears to have a good security posture with no injection risks or secrets found, but could benefit from additional input validation and consideration of system-specific timeout values."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 6,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "protocol implementation issues",
-        "build and packaging problems"
+        "Windows compatibility issues (socket handling, mingw64 builds)",
+        "Release integrity and hash mismatch problems breaking downstream builds",
+        "Specification compliance bugs (length field validation, CRC handling)",
+        "Slow CLA/contribution process blocking upstream patches",
+        "Namespace pollution from macro definitions conflicting with user code"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The libmodbus community is experiencing frustration due to unresolved protocol implementation issues, build problems, and slow maintainer responsiveness."
+      "praise_themes": [
+        "Users actively attempting contributions and patches",
+        "Library still in use by engaged community across multiple platforms"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows maintenance fatigue with unresolved recent critical bugs (Feb 2026 Windows connectivity, release integrity), minimal maintainer engagement on active issues, and a 12-year-old feature request still open."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,17 +229,19 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "low rate of issue closure",
-        "high number of open issues and PRs",
-        "infrequent releases"
+        "165 open issues with zero closed in past 6 months indicates no active maintenance or issue triage",
+        "Zero commits in past 6 months shows stalled development",
+        "No active contributors for 6+ months",
+        "No merged PRs in past 6 months suggests no feature or bug fix activity",
+        "Unknown last release date indicates release process may be defunct",
+        "Large unresolved issue backlog accumulating without resolution"
       ],
       "positive_signals": [
-        "recent commits within the past 6 months",
-        "some merged PRs in the recent past"
+        "Last commit is recent (Feb 16, 2026), though inconsistent with zero commits in 6 months"
       ],
-      "summary": "The libmodbus package appears to be stale due to a low rate of issue closure, infrequent releases, and a high number of open issues and PRs despite some recent activity."
+      "summary": "Libmodbus is stale with significant maintenance neglect: 165 unresolved issues, no commits/merges/releases in 6 months, and zero active contributors despite a recent anomalous commit date."
     },
     "changelog": null,
     "governance": {
@@ -243,7 +251,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for libmodbus lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:46:52.977175+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

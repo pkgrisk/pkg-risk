@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 7,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
-      "examples": 9,
+      "examples": 8,
       "configuration": 6,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides a good introduction to the package, but could be improved with more comprehensive installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Well-structured README with clear purpose, good examples for both CLI and Go API usage, but lacks troubleshooting guidance and configuration details beyond basic API usage.",
+      "top_issue": "No troubleshooting section \u2014 common issues like PATH problems, CSV parsing edge cases, or AWK compatibility gotchas are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,22 @@
       "summary": "The goawk package has some security concerns, including potential command injection attacks and lack of input validation, but overall it appears to be a relatively secure package."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "context cancellation issue",
-        "stdout and stderr order"
+        "POSIX compliance gaps (unicode/binary mode behavior)",
+        "Unclear encoding semantics with -c flag",
+        "Output ordering with redirections differs from standard awk",
+        "Field separator handling may not match POSIX spec"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Fast performance on large files",
+        "Appreciated as a useful tool",
+        "Polite, constructive engagement"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some active maintenance but facing issues related to context handling and output redirection."
+      "summary": "Healthy but technically engaged community raising legitimate POSIX compliance concerns; maintainer shows moderate responsiveness with some issues resolved but core behavioral issues remaining open for months."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,18 +241,26 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth in explaining decisions and are welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors have been active in the last six months",
-        "A high number of merged pull requests indicates ongoing development"
+      "status": "stale",
+      "confidence": 7,
+      "concerns": [
+        "No commits in past 6 months despite recent activity",
+        "5 open issues with no resolution activity",
+        "No active contributors in past 6 months",
+        "No merged PRs or closed issues in past 6 months",
+        "Unknown release history"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit visible (2026-02-24)",
+        "No abandoned open PRs"
+      ],
+      "summary": "Project appears stale with minimal maintenance; recent commit contradicts 0 commits in 6 months, suggesting possible data inconsistency or inactive development despite technical touchpoints."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:05:01.145305+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

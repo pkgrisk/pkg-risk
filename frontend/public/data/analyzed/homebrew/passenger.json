@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 3,
-      "configuration": 5,
-      "troubleshooting": 7,
-      "overall": 5,
-      "summary": "The README provides a good introduction to Phusion Passenger, but lacks clear and concise instructions for installation, configuration, and usage.",
-      "top_issue": "Lack of clear and step-by-step installation instructions within the README itself"
+      "clarity": 7,
+      "installation": 4,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "The README provides a good high-level overview but outsources nearly all actionable documentation to external links, leaving users with almost no inline guidance.",
+      "top_issue": "Installation, quick start, configuration, and troubleshooting all redirect to external URLs rather than providing any inline content, making the README nearly useless without internet access or if those links break."
     },
     "security": {
       "overall_score": 7,
@@ -200,12 +200,18 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "request routing issues",
-        "compatibility problems with Ruby versions"
+        "Lack of debugging visibility for timeouts/slow requests",
+        "Memory bloat during rolling restarts (~13-15GB spike)",
+        "High per-worker memory footprint (~800MB)",
+        "Configuration inflexibility (environment variables)",
+        "Infrastructure/repository access issues (IPv4-only, GPG verification)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Appreciation for 'generations' feature for request routing during restarts",
+        "Community engaged with detailed feature proposals (Pitchfork inspiration)"
+      ],
       "abandonment_signals": false,
-      "summary": "The Passenger community is experiencing a mix of resolved and ongoing issues, with maintainers showing moderate responsiveness to user concerns."
+      "summary": "Active but slowly-responding maintainers; engaged users identifying real operational pain points (memory, debugging, config), with infrastructure issues being addressed faster than feature requests and reported bugs."
     },
     "communication": {
       "helpfulness": 9,
@@ -220,18 +226,19 @@
       "summary": "The maintainer provides generally helpful and clear responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "low number of contributors",
-        "high number of open issues compared to closed ones",
-        "low number of merged PRs"
+        "239 open issues with no closures in past 6 months",
+        "No commits merged in past 6 months despite recent activity",
+        "Zero active contributors and zero PR merging activity",
+        "No releases tracked; maintenance status unknown",
+        "Massive backlog of unaddressed issues"
       ],
       "positive_signals": [
-        "recent commits and release",
-        "active contributor in the past 6 months"
+        "Recent commit on 2026-03-02 suggests some maintenance awareness"
       ],
-      "summary": "The passenger package appears to be minimally maintained with some recent activity, but concerns arise from the low number of contributors and unresolved issues."
+      "summary": "Passenger is stale with a large unresolved issue backlog and no meaningful maintenance activity over the past 6 months despite a recent isolated commit."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +256,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for Phusion Passenger lacks a clear succession plan and decision-making process, but provides a path for contributors to become maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:27:46.559656+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

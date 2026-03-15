@@ -191,15 +191,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 4,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides a clear overview of the package's purpose and offers numerous examples, but could benefit from more concise troubleshooting guidance.",
-      "top_issue": "Lack of dedicated troubleshooting section with common problems and solutions"
+      "summary": "Well-structured README with clear purpose, good install instructions, and solid examples, but lacks troubleshooting guidance and configuration documentation.",
+      "top_issue": "No troubleshooting section \u2014 common issues like failed installs, platform-specific problems, or proxy/auth errors are not addressed anywhere visible in the README."
     },
     "security": {
       "overall_score": 7,
@@ -226,16 +226,19 @@
       "summary": "The arkade package has some security concerns, including potential command injection vulnerabilities and lack of input validation, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "[bug]: buildpacks/pack missing arm64 support",
-        "[bug]: arkade installs crossplane v0.14.0 instead of latest stable version"
+        "Vendoring and build failures in recent releases",
+        "Wrong versions installed for dependencies (crossplane v0.14 vs v2.x)",
+        "Missing platform support (arm64 for buildpacks/pack)",
+        "Broken or outdated URLs (cdn.dl.k8s.io)",
+        "Version detection issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is reporting bugs, but there are no clear signs of frustration or abandonment."
+      "abandonment_signals": true,
+      "summary": "Moderate community health with some active maintenance on older issues but concerning unresponsiveness to a critical recent vendoring bug and multiple 2+ month old unresolved issues."
     },
     "communication": {
       "helpfulness": 7,
@@ -248,15 +251,20 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases within the last month",
-        "Multiple contributors active in the past six months",
-        "A high number of merged PRs indicating community involvement"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in the past 6 months despite recent activity suggests sporadic maintenance",
+        "18 open issues with zero closed in the past 6 months indicates issues are not being addressed",
+        "No merged pull requests in the past 6 months shows no active development",
+        "No active contributors in the past 6 months indicates lack of community engagement",
+        "Unknown last release date suggests unclear release cadence"
       ],
-      "summary": "The package arkade is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Very recent commit (2026-03-14) suggests minimal ongoing maintenance",
+        "No open pull requests indicates either all PRs are merged promptly or none are being submitted"
+      ],
+      "summary": "Arkade appears stale with sporadic maintenance\u2014recent commits are outweighed by accumulating unresolved issues, zero merged PRs in 6 months, and no active contributors."
     },
     "changelog": null,
     "governance": {
@@ -266,7 +274,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a documented decision-making process and contributor path, but lacks a succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:27:04.581358+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

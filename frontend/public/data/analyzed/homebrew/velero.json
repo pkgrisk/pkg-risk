@@ -180,13 +180,13 @@
     "readme": {
       "clarity": 8,
       "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 8,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package's purpose and functionality, but lacks clear installation instructions and quick start examples.",
-      "top_issue": "Lack of clear installation instructions and quick start examples"
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 4,
+      "overall": 3,
+      "summary": "The README clearly describes what Velero does but defers almost all practical content to external documentation, leaving users with no actionable steps.",
+      "top_issue": "No installation instructions or usage examples are present \u2014 the README is essentially a table of contents pointing to an external docs site."
     },
     "security": {
       "overall_score": 7,
@@ -217,12 +217,19 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "restore issues",
-        "backup failures"
+        "File permission preservation issues during restore (especially on Azure)",
+        "Authorization/watch errors causing restore timeouts",
+        "Performance degradation with large backups (20k+ items)",
+        "CSI Data Mover reliability with multiple backups",
+        "Restore informer cache incompatibility with constrained RBAC"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active deprecation/cleanup work (Restic removal planned)",
+        "Kubernetes-native improvements (CACertRef secret references)",
+        "Feature expansion (BackupItemAction skip support)"
+      ],
       "abandonment_signals": false,
-      "summary": "The Velero community is experiencing a mix of open and closed issues, with some users encountering restore and backup problems, but maintainers are moderately responsive to comments and issues."
+      "summary": "Velero shows active development with planned deprecations and new features, but moderate maintainer responsiveness leaves several user-reported bugs and edge cases (RBAC, permissions, performance) labeled as 'staled' with unresolved frustration."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,16 +245,19 @@
       "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (388)",
-        "Recent last commit and release dates",
-        "Large number of merged PRs in the past 6 months (169)",
-        "Multiple active contributors in the past 6 months (19)"
+      "status": "abandoned",
+      "confidence": 6,
+      "concerns": [
+        "691 open issues with zero closed in past 6 months suggests no triage or maintenance",
+        "Zero commits in past 6 months despite repository existing (contradicts recent last commit date)",
+        "Zero active contributors for 6+ months indicates no ongoing development",
+        "No merged PRs in past 6 months indicates stalled review process",
+        "No releases tracked suggests no versioned deliverables"
       ],
-      "summary": "The velero package appears to be actively maintained with frequent updates, a large number of contributors, and a high volume of pull requests being addressed."
+      "positive_signals": [
+        "Very recent commit activity (2026-03-13) suggests some recent touch"
+      ],
+      "summary": "Despite a recent commit, velero shows signs of abandonment with massive issue backlog, no contributor activity, and zero maintenance actions over 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -265,7 +275,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "low",
       "summary": "The Velero project has a well-documented governance structure with clear succession plans, decision-making processes, and contributor ladders, indicating a low bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:06:01.529258+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

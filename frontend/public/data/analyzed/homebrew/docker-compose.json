@@ -177,22 +177,34 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 5,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "Clear and concise introduction with a solid quick-start, but lacks configuration reference, advanced examples, and any troubleshooting guidance.",
+      "top_issue": "No troubleshooting section and no configuration documentation beyond a minimal compose.yaml snippet."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "containerID prefixed on container name when upgrading manifest",
-        "Panic on rebuild when using watch --no-up"
+        "Recent regressions in core functionality (containerd image store, TTY progress, multi-network support)",
+        "Breaking changes affecting older Docker API versions",
+        "Missing or incomplete documentation",
+        "Long-standing feature requests closed without implementation"
       ],
       "praise_themes": [
-        "Feature requests being addressed",
-        "Bug fixes in recent issues"
+        "Issue triage process in place (status labels being applied)",
+        "Active development with recent releases"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health for the docker-compose (homebrew) package shows a mix of active issue resolution and ongoing unresolved bugs, indicating moderate frustration levels but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows mixed health: recent issues are being triaged promptly, but multiple unresolved regressions, minimal engagement on open bugs (0-1 comments each), closed feature requests after significant community discussion, and a 6-year-old request closed dismissively suggest maintenance strain and user frustration."
     },
     "communication": {
       "helpfulness": 8,
@@ -208,15 +220,19 @@
       "summary": "The maintainer responses are generally helpful and technically detailed, but they can sometimes be challenging for less experienced users and occasionally redirect issues without providing clear guidance."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (248 in the past 6 months)",
-        "Regular releases",
-        "High number of merged PRs (195 in the past 6 months)"
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "No commits to upstream project in 6 months despite recent commit to homebrew formula",
+        "Zero closed issues in 6 months with 71 open issues accumulating",
+        "No active contributors or merged PRs in 6 months indicating no development activity",
+        "Unknown last release date - unclear if users receive updates or security fixes",
+        "Large backlog of unaddressed issues suggests project is not being triaged or maintained"
       ],
-      "summary": "The package docker-compose is actively maintained with frequent updates, regular releases, and a high volume of contributions."
+      "positive_signals": [
+        "Recent commit to homebrew formula (2026-03-12) suggests formula package is minimally maintained"
+      ],
+      "summary": "The upstream docker-compose project appears abandoned with zero development activity, issue triage, or contributor engagement over the past 6 months, despite 71 unresolved open issues."
     },
     "changelog": null,
     "governance": {
@@ -227,9 +243,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a process for contributions and becoming a maintainer but lacks details on succession planning, decision-making processes, and indicates only one person with merge rights."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:58:07.495389+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

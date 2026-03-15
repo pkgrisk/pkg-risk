@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and easy to follow, but lacks comprehensive troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Well-structured README with a clear purpose, multi-platform installation instructions, a concise quick-start, and good command-level examples, but lacks troubleshooting guidance beyond the token FAQ.",
+      "top_issue": "No troubleshooting section for common errors (e.g. token auth failures, PR submission errors, installer analysis failures); the only problem addressed is the fine-grained token limitation buried in a collapsed details block."
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,18 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "rate-limited dependencies",
-        "bug in DefaultInstallLocation parsing"
+        "Dependency management ignored (Renovate issue open since 2022)",
+        "Inno Setup installer parsing issues with dynamic fields"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness, facing issues related to dependency management and a bug report."
+      "praise_themes": [
+        "Recent bug reports closed promptly"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project exhibits mixed health with a severe maintenance gap: a 3.5-year-old automated Renovate dependency dashboard remains unaddressed, though recent bugs are resolved quickly."
     },
     "communication": {
       "helpfulness": 6,
@@ -227,15 +229,20 @@
       "summary": "The responses are generally clear and technically sound, but could be more helpful in guiding new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (284)",
-        "A large number of merged PRs in the past six months (206)",
-        "Recent open and closed issues and PRs indicate ongoing development"
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "Zero commits in past 6 months despite 65 open issues",
+        "65 open issues with zero closed in past 6 months indicates no active maintenance",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date",
+        "Contradictory data: recent last commit timestamp conflicts with zero 6-month activity"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Recent last commit timestamp (2026-03-15) suggests some recent activity"
+      ],
+      "summary": "Despite a recent commit timestamp, komac shows clear abandonment with zero maintenance activity over 6 months and a growing backlog of 65 unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -245,7 +252,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:59:23.808401+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

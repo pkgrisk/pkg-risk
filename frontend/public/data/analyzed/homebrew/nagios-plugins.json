@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 6,
+      "installation": 8,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 5,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides detailed installation instructions, but lacks a quick start guide and sufficient examples for common use cases.",
-      "top_issue": "Lack of a concise quick start guide to help new users get started with the package quickly."
+      "examples": 1,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 4,
+      "summary": "The README covers installation well for experienced users but lacks any quick-start examples, usage demonstrations, or practical guidance for new users.",
+      "top_issue": "No quick-start example or basic usage demonstration \u2014 new users have no idea what the plugins do or how to invoke them after installation."
     },
     "security": {
       "overall_score": 7,
@@ -209,29 +209,35 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation issues on FreeBSD",
-        "SSL certificate verification failures",
-        "segfaults with musl"
+        "Segmentation faults in check_http (SSL failures, musl compilation)",
+        "SSL/TLS certificate validation issues (forced checks, compatibility)",
+        "Regressions in recent versions (check_mysql, check_dns)",
+        "SNMP/device compatibility problems (printers, opaque types)",
+        "Build failures on newer systems (FreeBSD 13.2, musl libc)",
+        "Flapping states and timeout handling errors"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing multiple issues, particularly related to compilation and runtime errors, which indicate a negative sentiment but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Community health is concerning\u2014critical segfaults and regressions persist with minimal maintainer engagement; 4+ recent open bugs (Dec 2025) have zero responses, and older unresolved issues date back to 2021."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low commit activity in the past six months",
-        "High number of open issues and PRs"
+        "215 open issues with 0 closed in past 6 months - issues remain unaddressed",
+        "0 merged PRs in past 6 months - no active development or contribution integration",
+        "0 active contributors in past 6 months - maintenance team is absent",
+        "Unknown last release - cannot assess release cadence or support status",
+        "0 commits in past 6 months - minimal development activity despite recent commit"
       ],
       "positive_signals": [
-        "Recent release on 2024-08-20T17:32:09+00:00",
-        "Active contributors in the past six months"
+        "Recent commit activity (2026-03-11) indicates some level of maintenance occurring",
+        "No open PRs suggests controlled or diminished project scope"
       ],
-      "summary": "The package is minimally maintained with recent activity but faces challenges due to a high number of open issues and PRs."
+      "summary": "nagios-plugins is stale with extensive unresolved issues, no active development or contributor engagement for 6 months, and an unclear release schedule despite recent minimal activity."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -242,7 +248,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and comprehensive, with clear categorization of changes. However, breaking changes are not marked."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:30:23.602914+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

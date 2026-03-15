@@ -163,15 +163,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides a good introduction to the package and its features, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions"
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README excels at explaining what pybind11 is and its feature set, but defers all practical guidance (installation, usage, configuration) to external documentation.",
+      "top_issue": "No installation instructions or quick-start code example in the README \u2014 users are immediately redirected to readthedocs with no in-page getting-started path."
     },
     "security": {
       "overall_score": 8,
@@ -182,16 +182,19 @@
       "summary": "The provided code appears to have a good security posture with no major injection risks, secrets, or error exposure issues found, but some minor input validation concerns and potential insecure defaults were identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs",
-        "compatibility issues"
+        "Crashes and segfaults in version 3.0.x",
+        "Memory safety issues (leaks, invalid free)",
+        "std container binding failures",
+        "Python 3.14 compatibility breaks",
+        "Enum and default value incompatibilities"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The pybind11 community is actively addressing bugs and compatibility issues, indicating a healthy and maintained project."
+      "summary": "Version 3.0.x has introduced serious stability regressions (crashes, segfaults, memory leaks) affecting core functionality; while maintainers are triaging issues, the concentration of critical bugs and slow resolution pace raises quality concerns."
     },
     "communication": {
       "helpfulness": 9,
@@ -204,22 +207,26 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "No commits merged in past 6 months despite recent git activity (2026-03-07)",
+        "726 open issues with no closures in past 6 months indicates backlog stagnation",
+        "Zero active contributors past 6 months suggests reduced maintainer engagement",
+        "No merged PRs in past 6 months indicates slow review/integration process",
+        "Unknown last release date suggests infrequent version management"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent releases",
-        "many active contributors",
-        "high merge rate of PRs"
+        "Recent commit activity (8 days ago) shows repository is not completely abandoned",
+        "Zero open pull requests indicates no dangling unreviewed work"
       ],
-      "summary": "pybind11 appears to be actively maintained with a high volume of recent commits, merges, and active contributors, despite having a large number of open issues and PRs."
+      "summary": "pybind11 exhibits stalled maintenance with recent activity but no meaningful progress on issue resolution or PR integration over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:25:27.686878+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

@@ -186,12 +186,12 @@
       "clarity": 8,
       "installation": 9,
       "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Well-structured documentation covering installation across all major platforms and a step-by-step usage guide, but lacks troubleshooting guidance and the quick-start workflow is somewhat involved for a simple RPC example.",
+      "top_issue": "No troubleshooting section \u2014 common build errors, dependency conflicts, or runtime issues are not addressed anywhere in the README."
     },
     "security": {
       "overall_score": 5,
@@ -217,16 +217,19 @@
       "summary": "The code has some security concerns, including potential path traversal vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build issues with CMake and MinGW",
-        "compatibility issues with newer tools like Catch-3"
+        "Build system failures (CMake, MinGW linker issues)",
+        "Platform compatibility problems (Mac memory corruption, Windows MinGW support)",
+        "Threading and concurrency bugs",
+        "Breaking API changes without migration guidance",
+        "Memory safety issues (buffer overflow, race conditions)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with common complaints around build and compatibility issues, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project appears abandoned with critical unfixed bugs (memory corruption, race conditions) and compatibility issues (CMake 4+, Catch3) remaining open for 2-3 years despite user reports, and zero maintainer responses to recent 2025 issues."
     },
     "communication": {
       "helpfulness": 7,
@@ -242,17 +245,18 @@
       "summary": "The maintainer's responses are generally helpful but could be more patient and detailed, especially for beginners."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 10,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "Last commit was over 14 months ago (2024-01-02)",
+        "Zero commits in the past 6 months",
+        "20 open issues with no resolution attempts",
+        "No active contributors in past 6 months",
+        "No merged PRs or released versions in 6+ months",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "Recent open issues and PRs indicate some level of community interest",
-        "Multiple contributors active in the past six months"
-      ],
-      "summary": "The package is receiving minimal maintenance with occasional contributions but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "Project is abandoned with no commits, PRs, issue resolution, or contributors for over 14 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -270,7 +274,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, which increases the risk of losing progress if the primary maintainer leaves."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:10:13.323155+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

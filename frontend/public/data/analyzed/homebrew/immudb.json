@@ -193,15 +193,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 7,
       "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The immudb README provides clear and concise information on installation, quick start, and configuration, but lacks sufficient examples and troubleshooting documentation.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Excellent quickstart with multiple deployment options and solid configuration coverage, but lacks troubleshooting guidance and the README appears truncated.",
+      "top_issue": "No troubleshooting section for common issues (connection failures, auth errors, data corruption concerns), and the README is cut off mid-sentence in the S3 configuration section."
     },
     "security": {
       "overall_score": 6,
@@ -233,30 +233,38 @@
       "summary": "The code has some security concerns, including hardcoded credentials and potential SQL injection vulnerabilities, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "bug in secondary indexes",
-        "missing ARM64 container support"
+        "Database crashes with buffer overflow errors",
+        "Secondary indexes provide no query performance improvement",
+        "Docker containers not built for ARM64 architecture",
+        "SDK compatibility issues between server and client versions",
+        "Deployment difficulties (Windows service installation)",
+        "Maintenance gaps in tooling (outdated Helm charts)",
+        "API design/behavior unclear to users"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some technical issues but there are no signs of abandonment, and the overall sentiment remains neutral."
+      "abandonment_signals": true,
+      "summary": "Community health is poor with critical bugs unanswered, multiple deployment issues unresolved since mid-2025, and maintainers showing minimal engagement across recent issues."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "Zero commits merged in past 6 months despite recent commit on 2026-02-12",
+        "142 open issues with zero closed in past 6 months - growing backlog",
+        "No active contributors for 6+ months",
+        "Zero merged pull requests in past 6 months",
+        "Last release date unknown - possibly years old",
+        "No open PRs suggests community has stopped attempting contributions"
       ],
       "positive_signals": [
-        "Recent commits and releases",
-        "Moderate number of contributors active in the past six months"
+        "Recent commit activity on 2026-02-12 (possibly automated sync)"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges with issue backlog."
+      "summary": "Project is effectively abandoned with a stagnant issue backlog, no recent development activity, and no contributors despite having 142 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -274,7 +282,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The documentation lacks formal succession planning, decision-making processes, and a contributor ladder but indicates multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:09:13.280206+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

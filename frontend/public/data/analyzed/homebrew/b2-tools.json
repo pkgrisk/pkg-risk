@@ -175,13 +175,13 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
+      "quick_start": 5,
+      "examples": 6,
       "configuration": 5,
-      "troubleshooting": 2,
+      "troubleshooting": 4,
       "overall": 6,
-      "summary": "The documentation is generally well-structured and provides clear installation instructions, but lacks a concise quick start guide and sufficient troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Well-structured README with excellent multi-platform installation coverage but lacks a concrete quick-start workflow showing authorization through a first command.",
+      "top_issue": "No quick-start example walking through the basic auth \u2192 bucket \u2192 file workflow; users must follow external links to understand how to actually begin using the tool."
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,20 @@
       "summary": "The code has some potential security concerns, including command injection risks and lack of input validation, but no critical issues were found."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "upload issues",
-        "compatibility problems"
+        "Critical concurrent upload failures blocking file transfers mid-operation",
+        "CLI hanging/not completing on sync operations",
+        "Cross-platform inconsistencies (macOS/Linux vs Windows behavior)",
+        "Windows binary missing from recent releases",
+        "Dependency conflicts with other tools (phx-class-registry, docutils)",
+        "Poor error messages and incomplete documentation"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The b2-tools community is experiencing some frustration with upload issues and compatibility problems, but maintainers are moderately responsive to user concerns."
+      "abandonment_signals": true,
+      "summary": "b2-tools exhibits concerning health with multiple unresolved critical bugs (concurrent uploads failing, sync hanging) pending since mid-2024, cross-platform issues, and dependency conflicts affecting dependent projects, despite moderate maintainer engagement on some issues."
     },
     "communication": {
       "helpfulness": 9,
@@ -238,18 +242,20 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient, providing a good experience for users and contributors."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "abandoned",
       "confidence": 8,
       "concerns": [
-        "relatively low issue closure rate",
-        "open issues outnumber merged PRs"
+        "62 open issues with zero closed in past 6 months indicates no active issue triage",
+        "No active contributors in past 6 months despite open issues",
+        "No merged PRs or commits in past 6 months (recent commit is outlier)",
+        "Unknown last release suggests no clear versioning/release process",
+        "No response to community contributions"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent releases",
-        "active contributors"
+        "Single recent commit on 2026-03-03 (12 days ago) suggests minimal recent activity",
+        "No open PRs means no unreviewed backlog"
       ],
-      "summary": "The b2-tools package appears to be maintained, with regular updates and active contributors, but could improve its issue resolution process."
+      "summary": "Project is effectively abandoned with accumulating unresolved issues and no active maintainer engagement despite a single recent commit."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -267,7 +273,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:44:47.150070+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

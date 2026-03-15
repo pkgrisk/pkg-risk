@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 4,
-      "summary": "The documentation provides a good overview of the package's functionality, but lacks clear installation and usage instructions.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "clarity": 6,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 3,
+      "overall": 2,
+      "summary": "The README provides a high-level description and links to external docs, but contains no installation instructions, examples, or configuration guidance whatsoever.",
+      "top_issue": "No installation instructions \u2014 users have no idea how to install or get started with the library from the README alone."
     },
     "security": {
       "overall_score": 5,
@@ -201,16 +201,21 @@
       "summary": "The code has several security concerns, including potential injection risks, lack of input validation, and error exposure issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "compilation failures",
-        "memory leaks"
+        "Compiler compatibility issues (gcc -Werror=return-type)",
+        "Integer overflow bugs (32-bit type safety)",
+        "Test failures with specific MPI implementations",
+        "Feature clarification/documentation gaps"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to ongoing compilation and memory leak issues, but no signs of abandonment."
+      "praise_themes": [
+        "Well-structured bug reports with detailed technical analysis",
+        "Users suggesting concrete fixes alongside problem reports"
+      ],
+      "abandonment_signals": true,
+      "summary": "Technically competent community with detailed issue reporting, but concerning maintenance gaps evidenced by issues open 5-7 months (MPI-PR detection bug, gcc compilation failure) while some issues are resolved timely."
     },
     "communication": {
       "helpfulness": 7,
@@ -223,17 +228,20 @@
       "summary": "The maintainer responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "High number of open issues"
+        "33 open issues with zero closed in past 6 months indicates issues are not being triaged or addressed",
+        "Zero commits in the past 6 months suggests no ongoing development",
+        "Zero merged PRs in 6 months indicates no active maintenance",
+        "No active contributors in past 6 months",
+        "Unknown last release - no version information available"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Some contributor activity in the past six months"
+        "One recent commit on 2026-03-12 shows some repository access",
+        "Repository still exists and is accessible"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces challenges with unresolved issues and low PR merge rate."
+      "summary": "Project is stale with minimal activity; while a recent commit exists, the complete absence of merged PRs, closed issues, and active contributors over 6 months combined with 33 unaddressed issues indicates the project is not being actively maintained."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -244,7 +252,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:21:21.293536+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

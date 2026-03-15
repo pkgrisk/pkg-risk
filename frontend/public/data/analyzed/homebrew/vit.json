@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 4,
-      "configuration": 9,
-      "troubleshooting": 8,
-      "overall": 7,
-      "summary": "The README provides a good introduction to the package, but lacks detailed examples and has incomplete installation instructions.",
-      "top_issue": "Installation instructions are not provided directly in the README, instead pointing to an external file (INSTALL.md) without summarizing the key steps."
+      "installation": 4,
+      "quick_start": 5,
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 4,
+      "overall": 4,
+      "summary": "The README provides a good high-level overview and feature list but heavily relies on external linked files for all substantive content, leaving the README itself thin on actionable detail.",
+      "top_issue": "Installation, configuration, troubleshooting, and examples are all deferred to separate files (INSTALL.md, CUSTOMIZE.md, FAQ.md) rather than providing any inline content, making the README nearly useless on its own."
     },
     "security": {
       "overall_score": 7,
@@ -209,17 +209,20 @@
       "summary": "The application has some security concerns, including potential command injection risks and lack of proper input validation, but overall it appears to be moderately secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Escape sequences in description does not work.",
-        "Unable to run",
-        "quotes abort annotation"
+        "Application crashes (IndexOutOfRange on tab completion, invalid input handling)",
+        "Quote characters in annotations cause silent failures",
+        "Color configuration is unintuitive and poorly documented",
+        "Taskwarrior 3.0.0 compatibility unclear and unresolved"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "praise_themes": [
+        "Works adequately on mobile/termux despite UI limitations"
+      ],
+      "abandonment_signals": true,
+      "summary": "Mixed health: active recent bug reports but concerning unresolved issues including a year-old Taskwarrior 3.0.0 compatibility question and multiple crash bugs, suggesting maintenance gaps despite some ongoing activity."
     },
     "communication": {
       "helpfulness": 7,
@@ -235,17 +238,20 @@
       "summary": "The maintainer provides generally helpful and clear responses, showing patience with repeated questions but could improve in welcoming new contributors and providing deeper technical explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Only one merged PR in the past six months, suggesting limited contribution and activity."
+        "No commits in the past 6 months despite recent activity",
+        "77 unaddressed open issues with zero closed in 6 months",
+        "No active contributors over the past 6 months",
+        "No merged PRs or open PRs indicating stalled development",
+        "Unknown release status and no release activity"
       ],
       "positive_signals": [
-        "10 contributors active in the past six months, which shows some level of community involvement.",
-        "Regular issue reporting, even if not all are resolved"
+        "Recent commit from January 2026 indicates some sporadic activity",
+        "Presence of open issues suggests the project still has users"
       ],
-      "summary": "The package is minimally maintained with occasional contributions but lacks recent development or updates."
+      "summary": "Package appears stale with a recent but isolated commit, accumulating 77 unresolved issues with no recent maintenance activity or contributor engagement."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -256,7 +262,10 @@
       "overall_score": 5,
       "summary": "The changelog marks breaking changes and provides some fixes, but lacks migration guides, clear categorization, and completeness."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:03:15.873730+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

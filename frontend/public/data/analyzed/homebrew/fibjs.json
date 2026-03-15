@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 4,
-      "quick_start": 2,
-      "examples": 3,
+      "clarity": 6,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and examples.",
-      "top_issue": "Lack of clear installation instructions and examples"
+      "overall": 2,
+      "summary": "The README provides only a minimal description and external links, with no inline installation steps, examples, or usage guidance.",
+      "top_issue": "No installation instructions, quick start, or code examples \u2014 everything is deferred to external links that may go stale."
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,19 @@
       "summary": "The fibjs codebase has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues with recent compilers",
-        "missing functionality in main module detection"
+        "Build failures with modern toolchains (macOS 15/Clang 17, vendored zlib issues)",
+        "Module compatibility gaps (lru.min, .mjs ES modules, TypeScript support)",
+        "Missing modern protocol support (HTTP/3, QUIC)",
+        "API gaps compared to Node.js (file locks, require.main, dynamic TLS certificates)",
+        "Documentation clarity for module locations and APIs"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some build and feature-related frustrations, but the project seems to be actively maintained."
+      "abandonment_signals": true,
+      "summary": "Fibjs shows inconsistent maintenance with recent activity but concerning unresolved build failures, unanswered multi-month-old issues, and multilingual requests without clear responses, suggesting resource constraints and declining community engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,17 +236,19 @@
       "summary": "Maintainer responses are clear, helpful, and demonstrate a good level of technical depth while being patient with new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Zero closed issues in the past six months"
+        "36 open issues unresolved with zero closed issues in past 6 months",
+        "Zero contributor activity in past 6 months despite unresolved issues",
+        "No merged PRs in past 6 months indicating no active development",
+        "Unknown last release date raises questions about currency and stability",
+        "Contradictory metrics: recent commit timestamp but zero commits in past 6 months suggests data anomaly"
       ],
       "positive_signals": [
-        "Recent commits in the last month",
-        "Regular issue tracking"
+        "A commit timestamp from today exists, though it conflicts with the 0 commits past 6 months metric"
       ],
-      "summary": "The package is maintained with recent activity, but there are concerns about lack of pull requests and resolved issues."
+      "summary": "Project appears abandoned with 36 stale open issues, no maintainer activity for 6+ months, and an unknown last release."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -254,7 +259,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clarity in marking breaking changes and providing migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:37:20.953112+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

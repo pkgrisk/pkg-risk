@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 2,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
       "configuration": 1,
-      "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a clear introduction to FontForge, but lacks detailed usage examples and troubleshooting information.",
-      "top_issue": "Lack of quick start guide and examples for common use cases"
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "The README clearly identifies what FontForge is but defers nearly all substantive documentation to external files and links, leaving users with no actionable guidance.",
+      "top_issue": "No quick start, usage examples, or configuration docs \u2014 the README is essentially a stub that points elsewhere for everything."
     },
     "security": {
       "overall_score": 7,
@@ -192,17 +192,19 @@
       "summary": "FontForge has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 6,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "kerning issues",
-        "glyph recognition problems",
-        "installation and compatibility issues"
+        "SVG export producing blank or malformed output",
+        "Application crashes and segfaults (zip parsing, UFO generation, file access)",
+        "Blank/uneditable characters in GUI",
+        "Bitmap to outline conversion missing",
+        "Windows-specific usability issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The FontForge community is actively reporting various technical issues, but the maintainers' responsiveness is moderate, indicating a relatively healthy but imperfect open-source project."
+      "abandonment_signals": true,
+      "summary": "FontForge demonstrates mixed health: recent bug fixes and feature closures show activity, but multiple critical crash reports, unresolved 11-year-old feature requests (UFO export since 2015), and several stalled issues marked 'needs-info' suggest maintenance capacity constraints and potential user frustration."
     },
     "communication": {
       "helpfulness": 8,
@@ -215,18 +217,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, but could improve in terms of technical depth and welcoming new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "1032 open issues with 0 closed in past 6 months indicates issues are accumulating without resolution",
+        "Zero active contributors in past 6 months despite high issue volume",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "Unknown last release date suggests outdated release cadence",
+        "Contradiction between recent commit and zero commits reported in 6-month window suggests data inconsistency or non-maintenance activity"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors",
-        "merged PRs"
+        "Recent commit activity on 2026-03-12 (though may be automated or non-functional work)"
       ],
-      "summary": "The fontforge package appears to be actively maintained with regular updates, fixes, and contributions from a sizable group of developers."
+      "summary": "FontForge appears stale with a massive backlog of 1032 unresolved issues, zero maintenance activity (contributors, merged PRs) over 6 months, and an unknown release schedule."
     },
     "changelog": null,
     "governance": {
@@ -236,7 +239,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "FontForge has a documented decision process and multiple maintainers, but lacks a clear succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:30:16.081850+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

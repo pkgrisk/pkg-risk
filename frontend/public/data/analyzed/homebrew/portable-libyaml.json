@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 1,
       "examples": 1,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation is clear about installation but lacks examples and troubleshooting information.",
-      "top_issue": "Lack of usage examples and troubleshooting guidance"
+      "configuration": 1,
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "Minimal README covering only build/install steps with no usage examples, API documentation, or practical guidance for library consumers.",
+      "top_issue": "No usage examples or API documentation \u2014 users learn nothing about how to actually use the library in their code."
     },
     "security": {
       "overall_score": 7,
@@ -197,16 +197,19 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed to improve its overall security posture."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "memory leaks",
-        "compatibility issues with CMake"
+        "Memory leaks in api.c (multiple instances, unfixed for 10+ months)",
+        "Segmentation fault in yaml_free",
+        "Scanner API infinite-loop DoS risk",
+        "CMake version incompatibility (unfixed 8+ months)",
+        "Unicode/emoji handling incorrectly marks valid characters as unprintable"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate frustration due to open issues related to memory leaks and CMake compatibility."
+      "abandonment_signals": true,
+      "summary": "Project shows clear abandonment: multiple critical bugs (segfaults, memory leaks, DoS) have zero maintainer engagement despite being open for 8+ months, issue tracker polluted with spam, and a 2+ year old unicode bug remains unfixed."
     },
     "communication": {
       "helpfulness": 5,
@@ -223,21 +226,25 @@
       "summary": "The maintainer's responses are adequate in technical depth but lack patience and can be seen as hostile, which may discourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "A high number of open issues (67)",
-        "Only one merged PR in the past six months"
+        "No commits in past 6 months (last activity 2024-08-08)",
+        "114 open issues with zero resolution activity",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown/outdated release information"
       ],
       "positive_signals": [
-        "Ten contributors have been active in the past six months",
-        "Regular PR activity, even if not all are merged"
+        "Package still available in Homebrew repository"
       ],
-      "summary": "The package is minimally maintained with occasional contributions but faces significant issues backlog."
+      "summary": "portable-libyaml is stale with complete lack of maintenance activity over 6+ months and a large backlog of unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:34:54.752421+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

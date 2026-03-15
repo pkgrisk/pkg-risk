@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 9,
+      "quick_start": 5,
+      "examples": 4,
+      "configuration": 5,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package's features and configuration options, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise installation instructions for all platforms"
+      "overall": 5,
+      "summary": "README excels at describing what eza is but defers installation to an external file and lacks practical usage examples or troubleshooting guidance.",
+      "top_issue": "No quick-start examples showing actual command usage (e.g., `eza -la`, `eza --tree`) \u2014 the README lists all options but never demonstrates them in context."
     },
     "security": {
       "overall_score": 7,
@@ -210,12 +210,19 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and errors",
-        "compatibility issues"
+        "ls compatibility issues (--time/-t flag behavior)",
+        "documentation gaps (missing man page entries)",
+        "silent failures and unclear error handling",
+        "feature parity with standard ls",
+        "platform-specific limitations (Windows directory sizes)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The eza community is moderately active with some open issues, but maintainers are responsive and addressing problems, indicating a relatively healthy project."
+      "praise_themes": [
+        "active user engagement with detailed issue reports",
+        "some resolved issues showing development activity",
+        "feature development (hyperlinks, sorting options)"
+      ],
+      "abandonment_signals": true,
+      "summary": "eza shows moderate community engagement but concerning issue backlog with multiple unresolved bugs (including a critical 2026-03-14 -t flag footgun with zero responses) and old requests gathering dust (2024-04-05), suggesting maintainer capacity constraints or deprioritization."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,17 +238,19 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient, but sometimes lack technical depth and detail, making them a good but not exemplary communicator."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "346 open issues with zero closed in past 6 months indicates unaddressed user problems",
+        "Zero commits in past 6 months despite recent commit suggests stray activity or bot-driven commits",
+        "No active contributors for 6 months indicates team has moved on",
+        "No merged PRs in 6 months means no active development or community integration",
+        "Unknown last release suggests release process is dormant"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors"
+        "One commit within the past 7 days indicates repository is not completely frozen"
       ],
-      "summary": "The eza package appears to be maintained, with recent activity and active contributors, but has a significant backlog of open issues and pull requests."
+      "summary": "The eza project appears abandoned with a large backlog of unresolved issues and zero development activity over the past 6 months, despite a single recent commit."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -259,7 +268,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The eza project lacks a clear succession plan and documented decision process, but indicates multiple maintainers with merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T19:22:30.911579+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "maintained",
