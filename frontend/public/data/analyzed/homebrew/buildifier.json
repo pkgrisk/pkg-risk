@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 2,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "The README provides a brief overview of the package, but lacks detailed instructions and examples for users to get started.",
-      "top_issue": "Lack of clear installation instructions and absence of quick start guide or examples"
+      "summary": "The root README is a thin index that defers all meaningful documentation to subdirectory READMEs, providing almost no standalone value.",
+      "top_issue": "No installation instructions, usage examples, or configuration details \u2014 everything is delegated to subdirectory links with no inline guidance."
     },
     "security": {
       "overall_score": 7,
@@ -213,30 +213,35 @@
       "summary": "The code has some potential security issues, including a possible path traversal vulnerability and a JSON injection vulnerability, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug fixes",
-        "feature requests"
+        "Recurring CI failures with Protobuf generated code mismatches",
+        "Missing buildifier diff mode for lint-fix verification (4+ years unresolved)",
+        "List handling bugs in buildozer with unknown attribute names",
+        "Sorting inconsistency with comments in buildifier lists",
+        "Bazel Module Registry (BCR) integration unavailable (3+ years unresolved)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The buildifier community is moderately active with a neutral sentiment, having some open issues and feature requests but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Buildifier shows active CI infrastructure but accumulating maintenance debt with recurring test failures and unresolved feature requests dating back 4+ years, indicating potential capacity constraints."
     },
     "communication": null,
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "open PRs outnumber merged PRs"
+        "242 open issues with zero closures in past 6 months",
+        "No active contributors for past 6 months",
+        "No merged PRs or PR activity for 6 months",
+        "Unknown last release date",
+        "Severe issue backlog with no triage or response"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors"
+        "Recent commit activity (March 5, 2026)"
       ],
-      "summary": "The buildifier package appears to be maintained, with regular updates and active contributors, but may benefit from addressing the backlog of open issues and PRs."
+      "summary": "Project is abandoned with a massive unresolved issue backlog and zero maintenance activity despite a recent commit."
     },
     "changelog": null,
     "governance": {
@@ -246,7 +251,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for the buildifier package lacks a clear succession plan, decision-making process, and contributor ladder, but indicates multiple maintainers with merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:06:53.545154+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 7,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation and usage instructions.",
-      "top_issue": "Lack of clear installation and quick start instructions"
+      "overall": 2,
+      "summary": "The README provides a good high-level description and links to external docs, but contains no installation instructions, examples, or usage guidance whatsoever.",
+      "top_issue": "No installation instructions, quick start, or code examples \u2014 the entire README is just a description, badges, and sponsor logos with all actual documentation delegated to external links."
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,22 @@
       "summary": "The provided code snippet appears to be generally secure, but lacks input validation and secure default configurations in some areas."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
-      "common_complaints": [],
+      "common_complaints": [
+        "Version-specific bugs (xgboost4j core dumps)",
+        "Integration pain points (scikit-learn pipelines, pyspark external memory)",
+        "Performance optimization challenges",
+        "Feature requests not implemented despite years of discussion"
+      ],
       "praise_themes": [
-        "roadmap planning",
-        "release tracking"
+        "High community engagement on major proposals (133 comments on R interface)",
+        "Active release management (3.0 tracking)",
+        "Documentation improvements ongoing"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively discussing future features and release progress, but there are no significant complaints or signs of frustration."
+      "summary": "XGBoost shows healthy but inconsistent community engagement\u2014recent releases and active discussions indicate continued development, but some technical issues are marked 'need update' and feature requests languish open for years (e.g., 2022 pyspark external memory), suggesting resource constraints rather than abandonment."
     },
     "communication": {
       "helpfulness": 7,
@@ -219,17 +225,26 @@
       "summary": "The maintainer responses are generally clear and technically deep, showing patience with repeated questions. However, there is room for more direct guidance on simple issues."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent open issues and PRs indicate ongoing development"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "468 open issues with zero closed in past 6 months",
+        "No active contributors for past 6 months",
+        "Zero merged PRs in past 6 months despite high issue count",
+        "Unknown last release date suggests broken release process",
+        "No issue triage or maintenance activity despite accumulated backlog"
       ],
-      "summary": "The package xgboost (homebrew) is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Very recent commit today (2026-03-15)",
+        "No open pull requests indicates low abandoned contribution friction"
+      ],
+      "summary": "Repository is effectively stale with zero maintenance activity for 6+ months; a recent commit today is insufficient to override clear signs of abandonment given 468 unresolved issues and absent contributors."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:21:45.434065+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

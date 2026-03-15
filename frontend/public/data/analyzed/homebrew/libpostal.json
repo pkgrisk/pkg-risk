@@ -182,14 +182,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The documentation is clear about the package's purpose, but lacks sufficient installation instructions, usage examples, and troubleshooting information.",
-      "top_issue": "Insufficient installation instructions"
+      "summary": "The README excels at explaining what libpostal does and why it matters, but the provided content is almost entirely introductory/marketing material with no installation steps, usage examples, or configuration docs visible.",
+      "top_issue": "No installation instructions, code examples, or API usage are present in the provided README content \u2014 it cuts off before any practical documentation begins."
     },
     "security": {
       "overall_score": 7,
@@ -215,16 +215,19 @@
       "summary": "The libpostal package has some security concerns, including potential injection risks and limited input validation, but no critical issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "installation issues on Windows",
-        "memory leak in parsing functions"
+        "Windows/MSys2 installation failures (long-standing since 2020)",
+        "Compilation errors on Linux (Debian undefined reference)",
+        "Address parsing bugs (state abbreviations, UK counties in postcode field)",
+        "Memory leaks during repeated parsing",
+        "Release versioning issues blocking upstream packaging (conda-forge)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to ongoing installation and functionality issues, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Declining project health: critical Windows installation issue unresolved since 2020, recent bug reports (2026) unanswered, and sporadic maintenance pattern with minimal issue engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -239,17 +242,20 @@
       "summary": "The responses are generally helpful and technically sound, but could be more welcoming to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No releases in the past 5 years, indicating a lack of new features or improvements.",
-        "High number of open issues (277) suggests potential bugs or feature requests that have not been addressed."
+        "292 open issues with zero resolved in past 6 months",
+        "Zero commits in past 6 months despite recent last commit",
+        "No active contributors or merged PRs",
+        "Unknown release history",
+        "Significant issue backlog with no triage activity"
       ],
       "positive_signals": [
-        "Commits past 6 months: 16",
-        "Contributors active past 6 months: 2"
+        "Last commit from December 2025 suggests repo not fully abandoned",
+        "Repository still exists and is accessible"
       ],
-      "summary": "The package is minimally maintained with recent activity but lacks new releases and has a high number of unresolved issues."
+      "summary": "libpostal is stale with substantial unaddressed maintenance debt\u2014292 open issues, no recent activity, and no active contributors despite a recent commit date."
     },
     "changelog": null,
     "governance": {
@@ -259,7 +265,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear succession plans, decision-making processes, and paths for contributors to become maintainers, indicating a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:55:41.251014+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

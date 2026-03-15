@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 3,
       "examples": 6,
       "configuration": 8,
       "troubleshooting": 4,
       "overall": 6,
-      "summary": "The documentation is detailed and informative, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the library."
+      "summary": "Thorough technical documentation for build/configuration but lacks any API usage examples or quick-start code showing how to actually call the library.",
+      "top_issue": "No usage examples showing how to call the encode/decode API from C code \u2014 the README only covers building the library, not using it."
     },
     "security": {
       "overall_score": 7,
@@ -191,18 +191,23 @@
       "summary": "The code appears to be generally secure with no major injection risks or secrets exposed, but input validation and error handling could be improved."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "binary tool conflicts",
-        "lack of installation guide"
+        "ISA detection failures causing SIGILL on incompatible CPUs",
+        "Poor documentation and installation guides",
+        "Limited codec format support (base64url, RFC 2045)",
+        "Compilation errors with MSVC and C99 standards",
+        "Binary naming conflicts with system packages"
       ],
       "praise_themes": [
-        "good work on RFC4648 support"
+        "High-quality RFC4648 base64 implementation",
+        "Excellent SIMD optimization work",
+        "Core library is reliable and well-engineered"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally neutral with some ongoing issues and requests for improvements."
+      "abandonment_signals": true,
+      "summary": "Moderate community health with uneven maintainer engagement: recent bugs remain unaddressed (Feb 2026), old feature requests languish for years (base64url since 2020), but some 2024 issues were resolved, indicating sporadic rather than consistent maintenance."
     },
     "communication": {
       "helpfulness": 7,
@@ -218,20 +223,25 @@
       "summary": "The responses are generally technical and clear, but the maintainer's communication style is sometimes inadequate and can be hostile."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "A high number of open issues (26) suggests there may be unresolved problems that need attention."
+        "No commits for 10+ months (last: May 2025)",
+        "Zero activity in past 6 months across all metrics",
+        "32 open issues with no resolution attempts",
+        "No pull requests or contributor engagement",
+        "Unknown release status indicates lack of release management"
       ],
       "positive_signals": [
-        "Recent activity with contributors (10 active past six months)",
-        "Regular issue reporting and management"
+        "Project exists and had activity at some point"
       ],
-      "summary": "The package shows minimal maintenance, with recent contributor activity but no commits or merged PRs in the last six months."
+      "summary": "This project shows clear signs of abandonment with complete inactivity for 6+ months and a growing backlog of 32 unaddressed issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:14:35.104992+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

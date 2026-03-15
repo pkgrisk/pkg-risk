@@ -173,15 +173,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "configuration": 6,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "The README provides clear and detailed information on installation, usage, and configuration, but lacks troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Well-structured README with clear purpose, multi-platform install instructions, and thorough usage examples, but lacks troubleshooting guidance and deeper configuration docs.",
+      "top_issue": "No troubleshooting section for common build or runtime failures (e.g., missing audio device, voice not found, build errors on specific platforms)."
     },
     "security": {
       "overall_score": 4,
@@ -208,16 +208,21 @@
       "summary": "The mimic package has several security concerns, including regex injection risks and potential error exposure, which need to be addressed to ensure the security and reliability of the software."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compilation issues",
-        "missing dependencies"
+        "Build/compilation failures (make errors, autogen.sh syntax, LTO conflicts)",
+        "Missing or broken external dependencies (festvox.org links dead since 2022)",
+        "Dependency resolution issues (libpcre2-8 library not found)",
+        "Windows/cross-platform support problems",
+        "Core functionality gaps (pause/resume not working, segfaults)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to recurring compilation and dependency issues, but no clear signs of abandonment."
+      "praise_themes": [
+        "Technical quality discussions around vocoders and synthesis techniques"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows signs of slow/moderate abandonment with 6+ open issues spanning 2019-2022 remaining unaddressed, broken external dependencies, and poor Windows support maintenance."
     },
     "communication": {
       "helpfulness": 7,
@@ -230,21 +235,24 @@
       "summary": "Maintainer responses are generally helpful and clear, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "A high number of open issues (58)",
-        "Only one merged PR in the past six months"
+        "No commits for over 3 years (last commit 2022-11-02)",
+        "Zero activity in past 6 months across all metrics",
+        "59 open issues with no recent resolution",
+        "No active contributors",
+        "Unknown last release date",
+        "No merged PRs or closed issues in past 6 months"
       ],
-      "positive_signals": [
-        "Ten contributors have been active in the past six months",
-        "There is at least one open PR indicating some level of ongoing activity"
-      ],
-      "summary": "The package is minimally maintained with occasional contributions but faces significant issues and a lack of recent updates."
+      "positive_signals": [],
+      "summary": "Project is abandoned with over 3 years of inactivity, zero recent commits or maintenance, and 59 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:48:08.565518+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

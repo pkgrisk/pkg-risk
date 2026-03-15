@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 6,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 3,
-      "configuration": 4,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is thorough for installation and building, but lacks clear examples and troubleshooting guidance.",
-      "top_issue": "Lack of quick start guide and insufficient examples for common use cases"
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 3,
+      "overall": 4,
+      "summary": "The README covers multi-platform build instructions reasonably well but is entirely focused on compilation from source with no usage examples, API docs, or configuration guidance.",
+      "top_issue": "No usage examples or quick-start showing what you can actually do with the tools after building them."
     },
     "security": {
       "overall_score": 8,
@@ -190,16 +190,20 @@
       "summary": "The airspy-tools/getopt/getopt.c code appears to be a standard implementation of the getopt function and does not contain any critical security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "library structure and code duplication",
-        "callback issues in airspy_rx"
+        "Build/compilation errors (VS2022 pthread.h)",
+        "Hardware control issues (bias-tee disabling on Pi 5)",
+        "Critical bugs (uninitialized variables, callback crashes)",
+        "Code duplication between libairspy and libairspyhf",
+        "Performance issues on Apple M1",
+        "Missing features (PPM correction, buffer size control)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is generally neutral with some frustration over library structure and callback issues, but no clear signs of abandonment."
+      "summary": "Active but inconsistently responsive project with unresolved critical bugs, platform-specific issues, and minimal community engagement on serious problems."
     },
     "communication": {
       "helpfulness": 6,
@@ -215,21 +219,28 @@
       "summary": "The maintainer's responses are adequate in technical depth but can be less patient and welcoming, especially towards new contributors."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "stale",
       "confidence": 8,
       "concerns": [
-        "Last release is from 2021",
-        "No open issues or PRs"
+        "No commits in past 6 months despite recent repository history",
+        "No active contributors in past 6 months",
+        "No merged PRs or closed issues in past 6 months",
+        "Unknown last release date suggests abandoned release cycle",
+        "Single open issue with no response or triage activity",
+        "Minimal maintenance window with no development velocity"
       ],
       "positive_signals": [
-        "Commits past 6 months: 4",
-        "Merged PRs past 6 months: 2",
-        "Contributors active past 6 months: 3"
+        "Last commit relatively recent (October 2025)",
+        "Issue tracking mechanism still in place",
+        "No open pull requests indicating stable codebase state"
       ],
-      "summary": "The package shows signs of maintenance but could benefit from more recent releases."
+      "summary": "The airspy project shows signs of stagnation with no maintenance activity or contributor engagement over the past 6 months, though historical commits and issue tracking suggest it has not been completely abandoned."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:54:19.760249+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

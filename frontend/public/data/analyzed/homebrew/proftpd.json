@@ -189,15 +189,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 5,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is comprehensive but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example and troubleshooting documentation"
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "ProFTPD's README provides a decent feature overview but defers almost all practical guidance to external files and documentation, leaving users without actionable quick-start content.",
+      "top_issue": "No quick-start example or working configuration snippet \u2014 users are repeatedly directed to read separate INSTALL and README.* files instead of getting any hands-on guidance in the README itself."
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,21 @@
       "summary": "The ProFTPD configuration database implementation appears to have a moderate security posture, with some potential issues related to input validation and error handling, but no critical vulnerabilities were identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "TLSv1.3 issues",
-        "Login event detection reliability"
+        "Security vulnerabilities (DoS, buffer overflows, out-of-bounds reads)",
+        "Concurrency and stability issues (segfaults under high load)",
+        "FTPS/TLS compatibility issues with modern OpenSSL versions",
+        "Build system issues (LTO type mismatches with DSO)",
+        "Unclear module compatibility documentation"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Maintainers actively close and patch critical security issues"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is facing some specific issues but there are no signs of severe frustration or abandonment."
+      "summary": "Moderately active project with responsive bug fixes but concerning open security vulnerabilities (DoS) and TLS compatibility issues that lack engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -230,17 +235,19 @@
       "summary": "Maintainer responses are clear, helpful, and demonstrate patience with the contributor."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs in the past six months"
+        "166 open issues with no triage or resolution activity",
+        "Zero contributors active in past 6 months",
+        "No closed issues or merged PRs in past 6 months",
+        "Unknown last release date",
+        "No development activity despite high issue volume"
       ],
       "positive_signals": [
-        "Recent commit activity",
-        "Regular issue and PR contributions"
+        "One commit on 2026-03-05 (though appears isolated)"
       ],
-      "summary": "The package is maintained with recent commits and regular contributions, but there are concerns due to a high number of unresolved issues."
+      "summary": "Proftpd is abandoned with 166 unresolved issues, zero maintenance activity over 6 months, and no active contributors."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +258,10 @@
       "overall_score": 6,
       "summary": "The changelog is comprehensive but lacks clear categorization, marking of breaking changes, and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:05:51.887390+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

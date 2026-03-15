@@ -181,14 +181,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient examples for common use cases"
+      "installation": 7,
+      "quick_start": 5,
+      "examples": 3,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README is concise and covers the basics but lacks practical examples showing how to use the generated code.",
+      "top_issue": "No example showing a full workflow: running gowsdl on a WSDL file and then using the generated Go code in a real service call."
     },
     "security": {
       "overall_score": 5,
@@ -215,16 +215,19 @@
       "summary": "The gowsdl package has several security concerns, including potential SQL injection and path traversal vulnerabilities, as well as a lack of input validation and error handling best practices."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "namespace handling",
-        "targetNamespace value respect"
+        "Namespace handling and XML namespace generation bugs (4+ issues)",
+        "Type generation problems (lowercase primitives, private fields, maxOccurs handling)",
+        "WSDL parsing inconsistencies across different schemas"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration with namespace and targetNamespace issues, but there are no clear signs of abandonment."
+      "praise_themes": [
+        "Library functionality acknowledged as useful"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project appears abandoned with zero issue resolution across 7+ years; accumulating bugs particularly around WSDL namespace and type generation indicate lack of active maintenance despite some appreciative users."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,18 +240,17 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They address issues effectively while encouraging contributions."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "No merged PRs in the past six months",
-        "A large number of open issues (77)",
-        "Last release was over four years ago"
+        "No commits in 6+ months (last commit Aug 2024)",
+        "97 open issues with zero resolution in past 6 months",
+        "No merged PRs or closed issues recently",
+        "No active contributors",
+        "Unknown/missing last release date"
       ],
-      "positive_signals": [
-        "Ten contributors have been active in the past six months"
-      ],
-      "summary": "The package is receiving minimal maintenance with recent contributor activity, but lacks recent commits and merged PRs."
+      "positive_signals": [],
+      "summary": "The gowsdl project is effectively abandoned with zero activity in the past 6 months, 97 unresolved issues accumulating, and no active contributors or releases."
     },
     "changelog": null,
     "governance": {
@@ -258,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:04:17.203847+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

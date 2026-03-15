@@ -178,27 +178,33 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 4,
-      "summary": "The README provides a good introduction to the UHD software, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 3,
+      "overall": 3,
+      "summary": "The README clearly identifies the project and links to external docs, but contains no inline installation steps, usage examples, or configuration guidance \u2014 it's essentially a table of contents pointing elsewhere.",
+      "top_issue": "No quick start or usage examples whatsoever; a new user must navigate to external URLs just to do anything with the library."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "hardware compatibility issues",
-        "build failures"
+        "Hardware integration complexity (DC offset calibration, phase alignment issues)",
+        "Missing or incomplete API features (disconnect streamer, DVB-T2 demodulation)",
+        "Build system integration challenges (Model Composer IP, RFNoC workflow)",
+        "Packaging/distribution gaps (missing arm64 builds, version availability)",
+        "Documentation gaps and incomplete bug reports"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The uhd community is moderately active, with some open issues and a mix of resolved and unresolved problems, indicating a neutral overall sentiment."
+      "praise_themes": [
+        "Project still actively maintained and receiving issues",
+        "Some bugs do get resolved with community engagement"
+      ],
+      "abandonment_signals": true,
+      "summary": "Moderately active project with concerning unresponsiveness to recent issues\u2014several March 2026 requests remain unanswered despite some resolved bugs, suggesting potential understaffing or prioritization gaps."
     },
     "communication": {
       "helpfulness": 8,
@@ -214,16 +220,20 @@
       "summary": "The maintainers provide generally helpful and technically deep responses, but could improve in terms of clarity, patience, and welcomingness to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits (174 in the last 6 months)",
-        "Frequent releases (at least one in the last 6 months)",
-        "Active contributors (20 in the last 6 months)",
-        "Merged PRs (9 in the last 6 months)"
+      "concerns": [
+        "Zero commits in past 6 months despite recent last commit timestamp",
+        "74 unaddressed open issues with no activity",
+        "Zero closed issues in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release"
       ],
-      "summary": "The uhd package appears to be actively maintained with recent commits, frequent releases, and active contributors."
+      "positive_signals": [
+        "Repository still exists on GitHub"
+      ],
+      "summary": "Project shows no maintenance activity across all metrics (zero commits, PRs, issue resolutions, and contributors) over the past 6 months despite a substantial backlog of 74 open issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -241,7 +251,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the UHD package lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:10:18.339504+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

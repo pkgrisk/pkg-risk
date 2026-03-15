@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 2,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
+      "quick_start": 3,
+      "examples": 4,
+      "configuration": 7,
       "troubleshooting": 3,
       "overall": 5,
-      "summary": "The README provides a good overview of the package's features, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions"
+      "summary": "Rhai has excellent feature documentation and clear purpose but the README is truncated and lacks installation instructions, quick-start code, and troubleshooting guidance.",
+      "top_issue": "No installation instructions \u2014 the README (as provided) is cut off before showing how to add Rhai as a Cargo dependency or any working end-to-end Rust integration example."
     },
     "security": {
       "overall_score": 5,
@@ -217,18 +217,22 @@
       "summary": "The Rhai package has several security concerns, including code injection vulnerabilities and lack of input validation, which could potentially allow for malicious attacks."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "No implicit type conversions",
-        "Depends on unmaintained crate \"instant\""
+        "Soundness issues and undefined behavior in dependencies (smartstring)",
+        "Build/compilation failures (thin_vec PartialEq derivation)",
+        "Dependency maintenance (reliance on unmaintained crates)",
+        "Missing or incomplete public APIs"
       ],
       "praise_themes": [
-        "Feature requests for enhancements"
+        "Security-conscious (engaged in fuzz testing discussions)",
+        "Responsive to dependency issues (proactively switched from instant to web-time)",
+        "Active bug fixing (recent build issues resolved)"
       ],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged with feature requests and some unresolved issues, but overall sentiment remains neutral."
+      "summary": "Actively maintained with recent fixes and releases, but has concerning open issues including a soundness bug from Jan 2024 that suggests inconsistent priority/resources."
     },
     "communication": {
       "helpfulness": 7,
@@ -241,15 +245,20 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing patience with repeated questions and a good level of technical depth."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "A moderate number of merged PRs in the past six months",
-        "Regular issue tracking and resolution"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "43 open issues unaddressed for 6+ months",
+        "No commits in past 6 months (recent commit appears isolated)",
+        "Zero merged PRs past 6 months",
+        "No active contributors in past 6 months",
+        "No tracked release information",
+        "No closed issues in past 6 months"
       ],
-      "summary": "The package is actively maintained with recent activity and regular updates."
+      "positive_signals": [
+        "Very recent commit activity (2026-03-10, 5 days ago)"
+      ],
+      "summary": "Project is largely abandoned with significant unresolved issue backlog and no sustained maintenance activity despite a recent isolated commit."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -260,7 +269,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-structured and clear, with breaking changes marked and comprehensive categories. However, it lacks migration guides for users upgrading from previous versions."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:39:42.760794+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

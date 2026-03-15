@@ -164,15 +164,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
+      "clarity": 9,
+      "installation": 4,
       "quick_start": 4,
-      "examples": 3,
+      "examples": 1,
       "configuration": 2,
-      "troubleshooting": 6,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package, but lacks clear installation and configuration instructions.",
-      "top_issue": "Lack of clear installation instructions"
+      "troubleshooting": 4,
+      "overall": 4,
+      "summary": "The README clearly describes what rust-analyzer does but defers almost all practical documentation to external links, leaving the README itself nearly content-free.",
+      "top_issue": "Installation, quick start, examples, and configuration all just link to external docs with no inline content, making the README largely useless without following links."
     },
     "security": {
       "overall_score": 7,
@@ -198,17 +198,19 @@
       "summary": "The code has some security concerns, including potential command injection attacks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "memory usage",
-        "performance issues",
-        "bugs"
+        "Thread infinite loops and hangs when opening files",
+        "False positive and false negative type checking diagnostics",
+        "Excessive memory usage causing system resource exhaustion",
+        "Incorrect working directory in cargo workspace runnables",
+        "Diagnostic offset errors in edge cases"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The rust-analyzer community is experiencing frustration with memory usage, performance issues, and bugs, but maintainers are moderately responsive to addressing these concerns."
+      "summary": "rust-analyzer maintains active user engagement with recent bug reports and some resolutions, but shows inconsistent maintenance responsiveness with critical performance issues (hangs, memory bloat) and long-standing features remaining unaddressed."
     },
     "communication": {
       "helpfulness": 8,
@@ -224,16 +226,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, but could improve in welcoming new contributors and explaining complex concepts."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (991)",
-        "Recent last commit and release dates",
-        "Large number of merged PRs in the past 6 months (280)",
-        "Many active contributors in the past 6 months (59)"
+      "concerns": [
+        "No commits in past 6 months despite ongoing repository activity",
+        "Zero closed issues in past 6 months with massive backlog of 1942 open issues",
+        "No merged PRs in past 6 months - no contributions accepted",
+        "No active contributors in past 6 months",
+        "Unknown last release - no clear versioning or release strategy",
+        "Large untracked issue backlog indicates no maintenance or triage"
       ],
-      "summary": "The rust-analyzer package is actively maintained with frequent updates, a large contributor base, and a high volume of pull requests being addressed."
+      "positive_signals": [
+        "No backlog of open PRs (may indicate old PRs are being managed or development halted)"
+      ],
+      "summary": "rust-analyzer (homebrew) is stale with zero development activity over the past 6 months and an unresolved issue backlog of 1942, suggesting the project is no longer actively maintained."
     },
     "changelog": null,
     "governance": {
@@ -243,7 +249,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The rust-analyzer project has a documented decision process and multiple maintainers, but lacks a clear succession plan and contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:26:30.931467+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

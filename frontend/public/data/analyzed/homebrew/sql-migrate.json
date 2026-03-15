@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
       "examples": 9,
       "configuration": 9,
-      "troubleshooting": 4,
+      "troubleshooting": 6,
       "overall": 8,
-      "summary": "The README provides clear and detailed information about the package, its features, installation, usage, and configuration, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Well-structured documentation with clear CLI usage, multiple configuration examples, and both standalone and library usage covered thoroughly.",
+      "top_issue": "Troubleshooting section is minimal \u2014 only MySQL and Oracle caveats are mentioned, with no guidance on common errors like connection failures, migration conflicts, or permission issues."
     },
     "security": {
       "overall_score": 7,
@@ -211,16 +211,22 @@
       "summary": "The sql-migrate package has some security concerns, including potential command injection risks and lack of input validation, but overall it appears to be a well-structured and secure codebase."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "security updates",
-        "concurrent migration issues"
+        "Compilation errors with missing tablewriter methods",
+        "Database compatibility issues (CockroachDB transaction handling)",
+        "Concurrent migration execution causes conflicts",
+        "Crashes/panics on specific platforms (M4 Pro, memory sources)",
+        "Edge cases with empty migration files"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no signs of abandonment."
+      "praise_themes": [
+        "Appreciation for maintenance and library utility",
+        "Active enough to release security updates"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows mixed health with some responsive maintenance (security releases, issue discussion) but concerning backlog of unresolved issues spanning 9+ years (2016-2025) alongside recent critical bugs (compilation failures, platform crashes) that remain open."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,19 +239,25 @@
       "summary": "The maintainer provides clear, helpful, and technically sound responses while maintaining a patient and welcoming attitude."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Few commits in the past six months (only 2)",
-        "A high number of open issues (72)"
+        "Zero commits in past 6 months - no active development",
+        "95 open issues with no resolution activity - severe backlog",
+        "Zero contributors active in past 6 months - project appears unmanned",
+        "No merged PRs in past 6 months - pull requests not being reviewed",
+        "Unknown last release - unclear release schedule or version management"
       ],
       "positive_signals": [
-        "Some recent activity with two merged PRs in the past six months"
+        "Repository still exists and hasn't been archived"
       ],
-      "summary": "The package shows minimal maintenance efforts but has some recent activity."
+      "summary": "sql-migrate is stale with significant technical debt - no commits, contributions, or issue resolution in 6+ months despite 95 open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:11:17.409520+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

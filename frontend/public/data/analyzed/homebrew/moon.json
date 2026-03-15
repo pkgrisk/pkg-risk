@@ -184,14 +184,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good overview of the package's features and goals, but lacks clear installation instructions, examples, and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "overall": 3,
+      "summary": "The README clearly explains what moon is and why to use it, but contains no installation instructions, examples, configuration docs, or troubleshooting \u2014 it's a marketing document that defers everything to external documentation.",
+      "top_issue": "No installation instructions, quick start, or usage examples \u2014 the entire practical onboarding experience is missing from the README."
     },
     "security": {
       "overall_score": 7,
@@ -211,18 +211,22 @@
       "summary": "The code has some security concerns, including potential command injection and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug in `moon ci` command",
-        "environment variable inheritance issues"
+        "Performance degradation (glob caching not used)",
+        "Toolchain detection bugs (Python PEP 508, Go v2 modules)",
+        "Race conditions in parallel task execution",
+        "Token/variable substitution bugs",
+        "Task graph rendering regression in v2.0.3"
       ],
       "praise_themes": [
-        "feature requests for improved functionality"
+        "Detailed technical issue reporting",
+        "Community engagement on bugs"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, but there are ongoing bugs and feature requests that indicate some frustration."
+      "summary": "Moon shows moderate maintainer engagement with some issues being closed, but open bugs spanning performance, toolchain detection, and parallel execution reliability suggest ongoing pain points affecting user experience."
     },
     "communication": {
       "helpfulness": 7,
@@ -238,14 +242,18 @@
       "summary": "Responses are generally clear and patient, but could be more helpful by addressing current issues rather than deferring all answers to future versions."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent activity with a release on the same day as the last commit"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "110 open issues with zero closed in past 6 months indicates issues are unaddressed",
+        "0 commits in past 6 months despite recent commit suggests no development activity",
+        "0 active contributors and 0 merged PRs in past 6 months shows lack of ongoing maintenance",
+        "Unknown last release makes it unclear if users receive updates"
       ],
-      "summary": "The package 'moon' appears to be actively maintained based on recent commits, merges, and releases."
+      "positive_signals": [
+        "Very recent commit (2026-03-14) indicates some form of activity"
+      ],
+      "summary": "Project appears stale with minimal maintenance; recent commit is positive but contradicted by zero development activity, zero issue resolution, and zero active contributors over 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -263,7 +271,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision-making process but lacks a succession plan or clear contributor ladder, indicating medium bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:00:21.076794+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

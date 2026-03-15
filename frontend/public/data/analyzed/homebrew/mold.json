@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 7,
       "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 4,
+      "configuration": 6,
+      "troubleshooting": 5,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but could benefit from more concise quick start instructions and better troubleshooting guidance.",
-      "top_issue": "Lack of clear and prominent troubleshooting section"
+      "summary": "Well-structured README with strong performance motivation and good multi-ecosystem usage examples, but installation relies on an external badge rather than explicit instructions, and troubleshooting coverage is minimal.",
+      "top_issue": "Installation section contains only a repology badge with no actual package manager commands (e.g., `brew install mold`, `apt install mold`), forcing users to navigate away to find install instructions."
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,21 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "linking issues",
-        "compatibility problems"
+        "Memory safety issues (heap buffer overflows, SIGSEGV)",
+        "Symbol resolution and linking failures",
+        "LTO (Link Time Optimization) incompatibilities",
+        "Architecture-specific bugs (ARM64/aarch64)",
+        "Transitive dependency handling",
+        "Inconsistent behavior between linking modes",
+        "Poor error diagnostics and messages"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The mold community is experiencing a mix of resolved and ongoing issues, with maintainers showing moderate responsiveness to user concerns."
+      "abandonment_signals": true,
+      "summary": "Mold shows concerning maintenance patterns with critical memory safety bugs and linking failures remaining unresolved for months, some issues open since 2022, indicating potential abandonment or resource constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,21 +231,26 @@
       "summary": "The maintainer provides generally helpful and technically deep responses, but could improve in terms of clarity, patience, and welcomingness to create a more supportive community."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "relatively low number of closed issues compared to open ones"
+        "0 commits in past 6 months according to activity metrics",
+        "209 open issues with 0 closed in past 6 months",
+        "0 merged pull requests in past 6 months",
+        "0 active contributors in past 6 months",
+        "No documented release history",
+        "Single recent commit (2026-03-04) with no follow-up activity suggests stale repository"
       ],
       "positive_signals": [
-        "frequent commits in the past 6 months",
-        "recent release",
-        "active contributors"
+        "One commit within last 2 weeks indicates repository is not completely dead"
       ],
-      "summary": "The mold package appears to be maintained with regular updates and active contributors, but may benefit from addressing its open issues."
+      "summary": "The mold project appears abandoned with no meaningful maintenance activity, issue triage, or community engagement for at least 6 months despite 209 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:55:07.989035+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -163,14 +163,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 4,
       "configuration": 5,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and well-structured, but lacks a concise quick start guide and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section"
+      "overall": 5,
+      "summary": "Solid high-level overview and installation steps, but lacks inline code examples and troubleshooting guidance, pointing users to external files/docs instead.",
+      "top_issue": "No quick-start code example in the README itself \u2014 users are directed to an examples directory that may not be readily accessible."
     },
     "security": {
       "overall_score": 7,
@@ -181,16 +181,17 @@
       "summary": "The autogen.sh script has some security concerns related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "negative",
       "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "compatibility issues",
-        "outdated dependencies"
+        "macOS Sequoia compatibility issues with linker flags",
+        "Outdated dependency management (OpenSSL versions)",
+        "Platform expansion barriers (WebAssembly/emscripten support)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The liblqr community is experiencing some frustration due to compatibility issues and outdated dependencies, but the project does not appear to be abandoned."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of maintenance decline with a 7-year-old unresolved feature request, recent macOS compatibility issues receiving no response, and broader platform support constraints limiting adoption."
     },
     "communication": {
       "helpfulness": 8,
@@ -203,17 +204,20 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "low commit frequency",
-        "no recent issue closures"
+        "No commits, merged PRs, or closed issues in the past 6 months",
+        "3 open issues with zero recent activity",
+        "Unknown last release - no release history available",
+        "Zero active contributors in past 6 months",
+        "Last commit was 3 months ago with no follow-up activity"
       ],
       "positive_signals": [
-        "recent commits",
-        "active contributors and merged PR"
+        "Last commit from December 2025 shows the project hasn't been completely abandoned",
+        "No open PRs indicates absence of stalled development work"
       ],
-      "summary": "The package receives occasional updates and has active contributors, but the maintenance activity is relatively low."
+      "summary": "Package is stale with no maintenance activity or issue resolution in 6 months despite a recent solitary commit."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -224,7 +228,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:10:16.404401+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

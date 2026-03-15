@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 5,
       "installation": 2,
       "quick_start": 1,
-      "examples": 2,
+      "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a good introduction to the Jolie project, but lacks essential information on installation, usage, and troubleshooting.",
-      "top_issue": "Lack of clear installation instructions and quick start examples"
+      "overall": 2,
+      "summary": "The README is a high-level project landing page that defers all substantive documentation to external links, leaving new users with no actionable guidance.",
+      "top_issue": "No quick start, examples, or installation instructions in the README itself \u2014 everything is offloaded to external URLs with no inline content to orient a new user."
     },
     "security": {
       "overall_score": 7,
@@ -210,16 +210,23 @@
       "summary": "The Jolie codebase has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or dangerous defaults were found."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bugs",
-        "documentation issues"
+        "HTTP protocol handling issues (query parameters, aggregation, aggregation results inconsistent across clients)",
+        "Documentation accuracy (v1.13 database library types and behavior mismatch)",
+        "Configuration validation too lenient (invalid options silently ignored)",
+        "Platform compatibility (Windows path handling in tests)",
+        "Poor error diagnostics (incorrect line numbers in error messages)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues tracked with appropriate priority labels",
+        "Some bugs resolved (closed issues exist)",
+        "Detailed reproduction steps provided by reporters"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing frustration due to multiple open bugs and documentation issues, but there are no clear signs of abandonment."
+      "summary": "Project shows signs of slow maintenance with accumulating bugs (5+ open, 5+ months old) and minimal engagement on recent issues, though some are being addressed."
     },
     "communication": {
       "helpfulness": 7,
@@ -232,17 +239,20 @@
       "summary": "The responses are generally clear and helpful, showing a good level of technical depth and patience with the contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs compared to open PRs",
-        "No new releases in the past 3 months"
+        "38 open issues with zero closed in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release",
+        "No regular commit activity (0 commits in 6 months)"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "Multiple contributors active in the past six months"
+        "Recent commit on 2026-03-05 suggests minimal residual activity",
+        "Repository still exists and hasn't been deleted"
       ],
-      "summary": "The package is maintained with regular contributions, but there has been a lack of new releases and some PRs remain unmerged."
+      "summary": "Project is stale with accumulating unresolved issues and no active maintenance despite a recent single commit."
     },
     "changelog": null,
     "governance": {
@@ -252,7 +262,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a clear contributor path and documented decision-making processes, but lacks an explicit succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:22:58.284027+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

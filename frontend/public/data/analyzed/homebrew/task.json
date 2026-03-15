@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is clear and well-structured, but lacks a quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a quick start guide to get new users started with the package"
+      "overall": 3,
+      "summary": "The README covers project identity and links well but defers almost all practical documentation to an external website, leaving new users with no immediate usage guidance.",
+      "top_issue": "No quick start, examples, or basic usage shown \u2014 a new user cannot learn how to use the tool from the README at all."
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,18 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "unicode rendering issues",
-        "format changes in reports"
+        "Persistent UTF-8 and Unicode character encoding bugs affecting basic task creation and display (descriptions, tags, annotations)",
+        "Non-ASCII characters fail or display incorrectly (German umlauts, accents, Scandinavian letters, emoji, Cyrillic)",
+        "Encoding issues have persisted for years (2018-2026) despite multiple issue reports and some closures",
+        "Missing aarch64/ARM architecture builds"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The taskwarrior community is active and engaged, with users reporting various issues and feature requests, but the overall sentiment remains neutral due to a lack of explicit praise or severe criticism."
+      "summary": "Community health is poor due to pervasive, recurring UTF-8/Unicode bugs affecting core functionality across multiple years, along with an unaddressed recent security vulnerability, suggesting maintenance capacity issues rather than abandonment."
     },
     "communication": {
       "helpfulness": 9,
@@ -234,18 +236,19 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and welcoming, providing a positive experience for contributors and users."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues"
+        "441 open issues with zero closed in past 6 months indicates no triage or maintenance",
+        "Zero commits in past 6 months shows no development activity",
+        "Zero merged PRs in past 6 months indicates contributors are not accepted",
+        "Zero active contributors in past 6 months confirms lack of maintainer engagement",
+        "Unknown last release date suggests releases may have ceased"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors",
-        "merged PRs"
+        "Recent commit from 3 days ago suggests repository is not completely dormant"
       ],
-      "summary": "The task package appears to be actively maintained with regular updates, fixes, and contributions, despite a notable backlog of open issues."
+      "summary": "Despite a recent commit, this project appears abandoned with 441 unaddressed issues, zero maintenance activity, and no active contributors over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -255,7 +258,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a clear succession plan, decision-making process documentation, and indication of multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:46:09.149793+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -175,14 +175,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 6,
-      "installation": 8,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 9,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is detailed but lacks a clear and concise introduction, making it difficult for new users to quickly understand the package's purpose.",
-      "top_issue": "Lack of a quick start example or basic usage demonstration"
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "Build instructions are thorough but the README is essentially a deprecated project with no usage examples or quick-start guidance for the VM itself.",
+      "top_issue": "No examples of actual Neko VM usage \u2014 the README only covers building from source, not what you do with Neko once installed."
     },
     "security": {
       "overall_score": 7,
@@ -209,16 +209,19 @@
       "summary": "The Neko package has some security concerns, including potential code injection and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "race condition in GC",
-        "thread usage causing seg faults"
+        "Platform-specific bugs (Windows UTF-8 encoding, sys_read_dir incompatibilities)",
+        "Critical threading and GC race conditions",
+        "Build compatibility issues with modern compilers (gcc15)",
+        "Year 2038 integer overflow problems",
+        "Project deprecation status and future direction uncertainty"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Neko exhibits clear abandonment signals with deprecation uncertainty, unresolved critical bugs (GC race conditions, threading segfaults), platform-incompatibilities, and minimal maintainer responsiveness on recent issues, indicating a stagnant project lacking active stewardship."
     },
     "communication": {
       "helpfulness": 7,
@@ -231,20 +234,25 @@
       "summary": "Responses are generally helpful and clear, showing adequate patience but could improve in technical depth."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of merged PRs in the past six months indicates limited community contribution.",
-        "A high number of open issues suggests potential unresolved problems."
+        "No commits in past 6 months despite recent commit on 2026-01-28",
+        "35 open issues with zero resolution activity in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent commits and releases indicate some level of activity.",
-        "Two contributors are active, which is better than none."
+        "Recent commit on 2026-01-28 indicates minimal activity outside standard tracking window"
       ],
-      "summary": "The package shows minimal maintenance with occasional updates but faces concerns due to low PR merge rate and many open issues."
+      "summary": "The package is stale with virtually no maintenance activity over the past 6 months, accumulating 35 unresolved issues with no active contributors or releases."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:31:11.140129+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

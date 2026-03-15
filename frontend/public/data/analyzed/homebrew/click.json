@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 8,
-      "overall": 7,
-      "summary": "The documentation is generally clear and concise, but lacks sufficient examples and a quick start guide to help new users get started quickly.",
-      "top_issue": "Insufficient examples for common use cases"
+      "clarity": 7,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 5,
+      "overall": 5,
+      "summary": "The README covers the basics but lacks concrete command examples, leaving users unsure how to actually use the REPL beyond typing 'help'.",
+      "top_issue": "No examples of actual commands or workflows \u2014 users are just told to type 'help' once inside the REPL, with no demonstration of real usage."
     },
     "security": {
       "overall_score": 5,
@@ -206,16 +206,18 @@
       "summary": "The Click package has some security concerns, including potential code injection vulnerabilities and lack of input validation, but no sensitive secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "log merging for multiple pods",
-        "memory leak due to circular alias"
+        "Kubernetes/kubectl compatibility breaking (GCP auth, context loading errors)",
+        "Limited feature support compared to kubectl (logs for jobs, merged pod logs, ingress)",
+        "Critical bugs without fixes (circular alias memory leak, exec failures)",
+        "Build/compilation errors with dependencies"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately active, with issues focusing on feature requests and bugs. There are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of abandonment with critical unfixed bugs, zero engagement on recent issues, and years-old feature requests accumulating without response."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,17 +230,20 @@
       "summary": "Responses are generally clear and helpful, showing a good level of patience with new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No merged PRs in the past 6 months",
-        "Low number of contributors active in the last 6 months"
+        "No commits in past 6 months despite 37 open issues",
+        "No closed issues or merged PRs in 6 months indicates unresponsiveness",
+        "Zero active contributors in past 6 months",
+        "Accumulating unresolved issues with no maintenance activity",
+        "Last release unknown - no version bump in extended period"
       ],
       "positive_signals": [
-        "Recent commits and releases",
-        "Moderate number of open issues and PRs indicating community interest"
+        "Last commit occurred relatively recently (October 2025)",
+        "Project repository still exists and hasn't been archived"
       ],
-      "summary": "The package is maintained but may benefit from increased contributor activity."
+      "summary": "The click package shows signs of abandonment with no maintenance activity (commits, issue resolution, or contributor engagement) for at least 6 months despite a growing backlog of 37 open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +254,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:27:02.753235+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -183,15 +183,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
-      "examples": 4,
-      "configuration": 5,
-      "troubleshooting": 7,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 3,
+      "configuration": 4,
+      "troubleshooting": 5,
       "overall": 6,
-      "summary": "The README provides a good introduction to the library and its capabilities, but lacks detailed examples and configuration documentation.",
-      "top_issue": "Insufficient examples for common use cases"
+      "summary": "Well-structured README that clearly explains what libgit2 is and covers build steps, but lacks code examples and configuration details.",
+      "top_issue": "No code examples showing actual API usage \u2014 a C developer has no idea what using the library looks like in practice."
     },
     "security": {
       "overall_score": 7,
@@ -204,15 +204,16 @@
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "performance issues with git blame",
-        "memory leaks",
-        "cloning SHA256 repositories failure"
+        "Performance issues (packbuilder timeouts, slow delta resolution on large repos)",
+        "Missing features (worktree commitish reference, git bundle support)",
+        "Parsing/correctness bugs (@~1 refspec not recognized)",
+        "Platform-specific issues (Windows longpaths with nested submodules)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant performance and functionality issues, indicating a negative sentiment towards the project's current state."
+      "abandonment_signals": true,
+      "summary": "libgit2 shows critical maintenance concerns with multiple security/correctness bugs (memory corruption, operator precedence, parsing errors) reported in Feb-Mar 2026 receiving zero maintainer responses, alongside years of unresolved performance and feature requests."
     },
     "communication": {
       "helpfulness": 8,
@@ -225,18 +226,27 @@
       "summary": "Maintainer responses are clear, helpful, and demonstrate a high level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (55)",
-        "Recent release date (2025-12-06)",
-        "Multiple contributors active in the past six months (12)"
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "539 open issues with zero closed in past 6 months",
+        "Zero commits despite recent push (suggests no active development)",
+        "Zero active contributors in past 6 months",
+        "Zero merged pull requests in past 6 months",
+        "Unknown last release date indicates poor release cadence",
+        "Massive unaddressed issue backlog indicates maintainer disengagement"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Very recent commit (2026-03-14) suggests some activity",
+        "Repository still accessible and not archived"
+      ],
+      "summary": "Repository appears abandoned with a massive backlog of 539 unaddressed issues and zero maintainer engagement over six months, despite a recent unexplained commit."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:17:16.510618+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

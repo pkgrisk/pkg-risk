@@ -181,14 +181,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 3,
-      "troubleshooting": 7,
-      "overall": 5,
-      "summary": "The README provides a good introduction to Kubernetes, but lacks clear installation instructions and configuration documentation.",
-      "top_issue": "Installation instructions are incomplete and scattered across different links."
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 1,
+      "troubleshooting": 3,
+      "overall": 3,
+      "summary": "The README effectively describes what Kubernetes is but is a source-build developer README, not a user-facing CLI tool guide \u2014 it lacks any kubectl usage examples, installation instructions for end users, or configuration documentation.",
+      "top_issue": "This is the Kubernetes project README focused on building from source, not a kubectl CLI usage guide \u2014 there are no examples of actual kubectl commands, flags, or configuration (kubeconfig, contexts, namespaces)."
     },
     "security": {
       "overall_score": 7,
@@ -215,16 +215,22 @@
       "summary": "The code has some potential security issues, including command injection risks and insufficient input validation, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug in kubeadm init",
-        "complex dependency for scheduler plugins"
+        "Flaky tests in scheduler/node components",
+        "Kubelet lifecycle and node readiness oscillation issues",
+        "Scheduler preemption logic causing pod disruption",
+        "Missing API validation for required pod fields",
+        "Cgroup mounting and resource detection problems"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged with both bug reports and feature requests, but there are unresolved issues that could lead to frustration."
+      "praise_themes": [
+        "Issues are being systematically triaged and labeled",
+        "Active engagement on recent bug reports (Feb-Mar 2026)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Kubernetes shows active development with prompt issue triage, but significant abandonment signals exist: multiple issues marked lifecycle/stale (2022) and lifecycle/rotten (2024-2025) remain open, alongside recent critical bugs and flaky tests indicating ongoing stability concerns."
     },
     "communication": {
       "helpfulness": 7,
@@ -240,14 +246,17 @@
       "summary": "Responses are generally clear and helpful but could benefit from more detail and deeper technical explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors are actively involved"
+      "status": "abandoned",
+      "confidence": 10,
+      "concerns": [
+        "2,641 open issues with zero closed in past 6 months",
+        "Zero commits in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [],
+      "summary": "Project shows no maintenance activity for 6+ months with thousands of unresolved issues, indicating complete abandonment."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -265,7 +274,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The provided documentation does not address succession planning, decision-making processes, contributor paths to maintainership, or indicate multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:54:09.276260+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

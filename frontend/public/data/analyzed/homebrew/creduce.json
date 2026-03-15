@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 5,
-      "troubleshooting": 7,
-      "overall": 5,
-      "summary": "The documentation is clear about the package's purpose, but lacks concrete examples and a quick start guide.",
-      "top_issue": "Lack of a quick start guide or example usage"
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 3,
+      "troubleshooting": 6,
+      "overall": 3,
+      "summary": "The README clearly explains what C-Reduce does but defers nearly all practical guidance to external files and a website, leaving the README itself nearly useless for getting started.",
+      "top_issue": "No quick start or usage examples \u2014 a new user has no idea how to actually invoke C-Reduce after reading this."
     },
     "security": {
       "overall_score": 7,
@@ -207,18 +207,22 @@
       "summary": "The provided code has some security concerns, including potential code injection risks and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bug in `copy-propagation` pass",
-        "inflation of source code by passes"
+        "LLVM version compatibility issues (Apple Silicon, LLVM 19 support)",
+        "Reduction passes causing code inflation instead of reduction",
+        "Build errors with newer LLVM versions",
+        "Fatal/runtime errors on certain input types (Java files)",
+        "Broken documentation links"
       ],
       "praise_themes": [
-        "user appreciation for the tool"
+        "Tool is recognized as useful outside original C/C++ scope",
+        "Community interest in expansion and improvements"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally neutral with some frustration over bugs and documentation issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of maintenance fatigue with critical infrastructure issues (Apple Silicon support unanswered for 4 years, documentation broken since 2023) and multiple unresolved bugs in core reduction passes, despite some community engagement."
     },
     "communication": {
       "helpfulness": 7,
@@ -231,17 +235,20 @@
       "summary": "The maintainer responses are generally clear, helpful, and patient, with a good balance of technical depth and welcomingness."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "High number of open issues (60)"
+        "No commits in 6 months",
+        "Zero active contributors for 6 months",
+        "75 open issues with no recent triage or closure",
+        "No merged PRs or release activity in 6+ months",
+        "Unknown release history"
       ],
       "positive_signals": [
-        "Ten contributors active in the past six months"
+        "Project exists with historical commit activity",
+        "Last commit within the past year (August 2024)"
       ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks commit and merge activity."
+      "summary": "The creduce project is stale with no maintenance activity, contributors, or issue resolution in the past 6+ months despite accumulating 75 open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +259,10 @@
       "overall_score": 1,
       "summary": "The changelog is extremely lacking in detail and does not provide any useful information for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:50:19.513251+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

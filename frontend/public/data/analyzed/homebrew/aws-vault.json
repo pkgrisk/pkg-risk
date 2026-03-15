@@ -169,15 +169,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, with good installation instructions and examples, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent README with clear purpose, multi-platform install options, practical quick-start examples, and solid coverage of roles/MFA, but lacks troubleshooting guidance and defers detailed configuration to an external USAGE.md.",
+      "top_issue": "No troubleshooting section \u2014 common problems like keychain permission errors, MFA issues, or credential expiration are not addressed in the README."
     },
     "security": {
       "overall_score": 6,
@@ -210,16 +210,21 @@
       "summary": "The code has several security concerns, including command injection risks, lack of input validation, and potential error exposure, which need to be addressed to ensure the security of the application."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "configuration issues",
-        "performance problems"
+        "AWS_SESSION_TOKEN not exposed in environment variables (AWS CLI v2)",
+        "12-hour session duration no longer working when assuming role",
+        "Keychain behavior inconsistencies on macOS"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Appreciation for taking over maintenance from abandoned original project",
+        "Recognition of ongoing effort and commitment",
+        "Community willing to contribute fixes"
+      ],
       "abandonment_signals": false,
-      "summary": "The aws-vault community is actively engaged, with maintainers responding to issues and users seeking help with configuration and performance problems."
+      "summary": "Healthy community around an actively maintained fork of abandoned original project; users are respectful and appreciative despite recent regressions in session handling functionality."
     },
     "communication": {
       "helpfulness": 8,
@@ -232,19 +237,25 @@
       "summary": "The maintainer's responses are generally helpful, clear, patient, and welcoming, but could benefit from providing more technical depth in their explanations."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (328)",
-        "Recent last commit and release dates (2025-12-29)",
-        "Large number of merged PRs in the past 6 months (146)",
-        "Multiple active contributors in the past 6 months (9)"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months despite 14 open issues",
+        "Zero closed issues in past 6 months",
+        "No active contributors or maintainers",
+        "Unknown last release date",
+        "No merged PRs in 6 months indicates no development progress"
       ],
-      "summary": "The aws-vault package appears to be actively maintained with frequent updates, a high volume of pull requests, and multiple recent contributors."
+      "positive_signals": [
+        "Most recent commit timestamp is from 2026-03-12 (though conflicts with 0 commits in 6-month window)"
+      ],
+      "summary": "aws-vault has entered maintenance stasis with no active development, issue resolution, or contributor activity for at least 6 months, leaving 14 issues unresolved."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:36:02.162084+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

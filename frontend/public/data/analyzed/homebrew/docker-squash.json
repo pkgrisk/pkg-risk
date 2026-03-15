@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 6,
-      "examples": 8,
-      "configuration": 7,
+      "examples": 7,
+      "configuration": 5,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks a concise quick start guide and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section"
+      "overall": 6,
+      "summary": "Solid README with clear problem statement, good installation steps, and a detailed real-world example, but lacks troubleshooting guidance and configuration docs are externally linked rather than inline.",
+      "top_issue": "No troubleshooting section \u2014 common failure modes (permissions, Docker daemon connectivity, unsupported image formats) are undocumented."
     },
     "security": {
       "overall_score": 7,
@@ -203,16 +203,18 @@
       "summary": "The code has some potential security risks, including command injection and error exposure, but overall it seems to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "destination path issues",
-        "squashing errors"
+        "Destination path already exists errors (recurring across multiple versions)",
+        "Docker daemon connection and API version compatibility issues",
+        "Layer ID retrieval and file type handling bugs",
+        "Squashed images not being saved"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The docker-squash community is experiencing frustration with recurring issues and slow maintainer response, indicating a need for improved support and maintenance."
+      "abandonment_signals": true,
+      "summary": "docker-squash exhibits moderate maintenance with recurring bugs unfixed across releases (destination path error in 2024, 2025), critical unaddressed issues (2025-05-14 with zero responses), and stale open requests from 2015-2018, indicating potential project stagnation."
     },
     "communication": {
       "helpfulness": 9,
@@ -225,20 +227,25 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "outstanding open issues and PRs"
+        "No commits for 8+ months (last commit July 2025)",
+        "10 unresolved open issues with no resolution activity",
+        "Zero contributors active in past 6 months",
+        "No merged PRs or releases in past 6 months",
+        "Complete lack of maintenance signals across all metrics"
       ],
       "positive_signals": [
-        "recently active contributors",
-        "some issue and PR activity in the recent past"
+        "Repository still exists and has not been archived"
       ],
-      "summary": "The docker-squash package appears to be stale due to a lack of recent commits and ongoing open issues, despite some signs of recent contributor activity."
+      "summary": "docker-squash is abandoned with no maintenance activity for over 8 months and 10 unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:18:17.813278+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

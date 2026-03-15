@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "quick_start": 8,
+      "examples": 7,
       "configuration": 8,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The README provides a good overview of the package and its features, but could benefit from more examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Well-structured README covering installation, basic/advanced usage, and configuration clearly, but lacks any troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like build failures, dependency problems, or keybinding conflicts are not addressed anywhere."
     },
     "security": {
       "overall_score": 7,
@@ -215,16 +215,22 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Progress/indicator when grep takes a long time",
-        "Keep the buffer around when navigating grep results"
+        "Lack of progress indicators for long-running operations (grep)",
+        "Buffer management issues (lost on navigation, empty buffers created)",
+        "Missing file reload from disk capability",
+        "Keyboard handling edge cases (escape sequences)",
+        "Lack of power user features (selection-based ctags, file name access)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there are no clear signs of frustration or abandonment. The project seems to be in a state of ongoing development with moderate responsiveness from maintainers."
+      "praise_themes": [
+        "Tool is appreciated enough to inspire community channel requests",
+        "Design respected (compared favorably to dte)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Engaged but frustrated community with well-documented practical requests, facing a silent or unavailable maintainer with issues open 10+ months (as of March 2026)."
     },
     "communication": {
       "helpfulness": 7,
@@ -237,17 +243,19 @@
       "summary": "The maintainer's responses are generally clear, helpful, and patient. They encourage new contributors and provide technical depth in their explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of active development or community contribution.",
-        "Open issues and open PRs suggest potential unresolved problems."
+        "Zero commits in the past 6 months",
+        "15 open issues with zero resolved in 6 months",
+        "No active contributors or maintainer engagement",
+        "No releases tracked",
+        "Zero merged pull requests in 6 months"
       ],
       "positive_signals": [
-        "Commits in the past six months indicate some level of activity.",
-        "Contributors are still active, which is positive"
+        "At least one recent commit exists (September 2025)"
       ],
-      "summary": "The package shows minimal maintenance with occasional commits but lacks recent development or resolution of issues."
+      "summary": "The mle package is stale with no maintenance activity in 6 months despite accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -258,7 +266,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and upgrade paths."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:49:08.476581+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

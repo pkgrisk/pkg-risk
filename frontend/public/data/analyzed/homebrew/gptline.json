@@ -170,14 +170,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 6,
-      "examples": 4,
-      "configuration": 2,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides a good introduction to the package, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Lack of configuration documentation and troubleshooting guides"
+      "overall": 4,
+      "summary": "The README provides a clear overview and basic installation, but lacks critical documentation on API key setup, configuration options, and usage examples beyond launching the tool.",
+      "top_issue": "No documentation on how to configure the OpenAI API key, which is a required prerequisite that would block every new user."
     },
     "security": {
       "overall_score": 5,
@@ -210,16 +210,17 @@
       "summary": "The code has several security concerns, including potential command injection vulnerabilities and inadequate input validation, but also implements some security measures such as error handling and secure default settings."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Missing `lxml_html_clean`",
-        "PyPI sdist is missing `requirements.txt`"
+        "Incompatible with lxml >=5.2.0 (blocking Homebrew)",
+        "Missing dependencies in PyPI sdist",
+        "Non-standard environment variable naming"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health appears stable with active maintainer response, but there are ongoing issues related to dependencies and packaging."
+      "abandonment_signals": true,
+      "summary": "Critical unresolved dependency issue with lxml (open 10+ months) and minimal maintainer engagement indicate project maintenance challenges affecting downstream users like Homebrew."
     },
     "communication": {
       "helpfulness": 7,
@@ -234,19 +235,26 @@
       "summary": "The responses are adequate but could be more detailed, especially regarding the technical issues encountered."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No recent commits or PR activity",
-        "Unknown last commit and release dates"
+        "No commits in past 6 months (last commit 7+ months ago)",
+        "Zero active contributors in past 6 months",
+        "No merged or open PRs in past 6 months",
+        "1 open issue with no maintenance activity",
+        "Unknown release status - may be unmaintained upstream",
+        "Complete inactivity suggests project may be abandoned"
       ],
       "positive_signals": [
-        "One contributor active in the past six months"
+        "Project had activity at some point (last commit August 2024)"
       ],
-      "summary": "The package shows minimal maintenance with occasional contributions but lacks recent activity."
+      "summary": "Project is stale with no commits, PRs, or contributor activity in over 6 months, indicating potential abandonment."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:11:46.978035+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

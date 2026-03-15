@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 3,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 5,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package's functionality and features, but lacks clear installation instructions for Homebrew and a quick start example.",
-      "top_issue": "Lack of a clear quick start example to get new users started with the package."
+      "examples": 4,
+      "configuration": 3,
+      "troubleshooting": 3,
+      "overall": 4,
+      "summary": "Flye's README excels at explaining what the tool does and provides solid benchmarks, but defers nearly all practical documentation to external files with no inline examples or installation steps.",
+      "top_issue": "No installation instructions or usage examples in the README itself \u2014 everything is delegated to external docs links, leaving users with no quick-start path."
     },
     "security": {
       "overall_score": 7,
@@ -201,20 +201,25 @@
       "summary": "The code has some security concerns related to input validation and potential integer overflow vulnerabilities, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Minimum overlap length parameter limitation",
-        "Inconsistent assembly sizes",
-        "Telomeric repeat removal during polishing"
+        "Repeat sequence assembly issues (tandem repeats, terminal repeats not properly handled)",
+        "Parameter constraints (minimum overlap length fixed at 1000bp, limits small virus/viral segment assembly)",
+        "Performance degradation with large metagenomic datasets",
+        "Inconsistent assembly results across runs",
+        "Platform-specific crashes (SIGILL on Apple Silicon M2)",
+        "Input validation issues (@ symbol in FASTA headers)"
       ],
       "praise_themes": [
-        "User-friendly tool",
-        "Effective for large assemblies"
+        "Superior assembly quality compared to alternative tools",
+        "Algorithm effectiveness on complex genomes (plant mitochondria, bacteria)",
+        "Tool usability and documentation",
+        "Grateful appreciation despite encountering issues"
       ],
       "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the tool but faces some limitations and inconsistencies that need addressing."
+      "summary": "Flye maintains good community goodwill with users appreciating its quality, but faces moderate frustration around repeat handling, rigid parameters, and performance\u2014with maintainers showing selective responsiveness (closing some issues, explicitly rejecting feature requests as wontfix)."
     },
     "communication": {
       "helpfulness": 7,
@@ -227,20 +232,27 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with repeated questions. However, there is room for more technical depth in some cases."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "Only one contributor has been active in the last six months."
+        "No commits in past 6 months (last commit May 2025, 10+ months ago)",
+        "27 open issues with zero resolution in past 6 months",
+        "No active contributors for 6+ months",
+        "No recent releases available",
+        "Zero merged pull requests in past 6 months",
+        "No recent development activity or maintenance effort"
       ],
       "positive_signals": [
-        "Recent release and commit dates suggest some level of activity.",
-        "Multiple open PRs indicate there is ongoing work to be merged."
+        "Repository still exists (not deleted)",
+        "Had some activity in May 2025"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks consistent development."
+      "summary": "The flye package is abandoned with no commits, contributors, or issue resolution in over 6 months while 27 issues accumulate unaddressed."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T20:44:34.489752+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
