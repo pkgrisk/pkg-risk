@@ -191,51 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's type stubs for CloudFront, with minimal practical usage examples and no configuration or troubleshooting guidance.",
-      "top_issue": "Critical mismatch between package name (mypy-boto3-cloudfront) and README content (describes mypy-boto3-builder), making it unclear what this specific package actually does or how to use it for CloudFront."
+      "summary": "This README is for the builder tool rather than the specific mypy-boto3-cloudfront package, providing minimal actionable guidance for users of the pre-built service-specific stubs.",
+      "top_issue": "The README describes the builder project, not the mypy-boto3-cloudfront package itself \u2014 there are no CloudFront-specific usage examples, no direct install command (e.g. `pip install mypy-boto3-cloudfront`), and no demonstration of how to use the type stubs in practice."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules causing installation failures",
-        "Duplicate .pyi and .py stub files causing tooling confusion",
-        "Type definition inaccuracies (async/await, literal types, overly broad types)",
-        "Missing extras/metadata in package distributions",
-        "Documentation outdated (setup.py deprecation, local generation instructions)"
+        "Type definitions inaccurate or overly broad (aioboto3 async methods, ToolUseBlockTypeDef, FileobjTypeDef)",
+        "Stub files shipped as both .pyi and .py duplicates causing tool conflicts",
+        "Version mismatch between main and submodule packages (types-boto3 1.42)",
+        "Documentation outdated (generate locally instructions broken)",
+        "Package naming confusion (types-boto3 vs boto3-stubs identity unclear)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The mypy-boto3 project maintains active engagement with quality issues but struggles with technical debt around stub generation, version management, and packaging standards that impact user experience."
+      "summary": "Project shows moderate engagement with some issues resolved but several marked 'response needed' remaining unaddressed, indicating inconsistent triage rather than abandonment."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicates lack of active maintenance",
-        "No merged PRs in past 6 months shows no development activity",
+        "16 open issues with no activity (0 closed in 6 months)",
+        "Zero commits in past 6 months despite 16 unresolved issues",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests release tracking is not up to date",
-        "Stale backlog of open issues without triage or response"
+        "Unknown last release - version stagnation",
+        "No merged PRs in past 6 months indicates no community engagement"
       ],
       "positive_signals": [
-        "Recent commit activity (2026-01-12) suggests package is not completely abandoned"
+        "Some recent activity (last commit 2026-01-12)",
+        "No open PRs suggests maintainer isn't accepting new changes"
       ],
-      "summary": "Package shows signs of stagnation with recent commit but no ongoing maintenance activity, unresolved issues, or development in the past 6 months."
+      "summary": "Package has accumulated unaddressed issues with no maintenance activity, indicating the maintainer is not actively managing this dependency."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T06:03:01.408609+00:00"
+    "llm_analyzed_at": "2026-03-15T03:04:30.688408+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

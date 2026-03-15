@@ -174,53 +174,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
+      "installation": 9,
       "quick_start": 9,
       "examples": 9,
-      "configuration": 8,
-      "troubleshooting": 6,
-      "overall": 9,
-      "summary": "Excellent documentation with clear examples and comprehensive feature coverage, though troubleshooting guidance is minimal.",
-      "top_issue": "No troubleshooting section with common problems, error messages, or debugging guidance for typical integration issues."
+      "configuration": 6,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, thorough examples across all major use cases (models, forms, DRF), and good coverage of advanced features like forward references and Pydantic v1/v2 compatibility.",
+      "top_issue": "Troubleshooting is minimal \u2014 only system check error codes are listed with no explanation of common runtime issues (e.g., migration errors, validation failures, or JSON deserialization problems)."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Migration system causes infinite recursion and failures",
-        "Type checking broken in migrations (pyright compatibility)",
-        "Default validation interferes with dynamic defaults and factories",
-        "JSON encoding/decoding issues with DjangoJSONEncoder",
-        "Silent failures on malformed annotations"
+        "Type checking failures (mypy/pyright incompatibilities with generated migrations)",
+        "Pydantic v1/v2 compatibility warnings and version migration friction",
+        "Migration-related bugs (infinite recursion, serialization failures)",
+        "Dynamic defaults broken under Pydantic v2 validation",
+        "Constrained types (conint, conlist) not properly supported"
       ],
       "praise_themes": [
-        "Project inspired community derivatives (django-msgspec-field)",
-        "Solid foundation for Pydantic schema integration"
+        "Project inspired derivative work (django-msgspec-field), indicating solid design and approach"
       ],
       "abandonment_signals": true,
-      "summary": "Community is experiencing moderate frustration with critical migration and validation bugs that have gone unresolved for months, while maintainer shows slow responsiveness with minimal recent activity despite ongoing issues."
+      "summary": "Active recent bug-fixing (2025-2026 issues mostly closed) but concerning neglect of 2+ year old feature requests and accumulating type safety/compatibility friction with Python 3.14 and Pydantic v2 ecosystem."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-14)",
-        "18 open issues with no recent activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release tracking issues"
+        "Zero commits past 6 months despite recent commit date suggests data inconsistency or abandoned branch",
+        "15 open issues with zero closed in past 6 months indicates unaddressed backlog",
+        "No active contributors in past 6 months",
+        "Zero merged PRs past 6 months suggests no contribution acceptance",
+        "Unknown/undocumented last release makes versioning unpredictable"
       ],
       "positive_signals": [
-        "Recent commit activity (January 2026) shows some engagement",
-        "No open pull requests indicates backlog not accumulating"
+        "Most recent commit is recent (Feb 2026, ~3 weeks old)",
+        "Project still exists and has some usage (evidenced by open issues)"
       ],
-      "summary": "Django-pydantic-field appears stale with a recent commit but no subsequent maintenance activity, unresolved issues, or contributor engagement over the past 6 months."
+      "summary": "Package shows signs of abandonment with zero development activity in the past 6 months, unresolved issues, and no active contributors despite a recent commit marker."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:02:33.680264+00:00"
+    "llm_analyzed_at": "2026-03-15T12:12:05.725359+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

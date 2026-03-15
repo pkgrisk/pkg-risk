@@ -191,50 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README focuses on the builder tool rather than the actual package (mypy-boto3-application-autoscaling), creating severe confusion about what this package does and how to use it.",
-      "top_issue": "Wrong README content - this appears to be the builder's README, not the actual type stubs package README, so users cannot understand what mypy-boto3-application-autoscaling does or how to use it"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, providing minimal actionable information for users of mypy-boto3-application-autoscaling specifically.",
+      "top_issue": "This README belongs to the parent builder project, not the specific application-autoscaling stubs package \u2014 a new user gets no examples, API reference, or usage guidance for the actual package they installed."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Package metadata and dependency configuration problems (missing extras, setup.py deprecation)",
-        "Duplicate stub files (.pyi and .py) causing tool confusion",
-        "Type definition inaccuracies (async/await, literal values, overly broad types)",
-        "Documentation and tooling gaps (local generation instructions)"
+        "Type stub inaccuracies and incorrect definitions (ToolUseBlockTypeDef, FileobjTypeDef, async/await mismatches)",
+        "Version/dependency mismatch issues (types-boto3 submodules not following main package versioning)",
+        "Duplicate stub file distribution (.pyi and .py files causing IDE conflicts)",
+        "Package naming confusion (types-boto3 vs boto3-stubs unclear relationship)",
+        "Outdated documentation and generation instructions",
+        "Missing package metadata (extras not declared in types-aiobotocore)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Modernization efforts completed (pyproject.toml migration implemented and released)",
+        "Issues are actively being addressed and closed"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement addressing real technical issues, but showing organizational challenges around versioning, metadata standardization, and type accuracy that affect user experience."
+      "summary": "The project shows moderate maintainer engagement with resolved issues and recent activity, but has several open quality concerns around type stub accuracy, documentation gaps, and packaging consistency that create friction for users."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent",
-        "15 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicating stalled development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests potential lack of versioning",
-        "No issue or PR activity indicates project is dormant"
+        "No commits or activity in the past 6 months",
+        "16 open issues with zero closed in 6 months",
+        "No merged PRs or releases in 6 months",
+        "No active contributors",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent commit on 2026-01-12 suggests some activity"
+        "Last commit is recent (2 months ago)",
+        "No open pull requests suggests low incoming pressure"
       ],
-      "summary": "This package appears abandoned with no development activity, contributor engagement, or issue resolution in the past 6 months despite having open issues."
+      "summary": "This package is stale with minimal maintenance\u2014no activity in 6 months and 16 unaddressed issues, despite a recent last commit suggesting it's been left in a static state."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:51:30.210435+00:00"
+    "llm_analyzed_at": "2026-03-15T06:39:20.260160+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

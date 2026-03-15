@@ -191,49 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 4,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "This README describes mypy-boto3-builder (a code generator) rather than mypy-boto3-dynamodbstreams (the actual package being installed), creating severe confusion about what the package does and how to use it.",
-      "top_issue": "Wrong README content - users installing mypy-boto3-dynamodbstreams need type stub usage instructions, not instructions for building type stubs from scratch"
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific sub-package (mypy-boto3-dynamodbstreams), leaving users without any package-specific guidance.",
+      "top_issue": "README is for the parent builder project, not this specific DynamoDB Streams stubs package \u2014 there are no examples, API references, or usage instructions for the actual package being installed."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type stubs packaging inconsistencies (duplicate .pyi and .py files)",
-        "Version mismatch between main package and submodules",
-        "Missing extras metadata in package distributions",
-        "Incorrect type definitions not matching actual library behavior",
-        "Documentation and tooling issues (setup.py deprecation, broken local generation instructions)"
+        "Type stub definitions don't match actual AWS/aioboto3 behavior (ToolUseBlockTypeDef, get_credentials coroutine, FileobjTypeDef scope)",
+        "Packaging issues: missing extras metadata, duplicate .pyi/.py files shipped together",
+        "Documentation gaps: unclear package naming (types-boto3 vs boto3-stubs), outdated CLI instructions",
+        "Version compatibility problems: submodule version mismatches with pip-tools resolver"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Willingness to adopt modern standards (pyproject.toml migration marked released)",
+        "Issues are being triaged and labeled appropriately"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with ongoing bug reports, but maintainers demonstrate inconsistent responsiveness with several long-standing type definition issues and packaging problems unresolved."
+      "summary": "Moderately maintained project with engaged but stretched team\u2014type stub accuracy and packaging problems accumulating faster than fixes, particularly with AWS API evolution."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
-        "No merged PRs or releases in past 6 months",
-        "15 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicates lack of maintenance attention"
+        "No commits in past 6 months despite recent activity 2 months ago",
+        "16 open issues with no activity or resolution",
+        "Zero closed issues in past 6 months",
+        "No merged PRs or development activity for 6+ months",
+        "No active contributors",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent commit timestamp suggests repository still exists and hasn't been deleted"
+        "Recent commit on 2026-01-12 suggests not completely abandoned",
+        "No open PRs blocking development"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite open issues, indicating the maintainer is not actively addressing problems or accepting contributions."
+      "summary": "Package is stale with no maintenance activity for 6 months, accumulating unresolved issues, and no active contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:09:48.882128+00:00"
+    "llm_analyzed_at": "2026-03-15T08:21:06.334366+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

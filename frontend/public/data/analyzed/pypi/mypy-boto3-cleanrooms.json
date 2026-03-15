@@ -191,49 +191,56 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes the builder tool (mypy-boto3-builder) but the package name is mypy-boto3-cleanrooms, creating a critical mismatch that makes it unclear what this package actually does.",
-      "top_issue": "Package name mismatch - README describes 'mypy-boto3-builder' (a code generator) but package is 'mypy-boto3-cleanrooms' (likely a generated type stubs package for AWS Clean Rooms service), causing fundamental confusion about what users are installing"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-cleanrooms` package, leaving users confused about what this particular package does or how to use it directly.",
+      "top_issue": "The README describes the parent builder project, not the specific `mypy-boto3-cleanrooms` stub package \u2014 there are no examples, API references, or usage instructions specific to the CleanRooms service stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing or incorrect type definitions in stubs",
-        "Duplicate .pyi and .py files causing conflicts",
-        "Documentation and tooling issues",
-        "Package naming confusion (types-boto3 vs boto3-stubs)",
-        "Type accuracy issues (async/await, overly broad types)"
+        "Type stub inaccuracies (wrong types, overly broad definitions)",
+        "Version compatibility issues between types-boto3 submodules",
+        "Duplicate stub files (.pyi and .py) causing IDE issues",
+        "Package organization confusion (types-boto3 vs boto3-stubs naming)",
+        "Missing extras/metadata in package definitions",
+        "Documentation and installation instruction errors"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Project is actively maintained",
+        "Issues are being addressed and released",
+        "Community engagement with 2-5 comments per issue"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement addressing type definition accuracy issues, though systematic problems with version management and stub generation suggest underlying infrastructure challenges."
+      "summary": "Actively maintained project with good community engagement, but several type stub accuracy issues and documentation gaps need attention\u2014maintainers are responsive to major requests (pyproject.toml migration completed) but some 'response needed' issues remain unaddressed."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No active contributors in past 6 months",
-        "15 open issues with no recent resolution activity",
-        "Zero merged PRs in past 6 months indicating no active development",
-        "Unknown last release suggests release process may be stalled",
-        "No closed issues in past 6 months indicates lack of maintenance"
+        "Zero commits in the past 6 months despite having a last commit dated 2026-01-12",
+        "16 open issues with no recent resolution (0 closed in past 6 months)",
+        "No merged PRs in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release date",
+        "No ongoing pull requests indicating development activity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite a recent commit date, significant open issues, and no release information."
+      "positive_signals": [
+        "Has a recorded last commit date (not completely dormant)",
+        "No open PRs to manage (not accumulating unreviewed work)"
+      ],
+      "summary": "This package is stale with no maintenance activity over the past 6 months, accumulating unresolved issues, and unknown release status\u2014indicating it is not actively maintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T04:22:53.096057+00:00"
+    "llm_analyzed_at": "2026-03-15T06:46:43.369595+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

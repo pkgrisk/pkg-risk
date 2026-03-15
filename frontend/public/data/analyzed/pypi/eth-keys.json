@@ -173,46 +173,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 7,
-      "configuration": 7,
+      "configuration": 8,
       "troubleshooting": 3,
       "overall": 7,
-      "summary": "Well-structured documentation with clear installation and quick start, but lacks troubleshooting guidance and the README appears truncated mid-sentence.",
-      "top_issue": "README is incomplete (cuts off mid-sentence in Signature section) and provides no troubleshooting or error handling guidance"
+      "summary": "Well-structured documentation with a strong quick-start example and thorough API reference, but lacks troubleshooting guidance and the README appears truncated mid-sentence.",
+      "top_issue": "README is cut off mid-sentence in the Signature section, and there is no troubleshooting section for common issues like invalid key formats or signature verification failures."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 4,
+      "frustration_level": 5,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "API design inconsistencies requiring dual error handling and return value checking",
-        "Long-standing unresolved feature requests (7+ years old)",
-        "Missing cryptographic standards compliance (RFC 6979)"
+        "API design inconsistencies (verify_msg requiring both error handling and return value checks)",
+        "Missing cryptographic features (signatures without v value, modulo-reduced nonce generation)",
+        "Technical debt (duplicate ECDSA utilities, local code instead of py_ecc API)",
+        "Incomplete feature implementations (keyfile public_key field, test factories)",
+        "Unresolved bugs (intermittent infinite recursion in jacobian)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The eth-keys project shows signs of limited maintenance with several high-priority issues open for 6+ years, though recent activity (RFC 6979 compliance issue from November 2024) suggests occasional attention to cryptographic correctness."
+      "summary": "eth-keys shows signs of maintenance stagnation with a large backlog of open issues spanning 5-7 years, though recent activity on a 2024 issue suggests the project is not completely abandoned."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being in December 2025",
-        "7 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicating no active development",
+        "Zero commits in past 6 months",
+        "7 open issues with no recent resolution activity",
+        "No merged PRs or pull request activity in past 6 months",
         "No active contributors in past 6 months",
-        "No releases in recent history",
-        "0 closed issues in past 6 months showing lack of maintenance response"
+        "Unknown release status - no indication of recent releases",
+        "Zero issue triage or maintenance signal"
       ],
-      "positive_signals": [],
-      "summary": "eth-keys appears to be abandoned with no commits, releases, or contributor activity for at least 6 months despite open issues remaining unresolved."
+      "positive_signals": [
+        "Issues are being reported (community awareness exists)",
+        "Open PRs count is 0 (not blocked by unreviewed changes)"
+      ],
+      "summary": "eth-keys is stale with no maintenance activity (commits, releases, or issue resolution) over the past 6 months and 7 unaddressed open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:11:10.187878+00:00"
+    "llm_analyzed_at": "2026-03-15T08:22:26.599612+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

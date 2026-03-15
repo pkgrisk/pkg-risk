@@ -168,50 +168,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
+      "clarity": 8,
       "installation": 9,
-      "quick_start": 10,
+      "quick_start": 9,
       "examples": 9,
       "configuration": 8,
-      "troubleshooting": 7,
-      "overall": 9,
-      "summary": "Excellent documentation with clear examples and progressive complexity, though it could benefit from more troubleshooting guidance and complete example references.",
-      "top_issue": "The examples section references examples/streaming_mode.py but the sentence is incomplete/cut off, and troubleshooting is minimal beyond error type listings"
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Well-structured, example-rich README that covers installation, core API, tools, hooks, and types clearly, but lacks troubleshooting guidance and the error handling section is visibly truncated.",
+      "top_issue": "The error handling section is cut off mid-example, leaving users without complete guidance on how to handle errors in practice."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Structured outputs flakiness with large data and array serialization",
-        "SDK/CLI compatibility and feature parity issues",
-        "Missing support for resume and continue_conversation options",
-        "Context length and path handling problems in multi-agent environments",
-        "Skills/plugins not accessible through SDK"
+        "Silent failures and missing error logging (session resume, SendMessage)",
+        "Security gaps in MCP transport (no authentication, message integrity, replay protection)",
+        "Stream timeouts and reliability issues (~70s MCP server failures)",
+        "Configuration parameters being ignored (ANTHROPIC_BASE_URL with LiteLLM)",
+        "Protocol/integration mismatches between CLI and SDK modes"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Active but struggling SDK with multiple unresolved technical issues around structured outputs, feature parity, and multi-agent support; maintainers are responsive to some issues but several bugs remain open."
+      "summary": "Active but strained: solid technical bug reporting and some engagement (3-8 comments on older issues), but critical security and reliability issues from past month remain unacknowledged (0 responses on 2 recent high-severity bugs), suggesting limited maintainer capacity for an increasingly complex SDK."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-24)",
-        "221 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicates no maintenance work",
-        "No merged PRs in past 6 months suggests no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release process has stalled"
+        "320 open issues with zero closed in 6 months indicates no triage or maintenance",
+        "Zero commits, merged PRs, and active contributors in past 6 months despite recent commit timestamp",
+        "No releases tracked; version availability unclear",
+        "Complete absence of maintenance activity across all metrics (PRs, issues, contributors)"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-24), indicating some codebase activity"
+        "One recent commit on 2026-03-14 (though contradicts 0 commits metric)"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for at least 6 months despite 221 unresolved issues and no contributor engagement."
+      "summary": "Project is abandoned with severe issue backlog and no maintenance activity; recent commit appears anomalous."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T15:33:25.190975+00:00"
+    "llm_analyzed_at": "2026-03-15T18:19:38.003781+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

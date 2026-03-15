@@ -191,51 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool rather than the mypy-boto3-cognito-identity package itself, leaving users unclear about what they actually installed.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder tool's README, not the specific mypy-boto3-cognito-identity package documentation, causing severe confusion about the package's purpose and usage."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-cognito-identity package, leaving users confused about this package's direct purpose and usage.",
+      "top_issue": "This README describes the mypy-boto3-builder generator tool, not the specific cognito-identity stubs package \u2014 a new user has no idea how to actually use this package for Cognito Identity type annotations."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Version mismatch between main package and submodules causing installation failures",
-        "Duplicate .pyi and .py stub files causing IDE conflicts",
-        "Type definition inaccuracies (async def, overly broad types, missing extras)",
-        "Documentation and tooling issues (outdated generate locally instructions)",
-        "Confusion between types-boto3 and boto3-stubs packages"
+        "Type definitions are incorrect or overly broad (ToolUseBlockTypeDef, FileobjTypeDef, get_credentials)",
+        "Documentation and generation instructions are broken or outdated",
+        "Package metadata issues (missing extras, version compatibility between submodules)",
+        "Confusion between types-boto3 and boto3-stubs packages",
+        "Duplicate .pyi and .py file generation causing IDE issues"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some feature requests are eventually implemented (pyproject.toml migration marked released)"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderate community health with persistent type definition accuracy issues and version management problems, but maintainers are responsive to bug reports and releasing fixes."
+      "summary": "Project shows moderate maintenance burden with accumulated type definition and documentation bugs experiencing slow response times, though not abandoned\u2014indicates stretched maintainers managing ~400 packages."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicating no active development",
-        "No active contributors in past 6 months",
-        "No releases recorded, suggesting no version updates",
-        "Zero closed issues in past 6 months shows lack of maintenance",
-        "Package appears to be auto-generated type stub with no active maintainer"
+        "Zero commits in the past 6 months",
+        "16 open issues with no recent activity",
+        "No merged PRs in the past 6 months",
+        "Zero active contributors in the past 6 months",
+        "No closed issues in the past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent commit timestamp suggests some minimal update activity"
+        "Package repository still exists and is accessible",
+        "Some historical maintenance activity"
       ],
-      "summary": "This mypy boto3 type stub package is abandoned with no active maintenance, development, or issue resolution despite accumulating 15 open issues."
+      "summary": "Package is stale with no activity, issue resolution, or contributor engagement for 6 months, indicating abandoned maintenance."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:45:46.826650+00:00"
+    "llm_analyzed_at": "2026-03-15T05:41:02.146843+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

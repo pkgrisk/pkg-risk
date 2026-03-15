@@ -191,52 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) but the package name is mypy-boto3-mediaconnect, creating immediate confusion about what this specific package actually does.",
-      "top_issue": "Package identity mismatch - the README discusses mypy-boto3-builder extensively but says nothing about mypy-boto3-mediaconnect, leaving users completely unclear if this is the right package or what mediaconnect-specific functionality it provides."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-mediaconnect sub-package, leaving users confused about what this particular package does and how to use it.",
+      "top_issue": "This README describes the parent builder project, not the specific mediaconnect stubs package \u2014 there are no examples, API reference, or configuration docs for the MediaConnect service client."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules causing installation failures",
-        "Missing extras/metadata in package distributions (types-aiobotocore)",
-        "Duplicate .pyi and .py stub files causing tooling confusion",
-        "Incorrect type definitions not matching actual API behavior",
-        "Outdated documentation with broken setup instructions",
-        "Overly broad or incorrect TypeDef definitions (FileobjTypeDef, ToolUseBlockTypeDef)"
+        "Type definition inaccuracies (wrong async/await signatures, overly broad type protocols)",
+        "Duplicate stub files (.pyi and .py) causing IDE conflicts",
+        "Missing package extras and version mismatches between submodules",
+        "Documentation and setup instructions broken or outdated",
+        "Package metadata inconsistencies (missing Provides-Extra fields)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Project has legitimate technical issues with type stub accuracy and package distribution that frustrate users, but maintainers are moderately responsive with some issues marked released; community health is strained by recurring type definition problems rather than abandonment."
+      "praise_themes": [
+        "pyproject.toml migration completed and released"
+      ],
+      "abandonment_signals": true,
+      "summary": "Actively maintained with recent releases, but growing backlog of type stub bugs with inconsistent responsiveness to community issues (multiple \"response needed\" labels on open issues)."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicates no bug fixes or maintenance",
-        "No merged PRs in past 6 months shows no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests no versioning activity",
-        "No pull requests open indicates lack of community or maintainer engagement"
+        "16 open issues with no activity or resolution in 6 months",
+        "Zero commits recorded in past 6 months despite recent last commit date",
+        "No pull request activity or human contributions in past 6 months",
+        "No active contributors maintaining the package",
+        "Unknown release status indicates lack of version management"
       ],
       "positive_signals": [
-        "Recent commit timestamp suggests repository still exists"
+        "A commit exists from January 2026, suggesting possible automated updates"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite open issues remaining unresolved."
+      "summary": "Package shows signs of abandonment with unresolved issues, no human maintenance activity, and no recent releases despite being a boto3 stub package that may receive automated commits."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T19:41:40.789787+00:00"
+    "llm_analyzed_at": "2026-03-14T23:58:22.049076+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

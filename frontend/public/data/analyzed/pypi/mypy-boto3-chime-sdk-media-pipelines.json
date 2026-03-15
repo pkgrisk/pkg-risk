@@ -191,51 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's pre-built type stubs for a specific AWS service, creating a severe mismatch between expectations and content.",
-      "top_issue": "Critical package identity confusion - this appears to be mypy-boto3-chime-sdk-media-pipelines (service-specific type stubs) but contains README for mypy-boto3-builder (the generator tool), leaving users completely unclear what they actually installed."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-chime-sdk-media-pipelines without direct guidance on installation or usage.",
+      "top_issue": "The README describes the mypy-boto3-builder generator project, not the specific chime-sdk-media-pipelines stubs package \u2014 a new user has no idea how to install or use this specific package without following external links."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules causing installation failures",
-        "Duplicate .pyi and .py stub files causing IDE conflicts",
-        "Incomplete or inaccurate type definitions for AWS API responses",
-        "Missing extras/optional dependencies not properly declared",
-        "Documentation and tooling issues (setup.py deprecation, generate locally instructions broken)"
+        "Incorrect type definitions in stubs (wrong signatures, overly broad types)",
+        "Type stub duplication (.pyi and .py files shipped together)",
+        "Version mismatch between main packages and submodules",
+        "Documentation inaccuracy (broken generation instructions)",
+        "Package naming confusion (types-boto3 vs boto3-stubs)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Community shows moderate health with active bug reporting on real issues; maintainers are responsive but have accumulated technical debt around build system migration and type definition accuracy."
+      "summary": "Moderately maintained project with responsive closure of some issues but several bugs (especially type-definition errors) lingering open for 4+ months, suggesting adequate but not exemplary maintainer engagement."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite being published to PyPI",
-        "15 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicates no active development",
-        "No active contributors in past 6 months",
-        "No recent releases",
-        "Last commit over 2 weeks ago with no follow-up activity"
+        "Only 1 commit in past 6 months (January 12, 2026)",
+        "16 open issues with no recent resolution or activity",
+        "Zero merged PRs and zero active contributors in past 6 months",
+        "No closed issues in past 6 months indicating maintenance backlog",
+        "Unknown last release date and no recent release activity"
       ],
       "positive_signals": [
-        "Package exists and is available on PyPI",
-        "At least one commit was made (2026-01-12)"
+        "Single commit within past 2 months shows minimal signs of life",
+        "Package is published on PyPI and installable"
       ],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months, accumulating unresolved issues without any development or contributor engagement."
+      "summary": "Package is largely abandoned with minimal maintenance activity, unresolved issues accumulating, and no recent releases or contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:52:29.286206+00:00"
+    "llm_analyzed_at": "2026-03-15T13:05:26.004257+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

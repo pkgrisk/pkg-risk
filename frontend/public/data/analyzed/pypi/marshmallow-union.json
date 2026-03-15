@@ -176,50 +176,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
+      "clarity": 7,
       "installation": 1,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 1,
+      "quick_start": 3,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 4,
       "overall": 3,
-      "summary": "README provides a basic description and important warning about behavior but lacks installation instructions, quick start guide, and practical examples.",
-      "top_issue": "No installation instructions provided - users must guess to run 'pip install marshmallow-union'"
+      "summary": "The README conveys the core concept and includes a useful warning about gotchas, but lacks installation instructions, a quick start guide, and comprehensive usage examples.",
+      "top_issue": "No installation instructions whatsoever \u2014 a new user has no idea how to install the package."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
+      "frustration_level": 7,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Core serialization logic flawed (always picks first type in union)",
-        "Incorrect method calls in _serialize causing value to be ignored",
-        "Ambiguous/untagged union design creates deserialization conflicts",
-        "Project appears abandoned with no release updates",
-        "API design issues (fields must be instantiated but documentation unclear)"
+        "Union serialization defaults to first type instead of correct type matching",
+        "Ambiguous/untagged union serialization leading to wrong type selection",
+        "Deserialization picks wrong constants and types",
+        "_serialize method ignores provided values",
+        "Incorrect behavior with nested fields and mapping values"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Community interest in adoption (conda-forge request)",
+        "Willingness from maintainers of dependent projects to help"
+      ],
       "abandonment_signals": true,
-      "summary": "Project shows clear signs of abandonment with critical unresolved bugs, no maintainer engagement, and community members offering to take over maintenance."
+      "summary": "Project shows clear signs of abandonment with critical serialization/deserialization bugs open since 2019-2021, an explicit \"Is this project dead?\" inquiry in 2020, and no evidence of active maintenance despite community interest and willingness to help."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2025-12-22)",
-        "4 open issues with no recent resolution activity",
-        "No merged PRs in past 6 months indicates no active development",
-        "0 active contributors in past 6 months",
-        "Unknown last release date suggests release process may be stalled"
+        "No commits in past 6 months despite claiming recent activity",
+        "Zero active contributors over past 6 months",
+        "Four open issues with no recent resolution activity",
+        "No merged PRs in past 6 months",
+        "Unknown or no recent release history",
+        "No closed issues in past 6 months"
       ],
       "positive_signals": [
-        "Recent commit activity (within last month) shows some recent work",
-        "No abandoned PRs or blocking issues mentioned"
+        "Last commit is recent (2025-12-22, approximately 2.5 months ago)",
+        "No open pull requests suggesting minimal stale contributions to manage"
       ],
-      "summary": "The project shows recent commit activity but has entered a maintenance plateau with zero development activity over the past 6 months and unresolved open issues."
+      "summary": "Package appears abandoned or dormant with a recent commit but zero meaningful maintenance activity over the past 6 months, unresolved open issues, and no active contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:25:11.500529+00:00"
+    "llm_analyzed_at": "2026-03-15T14:09:03.914322+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

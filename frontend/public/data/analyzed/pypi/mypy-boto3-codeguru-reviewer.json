@@ -191,48 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 7,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is for the wrong package - it documents mypy-boto3-builder instead of mypy-boto3-codeguru-reviewer, causing severe confusion.",
-      "top_issue": "Wrong README: this appears to be a generic builder README mistakenly included in a service-specific type stubs package"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific sub-package (mypy-boto3-codeguru-reviewer), causing a mismatch that leaves users without targeted guidance for this package.",
+      "top_issue": "The README describes the parent builder project, not the specific mypy-boto3-codeguru-reviewer package \u2014 there are no examples, configuration details, or troubleshooting specific to CodeGuru Reviewer usage."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type definition mismatches with actual boto3/aioboto3 behavior",
-        "Package versioning and dependency resolution issues",
-        "Duplicate file formats (.pyi and .py) causing conflicts",
-        "Documentation/usability gaps (setup.py vs pyproject.toml, naming confusion)",
-        "Incomplete extras/metadata in package distribution"
+        "Type stub bugs and inaccuracies (wrong method signatures, incorrect type definitions)",
+        "Broken documentation and generation instructions",
+        "Packaging issues (duplicate .pyi/.py files, missing extras, version mismatches)",
+        "Unclear package naming and purpose (types-boto3 vs boto3-stubs)",
+        "Build reproducibility issues (non-deterministic wheels)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active project with moderate maintenance responsiveness addressing type stub accuracy and packaging issues, though some bugs languish with 0-5 comments suggesting capacity constraints or lower prioritization."
+      "praise_themes": [
+        "Issues are being triaged and some closed",
+        "Enhancement requests are being considered and implemented"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows moderate activity with selective issue resolution, but several bugs remain open for months with 'response needed' labels, suggesting an under-resourced or lower-priority maintenance effort."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit in January 2026",
-        "No merged PRs in past 6 months indicating no active development",
-        "No closed issues in past 6 months despite 15 open issues",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure may be inactive",
-        "15 open issues unaddressed for extended period"
+        "No commits in past 6 months despite one recent commit on 2026-01-12",
+        "16 open issues with zero closed in past 6 months",
+        "No merged PRs or development activity in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date",
+        "Issues accumulating without resolution or triage"
       ],
-      "positive_signals": [],
-      "summary": "This package is abandoned with no development activity, issue resolution, or releases in the past 6 months."
+      "positive_signals": [
+        "One recent commit approximately 2 months ago",
+        "No backlog of open pull requests"
+      ],
+      "summary": "This package is stale with minimal maintenance\u2014issues are accumulating without resolution despite an isolated recent commit, suggesting possible archive or semi-abandoned status."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T04:02:58.696716+00:00"
+    "llm_analyzed_at": "2026-03-15T04:48:23.704336+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

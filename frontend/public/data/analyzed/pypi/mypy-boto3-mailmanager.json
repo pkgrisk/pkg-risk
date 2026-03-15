@@ -191,48 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes the builder tool rather than the mypy-boto3-mailmanager type stubs package itself, leaving users unclear about what they're actually installing.",
-      "top_issue": "README describes the wrong package - it's for mypy-boto3-builder (the generator tool) but this is mypy-boto3-mailmanager (generated type stubs), causing fundamental confusion about purpose and usage"
+      "summary": "This README is for the builder tool rather than the specific `mypy-boto3-mailmanager` subpackage, leaving users confused about how to actually install and use the MailManager type stubs.",
+      "top_issue": "The README describes the parent builder project, not the specific `mypy-boto3-mailmanager` package \u2014 there are no examples, configuration docs, or troubleshooting for the MailManager service stubs a user actually installed."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing or incorrect type definitions (async/await, literal types)",
-        "Duplicate stub files (.pyi and .py) causing confusion",
-        "Package metadata issues (missing extras, setup.py deprecation)",
-        "Documentation and tooling issues (generate locally instructions broken)"
+        "Type stub accuracy issues (wrong type definitions for boto3/aioboto3 APIs)",
+        "Package versioning and distribution problems (missing submodule versions, extras not provided)",
+        "Duplicate/confusing packages (types-boto3 vs boto3-stubs, unclear which to use)",
+        "File duplication in distributions (.pyi and .py files coexisting)",
+        "Documentation and local setup instructions are outdated"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some enhancements are implemented and released (pyproject.toml migration, aioboto3 fixes shipped)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with steady issue engagement, but users face persistent type accuracy problems and packaging inconsistencies that suggest the generation pipeline needs refinement."
+      "summary": "Active but under-resourced project with moderate responsiveness; recent activity and shipped fixes indicate ongoing maintenance, but accumulated quality issues (type accuracy, packaging) and lingering issues with unresponded follow-ups suggest maintenance struggles."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests long time since release"
+        "No commits recorded in past 6 months despite last commit 2 months ago",
+        "16 open issues with no resolution activity in 6 months",
+        "No new releases since unknown date",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in 6 months indicating no development activity"
       ],
-      "positive_signals": [],
-      "summary": "Package is abandoned with no maintenance activity for at least 6 months and accumulating unresolved issues."
+      "positive_signals": [
+        "Last commit within 2 months suggests package hasn't been completely abandoned",
+        "No open pull requests avoids accumulation of stalled work"
+      ],
+      "summary": "Package appears stale with development halted for 6 months, unresolved issues accumulating, and no active maintenance despite recent commit history."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:09:04.851201+00:00"
+    "llm_analyzed_at": "2026-03-15T02:13:45.362269+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

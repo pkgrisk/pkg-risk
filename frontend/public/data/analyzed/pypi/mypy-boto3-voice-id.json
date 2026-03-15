@@ -191,47 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool rather than the actual package (mypy-boto3-voice-id type stubs), providing minimal useful information for package users.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder README, not documentation for the mypy-boto3-voice-id package itself, leaving users without proper installation or usage instructions for the actual Voice ID type stubs."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-voice-id without relevant installation or usage guidance.",
+      "top_issue": "The README describes the mypy-boto3-builder generator, not the mypy-boto3-voice-id service stub package itself \u2014 a user installing this package gets no voice-id-specific examples, API coverage, or configuration docs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type stub accuracy issues (wrong type signatures, missing async def, overly broad types)",
-        "Packaging/distribution problems (duplicate .py and .pyi files, missing extras, version mismatches)",
-        "Documentation and tooling gaps (outdated local generation instructions, confusing package naming)",
-        "Build system modernization needed (still using setup.py instead of pyproject.toml)"
+        "Type annotation inaccuracies in generated stubs (e.g., async/non-async mismatches, overly broad types)",
+        "Package versioning and dependency resolution issues between boto3 and types-boto3 submodules",
+        "Duplicate file output (.pyi and .py files shipped together causing IDE conflicts)",
+        "Documentation accuracy (generate locally instructions don't work)",
+        "Confusion between similar packages (types-boto3 vs boto3-stubs) and their relationship"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Moderately healthy project with consistent bug reports showing legitimate type stub accuracy issues, but maintainers are responsive to issues and the project continues to be maintained and released."
+      "praise_themes": [
+        "Issues are well-documented with reproducible examples",
+        "Some enhancements implemented (pyproject.toml migration completed)",
+        "Professional engagement from community"
+      ],
+      "abandonment_signals": true,
+      "summary": "Moderately maintained project with real technical issues in generated type stubs; some problems fixed but several bugs remain open for 4+ months, suggesting inconsistent maintenance attention."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent",
-        "15 open issues with no activity",
-        "Zero closed issues in past 6 months indicating no issue resolution",
-        "No merged PRs in past 6 months showing no development activity",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process has stalled"
+        "0 commits in past 6 months despite open issues",
+        "16 open issues with no recent resolution",
+        "0 active contributors in past 6 months",
+        "0 merged PRs in past 6 months",
+        "Unknown release date - unable to track release cadence"
       ],
-      "positive_signals": [],
-      "summary": "Package appears abandoned with complete lack of maintenance activity over the past 6 months despite recent repository timestamp."
+      "positive_signals": [
+        "Recent commit on 2026-01-12 suggests project hasn't been fully abandoned",
+        "0 open PRs indicates maintainer is controlling scope"
+      ],
+      "summary": "Package appears stale with accumulating unresolved issues and no maintenance activity for at least 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:33:14.910679+00:00"
+    "llm_analyzed_at": "2026-03-15T13:30:29.488974+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

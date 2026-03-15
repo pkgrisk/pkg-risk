@@ -198,50 +198,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
-      "installation": 1,
-      "quick_start": 1,
+      "clarity": 3,
+      "installation": 4,
+      "quick_start": 2,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 1,
-      "summary": "This README is completely misleading, showing generic Apache Airflow documentation instead of the specific SendGrid provider package documentation.",
-      "top_issue": "Wrong README content - displays main Airflow project documentation rather than provider-specific installation, usage, and configuration for the SendGrid integration"
+      "overall": 2,
+      "summary": "This README is for the base Apache Airflow project, not the SendGrid provider package \u2014 it contains no provider-specific documentation whatsoever.",
+      "top_issue": "Wrong README: the page describes Apache Airflow core, not the apache-airflow-providers-sendgrid package; there is zero documentation on SendGrid connection setup, hooks, operators, or usage."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Performance issues (n+1 queries, SQL timeouts, server 503 errors)",
-        "Complex infrastructure problems (Kubernetes pod entrypoint issues, transaction rollback errors)",
-        "Limited filtering/querying capabilities for dag executions",
-        "Code quality issues (redundant exception handling)"
+        "Dependency on unmaintained sqlean library",
+        "Critical crash bug in DagBundleProcessor",
+        "UI rendering issues (HTML display)",
+        "Missing support for platform-specific features (S3 namespaces)"
       ],
-      "praise_themes": [
-        "Willingness to contribute (multiple PRs offered)",
-        "Structured issue reporting with code examples"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Apache Airflow maintains active community engagement with ongoing feature development and bug fixes, but struggles with performance scalability issues and complex infrastructure problems that require user workarounds."
+      "summary": "Apache Airflow shows active maintenance with recent issues tracked and some resolved, but has concerning open items including a critical crash bug and dependency on a discontinued library that need prompt attention."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "Zero commits in past 6 months despite being a maintained Apache Airflow provider",
-        "1727 open issues with no recent activity or triage",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "Zero merged PRs in past 6 months suggesting no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure may be dormant"
+        "1759 open issues with zero closed in past 6 months indicates issues are not being triaged or addressed",
+        "No commits, PRs, or contributors active in past 6 months",
+        "No merged PRs or releases in past 6 months suggests no active development",
+        "Last release unknown - likely outdated or broken for recent dependencies",
+        "Zero open PRs may indicate pull requests are not being reviewed/accepted"
       ],
-      "positive_signals": [],
-      "summary": "This Apache Airflow provider package appears completely abandoned with zero development activity, issue triage, or PR merges over the past 6 months despite accumulating 1727 open issues."
+      "positive_signals": [
+        "Last commit timestamp is recent (2026-03-14), though likely automated"
+      ],
+      "summary": "This package is effectively abandoned with a critical backlog of 1759 unaddressed issues and zero maintenance activity for 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:30:39.027548+00:00"
+    "llm_analyzed_at": "2026-03-15T05:27:44.094211+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

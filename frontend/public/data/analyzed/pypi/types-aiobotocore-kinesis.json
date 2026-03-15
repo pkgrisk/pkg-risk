@@ -191,51 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 4,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool (mypy-boto3-builder) rather than the actual package (types-aiobotocore-kinesis), leaving users unclear about what they're installing and how to use it.",
-      "top_issue": "Critical mismatch: the README describes a completely different package (mypy-boto3-builder) instead of documenting types-aiobotocore-kinesis, which is a type stubs package for AWS Kinesis that users would install directly, not generate"
+      "summary": "The README is for the builder tool (mypy-boto3-builder), not the specific package (types-aiobotocore-kinesis), leaving users without any service-specific guidance.",
+      "top_issue": "Wrong README for the package \u2014 types-aiobotocore-kinesis users need Kinesis-specific type annotation usage examples, not builder tool documentation."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tooling confusion",
-        "Incorrect type definitions for async methods",
-        "Packaging/metadata issues (missing extras, setup.py deprecation)",
-        "Overly broad or incorrect TypeDef definitions",
-        "Documentation accuracy (local generation instructions broken)"
+        "Type definition inaccuracies (get_credentials, ToolUseBlockTypeDef, FileobjTypeDef)",
+        "Packaging/build issues (deterministic wheels, duplicate .pyi/.py files, missing extras)",
+        "Outdated/broken documentation (generate locally instructions don't work)",
+        "Version mismatch problems (submodules not found for newer boto3 versions)",
+        "Package confusion (types-boto3 vs boto3-stubs unclear differentiation)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Community reports legitimate technical issues with type stub accuracy and packaging practices; maintainers are responsive but fixing rate appears slower than issue discovery rate, with some tickets pending resolution for months."
+      "praise_themes": [
+        "Willingness to tackle architectural improvements (pyproject.toml migration completed)",
+        "Some bug fixes deployed (type annotation for aioboto3 marked released)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows maintainer bandwidth constraints with 6 open bugs (some marked 'response needed' since September-November 2025) and type definition issues outpacing fixes, despite occasional resolved enhancements."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No merged PRs in past 6 months indicating no active development",
-        "Zero active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "No closed issues in past 6 months showing lack of maintenance",
-        "Unknown last release date suggests release cadence has stopped"
+        "Zero commits in past 6 months",
+        "No active contributors",
+        "16 unresolved open issues with zero closures in 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown release status suggests stale release process"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-12), indicating repository is not completely dormant"
+        "Package exists with at least one historical commit"
       ],
-      "summary": "Package is abandoned with no active maintenance despite recent commit history; 15 unresolved issues and zero development activity over 6 months indicate the project is no longer being maintained."
+      "summary": "This package is abandoned with no maintenance activity, active contributors, or issue resolution for at least 6 months despite accumulating unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:53:20.308484+00:00"
+    "llm_analyzed_at": "2026-03-15T16:45:23.659519+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

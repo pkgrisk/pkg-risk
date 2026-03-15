@@ -191,49 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 6,
       "installation": 5,
-      "quick_start": 4,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's type stubs for AWS FinSpace, creating a fundamental mismatch between user expectations and actual content.",
-      "top_issue": "Wrong README - this appears to be the mypy-boto3-builder README mistakenly used for the mypy-boto3-finspace package, which should contain FinSpace-specific type stub documentation and installation instructions"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-finspace package, leaving users confused about what this specific package does and how to use it.",
+      "top_issue": "README belongs to the parent builder project, not the specific finspace stubs package \u2014 there are no usage examples, API references, or configuration docs specific to mypy-boto3-finspace."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules (1.42 not available for all)",
-        "Missing extras/metadata not properly advertised on PyPI",
-        "Duplicate .pyi and .py files causing tool confusion",
-        "Type definition inaccuracies (async/await, literal values, type narrowing)",
-        "Documentation outdated (generate locally instructions broken)",
-        "Confusing package naming (types-boto3 vs boto3-stubs duplication)"
+        "Type stub inaccuracies (incorrect type definitions, duplicated .pyi/.py files, overly broad type definitions)",
+        "Packaging and distribution issues (missing extras, version mismatches between submodules)",
+        "Documentation gaps (outdated generate locally instructions, unclear package naming/relationships)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Community experiencing moderate frustration with unresolved type stub accuracy issues, packaging inconsistencies, and slow maintainer response times despite some recent releases."
+      "praise_themes": [
+        "Issues do get resolved (pyproject.toml migration completed and released)",
+        "Project maintains active development cycle",
+        "Users submit detailed bug reports with reproduction steps"
+      ],
+      "abandonment_signals": false,
+      "summary": "Moderate community health with active development but a backlog of open bugs related to type stub accuracy and packaging that require maintainer attention."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (Jan 12, 2026)",
-        "15 open issues with no recent activity or resolution",
-        "Zero merged PRs in past 6 months indicates no active development",
-        "No active contributors in past 6 months",
-        "No releases recorded, suggesting stalled release cycle",
-        "Closed issues in past 6 months is zero, indicating no issue triage"
+        "Zero commits in the past 6 months despite recent commit activity",
+        "16 open issues with zero closed in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Zero merged PRs in the past 6 months",
+        "Last release date unknown - unclear if package is still being released",
+        "No pull request activity indicates no community or maintainer engagement"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite recent timestamps, 15 unresolved issues, and no release cycle activity."
+      "positive_signals": [
+        "Last commit was recent (approximately 2 months ago)",
+        "Package still exists and has open issues suggesting it was used"
+      ],
+      "summary": "Package is in stale condition with zero maintenance activity over the past 6 months and accumulating unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:11:59.432035+00:00"
+    "llm_analyzed_at": "2026-03-15T01:27:14.847107+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

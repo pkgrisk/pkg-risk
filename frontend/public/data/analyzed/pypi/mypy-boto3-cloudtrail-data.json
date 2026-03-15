@@ -191,49 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool rather than the actual package (mypy-boto3-cloudtrail-data), providing no specific information about CloudTrail Data service integration.",
-      "top_issue": "Wrong README content - this appears to be the README for mypy-boto3-builder (a code generator) rather than for mypy-boto3-cloudtrail-data (a specific AWS service type stubs package), leaving users with no information about the actual package they're looking at."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-cloudtrail-data package, providing minimal relevant guidance and deferring almost everything to external documentation links.",
+      "top_issue": "This README belongs to the parent builder project, not the specific cloudtrail-data stub package \u2014 a new user gets no package-specific usage examples, API reference, or explanation of what CloudTrail Data types are provided."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/optional dependencies not properly declared",
-        "Duplicate stub files (.pyi and .py) causing tooling confusion",
-        "Type definition inaccuracies (async/await, Literal values, optional fields)",
-        "Documentation and build tooling issues",
-        "Overly broad type definitions causing false positives"
+        "Incorrect type definitions in stubs (e.g., ToolUseBlockTypeDef, get_credentials async signature)",
+        "Type stub packaging issues (duplicate .pyi/.py files, missing extras metadata)",
+        "Package versioning confusion and mismatches (types-boto3 submodules)",
+        "Documentation outdated or inaccurate (generate locally instructions don't work)",
+        "Duplicate/confusing package naming (types-boto3 vs boto3-stubs)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Community is engaged with legitimate bug reports and feature requests, maintainers respond but there's friction around type accuracy, packaging metadata, and build tooling that suggests the project complexity is outpacing maintenance capacity."
+      "summary": "Moderately active project with concerning quality issues: 7 open bugs/enhancements (some unresolved for months) including critical type definition errors in a type stub library, but 3 closed issues show maintainers are addressing problems."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite package being on PyPI",
-        "15 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicating no active development",
-        "No active contributors in past 6 months",
-        "Last commit over a month ago with no follow-up activity",
-        "Unknown last release date suggests release cycle has stalled"
+        "16 open issues with no recent resolution (0 closed in 6 months)",
+        "No contributors active in past 6 months",
+        "No merged PRs in past 6 months",
+        "Last release date unknown - cannot assess version freshness",
+        "No activity on open issues despite backlog"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no development activity, issue resolution, or community engagement in the past 6 months."
+      "positive_signals": [
+        "Recent commit on 2026-01-12 indicates repository is not completely abandoned",
+        "No open pull requests suggests not actively soliciting contributions"
+      ],
+      "summary": "Package has a recent commit but shows no active maintenance - zero issue resolution, no contributors, and unknown release status indicate the project is stalled."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:37:07.386627+00:00"
+    "llm_analyzed_at": "2026-03-15T02:41:52.540900+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

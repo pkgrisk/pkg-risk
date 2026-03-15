@@ -172,53 +172,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 7,
+      "clarity": 6,
       "installation": 3,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 2,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "While the README clearly states the package's purpose as an OpenID Connect authentication library for Django, it lacks installation instructions and practical usage examples, focusing instead on development setup and testing.",
-      "top_issue": "No installation instructions for end users (only pip install '.[dev]' for developers) and no examples of how to actually integrate the library into a Django project"
+      "overall": 2,
+      "summary": "The README is almost entirely focused on contributor/developer workflows rather than user-facing documentation, with no installation or usage guidance for library consumers.",
+      "top_issue": "There is no installation guide, configuration reference, or usage example for integrating the library into a Django project \u2014 the entire README targets contributors, not users."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Documentation is outdated and missing settings",
-        "Edge case bugs in recent releases (5.0.0)",
-        "Non-standard OIDC endpoint responses not handled",
-        "Missing support for refresh tokens",
-        "Deprecated tooling (setup.py)"
+        "Token validation/expiration issues (iat leeway, 1-minute clock skew)",
+        "Middleware behavior bugs (SessionRefresh triggering for non-OIDC backends)",
+        "Missing configuration handling (LOGOUT_REDIRECT_URL defaults)",
+        "Limited OIDC spec compliance (JWT userinfo responses, refresh tokens)",
+        "Documentation lag"
       ],
       "praise_themes": [
-        "Project described as 'great'",
-        "Actively used in production applications"
+        "Project fills real need for Django OIDC integration",
+        "Active maintenance on resolved issues"
       ],
       "abandonment_signals": false,
-      "summary": "Project shows moderate maintenance with actively resolved issues, but documentation lag and edge-case bugs suggest maintainers may be stretched thin on quality assurance."
+      "summary": "Moderately healthy project with recent maintenance activity and responsive issue closure, but hampered by 4-year-old unresolved feature request and emerging unaddressed bugs in critical authentication paths."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-07)",
-        "No merged PRs in past 6 months indicating no active development",
-        "Zero active contributors in past 6 months",
-        "83 open issues with no recent closures (0 closed in past 6 months)",
-        "No releases in the tracked period",
-        "High issue count relative to maintenance activity suggests backlog accumulation"
+        "No commits in past 6 months despite recent activity (January 2026)",
+        "85 open issues with zero closed in past 6 months",
+        "No active contributors for 6+ months",
+        "No merged pull requests in past 6 months",
+        "Unknown release date; likely no recent releases"
       ],
       "positive_signals": [
-        "Repository still exists and has not been archived"
+        "Last commit was recent (2026-01-07), suggesting project hasn't been abandoned entirely",
+        "Repository still exists and is accessible"
       ],
-      "summary": "mozilla-django-oidc appears abandoned with no development activity, contributor engagement, or issue resolution in the past 6 months despite a large open issue backlog."
+      "summary": "mozilla-django-oidc appears stale with no maintenance activity for 6+ months, accumulating unresolved issues, and no recent releases despite a commit in early January."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:44:07.126288+00:00"
+    "llm_analyzed_at": "2026-03-15T06:33:05.397406+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

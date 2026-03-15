@@ -178,51 +178,53 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 8,
       "examples": 7,
       "configuration": 8,
-      "troubleshooting": 9,
+      "troubleshooting": 7,
       "overall": 8,
-      "summary": "Comprehensive documentation with excellent clarity and upfront warnings about limitations, though the quick start code example appears truncated.",
-      "top_issue": "The quick start example code is incomplete - the `delete_old_job_executions` function and the management command class are cut off mid-implementation, leaving users without a complete working example."
+      "summary": "Well-structured documentation with clear purpose, honest limitation disclosures, and a practical quick-start example, though the README appears truncated mid-example.",
+      "top_issue": "README is cut off mid-sentence during the `delete_old_job_executions` example, leaving the code sample incomplete"
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Database migration issues and complexity",
-        "Lack of async/await support for modern Python",
-        "Inability to dynamically add/modify jobs at runtime",
-        "Performance concerns with high-frequency job logging",
-        "Admin interface changes not reflecting in scheduler execution",
-        "Job persistence and cleanup issues across environment transitions"
+        "Async/await support missing (AsyncDjangoJobStore)",
+        "Migration and uninstallation failures",
+        "Admin interface not reflecting scheduling changes",
+        "High database write overhead from frequent job execution logging",
+        "Jobs persist in database across restarts when not wanted",
+        "ApScheduler 4.0 support missing (docs still mark it as pre-release)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Core scheduling functionality works reliably when configured correctly"
+      ],
       "abandonment_signals": true,
-      "summary": "django-apscheduler shows signs of maturity stagnation with unresolved architectural limitations (async support, dynamic job management), mixed issue resolution rates, and user frustration around core workflows like database management and job modification."
+      "summary": "Community health is concerning: while some recent issues are being closed, the project shows signs of slow maintenance with outdated documentation (4 years), long-standing unresolved feature requests (since 2021), wontfix labels on valid bugs, and lack of support for modern async Python patterns."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from March 2025",
-        "9 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
-        "No merged PRs in past 6 months suggesting pull requests are not being reviewed",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date indicates release activity is not tracked or has ceased"
+        "No commits in 6+ months (last commit was ~11.5 months ago)",
+        "10 open issues with zero closures in 6 months",
+        "No active contributors or maintainer engagement in 6 months",
+        "No merged pull requests in 6 months",
+        "No recent releases or version updates",
+        "Zero development or bug fix activity"
       ],
       "positive_signals": [
-        "Repository still exists with some historical activity",
-        "No indicators of complete abandonment (repo not archived or deleted)"
+        "Project exists and has historical commits",
+        "No hostile indicators (still accessible)"
       ],
-      "summary": "django-apscheduler appears stale with no maintenance activity for at least 6 months, unresolved issues, and no active contributors."
+      "summary": "django-apscheduler is stale with no maintenance activity for 6+ months, 10 unresolved issues, and no active contributors or releases."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:35:40.318365+00:00"
+    "llm_analyzed_at": "2026-03-15T05:32:23.483647+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

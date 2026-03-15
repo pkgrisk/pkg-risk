@@ -191,52 +191,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's pre-built type stubs for a specific AWS service (Bedrock Data Automation).",
-      "top_issue": "Critical mismatch: the README describes 'mypy-boto3-builder' (a code generator tool) but the package is 'mypy-boto3-bedrock-data-automation' (which should be pre-generated type stubs); users expecting bedrock-data-automation types will be completely confused by builder documentation"
+      "summary": "The README is for the builder tool itself rather than the specific package (mypy-boto3-bedrock-data-automation), providing little useful documentation for the actual service stubs package.",
+      "top_issue": "This README describes the mypy-boto3-builder generator tool, not the mypy-boto3-bedrock-data-automation package itself \u2014 a user installing this package gets no documentation about the Bedrock Data Automation service types, how to use them, or what they provide."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch and dependency resolution issues (types-boto3 submodules)",
-        "Duplicate stub files (.pyi and .py) causing tooling conflicts",
-        "Incorrect type definitions in generated stubs (async/await, type literals)",
-        "Missing extras/metadata in package distributions",
-        "Documentation and setup instructions are outdated",
-        "Confusion between multiple similar packages (types-boto3 vs boto3-stubs)"
+        "Type stub definition errors (ToolUseBlockTypeDef, FileobjTypeDef, duplicated .pyi/.py files)",
+        "Documentation inaccuracies (Generate locally instructions don't work)",
+        "Build and packaging issues (non-deterministic wheel output, setup.py deprecation)",
+        "Package naming confusion (types-boto3 vs boto3-stubs overlap)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement, but suffering from systematic issues in stub generation quality, package metadata, and documentation that frustrate users working with boto3 type hints."
+      "abandonment_signals": true,
+      "summary": "Moderately healthy community with legitimate technical issues, but maintainer responsiveness appears inconsistent with multiple bugs marked 'response needed' remaining open for 4-8 months."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date indicates release tracking issues",
-        "No pull requests indicating stalled development"
+        "16 open issues with no resolution activity in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests or PR activity in 6 months",
+        "No issue closure activity despite accumulating open issues",
+        "Unknown release status raises uncertainty about versioning strategy"
       ],
       "positive_signals": [
-        "Recent commit timestamp suggests repository is not completely deleted"
+        "Last commit exists from 2026-01-12 (approximately 2 months ago)"
       ],
-      "summary": "This package is effectively abandoned with no maintenance activity, issue resolution, or releases in the past 6 months despite 15 unresolved issues."
+      "summary": "Package is stale with minimal maintenance - a recent commit exists but shows no ongoing issue/PR activity, active contributors, or releases."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T20:34:43.324622+00:00"
+    "llm_analyzed_at": "2026-03-15T00:38:20.536225+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

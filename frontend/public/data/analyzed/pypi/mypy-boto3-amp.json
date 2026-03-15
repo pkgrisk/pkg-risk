@@ -191,51 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) rather than the actual package being installed (mypy-boto3-amp), leaving users unclear about what they're actually getting.",
-      "top_issue": "Critical mismatch: the README describes 'mypy-boto3-builder' (a code generator tool) but the package name is 'mypy-boto3-amp' (a generated type stubs package for AWS AMP service), creating complete confusion about the package's purpose and usage."
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific mypy-boto3-amp subpackage, leaving users confused about what this particular package does and how to use it.",
+      "top_issue": "This README is for the parent builder project, not for mypy-boto3-amp specifically \u2014 there are no examples, configuration docs, or usage instructions for the AMP (Amazon Managed Service for Prometheus) service stubs this package actually provides."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules (1.42 availability issue)",
-        "Duplicate .pyi and .py stub files causing IDE conflicts",
-        "Type definitions don't match actual runtime behavior (e.g., async methods typed as sync)",
-        "Incomplete or incorrect type definitions (FileobjTypeDef too broad, missing required fields)",
-        "Missing extras/optional dependencies not properly declared",
-        "Documentation gaps (local generation instructions outdated)"
+        "Type stub accuracy and correctness issues (wrong types, async/sync mismatches)",
+        "Duplicate stub files (.pyi and .py) in packages causing IDE confusion",
+        "Package versioning confusion (submodules, types-boto3 vs boto3-stubs relationship)",
+        "Documentation and tooling inaccuracies (Generate locally instructions broken)",
+        "Overly broad type definitions for specific methods"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Recent modernization efforts (pyproject.toml migration completed and released)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling project with persistent type accuracy issues, version coordination problems between submodules, and moderate maintainer engagement on open issues."
+      "summary": "Moderate health with evidence of maintenance activity, but several open bugs marked 'response needed' suggest resource constraints, particularly around type stub accuracy and generated package metadata."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being 14 days ago",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date"
+        "No commits in past 6 months despite recent activity on 2026-01-12",
+        "16 open issues with zero resolution in past 6 months",
+        "No active contributors or maintenance activity",
+        "No releases tracked or recent release history",
+        "Zero merged PRs indicating stalled development"
       ],
       "positive_signals": [
-        "Recent commit activity 14 days ago suggests some level of attention"
+        "Recent commit 2 months ago suggests repo is not completely inactive",
+        "No backlog of open PRs awaiting review"
       ],
-      "summary": "This package shows signs of stagnation with recent activity but no meaningful maintenance work over the past 6 months, indicated by zero commits, closed issues, and merged PRs despite accumulating 15 open issues."
+      "summary": "Package is effectively abandoned with accumulating unresolved issues and no maintainer engagement for six months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:35:27.548381+00:00"
+    "llm_analyzed_at": "2026-03-15T12:47:17.749084+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,52 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 4,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "This README is actually for mypy-boto3-builder (a code generator), not for mypy-boto3-iot-data (a generated type stub package), creating severe confusion about what the user is installing.",
-      "top_issue": "Wrong README entirely - this describes a builder tool when the package is actually pre-generated type stubs for AWS IoT Data Plane service that just need to be pip installed and imported"
+      "summary": "The README is for the builder tool (mypy-boto3-builder), not the specific package (mypy-boto3-iot-data), leaving users confused about what they actually installed.",
+      "top_issue": "The README describes the parent builder project rather than the specific mypy-boto3-iot-data package \u2014 there are no examples, API references, or usage instructions specific to the IoT Data service stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules (1.42 issue)",
-        "Duplicate .pyi and .py stub files causing tooling confusion",
-        "Type definition inaccuracies (async/await, Literal values, type broadness)",
-        "Incomplete extras/optional dependencies not declared",
-        "Documentation and tooling issues (pyproject.toml migration, local generation instructions)",
-        "Confusion between multiple similar packages (types-boto3 vs boto3-stubs)"
+        "Type stub inaccuracies and duplicate .pyi/.py files causing tooling conflicts",
+        "Package organization confusion between types-boto3 and boto3-stubs",
+        "Version/dependency resolution issues with submodule packages",
+        "Documentation and tooling bugs (generate locally instructions)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active but struggling maintenance: maintainers are responding to issues and releasing fixes, but type stub accuracy and packaging metadata problems are creating user friction across a large generated package ecosystem."
+      "praise_themes": [
+        "Some enhancements successfully released and closed"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows mixed health with selective maintenance\u2014some features released, but 6 open bugs and type stub issues remain unresolved for months, with several marked 'response needed' suggesting slow maintainer engagement."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent",
-        "15 open issues with no activity to close them",
-        "No merged PRs in past 6 months indicating stalled development",
-        "Zero active contributors in past 6 months",
-        "No releases in the analyzed period",
-        "Unknown last release date suggests tracking issues"
+        "No commits in past 6 months despite having a recent commit 2 months ago (indicates inconsistent maintenance pattern)",
+        "16 open issues with zero closed issues in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "Recent commit activity exists (as of Jan 12, 2026)",
-        "No open pull requests to suggest unfinished work"
+        "Last commit exists within 2 months (2026-01-12), indicating not completely abandoned",
+        "Zero open PRs suggests no broken contribution pipeline"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite recent historical commits, accumulating open issues, and no contributor engagement."
+      "summary": "This package shows stale maintenance with unresolved issues and no recent activity, suggesting the maintainer has deprioritized or abandoned active development."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T07:03:22.000895+00:00"
+    "llm_analyzed_at": "2026-03-15T09:11:37.065393+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

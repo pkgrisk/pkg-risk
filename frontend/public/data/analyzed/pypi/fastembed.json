@@ -176,47 +176,49 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
+      "installation": 9,
       "quick_start": 9,
       "examples": 10,
-      "configuration": 8,
-      "troubleshooting": 7,
-      "overall": 9,
-      "summary": "Excellent documentation with clear explanations, comprehensive examples across multiple model types, and straightforward installation, though it could benefit from more troubleshooting guidance and configuration details.",
-      "top_issue": "Limited troubleshooting section - no common errors, debugging tips, or FAQ for issues users might encounter"
+      "configuration": 6,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent coverage of usage patterns with rich examples across all embedding types, but lacks in-depth configuration reference and troubleshooting beyond a GPU link.",
+      "top_issue": "Troubleshooting is nearly absent \u2014 only a link to a GPU example page; no coverage of common errors, model download failures, or performance issues."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Network/firewall connectivity issues affecting offline functionality",
-        "Limited model support - multiple requests for additional embedding models",
-        "Language/tokenization support limitations (Thai language bm25 tokenization)"
+        "Security vulnerabilities (Pillow CVE-2026-25990) blocking downstream adoption",
+        "GPU runtime issues (onnxruntime CPU/GPU binary conflict)",
+        "Model loading failures with onnxruntime 1.24.1",
+        "Dependency conflicts preventing use with latest Python versions",
+        "Missing support for new SOTA models (Jina v5, Splade v2)",
+        "No Chinese language tokenization support"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Fastembed shows healthy engagement with feature requests and model additions, though maintainers show moderate responsiveness with some requests lingering open for extended periods."
+      "abandonment_signals": true,
+      "summary": "Package shows significant abandonment: security CVE from Feb 19 unanswered (fix exists on main but unreleased), most recent issues (Feb-Mar 2026) have zero maintainer engagement, blocking both security-conscious users and GPU-equipped developers."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-09)",
-        "115 open issues with no resolution activity",
-        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
-        "No merged PRs in past 6 months showing no feature development or contributions accepted",
-        "Zero active contributors in past 6 months",
-        "No recent release information available"
+        "123 open issues with zero closures in past 6 months indicates backlog accumulation",
+        "No active contributors in past 6 months despite issue volume",
+        "Zero merged PRs in past 6 months suggests limited development activity",
+        "Unknown last release - no clear release cycle"
       ],
       "positive_signals": [
-        "Repository still exists (not deleted)"
+        "Very recent commit (2026-03-12) indicates some ongoing work",
+        "No open PRs - maintenance is not blocked by pending changes"
       ],
-      "summary": "The fastembed package appears abandoned with no maintenance activity over 6 months despite a large backlog of 115 open issues and no community contribution acceptance."
+      "summary": "fastembed shows sporadic activity but is not keeping pace with issue management and lacks sustained contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:24:31.226197+00:00"
+    "llm_analyzed_at": "2026-03-15T10:53:11.958335+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

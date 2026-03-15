@@ -191,52 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 5,
-      "examples": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 2,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README is confusing because it describes mypy-boto3-builder (a generator tool) but the package name is mypy-boto3-billing (a generated stub package), creating fundamental clarity issues about what the user is actually installing.",
-      "top_issue": "Package identity mismatch - the README describes the builder tool while the package name suggests this is a specific service stub package (billing), leaving users uncertain about what they're installing and how to use it."
+      "summary": "The README describes the builder tool rather than the specific mypy-boto3-billing package, leaving users confused about what this particular package does and how to use it.",
+      "top_issue": "The README is for the parent builder project, not the mypy-boto3-billing package itself \u2014 there are no usage examples, API docs, or configuration guidance specific to the billing service stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Packaging and distribution problems (setup.py vs pyproject.toml, duplicate .pyi/.py files)",
-        "Type stub accuracy issues (incorrect type signatures not matching runtime behavior)",
-        "Documentation and usability problems (confusing package naming, broken local generation instructions)",
-        "Missing extras and metadata in generated packages"
+        "Type definition mismatches (FileobjTypeDef, ToolUseBlockTypeDef, get_credentials async)",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Version/release coordination failures (submodules, extras not propagating)",
+        "Duplicate stub files shipped (.pyi and .py causing conflicts)",
+        "Documentation inaccuracies (Generate locally instructions broken)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The project maintains moderate activity with fixes being released, but suffers from systemic issues in code generation quality, packaging practices, and type stub accuracy that create friction for users."
+      "praise_themes": [
+        "Completed major enhancements (pyproject.toml migration marked released)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Moderate maintenance with unresolved type definition bugs open for months despite 'response needed' labels; inconsistent issue triage and some stalled enhancements raise abandonment concerns despite completion of major features."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent resolution activity",
-        "Zero closed issues in past 6 months indicates no bug fixes or maintenance",
-        "No merged PRs in past 6 months suggests no active development",
+        "16 open issues with no resolution activity in past 6 months",
+        "No merged PRs or commits in past 6 months despite recent date",
+        "Unknown last release version and date",
         "Zero active contributors in past 6 months",
-        "No recent releases",
-        "Package appears to be auto-generated stub (mypy-boto3 pattern) with minimal maintenance model"
+        "No issue closure activity indicating triage or maintenance"
       ],
       "positive_signals": [
-        "Last commit is relatively recent (January 2026)",
-        "Repository still exists and hasn't been deleted"
+        "Recent commit on 2026-01-12 suggests package isn't completely abandoned"
       ],
-      "summary": "Package shows signs of abandonment with no maintenance activity in 6 months despite recent repository presence, with accumulating unresolved issues and no contributor engagement."
+      "summary": "Package is stale with unresolved issues and no meaningful development activity despite a recent isolated commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:00:33.738065+00:00"
+    "llm_analyzed_at": "2026-03-15T17:03:52.921489+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

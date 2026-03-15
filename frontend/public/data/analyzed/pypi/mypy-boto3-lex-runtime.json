@@ -191,48 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs rather than the actual mypy-boto3-lex-runtime package itself, making it unclear what this specific package does or how to use it.",
-      "top_issue": "Wrong README - this appears to be the builder's README, not the actual mypy-boto3-lex-runtime package README, so users have no idea how to use this specific AWS Lex Runtime type stub package"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-lex-runtime without direct installation or usage guidance.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-lex-runtime package itself \u2014 a new user has no idea how to install or use the lex-runtime stubs specifically."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main and submodule packages",
-        "Packaging format problems (duplicate .pyi/.py files, missing extras metadata)",
-        "Type definition inaccuracies (wrong async/await signatures, overly broad types)",
-        "Documentation and tooling issues (broken local generation instructions)",
-        "Confusion between competing packages (types-boto3 vs boto3-stubs)"
+        "Type definition inaccuracies (ToolUseBlockTypeDef, FileobjTypeDef, aioboto3 async types)",
+        "Duplicate stub files (.pyi and .py) causing tooling conflicts",
+        "Version management and dependency resolution issues",
+        "Missing package metadata (extras not declared)",
+        "Documentation outdated (local generation instructions broken)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Community shows moderate frustration with type accuracy and packaging issues, but maintainers are actively engaged with periodic releases and responses, indicating a moderately healthy but technically challenged project."
+      "praise_themes": [
+        "Some enhancements implemented and released (pyproject.toml migration)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows sporadic maintenance with intermittent releases, but multiple critical type definition and packaging bugs remain unresolved for 5+ months, indicating moderate responsiveness with clear areas of neglect."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release pipeline is inactive"
+        "Zero commits in past 6 months",
+        "Zero active contributors in past 6 months",
+        "16 open issues with no activity",
+        "No merged PRs or new releases in 6 months",
+        "No issue resolution despite open bug reports",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite recent repository commits, indicating the repository may be archived or the package is no longer actively maintained."
+      "positive_signals": [
+        "Recent commit 2 months ago (before 6-month window)"
+      ],
+      "summary": "Package appears abandoned with no maintenance activity, open issues, or contributor engagement for 6+ months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:51:45.903683+00:00"
+    "llm_analyzed_at": "2026-03-15T02:55:08.076332+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

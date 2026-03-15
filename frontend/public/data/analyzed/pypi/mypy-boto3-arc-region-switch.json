@@ -191,52 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 7,
-      "quick_start": 5,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 6,
       "examples": 3,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README provides basic installation and points to external docs, but lacks concrete examples, configuration details, and troubleshooting guidance within the main document.",
-      "top_issue": "No actual code examples showing how to use the generated type annotations with boto3, and quickstart is too vague ('answer some questions' doesn't explain what the tool does or outputs)"
+      "summary": "The README describes the builder tool well but provides minimal documentation for the specific sub-package (mypy-boto3-arc-region-switch), relying heavily on external links rather than inline content.",
+      "top_issue": "No examples, configuration docs, or troubleshooting specific to this package \u2014 nearly all substance is deferred to external documentation links."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules causing installation failures",
-        "Duplicate stub files (.pyi and .py) causing IDE conflicts",
-        "Type definition inaccuracies (async/await, Literal values, overly broad types)",
-        "Missing extras metadata in package distributions",
-        "Documentation outdated (generate locally instructions broken)",
-        "Confusion between types-boto3 and boto3-stubs packages"
+        "Type definition inaccuracies (Bedrock ToolUseBlockTypeDef, S3 FileobjTypeDef, aioboto3 get_credentials)",
+        "Packaging issues (duplicate .pyi/.py files, missing extras metadata, non-deterministic builds)",
+        "Outdated documentation and setup instructions",
+        "Version compatibility and package naming confusion (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Community is experiencing moderate frustration with type definition accuracy and packaging issues, but maintainers are engaged with recent issue activity and some labeled as released, indicating active maintenance despite persistent technical debt."
+      "praise_themes": [
+        "Active modernization efforts (pyproject.toml migration completed and released)",
+        "Issues are being tracked and some bugs are being fixed"
+      ],
+      "abandonment_signals": true,
+      "summary": "The project maintains critical type stubs for boto3 ecosystem but shows signs of maintenance strain with multiple unresolved bugs marked 'response needed' and lingering type definition inaccuracies, though some enhancements continue to be implemented."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests tracking issues",
-        "No pull request activity indicates lack of development"
+        "0 commits in past 6 months despite last commit 2 months ago",
+        "16 open issues with zero closures in past 6 months",
+        "No merged PRs or active contributors in past 6 months",
+        "Unknown release status suggests poor release cadence",
+        "No response to user issues or pull requests"
       ],
       "positive_signals": [
-        "Repository still exists and has a recent commit timestamp"
+        "At least one commit exists within last 2 months indicating not completely abandoned"
       ],
-      "summary": "This package is stale with no maintenance activity for 6 months, unresolved issues, and no development or release history available."
+      "summary": "Package is stale with significant unresolved issues and zero maintenance activity for at least 6 months despite recent but isolated commits."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:32:33.222625+00:00"
+    "llm_analyzed_at": "2026-03-15T13:29:16.008912+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

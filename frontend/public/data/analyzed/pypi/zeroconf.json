@@ -176,47 +176,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 8,
       "quick_start": 8,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "Well-structured README with clear purpose and good quick-start example, but lacks comprehensive configuration documentation and troubleshooting guidance.",
-      "top_issue": "Configuration options are mentioned (interfaces argument) but not documented; users must read source code to understand customization options"
+      "examples": 6,
+      "configuration": 3,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Solid basic coverage with a clear install step and a working browse example, but configuration options and troubleshooting are nearly absent.",
+      "top_issue": "Configuration is undocumented beyond a vague mention of the 'interfaces' argument \u2014 users have no guidance on customizing behavior without reading source code."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "unknown",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Asyncio auto-detection interferes with testing in Jupyter notebooks",
-        "Library makes assumptions about event loop availability"
+        "Resource leaks (file descriptors/sockets) persisting despite prior fixes",
+        "Network/environment-specific issues (Docker, Jupyter compatibility)",
+        "Unexpected auto-detection of asyncio event loops breaking use cases"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Single unresolved issue indicates a real design limitation with asyncio detection, but insufficient data to assess overall community health or maintainer engagement."
+      "abandonment_signals": true,
+      "summary": "The zeroconf project shows signs of maintenance decline: three open issues with zero to minimal responses, including a resurging socket leak bug that was supposedly fixed, and environment-specific problems that block common use cases like Docker and Jupyter testing."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in the past 6 months despite last commit being recent (2026-02-09)",
-        "58 open issues with no activity to address them",
-        "Zero closed issues in the past 6 months indicates no issue triage or resolution",
-        "No merged PRs in the past 6 months suggests no active development or review",
-        "No active contributors in the past 6 months",
-        "Unknown last release date suggests release history may be outdated"
+        "Zero commits in past 6 months despite 55 open issues",
+        "No closed issues or merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date creates uncertainty about stability",
+        "Recent commit (2026-03-09) contradicts zero 6-month activity \u2014 suggests automated updates only"
       ],
       "positive_signals": [
-        "Recent commit timestamp (2026-02-09) suggests repository was accessed recently"
+        "Very recent commit activity (6 days old) indicates repository is not fully abandoned",
+        "No accumulation of open PRs suggests reviews are not backing up"
       ],
-      "summary": "Package appears abandoned with substantial accumulated open issues and zero maintenance activity over the past 6 months despite recent repository access."
+      "summary": "Package shows signs of automation-driven maintenance only, with human development and issue resolution essentially stalled for at least 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:00:17.769497+00:00"
+    "llm_analyzed_at": "2026-03-15T17:03:17.323546+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

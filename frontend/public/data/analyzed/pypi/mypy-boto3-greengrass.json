@@ -191,51 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it documents the builder tool that generates this package, not the actual mypy-boto3-greengrass package the user installed.",
-      "top_issue": "Wrong README - this explains mypy-boto3-builder (the generator tool), but users installing mypy-boto3-greengrass need documentation for the generated type stubs package, not the builder itself."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-greengrass subpackage, leaving users confused about what this particular package does or how to use it directly.",
+      "top_issue": "This README belongs to the parent builder project, not the specific mypy-boto3-greengrass package \u2014 there are no Greengrass-specific usage examples, installation instructions, or API documentation."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tooling conflicts",
-        "Missing or incorrect type definitions in generated stubs",
-        "Packaging/installation issues (extras not provided, setup.py deprecation)",
-        "Unclear documentation and confusing package naming (types-boto3 vs boto3-stubs)"
+        "Type annotation bugs in stubs (wrong types for aioboto3, Bedrock, S3 methods)",
+        "Package confusion (types-boto3 vs boto3-stubs, missing extras metadata)",
+        "Outdated/broken documentation and local generation instructions",
+        "Distribution issues (duplicate .pyi and .py files in wheels)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some enhancements delivered (pyproject.toml migration marked released)",
+        "Users filing detailed, reproducible bug reports"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement addressing real packaging and type definition issues, though recurring problems with stub generation accuracy and versioning synchronization suggest systemic quality control gaps."
+      "summary": "Moderately maintained project with uneven responsiveness\u2014some issues resolved but 6 open issues remain, including months-old bugs labeled 'response needed' and a critical type annotation problem affecting production code."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity to address them",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months showing no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests no versioning activity"
+        "No commits in the tracked 6-month period despite recent activity 2 months ago",
+        "16 open issues with zero closed issues in past 6 months - no issue management",
+        "No merged PRs in the past 6 months - no active development or review",
+        "Unknown release date - unclear when last version was published",
+        "Zero active contributors in the past 6 months - no sustained team"
       ],
       "positive_signals": [
-        "Repository still exists and was updated recently (2026-01-12)",
-        "Some historical commit activity exists"
+        "Recent commit activity 2 months ago indicates not completely abandoned",
+        "No open PRs suggests repository is not cluttered with pending work",
+        "Package still exists and has some baseline maintenance"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for at least 6 months despite having unresolved issues."
+      "summary": "Package shows sporadic maintenance with a recent commit but no development activity, issue resolution, or releases in the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:39:48.374577+00:00"
+    "llm_analyzed_at": "2026-03-15T12:52:00.061928+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

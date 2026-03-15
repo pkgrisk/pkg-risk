@@ -191,47 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it describes a builder tool but the package name suggests type stubs for AWS Step Functions, with minimal examples and no configuration or troubleshooting guidance.",
-      "top_issue": "Critical mismatch: README describes 'mypy-boto3-builder' (a code generator) but package is 'mypy-boto3-stepfunctions' (generated type stubs for one AWS service), leaving users completely confused about what they're installing and how to use it."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-stepfunctions without relevant installation or usage guidance.",
+      "top_issue": "README describes the mypy-boto3-builder generator, not the mypy-boto3-stepfunctions service stub package itself \u2014 no examples of actually using StepFunctions type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Duplicate .pyi and .py stub files causing confusion",
-        "Incorrect type definitions not matching runtime behavior",
-        "Missing extras metadata in type packages",
-        "Unclear documentation and package naming confusion (types-boto3 vs boto3-stubs)"
+        "Type signature mismatches with actual boto3 behavior (get_credentials, ToolUseBlockTypeDef)",
+        "Package version and naming confusion (types-boto3 vs boto3-stubs, version mismatch across submodules)",
+        "Missing package metadata (extras not being exposed on PyPI)",
+        "Duplicate stub files shipped (.pyi and .py causing IDE conflicts)",
+        "Documentation and tooling issues (generate locally instructions outdated)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Responsive to modernization requests (pyproject.toml migration completed and released)",
+        "Well-articulated, technical issue reports from users"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement, but experiencing recurring issues with type accuracy, package metadata, and documentation clarity that frustrate users attempting to use generated stubs."
+      "summary": "Actively maintained but moderately responsive\u2014several bugs fixed and released, but 7 open issues with some marked as needing responses, indicating slower turnaround on current problems."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite package being on PyPI",
-        "No merged PRs or releases in past 6 months",
+        "Zero commits in past 6 months",
+        "16 open issues with no recent resolution activity",
+        "No merged PRs in past 6 months",
         "No active contributors in past 6 months",
-        "15 open issues with no recent activity or fixes",
-        "Last commit over 3 weeks ago with no follow-up activity"
+        "Unknown release date and schedule",
+        "No evidence of triage or issue management"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with no maintenance activity, releases, or contributor engagement over the past 6 months."
+      "positive_signals": [
+        "Last commit within 2 months (2026-01-12)",
+        "Project still has GitHub presence"
+      ],
+      "summary": "Package is stale with no maintenance activity for 6+ months, open issues accumulating without resolution, and unknown release schedule despite a recent last commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:52:53.190922+00:00"
+    "llm_analyzed_at": "2026-03-15T09:59:34.142769+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

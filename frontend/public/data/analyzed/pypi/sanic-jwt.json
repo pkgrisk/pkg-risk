@@ -183,48 +183,53 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 6,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "Clear purpose and installation but lacks concrete examples, with minimal in-README configuration guidance and no troubleshooting content.",
-      "top_issue": "The quick start example is incomplete (my_authenticate function body is just '...') and there are no real working examples or common use cases shown in the README itself, forcing users to read external documentation for basic functionality."
+      "summary": "The README provides a clear, concise introduction and basic setup but defers almost all detail to external documentation, leaving users with minimal working examples.",
+      "top_issue": "No concrete examples of authentication logic, protected routes, or JWT scoping \u2014 the authenticate function is a stub with no guidance, forcing users to external docs immediately."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Incompatibility with PyJWT 2.0+ breaking token generation",
-        "Cookie handling broken in Sanic 24.12.0",
-        "Python 3.13 compatibility issues",
-        "Duplicate exception handler errors with multiple blueprints",
-        "Session cookie expiry issues on mobile browsers",
-        "Uncertainty about project maintenance status"
+        "Breaking compatibility with PyJWT 2.0+ (token decode failures)",
+        "Python 3.13 incompatibility",
+        "Sanic 24.12.0 deprecated cookie API breaks login",
+        "Cookie Max-Age not aligned with JWT expiry (mobile browsers)",
+        "Exception handler registration bug with multiple blueprints"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Users describe as 'cool library'",
+        "Worked well on Python 3.10-3.12 historically",
+        "Community willing to contribute"
+      ],
       "abandonment_signals": true,
-      "summary": "sanic-jwt shows signs of abandonment with unresolved breaking compatibility issues across PyJWT 2.0+, Sanic 24.12.0, and Python 3.13, coupled with slow maintainer responsiveness and explicit community concerns about active support."
+      "summary": "Project appears abandoned with critical dependency compatibility issues (PyJWT, Sanic, Python 3.13) unresolved, a 2.5-year-old unanswered maintenance question, and zero response to recent bug reports from Feb 2025."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "39 open issues with no resolution activity",
-        "Unknown last release date suggests missing release history"
+        "Zero commits in past 6 months despite last commit being 5 months ago",
+        "39 open issues with no recent resolution activity",
+        "No merged PRs or contributor activity for 6+ months",
+        "Unknown or missing last release information",
+        "Growing issue backlog indicates lack of triage"
       ],
-      "positive_signals": [],
-      "summary": "sanic-jwt appears abandoned with no maintenance activity for at least 6 months and accumulating unaddressed issues."
+      "positive_signals": [
+        "Repository still exists and has not been deleted",
+        "Had recent activity history (last commit October 2024)"
+      ],
+      "summary": "sanic-jwt shows signs of stagnation with zero maintenance activity for 6 months, accumulating unresolved issues, and absent maintainer engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:54:37.023671+00:00"
+    "llm_analyzed_at": "2026-03-15T02:01:41.832106+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

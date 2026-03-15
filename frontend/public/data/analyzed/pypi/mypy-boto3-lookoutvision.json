@@ -191,50 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is for mypy-boto3-builder (a generator tool) but the package name is mypy-boto3-lookoutvision (a generated output), creating fundamental confusion about what this package actually does.",
-      "top_issue": "Wrong README: this appears to be the builder tool's README, not the README for the specific mypy-boto3-lookoutvision package, leaving users completely unclear about how to use this particular AWS Lookout for Vision type stubs package."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-lookoutvision subpackage, leaving users confused about how to install and use this particular service stub.",
+      "top_issue": "This README describes the parent builder project, not the specific lookoutvision package \u2014 there are no usage examples, no direct install instructions for this subpackage, and no service-specific documentation."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type definition accuracy issues (wrong async/await signatures, overly broad type hints)",
-        "Packaging and versioning problems (submodule version mismatches, missing extras)",
-        "Duplicate stub files (.pyi and .py) causing editor conflicts",
-        "Documentation and tooling issues (broken local generation instructions)",
-        "Confusion between boto3-stubs and types-boto3 packages"
+        "Type stub accuracy issues (wrong type signatures, overly broad/narrow types)",
+        "Duplicate stub files (.pyi and .py shipped together)",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Documentation out of sync with actual behavior",
+        "Build/packaging concerns (deterministic wheels, missing extras metadata)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some issues are resolved and released (pyproject.toml migration, aioboto3 typing fix)"
+      ],
       "abandonment_signals": false,
-      "summary": "Community is moderately engaged with legitimate technical issues, but maintainers show mixed responsiveness with some issues unresolved for months despite being marked as needing response."
+      "summary": "Moderate community health: maintainers release fixes for some issues but have accumulated backlog of open bugs with 'response needed' labels, particularly around type stub accuracy and documentation quality."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months showing no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggesting potential versioning issues"
+        "No commits in the past 6 months",
+        "16 open issues with zero closed in 6 months",
+        "No active contributors in 6 months",
+        "No merged PRs in 6 months",
+        "Unknown last release date",
+        "Complete inactivity across all development metrics"
       ],
       "positive_signals": [
-        "Repository still exists and is accessible"
+        "At least one commit exists (2026-01-12)"
       ],
-      "summary": "This package appears abandoned with no maintenance activity despite recent repository state, accumulating unresolved issues with no developer engagement."
+      "summary": "This package is abandoned with no maintenance activity, unaddressed issues, and unknown release status, making it unsuitable for production use."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:23:16.675590+00:00"
+    "llm_analyzed_at": "2026-03-15T12:35:01.967977+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

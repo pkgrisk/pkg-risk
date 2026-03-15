@@ -191,50 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's type stubs for AWS SimpleDB, creating immediate mismatch and unclear purpose.",
-      "top_issue": "Critical package identity confusion - user installed 'mypy-boto3-sdb' (SimpleDB type stubs) but got README for 'mypy-boto3-builder' (a code generator tool), making it impossible to understand what they actually installed or how to use it"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-sdb package, providing minimal context for the actual service stub and deferring almost everything to external docs.",
+      "top_issue": "This README belongs to the parent builder project, not the sdb-specific stub package \u2014 a new user has no idea what SDB-specific types are included or how to use them."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch and dependency resolution issues (submodules not matching main package versions)",
-        "Packaging and distribution problems (setup.py deprecated, pyproject.toml migration needed, duplicate .pyi/.py files)",
-        "Type stub accuracy issues (missing async keywords, incorrect type definitions, overly broad type signatures)",
-        "Documentation and usability gaps (unclear package relationships, broken local generation instructions)"
+        "Type stub accuracy and completeness (wrong type definitions, missing async markers)",
+        "Package metadata and distribution issues (missing extras, version mismatches between submodules)",
+        "Documentation and tooling gaps (broken local generation instructions, package naming confusion)",
+        "Build consistency and reproducibility"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues do get resolved eventually (pyproject.toml migration completed)",
+        "Some fixes released (aioboto3 async types, bedrock definitions)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active community with legitimate technical issues around type stub accuracy and packaging infrastructure, but maintainer engagement appears inconsistent with some issues receiving responses while others languish open."
+      "summary": "Moderate community health with active but inconsistent maintenance; several bugs remain open for months with 'response needed' labels, though some features are being delivered and issues eventually closed."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite repository activity",
-        "No closed issues in past 6 months indicating no active bug fixes",
-        "No merged PRs in past 6 months showing no development activity",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests extended release cycle"
+        "Zero commits in past 6 months despite recent last commit date",
+        "16 open issues with no closes in past 6 months",
+        "Zero active contributors in past 6 months",
+        "No releases documented",
+        "Zero merged PRs indicating no ongoing development"
       ],
       "positive_signals": [
-        "Repository exists and is accessible",
-        "Some historical activity (last commit date is recent but likely auto-generated)"
+        "Last commit is recent (2 months ago), suggesting project isn't completely dormant",
+        "Package is published and available"
       ],
-      "summary": "This package is abandoned with no meaningful maintenance activity over the past 6 months despite open issues remaining unresolved."
+      "summary": "This package exhibits abandoned maintenance characteristics: accumulated unresolved issues, zero contributors and development activity over 6 months, and no release history, despite a single recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:25:48.299845+00:00"
+    "llm_analyzed_at": "2026-03-15T02:30:27.904426+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

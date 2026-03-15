@@ -191,50 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes mypy-boto3-builder (a generator tool) rather than mypy-boto3-ssm-incidents (the actual package), leaving users unclear about what they installed and how to use it.",
-      "top_issue": "Wrong README content - this describes the builder tool that generates type stubs, not the mypy-boto3-ssm-incidents package itself, causing fundamental confusion about package purpose and usage"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-ssm-incidents` package, providing little context for users of this individual service stub.",
+      "top_issue": "README is mismatched \u2014 it documents the mypy-boto3-builder generator tool, not the ssm-incidents type stubs package itself, leaving users without package-specific installation, usage, or examples."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches and dependency resolution issues (types-boto3 submodule versions)",
-        "Duplicate file packaging (.pyi and .py files shipped together)",
-        "Type stub inaccuracies in generated stubs (wrong method signatures, overly broad type definitions)",
-        "Documentation and tooling issues (setup.py deprecation, generate locally instructions broken)",
-        "Confusion between package variants (types-boto3 vs boto3-stubs)"
+        "Type stub inaccuracies (ToolUseBlockTypeDef, get_credentials async mismatch, FileobjTypeDef overly broad)",
+        "Duplicate .pyi and .py files causing editor ambiguity",
+        "Confusing package naming (types-boto3 vs boto3-stubs, types-aiobotocore)",
+        "Documentation and developer experience issues (uvx command, missing extras)",
+        "Version mismatch and dependency resolution problems"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some issues are being fixed and released",
+        "Modernization efforts completed (pyproject.toml migration)"
+      ],
       "abandonment_signals": false,
-      "summary": "Community expresses moderate frustration with auto-generated type stub quality, versioning issues, and documentation gaps, but maintainers show moderate responsiveness with some issues resolved and labeled for attention."
+      "summary": "Project shows inconsistent maintenance: some issues fixed and released, but several bugs remain open with 'response needed' labels for months, suggesting stretched maintainers."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "minimal-maintenance",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite repository activity",
-        "15 open issues with no recent resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged pull requests in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process is stalled"
+        "16 open issues with zero resolution in past 6 months",
+        "No merged PRs or development activity in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown release schedule despite open issues"
       ],
       "positive_signals": [
-        "Recent commit activity (2026-01-12) suggests repository still exists"
+        "Last commit was approximately 2 months ago (relatively recent)"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for at least 6 months despite open issues remaining unresolved."
+      "summary": "Package is stagnant with a growing backlog of unresolved issues and no active development or maintenance."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T19:59:36.705354+00:00"
+    "llm_analyzed_at": "2026-03-15T00:02:31.442341+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

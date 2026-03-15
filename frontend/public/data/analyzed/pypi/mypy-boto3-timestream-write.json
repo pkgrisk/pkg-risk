@@ -191,51 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README confusingly presents a builder tool when users expect documentation for the mypy-boto3-timestream-write type stubs package itself.",
-      "top_issue": "Package name mismatch - users installing 'mypy-boto3-timestream-write' get a README about 'mypy-boto3-builder' with no information about the actual timestream-write service they're trying to use"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-timestream-write stub package, leaving users without targeted install/usage guidance for this service-specific stub.",
+      "top_issue": "README describes the parent builder project, not the specific timestream-write stubs package \u2014 missing direct install command (e.g. `pip install mypy-boto3-timestream-write`) and usage examples for the TimestreamWrite client."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .py and .pyi files causing tooling confusion",
-        "Missing or incorrect type definitions for async operations",
-        "Incorrect type specifications for S3 file operations",
-        "Documentation and setup process outdated",
-        "Confusion between types-boto3 and boto3-stubs packages"
+        "Type stub accuracy and wrong definitions causing type checking failures",
+        "Duplicate file shipping (.pyi and .py files together)",
+        "Outdated documentation and setup instructions",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Version/dependency management issues with submodules"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Successfully migrated to modern pyproject.toml standards"
+      ],
       "abandonment_signals": false,
-      "summary": "The project maintains moderate engagement with valid type definition bugs being reported and some issues resolved, but faces usability issues around package versioning, duplicate files, and documentation clarity that indicate maintenance challenges."
+      "summary": "Moderately healthy project with active development, but slow response to type stub accuracy bugs and documentation issues are creating user frustration."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolutions",
-        "Zero closed issues in past 6 months indicating no maintenance activity",
-        "No merged PRs in past 6 months showing no development progress",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests possible release tracking issues or stale releases"
+        "No commits in the past 6 months indicating development has stopped",
+        "16 open issues with zero closed issues in past 6 months suggests no bug triage or response",
+        "Zero active contributors in past 6 months - maintainers are not engaged",
+        "No merged PRs in 6 months - no feature development or maintenance work",
+        "Unknown last release - unclear version history and release schedule"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-12), though appears to be from initial/automated generation"
+        "Last commit is relatively recent (2026-01-12, ~2 months ago)",
+        "No accumulated open pull requests"
       ],
-      "summary": "This package appears to be abandoned with no maintenance activity for at least 6 months, accumulating unresolved issues without any development or community engagement."
+      "summary": "Package is stale with no maintenance activity for 6 months despite recent last commit; open issues remain unaddressed."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:36:32.315635+00:00"
+    "llm_analyzed_at": "2026-03-15T09:31:22.304754+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

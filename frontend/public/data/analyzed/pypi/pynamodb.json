@@ -178,47 +178,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
+      "installation": 9,
       "quick_start": 9,
       "examples": 8,
       "configuration": 7,
-      "troubleshooting": 3,
+      "troubleshooting": 4,
       "overall": 8,
-      "summary": "Excellent README with clear purpose, installation, and usage examples, but lacks troubleshooting guidance and comprehensive configuration documentation.",
-      "top_issue": "No troubleshooting section for common problems like AWS credentials setup, connection errors, or table operation failures"
+      "summary": "Excellent getting-started experience with clear examples covering basic and advanced usage, but nearly no troubleshooting guidance beyond a single upgrade warning.",
+      "top_issue": "Troubleshooting section is essentially absent \u2014 only an upgrade migration warning is included, with no coverage of common errors (auth issues, table not found, capacity errors, etc.)."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Breaking changes in v5.x making features unusable (UTCDateTimeAttribute)",
-        "Documentation/docstring accuracy issues (Model.update behavior)",
-        "Schema validation gaps between local and production DynamoDB",
-        "Data consistency and race condition issues in high-concurrency scenarios",
-        "Missing/incomplete feature support (multi-attribute composite keys for GSIs)",
-        "API design constraints (cannot combine default and default_for_new)"
+        "Data consistency/correctness bugs (inconsistent read results in concurrent operations)",
+        "DateTime attribute parsing failures and breaking changes in 5.x",
+        "Random intermittent GSI indexing errors in production",
+        "Missing async/await support (open since 2020)",
+        "Mypy and tooling compatibility issues"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Community is experiencing moderate frustration with slow maintainer responsiveness, breaking changes in recent versions, and unresolved data consistency issues, with several issues lingering 2-4 months without maintainer engagement."
+      "praise_themes": [
+        "Well-documented issues with technical depth",
+        "Community engagement on longstanding requests (async support has 14 comments)"
+      ],
+      "abandonment_signals": false,
+      "summary": "Active project with recent updates but slow maintainer response to bugs\u2014serious data consistency issues and critical feature requests (async, 6+ years old) remain unresolved, indicating under-resourced maintenance despite ongoing community engagement."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months despite last commit being 8 days ago",
-        "317 open issues with zero closed in the past 6 months indicates unresponsive maintenance",
-        "Zero active contributors in the past 6 months",
-        "No merged PRs in the past 6 months suggests pull requests are not being reviewed or integrated",
-        "Unknown last release date suggests release process has stalled"
+        "Zero commits in past 6 months despite 317 open issues",
+        "Zero closed issues and zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Large backlog of 317 unresolved issues with no triage activity",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "pynamodb appears to be abandoned with no recent development activity, unaddressed issues, and no contributor engagement despite having an active repository."
+      "positive_signals": [
+        "Recent commit activity 2 months ago suggests project is not completely dead"
+      ],
+      "summary": "pynamodb is effectively abandoned with no maintenance activity in 6 months and a growing backlog of unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T20:19:51.926570+00:00"
+    "llm_analyzed_at": "2026-03-15T00:23:07.696950+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,50 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's a type stub for AWS Marketplace Entitlement service, creating a fundamental mismatch between package identity and documentation.",
-      "top_issue": "Package name/README mismatch - user expects docs for mypy-boto3-marketplace-entitlement type stubs but gets generic mypy-boto3-builder documentation instead"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-marketplace-entitlement without relevant installation or usage guidance.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-marketplace-entitlement package itself \u2014 a new user has no idea how to install or use the specific package they're looking at."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch and dependency resolution issues between main and submodule packages",
-        "Missing extras/metadata in package configuration",
-        "Duplicate .pyi and .py stub files causing tooling confusion",
-        "Type definition inaccuracies compared to actual runtime behavior",
-        "Outdated documentation and build instructions"
+        "Type stub accuracy issues breaking production code (ToolUseBlockTypeDef, FileobjTypeDef type definitions)",
+        "Duplicate .pyi and .py files in distributed packages causing IDE conflicts",
+        "Missing version releases for submodules (version skew between main and submodules)",
+        "Outdated documentation (generate locally instructions don't work)",
+        "Missing extras/features in package distributions",
+        "Package naming confusion (types-boto3 vs boto3-stubs)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The project has active maintenance with merged enhancements, but users face significant frustration with type accuracy issues, dependency management problems, and packaging inconsistencies that create friction in the development workflow."
+      "summary": "Project shows moderate maintenance with critical type stub bugs unresolved, multiple issues labeled 'response needed' pending attention, yet evidence of ongoing releases suggests active but slow/backlogged maintenance."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release tracking is not maintained"
+        "Zero commits in the past 6 months despite recent last commit",
+        "16 open issues with zero closed in the past 6 months",
+        "No active contributors in the past 6 months",
+        "Unknown last release date",
+        "No merged PRs in the past 6 months"
       ],
       "positive_signals": [
-        "Recent commit timestamp suggests repository still exists"
+        "Last commit is recent (2 months ago)",
+        "No open pull requests (not accumulating unreviewed work)"
       ],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite open issues remaining unresolved."
+      "summary": "This package appears stale with minimal-to-no maintenance activity: despite a recent commit, there are zero contributions, issue resolutions, or releases in the past 6 months, leaving 16 issues unaddressed."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:12:36.325167+00:00"
+    "llm_analyzed_at": "2026-03-15T03:59:20.963426+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

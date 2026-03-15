@@ -191,52 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 5,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README confuses users by presenting content for a builder tool when the package name suggests it's a specific type stub for AWS Chime SDK Meetings service.",
-      "top_issue": "README is for the wrong package - it documents 'mypy-boto3-builder' (a code generation tool) but the package is 'mypy-boto3-chime-sdk-meetings' (generated type stubs for one specific AWS service)"
+      "summary": "This README is for the builder tool, not the specific package (mypy-boto3-chime-sdk-meetings), leaving users confused about what they actually installed.",
+      "top_issue": "The README describes the parent builder project rather than the specific service stub package, providing no documentation on how to actually use type annotations for the Chime SDK Meetings service."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules (1.42 discrepancy)",
-        "Missing extras/optional dependencies in types-aiobotocore package",
-        "Duplicate .pyi and .py stub files causing tooling confusion",
         "Type definitions don't match actual runtime behavior (async/await, literal values)",
-        "Overly broad type definitions (IO[Any] instead of specific protocols)",
-        "Documentation and setup instructions are outdated or incorrect",
-        "Confusion between types-boto3 and boto3-stubs packages"
+        "Duplicate .pyi and .py files in packages causing IDE conflicts",
+        "Documentation is outdated and incorrect",
+        "Package naming confusion between types-boto3 and boto3-stubs variants",
+        "Missing extras metadata in type stub packages"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Community health is poor with widespread technical issues, slow maintainer response, outdated documentation, and multiple unresolved bugs spanning packaging, type accuracy, and tooling compatibility."
+      "praise_themes": [
+        "Issues are being addressed and closed (pyproject.toml migration completed)",
+        "Bug fixes are making it to releases"
+      ],
+      "abandonment_signals": false,
+      "summary": "The project shows active maintenance with some fixes deployed, but struggles with lingering type accuracy issues and documentation gaps that frustrate users relying on type safety."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance effort",
-        "No merged PRs in past 6 months showing no active development",
+        "Zero commits in past 6 months despite 16 open issues",
+        "No issue resolution activity (0 closed issues in 6 months)",
+        "No PR activity or merges in past 6 months",
         "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release process has stalled"
+        "Unknown last release - unclear release cadence"
       ],
       "positive_signals": [
-        "Recent commit exists (though appears to be auto-generated or from previous cycle)"
+        "Recent commit on 2026-01-12 suggests not completely abandoned",
+        "No backlog of open pull requests (0 open PRs)"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite accumulating 15 open issues."
+      "summary": "Package shows signs of stagnation with no development or issue resolution activity over 6 months, despite recent commit history and accumulating open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T02:49:52.473249+00:00"
+    "llm_analyzed_at": "2026-03-15T03:39:09.264717+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

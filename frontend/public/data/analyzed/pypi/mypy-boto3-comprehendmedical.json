@@ -191,48 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 3,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) rather than the actual package (mypy-boto3-comprehendmedical), leaving users unclear about what they're installing and how to use it.",
-      "top_issue": "Complete mismatch between package name and README content - users installing mypy-boto3-comprehendmedical get documentation for the builder tool instead of type stubs for AWS Comprehend Medical service"
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-comprehendmedical package, providing little relevant guidance for users of this service-specific stub.",
+      "top_issue": "README describes the parent builder project, not the actual package being installed \u2014 a user looking for ComprehendMedical type stubs gets no service-specific usage examples or guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch and dependency resolution issues (types-boto3 submodules version mismatch)",
-        "Missing or incorrect type stubs causing type checker issues",
-        "Duplicate file formats (.pyi and .py) causing confusion in IDEs",
-        "Documentation and tooling gaps (generate locally instructions outdated)",
-        "Unclear package naming and relationships (types-boto3 vs boto3-stubs confusion)"
+        "Type stub correctness issues (wrong method signatures, incorrect type definitions)",
+        "Duplicate stub files (.pyi and .py) causing tool conflicts",
+        "Missing package extras and version mismatches between submodules",
+        "Documentation and setup instructions are outdated or incorrect",
+        "Package naming confusion between variants (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some issues are being actively resolved and marked as released"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate frustration with type stub accuracy and tooling issues, but maintainers are actively addressing problems with some responsiveness, indicating a project under maintenance despite technical debt."
+      "summary": "Project shows moderate health with active maintenance on some fronts (4 closed/released issues), but 7 open issues indicate a growing backlog, several marked 'response needed' suggesting unaddressed user requests and potential maintenance capacity constraints."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite package being on PyPI",
+        "No commits in past 6 months despite last activity 2 months ago",
+        "16 open issues with no recent triage or resolution",
         "No active contributors in past 6 months",
-        "Open issues (15) with no recent resolution activity",
-        "No merged PRs in past 6 months indicating no maintenance activity",
-        "No releases in past 6 months",
-        "Last commit was over a month ago with no follow-up activity"
+        "No closed issues or merged PRs in past 6 months",
+        "Unknown release status suggests lack of versioning activity"
       ],
-      "positive_signals": [],
-      "summary": "This package is effectively abandoned with no maintenance activity over the past 6 months and accumulating unresolved issues."
+      "positive_signals": [
+        "Recent commit history (2 months ago) indicates not completely abandoned",
+        "Auto-generated boto3 stub package may be feature-complete by design"
+      ],
+      "summary": "Package shows signs of stagnation with no maintenance activity for 6 months and unaddressed open issues, suggesting maintenance has been effectively abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:24:36.580005+00:00"
+    "llm_analyzed_at": "2026-03-15T02:29:21.932323+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

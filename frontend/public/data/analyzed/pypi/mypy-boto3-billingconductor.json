@@ -191,49 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing for the actual package (mypy-boto3-billingconductor) as it shows content for the builder tool instead of the type stubs package itself.",
-      "top_issue": "Wrong README content - this appears to be the builder tool's README, not the specific service package (billingconductor) README, leaving users completely unclear about how to use this specific package"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-billingconductor without relevant installation or usage guidance.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-billingconductor package itself \u2014 there are no examples, configuration docs, or troubleshooting for the actual billingconductor stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules (1.42 version not propagated)",
-        "Packaging issues (missing extras, duplicate .pyi and .py files, setup.py deprecation)",
-        "Type stub accuracy problems (incorrect async/await annotations, overly broad type definitions)",
-        "Documentation gaps and confusion (types-boto3 vs boto3-stubs naming, generate locally instructions broken)"
+        "Type definition inaccuracies (ToolUseBlockTypeDef wrong, FileobjTypeDef overly broad)",
+        "Duplicate stub file packaging (.pyi and .py files causing IDE conflicts)",
+        "Version mismatch and package naming confusion (types-boto3 vs boto3-stubs ambiguity)",
+        "Documentation/setup instructions outdated (local generation uvx command broken)",
+        "Missing or incorrect package metadata (extras not provided)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some issues resolved and released (pyproject.toml migration completed)",
+        "Enhancement work ongoing despite complexity of ~400 generated packages"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with responsive maintainers addressing legitimate type stub quality and packaging issues, but recurring problems with version consistency and type accuracy suggest underlying tooling or process challenges."
+      "summary": "Project is actively maintained but with moderate responsiveness; several unresolved type definition bugs and packaging issues create friction for users."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
-        "No merged pull requests in past 6 months",
-        "No closed issues in past 6 months indicating no maintenance activity",
-        "15 open issues unaddressed",
-        "No recent releases"
+        "16 open issues with no resolution in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "Issues backlog not being addressed"
       ],
       "positive_signals": [
-        "Recent last commit date suggests repository still exists"
+        "Last commit approximately 2 months ago (2026-01-12)",
+        "Repository still has recent activity"
       ],
-      "summary": "Package is abandoned with no maintenance activity in the past 6 months, evidenced by zero commits, contributors, merged PRs, and closed issues despite 15 open issues."
+      "summary": "Package has minimal maintenance with a recent commit but no active development, PR merging, or issue resolution over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T04:09:03.630207+00:00"
+    "llm_analyzed_at": "2026-03-15T04:54:25.111211+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

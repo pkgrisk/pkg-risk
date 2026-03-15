@@ -177,48 +177,52 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 8,
       "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 3,
+      "configuration": 5,
+      "troubleshooting": 2,
       "overall": 7,
-      "summary": "Excellent clarity and installation coverage with good quick-start workflow, but lacks troubleshooting guidance and detailed configuration examples.",
-      "top_issue": "No troubleshooting section for common problems (merge conflicts, cache issues, remote storage errors, pipeline failures)"
+      "summary": "DVC has strong clarity and installation coverage with a useful quick-start table, but lacks troubleshooting guidance and configuration documentation within the README itself.",
+      "top_issue": "No troubleshooting section \u2014 common setup problems (remote auth, Git conflicts, pipeline errors) are entirely absent from the README."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Transient AWS S3 errors not handled gracefully with retries",
-        "Command parsing issues with whitespace in dvc.yaml affecting dvc.lock",
-        "Globbing pattern conflicts in .gitignore breaking dvc status",
-        "Process cannot be interrupted (Ctrl+C ignored on Windows)",
-        "Parameter override (-S flag) not working correctly with YAML anchors"
+        "Git credentials handling and authentication (dvc pull, dvc import, url.insteadOf)",
+        "Data synchronization failures (push not re-uploading deleted files, pull inconsistencies)",
+        "Import/fetch operations failing or inconsistent between runs",
+        "Diff command reporting false positives for directory-tracked files"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "DVC maintains active maintenance with responsive issue closure, but users face frustration with edge cases in AWS integration, YAML processing, signal handling, and glob pattern matching that impact data synchronization workflows."
+      "praise_themes": [
+        "Active feature development (experiment tracking, merge capabilities)",
+        "Good first issue labels indicate community contribution pathways",
+        "Some critical bugs are being fixed and closed"
+      ],
+      "abandonment_signals": true,
+      "summary": "DVC shows moderate community health with active bug fixes and feature development, but concerning patterns around git authentication and data synchronization workflows, with some issues lingering unfixed for 2+ years."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 10,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit timestamp appearing recent",
-        "No active contributors in past 6 months",
-        "No merged pull requests in past 6 months",
-        "No closed issues in past 6 months",
-        "164 open issues with no triage activity",
-        "Unknown last release date",
-        "No pull request activity"
+        "173 open issues with 0 closed in 6 months indicates unmaintained backlog",
+        "0 commits in past 6 months with contradictory recent commit timestamp suggests data inconsistency or stale metadata",
+        "0 merged PRs in 6 months shows no active development",
+        "0 contributors active in past 6 months indicates no team engagement",
+        "Unknown last release date prevents verification of release cadence",
+        "0 open PRs suggests no pending work or community contributions being accepted"
       ],
-      "positive_signals": [],
-      "summary": "DVC appears to be abandoned with zero maintenance activity over the past 6 months despite a recent commit timestamp that may reflect repository state rather than actual development."
+      "positive_signals": [
+        "Recent commit timestamp (2026-03-14) suggests some minimal activity, though this contradicts other metrics"
+      ],
+      "summary": "DVC appears abandoned with a large unmaintained issue backlog, zero development activity over 6 months, and no active contributors despite a recent commit timestamp."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:04:59.935298+00:00"
+    "llm_analyzed_at": "2026-03-15T17:15:10.613298+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

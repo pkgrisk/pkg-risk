@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs, but the package name suggests it's the type stubs themselves for the EBS service, creating significant mismatch between user expectations and actual content.",
-      "top_issue": "Critical package identity confusion - users installing 'mypy-boto3-ebs' expect EBS service type stubs, but the README describes 'mypy-boto3-builder', a completely different tool for generating stubs, with no mention of EBS anywhere"
+      "summary": "This README is for the builder tool, not the specific mypy-boto3-ebs package, leaving users without any EBS-specific documentation or usage examples.",
+      "top_issue": "The README is completely mismatched \u2014 it documents the mypy-boto3-builder generator tool rather than the mypy-boto3-ebs package itself, so users get no information about EBS-specific types, methods, or usage."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Packaging/distribution issues (setup.py deprecation, duplicate .pyi/.py files)",
-        "Type definition inaccuracies (async/await, literal types, overly broad types)",
-        "Missing extras/features in related packages",
-        "Documentation and tooling issues (generate locally instructions outdated)"
+        "Type stub accuracy and correctness issues (wrong type annotations, overly broad definitions)",
+        "Stale or incorrect documentation (example commands don't work, package name confusion)",
+        "Version compatibility and dependency resolution problems",
+        "Duplicate packaging (stub files shipped as both .pyi and .py)",
+        "Slow response to reported bugs (multiple open issues with 'response needed' label for 4+ months)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Enhancement requests are being implemented and released (pyproject.toml migration completed)",
+        "Some issues are being resolved with reasonable discussion"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but challenged community with legitimate technical complaints; maintainers respond but struggle with packaging complexity and type accuracy across ~400 generated packages."
+      "summary": "Moderate community health with active feature development, but maintenance backlog on critical type stub bugs that have gone unaddressed for several months, creating user frustration around type accuracy and documentation."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (Jan 2026)",
-        "15 open issues with no recent closure activity",
-        "Zero active contributors in past 6 months",
+        "Zero commits in past 6 months despite recent repo activity",
+        "16 open issues with no resolution or triage in 6 months",
         "No merged PRs in past 6 months",
-        "No releases recorded",
-        "Clear stagnation pattern across all maintenance indicators"
+        "Zero active contributors",
+        "No releases tracked"
       ],
-      "positive_signals": [],
-      "summary": "This package is abandoned with no maintenance activity for 6+ months despite recent repository activity, evidenced by unresolved issues and absence of contributor engagement."
+      "positive_signals": [
+        "Recent commit activity (2026-01-12) suggests project not entirely abandoned",
+        "No open pull requests indicates stable codebase"
+      ],
+      "summary": "Package appears stale with unresponsive maintainers; 16 unaddressed issues and zero development activity in 6 months indicate lack of active maintenance."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:13:32.759781+00:00"
+    "llm_analyzed_at": "2026-03-15T17:35:59.612245+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

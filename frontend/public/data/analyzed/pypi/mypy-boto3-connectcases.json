@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 1,
-      "configuration": 1,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 2,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "The README is for a different package (mypy-boto3-builder) than the one being analyzed (mypy-boto3-connectcases), making it completely misleading and unhelpful for users.",
-      "top_issue": "Wrong README content - this appears to be the builder tool's README, not the actual mypy-boto3-connectcases package README, causing complete confusion about what the package actually does"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific package (mypy-boto3-connectcases), making it confusing and lacking any service-specific documentation.",
+      "top_issue": "This README describes the mypy-boto3-builder generator tool, not the mypy-boto3-connectcases package itself \u2014 users get no guidance on how to use the ConnectCases service stubs specifically."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Missing extras/metadata in published packages",
-        "Duplicate .pyi and .py stub files causing tooling conflicts",
-        "Type definition accuracy problems (async/await, literal values)",
-        "Outdated documentation and setup.py deprecation"
+        "Type definitions are inaccurate (wrong literal types, overly broad protocols)",
+        "Duplicate stub files (.pyi and .py) causing IDE conflicts",
+        "Documentation and build instructions don't work as written",
+        "Package naming confusion between types-boto3 and boto3-stubs",
+        "Dependency version mismatches between main package and submodules",
+        "Missing PyPI metadata (extras not declared)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Project maintains comprehensive type stubs for ~400 boto3 packages",
+        "Some major enhancements are completed (pyproject.toml migration)"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate frustration with type accuracy and packaging consistency issues, but maintainers are actively addressing bugs with releases and the project continues evolving toward PEP 517/518 standards."
+      "summary": "Project is actively maintained but shows moderate responsiveness with several unresolved bugs marked 'response needed' lingering for months, suggesting possible maintainer capacity constraints."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or resolution",
-        "No merged PRs in past 6 months indicating stalled development",
-        "Zero active contributors in past 6 months",
-        "No releases in tracked period",
-        "No closed issues in past 6 months showing lack of maintenance"
+        "No commits in past 6 months despite open issues",
+        "16 unresolved open issues with zero activity",
+        "No contributors active in past 6 months",
+        "Unknown or missing release schedule",
+        "No merged PRs or addressed pull requests"
       ],
       "positive_signals": [
-        "Last commit exists (recent date suggests repo still exists)"
+        "Last commit exists from 2 months ago (minimal recent activity)"
       ],
-      "summary": "This package appears abandoned with multiple stalled issues, no development activity, and zero contributor engagement over the past 6 months despite having an initial recent commit."
+      "summary": "Package is effectively unmaintained with zero activity across all metrics for 6 months and a backlog of unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:06:42.799380+00:00"
+    "llm_analyzed_at": "2026-03-15T10:23:03.785005+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

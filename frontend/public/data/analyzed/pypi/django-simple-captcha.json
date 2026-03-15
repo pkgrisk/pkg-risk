@@ -178,49 +178,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 3,
-      "quick_start": 2,
-      "examples": 2,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "Clear project description and features, but lacks any installation instructions or usage examples in the README itself, relying entirely on external documentation.",
-      "top_issue": "No installation or quick start guide in README - users must navigate to external docs to perform even basic setup"
+      "summary": "The README gives a clear high-level description and feature list but defers almost all practical guidance to external documentation, leaving the README itself nearly useless for getting started.",
+      "top_issue": "No installation instructions, quick start, or usage examples \u2014 everything is delegated to an external ReadTheDocs link with no inline guidance at all."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "File storage integration issues (S3/django-storages)",
-        "Audio captcha file cleanup not working (accumulation in /tmp)",
-        "Settings configuration not properly respected",
-        "Uncaught exceptions in audio generation",
-        "Stale releases - fixes committed but not released",
-        "Settings override decorator incompatibility with testing",
-        "REST API integration unclear/undocumented"
+        "Audio captcha files accumulate and are never deleted",
+        "django-storages/S3 integration broken (blank images)",
+        "Settings configuration not working when set in apps.py",
+        "Uncaught exceptions in audio captcha generation",
+        "Settings override decorators don't work in tests",
+        "REST API support unclear/undocumented"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The project shows signs of stagnation with critical bugs (file cleanup, storage integration) left unfixed despite commits addressing them, slow maintainer response, and multiple unresolved issues spanning 9+ years indicating abandonment risk."
+      "summary": "Project shows significant maintenance neglect with critical unfixed bugs from 2015, stalled release cycle, and users forced to pin git versions to work around known issues."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from 2025-12-07",
-        "39 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months indicates no maintenance",
-        "No merged PRs in past 6 months shows no active development",
+        "No commits in past 6 months despite 39 open issues",
+        "Zero closed issues in past 6 months indicates no active maintenance",
+        "No merged PRs in past 6 months suggests contributions are not being reviewed",
         "No active contributors in past 6 months",
-        "Unknown last release suggests release process is stalled"
+        "Unknown last release date increases uncertainty about version stability",
+        "High issue backlog accumulating with no resolution process"
       ],
-      "positive_signals": [],
-      "summary": "django-simple-captcha appears to be abandoned with no maintenance activity, unresolved issues piling up, and no recent development or releases."
+      "positive_signals": [
+        "At least one commit exists (2025-12-07), showing some historical maintenance",
+        "Zero open PRs may indicate previous triage of contributions"
+      ],
+      "summary": "django-simple-captcha appears abandoned with no maintenance activity for 6+ months, 39 unresolved issues, and no active contributors or release information."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:30:20.528995+00:00"
+    "llm_analyzed_at": "2026-03-15T11:04:13.426378+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,47 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool rather than the mypy-boto3-gamelift package itself, with unclear purpose, minimal usage examples, and missing configuration details.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder README, not the mypy-boto3-gamelift package README, causing complete confusion about what the package actually does"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-gamelift` stub package, leaving users confused about what they actually installed and how to use it.",
+      "top_issue": "Wrong README: this is the mypy-boto3-builder tool's README, not documentation for the mypy-boto3-gamelift package \u2014 there are no GameLift-specific usage examples, import snippets, or type annotation guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type stub accuracy issues (bedrock tool_use type, aioboto3 coroutine signature)",
-        "Package versioning and distribution problems (missing submodules at version 1.42, missing extras metadata)",
-        "Duplicate stub files (.pyi and .py) causing tool confusion",
-        "Documentation and tooling issues (setup.py deprecation, local generation instructions broken)"
+        "Type stub definitions are inaccurate (async functions marked as sync, overly broad type hints)",
+        "Package versioning and metadata issues (missing submodule versions, missing extras)",
+        "Documentation gaps (generate locally instructions outdated/incorrect)",
+        "Confusing dual package naming (types-boto3 vs boto3-stubs)",
+        "Build reproducibility concerns (non-deterministic wheel output)",
+        "Duplicate stub files (.pyi and .py shipped together)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Migration to modern pyproject.toml completed",
+        "Some issues resolved and closed",
+        "Community engagement with issue responses"
+      ],
       "abandonment_signals": false,
-      "summary": "Community is experiencing legitimate technical issues with type accuracy and packaging, but maintainers are moderately responsive with some issues marked as released; project shows ongoing maintenance despite infrastructure challenges."
+      "summary": "A moderately maintained typing stub generation project with active bug reports but a growing backlog of unresolved type accuracy and documentation issues that require maintainer attention."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
+        "16 open issues with zero closed in past 6 months",
         "No active contributors in past 6 months",
-        "No closed issues in past 6 months despite 15 open issues",
-        "Unknown last release date",
-        "15 open issues with no activity suggests unresponsive maintainers"
+        "No merged PRs in past 6 months",
+        "Last release date unknown",
+        "No issue triage or response activity despite open issues"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero development activity, no issue resolution, and no contributor engagement over the past 6 months."
+      "positive_signals": [
+        "Recent commit 2 months ago suggests not completely abandoned",
+        "No open PRs reduces technical debt surface area"
+      ],
+      "summary": "Package shows minimal maintenance activity with stagnant issues and no contributor engagement, though a recent commit suggests it hasn't been fully abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T04:25:32.374358+00:00"
+    "llm_analyzed_at": "2026-03-15T06:49:28.712738+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

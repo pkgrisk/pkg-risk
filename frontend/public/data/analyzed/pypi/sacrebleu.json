@@ -174,47 +174,49 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
+      "installation": 9,
       "quick_start": 8,
       "examples": 9,
       "configuration": 7,
-      "troubleshooting": 4,
+      "troubleshooting": 5,
       "overall": 8,
-      "summary": "Excellent documentation with clear motivation, comprehensive examples, and detailed usage instructions, though it lacks dedicated troubleshooting guidance.",
-      "top_issue": "No troubleshooting section for common errors like download failures, tokenization issues, or test set availability problems"
+      "summary": "Excellent documentation with clear motivation, thorough examples, and well-documented breaking changes, but lacks a troubleshooting section.",
+      "top_issue": "No troubleshooting section for common errors or failure modes"
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Critical bugs affecting core functionality (memory leaks, incorrect BLEU scores)",
-        "API inconsistencies between CLI and Python API",
-        "Documentation/API clarity issues (reference format confusion)",
-        "Missing features (confidence intervals, WMT25 test sets)",
-        "Release/distribution issues (missing sdist)"
+        "Correctness bugs (100 BLEU score for mismatched corpus, sys_len aggregation failures)",
+        "Memory leaks in core tokenizers (spm, flores101/200)",
+        "API inconsistencies (CLI vs Python API produce different results)",
+        "Silent failures with incorrect input format instead of error messages",
+        "Missing source distributions in releases"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The project shows signs of moderate neglect with several unresolved critical bugs (memory leaks, scoring errors) dating back 1-2+ years, mixed maintainer responsiveness, and limited feature development, suggesting a mature but potentially under-resourced library."
+      "summary": "sacrebleu shows declining maintenance with critical unresolved bugs (memory leaks, scoring errors), feature requests ignored for 2+ years, and minimal maintainer engagement on recent issues despite active user reports."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "19 open issues with no activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months showing no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release suggests release history may not be tracked or recent"
+        "Zero commits in the past 6 months despite reported recent last commit",
+        "19 open issues with zero resolutions in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No merged pull requests in the past 6 months",
+        "Last release date unknown - no indication of release cadence",
+        "Complete absence of maintenance activity across all metrics"
       ],
-      "positive_signals": [],
-      "summary": "sacrebleu appears to be abandoned with no maintenance activity over the past 6 months despite unresolved open issues."
+      "positive_signals": [
+        "A commit exists from January 2026, indicating the project is not entirely abandoned"
+      ],
+      "summary": "The package is stale with no meaningful maintenance activity for 6 months, 19 unresolved issues, and no active contributors despite a recent commit history."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:22:28.602116+00:00"
+    "llm_analyzed_at": "2026-03-15T01:34:53.565593+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

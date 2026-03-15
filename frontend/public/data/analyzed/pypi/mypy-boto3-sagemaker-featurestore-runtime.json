@@ -191,48 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool rather than the actual package (mypy-boto3-sagemaker-featurestore-runtime), making it nearly useless for users who just want type stubs for SageMaker Feature Store Runtime.",
-      "top_issue": "Wrong README: this appears to be the mypy-boto3-builder project README, not the README for the specific service package mypy-boto3-sagemaker-featurestore-runtime, leaving users with no documentation on how to actually use this package for type checking SageMaker Feature Store Runtime boto3 calls."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific sub-package (mypy-boto3-sagemaker-featurestore-runtime), leaving users without direct usage examples or configuration guidance for the actual package they installed.",
+      "top_issue": "The README describes the parent builder project, not the specific sagemaker-featurestore-runtime stubs package \u2014 users have no examples of how to actually use type annotations with the SageMaker Feature Store Runtime client."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Missing extras/features in published packages",
-        "Duplicate stub files (.pyi and .py) causing tool conflicts",
-        "Type definition accuracy issues across AWS services",
-        "Documentation gaps and outdated generation instructions"
+        "Type stub accuracy and correctness issues (wrong type definitions, missing async markers)",
+        "Version mismatches between package submodules and parent packages",
+        "Outdated or incorrect documentation (generate locally instructions)",
+        "Package naming/structure confusion (types-boto3 vs boto3-stubs identity)",
+        "Missing or incorrect package metadata (extras not provided)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active but challenged project with moderate maintainer engagement, struggling with packaging consistency, type accuracy, and documentation clarity across ~400 generated AWS stub packages."
+      "praise_themes": [
+        "Some enhancements successfully implemented and released (pyproject.toml migration)",
+        "Issues are technically detailed and well-documented"
+      ],
+      "abandonment_signals": true,
+      "summary": "A specialized type-stub generation project with slow but active maintenance, evidenced by open issues with 'response needed' labels remaining unaddressed for 3-6 months despite occasional releases."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit on 2026-01-12",
-        "15 open issues with no recent activity or resolution",
-        "Zero merged PRs in past 6 months",
+        "Zero commits in past 6 months despite 16 open issues",
+        "16 open issues with zero closed in 6 months - issues not being triaged",
         "No active contributors in past 6 months",
-        "No releases in past 6 months",
-        "No closed issues in past 6 months indicating lack of maintenance effort"
+        "Zero merged PRs in 6 months - no external contributions being accepted",
+        "Unknown last release - unclear when last version was published"
       ],
-      "positive_signals": [],
-      "summary": "This package is effectively abandoned with no maintenance activity over the past 6 months and a growing backlog of unresolved issues."
+      "positive_signals": [
+        "Last commit exists from 2026-01-12 (recent, ~2 months ago)"
+      ],
+      "summary": "This package is stale with accumulating unaddressed issues and no maintenance activity or contributor engagement over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:00:11.096303+00:00"
+    "llm_analyzed_at": "2026-03-15T17:02:24.413429+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

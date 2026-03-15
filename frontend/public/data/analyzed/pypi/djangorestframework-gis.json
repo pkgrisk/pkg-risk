@@ -180,46 +180,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 7,
+      "installation": 8,
+      "quick_start": 5,
       "examples": 5,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 6,
-      "summary": "Clear installation and setup instructions with good compatibility table, but lacks complete quick-start examples and troubleshooting guidance.",
-      "top_issue": "README appears truncated mid-example and lacks a working quick-start code snippet showing how to actually use GeometryField in a serializer with a view"
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "Good installation and compatibility documentation, but lacks a quick-start example showing end-to-end usage and has no troubleshooting section.",
+      "top_issue": "No working quick-start example showing how to actually build a GeoJSON API endpoint from scratch \u2014 the README cuts off mid-example and never shows the full picture."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Unresolved bugs from 2019 still open (GDALException, GeoJSON output)",
-        "Dependency version constraints preventing use of newer releases",
-        "Long delays between releases forcing users to pin to commits"
+        "Geometry type validation missing - serializers accept invalid types, errors only appear on database save",
+        "Unresolved bug from 2019: GDALException errors on bad input to GeometryFilter",
+        "Overly restrictive dependency constraints (djangorestframework <3.16) blocking user upgrades",
+        "GeoJSON spec compliance issue: output coordinates not normalized to EPSG:4326",
+        "Lack of releases - users cannot pin to fixed versions with recent fixes"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "Project shows signs of abandonment with critical bugs unfixed for 6+ years, slow dependency updates, and low maintainer engagement despite user requests for version compatibility."
+      "summary": "Project shows signs of slow/abandoned maintenance with critical bugs open since 2019, restrictive dependency constraints blocking modern versions, and minimal maintainer engagement on feature requests and bug fixes."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "26 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance activity",
-        "No merged PRs in past 6 months showing no code review or updates",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process is stalled"
+        "26 open issues with zero closed in past 6 months",
+        "No merged PRs in past 6 months despite recent activity",
+        "Zero active contributors in past 6 months",
+        "Unknown release schedule - cannot verify release cadence",
+        "Discrepancy between recent commit and zero 6-month commits suggests inactive main branch"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite a recent commit timestamp, accumulating 26 unresolved issues."
+      "positive_signals": [
+        "Last commit 10 days ago indicates some repository activity",
+        "No open PRs suggests controlled state (not ignoring contributions)"
+      ],
+      "summary": "Project shows signs of stalled maintenance with recent anomalous commit activity but 6+ months of zero issue resolution, merged PRs, and contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:29:41.039986+00:00"
+    "llm_analyzed_at": "2026-03-15T06:20:44.219239+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

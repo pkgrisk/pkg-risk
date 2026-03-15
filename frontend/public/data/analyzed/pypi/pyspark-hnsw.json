@@ -183,52 +183,56 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 7,
+      "clarity": 4,
       "installation": 1,
       "quick_start": 1,
-      "examples": 2,
+      "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 2,
-      "summary": "README explains what HNSW is and lists features but provides zero installation instructions, no code examples, and only vague references to documentation elsewhere.",
-      "top_issue": "No installation instructions whatsoever - critical for a PyPI package users expect to pip install"
+      "summary": "This README is for the wrong package \u2014 it describes a Java/Scala HNSW library, not the PySpark-specific pyspark-hnsw package, leaving users with no actionable information.",
+      "top_issue": "The README content is entirely mismatched: it documents the Java hnswlib project rather than pyspark-hnsw, providing no installation, usage, or configuration guidance for the actual package."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Performance issues (100x slower than C++ hnswlib)",
-        "Edge cases causing empty results (large K values, no similar items)",
-        "Scalability problems (large datasets, distributed systems)",
-        "Module/package overlapping in modular Java",
-        "Critical bugs (NegativeArraySizeException, data loss on k8s)",
+        "Performance: search 100x slower than C++ hnswlib",
+        "Critical bugs: NegativeArraySizeException with certain IDs, array sizing overflow",
+        "Data loss on k8s/distributed systems with persistence",
         "Model loading/persistence failures",
-        "Crashes with certain input patterns"
+        "Scalability issues with large K values (50k+) returning empty results",
+        "Module system incompatibilities with overlapping packages",
+        "Unresolved feature requests (num_threads, release versions)"
       ],
       "praise_themes": [
-        "Appreciation for the library's existence and core functionality"
+        "Appreciation for the library's existence and functionality",
+        "Gratitude for author's work on the project"
       ],
       "abandonment_signals": true,
-      "summary": "The pyspark-hnsw library shows signs of declining maintenance with multiple unresolved critical bugs, performance concerns, and sparse responsiveness to issues spanning several years."
+      "summary": "Community shows mixed health with active usage but concerning maintenance gaps\u2014critical bugs (data loss, overflow errors) and performance complaints remain unresolved, and recent open issues (2023-2025) lack engagement despite high-impact scope."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from March 2025",
-        "No closed issues in past 6 months indicating no active issue resolution",
-        "No merged PRs in past 6 months showing no active development",
-        "6 open issues remain unaddressed",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process is stalled"
+        "No commits in past 6 months (last commit approximately 11-12 months ago)",
+        "6 open issues with no recent activity or response",
+        "Zero closed issues in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release date indicates poor release cadence",
+        "No active contributors in past 6 months"
       ],
-      "positive_signals": [],
-      "summary": "pyspark-hnsw appears to be abandoned with no maintenance activity for at least 6 months and multiple unresolved issues."
+      "positive_signals": [
+        "Last commit exists (though outside 6-month window), indicating project was not abandoned abruptly",
+        "No open PRs prevents accumulation of stale proposals"
+      ],
+      "summary": "The pyspark-hnsw package is stale with 6+ months of inactivity and unresolved open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:25:51.999365+00:00"
+    "llm_analyzed_at": "2026-03-15T07:04:26.772074+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

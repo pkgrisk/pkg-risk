@@ -191,50 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
+      "clarity": 6,
       "installation": 5,
-      "quick_start": 4,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs, but the package name suggests it's a specific type stub package for AWS BCM Data Exports service, creating fundamental confusion about what this package actually does.",
-      "top_issue": "Critical package identity confusion - the README describes 'mypy-boto3-builder' (a tool for generating type stubs) but the package is 'mypy-boto3-bcm-data-exports' (which should be a specific service's type stubs), making it impossible to understand what this package actually provides or how to use it."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, providing little context for users of mypy-boto3-bcm-data-exports specifically.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-bcm-data-exports package itself \u2014 a new user has no idea how to install or use the BCM Data Exports type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/metadata in type stub packages",
-        "Duplicate .pyi and .py files causing tooling issues",
-        "Incorrect type definitions (async/await, Literal values)",
-        "Packaging standards not followed (setup.py instead of pyproject.toml)"
+        "Type stubs don't match actual library behavior (aioboto3 coroutines, Bedrock ToolUseBlockTypeDef, S3 FileobjTypeDef)",
+        "Duplicate .pyi and .py files causing IDE conflicts",
+        "Package versioning mismatches (types-boto3 submodules, extras not provided)",
+        "Outdated/broken documentation and CLI instructions",
+        "Lack of clarity on package naming (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Maintainers do address issues (pyproject.toml migration completed and released)",
+        "Users report issues clearly with reproduction steps",
+        "Some issues are being resolved despite complexity"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement, but plagued by type definition accuracy issues, packaging inconsistencies, and version synchronization problems that frustrate users trying to use boto3 type stubs."
+      "summary": "Moderate community health with active issue resolution on some fronts, but persistent type-accuracy and packaging distribution problems that frustrate users and require ongoing attention."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (Jan 12, 2026)",
-        "Zero merged PRs in past 6 months indicating no active development",
-        "Zero closed issues in past 6 months showing no maintenance activity",
-        "15 open issues with no resolution activity",
+        "Zero commits in past 6 months despite last commit being 2 months ago",
+        "16 open issues with zero resolutions in past 6 months",
+        "No pull request activity (merged or open) in past 6 months",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests release information may be unavailable or outdated"
+        "Unknown last release date prevents verifying if issues affect released versions"
       ],
       "positive_signals": [
-        "Recent commit timestamp (Jan 12, 2026) suggests repository still exists"
+        "Project exists and is published to PyPI",
+        "Recent commit history (January 2026)"
       ],
-      "summary": "This package appears abandoned with zero maintenance activity over the past 6 months despite recent repository timestamps, indicating either stale infrastructure or discontinuation of active support."
+      "summary": "This package shows dormant maintenance with unresolved issues accumulating and no recent activity pattern, indicating it is stale rather than actively maintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T21:08:25.955269+00:00"
+    "llm_analyzed_at": "2026-03-15T18:32:42.887971+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

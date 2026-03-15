@@ -191,49 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
+      "clarity": 6,
       "installation": 5,
-      "quick_start": 4,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README describes a builder tool for generating type stubs but is confusing because the package name (mypy-boto3-shield) suggests it's a pre-built type stub package, not the builder itself.",
-      "top_issue": "Critical mismatch: the README is for 'mypy-boto3-builder' (a generator tool) but the package is 'mypy-boto3-shield' (likely a pre-built service-specific stub), causing complete confusion about what this package actually does and how to use it."
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific mypy-boto3-shield package, providing minimal actionable guidance and deferring almost everything to external documentation links.",
+      "top_issue": "This README is for the builder tool, not the specific shield service stub package \u2014 a new user installing mypy-boto3-shield gets no shield-specific usage examples or explanation of what type stubs are provided."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Incorrect type definitions in generated stubs",
-        "Duplicate .pyi and .py files causing editor conflicts",
-        "Missing extras/metadata in packages",
-        "Documentation and tooling issues"
+        "Type definition and stub accuracy issues (wrong async signatures, missing extras, duplicate .pyi/.py files)",
+        "Documentation out of date (generate locally instructions broken)",
+        "Package naming confusion (types-boto3 vs boto3-stubs dual maintenance)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Enhancements are delivered (pyproject.toml migration completed and released)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement, but recurring issues with auto-generated type stub accuracy and packaging metadata are creating friction for users."
+      "summary": "Active but inconsistently responsive project\u2014delivers features and resolves some issues, but leaves multiple bugs labeled 'response needed' unaddressed for 4-5+ months despite ongoing maintenance activity."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite being a type stub package that needs updates",
-        "15 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicates no active development or community contributions",
-        "No active contributors in past 6 months",
-        "Last commit is over 2 weeks old with no follow-up activity"
+        "Zero commits in the past 6 months despite being a type-stub package",
+        "16 open issues with no issue closures in 6 months",
+        "No merged PRs in 6 months - no contribution activity",
+        "Zero active contributors for 6 months",
+        "Last release date unknown - difficulty assessing release cadence",
+        "Type-stub packages require frequent updates as boto3 evolves"
       ],
       "positive_signals": [
-        "Package exists and was updated relatively recently (2026-01-12)"
+        "Last commit was 2 months ago (2026-01-12), showing some recent activity",
+        "No open PRs suggests low unmanaged backlog"
       ],
-      "summary": "This mypy type stub package appears stale with no development activity, unresolved issues, or community engagement over the past 6 months."
+      "summary": "This type-stub package appears stale with no maintenance activity for 6 months, unaddressed issues, and unknown release status, though a commit 2 months ago suggests it hasn't been completely abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:26:10.569383+00:00"
+    "llm_analyzed_at": "2026-03-15T08:35:54.805984+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

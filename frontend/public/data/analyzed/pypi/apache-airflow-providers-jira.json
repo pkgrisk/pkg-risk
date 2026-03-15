@@ -197,42 +197,46 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
-      "installation": 1,
+      "clarity": 3,
+      "installation": 2,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 1,
-      "summary": "This README is for the wrong package - it shows generic Apache Airflow documentation instead of Jira provider-specific content, making it completely misleading and unusable.",
-      "top_issue": "Critical packaging error: README contains generic Airflow documentation instead of Jira provider package documentation, leaving users with no information about installation, configuration, or usage of the Jira integration"
+      "overall": 2,
+      "summary": "The README is actually the generic Apache Airflow core README, not specific to the Jira provider package \u2014 it contains no information about Jira integration, operators, hooks, or provider-specific usage.",
+      "top_issue": "Wrong README: the content describes Apache Airflow core rather than the apache-airflow-providers-jira package; there is zero documentation about Jira connectivity, available operators/hooks, or how to use this provider."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 2,
-      "maintainer_responsiveness": "moderate",
-      "common_complaints": [],
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
+      "common_complaints": [
+        "Migration 0094 upgrade performance degradation at scale due to row-by-row Python deserialization"
+      ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Single security-focused issue showing proactive maintenance awareness with clear technical resolution path (Connexion 2.15.0 upgrade), indicating healthy community stewardship despite dependency constraints."
+      "summary": "A critical performance regression in database migrations has been promptly reported with early maintainer engagement, though assessment is limited by single incomplete issue data."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 10,
       "concerns": [
-        "No commits in past 6 months despite last commit being 2026-02-12",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months despite 1725 open issues",
-        "Unknown last release date indicates possible release infrastructure issues",
-        "High number of open issues (1725) with no triage activity"
+        "Zero commits in past 6 months",
+        "1772 open issues with no recent closures",
+        "No merged PRs in 6 months",
+        "Zero active contributors",
+        "Unknown last release date",
+        "Massive unaddressed issue backlog"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with zero maintenance activity over the past 6 months, despite a large backlog of unresolved issues and no recent releases."
+      "positive_signals": [
+        "Recent commit timestamp suggests repo still exists"
+      ],
+      "summary": "Package is abandoned with no development activity, issue triage, or contributor engagement over 6 months despite massive open issue backlog."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:49:40.491060+00:00"
+    "llm_analyzed_at": "2026-03-15T16:36:01.743463+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

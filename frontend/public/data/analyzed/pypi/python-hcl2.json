@@ -171,47 +171,49 @@
       "clarity": 8,
       "installation": 9,
       "quick_start": 8,
-      "examples": 5,
-      "configuration": 3,
-      "troubleshooting": 2,
+      "examples": 4,
+      "configuration": 2,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "Clear introduction and installation with a basic usage example, but lacks comprehensive examples, configuration guidance, and troubleshooting information.",
-      "top_issue": "Minimal examples beyond the most basic use case - no coverage of common operations like accessing parsed data, handling errors, working with Terraform-specific constructs, or using the parse tree reconstruction features effectively"
+      "summary": "Clear and concise for basic usage, but lacks depth in examples, configuration options, and troubleshooting guidance.",
+      "top_issue": "No examples beyond basic file loading \u2014 no coverage of accessing parsed data, handling edge cases, or common HCL2 patterns like variables, modules, or resources."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Parser produces invalid/unparseable output (can't round-trip)",
-        "Binary operator precedence bugs causing incorrect expression parsing",
-        "Reverse transformation (writes/dumps) generates syntactically invalid HCL",
-        "String quoting issues in templates and literals",
-        "Nested function handling in transformations fails",
-        "Edge cases like empty string keys and special characters in keys",
-        "Template directives with string comparisons don't parse"
+        "Parsing failures: ternary expressions, operator precedence, empty string keys",
+        "Serialization bugs: reverse_transform omits quotes and handles nested functions incorrectly",
+        "String handling: literal 'string' keyword misquoted, jsonencode deserialization broken",
+        "Transformation inconsistencies: interpolation literal formatting deprecated"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "The project shows signs of maintenance abandonment with 9 open bugs spanning 5+ years, multiple marked 'fixed-in-8.0' (unreleased), critical serialization flaws preventing round-trip parsing, and no visible maintainer engagement on recent issues."
+      "praise_themes": [
+        "Library recognized as valuable for Terraform script manipulation",
+        "Used for real infrastructure automation workflows"
+      ],
+      "abandonment_signals": false,
+      "summary": "Active but troubled: python-hcl2 has fundamental parsing and serialization bugs concentrated in recent months (May 2025\u2013Feb 2026) with minimal maintainer engagement despite 'available-in-prerelease' labeling suggesting developmental focus."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite recent last commit date suggesting stale repository",
-        "21 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicating no active development",
-        "Zero active contributors in past 6 months",
-        "No releases recorded, suggesting version management has ceased",
-        "Closed issues past 6 months is 0, indicating issues are not being addressed"
+        "24 open issues with zero closed in past 6 months indicates accumulating bugs/requests without resolution",
+        "No commits in past 6 months despite recent activity (data inconsistency suggests last real maintenance was >6 months ago)",
+        "Zero active contributors in past 6 months signals project is unmaintained",
+        "Unknown last release - no stable versions published recently",
+        "No merged PRs in 6 months indicates no review/merge activity"
       ],
-      "positive_signals": [],
-      "summary": "python-hcl2 appears abandoned with no maintenance activity for 6+ months despite 21 unresolved issues."
+      "positive_signals": [
+        "Recent commit on 2026-03-14 suggests minimal ongoing activity",
+        "Zero open PRs keeps maintenance burden low"
+      ],
+      "summary": "This project is stale with 24 unresolved issues, no releases, and no contributor activity in 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:55:28.273804+00:00"
+    "llm_analyzed_at": "2026-03-15T16:51:06.379813+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

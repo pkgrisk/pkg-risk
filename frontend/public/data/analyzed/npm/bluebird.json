@@ -10,11 +10,11 @@
     "repo": "bluebird",
     "subpath": null
   },
-  "install_count_30d": 109503117,
+  "install_count_30d": 165976704,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 60.9,
+    "overall": 63.1,
     "grade": "D",
     "percentile": null,
     "risk_tier": "conditional",
@@ -23,7 +23,7 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 57.0,
+      "score": 70.0,
       "weight": 30,
       "key_factors": [
         "Dangerous CI/CD workflows detected",
@@ -31,12 +31,12 @@
       ]
     },
     "maintenance": {
-      "score": 49.5,
+      "score": 50.5,
       "weight": 25,
       "key_factors": []
     },
     "community": {
-      "score": 100.0,
+      "score": 95.0,
       "weight": 15,
       "key_factors": []
     },
@@ -49,7 +49,7 @@
       ]
     },
     "documentation": {
-      "score": 47.5,
+      "score": 35.5,
       "weight": 10,
       "key_factors": []
     },
@@ -64,12 +64,12 @@
       "owner": "petkaantonov",
       "name": "bluebird",
       "description": ":bird: :zap: Bluebird is a full featured promise library with unmatched performance.",
-      "stars": 20787,
-      "forks": 2332,
+      "stars": 20759,
+      "forks": 2324,
       "open_issues": 127,
-      "watchers": 20787,
+      "watchers": 20759,
       "created_at": "2013-09-07T19:39:57Z",
-      "updated_at": "2026-01-09T08:01:23Z",
+      "updated_at": "2026-03-14T08:15:56Z",
       "pushed_at": "2024-11-07T20:26:46Z",
       "default_branch": "master",
       "license": "MIT",
@@ -97,8 +97,8 @@
     },
     "issues": {
       "open_issues": 78,
-      "closed_issues_6mo": 1,
-      "avg_response_time_hours": null,
+      "closed_issues_6mo": 2,
+      "avg_response_time_hours": 0.1,
       "avg_close_time_hours": 0.0,
       "good_first_issue_count": 0,
       "regression_issue_count": 0
@@ -171,101 +171,59 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 8,
-      "installation": 3,
-      "quick_start": 2,
-      "examples": 2,
-      "configuration": 1,
-      "troubleshooting": 4,
-      "overall": 3,
-      "summary": "Clear introduction with prominent deprecation notice, but lacks practical installation/usage examples in the README itself, relying entirely on external documentation.",
-      "top_issue": "No installation instructions or code examples in README - users must navigate to external website for any practical usage information"
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "tools/mocha_runner.js",
-          "line": 34,
-          "severity": "low",
-          "description": "Use of eval-like functionality through setImmediate, but it's a built-in Node.js function and not directly user-input dependent."
-        },
-        {
-          "file": "tools/saucelabs_runner.js",
-          "line": 123,
-          "severity": "medium",
-          "description": "Potential command injection risk in tunnelArgs due to lack of input validation, but it's an internal implementation detail and not directly exposed to user input."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [
-        {
-          "file": "tools/saucelabs_runner.js",
-          "line": 14,
-          "type": "environment variable (SAUCE_USERNAME, SAUCE_ACCESS_KEY)"
-        }
-      ],
-      "critical_findings": [
-        "Potential for secrets exposure through environment variables"
-      ],
-      "summary": "The code has some potential security concerns, including lack of input validation and potential command injection risks, but overall it appears to be well-structured and follows best practices."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "unresponsive",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Package appears unmaintained (no updates in 2+ years)",
-        "Spam and low-quality issues dominate tracker",
-        "Security vulnerabilities not addressed",
-        "Incompatibility with modern Node.js features (--frozen-intrinsics)",
-        "Lack of response to legitimate bug reports"
+        "toFastProperties is not working",
+        "Incomplete string escaping or encoding - vulnerability alert"
       ],
       "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Bluebird shows severe abandonment with zero maintainer engagement, spam-filled issue tracker, unresolved security concerns, and no updates since ~2022, indicating a dead project despite its historical importance."
+      "abandonment_signals": false,
+      "summary": "The community health for the bluebird package shows mixed sentiment with some open issues indicating frustration, but no clear signs of abandonment. The maintainer responsiveness appears slow as there are several unresolved issues."
     },
     "communication": {
-      "helpfulness": 7,
-      "clarity": 8,
-      "patience": 9,
-      "technical_depth": 8,
-      "welcomingness": 6,
+      "helpfulness": 8,
+      "clarity": 7,
+      "patience": 6,
+      "technical_depth": 7,
+      "welcomingness": 5,
       "communication_style": "good",
       "red_flags": [
-        "occasional dismissive tone towards new contributors"
+        "Some responses could be more empathetic towards users who might not understand the context fully.",
+        "There are instances where the maintainer suggests alternatives without providing detailed migration paths or examples."
       ],
-      "summary": "The maintainer's responses are generally clear and technically sound, showing patience with repeated questions but occasionally coming across as slightly dismissive."
+      "summary": "The maintainer provides helpful and technically sound responses, but there's room for improvement in clarity and patience, especially when dealing with repeated or basic questions."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite being a popular package",
-        "127 open issues with no recent resolution activity",
-        "No merged PRs in past 6 months indicating stalled development",
-        "No active contributors in past 6 months",
-        "Last commit was over 2 months ago (November 2024)"
+        "No commits in the last 6 months",
+        "High number of open issues (78)",
+        "Low number of merged PRs (1) in the past 6 months"
       ],
       "positive_signals": [
-        "Package still has 0 open PRs, suggesting community is not actively attempting fixes",
-        "Last commit exists, indicating project was not immediately abandoned"
+        "Last release was relatively recent (2019-11-28)",
+        "Active contributors in the past 6 months (10)"
       ],
-      "summary": "Bluebird is in a stale maintenance state with no activity for 6+ months, large number of unresolved issues, and no active contributors."
+      "summary": "The package bluebird has not seen any commits in the last 6 months, with a high number of open issues and low activity on pull requests, indicating it is stale."
     },
     "changelog": null,
     "governance": {
       "has_succession_plan": false,
-      "decision_process_documented": true,
-      "contributor_ladder_exists": false,
+      "decision_process_documented": false,
+      "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
-      "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
+      "summary": "The governance documentation for the npm package 'bluebird' does not provide a succession plan, decision-making process, or indication of multiple maintainers. However, it does offer a path for contributors to become maintainers."
     },
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T04:58:41.393612+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": {
     "lifecycle_scripts": {
@@ -665,24 +623,23 @@
   },
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 1.8,
-      "score_date": "2025-12-29T00:00:00Z",
+      "overall_score": 2.0,
+      "score_date": "2026-03-02T00:00:00Z",
       "checks": {
-        "Dangerous-Workflow": -1.0,
-        "Packaging": -1.0,
-        "Code-Review": 3.0,
-        "Token-Permissions": -1.0,
         "Maintained": 0.0,
+        "Packaging": -1.0,
+        "Token-Permissions": -1.0,
+        "Code-Review": 3.0,
+        "Dangerous-Workflow": -1.0,
         "CII-Best-Practices": 0.0,
-        "Security-Policy": 0.0,
         "Binary-Artifacts": 10.0,
         "Pinned-Dependencies": 0.0,
+        "Security-Policy": 0.0,
         "License": 10.0,
         "Fuzzing": 0.0,
         "Signed-Releases": 0.0,
         "Branch-Protection": 0.0,
-        "SAST": 0.0,
-        "Vulnerabilities": 0.0
+        "SAST": 0.0
       },
       "code_review_score": 3.0,
       "maintained_score": 0.0,
@@ -694,8 +651,8 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 20782,
-      "forks": 2332,
+      "stars": 20758,
+      "forks": 2326,
       "open_issues": 127,
       "license": "MIT",
       "description": ":bird: :zap: Bluebird is a full featured promise library with unmatched performance.",
@@ -711,7 +668,7 @@
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-09T15:17:59.265637Z",
+    "fetched_at": "2026-03-14T16:46:51.529624Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -719,32 +676,32 @@
     ]
   },
   "analysis_summary": {
-    "maintenance_status": "minimal-maintenance",
+    "maintenance_status": "stale",
     "security_summary": "No issues",
-    "doc_summary": "The documentation is clear about the package's purpose, but lacks detailed installation and usage instructions.",
+    "doc_summary": "",
     "concerns": [
-      "No commits in the past six months",
-      "A high number of open issues and PRs",
-      "Docs: Lack of explicit installation instructions and a quick start guide",
-      "Community: open issues without comments or responses",
-      "Community: lack of detailed information in issue descriptions",
-      "Communication: occasional dismissive tone towards new contributors",
+      "No commits in the last 6 months",
+      "High number of open issues (78)",
+      "Low number of merged PRs (1) in the past 6 months",
+      "Community: toFastProperties is not working",
+      "Community: Incomplete string escaping or encoding - vulnerability alert",
+      "Communication: Some responses could be more empathetic towards users who might not understand the context fully.",
+      "Communication: There are instances where the maintainer suggests alternatives without providing detailed migration paths or examples.",
       "Governance: High bus factor risk identified",
-      "Security: Potential for secrets exposure through environment variables",
-      "Low OpenSSF Scorecard: 1.8/10",
+      "Low OpenSSF Scorecard: 2.0/10",
       "Dangerous CI/CD workflow patterns detected",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "Contributors are still active, though infrequently",
-      "Regular issue reporting is occurring"
+      "Last release was relatively recent (2019-11-28)",
+      "Active contributors in the past 6 months (10)"
     ],
-    "community_sentiment": "neutral",
+    "community_sentiment": "mixed",
     "communication_style": "good",
     "supply_chain_risk": "medium",
-    "scorecard_score": 1.8,
+    "scorecard_score": 2.0,
     "dependency_count": 0
   },
-  "analyzed_at": "2026-01-09T15:19:23.512005Z",
-  "data_fetched_at": "2026-01-09T15:19:23.512007Z"
+  "analyzed_at": "2026-03-14T16:51:54.134426Z",
+  "data_fetched_at": "2026-03-14T16:51:54.134428Z"
 }

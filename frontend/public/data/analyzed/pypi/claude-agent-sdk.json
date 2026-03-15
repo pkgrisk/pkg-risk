@@ -170,47 +170,49 @@
     "readme": {
       "clarity": 9,
       "installation": 9,
-      "quick_start": 10,
-      "examples": 8,
-      "configuration": 9,
-      "troubleshooting": 7,
-      "overall": 9,
-      "summary": "Excellent documentation with clear structure, comprehensive examples, and good coverage of core features, though some examples appear truncated.",
-      "top_issue": "The streaming_mode.py example reference at the end is cut off mid-sentence, and troubleshooting section only covers error types without actual troubleshooting scenarios"
+      "quick_start": 9,
+      "examples": 9,
+      "configuration": 8,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent, well-structured documentation with progressive examples from simple to advanced, but the error handling section is truncated mid-example and there is no dedicated troubleshooting guide.",
+      "top_issue": "The error handling section is cut off mid-example (`async for m`) and there is no troubleshooting section covering common failure modes or debugging steps."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Core functionality bugs (parentUuid chain corruption, thinking blocks missing with Opus 4.6)",
-        "Missing features from CLI not available in SDK (/context command, slash commands)",
-        "Data loss and integrity issues (session resume creates new session, context isolation failure)",
-        "Poor error handling and debugging experience (hook callback errors, dropped fields in message parsing)",
-        "Tool execution problems (mid-loop compaction missing, is_error flag ignored)",
-        "Billing/licensing restrictions (Max plan not supported, API key only)"
+        "Silent failures without logging or warnings",
+        "Configuration parameters being ignored (ANTHROPIC_BASE_URL)",
+        "Stream timeouts and connection drops after 60-70 seconds",
+        "Message delivery failures between agents",
+        "Security gaps (no MCP authentication or message verification)",
+        "Protocol mismatches between CLI and SDKs"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The claude-agent-sdk has multiple critical bugs affecting core functionality (data integrity, conversation chains), significant feature gaps compared to the CLI, and slow maintainer response, indicating a project in early/unstable state with growing user frustration."
+      "summary": "The SDK shows concerning patterns of reliability issues (silent failures, timeouts, undelivered messages), security vulnerabilities in MCP integration, and configuration problems\u2014with slow resolution times (some issues open 2+ months) and recent issues receiving no maintainer response."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite being the current date (2026-02-11)",
-        "245 open issues with no resolution activity",
-        "Zero closed issues in past 6 months indicates no maintenance",
-        "No merged PRs in past 6 months shows stalled development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release process has stopped"
+        "320 open issues with zero closures in past 6 months indicates issues are not being triaged or addressed",
+        "No merged pull requests in past 6 months suggests community contributions are not being integrated",
+        "No active contributors in past 6 months indicates minimal or absent team engagement",
+        "Unknown last release makes it unclear if recent changes are being published to users",
+        "Massive issue backlog with no triage suggests abandoned issue queue"
       ],
-      "positive_signals": [],
-      "summary": "claude-agent-sdk shows clear signs of abandonment with complete absence of maintenance activity over 6+ months and a large backlog of unresolved issues."
+      "positive_signals": [
+        "Very recent commit (2026-03-14) indicates some activity occurred",
+        "Repository appears to exist and has not been archived or deleted"
+      ],
+      "summary": "The project shows a massive unresolved issue backlog with virtually no maintenance activity for 6 months despite a single recent commit, indicating stale maintenance status rather than active development."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:49:43.697100+00:00"
+    "llm_analyzed_at": "2026-03-15T16:36:02.802845+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

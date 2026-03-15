@@ -191,48 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) rather than the actual package being installed (mypy-boto3-swf), with minimal quick-start guidance and almost no concrete examples.",
-      "top_issue": "Wrong package documented - README describes mypy-boto3-builder instead of mypy-boto3-swf, which will confuse users who installed this specific service stub package"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-swf package, providing minimal relevant guidance and deferring nearly everything to external documentation links.",
+      "top_issue": "The README describes the parent builder project, not the specific SWF service stubs package \u2014 a new user installing mypy-boto3-swf gets no usage examples, API coverage info, or configuration guidance for SWF specifically."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Incorrect type definitions in stubs (async/await, literal values, overly broad types)",
-        "Duplicate .pyi and .py files causing IDE confusion",
-        "Missing extras metadata in packages",
-        "Documentation and tooling issues (setup.py deprecation, generate instructions)"
+        "Type definition accuracy issues (ToolUseBlockTypeDef, FileobjTypeDef, get_credentials typing)",
+        "Duplicate/confusing package naming (types-boto3 vs boto3-stubs, types-aiobotocore vs aiobotocore-stubs)",
+        "Missing package metadata and extras on PyPI",
+        "Documentation accuracy (outdated generation instructions)",
+        "Duplicate stub files (.pyi and .py causing IDE issues)",
+        "Version synchronization problems between submodules"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Modernization efforts (pyproject.toml migration completed)",
+        "Some bugs marked as released/resolved"
+      ],
       "abandonment_signals": false,
-      "summary": "The types-boto3 project shows moderate health with consistent bug reporting and some issues being resolved, but struggles with type definition accuracy and package metadata management that frustrate users."
+      "summary": "Project is actively maintained with some fixes implemented, but several type definition bugs and infrastructure issues have lingered open for 4-6 months, indicating moderate responsiveness with room for improvement."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months",
-        "No closed issues in the past 6 months despite 15 open issues",
-        "No merged PRs in the past 6 months",
-        "No active contributors in the past 6 months",
-        "No recent release information available",
-        "Last commit over 2 weeks ago with no follow-up activity"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No issue closure activity (0 closed in 6 months)",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown release history prevents assessment of release cadence",
+        "Open issues remain unaddressed with no engagement"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity over the past 6 months and accumulating unresolved issues."
+      "positive_signals": [
+        "Last commit relatively recent (January 2026, ~2 months ago)",
+        "No abandoned stubs or placeholder code patterns evident"
+      ],
+      "summary": "Package appears stale with minimal engagement despite a recent commit; 16 unresolved issues and zero maintenance activity over the past 6 months indicate the project is not actively supported."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:54:26.380228+00:00"
+    "llm_analyzed_at": "2026-03-15T08:05:27.106740+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

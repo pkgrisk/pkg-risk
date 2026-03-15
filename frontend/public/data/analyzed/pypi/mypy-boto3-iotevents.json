@@ -191,49 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it primarily documents the mypy-boto3-builder tool rather than the actual package (mypy-boto3-iotevents), leaving users unclear about what this specific package does or how to use it.",
-      "top_issue": "Wrong README - this appears to be the builder tool's README, not the service-specific type stubs package README, causing complete confusion about the package's actual purpose and usage"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-iotevents package, leaving users confused about what this particular sub-package does and how to use it.",
+      "top_issue": "This README belongs to the parent builder project, not the mypy-boto3-iotevents package itself \u2014 there are no examples, configuration docs, or troubleshooting specific to IoT Events type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing or incorrect type definitions in stubs",
-        "Duplicate .pyi and .py files causing tool confusion",
-        "Missing extras metadata (Provides-Extra)",
-        "Documentation/instructions outdated or incorrect",
-        "Overly broad or incorrect TypeDef definitions"
+        "Type stubs don't match actual runtime behavior (get_credentials, ToolUseBlockTypeDef)",
+        "Duplicate stub files shipped as both .pyi and .py causing IDE conflicts",
+        "Package naming confusion between types-boto3 and boto3-stubs",
+        "Documentation and setup instructions are outdated/incorrect",
+        "Type annotations too broad for practical use (FileobjTypeDef)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active development and issue resolution (pyproject.toml modernization completed)",
+        "Issues are being addressed and closed when resolved"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project addressing legitimate type-stub quality issues, but maintainers are responding slowly to multiple bugs affecting user experience and type safety."
+      "summary": "Actively maintained project with real community engagement, but moderate responsiveness delays on critical type stub accuracy issues labeled 'response needed' are creating friction."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date"
+        "Zero commits in past 6 months despite last commit in January",
+        "16 open issues with zero closed in past 6 months",
+        "No merged PRs in past 6 months - no bug fixes or updates",
+        "Zero active contributors in past 6 months",
+        "Last release date unknown - unclear if releases are being made",
+        "No visible maintenance activity despite recent code changes"
       ],
-      "positive_signals": [],
-      "summary": "Package is abandoned with zero maintenance activity over the past 6 months and accumulating unresolved issues."
+      "positive_signals": [
+        "Last commit exists from Jan 2026 (2 months ago) - not completely dormant",
+        "No open PRs means no pending work blocking progress"
+      ],
+      "summary": "Package shows signs of stagnation with recent code activity but no maintenance work (releases, issue triage, PR merges) for 6+ months and a growing backlog of unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:10:37.347449+00:00"
+    "llm_analyzed_at": "2026-03-15T17:29:48.942395+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

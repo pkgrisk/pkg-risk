@@ -175,51 +175,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
+      "clarity": 8,
       "installation": 8,
       "quick_start": 2,
-      "examples": 1,
-      "configuration": 6,
-      "troubleshooting": 9,
-      "overall": 6,
-      "summary": "Excellent explanation of what the tool does and troubleshooting, but completely lacks code examples showing how to actually use the library.",
-      "top_issue": "No code examples demonstrating basic usage - users must read source code to understand the API"
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 7,
+      "overall": 5,
+      "summary": "The README excels at explaining what the library does and setup requirements, but critically lacks any code examples showing how to actually use the Python API.",
+      "top_issue": "No code examples whatsoever \u2014 a user cannot learn how to instantiate the client, connect to a host, or call run_executable without looking elsewhere."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Connection and authentication failures (SMB protocol errors, BadNetworkName)",
-        "Race conditions and service cleanup issues (service not deleted before next execution)",
-        "Connection state management problems (connections not closing, reconnection failures)",
-        "Timeout issues across different Windows versions and platforms (Windows XP, Server 2008 R2, macOS)",
-        "Service deletion errors (STATUS_CANNOT_DELETE appearing intermittently)"
+        "SMB connection and network errors (BadNetworkName, timeouts)",
+        "Service lifecycle management bugs (race conditions, deletion failures)",
+        "Reconnection failures after disconnect",
+        "Platform compatibility issues (Windows XP, 2008 R2, macOS)",
+        "Lack of file transfer functionality (get/put operations)"
       ],
       "praise_themes": [
-        "Appreciation for the library concept and functionality",
-        "Recognition of solving a gap in Python Windows automation"
+        "Functional core library for remote command execution"
       ],
       "abandonment_signals": true,
-      "summary": "pypsexec shows signs of abandonment with multiple unresolved critical issues spanning 6+ years, slow maintainer response, and a backlog of feature requests and reliability problems particularly around connection management and Windows compatibility."
+      "summary": "Project shows signs of abandonment with multiple critical issues unresolved for 6+ years (oldest from 2019), no visible maintainer engagement, and recent user reports of basic functionality failures."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from October 2025",
-        "13 open issues with no resolution activity",
-        "No closed issues in past 6 months indicating no bug fixes",
-        "No open or merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests stalled release cycle"
+        "Zero commits in the past 6 months despite being a maintained project",
+        "13 open issues remain unaddressed with zero closed in 6+ months",
+        "No active contributors or merged PRs in the past 6 months",
+        "Unknown release date suggests potentially outdated version in circulation",
+        "No response to user-reported issues indicates lack of maintainer engagement"
       ],
-      "positive_signals": [],
-      "summary": "pypsexec appears to be abandoned with no maintenance activity, open issues, or contributor engagement in the past 6 months."
+      "positive_signals": [
+        "Had activity 5 months ago (not completely dead)",
+        "No open PRs to manage (though may indicate no community contributions)"
+      ],
+      "summary": "Package is stale with no commits, issue resolution, or maintainer activity for 6+ months while accumulating unaddressed user issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:48:06.938368+00:00"
+    "llm_analyzed_at": "2026-03-15T16:31:42.359989+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

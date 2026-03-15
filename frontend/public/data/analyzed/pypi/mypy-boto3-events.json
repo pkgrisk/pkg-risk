@@ -191,48 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is for the wrong package (mypy-boto3-builder instead of mypy-boto3-events), creating severe confusion about what this package actually does and how to use it.",
-      "top_issue": "This appears to be a builder tool's README incorrectly used for a generated type stub package, leaving users with no information about mypy-boto3-events itself or how to use AWS Events type annotations"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-events` package, leaving users confused about what this particular sub-package does and how to use it.",
+      "top_issue": "The README describes the parent builder project, not the specific `mypy-boto3-events` package \u2014 there are no examples, configuration details, or troubleshooting guidance specific to the Events service type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Packaging/build system issues (setup.py vs pyproject.toml, duplicate .pyi/.py files)",
-        "Type definition accuracy problems (missing async, overly broad types, incorrect literals)",
-        "Package naming confusion (types-boto3 vs boto3-stubs, types-aiobotocore vs aiobotocore-stubs)",
-        "Missing extras/features not properly advertised"
+        "Type definition inaccuracies (Bedrock, aioboto3, S3 signatures incorrect)",
+        "Stub files duplicated as both .pyi and .py causing IDE confusion",
+        "Missing or incorrect extras metadata on packages",
+        "Documentation gaps (local generation instructions outdated)",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Build reproducibility issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Project maintains moderate health with responsive maintainers addressing technical debt and type accuracy issues, though packaging complexity and documentation gaps create user friction."
+      "summary": "Actively maintained project with strong community engagement on type system issues, but growing backlog of type definition accuracy bugs and moderate maintainer responsiveness with several issues marked 'response needed' languishing for months."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the last 6 months despite being a generated type stub library",
-        "15 open issues with no recent activity or resolution",
-        "No merged PRs in the past 6 months indicating no active development",
-        "No active contributors in the past 6 months",
-        "No recent release history available",
-        "Last commit over a month ago with no follow-up activity"
+        "16 open issues with no resolution activity in 6 months",
+        "Zero commits recorded in past 6 months despite alleged recent activity",
+        "No contributors active in past 6 months",
+        "No merged PRs or development activity in 6 months",
+        "Unknown last release status",
+        "Closed issues past 6 months: 0 (no issue triage)"
       ],
-      "positive_signals": [],
-      "summary": "This mypy type stub package appears abandoned with no maintenance activity, open issues, or contributor engagement in the past 6 months."
+      "positive_signals": [
+        "Last commit timestamp is recent (2026-01-12, ~2 months ago)",
+        "No open PRs (not actively blocking on reviews)"
+      ],
+      "summary": "Package is functionally abandoned with stale issues and no maintenance activity for 6+ months, despite a recent commit timestamp."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:33:32.845290+00:00"
+    "llm_analyzed_at": "2026-03-15T01:42:29.452606+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

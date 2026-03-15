@@ -181,47 +181,50 @@
       "installation": 8,
       "quick_start": 9,
       "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 6,
+      "configuration": 6,
+      "troubleshooting": 7,
       "overall": 8,
-      "summary": "Excellent documentation with clear purpose, benchmarks, and usage examples, though GPU setup could be more straightforward and troubleshooting guidance is limited.",
-      "top_issue": "GPU installation requirements are complex with multiple CUDA/cuDNN version compatibility issues that could confuse users"
+      "summary": "Well-structured README with clear purpose, strong benchmarks, good usage examples, and solid installation instructions including GPU-specific dependencies.",
+      "top_issue": "Configuration options (model parameters, language selection, VAD settings, etc.) are not documented \u2014 users must rely on source code or external docs to discover available options."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Dependency compatibility issues (CTranslate2, Python 3.14 support)",
-        "GPU/device support limitations (MPS on M2 Mac, unsupported CUDA devices)",
-        "Inference quality regressions (duplicate sentences in large-v3, no_speech_prob returning 0.0)",
-        "Performance issues with concurrent requests and latency scaling",
-        "Segment output differences in BatchedInferencePipeline"
+        "BatchedInferencePipeline silently overrides user-provided timestamp options",
+        "Punctuation handling breaks words with apostrophes",
+        "Quality degradation with float16 quantization",
+        "CUDA/cuDNN dependency and compatibility issues",
+        "Concurrent request scaling and latency problems",
+        "AMD GPU support unavailable",
+        "Upstream CTranslate2 dependency no longer maintained"
       ],
       "praise_themes": [
-        "Library effectiveness and ease of use",
-        "Community members contributing performance optimization suggestions"
+        "Good inference performance (when working)",
+        "Active community willing to contribute improvements"
       ],
       "abandonment_signals": true,
-      "summary": "The project shows signs of maintenance fatigue with slow/no responses to user issues, unresolved compatibility problems with dependencies, and recurring quality regressions in newer model versions, though users still actively engage with the library for practical applications."
+      "summary": "faster-whisper shows declining maintainer engagement with recent bugs receiving zero responses, stale releases, and unresolved issues\u2014compounded by concerns about unmaintained upstream dependencies."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from November 2025",
-        "303 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no bug fixing",
-        "No merged PRs in past 6 months suggesting stalled development",
+        "Zero commits in past 6 months despite last commit ~4 months ago",
+        "309 open issues with no closed issues in past 6 months",
         "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release process may be abandoned"
+        "No merged PRs or PR activity",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "faster-whisper appears abandoned with no maintenance activity over the past 6 months despite significant open issues."
+      "positive_signals": [
+        "Project has historical activity (last commit exists)"
+      ],
+      "summary": "The project appears abandoned with significant issue backlog accumulation and complete lack of maintenance activity over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:38:56.789684+00:00"
+    "llm_analyzed_at": "2026-03-15T09:35:28.935292+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

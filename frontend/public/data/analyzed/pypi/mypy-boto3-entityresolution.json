@@ -191,50 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 4,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "README is confusing because it describes the builder tool but the package name suggests it's type stubs for AWS Entity Resolution service.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder project README, but the package name 'mypy-boto3-entityresolution' suggests this should be documentation for Entity Resolution service type stubs, not the builder tool itself."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-entityresolution without targeted guidance on installing or using type annotations for that service.",
+      "top_issue": "The README describes the parent builder project rather than the specific mypy-boto3-entityresolution package, so there are no examples, configuration docs, or troubleshooting guidance relevant to the EntityResolution service stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tool conflicts",
-        "Type definition inaccuracies (async/await, literal values, type narrowness)",
-        "Missing or incorrect extras/metadata in package distribution",
-        "Confusion between competing packages (types-boto3 vs boto3-stubs)"
+        "Type definition inaccuracy (wrong types in Bedrock, aioboto3, overly broad FileobjTypeDef)",
+        "Packaging issues (duplicate .pyi/.py files, missing version variants)",
+        "Documentation/usability gaps (generate locally instructions outdated, package confusion)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active releases of enhancements (pyproject.toml migration, bug fixes)",
+        "Willingness to address structural improvements"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling project managing 400+ auto-generated type stub packages with recurring systemic issues around versioning, metadata, and type accuracy that cause user frustration despite moderate maintainer engagement."
+      "summary": "The project is actively maintained with released enhancements, but users report recurring type definition accuracy issues and packaging quirks across ~400 generated packages, suggesting resource constraints in maintaining comprehensive stubs."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance activity",
+        "16 open issues with zero closed in past 6 months",
         "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests incomplete or infrequent release cycle"
+        "Zero active contributors in past 6 months",
+        "Unknown last release date",
+        "Issues accumulating without resolution"
       ],
       "positive_signals": [
-        "Recent last commit timestamp (2026-01-12) shows some baseline activity"
+        "Last commit 2 months ago shows repository is not completely abandoned",
+        "Repository still exists and is accessible"
       ],
-      "summary": "Package shows signs of abandonment with zero maintenance activity over 6 months despite recent commit history, accumulating unresolved issues."
+      "summary": "Package exhibits minimal maintenance with stagnant issue resolution and no recent contributor activity, indicating reduced development attention."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T04:06:26.142823+00:00"
+    "llm_analyzed_at": "2026-03-15T04:51:58.352442+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

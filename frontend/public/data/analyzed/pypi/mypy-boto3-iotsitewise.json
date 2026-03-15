@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it describes the builder tool (mypy-boto3-builder) rather than the actual package (mypy-boto3-iotsitewise), leaving users unclear about what they installed and how to use it.",
-      "top_issue": "Wrong README content - this appears to be the README for the builder tool that generates type stubs, not for the mypy-boto3-iotsitewise package itself, creating severe confusion about the package's purpose and usage"
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific `mypy-boto3-iotsitewise` sub-package, leaving users confused about what this particular package does and how to use it directly.",
+      "top_issue": "The README is for the parent builder project, not the `mypy-boto3-iotsitewise` package itself \u2014 there are no examples, configuration docs, or troubleshooting specific to IoT SiteWise type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Incorrect type stubs not matching actual API behavior",
-        "Duplicate .pyi and .py files causing tooling conflicts",
-        "Missing extras/metadata in packaging",
-        "Documentation and build system issues"
+        "Type stub accuracy and completeness (wrong method signatures, missing async definitions)",
+        "Package metadata issues (extras not exposed, setup.py vs pyproject.toml confusion)",
+        "Duplicate file outputs (.pyi and .py files both shipped, causing IDE confusion)",
+        "Outdated documentation (local generation instructions broken)",
+        "Version synchronization between boto3 and types-boto3 submodules"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues closed and released over time (pyproject.toml migration, aioboto3 fixes)",
+        "Structured issue reporting with reproducible examples",
+        "Active recent development (issue from March 2026)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer responsiveness, but struggling with type accuracy, packaging consistency, and documentation clarity that frustrates users relying on correct type hints."
+      "summary": "Active project with responsive maintainers closing issues periodically, but lagging response times on multiple open bugs marked 'response needed', particularly around type stub accuracy and packaging concerns."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity to address them",
-        "No merged PRs in past 6 months indicating no active development",
+        "Zero commits in past 6 months despite recent activity 2 months ago (data inconsistency)",
+        "16 open issues with no resolution activity in 6 months",
+        "Zero merged PRs in past 6 months",
         "Zero active contributors in past 6 months",
-        "No releases in past 6 months",
-        "No closed issues in past 6 months showing lack of maintenance response"
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent last commit timestamp suggests repository still exists"
+        "Recent commit exists (2026-01-12, ~2 months ago)"
       ],
-      "summary": "This package appears to be abandoned with no maintenance activity over the past 6 months despite having unresolved open issues."
+      "summary": "Package shows signs of abandonment with zero maintenance activity over 6 months and unresolved open issues, despite a sporadic recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:15:28.564677+00:00"
+    "llm_analyzed_at": "2026-03-15T07:27:49.618055+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

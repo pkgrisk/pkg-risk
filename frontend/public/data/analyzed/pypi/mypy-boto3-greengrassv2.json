@@ -191,48 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README describes a builder tool but is confusing because the package name suggests it's type stubs for AWS Greengrass v2, creating immediate misdirection about what the package actually does.",
-      "top_issue": "Critical naming/branding confusion - package is 'mypy-boto3-greengrassv2' but README is for 'Mypy Boto3 Builder', making it unclear if this is the builder tool or generated stubs for a specific AWS service"
+      "summary": "The README is for the builder tool rather than the specific package (mypy-boto3-greengrassv2), providing minimal useful documentation for this particular service stub.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-greengrassv2 package itself \u2014 there are no examples, configuration docs, or troubleshooting specific to the GreengrassV2 service stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
+        "Type annotation mismatches with actual API behavior (ToolUseBlockTypeDef, get_credentials, FileobjTypeDef)",
         "Duplicate stub files (.pyi and .py) causing IDE conflicts",
-        "Incorrect type definitions in generated stubs (async/await, Literal values)",
-        "Package metadata issues (missing extras, setup.py deprecation)",
-        "Documentation and setup instructions outdated"
+        "Version management issues between main package and submodules",
+        "Documentation errors in setup/installation instructions",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Missing features and extras not provided"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some issues successfully closed and marked as released",
+        "Adoption of modern Python packaging (pyproject.toml migration)",
+        "Active bug fixing in certain areas"
+      ],
       "abandonment_signals": false,
-      "summary": "Community reports legitimate technical issues with stub generation accuracy and packaging practices, but project shows signs of active maintenance with some issues being addressed and released."
+      "summary": "Project shows active but uneven maintenance with some bugs fixed while many type-correctness and documentation issues accumulate, indicated by multiple unanswered 'response needed' issues and zero-engagement open tickets."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months",
-        "No closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "15 open issues with no recent activity",
-        "Unknown last release date suggests long time since release"
+        "Zero commits in the past 6 months",
+        "16 open issues with zero closed in 6 months",
+        "Zero active contributors past 6 months",
+        "Zero merged PRs in 6 months",
+        "No recent release history"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero maintenance activity over the past 6 months despite having open issues."
+      "positive_signals": [
+        "Last commit is relatively recent (2 months ago, not years)",
+        "No accumulating open PRs suggests no active contribution attempts"
+      ],
+      "summary": "The package shows no development activity, issue resolution, or contributor engagement over 6 months with a stagnant issue backlog, indicating it is stale and likely not actively maintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:49:34.077929+00:00"
+    "llm_analyzed_at": "2026-03-15T09:53:34.034590+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

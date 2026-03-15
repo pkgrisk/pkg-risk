@@ -191,49 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 7,
       "installation": 6,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README focuses heavily on related projects and builder tooling rather than explaining what mypy-boto3-odb actually is or how to use it as a type stub package.",
-      "top_issue": "Critical identity confusion - the README is for 'mypy-boto3-builder' (a code generator tool) but the package name is 'mypy-boto3-odb' (a generated type stub for AWS OpsWorksCM service), leaving users completely unclear about what they actually installed."
+      "overall": 4,
+      "summary": "The README is a reasonable entry point for the builder tool but is largely a redirect to external docs, with minimal inline examples, no configuration details, and no troubleshooting guidance.",
+      "top_issue": "No inline examples or configuration documentation \u2014 everything is deferred to external links, leaving users with little actionable content in the README itself."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
+        "Type stub inaccuracies (wrong types, missing async def, overly broad types)",
+        "Duplicate stub files (.pyi and .py) causing IDE conflicts",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
         "Version mismatches between main package and submodules",
-        "Packaging/metadata issues (setup.py deprecation, missing extras, duplicate .py/.pyi files)",
-        "Type definition accuracy problems (wrong async signatures, overly broad types, incorrect literals)",
-        "Documentation gaps (unclear package naming conventions, incomplete local generation instructions)"
+        "Documentation and CLI examples are outdated",
+        "Build system issues (setuptools compatibility, wheel determinism)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some enhancements are completed and released",
+        "Users provide detailed, actionable bug reports"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate frustration with type accuracy and packaging issues, but maintainers are addressing problems with reasonable responsiveness and recent releases indicate ongoing active development."
+      "summary": "Moderately maintained project with active bug fixes, but slow response times on type stub issues and documentation problems create frustration for users relying on accurate typing information."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests lack of release management"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No closed issues in past 6 months indicates zero triage activity",
+        "No merged PRs in 6 months suggests no active development or review",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cycle",
+        "Open issues accumulating without resolution"
       ],
       "positive_signals": [
-        "Recent commit activity suggests project is not completely abandoned"
+        "Recent commit 2 months ago indicates project is not completely abandoned",
+        "Package has users (evidenced by open issues)"
       ],
-      "summary": "Package appears stale with a single recent commit but no ongoing maintenance activity, unresolved issues, or regular releases."
+      "summary": "Package is stale with minimal maintenance activity; last commit was 2 months ago but no engagement with issues or PRs for 6 months indicates lack of active maintainers."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:42:00.867668+00:00"
+    "llm_analyzed_at": "2026-03-15T05:37:48.860107+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

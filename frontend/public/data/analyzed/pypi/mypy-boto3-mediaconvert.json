@@ -191,50 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes the builder tool rather than the actual package (mypy-boto3-mediaconvert), making it unclear what this specific package does or how to use it.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder tool's README, not the README for the specific service package mypy-boto3-mediaconvert, leaving users completely unclear about what this package actually provides"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-mediaconvert package, making it confusing and lacking any MediaConvert-specific usage examples.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-mediaconvert stubs package itself \u2014 there are no examples of how to actually use MediaConvert type annotations in code."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Duplicate .pyi and .py files causing IDE confusion",
-        "Incorrect type definitions in generated stubs",
-        "Missing extras/optional dependencies not properly declared",
-        "Documentation/tooling outdated (setup.py vs pyproject.toml)"
+        "Type definition inaccuracies (async/await, literal types, type narrowness)",
+        "Version management and package discovery issues",
+        "Duplicate/conflusing file distribution (.pyi and .py files)",
+        "Documentation and tooling issues (setup.py deprecation, generate locally instructions)",
+        "Package naming confusion (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are detailed and reproducible with clear steps",
+        "Some enhancements are being actioned and released",
+        "Bug reports are constructive and well-documented"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate frustration with type accuracy and packaging issues in generated boto3 stubs, but maintainers are responsive with some issues being resolved and no signs of abandonment."
+      "summary": "Moderately maintained project with responsive action on some issues but sluggish resolution on others; several technical bugs have lingered 4-5+ months with minimal engagement, while type definition accuracy and versioning remain persistent pain points."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months indicating no active development",
-        "No closed issues in past 6 months despite 15 open issues",
-        "Unknown last release date suggests release history is unclear"
+        "Zero commits in the past 6 months despite recent activity",
+        "16 open issues accumulating with no resolutions",
+        "No merged PRs or contributor activity in 6 months",
+        "Unknown release date prevents assessment of versioning",
+        "Auto-generated boto3 stub package with no generator maintenance visible"
       ],
       "positive_signals": [
-        "Recent commit activity on 2026-01-12 shows some recent touch",
-        "No open PRs may indicate issues are not being actively worked on rather than neglect"
+        "Repository still exists with recent commit history (Jan 12, 2026)",
+        "No open PRs indicates no pending changes being reviewed"
       ],
-      "summary": "Package appears stale with no meaningful maintenance activity over the past 6 months, despite a recent single commit, and 15 unresolved open issues."
+      "summary": "Package exhibits signs of stale maintenance with no activity in the past 6 months and accumulating unresolved issues, suggesting the automated generation process or active maintenance has ceased."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T19:31:31.401403+00:00"
+    "llm_analyzed_at": "2026-03-14T23:47:30.688000+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -212,49 +212,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 5,
-      "quick_start": 2,
+      "installation": 3,
+      "quick_start": 1,
       "examples": 1,
-      "configuration": 3,
+      "configuration": 2,
       "troubleshooting": 4,
-      "overall": 4,
-      "summary": "Clear project description but lacks inline installation steps, quick start example, and practical usage examples - relegating everything to external documentation.",
-      "top_issue": "No quick start code example in README - users must navigate to separate docs to see even basic usage"
+      "overall": 3,
+      "summary": "The README clearly describes what Unicorn is but defers almost all practical documentation to external files, leaving new users with no working examples or inline guidance.",
+      "top_issue": "No quick-start example or code snippet showing basic usage \u2014 new users have no idea how to actually use the library without hunting through external docs."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "MIPS architecture crashes and edge cases",
-        "Windows platform-specific failures (CFG, concurrent access)",
-        "ARM64 register access limitations",
-        "Cache operations causing segfaults",
-        "Incorrect pointer authentication implementation",
-        "Documentation gaps (Java binding compilation)"
+        "Missing architecture support (SuperH, Xtensa)",
+        "Critical bugs in specific architectures (ARM Thumb mode illegal instruction, MIPS segfault)",
+        "Unresolved issues languishing without fix or response"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active community testing and fuzzing discovering issues",
+        "Relevant feature requests from real-world use cases (ESP32/Xtensa)",
+        "Users demonstrating continued engagement with recent bug reports"
+      ],
       "abandonment_signals": true,
-      "summary": "Unicorn's community health is deteriorating with multiple critical bugs across MIPS, Windows, and ARM64 architectures, slow maintainer response to issues (some unanswered), and recent regression bugs (2.1.3+) suggesting insufficient testing or maintenance capacity."
+      "summary": "Unicorn shows signs of community engagement with recent bug reports, but has concerning patterns of unresolved crashes (MIPS segfault ~6 months old) and very old stale feature requests (SuperH from 2021), suggesting insufficient maintainer resources or prioritization."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in the last 6 months",
-        "160 open issues with no resolution activity",
-        "No closed issues in the past 6 months",
-        "No merged PRs in the past 6 months",
-        "Zero active contributors in the past 6 months",
-        "Last commit was over 3 months ago (2025-09-29)",
-        "Unknown last release date suggests potential versioning stagnation"
+        "164 open unresolved issues with zero closed in past 6 months",
+        "Zero commits in past 6 months despite active issue backlog",
+        "Zero active contributors",
+        "No merged PRs in past 6 months",
+        "No release history tracked",
+        "Stalled issue triage and maintenance"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity for over 6 months and a growing backlog of unresolved issues."
+      "positive_signals": [
+        "Recent commit on 2026-02-19 suggests some activity occurred"
+      ],
+      "summary": "Package is abandoned with accumulating unresolved issues and no active development or contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:38:50.713891+00:00"
+    "llm_analyzed_at": "2026-03-15T15:24:56.637075+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,48 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides installation basics but lacks clarity about what this specific package does versus the builder tool, has minimal examples, and no configuration or troubleshooting guidance.",
-      "top_issue": "Critical confusion: this appears to be a README for mypy-boto3-builder (the generator tool) but the package name is mypy-boto3-servicecatalog (a generated type stubs package), creating fundamental clarity issues about what the user actually installed."
+      "summary": "This README is for the builder tool rather than the specific service stub package, providing minimal relevant guidance for users of mypy-boto3-servicecatalog specifically.",
+      "top_issue": "The README describes the mypy-boto3-builder generator tool, not the mypy-boto3-servicecatalog package itself \u2014 users of this specific stub package get no service-specific usage examples, type annotation examples, or configuration relevant to ServiceCatalog."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/optional dependencies not declared properly",
-        "Duplicate .pyi and .py stub files causing tool conflicts",
-        "Incorrect type definitions that don't match actual library behavior",
-        "Documentation and setup process issues"
+        "Type stub inaccuracies (async/await, type definitions, overly broad types)",
+        "Packaging metadata issues (missing extras, duplicate .pyi/.py files)",
+        "Documentation is outdated/broken (uvx commands don't work, confusion between boto3-stubs vs types-boto3)",
+        "Installation and versioning issues with submodules"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Project actively generates comprehensive type stubs for AWS boto3",
+        "Some bugs are being fixed and released"
+      ],
       "abandonment_signals": false,
-      "summary": "Community reports legitimate technical bugs with moderate maintainer engagement, though some issues show delayed responses and packaging infrastructure challenges that frustrate users."
+      "summary": "Moderately maintained project with slow bug response times; users encounter real friction with type accuracy, packaging metadata, and outdated documentation."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months indicating no maintenance work",
-        "No merged PRs in past 6 months",
-        "Unknown last release date suggests release process is stalled"
+        "No commits in past 6 months",
+        "16 unresolved open issues",
+        "Zero issue resolution activity",
+        "No active contributors",
+        "No merged pull requests in 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite a recent commit, indicating the project is not actively maintained or developed."
+      "summary": "Package shows complete inactivity over the past 6 months with accumulating unresolved issues and no maintainer engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:20:43.436050+00:00"
+    "llm_analyzed_at": "2026-03-15T12:31:55.492824+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

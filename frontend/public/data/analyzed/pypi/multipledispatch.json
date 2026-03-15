@@ -174,49 +174,52 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 9,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 8,
-      "summary": "Excellent clarity and quick start with a clear example, but lacks troubleshooting guidance and comprehensive configuration documentation.",
-      "top_issue": "No troubleshooting section for common issues like dispatch conflicts, ambiguity resolution, or performance problems with many signatures"
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Clear, concise README with a good quick-start example and feature list, but lacks depth on configuration, advanced usage, and troubleshooting.",
+      "top_issue": "No troubleshooting section and no examples for advanced features like namespaces, variadic dispatch, or resolving ambiguities despite listing them as capabilities."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Core functionality limitations with keyword arguments and named parameters",
-        "Docstring/doctest handling broken by decorator",
-        "Type annotation support missing (List[Type], typing.overload)",
-        "Incompatibility with classmethods and optional arguments",
-        "License file not included in package distribution",
-        "Dispatch order depends on execution order rather than class hierarchy",
-        "Cannot dispatch on enum instances or non-type objects"
+        "Doctest integration broken with @dispatch decorator",
+        "Named/keyword arguments lose function signature or fail dispatch",
+        "Optional and default parameters not properly supported",
+        "Cannot dispatch on instances, only types",
+        "kwargs not checked in dispatcher.__call__",
+        "Missing LICENSE file blocking conda-forge updates",
+        "Class method decoration conflicts with dispatch",
+        "Type hint/generic type support limitations"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The project shows severe abandonment with unresponsive maintainers, multiple fundamental bugs unfixed for years (oldest open issue from 2017), missing basic features like keyword argument support, and unresolved packaging issues blocking conda-forge updates."
+      "summary": "The package exhibits signs of stagnation with critical unresolved issues from 2017-2024, minimal maintainer engagement on recent bugs, and a blocking distribution issue (missing LICENSE) suggesting active maintenance has largely ceased."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from December 2024",
-        "66 open issues with no recent resolution activity",
-        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
-        "No merged PRs in past 6 months showing no feature development or contributions",
+        "Zero commits in past 6 months despite last commit being December 2024",
+        "65 open issues with no recent triage or resolution",
+        "No closed issues or merged PRs in past 6 months",
         "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release cycle has stalled"
+        "Unknown last release date suggests extended release cycle"
       ],
-      "positive_signals": [],
-      "summary": "multipledispatch is effectively abandoned with no maintenance activity, issue resolution, or community engagement in the past 6 months."
+      "positive_signals": [
+        "Some level of recent activity (commit in December 2024)",
+        "No stale open pull requests"
+      ],
+      "summary": "multipledispatch is effectively stale with no meaningful maintenance activity in 6 months and a growing backlog of unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:58:34.086011+00:00"
+    "llm_analyzed_at": "2026-03-15T14:44:19.297185+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -173,50 +173,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 9,
-      "quick_start": 9,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 7,
-      "overall": 8,
-      "summary": "Well-structured README with clear purpose, excellent installation/quick-start sections, and helpful external resources, but lacks configuration documentation.",
-      "top_issue": "No documentation on configuration options (e.g., graphical browser setup, Tkinter requirements, or any customization parameters)"
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 2,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Good getting-started coverage with clear installation and a working quick-start example, but lacks configuration docs, troubleshooting guidance, and deeper usage examples beyond the basic heap inspection workflow.",
+      "top_issue": "No troubleshooting or configuration documentation \u2014 users hitting issues (e.g. memory profiling edge cases, Tkinter setup) have no in-README guidance and must rely on external blog posts."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Build failures with new Python versions (3.11, 3.13, 3.14)",
-        "Missing internal Python APIs (_PyLong_Frexp, longintrepr.h)",
-        "Remote monitoring mode broken for Python >3.8",
-        "Compatibility issues with newer libraries (JAX)",
-        "Flaky/intermittent test failures"
+        "Build failures with each new Python version (3.11, 3.13, 3.14 - C API changes)",
+        "Remote monitoring mode broken on Python >3.8",
+        "Runtime errors and crashes during heap analysis",
+        "Incompatibility with other libraries (JAX)",
+        "Intermittent/heisenbug test failures"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "guppy3 shows moderate health with active issue resolution but persistent challenges keeping pace with Python version releases and internal API changes."
+      "praise_themes": [
+        "Closed issue tracking (11 of 12 issues resolved)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Active but stretched maintenance: project responds to issues but shows persistent struggle with Python C API compatibility across versions and harbors a 2+ year old unresolved compatibility issue."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent",
-        "No closed issues in past 6 months indicating lack of issue triage",
-        "No merged PRs in past 6 months showing no development activity",
+        "No commits in past 6 months despite recent activity",
+        "4 open issues with no recent closure activity",
+        "No merged pull requests in past 6 months",
         "No active contributors in past 6 months",
-        "4 open issues without recent resolution"
+        "Unknown last release date",
+        "No version updates or releases tracked"
       ],
       "positive_signals": [
-        "Recent last commit date (January 2026) suggests some minimal activity",
-        "No abandoned repository indicators like deletion or archival"
+        "Last commit exists (2026-01-05, ~69 days ago)",
+        "Repository has not been deleted or archived"
       ],
-      "summary": "The project appears stale with no substantive maintenance activity over the past 6 months despite a recent commit timestamp, indicating it may receive only sporadic updates."
+      "summary": "guppy3 appears stale with zero development activity, issue management, or releases over the past 6 months, indicating the project is no longer actively maintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T03:27:03.485320+00:00"
+    "llm_analyzed_at": "2026-03-15T00:48:34.938197+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

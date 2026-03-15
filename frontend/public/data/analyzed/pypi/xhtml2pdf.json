@@ -201,47 +201,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 3,
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 2,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "Clear purpose and installation instructions but severely lacking practical usage examples, configuration documentation, and troubleshooting guidance.",
-      "top_issue": "No quick start example showing how to actually convert HTML to PDF - only mentions 'test/simple.py' exists without showing any code"
+      "summary": "The README clearly explains what the package is but falls short on practical usage, deferring almost everything to external docs without inline examples.",
+      "top_issue": "No quick-start code example \u2014 users are pointed to a test file (test/simple.py) rather than shown even a minimal usage snippet inline."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "CSS and styling features not working correctly (background images, transparent colors, percentages)",
-        "Dependency issues causing installation failures (svglib forcing pycairo)",
-        "Character encoding and font rendering problems (Slavic characters)",
-        "Missing or incomplete documentation (unclear error handling semantics)"
+        "Background image rendering issues (multiple related bugs)",
+        "Table and layout rendering problems (padding, RTL, empty cells)",
+        "Resource cleanup - temporary files accumulating in /tmp",
+        "Feature incompatibilities (pagecount + background-image, TOC + RTL)",
+        "Installation blockers (Rust/bidi dependency on non-Rust platforms)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "xhtml2pdf shows signs of maintenance neglect with unresolved bugs spanning 5+ months, zero maintainer engagement on recent issues, and accumulated dependency problems affecting installation."
+      "summary": "Project shows signs of abandonment with critical unresolved issues: a recent security vulnerability (Feb 2026) has zero responses despite being emailed to security contact, long-standing bugs from 2020-2023 languish with minimal engagement, and only infrastructure/background bugs from Jan 2026 show recent activity, suggesting inconsistent or reactive maintenance."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-14)",
-        "131 open issues with no recent closures",
-        "Zero merged PRs in past 6 months",
+        "132 open issues with no closures in past 6 months",
+        "Zero commits in past 6 months despite recent activity on 2026-01-19",
+        "No merged PRs in past 6 months",
         "Zero active contributors in past 6 months",
-        "No releases recorded",
-        "High issue backlog suggests unaddressed user problems"
+        "Last release date unknown"
       ],
-      "positive_signals": [],
-      "summary": "xhtml2pdf appears abandoned with a large unresolved issue backlog and no recent development activity despite having a recent commit timestamp."
+      "positive_signals": [
+        "Recent commit on 2026-01-19 indicates project is not completely abandoned",
+        "No open pull requests suggests maintainer may be preventing work accumulation"
+      ],
+      "summary": "xhtml2pdf shows signs of stagnation with a large backlog of unresolved issues and minimal recent maintenance activity despite a single commit in early 2026."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:00:53.953767+00:00"
+    "llm_analyzed_at": "2026-03-15T05:01:47.097476+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

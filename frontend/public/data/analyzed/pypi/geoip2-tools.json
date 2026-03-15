@@ -180,47 +180,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 8,
       "quick_start": 7,
-      "examples": 6,
+      "examples": 5,
       "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "Good basic documentation with clear installation and initial usage, but lacks configuration options, error handling guidance, and has code inconsistencies in examples.",
-      "top_issue": "Examples contain copy-paste errors (using 'country' database but calling city/asn methods) and no documentation of configuration options like custom database paths, update frequency control, or error handling."
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "README covers basic setup and usage well but has copy-paste errors in examples and lacks configuration/troubleshooting depth.",
+      "top_issue": "Code examples contain bugs \u2014 the city and ASN examples both incorrectly use `geoip2_manager['country']` instead of `geoip2_manager['city']` and `geoip2_manager['asn']` respectively, which would mislead users."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Multi-process concurrency issues with file race conditions",
-        "Lack of test coverage",
-        "Outdated Python version support",
+        "Multi-process concurrency issues (race condition in file downloads)",
+        "Lack of test coverage (open since 2020)",
+        "Outdated Python version support (open since 2023)",
         "Missing CI/CD automation"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "Project shows signs of abandonment with unresolved critical issues (concurrency bugs, missing tests) and maintenance tasks open for 3+ years without progress."
+      "summary": "Project appears abandoned with critical issues and feature requests sitting open for 2-6 years without maintainer engagement or resolution."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 10,
       "concerns": [
-        "No commits in over 3 years (last commit Feb 2022)",
+        "No commits for 4+ years (last commit February 2022)",
         "Zero activity in past 6 months across all metrics",
-        "No releases since at least 6 months ago",
+        "Two unresolved open issues with no closure activity",
         "No active contributors",
-        "Open issues present but unaddressed",
-        "No PR activity suggesting development has stopped"
+        "Unknown release status suggests tracking gaps",
+        "Potential unpatched security vulnerabilities due to age"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no development activity since early 2022 and zero engagement with open issues or pull requests."
+      "positive_signals": [
+        "Only 2 open issues (limited outstanding problems)"
+      ],
+      "summary": "This package is completely abandoned with over four years of inactivity and unresolved open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T10:58:44.281840+00:00"
+    "llm_analyzed_at": "2026-03-15T12:08:25.295891+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

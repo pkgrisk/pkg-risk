@@ -181,47 +181,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 7,
-      "installation": 2,
+      "clarity": 4,
+      "installation": 1,
       "quick_start": 1,
-      "examples": 2,
-      "configuration": 3,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README clearly explains what MCUboot is but completely lacks installation instructions, quick start examples, or any practical usage guidance for the imgtool package itself.",
-      "top_issue": "This is the README for MCUboot (the bootloader project), not imgtool (the PyPI package) - users installing 'imgtool' need specific documentation on how to install and use the image signing tool, not general bootloader information"
+      "overall": 2,
+      "summary": "This README describes the MCUboot bootloader project, not the imgtool PyPI package itself, leaving users with no actionable information on how to install or use imgtool.",
+      "top_issue": "The README is for the parent MCUboot project, not the imgtool package \u2014 there are zero installation instructions, usage examples, or API documentation specific to imgtool."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Missing or incomplete documentation/clarification on API behavior",
-        "License compliance and missing copyright notices",
-        "Missing cryptographic features (AES-KW support)",
-        "Technical debt from unmaintained dependencies (tinycrypt)"
+        "Deprecation and migration burden (Zephyr USB stack)",
+        "Security updates needed (mbedtls vulnerability fixes)",
+        "Hardware compatibility constraints (write block sizes)",
+        "Infrastructure tooling gaps (static analysis CI)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "Moderate health with concerning technical debt: one issue resolved quickly but three critical issues remain unaddressed for months, including licensing compliance, missing crypto support, and deprecated dependencies."
+      "summary": "Project shows active engagement on critical deprecation/security issues but has long-standing backlog items (5-year-old RFC with 'someday' label) suggesting limited bandwidth for non-urgent features."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-23)",
-        "65 open issues with no closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "No release information available",
-        "Stagnant issue backlog suggests unresponsive maintainers"
+        "78 open issues with zero closed in past 6 months indicates unaddressed maintenance debt",
+        "Zero commits in past 6 months despite recent activity suggests sporadic rather than consistent maintenance",
+        "Zero active contributors in past 6 months indicates no ongoing development",
+        "No merged PRs in past 6 months shows lack of integration of changes",
+        "Unknown last release date raises questions about versioning and release management"
       ],
-      "positive_signals": [],
-      "summary": "The imgtool package appears abandoned with no maintenance activity over the past 6 months despite a large unresolved issue backlog."
+      "positive_signals": [
+        "Recent commit on 2026-03-12 (3 days ago) indicates some level of activity"
+      ],
+      "summary": "Package exhibits signs of abandonment with a large backlog of unresolved issues and no maintenance activity for 6 months, though a very recent commit may indicate sporadic revival efforts."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:42:23.817704+00:00"
+    "llm_analyzed_at": "2026-03-15T07:54:09.354625+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

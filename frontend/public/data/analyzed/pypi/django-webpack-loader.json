@@ -183,47 +183,52 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 9,
-      "quick_start": 8,
-      "examples": 8,
+      "installation": 8,
+      "quick_start": 7,
+      "examples": 7,
       "configuration": 9,
-      "troubleshooting": 6,
-      "overall": 8,
-      "summary": "Excellent documentation with clear installation, configuration, and usage instructions, though troubleshooting guidance is limited.",
-      "top_issue": "Lacks dedicated troubleshooting section for common errors like missing stats file, webpack compilation failures, or template rendering issues"
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Well-structured documentation with strong configuration coverage but lacks a troubleshooting section and the README appears truncated mid-sentence.",
+      "top_issue": "No troubleshooting section for common errors (missing stats file, bundle not found, etc.), and the README is cut off mid-example in the production section."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "negative",
+      "frustration_level": 9,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Webpack integration issues (dev-server compatibility, publicPath handling)",
-        "Shared chunk deduplication across multiple entrypoints",
-        "Missing feature documentation (CSS inlining)"
+        "Caching causing infinite loops and hangs in development/production",
+        "Race conditions when webpack stats change mid-request",
+        "Missing security attributes (CSP nonce, SRI integrity) on preload tags",
+        "Configuration not responding to Django settings overrides",
+        "Chunk deduplication not working with skip_common_chunks=True",
+        "System check crashes on invalid configuration",
+        "Setup.py fails to read README with proper encoding"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "Project shows signs of maintenance challenges with unresolved webpack compatibility issues, slow response times, and gaps in documentation for common use cases."
+      "summary": "django-webpack-loader shows critical abandonment signals with 7 serious unaddressed bugs filed simultaneously covering caching hangs, security vulnerabilities, race conditions, and configuration issues, paired with zero maintainer engagement."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite recent repository activity",
-        "No merged PRs in past 6 months indicating lack of contribution acceptance",
+        "0 commits in past 6 months despite ongoing issues",
+        "17 unresolved open issues with 0 closed in past 6 months",
+        "No merged PRs in past 6 months",
         "No active contributors in past 6 months",
-        "10 open issues with no recent closure activity",
-        "No recent releases",
-        "Last commit is 3+ days old with no activity pattern"
+        "Unknown release history",
+        "No pull request activity suggests maintainers not accepting contributions"
       ],
       "positive_signals": [
-        "Repository still exists and was accessed recently (2026-01-22)"
+        "Recent commit exists (2026-02-03), not completely dormant",
+        "Open issues indicate package is still known/used"
       ],
-      "summary": "django-webpack-loader appears to be abandoned with no maintenance activity in the past 6 months despite open issues remaining unresolved."
+      "summary": "Package has stalled with accumulating unresolved issues and no maintenance activity over the past 6 months despite a recent single commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:43:24.242573+00:00"
+    "llm_analyzed_at": "2026-03-15T07:55:17.197569+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

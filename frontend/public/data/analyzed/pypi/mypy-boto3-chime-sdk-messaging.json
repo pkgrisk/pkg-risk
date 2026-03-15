@@ -191,48 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README focuses on the builder tool rather than the actual package (mypy-boto3-chime-sdk-messaging), causing severe confusion about what users are installing and how to use it.",
-      "top_issue": "This appears to be the wrong README - it describes 'mypy-boto3-builder' (a code generator) when the package is 'mypy-boto3-chime-sdk-messaging' (type stubs for AWS Chime SDK), leaving users with no information about the actual package they're installing."
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-chime-sdk-messaging without direct guidance on installation or usage.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-chime-sdk-messaging package itself \u2014 a new user has no idea how to install or use the specific package they found on PyPI."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tool conflicts",
-        "Incorrect type definitions in generated stubs",
-        "Missing extras/optional dependencies declarations",
-        "Documentation outdated (setup.py deprecation, generate locally instructions)"
+        "Type definitions don't match actual AWS API behavior (tool_use vs server_tool_use, async type errors)",
+        "Documentation and generation instructions are outdated/incorrect",
+        "Build system issues (setuptools version compatibility, wheel determinism)",
+        "Package organization confusion (types-boto3 vs boto3-stubs, version mismatches)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active maintenance with fixes being released",
+        "Modernization efforts completed (pyproject.toml migration)",
+        "Ambitious scope maintaining 400+ AWS service stubs"
+      ],
       "abandonment_signals": false,
-      "summary": "Community experiences moderate frustration with type stub accuracy and packaging inconsistencies, but maintainers show responsiveness with some issues resolved and labeled for action."
+      "summary": "Actively maintained but understaffed project with good progress on major initiatives, though several type stub accuracy and documentation bugs remain open."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months indicating no issue triage or bug fixes",
-        "No merged PRs in past 6 months showing stalled development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process is inactive"
+        "No activity in the past 6 months despite 16 open issues",
+        "Zero closed issues and zero merged PRs in 6 months indicates issues are not being triaged",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests lack of release cadence",
+        "Last commit was ~2 months ago with no follow-up activity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity despite having unresolved issues and no recent development."
+      "positive_signals": [
+        "Package received a commit on 2026-01-12 (recent enough to not be fully abandoned)"
+      ],
+      "summary": "Package is stagnant with unaddressed issues and no maintenance activity over the past 6 months, showing signs of abandonment despite a recent but isolated commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:37:33.358917+00:00"
+    "llm_analyzed_at": "2026-03-15T08:46:41.978385+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

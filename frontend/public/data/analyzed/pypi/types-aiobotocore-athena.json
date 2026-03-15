@@ -191,49 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 3,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it focuses on the builder tool rather than the actual package (types-aiobotocore-athena), provides minimal actionable usage examples, and lacks any configuration or troubleshooting guidance.",
-      "top_issue": "The README describes a completely different package (mypy-boto3-builder) instead of types-aiobotocore-athena, making it impossible for users to understand what this specific package does or how to use it for Athena type hints."
+      "summary": "The README is for the builder tool rather than the specific `types-aiobotocore-athena` package, leaving users confused about how to actually use Athena type stubs.",
+      "top_issue": "README describes the generic mypy-boto3-builder project, not the specific types-aiobotocore-athena package \u2014 there are no examples, API references, or usage instructions for Athena-specific type annotations."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type definition inaccuracies (wrong async/await signatures, overly broad types)",
-        "Packaging and distribution issues (duplicate .pyi/.py files, missing extras metadata)",
-        "Version mismatch problems between main package and submodules",
-        "Documentation gaps (generate locally instructions don't work, confusing package naming)"
+        "Type definition mismatches with runtime behavior (aioboto3.get_credentials, ToolUseBlockTypeDef, FileobjTypeDef)",
+        "Packaging and versioning issues (submodules versions, missing extras, version conflicts)",
+        "Duplicate stub files (.pyi and .py) causing IDE confusion",
+        "Documentation outdated (generate locally instructions don't work)",
+        "Confusion between package variants (types-boto3 vs boto3-stubs naming)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being tracked and some are marked as released/fixed",
+        "Community engagement with 2-5 comments on most issues",
+        "Recent activity shows project is maintained"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintenance addressing legitimate technical debt and type stub accuracy issues, but struggling with packaging complexity and documentation clarity."
+      "summary": "Project shows moderate health with active bug reporting and occasional fixes deployed, but several type annotation and packaging issues remain unresolved, indicating resource constraints or backlog accumulation."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
-        "No merged PRs or closed issues in past 6 months",
-        "15 open issues with no resolution activity",
-        "No releases in the analyzed period",
-        "Type stubs package with no maintenance activity indicates upstream library may be unmaintained"
+        "Zero commits in past 6 months despite last commit 2 months ago",
+        "16 open issues with no resolution activity",
+        "Zero issues closed in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release"
       ],
       "positive_signals": [
-        "Recent commit exists (though appears to be only recent activity)"
+        "Last commit was relatively recent (2 months ago)"
       ],
-      "summary": "This package appears abandoned with no maintenance activity over 6 months despite recent commit history, accumulating unresolved issues and no contributor engagement."
+      "summary": "Package is stale with a growing backlog of unaddressed issues and no contributor activity over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T06:00:15.617961+00:00"
+    "llm_analyzed_at": "2026-03-15T03:01:34.803994+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,49 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 4,
-      "quick_start": 2,
-      "examples": 1,
-      "configuration": 1,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 2,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "This README is for the wrong package (mypy-boto3-builder instead of mypy-boto3-route53-recovery-control-config), providing no useful information about the actual package's purpose or usage.",
-      "top_issue": "Package name mismatch - README describes a type annotation generator builder tool when the package is actually a specific AWS Route53 Recovery Control Config type stubs library"
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific service stub package, leaving users confused about what this particular package does and how to use it for Route53 Recovery Control Config.",
+      "top_issue": "This README is for the builder tool (mypy-boto3-builder), not for the specific package (mypy-boto3-route53-recovery-control-config) \u2014 there are no service-specific usage examples, type stubs documentation, or configuration details for the actual package being installed."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules (1.42 availability)",
-        "Missing extras/optional dependencies not declared properly",
-        "Duplicate .pyi and .py stub files causing IDE conflicts",
-        "Type definitions not matching actual runtime behavior (async/coroutine issues)",
-        "Inaccurate type stubs for AWS API responses",
-        "Documentation outdated (setup.py deprecation, local generation instructions)"
+        "Type stub accuracy issues (ToolUseBlockTypeDef, FileobjTypeDef, async/await mismatches)",
+        "Package naming confusion (types-boto3 vs boto3-stubs duplication)",
+        "Duplicate .pyi and .py file shipping causing editor conflicts",
+        "Version compatibility and mismatch errors between submodules",
+        "Documentation/tooling issues with local generation instructions"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Maintainers respond to feature requests (pyproject.toml migration completed)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with engaged users reporting legitimate bugs, but maintainers show moderate responsiveness with several long-standing issues (some 3+ months old) remaining unresolved despite community frustration."
+      "summary": "Moderately healthy project with active issue discussion and some released fixes, but persistent type stub accuracy problems and package organization confusion create ongoing user frustration."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
         "No commits in past 6 months",
+        "16 open issues with no recent closure",
+        "No contributors active in past 6 months",
         "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Last commit over 2 weeks ago with no follow-up activity"
+        "No released versions in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "Package shows clear signs of abandonment with zero maintenance activity over 6 months and growing unresolved issues."
+      "positive_signals": [
+        "Package exists on PyPI",
+        "Has commit history (last commit 2026-01-12)",
+        "Some engagement history evidenced by open issues"
+      ],
+      "summary": "Package shows no maintenance activity for the past 6 months with 16 unaddressed open issues and zero contributor engagement, indicating a stale and potentially unmaintained project."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:53:50.081565+00:00"
+    "llm_analyzed_at": "2026-03-15T08:04:48.066503+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

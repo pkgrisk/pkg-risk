@@ -182,52 +182,54 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 3,
+      "installation": 2,
       "quick_start": 9,
-      "examples": 8,
-      "configuration": 7,
+      "examples": 7,
+      "configuration": 6,
       "troubleshooting": 5,
-      "overall": 7,
-      "summary": "Clear purpose and usage examples but missing installation instructions and comprehensive troubleshooting guidance.",
-      "top_issue": "No installation instructions provided (pip install command missing)"
+      "overall": 6,
+      "summary": "Concise and clear for basic usage with good code examples, but lacks installation instructions entirely.",
+      "top_issue": "No installation instructions (e.g., `pip install striprtf`) are provided anywhere in the README."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Encoding/charset handling issues (cp1251, cp1252, Russian text)",
-        "Missing numbering and partial text conversion from RTF",
-        "Font table and default font not properly handled",
-        "Special characters and Unicode support problems",
-        "Unmatched braces causing text truncation",
-        "Optional RTF spec compliance (fcharset parameter)"
+        "Encoding issues (cp1252, Russian text, umlauts, Unicode characters)",
+        "RTF spec compliance gaps (fcharset required but should be optional, missing numbering preservation)",
+        "Text truncation and partial conversion with certain RTF documents",
+        "Font handling and default font not being respected",
+        "Missing features for metadata extraction (page/paragraph numbers)"
       ],
       "praise_themes": [
-        "Useful library for RTF conversion",
-        "Reliable for basic use cases"
+        "Library works well for common use cases",
+        "Code quality sufficient for third-party ports (PostgreSQL implementation)",
+        "Maintainer eventually resolves reported issues"
       ],
-      "abandonment_signals": true,
-      "summary": "The striprtf project shows signs of slow maintenance with encoding/charset bugs remaining unresolved, multiple open issues suggesting limited active development, and minimal engagement on maintainer responsiveness."
+      "abandonment_signals": false,
+      "summary": "Active project with real production usage, but recurrent encoding and RTF spec compliance bugs are addressed eventually rather than proactively, leaving users frustrated by slow resolution times on fundamental parsing issues."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits for 7+ months (last commit June 2025, current date January 2026)",
-        "Zero commits in past 6 months",
-        "Zero merged PRs in past 6 months",
-        "Zero closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "3 open issues with no resolution activity",
-        "Unknown last release date suggests release history gap"
+        "Zero commits in the past 6 months",
+        "No active contributors in the past 6 months",
+        "3 open issues with no recent triage or closure",
+        "No merged PRs - development activity has ceased",
+        "Unknown last release date - unclear what version users should rely on"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity for over 7 months and unresolved open issues."
+      "positive_signals": [
+        "Last commit was 9 months ago (not years of complete abandonment)",
+        "Only 3 open issues (manageable backlog if maintained)",
+        "No pending PRs waiting to be merged"
+      ],
+      "summary": "striprtf is stale with no development activity or issue triage in the past 6+ months, though recent enough that revival is possible."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:11:45.679911+00:00"
+    "llm_analyzed_at": "2026-03-15T13:54:37.072446+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

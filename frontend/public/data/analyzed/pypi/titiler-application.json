@@ -191,44 +191,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 6,
-      "examples": 3,
+      "examples": 4,
       "configuration": 2,
-      "troubleshooting": 1,
+      "troubleshooting": 3,
       "overall": 5,
-      "summary": "Clear purpose and excellent installation instructions, but lacks practical examples, configuration guidance, and troubleshooting help.",
-      "top_issue": "No quick start example showing actual usage with a sample GeoTIFF file or API endpoint - installation instructions end at 'uvicorn titiler.application.main:app' without showing what to do next or how to make an actual tile request."
+      "summary": "Well-structured overview with clear installation paths (pip, source, Docker), but lacks usage examples, configuration docs, and troubleshooting beyond a deprecation warning.",
+      "top_issue": "No examples of actual API usage or how to serve/request tiles after installation \u2014 users are left to discover functionality through external docs."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Input validation gaps causing 500 errors instead of 4xx",
-        "Specification compliance issues with tile matrix sizing"
+        "Parameter/regex parsing limitations (sel parameter doesn't accept timestamps with colons)",
+        "Algorithm compatibility issues (ufunc errors with contours)",
+        "Edge case handling for coordinate naming"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active integration into other projects (jupyter-xarray-tiler, ipyleaflet, ipyopenlayers)",
+        "Utility for geospatial data workflows"
+      ],
       "abandonment_signals": false,
-      "summary": "Project shows active maintenance with timely issue resolution; recent bug fixes and feature development indicate engaged maintainers, though specification compliance gaps suggest room for improvement."
+      "summary": "Moderate community health with responsive recent issue handling, but one unaddressed month-old bug report raises concerns about attention to edge cases."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months despite last commit date being in the future (data anomaly)",
-        "24 open issues with no recent activity or resolution",
-        "No closed issues in the past 6 months indicating no bug fixes or maintenance",
-        "No open or merged PRs in the past 6 months indicating no active development",
-        "Zero active contributors in the past 6 months",
-        "No release information available, suggesting stalled release cycle"
+        "No commits merged in past 6 months despite recent commit timestamp",
+        "28 open issues with zero closed in past 6 months - stalled triage",
+        "Zero active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release - possibly very old",
+        "No activity pattern despite issues accumulating"
       ],
-      "positive_signals": [],
-      "summary": "titiler-application shows clear signs of abandonment with zero maintenance activity over the past 6 months despite multiple open issues requiring attention."
+      "positive_signals": [
+        "Recent commit date (2026-03-13) suggests some non-zero activity",
+        "No pull requests queued - not accumulating review backlog"
+      ],
+      "summary": "The project appears stale with significant open issues accumulating but no resolution activity, no active contributors, and no merged PRs in 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:48:24.471255+00:00"
+    "llm_analyzed_at": "2026-03-15T16:32:42.502962+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

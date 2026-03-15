@@ -191,48 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool while the package name suggests it's type stubs for AWS ACM-PCA, with minimal practical usage guidance.",
-      "top_issue": "Package identity confusion - README describes mypy-boto3-builder (a tool) but package is mypy-boto3-acm-pca (type stubs for a specific AWS service), leaving users uncertain what they actually installed"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific ACM PCA stub package, leaving users confused about what this particular package does or how to use it.",
+      "top_issue": "This README describes the mypy-boto3-builder generator tool, not the mypy-boto3-acm-pca package itself \u2014 a new user has no idea what ACM PCA types are included or how to use them."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch and dependency resolution issues (submodule versions not found)",
-        "Type stub accuracy problems (incorrect method signatures, overly broad type definitions)",
-        "Package metadata and build system issues (missing extras, .py/.pyi duplication)",
-        "Documentation and tooling gaps (generate locally instructions don't work)",
-        "Confusion between package variants (types-boto3 vs boto3-stubs)"
+        "Type stub accuracy and correctness issues (wrong type definitions, missing async markers)",
+        "Duplicate file shipping (.pyi and .py files causing IDE conflicts)",
+        "Package versioning mismatches between submodules",
+        "Documentation outdated (local generation instructions don't work)",
+        "Confusing package naming (types-boto3 vs boto3-stubs duplication)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being tracked and addressed (some marked as released)",
+        "Maintainers do engage with responses and provide fixes",
+        "Enhancement requests are considered and implemented"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderate community health with active technical issues around type stub accuracy and dependency management; maintainers are responsive but issues indicate friction points in package generation and metadata publishing workflows."
+      "summary": "Active but moderately-paced maintenance with several high-impact bugs marked 'response needed' lingering for months, suggesting resource constraints rather than abandonment."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months",
-        "No closed issues in the past 6 months despite 15 open issues",
-        "No merged PRs in the past 6 months",
-        "No active contributors in the past 6 months",
-        "15 open issues accumulating without resolution",
-        "Unknown last release date suggests long release cycle or discontinuation"
+        "No commits in past 6 months despite last commit 2 months ago",
+        "16 open issues with zero closed in past 6 months",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
-      "positive_signals": [],
-      "summary": "This package shows no signs of active maintenance with zero activity across all metrics over the past 6 months and a growing backlog of unresolved issues."
+      "positive_signals": [
+        "Recent commit activity 2 months ago shows project isn't completely abandoned",
+        "No open PRs suggests maintainer isn't ignoring pull requests (though may be unresponsive)"
+      ],
+      "summary": "Package is in stale maintenance status with no activity for 6+ months; open issues accumulate without resolution and no releases are being published."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:22:14.663936+00:00"
+    "llm_analyzed_at": "2026-03-15T10:48:36.516599+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

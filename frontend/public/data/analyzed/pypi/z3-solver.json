@@ -174,50 +174,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 3,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 5,
-      "overall": 6,
-      "summary": "Comprehensive installation instructions across multiple platforms and build systems, but lacks a simple quick-start example showing actual Z3 usage for theorem proving.",
-      "top_issue": "No quick-start code example demonstrating basic Z3 theorem proving usage - README focuses entirely on building/installing without showing what the tool actually does in practice"
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "The README is focused on building from source with extensive CI badges, but provides no Python usage examples, no pip install instructions, and no quick-start guide for the primary pypi audience.",
+      "top_issue": "No Python usage examples or pip installation instructions \u2014 a pypi user has no idea how to actually import and use z3-solver after installing it."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Segmentation faults instead of proper error handling",
-        "Soundness/correctness issues in constraint solving",
-        "Arithmetic optimization producing incorrect results",
-        "Incremental mode bugs that persist across versions"
+        "Soundness bugs producing incorrect models (ABV logic, refutational soundness discrepancies with cvc5)",
+        "Performance regressions in recent versions (4.16 string solver 20x slower, QF_SLIA degradation)",
+        "Platform-specific behavior inconsistencies (Windows vs Linux producing different results)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active maintenance and refactoring efforts (code-simplification automation)"
+      ],
       "abandonment_signals": false,
-      "summary": "Z3 has active code quality improvements but concerning unresolved correctness bugs with slow maintainer response, indicating a project focused on internal refactoring while critical issues linger."
+      "summary": "Moderately healthy project with recent development activity, but critical soundness bugs unresolved since early 2024 and recent performance regressions in stable releases are concerning for correctness-critical solver tool adoption."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-02-04)",
-        "161 open issues with no recent resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date indicates potential versioning issues"
+        "No commits in past 6 months despite 152 open issues",
+        "Zero closed issues in past 6 months - unaddressed bug backlog",
+        "No merged PRs and zero active contributors in past 6 months",
+        "Unknown last release date",
+        "Large accumulation of unresolved issues indicates lack of triage"
       ],
       "positive_signals": [
-        "Recent commit activity exists (2026-02-04)",
-        "No open pull requests suggests not accumulating unreviewed contributions"
+        "Very recent commit detected (2026-03-15)",
+        "No open pull requests suggests some management of contribution flow"
       ],
-      "summary": "z3-solver appears abandoned or in hibernation mode with a recent commit but zero maintenance activity over the past 6 months and a large backlog of unresolved issues."
+      "summary": "Package is stale with no meaningful maintenance activity in 6 months despite a recent commit, with a substantial backlog of unaddressed issues and unclear release schedule."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:12:36.264420+00:00"
+    "llm_analyzed_at": "2026-03-15T10:34:01.417325+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

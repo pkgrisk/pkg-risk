@@ -191,49 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README focuses heavily on branding and related projects but provides minimal explanation of what mypy-boto3-ce actually is or how to use it specifically.",
-      "top_issue": "Critical confusion: the README is for 'mypy-boto3-builder' (a tool) but the package is 'mypy-boto3-ce' (likely a generated output for AWS Cost Explorer service), leaving users completely unclear about what they actually installed"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-ce` package, leaving users without direct guidance on using the CE-specific stubs.",
+      "top_issue": "The README describes the builder/generator tool, not the `mypy-boto3-ce` package itself \u2014 a new user has no idea what CE-specific types are included or how to use them without following external links."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules causing installation failures",
-        "Missing extras/features not properly declared in package metadata",
-        "Duplicate .pyi and .py stub files causing tool confusion",
-        "Type definition inaccuracies (async/await, literal types, overly broad protocols)",
-        "Confusing package naming (types-boto3 vs boto3-stubs, types-botocore vs botocore-stubs)",
-        "Documentation and tooling issues (pyproject.toml migration, local generation instructions)"
+        "Type definition inaccuracies (wrong async/await signatures, incorrect literal values)",
+        "Outdated and broken documentation/setup instructions",
+        "Package versioning and dependency resolution issues",
+        "Confusion about package naming and duplication (types-boto3 vs boto3-stubs, duplicate .pyi/.py files)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being closed and fixes released",
+        "Project maintains active release cycle"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderate community health with active maintenance but accumulating technical debt around package metadata, type accuracy, and packaging standards that frustrate users."
+      "summary": "Moderately healthy project with active maintenance but several long-standing type definition bugs and documentation issues marked 'response needed' that undermine user confidence."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "16 open issues with zero closed in past 6 months",
+        "No commits recorded in past 6 months despite recent activity date",
         "Zero active contributors in past 6 months",
         "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "15 open issues accumulating without resolution",
-        "Unknown last release date suggests release history tracking is broken or abandoned"
+        "No releases recorded",
+        "No open PRs indicating abandoned contribution pathway"
       ],
-      "positive_signals": [],
-      "summary": "Package appears abandoned with no maintenance activity for 6+ months despite recent commit timestamp anomaly, accumulating unresolved issues, and zero contributor engagement."
+      "positive_signals": [
+        "Last commit 2 months ago shows minimal recent activity",
+        "Repository not completely dormant"
+      ],
+      "summary": "Package is stale with recent but isolated commit activity, accumulating unresolved issues, and no active contributor engagement or release cycle."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:38:09.222583+00:00"
+    "llm_analyzed_at": "2026-03-15T02:43:08.007738+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

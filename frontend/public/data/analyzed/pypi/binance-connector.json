@@ -177,49 +177,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 8,
       "quick_start": 2,
       "examples": 1,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "Clear overview and installation but completely lacks usage examples, configuration details, and any code showing how to actually use the SDK.",
-      "top_issue": "No code examples whatsoever - users cannot see how to import, authenticate, or make API calls after installation"
+      "summary": "The README clearly lists available SDKs and installation commands but provides no usage examples, API key configuration, or quick-start code to help new users get running.",
+      "top_issue": "No quick-start example or code snippet showing how to instantiate a client and make a basic API call after installation."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "unresponsive",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Deserialization failures in core models (UserDataStreamEventsResponse, SymbolFilters) causing data loss",
-        "WebSocket streaming bugs breaking multi-stream subscriptions",
-        "Unit inconsistencies (milliseconds vs seconds) in configuration and backoff handling",
-        "Missing error codes in exceptions preventing proper error handling in trading bots",
-        "Examples in documentation don't work (unexpected keyword arguments, invalid request IDs)",
-        "API specification mismatches between SDK and server requirements"
+        "WebSocket subscription and streaming issues (multiple variants: incomplete subscriptions, loop iteration bugs)",
+        "Response deserialization failures (UserDataStreamEventsResponse, SymbolFilters returning None)",
+        "Timestamp synchronization errors with Binance servers",
+        "Type hint/API interface issues (QueryOrderResponse __getitem__ compatibility)",
+        "Signature and authentication errors"
       ],
       "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "The binance-connector project shows signs of poor maintenance with critical bugs in core deserialization logic, widespread API incompatibilities, zero maintainer engagement on recent issues, and no pull request activity to address fundamental problems affecting trading applications."
+      "abandonment_signals": false,
+      "summary": "The project shows moderate maintenance with some responsiveness, but has concerning unresolved critical bugs in core functionality (deserialization, WebSocket), mixed language support, and a pattern of similar issues being partially fixed rather than systematically resolved."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-13)",
-        "22 open issues with no resolution activity",
-        "No closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date indicates release history unavailable"
+        "Zero commits and zero contributor activity for past 6 months",
+        "19 open issues with no resolutions in 6 months",
+        "No merged PRs or released versions in past 6 months",
+        "Unknown last release date indicates poor release management"
       ],
-      "positive_signals": [],
-      "summary": "The project appears abandoned with stalled development, unresolved issues, and no maintainer activity despite recent repository activity."
+      "positive_signals": [
+        "Recent commit on 2026-03-09 may indicate potential revival",
+        "No stale open PRs blocking progress"
+      ],
+      "summary": "Project appears stale with months of inactivity and accumulating unresolved issues, though a very recent commit suggests possible revival."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:02:52.711090+00:00"
+    "llm_analyzed_at": "2026-03-15T14:48:50.083458+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

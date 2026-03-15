@@ -206,49 +206,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
+      "installation": 9,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 3,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 2,
       "overall": 7,
-      "summary": "Excellent clarity and installation instructions with good basic usage examples, but lacks configuration details and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section for common issues like import errors, module not found, or customization problems"
+      "summary": "Concise and well-structured README that quickly conveys purpose and basic usage, but lacks configuration details and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section or common pitfalls documented; configuration/customization options (e.g., templates, docstring formats) are only briefly mentioned without examples."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Performance issues - pdoc taking 20+ minutes to build projects",
-        "Pydantic v1 compatibility errors causing crashes",
-        "Markdown rendering bugs - table of contents md5 hashes, matrix formatting",
-        "Asset handling - local logo images not properly included in output",
-        "Generic type linking - backtick references don't work with Generic[T] syntax",
-        "Stub file support incomplete - .pyi files from compiled extensions not processed",
-        "Feature regressions from pdoc3 - submodules, sidebar organization, syntax highlighting"
+        "PyO3 binary modules and .pyi stub files not handled correctly (3 issues: name resolution, infinite recursion, stub file inclusion)",
+        "HTML/rendering bugs (garbled URLs, smooshed LaTeX matrices)",
+        "Type resolution and linking issues (generic types, overridden methods in complex inheritance)",
+        "Performance/timeout problems in CI/CD workflows"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Users writing detailed, reproducible bug reports",
+        "Project attracts sophisticated use cases (PyO3, generics, namespace packages)"
+      ],
       "abandonment_signals": false,
-      "summary": "pdoc community shows moderate health with active issue reporting and some maintenance activity, but users experience performance bottlenecks, dependency compatibility issues, and missing features compared to the predecessor pdoc3, indicating room for improvement in stability and feature parity."
+      "summary": "pdoc shows moderate maintenance activity with real bugs accumulating (especially PyO3 support) and slow triage, but at least one recent issue was closed indicating active work."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being Jan 1, 2026",
-        "52 open issues with no recent activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
+        "59 open issues with 0 closed in past 6 months",
+        "No merged PRs or commits in past 6 months (before recent spike)",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests lack of release management"
+        "Unknown last release date suggests stale releases",
+        "Recent commit appears isolated without broader maintenance activity"
       ],
-      "positive_signals": [],
-      "summary": "pdoc appears to be abandoned with no maintenance activity for at least 6 months and a growing backlog of unresolved issues."
+      "positive_signals": [
+        "Very recent commit activity (2026-03-01)",
+        "No stalled open PRs indicating some triage discipline"
+      ],
+      "summary": "Minimal maintenance with a recent isolated commit; significant backlog of 59 issues shows neglect despite occasional activity."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T10:45:26.438950+00:00"
+    "llm_analyzed_at": "2026-03-15T11:54:34.977254+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

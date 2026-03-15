@@ -190,45 +190,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "Excellent clarity and quick start with comprehensive examples, but lacks configuration details and troubleshooting guidance specific to the Slack integration.",
-      "top_issue": "This README is for the main Dagster project, not dagster-slack specifically - it contains no Slack integration configuration, setup instructions, or usage examples."
+      "clarity": 4,
+      "installation": 6,
+      "quick_start": 3,
+      "examples": 3,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "This README is for the main Dagster package and contains no content specific to dagster-slack, making it nearly useless for understanding the integration.",
+      "top_issue": "The README is entirely about the core Dagster framework \u2014 there is zero documentation about what dagster-slack does, how to configure it with Slack credentials, or how to use it to send Slack notifications from pipelines."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Performance issues with asset job resolution causing timeouts",
-        "Limited test sensor functionality for run status sensors"
+        "Upgrade compatibility issues (breaking GraphQL queries after version updates)",
+        "Asset/data cleanup problems (wipeAssets not fully removing events, DefsFolderComponent breaking resource resolution)",
+        "Missing feature support (skippable asset checks, auto_materialize for dbt assets, custom credentials strategies)",
+        "UI/UX scalability for large deployments (cluttered partition metadata plots, bulk expand/collapse for code locations)",
+        "Partition handling bugs (asset checks loading wrong partitions)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "dagster-slack shows moderate health with active maintenance on performance issues and feature requests, though resolution timelines appear measured rather than rapid."
+      "praise_themes": [
+        "Users actively adopting advanced features (partitioning, asset checks, dbt integration, Databricks workflows)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Active community engagement with detailed bug reports, but maintenance lag evidenced by stale labels, months-old unresolved bugs (DefsFolderComponent since June 2025), and multiple feature requests without progress."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 10,
+      "confidence": 9,
       "concerns": [
-        "Zero commits in past 6 months despite last commit being recent (2026-01-17)",
-        "2780 open issues with zero closed issues in past 6 months indicates no active issue management",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months suggests no development activity",
-        "Unknown last release indicates no recent version releases",
-        "Extreme issue backlog (2780 open) with no resolution activity"
+        "2789 open issues with 0 closed in past 6 months indicates severe backlog and neglect",
+        "0 commits in past 6 months despite complex integration package",
+        "0 active contributors for 6+ months",
+        "0 merged PRs in past 6 months suggests no development or issue resolution",
+        "No recent releases"
       ],
-      "positive_signals": [],
-      "summary": "dagster-slack is abandoned with no maintenance activity for at least 6 months, despite a large unresolved issue backlog of 2780 items."
+      "positive_signals": [
+        "Package exists and has historical usage"
+      ],
+      "summary": "Package is abandoned with massive unresolved issue backlog and zero maintenance activity for the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:41:51.935539+00:00"
+    "llm_analyzed_at": "2026-03-15T01:50:09.532244+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

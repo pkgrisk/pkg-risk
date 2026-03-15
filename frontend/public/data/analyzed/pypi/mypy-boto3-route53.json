@@ -191,48 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it describes mypy-boto3-builder (a code generator) but the package name is mypy-boto3-route53 (a generated type stub package), creating fundamental clarity issues about what the package actually is.",
-      "top_issue": "Wrong README content - this appears to be the builder tool's README, not the mypy-boto3-route53 package README, causing complete confusion about package purpose and usage"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-route53 package, leaving users confused about what this particular package does and how to use it directly.",
+      "top_issue": "The README describes the mypy-boto3-builder generator tool, not the mypy-boto3-route53 package itself \u2014 there are no usage examples, no API documentation, and no explanation of what Route53-specific type stubs are provided."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules causing installation failures",
-        "Duplicate .py and .pyi stub files causing IDE conflicts",
-        "Missing or incorrect type definitions in generated stubs",
-        "Lack of clarity on package naming (types-boto3 vs boto3-stubs)",
-        "Documentation and tooling issues (outdated generation instructions)"
+        "Type definitions are incorrect or overly broad (ToolUseBlockTypeDef, FileobjTypeDef, async/sync mismatches)",
+        "Documentation and local generation instructions are outdated or broken",
+        "Duplicate file outputs (.pyi and .py files causing conflicts)",
+        "Package naming confusion and missing metadata (extras not provided)",
+        "Version mismatches between main packages and submodules"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Modernization efforts completed (pyproject.toml migration released)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active maintenance with moderate responsiveness, but persistent issues around stub accuracy, packaging practices, and documentation are creating friction for users."
+      "summary": "Active project with good infrastructure improvements, but struggling with type stub accuracy and documentation quality\u2014some bugs marked 'response needed' suggest maintenance backlog."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or resolution",
-        "No closed issues in past 6 months indicating no bug fixes or maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure may be broken"
+        "0 commits in past 6 months despite recent activity on 2026-01-12",
+        "16 open issues with no resolution in past 6 months",
+        "0 closed issues and 0 merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "Appears to be abandoned after January activity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity, unresolved issues, and no development over the past 6 months."
+      "positive_signals": [
+        "Single recent commit on 2026-01-12 indicates some level of activity",
+        "No open PRs means no stalled work-in-progress",
+        "Auto-generated stub package (mypy-boto3-*) may be intentionally minimal-maintenance"
+      ],
+      "summary": "Package is stale with no maintenance activity for 2+ months, accumulating unresolved issues, likely abandoned or intentionally minimal-maintenance."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T06:00:38.446870+00:00"
+    "llm_analyzed_at": "2026-03-15T03:02:12.893792+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

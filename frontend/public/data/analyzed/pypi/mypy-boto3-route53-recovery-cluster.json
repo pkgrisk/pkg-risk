@@ -191,48 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 5,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 3,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README describes a type annotations builder tool but confusingly appears to be for the wrong package (mypy-boto3-route53-recovery-cluster vs mypy-boto3-builder), lacks concrete examples, and provides minimal configuration or troubleshooting guidance.",
-      "top_issue": "Critical mismatch: README is for 'mypy-boto3-builder' but package name is 'mypy-boto3-route53-recovery-cluster', suggesting wrong README or package identity confusion that will completely mislead users about what they installed."
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-route53-recovery-cluster without relevant installation or usage guidance.",
+      "top_issue": "README describes the mypy-boto3-builder generator, not the specific route53-recovery-cluster stubs package \u2014 a new user has no idea how to install or use this specific package."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Missing or incorrect type definitions",
-        "Packaging issues (setup.py vs pyproject.toml, duplicate .pyi/.py files)",
-        "Documentation and tooling gaps",
-        "Inconsistent extras/metadata across related packages"
+        "Type definitions incorrect or overly broad (ToolUseBlockTypeDef, FileobjTypeDef, get_credentials async)",
+        "Missing package metadata and extras (Provides-Extra field, types-aiobotocore extras)",
+        "Duplicate stub files shipped as both .pyi and .py",
+        "Documentation outdated (generate locally instructions broken)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues well-documented with clear reproduction steps",
+        "Some enhancements successfully implemented and released (pyproject.toml migration)"
+      ],
       "abandonment_signals": false,
-      "summary": "Project maintains active maintenance with responsive issue tracking, but struggles with type accuracy and packaging consistency across 400+ generated stub packages, causing user friction."
+      "summary": "Active but understaffed project with solid issue tracking; core maintenance happening but type-definition and metadata bugs linger unresolved for 3-6 months."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months",
-        "No closed issues in the past 6 months despite 15 open issues",
-        "No merged PRs in the past 6 months",
-        "No active contributors in the past 6 months",
-        "Last commit was over 3 weeks ago with no follow-up activity",
-        "Unknown last release date suggests lack of version management"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No issues closed in past 6 months, suggesting issues are not being triaged",
+        "No active contributors in past 6 months",
+        "Unknown last release date prevents assessment of release cadence"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero maintenance activity over the past 6 months and unresolved issues accumulating."
+      "positive_signals": [
+        "No backlog of unreviewed open PRs",
+        "Recent commit activity (January 2026) suggests project exists"
+      ],
+      "summary": "Package appears stale with no maintenance activity over 6 months and 16 unaddressed issues, though a recent commit suggests it hasn't been completely abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:50:01.523246+00:00"
+    "llm_analyzed_at": "2026-03-15T09:54:37.521349+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

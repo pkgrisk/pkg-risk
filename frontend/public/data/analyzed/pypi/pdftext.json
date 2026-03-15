@@ -168,51 +168,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 10,
-      "installation": 10,
-      "quick_start": 10,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 9,
-      "summary": "Exceptionally clear and well-organized documentation with excellent examples, though lacking troubleshooting guidance and detailed configuration documentation.",
-      "top_issue": "No troubleshooting section - common errors, edge cases, or debugging guidance are completely absent"
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose, good CLI and programmatic examples, and useful benchmarks, but lacks troubleshooting guidance and only briefly mentions configuration via environment variables.",
+      "top_issue": "No troubleshooting section \u2014 common issues like encoding problems, password-protected PDFs, or malformed PDFs are not addressed anywhere."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
+      "frustration_level": 7,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Zero response to open issues (all have 0-1 comments despite being months old)",
-        "Critical bugs blocking installation and usage (numpy dependency, UTF-8 decoding)",
-        "Dependency incompatibility issues (pypdfium2 5.0.0 support pending)",
-        "Extraction accuracy problems (superscript detection, link extraction, whitespace handling)",
-        "Platform-specific failures (Windows UTF-8 encoding, memory management on Linux)"
+        "Dependency/installation issues (pip 23+, pipx, numpy missing)",
+        "Character encoding bugs (UTF-8 decoding, Windows UnicodeEncodeError)",
+        "Text extraction issues (superscript detection, link extraction, bbox anomalies)",
+        "Missing pypdfium2 5.0.0 support",
+        "Memory safety issues (GC race conditions)"
       ],
       "praise_themes": [
-        "Acknowledgment of good work by maintainer",
-        "Interest in feature parity with alternatives (pymupdf)"
+        "Quality of work acknowledged by users",
+        "Interest in feature parity with pymupdf"
       ],
       "abandonment_signals": true,
-      "summary": "The pdftext project shows clear signs of abandonment with zero maintainer engagement on 10 open issues spanning 9+ months, including critical blockers (missing numpy dependency, UTF-8 decoding failures) that prevent basic installation and operation."
+      "summary": "Poor community health: 10 unresolved issues spanning 10+ months with zero maintainer engagement; a pending 2-month-old PR and critical bugs (memory leaks, installation failures) suggest active abandonment."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from June 2025",
-        "18 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicating no active development",
+        "No commits in past 6 months",
+        "18 open issues with zero activity closing them",
+        "No merged PRs in past 6 months",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests release process has stalled",
-        "No closed issues in past 6 months showing lack of maintenance response"
+        "No recent releases",
+        "Accumulating unresolved issues suggests maintainer disengagement"
       ],
-      "positive_signals": [],
-      "summary": "Package is abandoned with no maintenance activity, unresolved issues, and no recent development or releases."
+      "positive_signals": [
+        "Project exists and was previously maintained",
+        "No stale pull requests blocking progress"
+      ],
+      "summary": "pdftext appears abandoned with no maintenance activity in the past 6 months and 18 unaddressed open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T03:44:35.168579+00:00"
+    "llm_analyzed_at": "2026-03-15T01:03:09.386016+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

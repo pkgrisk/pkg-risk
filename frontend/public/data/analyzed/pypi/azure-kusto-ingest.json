@@ -178,47 +178,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 5,
-      "overall": 7,
-      "summary": "Well-structured README with excellent installation instructions but lacks inline quick-start examples and comprehensive configuration documentation.",
-      "top_issue": "No inline quick-start code example - users must navigate to external sample files to see basic usage patterns"
+      "clarity": 6,
+      "installation": 8,
+      "quick_start": 3,
+      "examples": 4,
+      "configuration": 3,
+      "troubleshooting": 4,
+      "overall": 5,
+      "summary": "Installation is well-documented with multiple options, but the README lacks inline code examples and defers most practical guidance to external links.",
+      "top_issue": "No inline quick-start or usage example \u2014 users must navigate to external sample files just to see basic ingestion code."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Error handling deficiencies (throttling errors not properly caught)",
-        "Breaking changes without documentation updates (aio -> async in 6.0.0)",
-        "Regression bugs in recent releases (dataframe_from_result_table failures)",
-        "Data corruption in core functionality (float serialization in ingest_from_dataframe)"
+        "Compatibility breaking changes (Python 3.14 SSL errors, pandas 3.0 incompatibility)",
+        "Major version regressions (6.0.0 dataframe_from_result_table failures)",
+        "Undocumented API changes (aio \u2192 async extra name change)",
+        "Data integrity issues (float value corruption on large numbers)",
+        "Error handling gaps (KustoThrottlingError not caught)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Community health is poor: multiple recent releases introduced critical bugs (data corruption, regressions), breaking changes lack documentation updates, and core error handling is incomplete, though issues are being closed indicating some maintainer attention."
+      "abandonment_signals": true,
+      "summary": "Community health is declining with critical unaddressed issues (Python 3.14 SSL error open with zero engagement), recent data corruption bugs, breaking changes in major versions, and lag in addressing the newest reports despite some older issue resolution."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "5 open issues with no resolution activity",
-        "Unknown last release date suggests outdated versioning"
+        "Zero commits in past 6 months despite recent activity (24 days ago)",
+        "10 open issues with no resolution activity",
+        "No merged PRs or contributor activity in 6 months",
+        "Unknown last release - unclear versioning cadence",
+        "No issue closure - accumulated problems not being addressed"
       ],
-      "positive_signals": [],
-      "summary": "Azure Kusto Ingest appears to be abandoned with no maintenance activity for at least 6 months and multiple unresolved issues."
+      "positive_signals": [
+        "Recent commit 24 days ago (2026-02-19) shows some activity",
+        "No open PRs backlog - not actively ignoring contributions"
+      ],
+      "summary": "Package is stale with no maintenance activity for 6 months, only a single recent commit that breaks an otherwise dormant pattern."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:00:28.122517+00:00"
+    "llm_analyzed_at": "2026-03-15T13:43:19.315190+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

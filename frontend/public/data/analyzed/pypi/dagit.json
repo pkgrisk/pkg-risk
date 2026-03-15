@@ -191,50 +191,47 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 9,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "Excellent clarity and quick start with a compelling code example, but lacks configuration details and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section - common errors, debugging tips, or FAQ for problems users might encounter"
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 6,
+      "summary": "Excellent high-level introduction with a solid code example, but the README defers almost everything to external docs and lacks configuration or troubleshooting content.",
+      "top_issue": "No troubleshooting or configuration documentation whatsoever \u2014 users hitting issues or needing to configure Dagster must leave immediately to find help elsewhere."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "UI regressions and missing features (select all checkbox)",
-        "Complex configuration and resource initialization issues",
-        "Runtime errors in specialized environments (K8s log parsing, ECS/Bottlerocket)",
-        "Asset loading and dependency resolution problems",
-        "Overly restrictive dependency constraints"
+        "Resource resolution and integration failures (DefsFolderComponent breaks resource loading, Databricks auth limitations)",
+        "Asset lifecycle management issues (removal/cleanup not working properly)",
+        "Missing feature parity across decorator types (@asset vs @dbt_assets capabilities)",
+        "UI/UX friction when managing complex deployments with many code locations"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Dagster shows moderate community health with active bug reporting and recent issue creation, but lacks visible maintainer engagement and has concerning regressions in recent patch versions."
+      "abandonment_signals": true,
+      "summary": "Dagster shows moderate community health with active recent issue reporting but concerning backlog of unresolved bugs (critical DefsFolderComponent issue open 9+ months) and multiple stale feature requests, indicating slower-than-needed maintainer responsiveness relative to user needs."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-23)",
-        "2776 open issues with zero closed in past 6 months indicates no active issue resolution",
-        "Zero merged PRs in past 6 months shows no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests potential release stagnation",
-        "High ratio of open issues (2776) with no triage or closure activity"
+        "2791 open issues with zero closed in past 6 months indicates massive unaddressed backlog",
+        "Zero commits in past 6 months (except anomalous today commit) shows no development activity",
+        "Zero merged PRs in past 6 months means contributions are not being integrated",
+        "Zero active contributors in past 6 months indicates no one is actively maintaining the project",
+        "Unknown last release prevents assessment of release cadence"
       ],
       "positive_signals": [
-        "Recent commit activity exists (2026-01-23), though appears to be isolated",
-        "Open PRs count is 0, preventing accumulation of stalled pull requests"
+        "One commit on 2026-03-14 (today), though this may be automated or anomalous"
       ],
-      "summary": "dagit appears abandoned with massive open issue backlog, zero recent maintenance activity, and no contributor engagement despite one recent commit."
+      "summary": "dagit is effectively abandoned with 2791 unaddressed issues and zero maintenance activity over the past 6 months, making it unsuitable for dependency use."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T04:07:10.213602+00:00"
+    "llm_analyzed_at": "2026-03-15T04:52:31.941949+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

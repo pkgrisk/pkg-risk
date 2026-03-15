@@ -191,50 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 7,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "This README is for the wrong package (mypy-boto3-builder) when the user asked about mypy-boto3-sqs, causing severe clarity issues and making most content irrelevant.",
-      "top_issue": "README content belongs to mypy-boto3-builder (the generator tool) not mypy-boto3-sqs (the generated stub package), creating complete confusion about what the package actually does and how to use it."
+      "summary": "This README is for the builder tool, not the specific mypy-boto3-sqs package, leaving users confused about what they actually installed and how to use it.",
+      "top_issue": "The README describes the mypy-boto3-builder generator, not the mypy-boto3-sqs stub package itself \u2014 there are no SQS-specific usage examples, type annotation demos, or explanation of what the installed package provides."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules (1.42 issue)",
-        "Duplicate .pyi and .py files causing confusion in IDEs",
-        "Missing extras/optional dependencies not properly declared",
-        "Type stub accuracy issues (wrong method signatures, overly broad types)",
-        "Documentation and tooling gaps (pyproject.toml migration, local generation instructions)"
+        "Type stub accuracy and completeness (wrong return types, missing extras)",
+        "Package distribution issues (missing versions, duplicate .pyi/.py files)",
+        "Build reproducibility and determinism",
+        "Outdated or broken documentation",
+        "Package naming confusion (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are properly triaged with relevant labels",
+        "Some enhancements do get implemented and released (pyproject.toml migration)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling with technical debt: maintainers are responding to issues (many marked released/closed) but facing recurring problems with stub accuracy, packaging inconsistencies, and modernization gaps that suggest resource constraints or process issues."
+      "summary": "Moderate maintenance health with selective responsiveness\u2014some features are implemented and released, but several user-reported bugs flagged 'response needed' remain unaddressed for months despite active issue reporting."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "No merged PRs in past 6 months indicating stalled development",
-        "No releases in past 6 months",
-        "No closed issues in past 6 months showing lack of maintenance"
+        "16 open issues unresolved for 6+ months",
+        "Zero merged PRs or active contributions in past 6 months",
+        "No active contributors",
+        "Release date unknown",
+        "No issue closures despite significant open backlog"
       ],
       "positive_signals": [
-        "Had recent activity on 2026-01-12, suggesting not completely dead"
+        "Recent commit activity (2026-01-12, ~2 months ago)"
       ],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite having open issues, though a single recent commit suggests it may not be completely defunct."
+      "summary": "Package shows signs of stalled maintenance with a recent commit but no ongoing issue resolution or contribution activity over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:14:29.881686+00:00"
+    "llm_analyzed_at": "2026-03-15T04:00:49.955665+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

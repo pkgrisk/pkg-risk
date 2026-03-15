@@ -198,47 +198,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
-      "installation": 1,
+      "clarity": 4,
+      "installation": 3,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 1,
-      "summary": "This README is for Apache Airflow itself, not the Datadog provider package, making it completely irrelevant and misleading for users trying to understand the provider.",
-      "top_issue": "Wrong README content - displays generic Apache Airflow documentation instead of Datadog provider-specific information about hooks, operators, sensors, and integration setup"
+      "overall": 2,
+      "summary": "This README is for the base Apache Airflow project, not the Datadog provider package \u2014 it contains no provider-specific documentation, examples, or configuration guidance.",
+      "top_issue": "Wrong README: the content describes Apache Airflow core rather than the apache-airflow-providers-datadog provider, leaving users with no information about what the Datadog provider does or how to use it."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "UI sorting/display inconsistencies",
-        "Data duplication issues",
-        "Missing metrics after migrations",
-        "Performance and memory leaks",
-        "Database migration complexity"
+        "Critical performance regression in database migrations",
+        "Row-by-row Python deserialization causing scaling bottlenecks",
+        "Migration 0094 upgrade times unacceptable for large deployments"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Active maintainer engagement with steady bug fixes and feature improvements, but persistent performance issues and data consistency problems indicate room for improvement in code quality and testing."
+      "summary": "Single critical performance issue in database migration recently reported (2 days ago) with minimal community engagement; too early to assess maintainer responsiveness, but well-categorized with appropriate priority labels suggesting organizational awareness."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 10,
+      "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (suggests data anomaly or stale package)",
-        "1712 open issues with zero closed in past 6 months indicates no active issue triage",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months shows no development activity",
-        "Unknown last release date suggests release process is not tracked or package is unmaintained"
+        "Zero commits in past 6 months despite recent last commit timestamp",
+        "1761 open issues with zero closed in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date",
+        "Massive unaddressed issue backlog indicates complete lack of maintenance"
       ],
-      "positive_signals": [],
-      "summary": "Package is abandoned with no development, issue resolution, or contributor activity in 6+ months despite large backlog of open issues."
+      "positive_signals": [
+        "Last commit timestamp is recent (2026-03-15)"
+      ],
+      "summary": "Project is effectively abandoned with a massive unaddressed issue backlog and zero maintenance activity for at least 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:05:18.834212+00:00"
+    "llm_analyzed_at": "2026-03-15T13:48:22.079981+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

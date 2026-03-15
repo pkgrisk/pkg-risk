@@ -177,50 +177,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 8,
       "examples": 7,
       "configuration": 9,
       "troubleshooting": 6,
       "overall": 8,
-      "summary": "Excellent README with clear purpose, installation, and configuration, but lacks comprehensive troubleshooting and could use more diverse usage examples.",
-      "top_issue": "Limited troubleshooting section - only mentions libcst/rust compiler issue but doesn't cover common mutation testing problems like handling slow tests, dealing with surviving mutants systematically, or debugging why certain mutants aren't being generated"
+      "summary": "Well-structured documentation with clear installation, strong configuration coverage, and good feature highlights, but limited troubleshooting beyond the libcst dependency note.",
+      "top_issue": "Troubleshooting is minimal \u2014 only one known issue (libcst/Rust compiler) is documented, with no guidance on common problems like mutants not being detected, test suite misconfigurations, or performance issues on large codebases."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Segmentation faults on Python 3.14 and macOS",
-        "Async/async generator function handling broken",
-        "Configuration and import path issues with project structures",
-        "Incomplete releases (missing git tags)",
-        "Poor mutation reporting and debugging information"
+        "Decorated functions/methods not being mutated",
+        "Dataclass methods produce zero mutants",
+        "Default argument mutations not working",
+        "Segfault crashes on macOS with setproctitle()",
+        "Core mutation testing failing for certain code patterns"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Tool valued as 'great asset'",
+        "Users actively trying to use it despite issues",
+        "Detailed bug reports indicating engagement"
+      ],
       "abandonment_signals": true,
-      "summary": "mutmut has significant technical debt with critical bugs affecting core functionality (segfaults, async support), unclear maintainer engagement on long-standing issues, and delayed releases suggesting limited active development."
+      "summary": "Moderate community health with strong user interest but concerning unresolved critical bugs (macOS crashes, decorator/dataclass mutation failures) and slow maintainer response to recent issues."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months despite being a recently active project",
-        "42 open issues with no recent closures",
-        "No merged PRs in the past 6 months indicating lack of development activity",
-        "No active contributors in the past 6 months",
-        "Unknown last release date suggests potential versioning gaps"
+        "No commits merged in past 6 months despite 44 open issues",
+        "Zero closed issues in 6 months - issues are accumulating unaddressed",
+        "No active contributors in past 6 months - project lacks maintainer engagement",
+        "Last release date unknown - unclear if users have access to recent fixes",
+        "No merged PRs in 6 months - pull requests are not being processed"
       ],
       "positive_signals": [
-        "Recent commit activity (2026-01-14) shows the repository isn't completely dormant",
-        "Project has accumulated 42 open issues indicating previous usage and community engagement"
+        "Very recent commit (2026-03-11) suggests minimal activity",
+        "No open pull requests - no stalled reviews backlog"
       ],
-      "summary": "mutmut appears stale with no recent development activity, zero merged PRs, and accumulating unresolved issues despite a recent commit suggesting possible abandoned maintenance."
+      "summary": "mutmut is stale with accumulated unresolved issues and no demonstrable maintenance activity in 6 months despite a recent single commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T03:50:16.096780+00:00"
+    "llm_analyzed_at": "2026-03-15T01:07:42.207792+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

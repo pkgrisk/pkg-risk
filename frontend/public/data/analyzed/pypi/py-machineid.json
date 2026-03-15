@@ -170,46 +170,49 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
+      "installation": 9,
       "quick_start": 9,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 8,
-      "summary": "Clear, concise documentation with excellent installation and quick start guides, but lacks troubleshooting information and more advanced usage examples.",
-      "top_issue": "No troubleshooting section for common issues like permissions errors, platform-specific problems, or what to do if machine ID changes"
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Concise and well-structured README that covers the core API clearly, but lacks troubleshooting guidance and deeper configuration documentation.",
+      "top_issue": "No troubleshooting section \u2014 no guidance on platform-specific issues, permission errors, or what to do when the machine ID cannot be retrieved."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 5,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Platform-specific bugs (Windows wmic failures, Linux CI runners, Docker containers)",
-        "Dependency compatibility issues (winregistry version breaking changes)",
-        "Inconsistent machine ID generation across environments",
-        "Poor error handling (returning None instead of proper exceptions)"
+        "wmic deprecation and removal from Windows 11 (critical, breaking change)",
+        "Environment-specific failures (Docker, GitLab CI, Linux containers)",
+        "Dependency compatibility issues (winregistry 2.0.0+ API change)",
+        "Poor error handling (None result causing AttributeError instead of MachineIdNotFound)",
+        "Test coverage and quality improvements neglected"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The py-machineid project shows moderate health with responsive maintenance addressing real bugs, but struggles with cross-platform reliability and environmental edge cases that suggest the core functionality needs architectural improvements."
+      "abandonment_signals": true,
+      "summary": "Package shows reactive maintenance (closed issues) but faces critical vulnerability with Windows wmic deprecation; 8-day-old blocker issue has minimal engagement, and test improvement request from Oct 2023 remains unaddressed, signaling low development velocity."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being from December 2025",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "2 open issues with no resolution activity",
-        "Unknown last release date suggests outdated release information"
+        "No commits in the past 6 months despite last commit being relatively recent",
+        "3 open issues with no activity or resolution",
+        "Unknown last release date suggests no versioning",
+        "Zero active contributors for 6 months",
+        "No merged PRs in the past 6 months"
       ],
-      "positive_signals": [],
-      "summary": "py-machineid appears abandoned with no maintenance activity in at least 6 months and unresolved open issues."
+      "positive_signals": [
+        "Last commit is relatively recent (3.5 months ago)",
+        "No pending PRs requiring review"
+      ],
+      "summary": "py-machineid is stale with no maintenance activity in 6 months despite unresolved open issues, indicating dormant development."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:14:58.580313+00:00"
+    "llm_analyzed_at": "2026-03-15T05:14:14.229086+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

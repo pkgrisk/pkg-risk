@@ -183,46 +183,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 9,
-      "quick_start": 3,
+      "installation": 7,
+      "quick_start": 2,
       "examples": 2,
-      "configuration": 7,
+      "configuration": 5,
       "troubleshooting": 4,
-      "overall": 6,
-      "summary": "Excellent clarity and installation instructions, but severely lacks practical code examples and quick-start guidance for basic usage.",
-      "top_issue": "No basic usage examples showing how to actually use Polars after installation (e.g., reading data, performing operations, writing output)"
+      "overall": 5,
+      "summary": "Strong high-level overview and clear installation, but almost no code examples or quick-start demonstration \u2014 the README relies heavily on external docs.",
+      "top_issue": "No quick-start code example showing basic DataFrame creation and querying, forcing new users to immediately leave to external documentation."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bugs in streaming engine (broadcasting, equals comparison)",
-        "edge case bugs in low-level array builders",
-        "API inconsistencies requiring workarounds",
-        "feature gaps (holiday expressions, user-defined functions)"
+        "Recent regressions in 1.39 (business_day_count with Series, column_naming docs missing)",
+        "Panics and crashes in edge cases (duplicated variables in over(), cloud writes)",
+        "Documentation not updated alongside code changes",
+        "Type inference issues requiring workarounds (infer_schema_length tuning)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "High-quality library overall with robust feature set",
+        "Aggressive feature development (new streaming engine actively progressing)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with responsive maintainers, but recent uptick in bugs (especially streaming engine issues) and missing features suggests quality control challenges as codebase scales."
+      "summary": "Actively maintained project with strong development momentum, but quality concerns emerging from recent releases\u2014multiple regressions, panics, and documentation gaps suggest tension between release velocity and testing rigor."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (Jan 15, 2026)",
-        "Zero active contributors in past 6 months",
-        "2707 open issues with no recent activity",
-        "No closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "Unknown last release date suggests release information is unavailable"
+        "2726 open issues with zero closed in 6 months indicates no issue triage",
+        "Zero commits in past 6 months despite recent commit suggests one-off hotfix, not active maintenance",
+        "No active contributors in 6 months",
+        "No merged pull requests in 6 months",
+        "Unknown last release date - cannot assess release cadence",
+        "Zero pull request activity indicates no review process"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity despite a recent last commit timestamp that may indicate stale repository metadata."
+      "positive_signals": [
+        "Very recent commit (2026-03-13) suggests minimal ongoing support"
+      ],
+      "summary": "Package is effectively abandoned with a massive unaddressed issue backlog and no meaningful maintenance activity over 6 months, despite a recent isolated commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:51:59.054638+00:00"
+    "llm_analyzed_at": "2026-03-15T15:39:49.192857+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -198,44 +198,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
-      "installation": 1,
+      "clarity": 3,
+      "installation": 4,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 1,
-      "summary": "This README is for the wrong package - it shows generic Apache Airflow documentation instead of the HTTP provider package documentation, making it completely misleading for users.",
-      "top_issue": "README contains generic Apache Airflow content instead of provider-specific documentation, with no information about HTTP hooks, operators, or sensors that are the actual purpose of this package"
+      "overall": 2,
+      "summary": "The README is for the base Apache Airflow project, not the HTTP provider package, providing no useful documentation for the actual package being evaluated.",
+      "top_issue": "Wrong README \u2014 shows generic Apache Airflow project docs instead of anything specific to the apache-airflow-providers-http package, its operators, hooks, or HTTP connection usage."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "negative",
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
-      "common_complaints": [],
+      "common_complaints": [
+        "Performance degradation during database migrations at scale",
+        "Row-by-row Python deserialization inefficiency"
+      ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Single open security issue showing proactive dependency management with a clear upgrade path planned, indicating active but not rapidly responsive maintenance."
+      "summary": "A critical performance issue in database migration 0094 was recently reported for large-scale deployments; early triage and critical labeling suggest maintainer awareness, but insufficient data for broader health assessment."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-02-12)",
-        "1725 open issues with zero closed in past 6 months indicates no active triage",
+        "1761 open issues with zero resolution in past 6 months",
+        "No commits in past 6 months despite large backlog",
         "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months shows no development activity",
-        "Unknown last release date suggests release infrastructure may be broken",
-        "High issue count with no maintenance suggests neglected state"
+        "No pull requests merged in past 6 months",
+        "No new releases in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent commit timestamp exists (though appears to be data anomaly given zero commits past 6 months)"
+        "Repository still exists and accessible",
+        "A recent commit exists (though appears to be automated sync)"
       ],
-      "summary": "Package is effectively abandoned with massive backlog of 1725 unresolved issues and zero maintenance activity over the past 6 months."
+      "summary": "This package shows clear signs of abandonment with massive unresolved issue backlog and zero development activity over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:38:18.262194+00:00"
+    "llm_analyzed_at": "2026-03-15T13:38:19.954005+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

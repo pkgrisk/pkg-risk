@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) rather than the actual package (mypy-boto3-redshift), leaving users uncertain about what they actually installed and how to use it.",
-      "top_issue": "Wrong README - this is the builder's README, not the mypy-boto3-redshift package README, so installation/usage instructions don't match the actual package users installed"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-redshift package, providing minimal actionable guidance and deferring almost everything to external documentation links.",
+      "top_issue": "This README belongs to the parent builder project, not the specific mypy-boto3-redshift package \u2014 there are no Redshift-specific usage examples, type annotations, or configuration details."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tooling conflicts",
-        "Type definition accuracy issues (wrong async/await signatures, overly broad types)",
-        "Missing or incomplete extras/optional dependencies",
-        "Documentation and tooling instructions are outdated"
+        "Type stub inaccuracies (wrong type definitions, overly broad types)",
+        "Duplicate stub files (.pyi and .py) causing editor confusion",
+        "Documentation errors (generate locally instructions don't work)",
+        "Version/package confusion (types-boto3 vs boto3-stubs clarity)",
+        "Missing package metadata (extras not provided)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some issues are being fixed and released (pyproject.toml migration completed)",
+        "Technical bugs are tracked and discussed with reasonable engagement"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but imperfect maintenance with recurring type stub accuracy issues and packaging inconsistencies that frustrate users integrating with modern Python tooling."
+      "summary": "Project is actively maintained with periodic releases, but suffers from type stub accuracy issues and responsive gaps on open bugs\u2014users encounter real friction from incorrect type annotations and outdated documentation."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no active issue management",
-        "No merged pull requests in past 6 months",
-        "Zero active contributors in past 6 months",
-        "No releases recorded, suggesting version stagnation"
+        "No commits, closed issues, or merged PRs in the past 6 months",
+        "16 open issues with zero resolution activity",
+        "No active contributors in the past 6 months",
+        "Unknown last release version",
+        "No pull request activity despite open issues"
       ],
       "positive_signals": [
-        "Repository exists and has historical commits"
+        "Recent commit activity 2 months ago suggests project is not completely abandoned",
+        "Package still exists and is publicly available"
       ],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite accumulating 15 unresolved issues."
+      "summary": "This package is stale with minimal maintenance\u2014while a recent commit shows some sign of life, the complete absence of issue resolution, PR activity, and contributor engagement over 6 months indicates the project is effectively unmaintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:29:41.551372+00:00"
+    "llm_analyzed_at": "2026-03-15T08:39:25.560788+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

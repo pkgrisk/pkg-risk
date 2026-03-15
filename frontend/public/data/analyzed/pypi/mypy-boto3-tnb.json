@@ -191,49 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs but the package name 'mypy-boto3-tnb' suggests it's a pre-built type stub package, creating fundamental clarity issues about what the user is actually installing.",
-      "top_issue": "Critical mismatch between package name (mypy-boto3-tnb, a specific service stub) and README content (mypy-boto3-builder, the generator tool) - user cannot understand what they're actually installing or how to use it"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-tnb package, providing minimal actionable information and deferring heavily to external documentation links.",
+      "top_issue": "The README is generic to the entire mypy-boto3-builder project and contains no content specific to the mypy-boto3-tnb package (AWS Telco Network Builder service), with no examples, configuration docs, or troubleshooting."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py files causing IDE conflicts",
-        "Missing extras/metadata in package distributions",
-        "Type stub inaccuracies (async/await, type literals)",
-        "Documentation and setup process issues",
-        "Confusion between boto3-stubs and types-boto3 packages"
+        "Type annotations don't match actual runtime behavior (async vs sync, wrong literal values)",
+        "Documentation and build instructions are outdated or incorrect",
+        "Package naming confusion between types-boto3 and boto3-stubs",
+        "Stub files shipped duplicated (.pyi and .py) causing editor confusion",
+        "Version mismatches between main package and submodules"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some feature requests are implemented (pyproject.toml migration completed)",
+        "Issues do get closed and resolved eventually",
+        "Active maintenance with regular releases"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderately healthy community with active bug reports but infrastructure and type accuracy issues causing frustration; maintainers are responsive but struggling with packaging and metadata consistency across 400+ generated packages."
+      "summary": "Project maintains steady releases and closes some issues, but struggles with type annotation accuracy, outdated documentation, and slow resolution of bugs that block user workflows\u2014moderate maintenance quality with recurring correctness problems."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
+        "16 open issues with zero closed in past 6 months",
+        "No commits in past 6 months despite recent activity date",
+        "Zero merged PRs in past 6 months indicates no code review activity",
         "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests release cycle has stalled"
+        "Unknown release history makes version stability unclear"
       ],
-      "positive_signals": [],
-      "summary": "This package shows no maintenance activity over the past 6 months with accumulating unresolved issues and no contributor engagement."
+      "positive_signals": [
+        "Single recent commit 2 months ago shows not completely abandoned",
+        "No backlog of open pull requests"
+      ],
+      "summary": "Package is stale with minimal recent activity; a single commit 2 months ago but no sustained maintenance, issue resolution, or code review activity over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:21:35.504241+00:00"
+    "llm_analyzed_at": "2026-03-15T01:34:16.091453+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

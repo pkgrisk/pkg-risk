@@ -174,47 +174,46 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 9,
+      "clarity": 8,
+      "installation": 7,
       "quick_start": 9,
-      "examples": 9,
-      "configuration": 7,
-      "troubleshooting": 6,
-      "overall": 8,
-      "summary": "Well-structured documentation with excellent examples and clear explanations, though configuration options and troubleshooting could be more comprehensive.",
-      "top_issue": "Configuration options (like block_duration_s, yield_nones, timeout_s parameters) are mentioned but not systematically documented with all available options and their effects."
+      "examples": 8,
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Well-documented with clear examples and good coverage of core use cases, but lacks configuration reference and troubleshooting guidance.",
+      "top_issue": "No documentation of available event types/masks, constructor parameters, or the full API surface \u2014 users must read source to discover options like block_duration_s or watch masks."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Core functionality bugs (move handling, directory event detection) not fixed",
-        "Mask behavior undocumented and inconsistent (IN_MODIFY triggers unexpected events)",
-        "Poor error messages lacking diagnostic information",
-        "Missing modern async/await support"
+        "File move handling broken (inode vs path tracking mismatch)",
+        "Directory monitoring limitations (events not picked up for dynamically created directories)",
+        "Undocumented event mask behavior (IN_MODIFY produces unexpected CREATE/DELETE events)",
+        "Poor error messages lack diagnostic information"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The inotify project shows signs of abandonment with multiple unresolved bugs spanning years, zero maintainer responses, and no recent feature development despite community requests."
+      "summary": "The inotify project shows significant abandonment with critical bugs unfixed for 4 years and zero engagement on recent 2025 issues, indicating inactive maintainership and poor community health."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months despite last commit being over 6 months ago",
-        "44 open issues with no recent activity or resolution",
-        "No closed issues in the past 6 months indicating lack of maintenance",
-        "No open or merged PRs in the past 6 months showing no development activity",
-        "No active contributors in the past 6 months",
-        "Unknown last release date suggests release history may be outdated"
+        "No commits for 6+ months (last commit 8 months ago)",
+        "44 open issues with zero closed in past 6 months - issues accumulating",
+        "No active contributors or merged pull requests in 6+ months",
+        "Unknown release history suggests no versioned releases",
+        "Complete absence of maintenance activity across all metrics"
       ],
       "positive_signals": [],
-      "summary": "The inotify package appears to be abandoned with no maintenance activity, commits, issue resolution, or contributor engagement in the past 6 months."
+      "summary": "This package is abandoned with no maintenance activity for at least 6 months and 44 unaddressed open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T21:05:01.347021+00:00"
+    "llm_analyzed_at": "2026-03-15T18:28:46.040197+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

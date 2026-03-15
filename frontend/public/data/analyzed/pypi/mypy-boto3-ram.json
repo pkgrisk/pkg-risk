@@ -191,51 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
       "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it's actually for 'mypy-boto3-builder' (a code generator) but the package name is 'mypy-boto3-ram' (a generated stub package), leading to a complete mismatch between what users expect and what's documented.",
-      "top_issue": "Wrong README - this appears to be the builder tool's README, not the RAM service stubs README, causing complete confusion about what this package actually does and how to use it"
+      "overall": 4,
+      "summary": "The README is heavy on badges and links but light on actual content, deferring most documentation to external sites with minimal inline examples or guidance.",
+      "top_issue": "No examples of actual usage \u2014 the README is essentially a table of contents pointing elsewhere, leaving users with no inline code or practical demonstration of the package."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tooling conflicts",
-        "Type definitions don't match actual runtime behavior",
-        "Missing or incomplete package metadata (extras not declared)",
-        "Documentation and tooling instructions are outdated"
+        "Type stub accuracy issues (incorrect type signatures for async functions, wrong Literal values)",
+        "Duplicate stub files (.pyi and .py) causing tool conflicts",
+        "Package extras not working (types-aiobotocore missing Provides-Extra)",
+        "Version mismatches between main and submodule packages",
+        "Outdated documentation and broken local generation instructions",
+        "Confusion between boto3-stubs and types-boto3 naming"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some feature requests implemented and released (pyproject.toml migration completed)",
+        "Issues are being closed and addressed over time"
+      ],
       "abandonment_signals": false,
-      "summary": "Active maintenance with recurring type accuracy issues affecting developer experience, complicated by version management problems across ~400 generated packages."
+      "summary": "Project shows moderate health with partial responsiveness, but multiple unresolved type stub correctness bugs and several 'response needed' issues languishing for months suggest maintainers may be overwhelmed by the scope of ~400 generated packages."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity",
-        "Zero closed issues in the past 6 months",
-        "No merged PRs in the past 6 months",
-        "No active contributors in the past 6 months",
-        "Unknown last release date suggests release infrastructure abandoned",
-        "No pull requests being worked on"
+        "Zero commits in past 6 months despite last commit being recent",
+        "16 open issues with no resolution activity in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs or releases in past 6 months",
+        "Unknown release schedule"
       ],
       "positive_signals": [
-        "Recent commit timestamp exists (though likely auto-generated or from maintenance tooling)"
+        "Recent commit activity (Jan 2026)",
+        "No accumulating pull requests (0 open)"
       ],
-      "summary": "Package appears abandoned with stale issues and zero maintenance activity over 6 months despite a recent commit timestamp."
+      "summary": "Package shows no active maintenance with accumulating unresolved issues and no development activity in the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T20:05:43.022911+00:00"
+    "llm_analyzed_at": "2026-03-15T00:08:50.579398+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

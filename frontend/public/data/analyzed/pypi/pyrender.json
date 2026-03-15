@@ -182,55 +182,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "Excellent clarity and feature overview with good examples via external links, but lacks inline quick-start code and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section for common issues like EGL/OSMesa setup problems or platform-specific installation requirements"
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README provides a clear overview and simple installation, but defers nearly all practical guidance to external documentation links rather than including inline examples.",
+      "top_issue": "No inline code examples \u2014 quick start and usage are entirely offloaded to external links, leaving users with nothing actionable if those links break or they prefer not to follow them."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "OpenGL/dependency version incompatibilities (PyOpenGL, PyOpenGL-accelerate)",
-        "Offscreen rendering failures and memory leaks",
-        "Rendering artifacts and visual bugs",
-        "No releases despite fixes being committed",
-        "Platform-specific issues (macOS, server/headless environments)",
-        "GPU device ID validation errors",
-        "API incompatibilities (trimesh.Scene objects, orthographic camera depth output)"
+        "Rendering artifacts and display issues (black screens, mesh artifacts)",
+        "PyOpenGL version compatibility problems (3.1.0+ breaks Python 3.12/3.13)",
+        "Memory leaks in glReadPixels and rendering functions",
+        "Offscreen/headless rendering failures with GLError exceptions",
+        "GPU device enumeration errors and device ID validation",
+        "Server and remote desktop rendering not working"
       ],
       "praise_themes": [
-        "Recognition of library quality and functionality when it works"
+        "Library appreciated when functional",
+        "Good documentation and examples"
       ],
       "abandonment_signals": true,
-      "summary": "Pyrender shows severe abandonment signals with unresponsive maintainers, numerous unresolved critical bugs spanning 5+ years, dependency version conflicts blocking Python 3.12/3.13 support, and no recent releases despite available fixes."
+      "summary": "Project shows critical abandonment signals: 13 open issues spanning 6+ years (earliest from 2019), a March 2025 direct question 'is this library dead?' with zero responses, unaddressed May 2025 release request for Python 3.12/3.13 fixes, and no visible maintenance activity despite core rendering functionality breakage."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (Feb 2025)",
-        "189 open issues with no recent activity",
-        "Zero closed issues in past 6 months indicating no active issue triage",
-        "No merged PRs in past 6 months showing no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests stalled release cycle"
+        "190 open issues with zero closed in past 6 months",
+        "No merged PRs in past 6 months indicates no active development",
+        "No active contributors in past 6 months suggests abandoned by maintainers",
+        "Last release unknown - unclear release cadence",
+        "Zero commits in past 6 months despite recent last commit date"
       ],
       "positive_signals": [
-        "Has a recent commit history (last commit Feb 2025)",
-        "No open pull requests suggests maintainers aren't accepting new work"
+        "Single recent commit on 2025-02-07 shows some activity",
+        "No open PRs backlog suggests not actively breaking things"
       ],
-      "summary": "The pyrender package appears abandoned with no maintenance activity in the past 6 months despite having a backlog of 189 unresolved issues."
+      "summary": "Project is stale with a large unaddressed issue backlog and no maintainer activity for 6+ months, despite one recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T20:15:28.047299+00:00"
+    "llm_analyzed_at": "2026-03-15T00:18:14.421907+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

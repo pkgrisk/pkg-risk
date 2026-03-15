@@ -191,49 +191,47 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README confusingly presents itself as documentation for mypy-boto3-builder (a code generator) when users installing mypy-boto3-mediapackage-vod expect ready-to-use type stubs for AWS MediaPackage VOD service.",
-      "top_issue": "Critical mismatch: this appears to be the wrong README entirely - users want MediaPackage VOD type stub usage docs, not the builder tool documentation"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users confused about what mypy-boto3-mediapackage-vod actually does or how to use it directly.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the specific mediapackage-vod stubs package \u2014 a new user has no idea what types/classes this package provides or how to import and use it."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main and submodule packages",
-        "Duplicate .pyi and .py stub files causing tooling confusion",
-        "Type definition accuracy problems (async/await, literal values)",
-        "Missing extras and metadata in package distribution",
-        "Documentation outdated (setup.py deprecation, local generation)"
+        "Type stub definitions don't match actual library behavior (get_credentials async mismatch, ToolUseBlockTypeDef Literal values)",
+        "Package/version alignment issues (types-boto3 submodules missing versions, pip-tools resolver confusion)",
+        "Outdated documentation (local generation instructions use wrong command syntax)",
+        "Duplicate/conflicting file shipping (.pyi and .py files causing IDE confusion)",
+        "Missing or inconsistent package extras across similar packages (types-aiobotocore extras not provided)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The project shows moderate community engagement with recurring type accuracy issues and packaging inconsistencies, but demonstrates active maintenance through releases and responsiveness to bug reports."
+      "summary": "Active but slow-moving project: issues eventually close and get released, but multiple bugs from September-December remain open with modest response times, and type definition accuracy issues continue to impact user workflows."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent resolution activity",
-        "Zero closed issues in past 6 months indicates no bug fixes or maintenance",
-        "No merged PRs in past 6 months shows no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests stale release cycle",
-        "No open PRs indicates no ongoing work or community engagement"
+        "Zero commits in past 6 months",
+        "16 open issues with no resolution activity",
+        "No merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release - unclear maintenance schedule"
       ],
       "positive_signals": [],
-      "summary": "Package appears abandoned with no maintenance activity for 6+ months despite open issues remaining unresolved."
+      "summary": "This package is effectively abandoned with accumulating unresolved issues and no development activity for 6+ months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:54:58.125494+00:00"
+    "llm_analyzed_at": "2026-03-15T05:49:32.775555+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

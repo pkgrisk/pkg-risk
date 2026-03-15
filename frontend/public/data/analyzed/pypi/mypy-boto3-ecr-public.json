@@ -191,50 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's pre-built type stubs for a specific AWS service (ECR Public), creating a severe mismatch between package identity and documentation.",
-      "top_issue": "Critical identity confusion: the package is 'mypy-boto3-ecr-public' (pre-built type stubs for one AWS service) but the README describes 'mypy-boto3-builder' (a code generation tool), making it impossible for users to understand what this specific package actually does or how to use it."
+      "summary": "This README is for the builder tool rather than the specific mypy-boto3-ecr-public package, leaving users without package-specific installation, usage, or configuration guidance.",
+      "top_issue": "The README describes the parent builder project, not the mypy-boto3-ecr-public package itself \u2014 there are no ECR Public-specific usage examples, API coverage details, or direct installation instructions for this package."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing or incorrect type definitions in generated stubs",
-        "Duplicate .pyi and .py files causing tooling conflicts",
-        "Missing extras/optional dependencies not declared",
-        "Documentation and setup instructions outdated"
+        "Type stub generation issues (duplicate .pyi/.py files, incorrect async/type definitions)",
+        "Version/packaging mismatches (submodule versions not published, missing extras metadata)",
+        "Documentation quality (outdated instructions, unclear package naming confusion)",
+        "Build consistency and determinism problems"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Feature requests are implemented (pyproject.toml migration released)",
+        "Bug tracking is organized with labels"
+      ],
       "abandonment_signals": false,
-      "summary": "The mypy-boto3 project shows moderate community engagement with recurring type definition accuracy issues and packaging inconsistencies, but maintainers are addressing problems methodically with multiple issues reaching resolution."
+      "summary": "Project shows moderate maintenance activity with some features implemented but slow responsiveness to bug reports and documentation gaps, creating friction for users."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being from Jan 2026",
-        "15 open issues with no recent closure activity",
-        "Zero merged PRs in past 6 months indicating no active development",
+        "No commits in past 6 months despite last commit ~2 months ago",
+        "16 open issues with zero closed issues in past 6 months",
         "No active contributors in past 6 months",
-        "No releases recorded, suggesting no version updates",
-        "Issues accumulating without resolution"
+        "No merged PRs or PR activity in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Package exists and was last updated relatively recently (Jan 2026)"
+        "Last commit was recent (~2 months ago), indicating not completely abandoned"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite open issues remaining unresolved."
+      "summary": "Package is stale with no development activity, issue resolution, or contributor engagement in the past 6 months, despite 16 unresolved open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:30:38.772273+00:00"
+    "llm_analyzed_at": "2026-03-15T11:04:48.784264+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

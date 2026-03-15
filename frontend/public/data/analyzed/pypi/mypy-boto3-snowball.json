@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) but the package name is mypy-boto3-snowball, creating immediate clarity issues, and lacks concrete examples of actual usage.",
-      "top_issue": "Critical mismatch between package name (mypy-boto3-snowball) and README content (mypy-boto3-builder documentation), making it unclear what this specific package actually does or how it differs from the builder"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-snowball` package, causing confusion about what this specific package does and how to use it.",
+      "top_issue": "README describes the parent builder project, not the specific Snowball service stubs package \u2014 a new user has no idea what types are provided or how to use them with boto3's Snowball client."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py stub files causing IDE confusion",
-        "Missing or incorrect type definitions in generated stubs",
-        "Packaging and distribution inconsistencies (setup.py vs pyproject.toml)",
-        "Confusion between multiple similar packages (types-boto3 vs boto3-stubs)"
+        "Type definition inaccuracies (wrong types, overly broad protocols, missing extras)",
+        "Stub files shipped as both .pyi and .py causing IDE confusion",
+        "Documentation/installation instructions outdated",
+        "Version mismatch issues (submodule types not available for main package versions)",
+        "Package naming confusion (types-boto3 vs boto3-stubs clarity)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being addressed (some marked as released)"
+      ],
       "abandonment_signals": false,
-      "summary": "The project maintains moderate engagement with users reporting legitimate technical issues, but struggles with quality control in stub generation and packaging consistency."
+      "summary": "Moderate community health with active issue reporting and partial resolution, but multiple unresolved bugs and documentation gaps with pending maintainer responses creating user frustration."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no active issue management",
-        "No merged PRs in past 6 months showing no development activity",
+        "Zero commits in past 6 months despite last commit being 2 months ago",
+        "16 open issues with no resolution activity",
+        "No closed issues in past 6 months",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests release cycle has stalled"
+        "No merged PRs in past 6 months",
+        "Unknown last release status"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-12), though appears to be isolated activity"
+        "Repository still exists and was updated 2 months ago",
+        "No blocked/pending PRs awaiting review"
       ],
-      "summary": "Package is effectively abandoned with no development activity, issue management, or releases in the past 6 months despite a single recent commit."
+      "summary": "Package appears abandoned with zero maintenance activity over 6 months despite 16 unresolved issues and an unknown release status."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T02:25:09.568319+00:00"
+    "llm_analyzed_at": "2026-03-15T03:16:13.196428+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,50 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "README focuses on the builder tool rather than the actual package (mypy-boto3-elasticache), providing minimal clarity on what this specific package does or how to use it for ElastiCache type annotations.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder README, not the mypy-boto3-elasticache package README, causing complete confusion about the actual package's purpose and usage."
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-elasticache package, leaving users without relevant installation or usage details for this sub-package.",
+      "top_issue": "README describes the parent builder project, not the specific elasticache sub-package \u2014 no installation command, no ElastiCache-specific usage examples, and no inline documentation."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tool conflicts",
-        "Missing or incorrect type definitions in generated stubs",
-        "Incomplete documentation and broken setup instructions",
-        "Missing extras/optional dependencies in packages"
+        "Type stubs contain errors and mismatches (wrong async/await, overly broad types, duplicate .py/.pyi files)",
+        "Dependency version confusion between submodule packages (1.42 version mismatch)",
+        "Package naming confusion (types-boto3 vs boto3-stubs relationship unclear)",
+        "Documentation and usability issues (generate locally instructions broken)",
+        "Build reproducibility issues (non-deterministic wheels)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being triaged and closed (some marked as released)",
+        "Coverage of multiple related packages (boto3, aioboto3, botocore)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling project with systematic issues in stub generation quality and package distribution, showing moderate maintainer engagement but high technical debt."
+      "summary": "Moderate community health: active maintenance with issues being addressed, but slow response to some user-reported bugs and ongoing quality issues with type stubs causing IDE and type-checker problems."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite being a generated AWS SDK package",
-        "15 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicates lack of maintenance",
-        "No active contributors in past 6 months",
-        "No recent releases despite open issues"
+        "No commits, PRs, or issue resolution in the past 6 months despite 16 open issues",
+        "Zero active contributors in past 6 months indicates abandoned development",
+        "Unknown last release suggests release process may be broken or unmaintained",
+        "Open issues remain unaddressed with no community engagement"
       ],
       "positive_signals": [
-        "Recent commit activity exists (within past 2 days)",
-        "Package is generated from AWS SDK, may be intentionally static"
+        "Last commit was recent (2026-01-12, ~2 months ago)",
+        "No pending PRs indicating no backlog of unreviewed changes"
       ],
-      "summary": "Package appears stale with no maintenance activity in 6 months, though recent commits suggest sporadic updates may occur."
+      "summary": "Package shows signs of stagnation with recent commits but no active maintenance activity, issue resolution, or community engagement in the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T19:15:15.603219+00:00"
+    "llm_analyzed_at": "2026-03-14T23:31:26.395245+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

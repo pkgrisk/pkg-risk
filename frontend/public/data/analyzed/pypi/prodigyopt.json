@@ -168,51 +168,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 10,
-      "quick_start": 9,
-      "examples": 7,
+      "clarity": 7,
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 6,
       "configuration": 8,
-      "troubleshooting": 7,
-      "overall": 8,
-      "summary": "Well-structured documentation with clear installation and basic usage, though examples are limited to one Colab notebook and advanced configuration guidance is scattered.",
-      "top_issue": "Examples section relies on a single external Colab notebook rather than providing multiple inline code examples for common use cases"
+      "troubleshooting": 6,
+      "overall": 7,
+      "summary": "Well-structured README with clear installation and configuration guidance, but examples are limited to a single external Colab notebook and troubleshooting relies on GitHub issue links rather than inline documentation.",
+      "top_issue": "Examples are sparse \u2014 only one external Colab link with no inline code showing a complete training loop, making it harder for users to quickly adapt usage to their own projects."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Optimizer instability with certain architectures (divergence/snowflake outputs)",
-        "Performance issues (CUDA synchronization overhead from item() calls)",
-        "Incompatibility or suboptimal performance with specific models (SD 3.5 Medium, Flux-dev)",
-        "Learning rate unbounded growth causing training degradation",
-        "Distributed training issues (FSDP hanging)"
+        "Training instability and divergence (outputs diverge to 'snowflake' patterns)",
+        "Learning rate grows mechanically with epochs, potentially damaging results",
+        "CUDA synchronization performance overhead from item() calls",
+        "Compatibility issues with specific models (Stable Diffusion 3.5, Flux-dev)",
+        "FSDP distributed training hangs due to early returns on some ranks"
       ],
       "praise_themes": [
-        "Appreciation for the work and innovation",
-        "Interest in extending the approach (Schedule-Free combination, 8-bit variants)"
+        "Appreciation for the project ('amazing work, thank you')",
+        "Interest in integration with other optimization approaches"
       ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with mixed sentiment; users appreciate the novel optimizer but encounter stability and compatibility issues across different model architectures, with maintainers responding but technical problems remaining unresolved."
+      "summary": "Active community using the optimizer for advanced ML training, but experiencing critical stability and performance issues with declining maintainer engagement on recent bug reports."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2025-01-16)",
-        "14 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "No releases recorded"
+        "No commits in past 6 months despite 14 open issues",
+        "Zero closed issues past 6 months - bugs/features not being addressed",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Last release unknown - unable to assess release cadence",
+        "Growing backlog of 14 open issues with no resolution activity"
       ],
-      "positive_signals": [],
-      "summary": "The project appears abandoned with no maintenance activity over the past 6 months despite recent commits, suggesting the repository may have been left in an incomplete state."
+      "positive_signals": [
+        "Recent commit activity 2 months ago shows project is not completely dead"
+      ],
+      "summary": "prodigyopt appears abandoned or in indefinite hiatus with no maintenance activity in 6 months despite open issues, though minimal recent commit activity suggests it has not been completely removed."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T07:02:53.702582+00:00"
+    "llm_analyzed_at": "2026-03-15T09:11:28.273644+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

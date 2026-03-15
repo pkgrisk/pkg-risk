@@ -191,50 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 5,
-      "examples": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 2,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "README describes the wrong package (mypy-boto3-builder instead of mypy-boto3-serverlessrepo), making it confusing and unhelpful for users of this specific service package.",
-      "top_issue": "This is a generic README for the builder tool, not the actual mypy-boto3-serverlessrepo package - users looking for ServerlessRepo type stubs get misdirected to builder documentation instead of service-specific usage examples."
+      "summary": "The README is for the builder tool rather than the specific subpackage (mypy-boto3-serverlessrepo), creating a mismatch that leaves users confused about the package they actually installed.",
+      "top_issue": "This README describes the mypy-boto3-builder generator tool, not the mypy-boto3-serverlessrepo subpackage itself \u2014 users get no guidance on how to actually use the ServerlessRepo type stubs they installed."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Missing extras/optional dependencies not properly declared",
-        "Duplicate .pyi and .py stub files causing confusion",
-        "Type definition accuracy issues (async/await, literal values)",
-        "Documentation and setup instructions outdated or incorrect"
+        "Type definition inaccuracies (ToolUseBlockTypeDef, FileobjTypeDef, aioboto3 credentials)",
+        "Duplicate stub files (.pyi and .py) causing IDE conflicts",
+        "Documentation/setup issues (generate locally instructions, pyproject.toml migration)",
+        "Package versioning mismatches between submodules",
+        "Confusion between package variants (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Appreciation for pyproject.toml migration completion"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling project with systematic issues in type stub accuracy and packaging metadata that frustrate users; maintainers appear responsive to bugs but underlying architectural problems persist."
+      "summary": "Package is actively used with legitimate bug reports, but maintainers show slow responsiveness with multiple type-definition bugs remaining open for 6+ months and inconsistent issue closure practices."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No open or merged PRs in past 6 months showing stagnation",
-        "No active contributors in past 6 months",
-        "Unknown last release suggests possible versioning gaps"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No issue resolution - 16 open issues with zero closed in past 6 months",
+        "No merged PRs or active contributors in past 6 months",
+        "Unknown last release date - unclear if package is production-ready",
+        "No maintenance activity across any metric",
+        "Contradictory data: recent commit (2026-01-12) but zero commits in 6-month window suggests data collection issues or package snapshot from abandoned state"
       ],
       "positive_signals": [
-        "Recent last commit date indicates repository still exists"
+        "No open pull requests - no pending maintenance burden"
       ],
-      "summary": "This package is effectively abandoned with no maintenance activity for 6+ months despite open issues remaining unaddressed."
+      "summary": "Package shows clear signs of abandonment with no maintenance activity for 6+ months, growing unaddressed issues, and no active contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:07:18.561477+00:00"
+    "llm_analyzed_at": "2026-03-15T17:20:42.676731+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

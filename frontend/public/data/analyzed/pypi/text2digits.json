@@ -174,53 +174,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 9,
-      "quick_start": 10,
-      "examples": 10,
-      "configuration": 3,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "Excellent clarity and examples with a clear quick start, but lacks configuration documentation and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section despite known limitations (decimal/negative number handling) that could cause user confusion"
+      "clarity": 7,
+      "installation": 8,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "Good quick-start and examples for basic usage, but lacks any configuration docs, troubleshooting, or edge case handling guidance.",
+      "top_issue": "No configuration or troubleshooting documentation at all \u2014 users have no guidance on handling failures, edge cases, or customizing behavior."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Ordinal and cardinal number merging (e.g., 'first two' becomes '12' instead of '1 2')",
-        "Incorrect parsing of large numbers (e.g., '649 million' becomes '49000600')",
-        "Boundary issues with numbers at sentence start/end without spaces",
-        "Crashes and TypeError exceptions on edge cases",
-        "Existing decimal numbers cause parsing failures",
-        "Date format conversions produce wrong results"
+        "Ordinal and cardinal numbers merge together (e.g., 'first two' \u2192 '12' instead of '1st 2')",
+        "Parsing fails with punctuation/spacing (e.g., 'eight.' stays unchanged)",
+        "Large number conversion produces wrong output (e.g., '649 million' \u2192 '49000600')",
+        "Decimal numbers and existing digits cause crashes or errors",
+        "Comma-separated sequences incorrectly merge (e.g., '6, 2020' \u2192 '12120')"
       ],
       "praise_themes": [
-        "Useful functionality concept",
-        "Fabulous code (mentioned in one issue)"
+        "Code described as 'fabulous' and 'really useful' (one comment in issue #3)"
       ],
       "abandonment_signals": true,
-      "summary": "The project shows signs of abandonment with multiple critical bugs spanning 5+ years (2020-2025) remaining unresolved, only 1 of 13 issues closed, zero maintainer engagement, and core parsing logic fundamentally broken for common use cases like ordinal-cardinal sequences and large numbers."
+      "summary": "text2digits shows signs of complete abandonment\u201411 of 13 issues remain unresolved despite spanning 5+ years (oldest from 2020), with core parsing bugs unfixed and the maintainer entirely unresponsive."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in over 3 years (last commit December 2022)",
-        "14 open issues with no recent activity or resolution",
-        "Zero commits in the past 6 months",
-        "No merged PRs in the past 6 months",
-        "No active contributors in the past 6 months",
-        "No recent releases",
-        "No closed issues in the past 6 months indicating no maintenance activity"
+        "No commits for 3+ years (last commit December 2022)",
+        "14 open issues with no recent closure or triage",
+        "Zero activity past 6 months across all metrics",
+        "No active contributors or maintainers",
+        "Unknown last release - likely outdated"
       ],
       "positive_signals": [],
-      "summary": "The package is abandoned with no maintenance activity for over 3 years and unresolved issues accumulating."
+      "summary": "text2digits is effectively abandoned with no maintenance activity since late 2022 and unresolved issues indicating no active stewardship."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T18:11:14.706957+00:00"
+    "llm_analyzed_at": "2026-03-15T16:00:43.784221+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

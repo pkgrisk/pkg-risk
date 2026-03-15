@@ -191,49 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
+      "clarity": 6,
       "installation": 5,
-      "quick_start": 3,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README describes the mypy-boto3-builder tool but the package name is mypy-boto3-backupsearch, creating severe confusion about what this package actually does.",
-      "top_issue": "Package name mismatch - README is for mypy-boto3-builder (a type annotation generator tool) but package is mypy-boto3-backupsearch (likely pre-generated type stubs for AWS Backup Search service)"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-backupsearch` package, leaving users confused about what this particular package does or how to use it directly.",
+      "top_issue": "README describes the parent builder project, not the specific `mypy-boto3-backupsearch` package \u2014 there are no usage examples, API docs, or configuration details for the BackupSearch service stubs themselves."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main and submodule packages",
-        "Missing extras/metadata in published packages",
-        "Duplicate stub files (.pyi and .py) causing editor conflicts",
-        "Type definition inaccuracies (e.g., async vs sync, wrong literal values)",
-        "Documentation and tooling gaps (uvx instructions don't work)"
+        "Type annotation accuracy (ToolUseBlockTypeDef, aioboto3.get_credentials, FileobjTypeDef)",
+        "Package metadata issues (missing extras, version mismatches for submodules)",
+        "Outdated documentation and broken setup instructions",
+        "Duplicate file shipping (.pyi and .py files)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active project with solid maintenance but struggling with packaging consistency, type accuracy, and tooling documentation that frustrate users during dependency resolution and IDE usage."
+      "praise_themes": [
+        "Successfully migrated to pyproject.toml when requested",
+        "Issues receive some discussion/comments indicating awareness"
+      ],
+      "abandonment_signals": true,
+      "summary": "Moderate community health with active issue tracking but slow resolution times, multiple unaddressed type annotation bugs, and documentation gaps causing user friction."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or closure",
-        "Zero closed issues in past 6 months indicating no issue resolution",
-        "No merged PRs in past 6 months showing no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests no versioning activity",
-        "No open PRs indicates lack of community or maintainer engagement"
+        "Zero commits in past 6 months despite last commit 2 months ago",
+        "16 open issues with no recent closure activity",
+        "No merged PRs or closed issues in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests no recent version releases"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite open issues, suggesting the maintainer is no longer actively developing or supporting it."
+      "positive_signals": [
+        "Repository exists with a relatively recent last commit (2026-01-12)",
+        "No pending pull requests blocking maintenance",
+        "Package maintains some form of presence despite inactivity"
+      ],
+      "summary": "Package is stale with minimal to no maintenance activity over the past 6 months; issues remain unaddressed and no releases are tracked despite a recent last commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:50:06.777644+00:00"
+    "llm_analyzed_at": "2026-03-15T04:36:00.137466+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

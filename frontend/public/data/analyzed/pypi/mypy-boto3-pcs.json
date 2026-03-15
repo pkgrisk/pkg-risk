@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs rather than the actual mypy-boto3-pcs package, leaving users unclear about what they're installing.",
-      "top_issue": "Package identity mismatch - the README describes 'mypy-boto3-builder' (a generator tool) but the package name is 'mypy-boto3-pcs' (likely a generated type stub package), causing fundamental confusion about what this package does and how to use it."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-pcs` package, leaving users confused about what this specific package does and how to use it.",
+      "top_issue": "The README describes the parent builder project, not the specific `mypy-boto3-pcs` service stub \u2014 there are no usage examples, API coverage info, or configuration docs specific to the PCS service."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Broken or incomplete documentation/setup instructions",
-        "Incorrect type definitions in generated stubs",
-        "Packaging issues (duplicate .py/.pyi files, missing extras)",
-        "Package naming confusion (types-boto3 vs boto3-stubs)"
+        "Type definition inaccuracies (Bedrock, S3, aioboto3)",
+        "Version/packaging inconsistencies (types-boto3 vs boto3-stubs, missing submodule versions)",
+        "Duplicate/conflicting package metadata (.pyi and .py files shipped together)",
+        "Documentation gaps (generate locally instructions outdated)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some issues are resolved and released",
+        "Community submitting detailed, reproducible bug reports",
+        "Active codebase with recent commits"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintenance responsiveness, but struggling with quality control in auto-generated type stubs and packaging consistency across ~400 packages."
+      "summary": "Moderately healthy project with active issue resolution, but several months-old issues tagged 'response needed' remain unaddressed, indicating inconsistent maintainer engagement."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
+        "Zero commits in past 6 months despite last commit only 2 months ago",
+        "16 open issues with no closures in past 6 months",
+        "Zero merged PRs in past 6 months",
         "No active contributors in past 6 months",
-        "15 open issues with no recent activity",
-        "Unknown last release date"
+        "Unknown release history prevents assessment of release cadence"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero maintenance activity over the past 6 months despite 15 unresolved open issues."
+      "positive_signals": [
+        "Last commit was recent (2 months ago)",
+        "No open pull requests (not backlogged)"
+      ],
+      "summary": "This AWS SDK package appears minimally maintained with development activity that has stalled over the past 6 months and accumulating unaddressed issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:33:17.667619+00:00"
+    "llm_analyzed_at": "2026-03-15T09:25:01.310119+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

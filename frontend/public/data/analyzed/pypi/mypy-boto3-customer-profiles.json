@@ -191,47 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is for the wrong package (mypy-boto3-builder instead of mypy-boto3-customer-profiles), making it completely misleading for users who installed this specific service stub package.",
-      "top_issue": "This is a generic builder README incorrectly used for a service-specific type stub package; users expect documentation for AWS Customer Profiles type annotations, not the builder tool."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific sub-package (mypy-boto3-customer-profiles), leaving users of this particular package without relevant installation or usage guidance.",
+      "top_issue": "README describes the parent builder project, not the specific mypy-boto3-customer-profiles package \u2014 a new user has no idea how to install or use this specific sub-package."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Package metadata inconsistencies (extras not provided, duplicate .py/.pyi files)",
-        "Type definition accuracy issues (async/await, literal values, overly broad types)",
-        "Documentation and tooling gaps (outdated generate instructions, confusing package naming)"
+        "Type definition bugs in stubs (wrong types, missing async annotations)",
+        "Outdated or incorrect documentation (generate locally instructions)",
+        "Package versioning/metadata issues (missing extras, version mismatches)",
+        "Duplicate/unwanted file generation (.pyi and .py both shipped)",
+        "Confusion about package naming (types-boto3 vs boto3-stubs)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The mypy-boto3 project maintains moderate community engagement with active issue tracking and at least one resolved enhancement, but suffers from persistent type accuracy problems, version management complexities, and documentation gaps that frustrate users trying to maintain type safety in their boto3 code."
+      "abandonment_signals": true,
+      "summary": "Moderately active project with some responsiveness (4+ closed issues) but concerning backlog of unresolved bugs, inconsistent labeling (issues marked 'released' still open), and newest issue (2026-03-10) unanswered after 5+ days suggest maintainers may be overwhelmed managing ~400 generated packages."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite recent activity timestamp",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months showing no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release suggests outdated or missing release information"
+        "No commits in the past 6 months despite recent last commit (Jan 12, 2026)",
+        "16 open issues with zero resolutions in the past 6 months",
+        "No merged pull requests in 6 months",
+        "No active contributors detected",
+        "No recent release activity",
+        "Open issues suggest unaddressed bugs or feature requests"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with no maintenance activity, unresolved issues, and no contributor engagement over the past 6 months."
+      "positive_signals": [
+        "Package had recent activity 2 months ago (not completely abandoned)",
+        "mypy-boto3 packages are often auto-generated, may not require frequent updates"
+      ],
+      "summary": "Package shows signs of stagnation with no maintenance activity for 6 months despite recent commits, accumulating unresolved issues, and no active contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T18:21:30.103503+00:00"
+    "llm_analyzed_at": "2026-03-15T16:13:16.562806+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

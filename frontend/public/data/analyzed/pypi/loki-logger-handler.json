@@ -174,51 +174,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 9,
+      "clarity": 8,
+      "installation": 8,
       "quick_start": 9,
-      "examples": 8,
+      "examples": 9,
       "configuration": 8,
-      "troubleshooting": 3,
+      "troubleshooting": 2,
       "overall": 7,
-      "summary": "Well-structured documentation with clear examples and installation instructions, but lacks troubleshooting guidance and has an incomplete sentence at the end.",
-      "top_issue": "No troubleshooting section exists despite complex integration with Grafana Loki, and the final query example is cut off mid-sentence"
+      "summary": "Well-structured README with clear examples for both standard logging and Loguru, good coverage of features and configuration, but lacks any troubleshooting section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like authentication failures, connection errors, or Loki version compatibility problems are not addressed."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Feature gaps in core functionality (SSL verification, custom JSON encoders)",
-        "Bugs with basic features not working as documented (message_in_json_format, initial labels, logging.Formatter)",
-        "Lack of documentation and examples for common use cases (static logging config)",
-        "API design inconsistencies (naming scheme, parameter behavior)"
+        "Documented features don't work as advertised (logging.Formatter support, message_in_json_format=false)",
+        "Critical functionality broken: logs not sent to Loki server with initial labels",
+        "Formatter raises ValueError and RecursionError",
+        "Backwards compatibility issues with encoding parameter",
+        "Metadata being discarded in structured metadata workflows"
       ],
       "praise_themes": [
-        "Appreciation for maintaining an up-to-date Loki client",
-        "Support for modern Loki features (structured metadata)"
+        "Library supports modern Loki features (structured metadata)",
+        "Responsive to some issues (several closed, some with 3+ comments)"
       ],
-      "abandonment_signals": false,
-      "summary": "Project is actively maintained with moderate responsiveness, but has usability gaps between documentation claims and actual functionality, with several unresolved bugs affecting core features."
+      "abandonment_signals": true,
+      "summary": "Mixed health: library has active maintenance on some issues, but multiple open bugs affecting core functionality combined with documentation mismatches and minimal maintainer engagement on several issues indicate inconsistent support."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-09)",
-        "10 open issues with no activity or resolution",
-        "No closed issues in past 6 months indicating no bug fixes",
-        "No merged PRs in past 6 months indicating no active development",
+        "11 open issues with zero closed in past 6 months",
+        "No commits, PRs, or merged changes in past 6 months despite recent activity",
         "Zero active contributors in past 6 months",
-        "Unknown last release date suggests no version management",
-        "Recent commit activity contradicts complete inactivity metrics"
+        "Unknown or missing release history",
+        "No clear maintenance plan for issue backlog"
       ],
-      "positive_signals": [],
-      "summary": "Package appears abandoned with no maintenance activity for 6+ months despite recent repository commit, indicating the project is not actively maintained."
+      "positive_signals": [
+        "Last commit within 2 months (2026-01-09) shows recent but dormant activity"
+      ],
+      "summary": "Package is dormant with accumulating unresolved issues and no recent maintenance activity beyond a single commit in January."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:09:32.375537+00:00"
+    "llm_analyzed_at": "2026-03-15T01:25:26.356239+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

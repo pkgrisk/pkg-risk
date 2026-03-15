@@ -191,50 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it primarily documents mypy-boto3-builder (a generator tool) rather than mypy-boto3-outposts (the generated package users actually want to use), with minimal quick-start guidance and almost no examples.",
-      "top_issue": "Wrong README content - this appears to be the builder tool's README, not the specific service package README, causing fundamental confusion about what the package actually is and how to use it for AWS Outposts type hints."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-outposts` package, leaving users confused about what this particular package does and how to use it directly.",
+      "top_issue": "README is mismatched \u2014 it documents the parent builder project, not the `mypy-boto3-outposts` stub package itself, so there are no usage examples, API coverage details, or package-specific installation instructions."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Missing or incorrect type definitions in stubs",
-        "Duplicate .pyi and .py files causing tooling issues",
-        "Extras/metadata not properly exposed in package metadata",
-        "Documentation outdated or incorrect"
+        "Type stub definitions don't match actual API behavior (ToolUseBlockTypeDef, FileobjTypeDef, aioboto3.get_credentials)",
+        "Documentation and setup instructions are outdated or incorrect",
+        "Duplicate stub files (.pyi and .py) causing IDE conflicts",
+        "Type definitions too broad or inaccurate for specific methods",
+        "Package naming confusion (types-boto3 vs boto3-stubs) lacks clarification"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Project shows active maintenance with issues being tracked and some resolved, but has systemic problems with type stub accuracy, package versioning, and metadata generation that frustrate users."
+      "abandonment_signals": true,
+      "summary": "Project shows moderate maintenance activity with some releases but concerning backlog of unresolved type accuracy bugs and outdated documentation that have lingered open for 6+ months."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged pull requests in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release history not tracked or outdated"
+        "Zero commits in the past 6 months despite claiming a recent last commit",
+        "Zero merged PRs and no open PRs indicate halted development",
+        "16 open issues with zero closed in the past 6 months shows issues accumulating without resolution",
+        "Zero active contributors in past 6 months",
+        "Last release date unknown, unable to assess release cadence"
       ],
       "positive_signals": [
-        "Recent commit activity on 2026-01-12 suggests repository is not completely dormant"
+        "Last commit is relatively recent (2026-01-12, approximately 2 months ago)",
+        "Package was previously maintained (mypy-boto3-* packages are actively generated for AWS)"
       ],
-      "summary": "Package appears abandoned with no meaningful maintenance activity over 6 months despite recent isolated commit, accumulating unresolved issues."
+      "summary": "Development has stalled with no activity over the past 6 months despite a recent commit, indicating the project is drifting toward abandonment with unresolved user-reported issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:53:25.339341+00:00"
+    "llm_analyzed_at": "2026-03-15T04:38:53.149509+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

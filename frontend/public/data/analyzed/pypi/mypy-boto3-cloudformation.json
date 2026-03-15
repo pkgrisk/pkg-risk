@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) but the package name is mypy-boto3-cloudformation, creating severe clarity issues about what this specific package actually does.",
-      "top_issue": "Critical mismatch between package name (mypy-boto3-cloudformation) and README content (describes mypy-boto3-builder), making it unclear if this is type stubs for CloudFormation or a builder tool"
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-cloudformation package, leaving users confused about this package's purpose and usage.",
+      "top_issue": "This README describes the generic mypy-boto3-builder project, not the specific mypy-boto3-cloudformation package \u2014 there are no CloudFormation-specific examples, type stubs usage, or configuration guidance for this package."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch and dependency resolution issues between submodules",
-        "Duplicate stub files (.pyi and .py) causing tooling confusion",
-        "Type definition inaccuracies (wrong method signatures, overly broad type hints)",
-        "Missing or broken documentation (extras not provided, local generation instructions outdated)",
-        "Confusion about package naming and which variant to use (types-boto3 vs boto3-stubs)"
+        "Type definition inaccuracies (wrong signatures, overly broad types)",
+        "Duplicate stub file shipping (.pyi and .py)",
+        "Documentation inconsistencies and broken instructions",
+        "Version/metadata mismatches across submodules",
+        "Lack of clarity on package naming (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Enhancement requests are being addressed (pyproject.toml migration completed)",
+        "Bugs are being fixed and released"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling maintainance with recurring type accuracy issues, dependency resolution problems, and documentation gaps affecting a widely-used stub package ecosystem."
+      "summary": "Project shows moderate health with active bug fixes and releases, but several unresolved type definition and documentation issues suggest maintainer capacity constraints."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months indicating no maintenance activity",
-        "No closed issues in past 6 months showing lack of issue triage",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests potential lack of versioning"
+        "Zero commits in past 6 months despite ongoing dependencies",
+        "16 open issues with no recent activity or triaging",
+        "No merged PRs in past 6 months indicates no maintenance",
+        "No active contributors in past 6 months",
+        "Unknown last release prevents verification of compatibility",
+        "Dependency drift risk: auto-generated boto3 stubs may have unaddressed API mismatches"
       ],
       "positive_signals": [
-        "Recent commit activity (2026-01-12) suggests repository hasn't been deleted"
+        "Recent commit timestamp (2026-01-12) suggests minimal ongoing presence"
       ],
-      "summary": "This package appears abandoned with zero maintenance activity over 6 months despite a recent commit, indicating the repository may be dormant or inactive."
+      "summary": "Package appears stale with no maintenance activity in 6 months, accumulating unaddressed issues, and unknown release status making it unsafe for production use."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:47:44.303638+00:00"
+    "llm_analyzed_at": "2026-03-15T08:56:47.181273+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

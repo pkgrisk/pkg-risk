@@ -195,50 +195,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 9,
-      "quick_start": 8,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "Clear purpose and installation with good visual demo, but lacks inline examples and configuration details in the README itself.",
-      "top_issue": "No actual usage examples in README - relies entirely on external documentation link for how to implement the form in Django models/admin"
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 2,
+      "troubleshooting": 3,
+      "overall": 4,
+      "summary": "The README provides a clear overview and basic installation but defers almost all practical guidance to external documentation, leaving users without inline examples or configuration reference.",
+      "top_issue": "No quick-start code example or schema usage shown inline \u2014 users must visit external docs just to write their first form field."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Complex schema validation edge cases (oneOf with $ref, array types, recursive references)",
-        "Configuration inflexibility (hardcoded CSRF token name, styling limitations)",
-        "Null/nullable value handling in validation",
-        "Missing features for extensibility (custom validators, additionalProperties)"
+        "Validation bugs with nullable/optional fields (integers, dates, null handling)",
+        "Complex schema references fail (oneOf with array types, recursive validation)",
+        "UI regressions (ArrayField button hidden when >= 100 items)",
+        "Hardcoded configuration values (CSRF_COOKIE_NAME not respecting Django settings)",
+        "Security: React dependency vulnerable to pentest findings"
       ],
       "praise_themes": [
-        "Powerful validation system with coordinates",
-        "Good documentation and examples"
+        "Appreciation for library design and powerful validation/coordinate system",
+        "Recognition of useful features for dynamic forms"
       ],
-      "abandonment_signals": false,
-      "summary": "Active but understaffed project with technical debt in schema handling; users appreciate core functionality but struggle with edge cases and lack of customization options."
+      "abandonment_signals": true,
+      "summary": "Community health is declining: users appreciate the library but are frustrated by accumulating unresolved bugs, critical validation edge cases, and security concerns spanning 11+ months with minimal maintainer engagement or issue triage."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2025-01-29)",
-        "46 open issues with no recent activity or closure",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "No releases recorded",
-        "No closed issues in past 6 months indicating lack of maintenance"
+        "No commits in past 6 months (last commit was 13+ months ago)",
+        "48 open issues with zero closure activity",
+        "No releases tracked (likely very outdated)",
+        "Zero active contributors and merged PRs in past 6 months",
+        "No pull request activity suggests no ongoing development or community contributions"
       ],
-      "positive_signals": [],
-      "summary": "django-jsonform appears abandoned with zero maintenance activity over the past 6 months despite a recent commit timestamp, 46 unresolved issues, and no contributor engagement."
+      "positive_signals": [
+        "One commit exists from January 2025 (not completely untouched)"
+      ],
+      "summary": "django-jsonform is abandoned with over a year of inactivity and 48 stale open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-13T18:05:59.847740+00:00"
+    "llm_analyzed_at": "2026-03-14T22:44:28.536899+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

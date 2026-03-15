@@ -191,49 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 7,
       "installation": 6,
-      "quick_start": 3,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs, not the mypy-boto3-sagemaker package itself, leaving users unclear what they actually installed.",
-      "top_issue": "Package identity mismatch - README describes mypy-boto3-builder (a code generator) but the package is mypy-boto3-sagemaker (generated type stubs), causing fundamental confusion about what the package does and how to use it"
+      "overall": 4,
+      "summary": "The README describes the builder tool adequately but provides almost no documentation specific to the mypy-boto3-sagemaker package itself, deferring everything to external docs.",
+      "top_issue": "No package-specific documentation \u2014 no examples of using SageMaker type stubs, no configuration options, and no troubleshooting guidance; everything is offloaded to external links."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate stub files (.pyi and .py) causing tooling conflicts",
-        "Type definition inaccuracies (async methods typed as sync, wrong literal values)",
-        "Missing or incorrect extras metadata",
-        "Overly broad type definitions causing runtime issues",
-        "Documentation and tooling gaps (setup.py vs pyproject.toml, broken generation instructions)"
+        "Type stub definition inconsistencies (wrong types, missing extras, duplicate .pyi/.py files)",
+        "Documentation and setup issues (instructions don't work, package naming confusion)",
+        "Build system and packaging problems (deterministic wheels, pyproject.toml migration)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being closed and addressed (marked as released)",
+        "Professional and well-documented issue reports from users",
+        "Active development with recent enhancements"
+      ],
       "abandonment_signals": false,
-      "summary": "The project maintains moderate maintainer engagement with several bugs being closed, but users face ongoing frustration with type accuracy issues, packaging inconsistencies, and incomplete fixes across the ~400 generated boto3 stub packages."
+      "summary": "Moderately healthy project with active maintenance but uneven responsiveness\u2014several bugs remain open with minimal engagement while others are resolved, and documentation clarity could be improved."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months despite last commit being recent (Jan 2026)",
-        "Zero active contributors in the past 6 months",
-        "15 open issues with no recent resolution activity",
-        "No merged PRs in the past 6 months indicating no active development",
-        "No releases in the past 6 months",
-        "Unknown last release date suggests poor release management"
+        "Zero commits in past 6 months despite 16 open issues",
+        "Zero closed issues and merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release - no version information available",
+        "16 unresolved open issues with no triage or response"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity for 6 months despite open issues and no development momentum."
+      "positive_signals": [
+        "At least one commit exists from January 2026"
+      ],
+      "summary": "Package appears abandoned with zero development activity, issue resolution, or releases in the past 6 months, despite 16 open unaddressed issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:31:38.986568+00:00"
+    "llm_analyzed_at": "2026-03-15T11:06:45.781536+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

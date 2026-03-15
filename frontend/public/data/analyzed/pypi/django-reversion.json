@@ -173,52 +173,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 3,
-      "quick_start": 2,
-      "examples": 2,
+      "quick_start": 1,
+      "examples": 1,
       "configuration": 1,
-      "troubleshooting": 2,
-      "overall": 3,
-      "summary": "Clear purpose statement but critically lacks installation instructions and usage examples in the README itself, relying entirely on external documentation.",
-      "top_issue": "No installation instructions in README - users must click through to external docs to learn how to install or use the package"
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "The README provides a minimal overview and defers almost all useful documentation to an external link, leaving new users with no actionable guidance.",
+      "top_issue": "No installation instructions, quick start, or usage examples are included \u2014 the README is essentially just a pointer to external docs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "ManyToMany field handling issues (not saved in versions, deleted relationships cause problems)",
-        "Bulk action support gaps (QuerySet.update() not tracked)",
-        "Signal firing side effects when browsing history in admin",
-        "Lack of deletion tracking/separate deletion model",
-        "Missing support for Django 5.2 composite primary keys",
-        "Documentation gaps on workarounds for known limitations"
+        "M2M relationship versioning issues (saves on subsequent saves, not with initial save)",
+        "Deletion tracking and M2M deletion edge cases",
+        "Thread safety/concurrency issues with uWSGI",
+        "Documentation gaps (bulk actions, revision creation workflow)",
+        "Performance with large version tables",
+        "Missing support for Django 5.2 composite primary keys"
       ],
-      "praise_themes": [
-        "Appreciation for the package's core functionality",
-        "Gratitude for maintenance and feature consideration"
-      ],
-      "abandonment_signals": false,
-      "summary": "django-reversion shows stable maintenance with moderate community engagement, though users face recurring architectural limitations around M2M relationships, bulk operations, and signal handling that remain unresolved."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Moderate community health with mixed signals: several issues closed and resolved (M2M bugs, signal handling), but a 4-year-old documentation request remains open, recent issues lack responses, and production concerns (uWSGI threading) are under-addressed."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being dated 2025-12-12",
-        "No active contributors in past 6 months",
-        "24 open issues with no recent resolution activity",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "Unknown last release date suggests release information is unavailable or stale"
+        "Zero commits in past 6 months despite recent activity",
+        "24 unresolved open issues with no closing activity in past 6 months",
+        "No active contributors for 6 months",
+        "No merged PRs or releases documented",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "django-reversion shows no active maintenance with zero commits, contributor activity, or issue resolution in the past 6 months, indicating the project has been abandoned."
+      "positive_signals": [
+        "Recent commit on 2026-02-01 indicates project is not completely dormant",
+        "No open PRs suggests maintainer is not overwhelmed by contributions to ignore"
+      ],
+      "summary": "django-reversion shows signs of minimal maintenance with recent commits but no substantive development activity, issue resolution, or releases in the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:14:51.557890+00:00"
+    "llm_analyzed_at": "2026-03-15T06:07:06.291166+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

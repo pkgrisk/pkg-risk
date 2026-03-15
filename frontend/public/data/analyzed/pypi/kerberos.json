@@ -215,44 +215,46 @@
       "quick_start": 2,
       "examples": 4,
       "configuration": 2,
-      "troubleshooting": 1,
+      "troubleshooting": 2,
       "overall": 3,
-      "summary": "The README provides moderate conceptual clarity but severely lacks practical installation instructions, quick start examples, and troubleshooting guidance, making it difficult for new users to actually use the package.",
-      "top_issue": "No installation instructions provided - only build instructions that require users to already have the source code, with no mention of 'pip install kerberos' or dependency requirements"
+      "summary": "Archived project with minimal documentation that covers testing setup but lacks installation instructions, API usage examples, and configuration guidance.",
+      "top_issue": "No installation instructions (pip install command missing) and API documentation is just a pointer to the source file, leaving users without actionable guidance."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
+      "frustration_level": 9,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Missing wheel distributions for recent Python versions (3.10, 3.11)",
-        "Build failures on installation requiring native compilation",
-        "Memory leaks in core authentication functions",
-        "Security vulnerabilities in password verification",
-        "Lack of platform support (AIX, Windows compatibility issues)",
-        "Python 3 compatibility issues"
+        "Build/installation failures across platforms (krb5-config, gcc errors on AIX)",
+        "Missing pre-built wheels for Python 3.10+ (2022-2023 requests still unaddressed)",
+        "Critical memory leak in authGSSServerStep() unresolved since 2023",
+        "Python 3.10 SystemError unresolved for 5 years",
+        "Windows authentication failures unresolved for 6 years"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The kerberos project shows severe abandonment signals with critical unresolved issues dating back years, no wheel support for modern Python versions, and unresponsive maintainers leaving users struggling with build failures and security vulnerabilities."
+      "summary": "The kerberos package shows severe abandonment signals with a 12-year-old unresolved security vulnerability (insecure checkPassword), multiple years-old unresolved bugs, zero responses to recent feature requests, and no wheel builds for Python 3.10+, indicating the project is effectively unmaintained."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months",
-        "No closed issues in past 6 months despite 26 open issues",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Last commit over 11 months ago (February 2024)",
-        "Unknown last release date suggests outdated release information"
+        "No commits in the past 6+ months (last commit ~1 year ago)",
+        "26 open issues with no recent triage or resolution",
+        "Zero closed issues in the past 6 months",
+        "No active contributors for 6+ months",
+        "Unknown release status - likely no releases in 6+ months",
+        "No merged PRs in the past 6 months indicates no code review activity"
       ],
-      "positive_signals": [],
-      "summary": "This package is abandoned with no maintenance activity for at least 6 months and accumulating unresolved issues."
+      "positive_signals": [
+        "Repository hasn't been archived or deleted",
+        "Had recent enough activity (Feb 2024) to be a real project"
+      ],
+      "summary": "The kerberos package is effectively stale with over a year of inactivity, unresolved issues, and no contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T03:42:26.339298+00:00"
+    "llm_analyzed_at": "2026-03-15T01:01:41.035710+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

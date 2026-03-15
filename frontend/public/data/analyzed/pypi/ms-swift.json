@@ -238,47 +238,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 3,
+      "installation": 5,
+      "quick_start": 4,
+      "examples": 4,
       "configuration": 3,
-      "troubleshooting": 1,
+      "troubleshooting": 2,
       "overall": 4,
-      "summary": "Excellent overview of features and capabilities, but lacks concrete installation instructions, quick start examples, and troubleshooting guidance in the README itself.",
-      "top_issue": "No installation instructions provided in the README - only references external documentation links without showing basic pip install or setup commands"
+      "summary": "The README excels at breadth of feature coverage but the truncated content means installation, quick start, examples, and troubleshooting sections are absent or incomplete in the provided text.",
+      "top_issue": "The README content is cut off mid-sentence, so critical sections (installation steps, quick start code, examples, configuration, troubleshooting) are missing or inaccessible from this excerpt."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "unresponsive",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Import errors and missing modules (swift.infer_engine, InferRequest)",
-        "Training failures with specific model architectures (Qwen models, KeyE VL)",
-        "CUDA/memory allocation issues causing training hangs",
-        "Data format inconsistencies and documentation gaps",
-        "Inference errors with transformers backend"
+        "Training performance severely degraded on newer model variants (Qwen3.5-9B/27B 5-6x slower)",
+        "Multi-threading and data loading errors in Megatron training pipelines",
+        "LoRA fine-tuning issues (checkpoint saving, adapter name mismatches, merge failures)",
+        "Model-specific bugs (qwen3VL variants, Triton tensor size limits)",
+        "IO performance bottlenecks with large image datasets in multi-turn SFT",
+        "Package dependency conflicts in 4.0 release"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "Community health is poor: 12 open issues with zero to minimal responses from maintainers, multiple critical import/runtime errors blocking users, training failures on popular models, and no evident maintenance activity despite recent issues."
+      "summary": "Active community reporting legitimate technical issues, but growing backlog of unresolved bugs\u2014especially performance regressions\u2014with some stale-labeled issues suggesting maintainers acknowledge but cannot quickly address problems."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 10,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (likely initial analysis timestamp)",
-        "752 open issues with zero closed in past 6 months indicates no active issue management",
-        "Zero merged PRs in past 6 months shows no active development or community contributions",
-        "No active contributors in past 6 months",
-        "No releases in past 6 months",
-        "High open issue count suggests accumulated backlog without triage"
+        "926 open issues with zero closed in 6 months indicates no active issue management",
+        "Zero commits in past 6 months despite repository existence",
+        "Zero merged PRs in past 6 months - no contribution activity",
+        "Zero active contributors in past 6 months",
+        "No documented releases",
+        "Massive unaddressed issue backlog suggests project neglect"
       ],
-      "positive_signals": [],
-      "summary": "ms-swift is abandoned with no development activity, issue management, or community engagement over the past 6 months despite a large backlog of 752 open issues."
+      "positive_signals": [
+        "Recent commit timestamp (2026-03-14) suggests possible automated updates or periodic activity",
+        "Repository still exists and is accessible"
+      ],
+      "summary": "Project is abandoned with zero active development, contributions, or issue management over 6 months despite 926 unresolved issues and a recent automated commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T11:26:51.497190+00:00"
+    "llm_analyzed_at": "2026-03-15T16:29:44.963306+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,50 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is primarily about mypy-boto3-builder (a type annotation generator), not the actual package mypy-boto3-compute-optimizer, creating significant confusion about what this package does and how to use it.",
-      "top_issue": "Wrong README content - shows the builder tool's documentation instead of the specific boto3 service package (compute-optimizer), leaving users completely unclear about what this package actually provides or how to use it for AWS Compute Optimizer."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific subpackage (mypy-boto3-compute-optimizer), creating confusion about what this particular package does and how to use it directly.",
+      "top_issue": "This README belongs to the parent builder project, not the specific mypy-boto3-compute-optimizer subpackage \u2014 there are no examples, API docs, or usage instructions specific to the Compute Optimizer service stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tool conflicts",
-        "Type definitions don't match actual runtime behavior",
-        "Missing or incorrect extras metadata",
-        "Documentation/setup instructions are outdated"
+        "Type definition inaccuracies in generated stubs",
+        "Confusing packaging with duplicate variants (types-boto3 vs boto3-stubs)",
+        "Documentation gaps and outdated setup instructions",
+        "Duplicate file outputs (.pyi and .py files shipped simultaneously)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Fixes do get released to production",
+        "Community provides well-structured bug reports with reproduction steps",
+        "Some technical debt addressed (pyproject.toml migration completed)"
+      ],
       "abandonment_signals": false,
-      "summary": "The project shows moderate maintenance activity with resolved issues, but users are frustrated by type inaccuracies, packaging inconsistencies, and documentation gaps that suggest the rapid generation of ~400 packages creates quality control challenges."
+      "summary": "Project maintains moderate activity with periodic releases, but 6 open issues spanning 6+ months and multiple 'response needed' labels indicate slower-than-ideal resolution times and technical debt accumulation."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
+        "No commits in past 6 months despite recent last commit (2 months ago)",
+        "16 open issues with zero closed issues in 6 months",
         "No merged PRs in past 6 months",
-        "No closed issues in past 6 months despite 15 open issues",
-        "Unknown last release date suggests release tracking may be broken",
-        "15 open issues with no activity indicates lack of maintenance response"
+        "Zero active contributors in past 6 months",
+        "Last release date unknown - unclear versioning strategy",
+        "No response to user-reported issues"
       ],
       "positive_signals": [
-        "No open PRs suggests no pending work being ignored"
+        "Last commit is relatively recent (2 months ago)",
+        "No backlog of unmerged PRs"
       ],
-      "summary": "This package appears abandoned with zero maintenance activity over 6 months, accumulating open issues without resolution or contributor engagement."
+      "summary": "This package appears abandoned with stale issues and no maintenance activity despite a recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:30:46.323163+00:00"
+    "llm_analyzed_at": "2026-03-15T07:11:41.314085+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

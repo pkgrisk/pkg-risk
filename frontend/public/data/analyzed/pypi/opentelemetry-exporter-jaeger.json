@@ -184,47 +184,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
+      "clarity": 4,
       "installation": 5,
       "quick_start": 2,
       "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "This is a generic OpenTelemetry Python repository README that provides no specific information about the Jaeger exporter package itself.",
-      "top_issue": "Wrong README: this appears to be the main opentelemetry-python repository README, not the specific opentelemetry-exporter-jaeger package documentation, providing no exporter-specific installation instructions, usage examples, or configuration guidance."
+      "overall": 3,
+      "summary": "This is the monorepo README for the entire OpenTelemetry Python project, not specific to the Jaeger exporter, leaving users without any package-specific guidance.",
+      "top_issue": "README is for the parent monorepo, not the opentelemetry-exporter-jaeger package \u2014 there are no Jaeger-specific installation instructions, configuration options, or usage examples."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Version compatibility issues between exporters and SDK",
-        "Process termination not properly finalizing spans",
-        "Specification compliance issues (Prometheus format violations)",
-        "Error handling inconsistencies across Python versions"
+        "Gunicorn multi-worker process model breaks metrics collection",
+        "Span mutation affects multiple processors, requires deepcopy workaround"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Recent feature request implementation (deepcopy support closed Feb 2026)"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderately healthy project with active maintenance addressing architectural improvements and bug fixes, though some user frustration around version compatibility and incomplete feature implementations."
+      "summary": "Community shows signs of concern with a production-impacting bug (Gunicorn metrics) open for 2 years, though recent feature implementation suggests project is not abandoned."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-15)",
+        "444 open issues with zero resolutions in past 6 months indicates issues are accumulating without action",
+        "No commits in past 6 months despite single recent commit (data inconsistency suggests lack of regular maintenance)",
         "Zero active contributors in past 6 months",
-        "441 open issues with no recent resolution activity",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "Unknown last release date suggests release process has stalled"
+        "No merged PRs or pull request activity in 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite a recent commit timestamp, suggesting either the repository is archived or the commit metadata is unreliable."
+      "positive_signals": [
+        "Project repository still exists and accessible"
+      ],
+      "summary": "Package appears stale with 444 unresolved issues and no maintainer activity for 6 months, despite a single recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:03:21.492388+00:00"
+    "llm_analyzed_at": "2026-03-15T05:56:07.469504+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

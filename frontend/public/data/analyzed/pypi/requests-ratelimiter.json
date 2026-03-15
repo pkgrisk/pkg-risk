@@ -179,46 +179,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
-      "quick_start": 10,
+      "installation": 9,
+      "quick_start": 9,
       "examples": 9,
       "configuration": 8,
-      "troubleshooting": 4,
+      "troubleshooting": 3,
       "overall": 8,
-      "summary": "Excellent documentation with clear examples and usage patterns, but lacks troubleshooting guidance for common issues.",
-      "top_issue": "No troubleshooting section covering common problems like rate limit persistence issues, thread safety concerns, or debugging techniques when rate limits aren't working as expected."
+      "summary": "Excellent documentation with clear purpose, multiple usage patterns, and working examples, but lacks any troubleshooting section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like rate limit errors, thread-safety gotchas, or backend connection failures are not addressed."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Dependency compatibility issues (pyrate-limiter v3)",
-        "Integration challenges with alternative HTTP libraries (curl_cffi)"
+        "pyrate-limiter v4 upgrade introduced breaking changes (removed BucketFullException)",
+        "Thread leakage/resource management issue with background daemon thread",
+        "Dependency compatibility not properly handled before release"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Project shows signs of maintenance neglect with a 1.5+ year old blocking issue unresolved and limited recent activity, though recent issue closure suggests some ongoing minimal support."
+      "praise_themes": [
+        "Issues are being promptly closed and addressed",
+        "Growing ecosystem interest (Debian packaging)",
+        "Community engagement with maintainers"
+      ],
+      "abandonment_signals": false,
+      "summary": "Healthy but transitional: Recent dependency upgrade (pyrate-limiter v4) introduced real bugs (thread leaks, API breaks) that maintainers are actively closing, with growing downstream interest suggesting good community adoption."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-22)",
-        "No merged PRs in past 6 months indicates no active development",
-        "No closed issues in past 6 months suggests lack of maintenance activity",
-        "Zero active contributors in past 6 months",
-        "3 open issues remain unresolved without recent attention"
+        "No commits in past 6 months despite 2 open issues",
+        "No releases for at least 6 months",
+        "Zero closed issues and merged PRs in past 6 months",
+        "No active contributors in the past 6 months",
+        "2 unresolved open issues with no activity"
       ],
       "positive_signals": [
-        "Recent commit activity exists (2026-01-22), indicating project is not completely dormant",
-        "No open PRs suggests maintainers are not overwhelmed with pending work"
+        "Very recent commit (2026-03-11, 4 days ago) indicates someone is still working on the project",
+        "No stalled pull requests"
       ],
-      "summary": "The package appears stale with a recent commit but no development activity (commits, issue resolution, or merges) over the past 6 months, indicating the project is likely in maintenance-freeze or abandoned state."
+      "summary": "Package shows signs of dormant maintenance with a recent isolated commit, but lacks the consistent release cycle, issue resolution, and contributor activity expected of actively maintained software."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:49:36.485545+00:00"
+    "llm_analyzed_at": "2026-03-15T08:00:48.862320+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

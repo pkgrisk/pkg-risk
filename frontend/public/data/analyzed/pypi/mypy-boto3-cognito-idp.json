@@ -191,50 +191,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 4,
-      "quick_start": 2,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "This README is for the wrong package - it documents mypy-boto3-builder (the generator tool) instead of mypy-boto3-cognito-idp (the generated type stubs package).",
-      "top_issue": "Package name mismatch: user installed mypy-boto3-cognito-idp but got documentation for mypy-boto3-builder, leaving them with no information about how to use the actual package they installed"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-cognito-idp` package, leaving users confused about what this particular package does or how to use it directly.",
+      "top_issue": "The README describes the parent builder project, not the specific `mypy-boto3-cognito-idp` package \u2014 there are no examples, configuration docs, or troubleshooting guidance specific to Cognito IDP type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate stub files (.pyi and .py) causing tooling confusion",
-        "Missing or incorrect type definitions in generated stubs",
-        "Packaging/metadata issues (missing extras, setup.py deprecation)",
-        "Documentation accuracy problems"
+        "Type definition bugs in generated stubs (bedrock ToolUseBlockTypeDef, S3 FileobjTypeDef too broad)",
+        "Broken or missing documentation (generate locally instructions, unclear stub file duplication)",
+        "Version/packaging inconsistencies (types-boto3 submodules 1.42 unavailable, missing extras)",
+        "Build reproducibility issues with setuptools versions"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Community shows moderate health with active bug reporting but inconsistent maintainer engagement; issues span both technical problems (type accuracy, packaging) and documentation gaps, though the project continues shipping releases."
+      "summary": "Actively maintained but with growing backlog\u2014some enhancements shipped, but multiple unresolved type and documentation bugs labeled 'response needed' from past months frustrate users."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite being a boto3 type stub package",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicates no maintenance effort",
-        "No merged PRs in past 6 months shows no active development",
+        "No commits in past 6 months despite 16 open issues",
+        "No closed issues or merged PRs in past 6 months",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests outdated type stubs"
+        "Unknown last release date",
+        "Unaddressed backlog of 16 open issues suggests abandoned maintenance"
       ],
       "positive_signals": [
-        "Package exists and is installable"
+        "Recent commit activity 2 months ago indicates project not completely dead",
+        "No stalled open pull requests accumulating"
       ],
-      "summary": "This boto3 type stub package appears abandoned with no maintenance activity, unresolved issues, or updates in the past 6 months."
+      "summary": "Package shows signs of stagnation with no meaningful maintenance activity over 6 months despite recent code touch, growing unaddressed issue backlog, and unknown release status."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T06:02:13.195255+00:00"
+    "llm_analyzed_at": "2026-03-15T03:03:58.073110+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

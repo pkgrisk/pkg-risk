@@ -183,51 +183,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 5,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "Well-structured README with clear purpose and installation, but incomplete code examples and limited troubleshooting guidance.",
-      "top_issue": "Code examples are truncated (especially the manual usage section cuts off mid-line), making it impossible to follow complete implementation patterns"
+      "summary": "Well-structured README with clear purpose, good usage examples, and multiple integration patterns, but lacks configuration reference and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common issues (e.g., Dash callback failures, widget not updating, environment-specific quirks)"
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Dependency version conflicts (kaleido, plotly, dash)",
-        "Resampling accuracy issues with zooming/axis reset",
-        "Missing downsampling support for marker properties",
-        "Incompatibility with newer library versions",
-        "Date/time handling problems"
+        "Dash 4.0.0 compatibility breaking show_dash() rendering",
+        "Missing dependencies (pytz not declared, causing ModuleNotFoundError)",
+        "isinstance() type checking failures after register_plotly_resampler()",
+        "Jupyter/Colab integration issues",
+        "Windows path handling errors (os.path.relpath across disk drives)",
+        "Outdated kaleido version pinning (0.2.1 vs 1.2.0)"
       ],
       "praise_themes": [
-        "Product quality and usefulness acknowledged",
-        "Helpful community guidance on workarounds"
+        "Workarounds available (FigureWidgetResampler as alternative to show_dash)",
+        "Library solves real performance problem (5M+ point rendering)"
       ],
-      "abandonment_signals": false,
-      "summary": "Project shows moderate health with active bug tracking and user engagement, but maintainers are slow to resolve dependency conflicts and feature gaps that increasingly impact compatibility with newer ecosystem versions."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of maintainer neglect: 6+ open bugs from 2026-02-10 through 2026-03-02 with zero responses, missing dependency declarations, and unresolved compatibility issues with major upstream libraries (Dash 4.0.0, Kaleido 1.2.0), though some older issues have been closed and users remain engaged."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months despite package being active",
-        "64 open issues with no recent activity or triage",
-        "Zero closed issues in past 6 months indicating no maintenance response",
-        "No merged PRs in past 6 months suggesting stalled development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process is broken or outdated"
+        "69 open issues with zero closed in past 6 months indicates completely abandoned issue triage",
+        "No commits, merged PRs, or releases in past 6 months despite having development history",
+        "Zero active contributors - no maintainers working on the project",
+        "Unknown last release date suggests outdated version in production use"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity, issue triage, or development progress over the past 6 months."
+      "positive_signals": [
+        "Last commit 3 months ago (2025-12-06) shows recent activity in repository history",
+        "No open PRs indicates no abandoned work-in-progress",
+        "Repository still exists and accessible"
+      ],
+      "summary": "Project is stale with significant technical debt: 69 unaddressed issues, no recent development, and no active maintainers, though the last commit suggests prior maintenance before falling dormant."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:10:44.142278+00:00"
+    "llm_analyzed_at": "2026-03-15T14:55:02.495984+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

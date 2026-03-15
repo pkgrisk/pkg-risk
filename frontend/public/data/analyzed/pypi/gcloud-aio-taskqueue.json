@@ -174,45 +174,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 7,
-      "quick_start": 2,
+      "clarity": 5,
+      "installation": 4,
+      "quick_start": 1,
       "examples": 1,
-      "configuration": 3,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides basic project overview and installation instructions but lacks any code examples, usage documentation, or troubleshooting guidance, requiring users to visit external documentation links.",
-      "top_issue": "No quick start code examples or usage documentation in the main README - all actual usage information is delegated to external links"
+      "overall": 2,
+      "summary": "This README is a top-level monorepo index that provides almost no useful information about the taskqueue package itself, deferring everything to external links.",
+      "top_issue": "No usage examples, API documentation, or quick start for the taskqueue package \u2014 the README is essentially a table of contents pointing elsewhere."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Feature parity missing between streaming and non-streaming implementations",
-        "Data type parsing issues with BigQuery DATE fields"
+        "Missing API flexibility and parity (download_stream lacks auto_decompress parameter available in non-streaming version)",
+        "Resource management issues (unclosed aiohttp sessions and connections causing warnings)",
+        "Undocumented or inflexible default behaviors (metrics collection cannot be disabled despite documentation claims)",
+        "API inconsistency between related implementations (streaming vs non-streaming downloads)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Small sample of issues suggests moderate community engagement with specific feature gaps and data handling bugs, but insufficient data to assess overall project health."
+      "abandonment_signals": true,
+      "summary": "Library sees active production usage with legitimate bug reports, but minimal maintainer engagement (1-3 comments per issue, one from January unresolved) indicates moderate maintenance neglect and abandonment risk."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Zero commits in past 6 months despite active issue backlog",
-        "47 open issues with no recent resolutions",
-        "No merged PRs in past 6 months indicating stalled development",
-        "Zero active contributors in past 6 months",
-        "No recent releases suggesting no maintenance activity",
-        "Large gap between last commit and current date"
+        "41 open issues with zero closed in past 6 months indicates backlog accumulation and no issue triage",
+        "Zero commits and zero merged PRs in past 6 months shows no active development",
+        "No active contributors in the past 6 months signals abandonment",
+        "Unknown last release date is a critical information gap for users",
+        "Contradiction between recent commit and zero 6-month activity suggests isolated or automated changes"
       ],
-      "positive_signals": [],
-      "summary": "This package is abandoned with a substantial unresolved issue backlog and no development activity for at least 6 months."
+      "positive_signals": [
+        "Very recent commit (2026-03-13) suggests repository is not completely abandoned"
+      ],
+      "summary": "Project is stale with accumulating maintenance debt; the recent commit is likely isolated activity rather than resumption of active development."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:39:41.941798+00:00"
+    "llm_analyzed_at": "2026-03-15T13:42:37.115680+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

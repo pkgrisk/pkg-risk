@@ -169,48 +169,47 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 3,
+      "installation": 2,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
+      "examples": 7,
+      "configuration": 3,
       "troubleshooting": 2,
       "overall": 5,
-      "summary": "Clear purpose and good examples for command-line usage, but lacks installation instructions, configuration details, and troubleshooting guidance.",
-      "top_issue": "No installation instructions provided - users must guess to use pip/PyPI despite the PyPI badge being present"
+      "summary": "Good coverage of features with clear examples, but missing installation instructions entirely and lacks troubleshooting guidance.",
+      "top_issue": "No installation instructions \u2014 there is no `pip install sqlvalidator` or equivalent anywhere in the README."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Validation crashes with TypeError on various SQL patterns (WITH statements, function calls)",
-        "False negatives and false positives in validation logic",
-        "BigQuery and PostgreSQL dialect support issues",
-        "Core functionality broken (is_valid() raising exceptions instead of returning boolean)"
+        "Type errors and exception crashes during validation (TypeError, StopIteration, AssertionError)",
+        "Parsing failures on valid SQL (BigQuery CAST, CTE/WITH statements, CASE nesting, LIMIT NULL)",
+        "Missing support for SQL dialect-specific syntax (BigQuery REPLACE, PostgreSQL LIMIT NULL)",
+        "validate() method signature inconsistencies requiring 'known_fields' argument"
       ],
       "praise_themes": [
-        "Appreciation for the project's existence and concept"
+        "Initial appreciation for the tool's existence (minimal)"
       ],
       "abandonment_signals": true,
-      "summary": "sqlvalidator shows severe abandonment with 7 open critical bugs spanning 3+ years, zero maintainer engagement, and fundamental validation failures that make the library unreliable for production use."
+      "summary": "sqlvalidator shows clear abandonment with 7 of 9 issues unresolved for 3-4 years, critical parsing bugs unfixed, zero recent engagement, and a recent issue (June 2025) already ignored."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months despite last commit being from March 2024",
-        "13 open issues with no recent activity to address them",
-        "Zero closed issues in the past 6 months indicating no maintenance effort",
-        "No merged PRs in the past 6 months suggesting no active development",
-        "No active contributors in the past 6 months",
-        "Unknown last release date suggests release history may be outdated"
+        "No commits for ~1 year (last: 2024-03-14)",
+        "Zero activity past 6 months (commits, PRs, issues closed, contributors)",
+        "13 unresolved open issues with no triage",
+        "Unknown last release - version status unclear",
+        "No active maintainers or contributors"
       ],
       "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity for at least 9 months and growing unresolved issues."
+      "summary": "sqlvalidator is abandoned with no development activity, unresolved issues, and no recent releases."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:46:13.616986+00:00"
+    "llm_analyzed_at": "2026-03-15T08:55:10.638924+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

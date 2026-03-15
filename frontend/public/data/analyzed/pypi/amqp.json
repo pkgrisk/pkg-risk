@@ -185,49 +185,49 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 5,
-      "troubleshooting": 3,
-      "overall": 7,
-      "summary": "Well-structured README with excellent quick start examples and clear purpose, but lacking basic installation instructions and troubleshooting guidance.",
-      "top_issue": "Missing standard installation instructions (pip install amqp) - only documents optional Cython speedups installation"
+      "installation": 3,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "Good quick-start examples for core use cases, but lacks installation instructions, connection configuration reference, and any troubleshooting guidance.",
+      "top_issue": "No installation instructions whatsoever \u2014 a new user has no idea how to install the package (e.g., `pip install amqp` is never mentioned)."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Connection and channel error handling issues preventing proper recovery",
-        "Frequent disconnections and timeouts with message brokers",
-        "Channels hanging after errors instead of recovering gracefully",
-        "Data type encoding issues (UTF-8, signed/unsigned integers)",
-        "Message size calculation errors leading to false rejections"
+        "Channel and connection reliability issues (hanging, unexpected closures)",
+        "Incorrect exception types prevent proper error recovery in upstream libraries",
+        "Timeout handling inconsistency across operations",
+        "Protocol compliance issues (UTF8 encoding assumptions, header mangling)",
+        "Production operational problems (Celery workers disconnecting from RabbitMQ)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The amqp library shows significant community health concerns with critical connection stability issues, minimal maintainer engagement (most issues have only 1-2 comments), and no clear resolution path for blocking problems affecting production systems."
+      "summary": "Community health is concerning: critical reliability bugs remain unresolved (channel hanging from Jan 2025, timeout handling from 2018), recent production issues go largely unaddressed, and lack of feature support (OAuth2) suggests slow maintainer capacity relative to user needs."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-02-02)",
-        "39 open issues with no recent resolution activity",
-        "Zero closed issues in past 6 months indicating no active issue management",
-        "No merged PRs in past 6 months showing no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release process is stalled"
+        "39 open issues with zero closed in 6 months indicates issues are not being actively triaged",
+        "No contributors active past 6 months despite recent commit",
+        "No merged PRs in 6 months and no open PRs suggests development has stalled",
+        "Unknown last release - likely no recent releases",
+        "Contradiction between recent commit (6 days ago) and zero commits recorded past 6 months suggests data inconsistency or commits on abandoned branches"
       ],
       "positive_signals": [
-        "Recent commit activity exists (2026-02-02), though appears to be isolated"
+        "One commit within the last 6 days (though context unclear given 0 commits recorded in 6-month window)",
+        "No backlog of open pull requests requiring review"
       ],
-      "summary": "The amqp package appears abandoned with no meaningful maintenance activity over 6 months despite a recent commit, accumulating unresolved issues with no contributor engagement."
+      "summary": "The amqp package shows strong indicators of being abandoned with 39 unresolved issues, no active maintainers, and no development activity (PRs/releases) in 6 months despite a suspicious recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:11:56.301741+00:00"
+    "llm_analyzed_at": "2026-03-15T10:32:22.604928+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 3,
-      "quick_start": 2,
-      "examples": 1,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "The README is for the wrong package (mypy-boto3-builder) when users expect documentation for mypy-boto3-marketplacecommerceanalytics, a type stub package.",
-      "top_issue": "This is a generic builder README incorrectly used for a service-specific type stub package; users looking for marketplacecommerceanalytics type stubs get confusing documentation about the builder tool instead of simple installation/usage instructions for their specific service."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-marketplacecommerceanalytics without any package-specific guidance.",
+      "top_issue": "README describes the builder generator project, not the actual mypy-boto3-marketplacecommerceanalytics stub package \u2014 no usage examples, type annotation demos, or configuration docs specific to this package."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Packaging issues (extras not provided, duplicate .pyi/.py files)",
-        "Type stub accuracy problems (wrong method signatures, overly broad types)",
-        "Documentation and tooling gaps (pyproject.toml migration, unclear package naming)",
-        "Build system using deprecated setup.py pattern"
+        "Type annotation errors (incorrect/overly broad type definitions)",
+        "Packaging metadata issues (missing extras, duplicate files, version mismatches)",
+        "Documentation gaps (outdated local generation instructions)",
+        "Package naming confusion (types-boto3 vs boto3-stubs clarity)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement, but users face recurring type accuracy issues and packaging/versioning problems that indicate need for improved quality control and clearer documentation."
+      "praise_themes": [
+        "Migration to modern tooling (pyproject.toml adoption)",
+        "Technical maintenance and releases on some issues"
+      ],
+      "abandonment_signals": true,
+      "summary": "Moderate health with active releases on some fixes, but growing backlog of unresolved bugs\u2014several marked 'response needed' have been open 6+ months without clear resolution."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite package being on PyPI",
-        "No merged PRs in past 6 months indicating no active development",
-        "No closed issues in past 6 months despite 15 open issues",
-        "No active contributors in past 6 months",
-        "No releases recorded, suggesting stagnation at current version",
-        "Last commit over 3 weeks ago with no follow-up activity"
+        "No commits in past 6 months despite 16 open issues",
+        "No closed issues in past 6 months - issues are accumulating",
+        "No merged PRs in past 6 months - no active development",
+        "Zero active contributors past 6 months",
+        "Unknown last release date - cannot assess release cadence",
+        "Maintenance activity has ceased while problems remain unaddressed"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity, no issue resolution, and no development in the past 6 months."
+      "positive_signals": [
+        "Last commit is recent (2026-01-12, ~2 months ago) - not completely abandoned",
+        "Repository still exists and is accessible"
+      ],
+      "summary": "Package is stale with maintenance activity halted 6+ months ago, leaving 16 open issues unaddressed despite a recent commit touchpoint."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:09:57.712356+00:00"
+    "llm_analyzed_at": "2026-03-15T10:28:23.351330+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

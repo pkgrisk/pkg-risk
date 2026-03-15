@@ -173,47 +173,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
+      "clarity": 8,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 3,
-      "overall": 7,
-      "summary": "Clear problem statement and comprehensive usage documentation, but lacks troubleshooting guidance and quick-start examples are buried after verbose CLI help.",
-      "top_issue": "No troubleshooting section for common errors (permissions, Docker daemon issues, layer conflicts) and configuration via environment variables is mentioned but delegated to external file."
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Solid coverage of installation and CLI reference with a real-world example, but lacks troubleshooting guidance and only references environment variable docs externally rather than including them inline.",
+      "top_issue": "No troubleshooting section \u2014 common failure modes (permissions, Docker daemon connectivity, unsupported image formats) are undocumented, and environment variable configuration is deferred to an external file without inline examples."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Destination path already exists errors recurring across multiple versions",
-        "Docker daemon connection issues and environment variable handling",
-        "File system state corruption during squashing (directories replaced by files)",
-        "Inconsistent behavior and regressions between versions"
+        "Destination path already exists error (recurring across multiple versions)",
+        "Docker daemon connectivity issues (DOCKER_HOST, API version mismatch)",
+        "Squashed images not being saved/persisted",
+        "File type handling bugs (directory replaced with file causes corruption)",
+        "Layer processing and identification errors"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The docker-squash project shows signs of abandonment with recurring bugs, slow issue resolution, and multiple unresolved problems spanning years despite user reports."
+      "summary": "docker-squash shows signs of maintenance but suffers from unresolved systemic bugs (destination path errors recurring across v1.2.0-1.2.1) and has stalled feature requests dating back to 2015, indicating partial abandonment despite recent issue closures."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from July 2025",
-        "No active contributors in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "10 open issues with no triage activity",
-        "No releases for an extended period"
+        "Zero commits in past 6 months (last commit 8+ months ago)",
+        "10 open issues with no triage or closure activity",
+        "No merged PRs or releases in past 6 months",
+        "No active contributors",
+        "Unknown last release version - potential version tracking loss"
       ],
-      "positive_signals": [],
-      "summary": "docker-squash appears abandoned with zero maintenance activity over the past 6 months and no active contributors."
+      "positive_signals": [
+        "Repository still exists and has historical commits"
+      ],
+      "summary": "docker-squash is abandoned with no maintenance activity, open issues, or releases for over 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:27:06.218093+00:00"
+    "llm_analyzed_at": "2026-03-15T04:13:20.002008+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -175,48 +175,52 @@
   "llm_assessments": {
     "readme": {
       "clarity": 7,
-      "installation": 8,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 1,
-      "configuration": 1,
-      "troubleshooting": 6,
+      "examples": 2,
+      "configuration": 3,
+      "troubleshooting": 5,
       "overall": 4,
-      "summary": "Clear overview and installation but completely lacks usage examples or quick-start code to help users actually use the library.",
-      "top_issue": "No code examples showing how to actually use mmcv's core features (image processing, transforms, CNN architectures, etc.)"
+      "summary": "The README covers installation adequately but lacks any quick-start code examples or usage demonstrations, making it hard for new users to get productive quickly.",
+      "top_issue": "No quick-start or usage examples \u2014 the README explains what MMCV is and how to install it, but never shows a single line of code demonstrating how to actually use it."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "unresponsive",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "mmcv._ext module not building with recent PyTorch/CUDA versions",
-        "SSL certificate expired for download.openmmlab.com",
-        "GPU version installation issues on Windows",
-        "Version compatibility conflicts and incompatible dependency chains",
-        "Lack of CUDA version support updates",
-        "Hardware-specific compatibility problems (RTX 5090, Ascend 910B)"
+        "Installation failures (mmcv._ext not building, pkg_resources missing)",
+        "Hardware compatibility issues (RTX 5090, Ascend NPU support lagging)",
+        "Dependency version conflicts (setuptools 82.0, PyTorch 2.9+, CUDA 12.8+)",
+        "Infrastructure outages (SSL certificate expired for download.openmmlab.com)",
+        "Cross-platform build failures (Windows GPU distribution, Linux CUDA variants)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Community members sharing workaround documentation",
+        "Users attempting peer support with installation tips"
+      ],
       "abandonment_signals": true,
-      "summary": "mmcv community shows significant health concerns with persistent unresolved build issues, infrastructure problems (expired SSL cert), minimal maintainer engagement on critical bugs, and users expressing frustration about compatibility with modern PyTorch/CUDA versions."
+      "summary": "The project shows signs of maintenance strain with chronic build/compatibility issues across platforms and hardware, critical infrastructure failures remaining unresolved, and slow maintainer response despite high user frustration and 47+ comment threads."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2025-12-10)",
-        "452 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months",
-        "No merged pull requests in past 6 months",
+        "No commits in past 6 months despite 454 open issues",
+        "No closed issues or merged PRs in past 6 months",
         "Zero active contributors in past 6 months",
-        "Unknown last release date indicates stale release cycle"
+        "Unknown last release date",
+        "Large backlog of unresolved issues with no maintenance activity"
       ],
-      "positive_signals": [],
-      "summary": "mmcv appears abandoned with no development activity, issue resolution, or contributor engagement over the past 6 months despite hundreds of open issues."
+      "positive_signals": [
+        "Last commit was only 45 days ago (suggests recent code exists)",
+        "Zero open PRs indicates no unmerged changes pending"
+      ],
+      "summary": "This package is stale\u2014no maintenance activity for 6 months despite 454 open issues, making it unsuitable for production use."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:49:28.482812+00:00"
+    "llm_analyzed_at": "2026-03-15T15:36:45.490401+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

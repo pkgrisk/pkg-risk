@@ -191,49 +191,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README appears to be for mypy-boto3-builder but was packaged with mypy-boto3-resource-groups, creating severe confusion about what package users actually installed and how to use it.",
-      "top_issue": "Critical mismatch: README describes mypy-boto3-builder (a code generator) but the package is mypy-boto3-resource-groups (type stubs for AWS Resource Groups service), leaving users with no documentation for the actual package they installed."
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific service stub package, leaving users to follow external links for actual usage guidance.",
+      "top_issue": "This README is for the builder tool, not the specific mypy-boto3-resource-groups stub package \u2014 a new user gets no concrete examples of how to use Resource Groups type annotations with boto3."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules (1.42 not found)",
-        "Duplicate .pyi and .py stub files causing IDE conflicts",
-        "Missing extras/metadata in types-aiobotocore package",
-        "Type definition inaccuracies (async/await, Literal values)",
-        "Overly broad type hints not matching actual API constraints",
-        "Documentation and tooling issues (setup.py deprecation, local generation)"
+        "Type stub definitions don't match actual boto3/aioboto3 runtime behavior",
+        "Package versioning and dependency resolution issues (versions not published)",
+        "Missing package extras metadata not declared on PyPI",
+        "Outdated or broken documentation and installation instructions"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with technical quality issues; maintainers respond to bugs but some type definition problems persist, indicating the large auto-generated stub codebase (400+ packages) has quality control challenges that need systematic fixes rather than individual issue resolution."
+      "abandonment_signals": true,
+      "summary": "Project shows active but inconsistent maintenance with recurring type accuracy bugs, several unresolved issues marked 'response needed' for months, and zero engagement on the most recent issue (5 days old)."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "15 open issues with no recent activity or resolution",
-        "Unknown last release date suggests no versioning activity"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No closed or addressed issues in 6 months",
+        "No merged PRs or development activity in 6 months",
+        "Zero active contributors in 6 months",
+        "Last release unknown - likely outdated",
+        "Auto-generated package (mypy-boto3-*) with stalled generation process"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity in the past 6 months despite having 15 unresolved open issues."
+      "positive_signals": [
+        "Last commit exists (2026-01-12, ~2 months ago)"
+      ],
+      "summary": "This package is abandoned with no maintenance activity, unresolved issues, or development for at least 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T12:07:16.553015+00:00"
+    "llm_analyzed_at": "2026-03-15T13:20:26.573809+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

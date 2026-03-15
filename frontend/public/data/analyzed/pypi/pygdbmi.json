@@ -187,49 +187,50 @@
       "clarity": 9,
       "installation": 9,
       "quick_start": 8,
-      "examples": 9,
-      "configuration": 7,
-      "troubleshooting": 6,
-      "overall": 8,
-      "summary": "Excellent documentation with clear purpose, installation, and comprehensive examples, though configuration options and troubleshooting could be more detailed.",
-      "top_issue": "Configuration options (timeout values, GdbController parameters, etc.) are mentioned in examples but not systematically documented in a dedicated section."
+      "examples": 8,
+      "configuration": 4,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose, solid examples, and good API coverage, but lacks configuration reference and troubleshooting beyond one macOS codesigning note.",
+      "top_issue": "No configuration documentation for GdbController (e.g., custom gdb path, flags, timeout defaults) and minimal troubleshooting guidance beyond a single platform-specific note."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 7,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Timeout-based response handling is inefficient and non-intuitive",
-        "Missing documented methods (send_signal_to_gdb, interrupt_gdb)",
-        "Response waiting logic relies on timeouts instead of completion detection",
-        "Output parsing issues with newlines and special characters",
-        "Platform-specific bugs (Windows gdb termination)",
-        "Documentation is out of date",
-        "Test failures on newer Python/gdb versions"
+        "Timeout-based response handling blocks unnecessarily and degrades performance",
+        "Missing or broken interrupt_gdb() and send_signal_to_gdb() methods documented but unavailable",
+        "Output parsing discards newline characters, causing data loss",
+        "Documentation is outdated and references non-existent functions",
+        "No prompt-based waiting mechanism for GDB responses"
       ],
       "praise_themes": [
-        "Package adoption by Fedora for KDE debugging"
+        "Community adoption (packaged in Fedora for KDE debugging)"
       ],
       "abandonment_signals": true,
-      "summary": "Community shows moderate frustration with core architectural issues around timeout-based response handling, missing documented features, and outdated documentation, paired with slow maintainer responsiveness and aging test compatibility."
+      "summary": "The project shows concerning maintenance gaps with critical functionality issues (interrupt handling, timeout behavior) and bugs spanning 6+ years unresolved, suggesting the maintainer may be inactive or capacity-constrained."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits for over 2 years (since December 2023)",
-        "23 open issues with no resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged pull requests in past 6 months",
-        "No active contributors in past 6 months",
-        "No releases in recent history"
+        "No commits in past 6 months (last commit ~2.25 years ago)",
+        "23 open issues with zero closed in past 6 months",
+        "Zero contributors active in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown/no recent releases",
+        "No pull requests in progress suggesting lack of community engagement"
       ],
-      "positive_signals": [],
-      "summary": "pygdbmi is effectively abandoned with over 2 years of inactivity and growing unresolved issues."
+      "positive_signals": [
+        "Repository still exists and is findable",
+        "No stale open pull requests"
+      ],
+      "summary": "pygdbmi is abandoned with no maintenance activity for 6+ months, accumulating unresolved issues, and no recent releases."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T10:03:45.155177+00:00"
+    "llm_analyzed_at": "2026-03-15T11:11:16.758903+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

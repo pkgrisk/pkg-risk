@@ -191,48 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README focuses on the builder tool rather than the actual package (mypy-boto3-controlcatalog), creating confusion about what this specific package does and how to use it.",
-      "top_issue": "This appears to be a generated stub package for AWS Control Catalog service, but the README is for the builder tool instead of explaining how to install and use type stubs for boto3's controlcatalog client."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific sub-package (mypy-boto3-controlcatalog), creating confusion for users who installed a service-specific stub package.",
+      "top_issue": "The README describes the mypy-boto3-builder generator tool, not the mypy-boto3-controlcatalog stub package itself \u2014 users get no guidance on how to actually use the controlcatalog type stubs they installed."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Missing or incorrect type definitions in stubs",
-        "Duplicate .pyi and .py files causing IDE issues",
-        "Package metadata/extras not properly declared",
-        "Confusing package naming (types-boto3 vs boto3-stubs)"
+        "Type stubs don't match actual runtime behavior (async/coroutine types, ToolUseBlockTypeDef)",
+        "Package metadata and configuration issues (missing extras, version mismatches)",
+        "Documentation is outdated (generate locally instructions fail)",
+        "Duplicate stub files (.pyi and .py) shipped together",
+        "Package naming confusion between types-boto3 and boto3-stubs variants"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some enhancements eventually completed and released",
+        "Issues do get triaged and closed"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate community engagement, but persistent technical debt around type stub accuracy and packaging configuration causing user frustration."
+      "summary": "The project is actively maintained with occasional bug fixes released, but suffers from moderate technical debt in type accuracy and documentation that creates friction for users trying to keep stubs in sync with runtime behavior."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months",
+        "Zero commits in past 6 months despite recent push",
+        "16 open issues with no activity or resolution",
+        "No active contributors for 6+ months",
         "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests stale release cycle"
+        "Unknown release date makes versioning unclear"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity for at least 6 months despite having open issues."
+      "positive_signals": [
+        "Last commit was recent (2 months ago)",
+        "No open PRs indicates no stalled review queue",
+        "Type stub package may have lower update frequency if boto3 API stable"
+      ],
+      "summary": "Package is stale with minimal maintenance activity; last commit 2 months ago but zero development activity for 6 months with growing unaddressed issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:39:14.977202+00:00"
+    "llm_analyzed_at": "2026-03-15T08:48:22.721493+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

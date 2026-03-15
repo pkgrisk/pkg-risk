@@ -191,51 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 3,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "README is confusing because it documents the builder tool rather than the actual package (types-aiobotocore-cognito-idp), forcing users to click through multiple documentation links to understand what they installed.",
-      "top_issue": "Wrong README content - this is the mypy-boto3-builder tool documentation, not the types-aiobotocore-cognito-idp package documentation that users actually need"
+      "summary": "The README is for the builder tool rather than the specific `types-aiobotocore-cognito-idp` package, leaving users without any package-specific documentation, usage examples, or API reference.",
+      "top_issue": "The README is entirely mismatched \u2014 it describes the mypy-boto3-builder generator rather than the `types-aiobotocore-cognito-idp` stubs package itself, so users get no guidance on how to actually use Cognito IDP type annotations."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Missing extras/optional dependencies not declared",
-        "Duplicate .pyi and .py files causing tooling conflicts",
-        "Type stub accuracy issues (async/await, literal types)",
-        "Documentation outdated or incorrect",
-        "Confusion between package variants (types-boto3 vs boto3-stubs)"
+        "Type stub definitions incorrect or overly broad (e.g., ToolUseBlockTypeDef, FileobjTypeDef)",
+        "Documentation and generate-locally instructions broken or outdated",
+        "Duplicate .pyi and .py stub files causing IDE confusion",
+        "Missing package extras and version mismatch issues",
+        "Confusion between types-boto3 and boto3-stubs naming"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active maintenance with issues being marked released",
+        "Engagement on issues with response labels and follow-ups"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling project with moderate maintainer engagement; users face frustration with packaging inconsistencies, type accuracy issues, and documentation gaps in a complex multi-package stub generation system."
+      "summary": "Project is actively maintained with good issue resolution, but has lingering quality issues around type stub accuracy and documentation that frustrate users."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
-        "15 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicating stalled development",
-        "Unknown last release date suggests release process has stopped",
-        "Zero closed issues in past 6 months shows no maintenance activity"
+        "No commits in past 6 months despite last commit in January",
+        "16 open issues with zero resolutions in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No recent release information available",
+        "Type stub package with no maintenance activity suggests compatibility drift risk"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-12) showing some minimal recent activity"
+        "Recent commit in January 2026 indicates project not completely abandoned",
+        "No open PRs to manage suggests minimal outstanding work"
       ],
-      "summary": "This package appears abandoned with no meaningful maintenance activity over the past 6 months despite a recent commit timestamp, indicating the project is no longer actively developed or supported."
+      "summary": "This types package is stale with no meaningful maintenance activity in 6 months; recent single commit is insufficient to indicate active maintenance given absence of issue resolution and contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T10:13:55.825777+00:00"
+    "llm_analyzed_at": "2026-03-15T11:21:44.099141+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

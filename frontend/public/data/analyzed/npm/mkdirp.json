@@ -10,14 +10,14 @@
     "repo": "node-mkdirp",
     "subpath": null
   },
-  "install_count_30d": 325234096,
+  "install_count_30d": 454700879,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 58.5,
-    "grade": "F",
+    "overall": 62.4,
+    "grade": "D",
     "percentile": null,
-    "risk_tier": "restricted",
+    "risk_tier": "conditional",
     "update_urgency": "medium",
     "confidence": "medium",
     "confidence_factors": [
@@ -25,7 +25,7 @@
     ],
     "project_age_band": "legacy",
     "security": {
-      "score": 52.0,
+      "score": 75.0,
       "weight": 30,
       "key_factors": [
         "Weak code review",
@@ -33,12 +33,12 @@
       ]
     },
     "maintenance": {
-      "score": 56.5,
+      "score": 50.5,
       "weight": 25,
       "key_factors": []
     },
     "community": {
-      "score": 85.0,
+      "score": 80.0,
       "weight": 15,
       "key_factors": []
     },
@@ -51,12 +51,12 @@
       ]
     },
     "documentation": {
-      "score": 20.0,
+      "score": 17.5,
       "weight": 10,
       "key_factors": []
     },
     "stability": {
-      "score": 93.0,
+      "score": 88.0,
       "weight": 10,
       "key_factors": []
     }
@@ -66,12 +66,12 @@
       "owner": "isaacs",
       "name": "node-mkdirp",
       "description": "Recursively mkdir, like `mkdir -p`, but in node.js",
-      "stars": 194,
-      "forks": 39,
+      "stars": 197,
+      "forks": 41,
       "open_issues": 1,
-      "watchers": 194,
+      "watchers": 197,
       "created_at": "2011-11-06T01:33:28Z",
-      "updated_at": "2025-09-01T02:18:41Z",
+      "updated_at": "2026-03-10T04:53:44Z",
       "pushed_at": "2023-09-15T19:59:26Z",
       "default_branch": "main",
       "license": "NOASSERTION",
@@ -173,99 +173,55 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 9,
-      "installation": 3,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 6,
-      "overall": 7,
-      "summary": "Excellent clarity and examples, but lacks installation instructions and the CLI help text appears truncated.",
-      "top_issue": "No installation instructions provided (npm install command missing)"
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "src/bin.ts",
-          "line": 34,
-          "severity": "medium",
-          "description": "The 'mode' argument is parsed using parseInt with base 8, but it does not validate if the input is a valid octal number. This could lead to unexpected behavior."
-        },
-        {
-          "file": "src/bin.ts",
-          "line": 34,
-          "severity": "low",
-          "description": "The 'mode' argument is not validated for potential security issues, such as setting an insecure permission mode."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential injection risk in the 'mode' argument parsing",
-        "Lack of input validation for null or undefined values"
-      ],
-      "summary": "The mkdirp package has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure package."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Breaking changes in major versions (3.0.0, 2.1.0) breaking backward compatibility",
-        "Module export/import issues (default vs named imports)",
-        "TypeScript/ESM module resolution errors",
-        "Vulnerable dependencies not being updated",
-        "Delayed npm package publishing",
-        "Syntax errors in built code (optional chaining on older Node versions)"
+        "Vulnerable dependency (indirect security issue)",
+        "TypeError: mkdirp.sync is not a function"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "mkdirp shows signs of poor maintenance with breaking API changes, unresolved security vulnerabilities, delayed releases, and minimal maintainer engagement on issues."
+      "praise_themes": [
+        "hybrid module support",
+        "documentation"
+      ],
+      "abandonment_signals": false,
+      "summary": "The community health of the mkdirp package shows mixed sentiment with moderate frustration levels. While there are some unresolved issues, the maintainers respond to them moderately well. Common complaints include security vulnerabilities and breaking changes in newer versions."
     },
     "communication": {
-      "helpfulness": 6,
-      "clarity": 7,
+      "helpfulness": 7,
+      "clarity": 6,
       "patience": 5,
       "technical_depth": 8,
       "welcomingness": 4,
       "communication_style": "adequate",
       "red_flags": [
-        "Dismissive tone towards new contributors",
-        "Lack of clear, actionable guidance in some responses"
+        "Some responses can be dismissive or condescending",
+        "Lack of response to some issues"
       ],
-      "summary": "The maintainer's responses are generally adequate but could be more patient and clearer with new contributors."
+      "summary": "The maintainer provides technical explanations and fixes, but the communication style is sometimes dismissive, which may deter users from contributing or seeking further assistance."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 8,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months",
-        "No active contributors in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "Last release date unknown"
+        "No commits in the past 6 months",
+        "Last release date is unknown",
+        "No merged PRs in the past 6 months"
       ],
       "positive_signals": [
-        "Last commit relatively recent (September 2023)",
-        "Only 1 open issue suggests low bug volume or issue triage"
+        "9 contributors were active in the past 6 months",
+        "There are open issues which might indicate ongoing interest or problems that need addressing"
       ],
-      "summary": "mkdirp appears to be in minimal-maintenance mode with no recent development activity, though it may be considered feature-complete for its core functionality."
+      "summary": "The package mkdirp appears to be stale due to a lack of recent commits and releases, though there is some activity from contributors."
     },
-    "changelog": {
-      "breaking_changes_marked": true,
-      "has_migration_guides": false,
-      "well_categorized": false,
-      "appears_complete": true,
-      "clarity_score": 7,
-      "overall_score": 6,
-      "summary": "The changelog marks breaking changes and provides some context, but lacks migration guides and clear categorization."
-    },
+    "changelog": null,
     "governance": null,
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T04:59:02.211654+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": {
     "lifecycle_scripts": {
@@ -738,23 +694,22 @@
   },
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 2.6,
-      "score_date": "2025-12-29T00:00:00Z",
+      "overall_score": 3.5,
+      "score_date": "2026-03-02T00:00:00Z",
       "checks": {
         "Code-Review": 0.0,
+        "Maintained": 0.0,
         "Dangerous-Workflow": 10.0,
         "Binary-Artifacts": 10.0,
-        "Pinned-Dependencies": 1.0,
-        "Maintained": 0.0,
         "Packaging": -1.0,
         "Token-Permissions": 0.0,
+        "Pinned-Dependencies": 1.0,
         "CII-Best-Practices": 0.0,
         "Fuzzing": 0.0,
         "License": 9.0,
         "Signed-Releases": -1.0,
+        "Security-Policy": 10.0,
         "Branch-Protection": 0.0,
-        "Security-Policy": 0.0,
-        "Vulnerabilities": 1.0,
         "SAST": 0.0
       },
       "code_review_score": 0.0,
@@ -767,7 +722,7 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 194,
+      "stars": 197,
       "forks": 41,
       "open_issues": 1,
       "license": "non-standard",
@@ -784,7 +739,7 @@
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-09T15:16:24.868504Z",
+    "fetched_at": "2026-03-14T16:24:41.533157Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -792,34 +747,32 @@
     ]
   },
   "analysis_summary": {
-    "maintenance_status": "minimal-maintenance",
+    "maintenance_status": "stale",
     "security_summary": "No issues",
     "doc_summary": "",
     "concerns": [
-      "no recent commits or PR activity",
-      "unknown last commit and release dates",
-      "Community: documentation discrepancies",
-      "Community: typeScript compatibility issues",
-      "Communication: Dismissive tone towards new contributors",
-      "Communication: Lack of clear, actionable guidance in some responses",
-      "Security: Potential injection risk in the 'mode' argument parsing",
-      "Security: Lack of input validation for null or undefined values",
+      "No commits in the past 6 months",
+      "Last release date is unknown",
+      "No merged PRs in the past 6 months",
+      "Community: Vulnerable dependency (indirect security issue)",
+      "Community: TypeError: mkdirp.sync is not a function",
+      "Communication: Some responses can be dismissive or condescending",
+      "Communication: Lack of response to some issues",
       "High bus factor risk (88% from top contributor)",
-      "Low OpenSSF Scorecard: 2.6/10",
+      "Low OpenSSF Scorecard: 3.5/10",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "recent contributors",
-      "only one open issue",
-      "Breaking changes clearly marked in changelog",
+      "9 contributors were active in the past 6 months",
+      "There are open issues which might indicate ongoing interest or problems that need addressing",
       "CI/CD configured"
     ],
-    "community_sentiment": "neutral",
+    "community_sentiment": "mixed",
     "communication_style": "adequate",
     "supply_chain_risk": "low",
-    "scorecard_score": 2.6,
+    "scorecard_score": 3.5,
     "dependency_count": 0
   },
-  "analyzed_at": "2026-01-09T15:17:34.312220Z",
-  "data_fetched_at": "2026-01-09T15:17:34.312221Z"
+  "analyzed_at": "2026-03-14T16:29:44.370044Z",
+  "data_fetched_at": "2026-03-14T16:29:44.370045Z"
 }

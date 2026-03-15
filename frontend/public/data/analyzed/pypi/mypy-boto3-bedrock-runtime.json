@@ -191,47 +191,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool rather than the type stubs package that users actually installed, with minimal concrete usage examples.",
-      "top_issue": "Identity confusion - users installing mypy-boto3-bedrock-runtime get documentation for mypy_boto3_builder (a code generator), not instructions for using the type stubs they actually need"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-bedrock-runtime` package, leaving users without targeted guidance on using this service-specific stub.",
+      "top_issue": "This README describes the parent builder project, not the `mypy-boto3-bedrock-runtime` package itself \u2014 there are no examples, configuration docs, or troubleshooting specific to using Bedrock Runtime type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues with types-boto3 submodules",
-        "Incorrect type definitions in stubs (tool_use, get_credentials, FileobjTypeDef)",
-        "Duplicate .pyi and .py files causing IDE conflicts",
-        "Missing extras metadata in types-aiobotocore",
-        "Documentation and tooling issues (setup.py deprecation, generate locally instructions)"
+        "Type definition inaccuracies (ToolUseBlockTypeDef, get_credentials, FileobjTypeDef)",
+        "Duplicate stub files (.pyi and .py shipped together)",
+        "Incorrect or outdated documentation and instructions",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Version compatibility issues with submodules"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Community reports legitimate technical issues with type stub accuracy and packaging metadata, with moderate maintainer engagement but persistent unfixed bugs suggesting resource constraints or deprioritization."
+      "summary": "Project shows moderate maintenance with responsive bug fixes on some issues, but growing backlog of unresolved type definition accuracy bugs and documentation gaps marked 'response needed' since September 2025."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months",
-        "No closed issues in past 6 months despite 15 open issues",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Last commit over 3 weeks ago with no follow-up activity"
+        "Zero commits in the past 6 months indicates development has stalled",
+        "16 open issues with zero closed issues past 6 months shows no maintenance",
+        "Zero active contributors for 6 months suggests complete abandonment of maintenance",
+        "No merged PRs in past 6 months indicates no active development or review",
+        "Unknown last release date raises questions about release cadence and stability"
       ],
-      "positive_signals": [],
-      "summary": "This package shows no maintenance activity for at least 6 months with unresolved issues and no developer engagement, indicating it has been abandoned."
+      "positive_signals": [
+        "Last commit was relatively recent (January 2026, ~2 months ago)"
+      ],
+      "summary": "This package is stale with no active maintenance\u2014zero commits, contributors, merged PRs, or closed issues over the past 6 months despite 16 accumulating open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:21:56.646298+00:00"
+    "llm_analyzed_at": "2026-03-15T10:48:11.592365+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

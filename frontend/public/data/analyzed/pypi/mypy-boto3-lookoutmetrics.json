@@ -191,48 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README describes a build tool rather than the actual package (mypy-boto3-lookoutmetrics), creating significant confusion about what users are installing and how to use it.",
-      "top_issue": "Wrong README content - this describes mypy-boto3-builder (the generator tool) but the package is mypy-boto3-lookoutmetrics (a generated type stubs package), leaving users without any documentation on actual usage"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific sub-package (mypy-boto3-lookoutmetrics), leaving users confused about what this particular package does and how to use it directly.",
+      "top_issue": "This README describes the parent builder project, not the specific `mypy-boto3-lookoutmetrics` package \u2014 there are no usage examples, API references, or configuration docs for the LookoutMetrics type stubs themselves."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type stub generation issues (duplicate .pyi and .py files)",
-        "Version mismatch between main package and submodules",
-        "Incorrect type definitions not matching actual AWS API behavior",
-        "Missing extras/metadata in package metadata",
-        "Documentation and setup process outdated"
+        "Type stub accuracy issues (async/await signatures, overly broad type definitions)",
+        "Documentation and tooling clarity (command-line examples don't work, package naming confusion)",
+        "Package quality issues (duplicate .pyi/.py files, missing metadata extras)",
+        "Version/dependency management (setuptools compatibility, version mismatch between main and submodules)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The project is actively maintained with issues being closed and released, but shows moderate responsiveness with recurring type accuracy problems and packaging inconsistencies that frustrate users."
+      "summary": "Project is actively maintained with regular bug fixes, but users experience frustration with type stub correctness, documentation accuracy, and package metadata completeness\u2014issues are being closed and resolved, though maintainers maintain moderate rather than rapid response times."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
+        "No commits in past 6 months despite 16 open issues",
+        "16 unresolved issues with zero closed in past 6 months",
         "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests missing version history"
+        "No merged PRs or PR activity in past 6 months",
+        "Unknown release status - unable to confirm release cadence",
+        "Stale issue backlog with no triage activity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with zero maintenance activity over the past 6 months and accumulating unresolved issues."
+      "positive_signals": [
+        "Recent commit activity (2026-01-12, approximately 2 months ago)",
+        "Issues are being tracked and open for visibility"
+      ],
+      "summary": "This package is minimally maintained with no active development or issue resolution in the past 6 months, posing dependency risk despite recent commit history."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:16:02.903195+00:00"
+    "llm_analyzed_at": "2026-03-15T06:08:27.129820+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -186,48 +186,52 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 3,
-      "examples": 6,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 4,
       "configuration": 2,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "Strong conceptual explanation with research results but severely lacks practical usage documentation including installation steps, basic code examples, and any troubleshooting guidance.",
-      "top_issue": "No installation instructions provided - users cannot determine how to install loralib (pip install, from source, dependencies, etc.)"
+      "overall": 3,
+      "summary": "The README excels at explaining the research motivation and benchmarks but reads like an academic paper rather than a developer guide, with no installation instructions, no code snippets, and no hands-on quick start.",
+      "top_issue": "No installation instructions or basic usage code example \u2014 a new user has no idea how to `pip install` the package or write their first line of code with it."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
-      "maintainer_responsiveness": "unresponsive",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Reproduction results not matching paper claims",
-        "Module compatibility issues (unsupported layer types)",
-        "Parameter initialization bugs",
-        "Training/inference behavior inconsistencies",
-        "Training performance and memory constraints"
+        "Cannot reproduce published paper results (multiple users since 2023)",
+        "Parameter initialization bugs (reset_parameters logic confusion)",
+        "Weight parameter changes when loading checkpoints",
+        "Incompatibility with quantized models (CLIPEncoderLayer/Linear4bit)",
+        "Training speed and memory constraints"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Technical depth in discussions (merge BA during training question)"
+      ],
       "abandonment_signals": true,
-      "summary": "The loralib project shows signs of abandonment with unresponsive maintainers, significant technical bugs unfixed, spam/off-topic issues uncurated, and users unable to reproduce published results."
+      "summary": "Community health is declining: legitimate technical issues and reproduction failures remain unresolved for 2+ years, spam/off-topic issues go unmoderated, and maintainers show minimal responsiveness despite active user engagement seeking help."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2024-12-17)",
-        "113 open issues with no closed issues in past 6 months indicates unaddressed backlog",
-        "Zero active contributors in past 6 months suggests maintainer inactivity",
-        "No merged PRs in past 6 months indicates no feature development or bug fixes",
-        "Unknown last release date suggests possible release management issues"
+        "No commits in past 6 months despite 113 open issues",
+        "No issues closed in 6 months despite large backlog",
+        "No merged pull requests in 6 months",
+        "No active contributors in 6 months",
+        "Unknown last release - no recent release history",
+        "Large unresolved issue count suggests backlog accumulation"
       ],
       "positive_signals": [
-        "Recent commit activity (December 2024) shows some recent work"
+        "Last commit was relatively recent (December 2024)",
+        "Package has historical development activity"
       ],
-      "summary": "Package is stale with significant unaddressed issues and no maintenance activity over the past 6 months despite recent commits."
+      "summary": "loralib shows clear signs of stagnation with no maintenance activity for 6+ months and 113 unaddressed issues, indicating the project has been abandoned by its maintainers."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:21:12.555269+00:00"
+    "llm_analyzed_at": "2026-03-15T15:05:46.896202+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

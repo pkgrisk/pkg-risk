@@ -191,50 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it focuses on mypy-boto3-builder (a code generator tool) rather than mypy-boto3-omics (the actual package being installed), with minimal guidance on how to use the type stubs.",
-      "top_issue": "Package identity confusion - users installing mypy-boto3-omics will see documentation for the builder tool instead of instructions on how to use the omics type stubs with boto3"
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-omics package, providing minimal actionable guidance for users of this AWS Omics-specific stub package.",
+      "top_issue": "This README describes the generic mypy-boto3-builder project, not the specific mypy-boto3-omics package \u2014 there are no Omics-specific examples, configuration, or usage instructions."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Duplicate .pyi and .py stub files causing conflicts",
-        "Incorrect type definitions in generated stubs",
-        "Missing extras/metadata in packages",
-        "Documentation and tooling issues"
+        "Incorrect type stub definitions (wrong types for async methods, overly broad type hints)",
+        "Duplicate stub files (.pyi and .py shipped together, breaking IDE features)",
+        "Version mismatch between main package and submodules",
+        "Missing or incorrect extras metadata",
+        "Broken or outdated documentation/setup instructions",
+        "Package naming confusion (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some significant features implemented (pyproject.toml migration completed)",
+        "Issues do get closed and resolved over time",
+        "Users provide detailed, well-documented bug reports"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling project with technical debt in stub generation causing recurring type definition issues; maintainers respond to issues but fixes are slow, indicating capacity constraints rather than abandonment."
+      "summary": "Moderately active project with decent issue resolution, but persistent responsiveness gaps on type stub bugs and documentation issues marked as requiring maintainer response."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
-        "No merged PRs in past 6 months suggesting no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests versioning/release process is stalled"
+        "No commits in past 6 months despite last commit 2 months ago",
+        "16 open issues with zero closed in past 6 months",
+        "No merged PRs or pull request activity in past 6 months",
+        "Zero active contributors for past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Repository still exists and has not been deleted"
+        "Had recent commit activity approximately 2 months ago (not completely dead)",
+        "Repository still exists and is publicly accessible"
       ],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite open issues remaining unaddressed."
+      "summary": "Package is stale with accumulated unaddressed issues and no maintenance activity over the past 6 months, indicating active development has stopped."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T04:22:44.496999+00:00"
+    "llm_analyzed_at": "2026-03-15T06:46:48.289462+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,49 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) rather than the actual package (mypy-boto3-detective), making it unclear what this specific package does or how to use it.",
-      "top_issue": "Wrong README content - this appears to be the builder's README, not the mypy-boto3-detective package README, leaving users completely unclear about what mypy-boto3-detective actually provides or how to use it for AWS Detective type stubs"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-detective package, leaving users confused about what this particular package does and how to use it.",
+      "top_issue": "The README describes the parent builder project, not the specific `mypy-boto3-detective` package \u2014 there are no examples, API docs, or usage instructions for the Detective service stubs specifically."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/features in type stub packages",
-        "Duplicate .pyi and .py files causing confusion",
-        "Type definition inaccuracies (async/await, Literal types)",
-        "Documentation and setup process issues",
-        "Unclear packaging strategy (types-boto3 vs boto3-stubs)"
+        "Type definitions incorrect or overly broad (S3, Bedrock, aioboto3)",
+        "Duplicate stub files shipped as both .pyi and .py",
+        "Documentation/usage instructions don't work",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Version mismatch issues between submodule packages"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues do get resolved when addressed",
+        "Modernization efforts (pyproject.toml migration completed)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with responsive maintainers addressing genuine technical issues, but struggles with packaging complexity, type accuracy, and documentation clarity across ~400 generated stub packages."
+      "summary": "Project is actively maintained but stretched thin, with several bugs marked 'response needed' languishing open while some issues are successfully closed\u2014suggests inconsistent triage and bandwidth constraints rather than abandonment."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months",
-        "No closed issues in the past 6 months despite 15 open issues",
-        "No merged PRs in the past 6 months",
-        "No active contributors in the past 6 months",
-        "No recent releases",
-        "Last commit was 44 days ago with no follow-up activity"
+        "No commits in past 6 months",
+        "16 open issues with zero closed in past 6 months",
+        "No pull requests merged in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown release history makes version tracking unclear"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with no maintenance activity over the past 6 months and unaddressed open issues accumulating."
+      "positive_signals": [
+        "Recent commit on 2026-01-12 (2 months ago) indicates repository was touched recently"
+      ],
+      "summary": "Package is stale with no development activity, issue resolution, or contributor engagement over the past 6 months despite a recent commit 2 months ago."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:41:48.253248+00:00"
+    "llm_analyzed_at": "2026-03-15T07:53:34.093600+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

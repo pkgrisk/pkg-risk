@@ -191,48 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it documents mypy-boto3-builder (a code generator tool) rather than mypy-boto3-osis (the actual package users would install), leading to misdirected installation instructions and missing usage examples.",
-      "top_issue": "Wrong README content - this appears to be the builder tool's README, not the mypy-boto3-osis package README, causing complete mismatch between package name and documentation"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-osis stub package, leaving users confused about what this particular package does or how to use it directly.",
+      "top_issue": "This README describes the parent builder project, not the specific `mypy-boto3-osis` service stub \u2014 there are no examples, API references, or usage instructions specific to the OpenSearch Ingestion Service (OSIS) client."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main and submodule packages",
-        "Packaging/distribution issues (duplicated .py/.pyi files, missing extras)",
-        "Type stub accuracy problems (incorrect type definitions, async/await mismatches)",
-        "Documentation and tooling gaps (outdated local generation instructions)"
+        "Type stub accuracy issues (wrong/overly broad type definitions)",
+        "Duplicate stub files (.pyi and .py shipped together)",
+        "Version mismatches across package variants",
+        "Documentation/tooling issues (broken generate instructions)",
+        "Package naming confusion (types-boto3 vs boto3-stubs)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Active project with a large ecosystem (~400 packages) experiencing moderate community friction around packaging consistency, type accuracy, and documentation maintenance, but showing sustained development activity."
+      "summary": "Actively maintained stub generation project with moderate engagement\u2014some issues resolved but newer issues receiving minimal responses, with recurring type definition bugs suggesting the automated generation process needs refinement."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No closed issues in past 6 months indicates no active issue triage",
-        "No merged PRs in past 6 months shows no development activity",
-        "No active contributors in past 6 months",
-        "15 open issues accumulating without resolution"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months",
+        "Zero active contributors",
+        "16 unaddressed open issues accumulating",
+        "Unknown release history",
+        "No open PRs indicating lack of community interest"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-12), suggesting package hasn't been completely abandoned"
+        "Last commit exists (January 2026)"
       ],
-      "summary": "Package appears stale with recent commit activity but no ongoing maintenance or issue resolution over the past 6 months."
+      "summary": "Package is abandoned with no active development, maintenance activity, or contributor engagement over the past 6 months despite 16 open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T12:11:32.950810+00:00"
+    "llm_analyzed_at": "2026-03-15T13:24:35.026423+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

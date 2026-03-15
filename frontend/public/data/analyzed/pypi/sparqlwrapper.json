@@ -181,49 +181,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 10,
+      "clarity": 8,
+      "installation": 9,
       "quick_start": 9,
-      "examples": 10,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 8,
-      "summary": "Excellent documentation with comprehensive examples and clear installation instructions, but lacks troubleshooting guidance and configuration details.",
-      "top_issue": "No troubleshooting section for common errors like endpoint failures, authentication issues, or timeout handling"
+      "examples": 9,
+      "configuration": 5,
+      "troubleshooting": 1,
+      "overall": 7,
+      "summary": "Excellent examples covering all major SPARQL query types with clear installation instructions, but lacks configuration reference and any troubleshooting guidance.",
+      "top_issue": "No troubleshooting section and no documentation of configuration options (auth methods, return formats, timeouts, HTTP settings) beyond what appears incidentally in examples."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Resource management issues (unclosed HTTP connections)",
-        "HTTP protocol compliance problems (308 redirects, timeout handling)",
-        "Lack of advanced features (parameterized queries, query cancellation)",
-        "Compatibility issues with specific SPARQL endpoints (GraphDB, UniProt, Virtuoso)",
-        "Testing infrastructure problems (slow tests, flaky test suites)"
+        "HTTP connections not closing after UPDATE queries (resource leak)",
+        "SPARQL endpoint compatibility issues (Wikidata, UniProt, Virtuoso, GraphDB)",
+        "Missing timeout parameter handling for Virtuoso endpoints",
+        "HTTP 308 redirect handling not implemented",
+        "No query cancellation/interruption capability"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "High user interest in pandas DataFrame integration (16 comments)",
+        "Detailed bug reports with reproduction steps",
+        "Users seeking library improvements despite issues"
+      ],
       "abandonment_signals": true,
-      "summary": "SPARQLWrapper shows signs of maintenance stagnation with 13 open issues (including 6 recent ones from 2024-2025), slow response times, critical resource management bugs remaining unfixed, and limited maintainer engagement despite reports of serious production issues."
+      "summary": "Project shows slow maintenance with critical open issues (resource leaks, endpoint compatibility) receiving zero engagement for months, while some historical issues are resolved; moderate community interest evident but frustration likely growing due to unanswered recent issues."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being from November 2025",
-        "66 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no active maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "Zero active contributors in past 6 months",
-        "No recent releases despite outstanding issues",
-        "Last commit timestamp appears inconsistent with activity metrics"
+        "66 open issues with zero closed in past 6 months",
+        "No active contributors for 6 months despite issue backlog",
+        "No merged pull requests in past 6 months",
+        "Unknown last release status"
       ],
-      "positive_signals": [],
-      "summary": "sparqlwrapper shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months despite a substantial backlog of 66 open issues."
+      "positive_signals": [
+        "Recent commit on 2025-11-21 indicates some ongoing activity",
+        "No open pull requests suggests low external contribution attempts"
+      ],
+      "summary": "Package has a recent commit but shows signs of stagnation with a large unresolved issue backlog and no contributor activity over 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T21:05:27.203650+00:00"
+    "llm_analyzed_at": "2026-03-15T00:47:28.596230+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

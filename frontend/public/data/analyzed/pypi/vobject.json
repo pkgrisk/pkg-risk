@@ -179,50 +179,52 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 7,
-      "examples": 9,
-      "configuration": 3,
+      "examples": 8,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "Comprehensive examples and clear installation instructions, but lacks configuration documentation and troubleshooting guidance.",
-      "top_issue": "No configuration options or troubleshooting section provided, making it difficult to customize behavior or debug issues"
+      "overall": 6,
+      "summary": "Well-documented with solid code examples for core iCalendar/vCard usage, but lacks troubleshooting guidance and has outdated dependency info (references Python 2.7 and 'six' package).",
+      "top_issue": "No troubleshooting section \u2014 common parsing errors, timezone issues, and vCard compatibility problems are undocumented."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "RFC compliance issues (RECURRENCE-ID validation, vCard 4.0 support)",
-        "Parsing errors with edge cases (unicode with allowQP, Apple-generated vCards)",
-        "Performance problems (slow serialization with large attachments)",
-        "Documentation outdated (website history section out of sync with releases)",
-        "Build/installation issues (VERSION attribute missing in source builds)",
-        "Timezone handling bugs (collisions, historical dates, caching conflicts)"
+        "Parsing failures with special characters (unescaped commas, unicode with allowQP)",
+        "Missing contact attributes when parsing vCard 2.1",
+        "Timezone handling issues (collisions, historical dates, pytz dependency)",
+        "Validation gaps (RECURRENCE-ID not validated per RFC5545)",
+        "Serialization performance (slow with large attachments)",
+        "Build from source failures (AttributeError VERSION)",
+        "Outdated documentation and website (claims no maintenance since 2018)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Community interest in vCard 4.0 support (9 comments, most engaged issue)"
+      ],
       "abandonment_signals": true,
-      "summary": "vobject shows signs of maintenance neglect with multiple open RFC compliance issues, parsing edge cases, and documentation drift, indicating a moderately healthy but stagnating community."
+      "summary": "vobject shows concerning maintenance gaps with multiple recent unanswered bug reports (Feb-Dec 2025), outdated website, unresolved tech debt, and sporadic fixes\u2014suggesting active community need but passive maintainer engagement."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-05)",
-        "49 open issues with no activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests missing release history"
+        "Zero commits in past 6 months despite 50 open issues",
+        "Zero issue resolutions in past 6 months",
+        "No active contributors in past 6 months",
+        "No PR activity or merged PRs in past 6 months",
+        "Unknown release history"
       ],
       "positive_signals": [
-        "Last commit within past 3 weeks indicates some recent activity"
+        "Last commit exists (2026-01-05, ~2.5 months ago)"
       ],
-      "summary": "vobject appears abandoned with a single recent commit but zero ongoing maintenance activity, unresolved issues, or contributor engagement over the past 6 months."
+      "summary": "vobject is a stale package with no maintenance activity in the past 6 months, accumulating 50 unresolved issues with no active contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:03:45.753399+00:00"
+    "llm_analyzed_at": "2026-03-15T08:14:05.731023+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

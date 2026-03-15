@@ -184,49 +184,46 @@
       "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 10,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 8,
-      "summary": "Excellent clarity and examples with pathlib-familiar API, but lacks troubleshooting guidance and inline configuration details.",
-      "top_issue": "No troubleshooting section for common issues like AWS credentials setup, permissions errors, or S3 endpoint configuration"
+      "examples": 8,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Excellent introductory documentation with clear examples covering core pathlib-like operations, but lacks troubleshooting guidance and inline configuration docs (deferred to external links).",
+      "top_issue": "No troubleshooting section \u2014 common issues like AWS credential setup, permission errors, or boto3 configuration are not addressed anywhere in the README."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Permission and access control issues (AccessDenied errors)",
-        "Inconsistent behavior with S3 semantics (exists() with versioning, rmdir deleting non-empty prefixes)",
-        "API design limitations (path normalization, trailing slashes, mkdir behavior)",
-        "Deprecated AWS API usage (Owner.DisplayName)"
+        "File operation correctness (rmdir deletes non-empty, exists() false positives with versioning)",
+        "AWS API compatibility (deprecated Owner.DisplayName field, time-sensitive Nov 21 2025 deadline)",
+        "Behavior divergence from standard pathlib",
+        "Permission-related issues (AccessDenied on version checks, ACL support)"
       ],
-      "praise_themes": [
-        "Feature requests are detailed and well-reasoned",
-        "Issues include reproduction cases and context"
-      ],
-      "abandonment_signals": false,
-      "summary": "Moderately healthy community with engaged users reporting legitimate bugs and feature requests, but several unresolved behavioral issues and AWS compatibility concerns indicate maintenance gaps."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Project shows mixed health with 2 recent fixes but concerning gaps: critical AWS deprecation deadline (Nov 21, 2025) has minimal engagement, several bugs remain open affecting core file operations, and old unanswered issues from Oct 2024 suggest inconsistent maintenance."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months despite last commit being on 2026-01-24",
-        "18 open issues with no activity to address them",
-        "No closed issues in the past 6 months indicating lack of maintenance",
-        "No merged PRs in the past 6 months showing no active development",
-        "Zero active contributors in the past 6 months",
-        "Unknown last release date suggests unclear release cadence"
+        "19 open issues with zero closed in 6 months indicates unmaintained backlog",
+        "No merged PRs in 6 months - no active development or review process",
+        "No commits in past 6 months despite data showing last commit 50 days ago",
+        "No active contributors in 6 months - no development team engagement",
+        "Unknown last release - release process appears broken or abandoned"
       ],
       "positive_signals": [
-        "Repository still exists and has not been archived"
+        "Recent commit activity 50 days ago suggests not completely abandoned",
+        "No open PRs accumulating - doesn't indicate broken CI/review process"
       ],
-      "summary": "s3path appears to be stale with no maintenance activity in the past 6 months despite having open issues."
+      "summary": "s3path is stale with mounting unresolved issues and no development activity for at least 6 months despite a recent commit, indicating the maintainers are no longer actively supporting the project."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:39:21.316269+00:00"
+    "llm_analyzed_at": "2026-03-15T09:36:27.079319+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

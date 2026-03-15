@@ -191,51 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes the builder tool that generates type stubs, not the actual package (mypy-boto3-workspaces-web) which is a generated type stub for a specific AWS service.",
-      "top_issue": "Wrong README - this is for the builder tool, not the actual package mypy-boto3-workspaces-web, leaving users completely confused about what they installed and how to use it for AWS WorkSpaces Web service typing."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-workspaces-web` package, providing little actionable guidance for users of this specific sub-package.",
+      "top_issue": "README describes the parent builder project, not the specific `mypy-boto3-workspaces-web` package \u2014 users get no examples, configuration, or usage specific to the WorkSpaces Web service stubs they installed."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main and submodule packages",
-        "Missing extras/metadata in package specifications",
-        "Duplicate .pyi and .py stub files causing tool conflicts",
-        "Type definition inaccuracies (async/await, Literal types, overly broad protocols)",
-        "Documentation and build system issues",
-        "Confusion between types-boto3 and boto3-stubs naming"
+        "Type annotation bugs causing downstream failures (ToolUseBlockTypeDef, FileobjTypeDef, aioboto3 async)",
+        "Duplicate .pyi and .py stub files causing IDE conflicts",
+        "Documentation outdated (generate locally instructions don't work)",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Version mismatch between main package and submodules"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Maintainers do address feature requests (pyproject.toml migration completed)",
+        "Active release cycle with regular updates"
+      ],
       "abandonment_signals": false,
-      "summary": "Community reports consistent type stub quality issues with moderate maintainer engagement, some issues resolved but several open bugs indicate ongoing maintenance challenges with a complex multi-package build system."
+      "summary": "Project is actively maintained with some responsiveness to feature requests, but type annotation bugs and stale documentation are creating user friction and the backlog has several open issues awaiting maintainer response."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months",
-        "No closed issues in past 6 months",
-        "No merged PRs in past 6 months",
+        "Zero commits in past 6 months",
+        "Zero closed issues in past 6 months despite 16 open issues",
+        "Zero merged PRs in past 6 months",
         "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests long time since publication"
+        "Unknown last release date",
+        "Accumulating unresolved issues"
       ],
       "positive_signals": [
-        "Repository still exists"
+        "Repository still exists",
+        "At least one historical commit from January 2026"
       ],
-      "summary": "This package appears abandoned with zero maintenance activity over the past 6 months and accumulating unresolved issues."
+      "summary": "This package is effectively abandoned with no development, issue resolution, or community engagement over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:52:08.735633+00:00"
+    "llm_analyzed_at": "2026-03-15T09:01:10.928744+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

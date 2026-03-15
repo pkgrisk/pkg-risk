@@ -191,50 +191,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's type stubs for AWS Chatbot, with minimal actual usage examples and no troubleshooting guidance.",
-      "top_issue": "Major mismatch between package name (mypy-boto3-chatbot) and README content (describes mypy-boto3-builder), making it unclear what this specific package actually does or how to use it for AWS Chatbot service"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-chatbot sub-package, creating confusion, and defers most useful content to external documentation links.",
+      "top_issue": "This README describes the parent builder project, not the specific chatbot sub-package \u2014 a new user has no idea what mypy-boto3-chatbot specifically does or how to use it for the Chatbot service."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Incorrect type definitions for async methods and edge cases",
-        "Duplicate .pyi and .py files causing tooling confusion",
-        "Missing extras/metadata in PyPI manifests",
-        "Documentation and setup instructions out of date"
+        "Type stubs incorrectly defined (e.g., ToolUseBlockTypeDef, get_credentials async signature)",
+        "Package metadata and build issues (missing extras, dual .pyi/.py files, setup.py vs pyproject.toml)",
+        "Confusing duplicate packages (types-boto3 vs boto3-stubs naming)",
+        "Outdated documentation (local generation instructions broken)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The mypy-boto3 project shows moderate maintenance activity with responsiveness to issues, but users are frustrated by recurring type accuracy problems, packaging inconsistencies, and outdated documentation that create friction in the development experience."
+      "summary": "Project shows moderate maintenance activity with some releases and closed issues, but several bugs and feature requests are stalled (open 5-6 months) and marked 'response needed', suggesting potential resource constraints despite ongoing work."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No active contributors in past 6 months",
-        "No merged PRs in past 6 months indicating no development activity",
-        "15 open issues with no recent closed issues suggesting issues are not being addressed",
-        "No releases in tracked period indicates no version updates or bug fixes",
-        "Stagnant development cycle with unresolved issues accumulating"
+        "No commits in past 6 months",
+        "Zero contributors active in past 6 months",
+        "16 unresolved open issues with no closure activity",
+        "No merged PRs in past 6 months",
+        "Last commit over 2 months ago (2026-01-12)",
+        "Unknown last release date",
+        "Complete absence of maintenance activity"
       ],
-      "positive_signals": [
-        "Recent commit timestamp suggests some minimal activity"
-      ],
-      "summary": "Package is effectively abandoned with no maintenance activity, unresolved issues, and no contributors engaged in the past 6 months."
+      "positive_signals": [],
+      "summary": "Package is effectively abandoned with zero maintenance activity for 6+ months and 16 unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:36:05.135694+00:00"
+    "llm_analyzed_at": "2026-03-15T02:40:37.734486+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

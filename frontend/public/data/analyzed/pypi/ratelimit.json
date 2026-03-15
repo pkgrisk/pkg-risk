@@ -182,47 +182,49 @@
       "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 9,
-      "configuration": 7,
+      "examples": 8,
+      "configuration": 6,
       "troubleshooting": 4,
       "overall": 8,
-      "summary": "Excellent README with clear purpose, installation, and usage examples, but lacks troubleshooting guidance and comprehensive configuration documentation.",
-      "top_issue": "No troubleshooting section addressing common issues like thread safety, async compatibility, or distributed system rate limiting scenarios"
+      "summary": "Concise, well-structured README with clear purpose, multiple installation paths, and three practical usage examples covering common patterns.",
+      "top_issue": "No troubleshooting section and minimal documentation of configuration options (e.g., thread safety, clock behavior, behavior across processes)."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Core functionality bug: rate limiting algorithm doesn't properly track sliding time windows, allowing violations",
-        "Confusing error messages and behavior that contradicts the library's purpose",
-        "Lack of logging/debugging capabilities for understanding rate limit behavior",
-        "Missing modern Python packaging (pyproject.toml, wheel distribution)",
-        "No support for advanced use cases (per-token limits, cross-method rate limit sharing, thread safety)"
+        "Core algorithm bug: sliding window rate limit logic flawed (2019, 10 comments, unresolved)",
+        "No logging/debugging support for rate limit waits",
+        "Type hints not preserved in decorators",
+        "Deprecated Python packaging (no pyproject.toml, no wheel distribution)",
+        "Confusing exception handling - users don't understand why RateLimitException is raised",
+        "No cross-method or per-token rate limiting support"
       ],
       "praise_themes": [
-        "Library has been generally helpful for basic rate limiting use cases"
+        "Basic library concept is helpful for simple use cases"
       ],
       "abandonment_signals": true,
-      "summary": "The ratelimit package shows signs of abandonment with unresponsive maintainers, a critical unfixed bug in the core rate-limiting algorithm since 2019, missing modern Python standards, and growing user frustration about both fundamental issues and lack of support for contemporary use cases."
+      "summary": "Project is effectively abandoned with a critical 7-year-old algorithmic issue unresolved, deprecated packaging (setup.py), no wheel distribution, zero maintainer responses to recent issues, and multiple feature requests ignored since 2019-2023."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit in May 2025",
-        "30 open issues with no recent resolution activity",
-        "No closed issues in past 6 months indicating no active triage",
-        "No merged PRs in past 6 months showing no development activity",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release cycle has stalled"
+        "No commits for 9 months",
+        "30 open issues with zero resolutions in past 6 months",
+        "No active contributors or PR activity",
+        "Unknown release date suggests outdated or unmaintained state"
       ],
-      "positive_signals": [],
-      "summary": "The ratelimit package appears to be abandoned with no maintenance activity, issue resolution, or development in the past 6 months despite 30 unresolved open issues."
+      "positive_signals": [
+        "Last commit exists (not completely abandoned)",
+        "Zero open PRs suggests no half-finished work"
+      ],
+      "summary": "The ratelimit package appears stale with no maintenance activity for 6+ months despite 30 accumulating open issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:10:59.015905+00:00"
+    "llm_analyzed_at": "2026-03-15T10:30:19.240198+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

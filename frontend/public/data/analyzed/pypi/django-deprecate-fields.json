@@ -174,51 +174,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 10,
+      "clarity": 8,
+      "installation": 9,
       "quick_start": 9,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 3,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 2,
       "overall": 7,
-      "summary": "Well-structured README with clear usage examples but lacks troubleshooting guidance and edge case documentation.",
-      "top_issue": "No troubleshooting section covering common issues like handling existing data, foreign key constraints, or rollback scenarios"
+      "summary": "Concise and well-structured docs covering the core workflow clearly, but lacks troubleshooting guidance and deeper examples for edge cases.",
+      "top_issue": "No troubleshooting section \u2014 common pitfalls like migration conflicts or unexpected None returns are not addressed."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Package publishing only source distributions, not pre-built wheels",
-        "Noisy/excessive warnings on startup and during indirect field access",
-        "Naive migration detection using sys.argv fails with custom deployment tools",
-        "Incompatibility with Django testing patterns (TransactionTestCase, MigrationAutodetector)",
-        "Lack of comprehensive documentation and test coverage"
+        "Noisy false-positive warnings on startup (NoneType.<unknown> messages)",
+        "Edge case bugs with FK and M2M field deprecation",
+        "Test compatibility issues (TransactionTestCase, MigrationAutodetector)",
+        "Deployment/zero-downtime edge cases with high-frequency models",
+        "sys.argv migration detection too naive for custom deploy commands"
       ],
       "praise_themes": [
-        "Enables zero-downtime deployments",
-        "Solves a real operational problem for Django projects"
+        "Effective for zero-downtime deployments",
+        "Solves real production deployment problems"
       ],
       "abandonment_signals": true,
-      "summary": "The project addresses a valuable problem for Django deployments but shows signs of slow maintenance with multiple unresolved issues over 2+ years, inadequate documentation for edge cases, and lack of engagement from maintainers on technical questions."
+      "summary": "Package is valued for solving zero-downtime deployment problems, but shows signs of maintenance burden with multiple critical bugs open for 3-4 years and minimal maintainer engagement."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being in July 2025",
+        "Zero commits in past 6 months despite active issues",
         "9 open issues with no resolution activity",
-        "No closed issues in past 6 months indicating no bug fixes",
-        "No merged PRs in past 6 months indicating no development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release process is stalled"
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown release status"
       ],
-      "positive_signals": [],
-      "summary": "django-deprecate-fields is abandoned with no maintenance activity, bug fixes, or community engagement in at least 6 months."
+      "positive_signals": [
+        "Last commit exists (2026-01-20, ~54 days ago)"
+      ],
+      "summary": "Package shows signs of abandonment with unresolved issues and zero maintenance activity over the past 6 months despite recent commit history."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T18:19:43.698024+00:00"
+    "llm_analyzed_at": "2026-03-15T16:11:10.215030+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

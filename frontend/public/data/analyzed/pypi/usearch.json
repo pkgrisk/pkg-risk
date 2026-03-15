@@ -191,50 +191,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 3,
+      "clarity": 8,
+      "installation": 2,
       "quick_start": 2,
       "examples": 3,
-      "configuration": 2,
+      "configuration": 4,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "Excellent marketing-focused README with clear value proposition and comparisons, but severely lacks practical installation instructions, quick start code examples, and any troubleshooting guidance.",
-      "top_issue": "No installation instructions or quick start code example in the README - users cannot get started without clicking through to external documentation"
+      "overall": 3,
+      "summary": "The README excels at marketing and feature comparison but is severely lacking in practical getting-started content \u2014 no install commands, no code examples, and no troubleshooting guidance are visible in the provided excerpt.",
+      "top_issue": "No installation instructions or quick-start code example in the visible README content \u2014 a new user cannot get started without searching elsewhere."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Critical concurrency bugs in core functionality (integer underflow in size())",
-        "Missing features in Rust SDK bindings compared to C++ implementation",
-        "Data integrity issues with duplicate neighbor slots in HNSW graphs"
+        "HNSW graph corruption (duplicate neighbors and stale vectors affecting correctness)",
+        "Memory bloat from deleted vectors never being freed (severe impact on long-running applications)",
+        "Threading configuration bugs causing segmentation faults (reported 11+ months ago, unresolved)",
+        "Documentation links broken in CONTRIBUTING.md"
       ],
-      "praise_themes": [
-        "Active feature development and optimization efforts",
-        "Community engagement with feature requests being accepted",
-        "Clear issue labeling and categorization (good first issue, v3 milestone)"
-      ],
-      "abandonment_signals": false,
-      "summary": "USearch shows healthy community engagement with active feature development, but has concerning concurrency bugs in core indexing operations that suggest quality control gaps requiring urgent attention."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Critical correctness bugs in core HNSW operations reported in past week remain untriaged; a year-old segmentation fault in threading persists, signaling maintenance backlog and deteriorating responsiveness."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (Jan 2026)",
-        "97 open issues with no activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests versioning/release process abandoned"
+        "109 open issues with no recent resolution (0 closed in 6 months)",
+        "No merged pull requests in 6 months",
+        "No active contributors in 6 months",
+        "Unknown last release date",
+        "No open PRs despite significant issue backlog"
       ],
-      "positive_signals": [],
-      "summary": "The usearch package shows clear abandonment with no development activity, issue resolution, or community engagement over the past 6 months despite an unusually recent last commit timestamp."
+      "positive_signals": [
+        "Very recent commit (2026-03-02, 12 days ago)"
+      ],
+      "summary": "Project is stale despite recent commit activity\u2014no maintainer engagement with issue backlog, PRs, or releases in 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:53:55.060789+00:00"
+    "llm_analyzed_at": "2026-03-15T02:00:42.350776+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

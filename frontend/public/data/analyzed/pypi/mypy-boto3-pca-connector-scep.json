@@ -191,49 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it describes mypy-boto3-builder (a code generator) but the package name is mypy-boto3-pca-connector-scep (a generated output), creating a fundamental mismatch between what users expect and what's documented.",
-      "top_issue": "This appears to be the wrong README - it documents the builder tool that generates type stubs, not the actual mypy-boto3-pca-connector-scep package which is a pre-generated type stub for AWS PCA Connector SCEP service that users would install and use directly."
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific scoped package (mypy-boto3-pca-connector-scep), leaving users unclear on how to use this particular service stub.",
+      "top_issue": "README is for the parent builder project, not the specific package \u2014 no documentation of the PCA Connector SCEP service types, how to import them, or usage examples specific to this package."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Missing extras and packaging metadata not properly exposed",
-        "Duplicate .py and .pyi stub files causing tooling conflicts",
-        "Incorrect type definitions for async methods and specific APIs",
-        "Documentation and build instruction accuracy problems",
-        "Overly broad type definitions lacking necessary specificity"
+        "Type definition bugs (ToolUseBlockTypeDef, FileobjTypeDef, async/sync mismatches)",
+        "Documentation/instruction issues (outdated cli commands, package confusion)",
+        "Duplicate file shipping (.pyi and .py files both included)",
+        "Version mismatch and extras availability problems"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The project experiences moderate technical issues around version coordination, packaging metadata, and type accuracy, with some closed issues showing responsiveness but several open issues awaiting response."
+      "praise_themes": [
+        "Enhancement requests being implemented and released (pyproject.toml migration)",
+        "Issues being tracked and systematically resolved"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project is actively maintained but shows moderate health challenges with recurring type definition bugs, documentation gaps, and some open issues lacking recent maintainer engagement (several marked 'response needed' for months)."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (Jan 2026)",
-        "15 open issues with no activity to address them",
-        "Zero closed issues in past 6 months indicating no bug fixes",
-        "No merged PRs in past 6 months showing no development activity",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release cadence has stopped"
+        "16 open issues with no closures in past 6 months indicates unaddressed problems",
+        "Zero active contributors in past 6 months suggests maintainer inactivity",
+        "No merged PRs or commits in past 6 months prior to January commit",
+        "Unknown last release suggests poor release management",
+        "Recent commit (Jan 12) followed by no activity for over a month indicates sporadic maintenance"
       ],
-      "positive_signals": [],
-      "summary": "This package is abandoned with no maintenance activity despite recent history, evidenced by zero commits, PRs, issue resolution, and active contributors over the past 6 months."
+      "positive_signals": [
+        "Recent commit activity (Jan 12, 2026) shows repository is not fully abandoned",
+        "No open PRs means maintainer isn't leaving pending work unreviewed",
+        "This is a boto3 stub package which may have minimal maintenance by design"
+      ],
+      "summary": "Package shows sporadic maintenance with recent activity but persistent unresolved issues and no contributor engagement, typical of auto-generated boto3 stub packages with limited active support."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:46:47.979847+00:00"
+    "llm_analyzed_at": "2026-03-15T09:48:54.272220+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

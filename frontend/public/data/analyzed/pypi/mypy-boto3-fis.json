@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) but the package name is mypy-boto3-fis, creating immediate clarity issues about what this specific package actually does.",
-      "top_issue": "Package identity mismatch - the README describes 'mypy-boto3-builder' (a generator tool) but the package is 'mypy-boto3-fis' (likely type stubs for AWS FIS service), causing fundamental confusion about the package's purpose"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-fis package, providing minimal actionable information for users of this particular service stub.",
+      "top_issue": "This README describes the parent builder project, not the mypy-boto3-fis package itself \u2014 there are no FIS-specific examples, API coverage details, or usage instructions for the AWS Fault Injection Simulator service."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type definition accuracy issues (wrong method signatures, overly broad type hints)",
-        "Packaging and distribution problems (duplicate .py/.pyi files, missing extras metadata)",
-        "Version mismatch between main and submodule packages",
-        "Documentation and tooling issues (outdated CLI instructions)",
-        "Confusion between multiple similar packages (types-boto3 vs boto3-stubs)"
+        "Build system and distribution issues (setuptools, wheel determinism, pyproject.toml migration)",
+        "Type stub accuracy problems (wrong type definitions, missing extras metadata)",
+        "Package naming and organization confusion (types-boto3 vs boto3-stubs duality)",
+        "Documentation and setup instructions not working",
+        "Duplicate stub file shipping (.pyi and .py files)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being closed and marked as released",
+        "Maintainers provide feedback and engagement"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows signs of technical debt and maintenance strain with legitimate type stub accuracy issues, but maintainers are actively closing issues and releasing fixes, indicating the project is still being actively managed despite user frustration."
+      "summary": "The project shows moderate health with active maintenance and issue resolution, but faces a growing backlog of type stub accuracy bugs and build system issues that impact developer experience."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity",
-        "Zero closed issues in past 6 months indicating no issue triage",
-        "No merged PRs in past 6 months showing no development activity",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release process is stalled"
+        "No commits, merged PRs, or closed issues in the past 6 months",
+        "16 open issues with no recent activity or triage",
+        "No active contributors in the past 6 months",
+        "Last release unknown - unclear if package is still being released",
+        "No pull request activity suggests no upstream contributions being accepted"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite recent commit metadata."
+      "positive_signals": [
+        "Last commit was relatively recent (2026-01-12, ~2 months ago)",
+        "No open PRs means no stalled contributions"
+      ],
+      "summary": "Package shows signs of abandonment with no maintenance activity for 6+ months despite recent historical commits; open issues are not being addressed."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:06:28.404575+00:00"
+    "llm_analyzed_at": "2026-03-15T13:49:05.412965+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

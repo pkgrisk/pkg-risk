@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) but the package name is mypy-boto3-fms, creating immediate user confusion about what this specific package actually does.",
-      "top_issue": "Critical mismatch: README describes 'mypy-boto3-builder' (a code generator) but package is 'mypy-boto3-fms' (likely pre-generated type stubs for AWS FMS service), causing complete confusion about package purpose and usage"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-fms service stub package, leaving users confused about what this particular package does and how to use it.",
+      "top_issue": "This README describes the mypy-boto3-builder meta-package rather than the specific mypy-boto3-fms package, providing no FMS-specific usage examples, API coverage, or configuration guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Incorrect type definitions causing runtime errors",
-        "Duplicate .pyi and .py files causing IDE confusion",
-        "Missing extras/metadata in packages",
-        "Documentation and tooling issues"
+        "Type definition accuracy issues (wrong types, missing extras)",
+        "Stub file duplication (.pyi and .py files causing editor conflicts)",
+        "Version/dependency resolution problems (types not matching boto3 versions)",
+        "Documentation inaccuracies (generate locally instructions don't work)",
+        "Package naming confusion (types-boto3 vs boto3-stubs clarity)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues do get resolved and marked as released",
+        "Multiple closed issues show active maintenance"
+      ],
       "abandonment_signals": false,
-      "summary": "The community shows moderate frustration with type accuracy and packaging issues, but maintainers are engaged with closed issues indicating active maintenance despite some unresolved bugs."
+      "summary": "Project shows active maintenance with 4/10 issues closed, but 6 open bugs several labeled 'response needed' suggest maintainers are backlogged on community concerns."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite repository activity",
-        "15 open issues with no recent closures",
-        "No merged pull requests in past 6 months",
-        "Zero active contributors in past 6 months",
-        "No recent releases",
-        "Last commit over 3 days ago with no follow-up activity"
+        "Zero commits and contributors active in past 6 months despite 16 open issues",
+        "Zero closed issues in 6 months indicates unaddressed bug reports and feature requests",
+        "No merged PRs in 6 months suggests pull requests are not being reviewed or accepted",
+        "Unknown last release indicates possible versioning/release management issues",
+        "Last commit over 2 months ago with no follow-up activity"
       ],
       "positive_signals": [
-        "Repository still exists and has not been deleted"
+        "Most recent commit exists (2026-01-12), indicating not completely abandoned",
+        "No open pull requests suggests maintainer has not accumulated a review backlog"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for at least 6 months, accumulating unaddressed issues without any contributor engagement or releases."
+      "summary": "Package appears stale with minimal maintenance activity\u201416 unresolved issues, no recent commits or PRs merged, and no active contributors over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:45:51.637857+00:00"
+    "llm_analyzed_at": "2026-03-15T14:30:53.403413+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

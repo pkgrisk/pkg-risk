@@ -191,48 +191,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 4,
-      "quick_start": 2,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "This README is for the mypy-boto3-builder tool but appears in the mypy-boto3-workspaces-instances package, creating massive confusion about what the package actually does or how to use it.",
-      "top_issue": "Wrong README - this is a type stub package for AWS WorkSpaces Instances service, but the README describes the builder tool that generates it, leaving users with no idea how to actually use this package"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-workspaces-instances without targeted installation or usage guidance.",
+      "top_issue": "README describes the parent builder project, not this specific package \u2014 no examples, configuration, or troubleshooting for the workspaces-instances stubs themselves."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules (1.42 issue)",
-        "Packaging and distribution problems (setup.py vs pyproject.toml, duplicate .pyi/.py files)",
-        "Type stub accuracy issues (incorrect async definitions, overly broad types, wrong literal values)",
-        "Missing extras/metadata (types-aiobotocore extras not provided)",
-        "Documentation gaps (local generation instructions outdated)"
+        "Type stub accuracy issues (wrong async/await signatures, overly broad type definitions, incorrect literal values)",
+        "Package versioning and metadata issues (missing extras, version mismatches between submodules)",
+        "Documentation and build system outdated (setup.py legacy, outdated uvx examples)",
+        "Duplicate stub files shipped (.pyi and .py causing IDE conflicts)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Willingness to modernize (pyproject.toml migration completed and released)",
+        "Issues being tracked and some marked as released"
+      ],
       "abandonment_signals": false,
-      "summary": "The project shows moderate responsiveness to bugs with some issues marked as released/closed, but faces recurring structural problems with type accuracy, packaging standards, and version coordination across ~400 subpackages that create user frustration."
+      "summary": "Moderate health with active bug reporting and some fixes delivered (pyproject.toml released), but persistent type accuracy issues and documentation gaps remain with multiple issues awaiting maintainer response."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
+        "No commits in past 6 months despite last commit being 2 months ago",
+        "16 open issues with zero closed in past 6 months",
         "No active contributors in past 6 months",
-        "15 open issues remain unaddressed",
-        "Unknown last release date"
+        "No merged PRs or open PRs indicating no development activity",
+        "Unknown release information suggests irregular or halted releases"
       ],
       "positive_signals": [],
-      "summary": "Package shows no maintenance activity for at least 6 months with accumulating unresolved issues and no contributor engagement."
+      "summary": "This package shows no maintenance activity over the past 6 months with a growing backlog of unresolved issues and no active contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T15:28:53.438735+00:00"
+    "llm_analyzed_at": "2026-03-15T18:14:24.053646+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

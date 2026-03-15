@@ -191,48 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool rather than the actual package (mypy-boto3-managedblockchain-query), making it nearly impossible for users to understand what this specific package does or how to use it.",
-      "top_issue": "Wrong README content - this appears to be the README for mypy-boto3-builder (the generator tool) rather than for the specific generated package mypy-boto3-managedblockchain-query, leaving users without any information about the actual package they're looking at"
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific service stub package, leaving users of mypy-boto3-managedblockchain-query without relevant installation or usage guidance.",
+      "top_issue": "The README is for the upstream builder project, not this specific service stub package \u2014 a new user gets no examples, configuration docs, or troubleshooting for ManagedBlockchain Query specifically."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Packaging/distribution issues (setup.py vs pyproject.toml, duplicate .pyi/.py files)",
-        "Type stub accuracy issues (incorrect method signatures, overly broad types)",
+        "Type stub accuracy inconsistencies (aioboto3, ToolUseBlockTypeDef, FileobjTypeDef)",
+        "Duplicate .pyi and .py files shipped in packages",
+        "Package version resolution issues for submodules",
+        "Missing extras metadata declaration",
+        "Documentation/instructions outdated or incorrect",
         "Package naming confusion (types-boto3 vs boto3-stubs)",
-        "Documentation gaps (incomplete generation instructions)"
+        "Build reproducibility for deterministic wheels"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Some issues are resolved and released (pyproject.toml migration completed)",
+        "Clear, well-documented bug reports with reproduction steps"
+      ],
       "abandonment_signals": false,
-      "summary": "Project is actively maintained with some community engagement, but struggles with type accuracy, packaging complexity, and documentation clarity across 400+ generated packages."
+      "summary": "Moderately maintained project with responsive fixes for some issues, but showing signs of capacity constraints with several type-definition bugs and documentation issues awaiting maintainer response (multiple open issues 6+ months old, some marked 'response needed')."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being 14 days ago",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicates no active maintenance",
-        "No merged PRs in past 6 months shows no development activity",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests no recent version updates"
+        "No commits in the past 6 months",
+        "16 open issues with zero closed in 6 months",
+        "No active contributors in the past 6 months",
+        "Zero merged pull requests in 6 months",
+        "Unknown release status"
       ],
-      "positive_signals": [],
-      "summary": "This package is abandoned with no maintenance activity or contributors over the past 6 months despite a recent commit timestamp."
+      "positive_signals": [
+        "Last commit was within 2 months (not abandoned years ago)",
+        "Package exists on PyPI indicating it was released at some point"
+      ],
+      "summary": "This package shows no maintenance activity over the past 6 months with 16 unaddressed issues and no active contributors, indicating it is stale and should not be relied upon for active support."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:22:53.071938+00:00"
+    "llm_analyzed_at": "2026-03-15T12:34:24.383776+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

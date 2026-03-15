@@ -176,51 +176,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 9,
       "quick_start": 7,
       "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "configuration": 8,
+      "troubleshooting": 1,
       "overall": 7,
-      "summary": "Well-structured README with good examples and clear installation, but lacks troubleshooting guidance and has some incomplete parameter documentation.",
-      "top_issue": "No troubleshooting section and the `loop` parameter description is copy-pasted from `eviction_weight` making it unclear what it does"
+      "summary": "Well-structured README with clear installation, thorough API examples, and good configuration docs, but lacks any troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like pool exhaustion, timeout behavior, or thread/coroutine misuse are not addressed."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Core functionality bugs in pooled_object.py (useless properties, public attributes causing data corruption risks)",
-        "Borrow method creating instances repeatedly instead of reusing pooled objects",
-        "Lack of async support despite users requesting it",
-        "Missing documentation/clarity on reset vs replace behavior",
-        "Instance creation doesn't support constructor arguments",
-        "MacOS wheel distribution not available on PyPI"
+        "Missing macOS wheel distribution for pip/uv installation",
+        "Design flaws in pooled_object.py (public properties, useless class properties)",
+        "No async/await support for async frameworks",
+        "Constructor arguments not supported when creating pooled instances",
+        "Socket errors and recursion depth issues with borrow method",
+        "Instance creation in every request instead of reusing pooled objects"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Core concept is valued by users (multiple issues show active usage attempts)"
+      ],
       "abandonment_signals": true,
-      "summary": "The pondpond library shows signs of poor maintenance with multiple unresolved critical bugs (recursive instance creation, public attribute exposure), feature gaps (async support, parameterized initialization), and no apparent maintainer engagement despite user frustration dating back to 2023."
+      "summary": "Mixed community health: critical bugs (e.g., pooled_object.py design flaws) and feature requests remain unresolved since mid-2024, though the maintainer has addressed some issues, indicating slow rather than abandoned maintenance."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in the past 6 months despite last commit being recent (2025-12-23)",
-        "No merged PRs in the past 6 months",
-        "No closed issues in the past 6 months",
+        "Zero commits in the past 6 months",
         "Zero active contributors in the past 6 months",
-        "4 open issues without resolution activity",
-        "No releases documented"
+        "Four open issues with no recent attention",
+        "Unknown release history",
+        "No closed issues or merged PRs in the past 6 months"
       ],
       "positive_signals": [
-        "Recent commit activity exists (within last month)"
+        "Last commit is relatively recent (Dec 23, 2025)",
+        "No open pull requests (clean state)"
       ],
-      "summary": "Package appears abandoned with a single recent commit but complete lack of ongoing maintenance activity, issue resolution, or contributor engagement over the past 6 months."
+      "summary": "Package has stalled with no maintenance activity in the past 6 months despite having unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T07:07:25.121933+00:00"
+    "llm_analyzed_at": "2026-03-15T09:15:32.520464+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

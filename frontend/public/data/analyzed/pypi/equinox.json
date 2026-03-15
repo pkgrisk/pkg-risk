@@ -178,50 +178,52 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 5,
-      "overall": 8,
-      "summary": "Excellent clarity and quick start with a comprehensive example, but lacks configuration details and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section for common errors (e.g., version conflicts, JAX installation issues, or runtime errors) and minimal configuration documentation beyond basic installation"
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 6,
+      "summary": "Excellent introduction and quick start, but relies heavily on external docs for anything beyond basic usage, with no troubleshooting or configuration guidance.",
+      "top_issue": "No troubleshooting section and no configuration documentation; users hitting issues must navigate to external docs with no in-README guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "GPU/XLA compatibility issues",
-        "JAX deprecation warnings causing test failures",
-        "API limitations (PReLU key argument, frozen parameters flexibility)",
-        "Memory/stability issues (corrupted size errors)"
+        "Performance regressions under vmap + grad (unnecessary permutes, 45% slowdown in LayerNorm)",
+        "Breaking changes in recent versions (0.13.3) affecting static fields",
+        "Documentation inconsistencies (formatting, RoPE placement)",
+        "JAX compatibility issues (0.9.0)"
       ],
       "praise_themes": [
-        "Library quality and design",
-        "Active feature development",
-        "Responsive to community requests"
+        "Well-researched, well-documented issues with benchmarks and reproduction cases",
+        "Professional, constructive tone with technical depth",
+        "Users willing to suggest solutions (x @ weight.T alternative)"
       ],
       "abandonment_signals": false,
-      "summary": "Equinox has healthy community engagement with active maintainers addressing issues promptly, though users face recurring JAX ecosystem compatibility challenges and some API friction points that are being iteratively resolved."
+      "summary": "Healthy community with engaged technical discussion, but performance regressions and compatibility issues in the backlog suggest the maintainer should prioritize the open performance/compatibility problems."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2025-12-22)",
-        "238 open issues with no recent activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests stale release process"
+        "238 open issues with zero closed in past 6 months indicates accumulated backlog",
+        "Zero commits in past 6 months from active contributors despite recent push",
+        "No merged PRs in 6 months suggests no active development or review",
+        "Last release unknown\u2014unclear if package has recent stable versions",
+        "Zero active contributors in past 6 months indicates no active maintenance"
       ],
-      "positive_signals": [],
-      "summary": "Equinox appears abandoned with no maintenance activity despite recent commit timestamp, indicating either a data inconsistency or repository in complete stagnation."
+      "positive_signals": [
+        "Single recent commit 6 days ago shows some sign of life",
+        "Zero open PRs prevents accumulation of unreviewed contributions"
+      ],
+      "summary": "Equinox appears stale with massive accumulated issues (238) and zero maintenance activity over 6 months, though a recent automated or sporadic commit prevents full abandonment classification."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:53:14.345709+00:00"
+    "llm_analyzed_at": "2026-03-15T14:39:09.461375+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -168,52 +168,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
+      "clarity": 7,
       "installation": 8,
-      "quick_start": 4,
+      "quick_start": 5,
       "examples": 3,
-      "configuration": 5,
-      "troubleshooting": 2,
+      "configuration": 4,
+      "troubleshooting": 3,
       "overall": 5,
-      "summary": "Extremely detailed technical explanation of Windows Unicode console issues, but lacks practical quick-start examples and the usage section appears truncated mid-sentence.",
-      "top_issue": "The Usage section is incomplete (cuts off mid-sentence) and lacks concrete code examples showing before/after scenarios or common use cases, making it difficult for users to quickly implement despite thorough technical background."
+      "summary": "The README is technically thorough but reads as an implementation deep-dive rather than user-facing documentation, burying the simple usage pattern in verbose internals.",
+      "top_issue": "No code examples \u2014 the basic `win_unicode_console.enable()` usage is mentioned in prose but never shown in a code block, making it harder to quickly adopt."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Crashes and system errors (WinError, interpreter crashes)",
-        "Incompatibility with Python versions (3.5, 3.6 broken)",
-        "Breaks other tools and libraries (IDLE, livestreamer, nose)",
-        "EOFError with certain Unicode input",
-        "Unexpected behavior when used as sitecustomize patch",
-        "Poor error handling and warnings instead of graceful failures"
+        "Python version incompatibility (3.5, 3.6 crashes)",
+        "IDLE and IDE incompatibility",
+        "Breaking other packages' functionality (missing .buffer attribute)",
+        "Segfaults and unhandled crashes",
+        "EOFError and handle errors with specific Unicode input",
+        "Encoding detection and warning issues"
       ],
       "praise_themes": [
-        "Appreciation for Python 2 support",
-        "Recognition of library's purpose as a Windows Unicode patch"
+        "Appreciated for attempting Python 2/3 Unicode support"
       ],
       "abandonment_signals": true,
-      "summary": "Win-unicode-console shows signs of abandonment with multiple critical bugs across Python versions, poor maintainer responsiveness to user issues, and frequent reports of crashes and incompatibilities that remain unresolved for years."
+      "summary": "This package shows severe abandonment with critical, unresolved bugs from 2015-2018 still open (Python crashes, IDLE failure, breaking downstream packages), suggesting it is no longer actively maintained."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in over 4 years (last commit January 2021)",
-        "7 open issues with no resolution activity",
-        "No closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "No releases recorded"
+        "No commits for over 5 years (since 2021-01-04)",
+        "Zero activity in past 6 months (no commits, PRs, or issue closures)",
+        "7 open issues with no recent resolution or maintainer engagement",
+        "No active contributors",
+        "Unknown last release date indicates very stale release cycle"
       ],
       "positive_signals": [],
-      "summary": "The package is abandoned with no maintenance activity since early 2021 and unresolved issues remaining open."
+      "summary": "Package is abandoned with no maintenance activity for over 5 years and unresolved issues accumulating."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-13T18:30:25.966776+00:00"
+    "llm_analyzed_at": "2026-03-14T23:17:56.716870+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,52 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 7,
       "installation": 6,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's type stubs for AWS ImageBuilder service, with minimal concrete usage examples.",
-      "top_issue": "Major package identity confusion - the README discusses 'mypy-boto3-builder' (a code generator tool) but the package is 'mypy-boto3-imagebuilder' (which should be type stubs for a specific AWS service), making it unclear what this package actually does or how to use it"
+      "overall": 4,
+      "summary": "The README is polished and well-structured for the builder tool itself, but provides almost no documentation for the specific sub-package (mypy-boto3-imagebuilder) a user actually installed.",
+      "top_issue": "The README is for the parent builder project, not the specific imagebuilder stubs package \u2014 a user installing mypy-boto3-imagebuilder gets no examples, API reference, or usage guidance for the EC2 Image Builder service specifically."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tool confusion",
-        "Incorrect type definitions in stubs (async/await, Literal values, overly broad types)",
-        "Missing extras in package metadata",
-        "Outdated setup.py instead of pyproject.toml",
-        "Documentation and tooling issues (uvx commands don't work)"
+        "Type annotation issues (stubs shipped as both .pyi and .py files, incorrect type definitions)",
+        "Dependency/version resolution problems (missing submodule versions)",
+        "Documentation and usability gaps (broken local generation instructions)",
+        "Missing package metadata (extras not properly defined)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Responsiveness to modernization requests (pyproject.toml migration completed)",
+        "Active bug fixing and release cycles"
+      ],
       "abandonment_signals": false,
-      "summary": "The mypy-boto3-imagebuilder project shows moderate maintenance with several active bugs related to type accuracy and packaging issues, though some tickets are being closed and maintainers respond to reports."
+      "summary": "The project is actively maintained with resolved issues and recent releases, but users are frustrated by unresolved type system bugs and documentation gaps that affect practical usage."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No closed issues in past 6 months indicating no active issue management",
-        "No merged PRs in past 6 months showing lack of development activity",
-        "Zero active contributors in past 6 months",
-        "15 open issues accumulating without resolution",
-        "Unknown last release date suggests release history may be unavailable or stalled"
+        "No commits in past 6 months despite 16 open issues",
+        "No closed issues in past 6 months indicating zero issue resolution",
+        "No merged PRs in past 6 months showing no active development",
+        "No active contributors in past 6 months",
+        "Unknown last release - unclear what version is recommended",
+        "Growing backlog of unresolved issues with no triage activity"
       ],
       "positive_signals": [
-        "Recent commit exists from January 2026",
-        "No open PRs suggests no pending work in progress"
+        "One commit exists from 2026-01-12 suggesting minimal recent touch"
       ],
-      "summary": "Package appears abandoned with no maintenance activity (commits, issue resolution, or PR merges) over the past 6 months despite a recent commit timestamp."
+      "summary": "Package is effectively unmaintained with zero activity for 6+ months and 16 unresolved issues accumulating."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:14:41.104253+00:00"
+    "llm_analyzed_at": "2026-03-15T10:36:29.306970+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

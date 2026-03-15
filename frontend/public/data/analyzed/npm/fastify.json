@@ -2,7 +2,7 @@
   "ecosystem": "npm",
   "name": "fastify",
   "description": "Fast and low overhead web framework, for Node.js",
-  "version": "5.6.2",
+  "version": "5.8.2",
   "homepage": "https://fastify.dev/",
   "repository": {
     "platform": "github",
@@ -10,11 +10,11 @@
     "repo": "fastify",
     "subpath": null
   },
-  "install_count_30d": 11755875,
+  "install_count_30d": 22407353,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 89.8,
+    "overall": 89.0,
     "grade": "B",
     "percentile": null,
     "risk_tier": "approved",
@@ -23,11 +23,12 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 75.0,
+      "score": 85.0,
       "weight": 30,
       "key_factors": [
         "Code review practices",
         "Proper token permissions",
+        "SAST enabled (Scorecard)",
         "CII Best Practices badge",
         "Weak branch protection"
       ]
@@ -50,7 +51,7 @@
       ]
     },
     "documentation": {
-      "score": 77.5,
+      "score": 40.0,
       "weight": 10,
       "key_factors": []
     },
@@ -67,15 +68,15 @@
       "owner": "fastify",
       "name": "fastify",
       "description": "Fast and low overhead web framework, for Node.js",
-      "stars": 35375,
-      "forks": 2547,
+      "stars": 35820,
+      "forks": 2616,
       "open_issues": 109,
-      "watchers": 35375,
+      "watchers": 35820,
       "created_at": "2016-09-28T19:10:14Z",
-      "updated_at": "2026-01-09T15:09:18Z",
-      "pushed_at": "2026-01-06T22:52:51Z",
+      "updated_at": "2026-03-14T16:33:18Z",
+      "pushed_at": "2026-03-14T17:01:37Z",
       "default_branch": "main",
-      "license": "NOASSERTION",
+      "license": "MIT",
       "language": "JavaScript",
       "topics": [
         "hacktoberfest",
@@ -90,47 +91,47 @@
       "is_deprecated": false
     },
     "contributors": {
-      "total_contributors": 435,
-      "active_contributors_6mo": 47,
-      "top_contributor_pct": 18.7,
+      "total_contributors": 436,
+      "active_contributors_6mo": 55,
+      "top_contributor_pct": 18.4,
       "contributors_over_5pct": 2,
-      "contributors_prev_6mo": 40,
-      "contributor_trend": "stable",
-      "first_time_contributors_6mo": 36,
-      "contributor_entropy": 5.55
+      "contributors_prev_6mo": 34,
+      "contributor_trend": "growing",
+      "first_time_contributors_6mo": 42,
+      "contributor_entropy": 5.54
     },
     "commits": {
-      "last_commit_date": "2026-01-06T16:26:51Z",
-      "commits_last_6mo": 103,
+      "last_commit_date": "2026-03-11T10:57:14Z",
+      "commits_last_6mo": 154,
       "commits_last_year": 300
     },
     "issues": {
-      "open_issues": 75,
-      "closed_issues_6mo": 43,
-      "avg_response_time_hours": 6.0,
-      "avg_close_time_hours": 221.9,
-      "good_first_issue_count": 9,
+      "open_issues": 73,
+      "closed_issues_6mo": 50,
+      "avg_response_time_hours": 19.5,
+      "avg_close_time_hours": 56.8,
+      "good_first_issue_count": 6,
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 34,
-      "merged_prs_6mo": 97,
-      "closed_prs_6mo": 127,
-      "stale_prs": 21,
+      "open_prs": 36,
+      "merged_prs_6mo": 137,
+      "closed_prs_6mo": 181,
+      "stale_prs": 8,
       "avg_merge_time_hours": null
     },
     "releases": {
-      "total_releases": 301,
-      "releases_last_year": 11,
-      "last_release_date": "2025-11-09T08:47:59Z",
-      "latest_version": "v5.6.2",
+      "total_releases": 309,
+      "releases_last_year": 19,
+      "last_release_date": "2026-03-07T09:42:46Z",
+      "latest_version": "v5.8.2",
       "has_signed_releases": false,
       "prerelease_ratio": 0.06
     },
     "security": {
       "has_security_md": true,
       "has_security_policy": false,
-      "signed_commits_pct": 98.0,
+      "signed_commits_pct": 100.0,
       "has_dependabot": true,
       "has_codeql": false,
       "has_security_ci": true,
@@ -142,11 +143,28 @@
       "has_sigstore": false,
       "has_sbom": false,
       "has_reproducible_builds": false,
-      "known_cves": 5,
+      "known_cves": 8,
       "vulnerable_deps": 0,
       "cve_history": {
-        "total_cves": 5,
+        "total_cves": 8,
         "cves": [
+          {
+            "id": "GHSA-jx2c-rxcm-jvmq",
+            "summary": "Fastify's Content-Type header tab character allows body validation bypass",
+            "severity": "HIGH",
+            "cvss_score": null,
+            "published_date": "2026-02-02T22:23:29Z",
+            "fixed_version": "5.7.2",
+            "patch_release_date": "2026-01-26T11:15:54Z",
+            "days_to_patch": 0,
+            "references": [
+              "https://github.com/fastify/fastify/security/advisories/GHSA-jx2c-rxcm-jvmq",
+              "https://nvd.nist.gov/vuln/detail/CVE-2026-25223",
+              "https://github.com/fastify/fastify/commit/32d7b6add39ddf082d92579a58bea7018c5ac821",
+              "https://hackerone.com/reports/3464114",
+              "https://fastify.dev/docs/latest/Reference/Validation-and-Serialization"
+            ]
+          },
           {
             "id": "GHSA-mg2h-6x62-wpwc",
             "summary": "Fastify vulnerable to invalid content-type parsing, which could lead to validation bypass",
@@ -199,6 +217,40 @@
             ]
           },
           {
+            "id": "GHSA-mrq3-vjjr-p77c",
+            "summary": "Fastify Vulnerable to DoS via Unbounded Memory Allocation in sendWebStream",
+            "severity": "LOW",
+            "cvss_score": null,
+            "published_date": "2026-02-02T22:25:05Z",
+            "fixed_version": "5.7.3",
+            "patch_release_date": "2026-02-02T17:57:52Z",
+            "days_to_patch": 0,
+            "references": [
+              "https://github.com/fastify/fastify/security/advisories/GHSA-mrq3-vjjr-p77c",
+              "https://nvd.nist.gov/vuln/detail/CVE-2026-25224",
+              "https://github.com/fastify/fastify/commit/eb11156396f6a5fedaceed0140aed2b7f026be37",
+              "https://hackerone.com/reports/3524779",
+              "https://github.com/fastify/fastify"
+            ]
+          },
+          {
+            "id": "GHSA-573f-x89g-hqp9",
+            "summary": "Fastify's Missing End Anchor in \"subtypeNameReg\" Allows Malformed Content-Types to Pass Validation",
+            "severity": "MODERATE",
+            "cvss_score": null,
+            "published_date": "2026-03-05T21:29:54Z",
+            "fixed_version": "5.8.1",
+            "patch_release_date": "2026-03-05T10:10:57Z",
+            "days_to_patch": 0,
+            "references": [
+              "https://github.com/fastify/fastify/security/advisories/GHSA-573f-x89g-hqp9",
+              "https://nvd.nist.gov/vuln/detail/CVE-2026-3419",
+              "https://github.com/fastify/fastify/commit/67f6c9b32cb3623d3c9470cc17ed830dd2f083d7",
+              "https://cna.openjsf.org/security-advisories.html",
+              "https://github.com/advisories/GHSA-573f-x89g-hqp9"
+            ]
+          },
+          {
             "id": "GHSA-3fjj-p79j-c9hh",
             "summary": "Fastify: Incorrect Content-Type parsing can lead to CSRF attack ",
             "severity": "MODERATE",
@@ -237,7 +289,7 @@
     },
     "files": {
       "has_readme": true,
-      "readme_size_bytes": 16372,
+      "readme_size_bytes": 16457,
       "has_license": true,
       "has_changelog": false,
       "has_contributing": true,
@@ -254,8 +306,8 @@
     },
     "ci": {
       "has_github_actions": true,
-      "workflow_count": 23,
-      "recent_runs_pass_rate": 44.0,
+      "workflow_count": 24,
+      "recent_runs_pass_rate": 50.0,
       "has_tests_workflow": true,
       "has_lint_workflow": true,
       "has_security_workflow": true,
@@ -264,83 +316,45 @@
     }
   },
   "llm_assessments": {
-    "readme": {
-      "clarity": 10,
-      "installation": 10,
-      "quick_start": 10,
-      "examples": 9,
-      "configuration": 8,
-      "troubleshooting": 7,
-      "overall": 9,
-      "summary": "Exceptional documentation with clear purpose, installation, and examples, though troubleshooting could be more prominent in the main README.",
-      "top_issue": "Troubleshooting guidance is minimal in the README itself, relying on users to navigate to separate documentation files for common issues."
-    },
-    "security": {
-      "overall_score": 7,
-      "injection_risks": [
-        {
-          "file": "integration/server.js",
-          "line": 13,
-          "severity": "medium",
-          "description": "Potential template injection vulnerability in the /post/:id endpoint, where user input is directly concatenated into the response without proper sanitization."
-        },
-        {
-          "file": "integration/server.js",
-          "line": 19,
-          "severity": "medium",
-          "description": "Potential template injection vulnerability in the /put/:id endpoint, where user input is directly concatenated into the response without proper sanitization."
-        },
-        {
-          "file": "integration/server.js",
-          "line": 25,
-          "severity": "medium",
-          "description": "Potential template injection vulnerability in the /delete/:id endpoint, where user input is directly concatenated into the response without proper sanitization."
-        }
-      ],
-      "input_validation_score": 6,
-      "secrets_found": [],
-      "critical_findings": [
-        "Potential template injection vulnerabilities in multiple endpoints"
-      ],
-      "summary": "The code has some security concerns, including potential template injection vulnerabilities and lack of input validation, but no critical secrets exposure or dangerous defaults were found."
-    },
+    "readme": null,
+    "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 2,
-      "maintainer_responsiveness": "unknown",
-      "common_complaints": [],
-      "praise_themes": [],
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "moderate",
+      "common_complaints": [
+        "Incompatibility between passport \"authenticate\" method return type and \"preValidation\" type"
+      ],
+      "praise_themes": [
+        "Categorize Fastify Plugins"
+      ],
       "abandonment_signals": false,
-      "summary": "Limited data from single issue: a constructive technical discussion about dependency maintenance rather than a complaint, suggesting healthy proactive community engagement around tooling decisions."
+      "summary": "The community health of the fastify project shows a mix of active engagement with feature requests like categorizing plugins and some reported issues that need attention, indicating moderate maintainer responsiveness."
     },
     "communication": {
       "helpfulness": 7,
-      "clarity": 8,
-      "patience": 9,
-      "technical_depth": 8,
-      "welcomingness": 6,
-      "communication_style": "adequate",
+      "clarity": 6,
+      "patience": 8,
+      "technical_depth": 7,
+      "welcomingness": 9,
+      "communication_style": "good",
       "red_flags": [
-        "Some responses are brief and may not fully address the issue",
-        "There is a mix of technical depth and surface-level explanations"
+        "Some responses are brief and could be more detailed for complex issues",
+        "A few responses seem to assume a high level of prior knowledge"
       ],
-      "summary": "The maintainer's responses are generally helpful but could benefit from more detailed explanations and clearer communication, especially for new contributors."
+      "summary": "The maintainer responses are generally helpful, clear, and welcoming. They show patience with repeated or basic questions and provide technical depth where necessary, though some could benefit from additional detail."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "actively-maintained",
       "confidence": 9,
-      "concerns": [
-        "Zero commits in the past 6 months despite last commit being recent",
-        "No merged PRs in the past 6 months indicating no active development",
-        "No active contributors in the past 6 months",
-        "108 open issues with no closed issues in 6 months suggests unaddressed backlog",
-        "Unknown last release date indicates unclear release cycle",
-        "Data anomaly: recent last commit (2026-01-13) but zero activity metrics suggests repository may be archived or data collection issues"
-      ],
+      "concerns": [],
       "positive_signals": [
-        "0 open PRs suggests no pending work in review"
+        "Frequent commits (154 in the last 6 months)",
+        "Regular releases",
+        "High number of merged PRs (137 in the last 6 months)",
+        "Active contributors (55 in the last 6 months)"
       ],
-      "summary": "Fastify shows clear signs of abandonment with zero commits, contributions, or PR merges over 6 months despite a recent timestamp, combined with a growing unresolved issue backlog."
+      "summary": "The package fastify is actively maintained with frequent commits, regular releases, and a high volume of contributions."
     },
     "changelog": null,
     "governance": {
@@ -348,12 +362,12 @@
       "decision_process_documented": true,
       "contributor_ladder_exists": true,
       "indicates_multiple_maintainers": true,
-      "bus_factor_risk": "low",
-      "summary": "The project has a clear contributor path and multiple maintainers, but lacks an explicit succession plan."
+      "bus_factor_risk": "medium",
+      "summary": "The governance documentation for the Fastify project outlines a clear decision-making process and path from contributor to maintainer, with multiple maintainers indicated. However, there is no explicit succession plan in place."
     },
-    "llm_provider": "claude",
-    "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T05:00:51.452592+00:00"
+    "llm_provider": null,
+    "llm_model": null,
+    "llm_analyzed_at": null
   },
   "supply_chain": {
     "lifecycle_scripts": {
@@ -375,9 +389,9 @@
       "installs_runtime": false
     },
     "tarball": {
-      "tarball_url": "https://registry.npmjs.org/fastify/-/fastify-5.6.2.tgz",
-      "tarball_size_bytes": 472862,
-      "file_count": 350,
+      "tarball_url": "https://registry.npmjs.org/fastify/-/fastify-5.8.2.tgz",
+      "tarball_size_bytes": 490679,
+      "file_count": 354,
       "files": [
         {
           "path": ".prettierignore",
@@ -387,19 +401,13 @@
         },
         {
           "path": "LICENSE",
-          "size_bytes": 1185,
+          "size_bytes": 1123,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/logger/tap-parallel-not-ok",
           "size_bytes": 0,
-          "is_executable": false,
-          "is_binary": false
-        },
-        {
-          "path": "test/decorator-namespace.test._js_",
-          "size_bytes": 797,
           "is_executable": false,
           "is_binary": false
         },
@@ -417,7 +425,7 @@
         },
         {
           "path": "test/404s.test.js",
-          "size_bytes": 50880,
+          "size_bytes": 53042,
           "is_executable": false,
           "is_binary": false
         },
@@ -507,7 +515,7 @@
         },
         {
           "path": "build/build-validation.js",
-          "size_bytes": 5761,
+          "size_bytes": 5879,
           "is_executable": false,
           "is_binary": false
         },
@@ -573,7 +581,7 @@
         },
         {
           "path": "lib/config-validator.js",
-          "size_bytes": 34331,
+          "size_bytes": 34251,
           "is_executable": false,
           "is_binary": false
         },
@@ -603,13 +611,13 @@
         },
         {
           "path": "test/content-parser.test.js",
-          "size_bytes": 21573,
+          "size_bytes": 22081,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "lib/content-type-parser.js",
-          "size_bytes": 11772,
+          "size_bytes": 12004,
           "is_executable": false,
           "is_binary": false
         },
@@ -620,8 +628,14 @@
           "is_binary": false
         },
         {
+          "path": "lib/content-type.js",
+          "size_bytes": 4948,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
           "path": "test/content-type.test.js",
-          "size_bytes": 1345,
+          "size_bytes": 5882,
           "is_executable": false,
           "is_binary": false
         },
@@ -633,7 +647,7 @@
         },
         {
           "path": "lib/context.js",
-          "size_bytes": 2465,
+          "size_bytes": 2573,
           "is_executable": false,
           "is_binary": false
         },
@@ -675,13 +689,13 @@
         },
         {
           "path": "test/custom-parser.0.test.js",
-          "size_bytes": 17515,
+          "size_bytes": 17525,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/custom-parser.1.test.js",
-          "size_bytes": 7343,
+          "size_bytes": 6493,
           "is_executable": false,
           "is_binary": false
         },
@@ -693,7 +707,7 @@
         },
         {
           "path": "test/custom-parser.3.test.js",
-          "size_bytes": 5616,
+          "size_bytes": 5620,
           "is_executable": false,
           "is_binary": false
         },
@@ -759,7 +773,7 @@
         },
         {
           "path": "lib/error-handler.js",
-          "size_bytes": 4979,
+          "size_bytes": 4862,
           "is_executable": false,
           "is_binary": false
         },
@@ -771,7 +785,7 @@
         },
         {
           "path": "lib/error-serializer.js",
-          "size_bytes": 3569,
+          "size_bytes": 3634,
           "is_executable": false,
           "is_binary": false
         },
@@ -782,20 +796,26 @@
           "is_binary": false
         },
         {
+          "path": "lib/error-status.js",
+          "size_bytes": 339,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
           "path": "test/diagnostics-channel/error-status.test.js",
-          "size_bytes": 935,
+          "size_bytes": 3827,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "lib/errors.js",
-          "size_bytes": 14678,
+          "size_bytes": 15014,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/internals/errors.test.js",
-          "size_bytes": 39965,
+          "size_bytes": 39961,
           "is_executable": false,
           "is_binary": false
         },
@@ -825,7 +845,7 @@
         },
         {
           "path": "fastify.js",
-          "size_bytes": 33035,
+          "size_bytes": 33446,
           "is_executable": false,
           "is_binary": false
         },
@@ -843,7 +863,7 @@
         },
         {
           "path": "lib/four-oh-four.js",
-          "size_bytes": 6267,
+          "size_bytes": 6422,
           "is_executable": false,
           "is_binary": false
         },
@@ -861,7 +881,7 @@
         },
         {
           "path": "lib/handle-request.js",
-          "size_bytes": 4495,
+          "size_bytes": 5119,
           "is_executable": false,
           "is_binary": false
         },
@@ -874,6 +894,12 @@
         {
           "path": "test/handler-context.test.js",
           "size_bytes": 1197,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "test/handler-timeout.test.js",
+          "size_bytes": 10869,
           "is_executable": false,
           "is_binary": false
         },
@@ -1029,7 +1055,7 @@
         },
         {
           "path": "test/internals/initial-config.test.js",
-          "size_bytes": 11492,
+          "size_bytes": 11540,
           "is_executable": false,
           "is_binary": false
         },
@@ -1053,7 +1079,7 @@
         },
         {
           "path": "test/issue-4959.test.js",
-          "size_bytes": 2308,
+          "size_bytes": 3274,
           "is_executable": false,
           "is_binary": false
         },
@@ -1065,7 +1091,7 @@
         },
         {
           "path": "test/listen.1.test.js",
-          "size_bytes": 3657,
+          "size_bytes": 3986,
           "is_executable": false,
           "is_binary": false
         },
@@ -1125,7 +1151,7 @@
         },
         {
           "path": "test/logger/logging.test.js",
-          "size_bytes": 12821,
+          "size_bytes": 13809,
           "is_executable": false,
           "is_binary": false
         },
@@ -1395,7 +1421,7 @@
         },
         {
           "path": "lib/reply.js",
-          "size_bytes": 26405,
+          "size_bytes": 28663,
           "is_executable": false,
           "is_binary": false
         },
@@ -1425,7 +1451,7 @@
         },
         {
           "path": "test/request-error.test.js",
-          "size_bytes": 14468,
+          "size_bytes": 15479,
           "is_executable": false,
           "is_binary": false
         },
@@ -1455,7 +1481,7 @@
         },
         {
           "path": "lib/request.js",
-          "size_bytes": 10002,
+          "size_bytes": 10419,
           "is_executable": false,
           "is_binary": false
         },
@@ -1551,13 +1577,13 @@
         },
         {
           "path": "lib/route.js",
-          "size_bytes": 20888,
+          "size_bytes": 22906,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/router-options.test.js",
-          "size_bytes": 21854,
+          "size_bytes": 27018,
           "is_executable": false,
           "is_binary": false
         },
@@ -1568,8 +1594,14 @@
           "is_binary": false
         },
         {
+          "path": "test/internals/schema-controller-perf.test.js",
+          "size_bytes": 1376,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
           "path": "lib/schema-controller.js",
-          "size_bytes": 5860,
+          "size_bytes": 5868,
           "is_executable": false,
           "is_binary": false
         },
@@ -1599,7 +1631,7 @@
         },
         {
           "path": "test/schema-validation.test.js",
-          "size_bytes": 35899,
+          "size_bytes": 36726,
           "is_executable": false,
           "is_binary": false
         },
@@ -1653,7 +1685,7 @@
         },
         {
           "path": "test/server.test.js",
-          "size_bytes": 9504,
+          "size_bytes": 9684,
           "is_executable": false,
           "is_binary": false
         },
@@ -1731,7 +1763,7 @@
         },
         {
           "path": "lib/symbols.js",
-          "size_bytes": 3233,
+          "size_bytes": 3442,
           "is_executable": false,
           "is_binary": false
         },
@@ -1761,7 +1793,7 @@
         },
         {
           "path": "build/sync-version.js",
-          "size_bytes": 494,
+          "size_bytes": 433,
           "is_executable": false,
           "is_binary": false
         },
@@ -1832,6 +1864,18 @@
           "is_binary": false
         },
         {
+          "path": "scripts/validate-ecosystem-links.js",
+          "size_bytes": 4464,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
+          "path": "test/scripts/validate-ecosystem-links.test.js",
+          "size_bytes": 9755,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
           "path": "test/validation-error-handling.test.js",
           "size_bytes": 21419,
           "is_executable": false,
@@ -1869,7 +1913,7 @@
         },
         {
           "path": "test/web-api.test.js",
-          "size_bytes": 8072,
+          "size_bytes": 15109,
           "is_executable": false,
           "is_binary": false
         },
@@ -1880,8 +1924,14 @@
           "is_binary": false
         },
         {
+          "path": "examples/benchmark/webstream.js",
+          "size_bytes": 561,
+          "is_executable": false,
+          "is_binary": false
+        },
+        {
           "path": "lib/wrap-thenable.js",
-          "size_bytes": 2225,
+          "size_bytes": 2399,
           "is_executable": false,
           "is_binary": false
         },
@@ -1899,7 +1949,7 @@
         },
         {
           "path": "package.json",
-          "size_bytes": 7167,
+          "size_bytes": 7125,
           "is_executable": false,
           "is_binary": false
         },
@@ -1916,18 +1966,6 @@
           "is_binary": false
         },
         {
-          "path": ".vscode/settings.json",
-          "size_bytes": 736,
-          "is_executable": false,
-          "is_binary": false
-        },
-        {
-          "path": "types/tsconfig.eslint.json",
-          "size_bytes": 216,
-          "is_executable": false,
-          "is_binary": false
-        },
-        {
           "path": "docs/Guides/Benchmarking.md",
           "size_bytes": 1742,
           "is_executable": false,
@@ -1935,7 +1973,7 @@
         },
         {
           "path": "docs/Reference/ContentTypeParser.md",
-          "size_bytes": 8483,
+          "size_bytes": 8894,
           "is_executable": false,
           "is_binary": false
         },
@@ -1947,7 +1985,7 @@
         },
         {
           "path": "docs/Reference/Decorators.md",
-          "size_bytes": 11850,
+          "size_bytes": 11844,
           "is_executable": false,
           "is_binary": false
         },
@@ -1959,13 +1997,13 @@
         },
         {
           "path": "docs/Guides/Detecting-When-Clients-Abort.md",
-          "size_bytes": 5314,
+          "size_bytes": 5316,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Guides/Ecosystem.md",
-          "size_bytes": 49070,
+          "size_bytes": 46174,
           "is_executable": false,
           "is_binary": false
         },
@@ -1977,13 +2015,13 @@
         },
         {
           "path": "docs/Reference/Errors.md",
-          "size_bytes": 31942,
+          "size_bytes": 32476,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Guides/Fluent-Schema.md",
-          "size_bytes": 3545,
+          "size_bytes": 3547,
           "is_executable": false,
           "is_binary": false
         },
@@ -2001,7 +2039,7 @@
         },
         {
           "path": "docs/Reference/Hooks.md",
-          "size_bytes": 27711,
+          "size_bytes": 29465,
           "is_executable": false,
           "is_binary": false
         },
@@ -2031,25 +2069,25 @@
         },
         {
           "path": "docs/Reference/Lifecycle.md",
-          "size_bytes": 3936,
+          "size_bytes": 4631,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Reference/Logging.md",
-          "size_bytes": 7038,
+          "size_bytes": 7208,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Reference/LTS.md",
-          "size_bytes": 4553,
+          "size_bytes": 4536,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Reference/Middleware.md",
-          "size_bytes": 2811,
+          "size_bytes": 2814,
           "is_executable": false,
           "is_binary": false
         },
@@ -2061,19 +2099,19 @@
         },
         {
           "path": "docs/Guides/Migration-Guide-V4.md",
-          "size_bytes": 7697,
+          "size_bytes": 7251,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Guides/Migration-Guide-V5.md",
-          "size_bytes": 26341,
+          "size_bytes": 26725,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Guides/Plugins-Guide.md",
-          "size_bytes": 17072,
+          "size_bytes": 17138,
           "is_executable": false,
           "is_binary": false
         },
@@ -2103,7 +2141,7 @@
         },
         {
           "path": "README.md",
-          "size_bytes": 16564,
+          "size_bytes": 16371,
           "is_executable": false,
           "is_binary": false
         },
@@ -2121,43 +2159,43 @@
         },
         {
           "path": "docs/Reference/Reply.md",
-          "size_bytes": 30589,
+          "size_bytes": 30858,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Reference/Request.md",
-          "size_bytes": 10016,
+          "size_bytes": 11077,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Reference/Routes.md",
-          "size_bytes": 25650,
+          "size_bytes": 25997,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "SECURITY.md",
-          "size_bytes": 7362,
+          "size_bytes": 9021,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Reference/Server.md",
-          "size_bytes": 70641,
+          "size_bytes": 76744,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Guides/Serverless.md",
-          "size_bytes": 16673,
+          "size_bytes": 17201,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "SPONSORS.md",
-          "size_bytes": 896,
+          "size_bytes": 927,
           "is_executable": false,
           "is_binary": false
         },
@@ -2175,19 +2213,19 @@
         },
         {
           "path": "docs/Reference/Type-Providers.md",
-          "size_bytes": 6468,
+          "size_bytes": 6436,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Reference/TypeScript.md",
-          "size_bytes": 63147,
+          "size_bytes": 63167,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "docs/Reference/Validation-and-Serialization.md",
-          "size_bytes": 26733,
+          "size_bytes": 29292,
           "is_executable": false,
           "is_binary": false
         },
@@ -2283,13 +2321,13 @@
         },
         {
           "path": "test/types/dummy-plugin.ts",
-          "size_bytes": 192,
+          "size_bytes": 202,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "types/errors.d.ts",
-          "size_bytes": 3254,
+          "size_bytes": 3335,
           "is_executable": false,
           "is_binary": false
         },
@@ -2301,13 +2339,13 @@
         },
         {
           "path": "fastify.d.ts",
-          "size_bytes": 14241,
+          "size_bytes": 14215,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/types/fastify.test-d.ts",
-          "size_bytes": 11351,
+          "size_bytes": 11931,
           "is_executable": false,
           "is_binary": false
         },
@@ -2331,25 +2369,25 @@
         },
         {
           "path": "types/instance.d.ts",
-          "size_bytes": 36808,
+          "size_bytes": 36845,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/types/instance.test-d.ts",
-          "size_bytes": 19817,
+          "size_bytes": 20138,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "types/logger.d.ts",
-          "size_bytes": 4073,
+          "size_bytes": 4077,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/types/logger.test-d.ts",
-          "size_bytes": 7406,
+          "size_bytes": 7348,
           "is_executable": false,
           "is_binary": false
         },
@@ -2373,43 +2411,43 @@
         },
         {
           "path": "test/types/register.test-d.ts",
-          "size_bytes": 10343,
+          "size_bytes": 10335,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "types/reply.d.ts",
-          "size_bytes": 6860,
+          "size_bytes": 6879,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/types/reply.test-d.ts",
-          "size_bytes": 9147,
+          "size_bytes": 11158,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "types/request.d.ts",
-          "size_bytes": 4450,
+          "size_bytes": 4508,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/types/request.test-d.ts",
-          "size_bytes": 6945,
+          "size_bytes": 6975,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "types/route.d.ts",
-          "size_bytes": 12220,
+          "size_bytes": 12659,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/types/route.test-d.ts",
-          "size_bytes": 21676,
+          "size_bytes": 21865,
           "is_executable": false,
           "is_binary": false
         },
@@ -2439,13 +2477,13 @@
         },
         {
           "path": "types/type-provider.d.ts",
-          "size_bytes": 7033,
+          "size_bytes": 7727,
           "is_executable": false,
           "is_binary": false
         },
         {
           "path": "test/types/type-provider.test-d.ts",
-          "size_bytes": 32943,
+          "size_bytes": 33005,
           "is_executable": false,
           "is_binary": false
         },
@@ -3234,21 +3272,61 @@
           "location": "examples/shared-schema.js",
           "matched_content": "'https://foo/common.json#reply'",
           "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "test/scripts/validate-ecosystem-links.test.js",
+          "matched_content": "'https://github.com/fastify/fastify-helmet'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "test/scripts/validate-ecosystem-links.test.js",
+          "matched_content": "'https://github.com/fastify/fastify-cors'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "test/scripts/validate-ecosystem-links.test.js",
+          "matched_content": "'https://github.com/owner/repo#readme'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "test/scripts/validate-ecosystem-links.test.js",
+          "matched_content": "'https://api.github.com'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "test/scripts/validate-ecosystem-links.test.js",
+          "matched_content": "'https://api.github.com'",
+          "description": "Hardcoded URL in string"
+        },
+        {
+          "pattern_type": "url_literal",
+          "severity": "low",
+          "location": "test/scripts/validate-ecosystem-links.test.js",
+          "matched_content": "'https://api.github.com'",
+          "description": "Hardcoded URL in string"
         }
       ],
       "risk_score": 0
     },
     "version_diff": {
-      "current_version": "5.6.2",
-      "previous_version": "5.6.1",
+      "current_version": "5.8.2",
+      "previous_version": "5.8.1",
       "comparison_available": true,
       "files_added": [],
       "files_removed": [],
       "files_modified": [],
-      "scripts_changed": true,
-      "scripts_added": [
-        "build:sync-version"
-      ],
+      "scripts_changed": false,
+      "scripts_added": [],
       "dependencies_added": [],
       "dependencies_removed": [],
       "size_change_bytes": 0,
@@ -3259,7 +3337,7 @@
       "version_jump_suspicious": false,
       "days_since_previous": null,
       "published_without_repo_commits": false,
-      "risk_score": 10,
+      "risk_score": 0,
       "risk_factors": []
     },
     "publishing": {
@@ -4033,6 +4111,48 @@
         "location": "examples/shared-schema.js",
         "matched_content": "'https://foo/common.json#reply'",
         "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "test/scripts/validate-ecosystem-links.test.js",
+        "matched_content": "'https://github.com/fastify/fastify-helmet'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "test/scripts/validate-ecosystem-links.test.js",
+        "matched_content": "'https://github.com/fastify/fastify-cors'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "test/scripts/validate-ecosystem-links.test.js",
+        "matched_content": "'https://github.com/owner/repo#readme'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "test/scripts/validate-ecosystem-links.test.js",
+        "matched_content": "'https://api.github.com'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "test/scripts/validate-ecosystem-links.test.js",
+        "matched_content": "'https://api.github.com'",
+        "description": "Hardcoded URL in string"
+      },
+      {
+        "pattern_type": "url_literal",
+        "severity": "low",
+        "location": "test/scripts/validate-ecosystem-links.test.js",
+        "matched_content": "'https://api.github.com'",
+        "description": "Hardcoded URL in string"
       }
     ],
     "critical_findings": [],
@@ -4040,24 +4160,23 @@
   },
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 8.7,
-      "score_date": "2025-12-29T00:00:00Z",
+      "overall_score": 8.8,
+      "score_date": "2026-03-02T00:00:00Z",
       "checks": {
         "Maintained": 10.0,
-        "Security-Policy": 10.0,
         "Code-Review": 9.0,
         "Dangerous-Workflow": 10.0,
+        "Security-Policy": 10.0,
         "Packaging": -1.0,
+        "CII-Best-Practices": 5.0,
         "Binary-Artifacts": 10.0,
+        "License": 10.0,
         "Token-Permissions": 10.0,
         "Pinned-Dependencies": 2.0,
-        "CII-Best-Practices": 5.0,
-        "Vulnerabilities": 10.0,
-        "License": 9.0,
         "Branch-Protection": -1.0,
-        "Fuzzing": 10.0,
         "Signed-Releases": -1.0,
-        "SAST": 4.0
+        "Fuzzing": 10.0,
+        "SAST": 6.0
       },
       "code_review_score": 9.0,
       "maintained_score": 10.0,
@@ -4065,14 +4184,14 @@
       "dangerous_workflow_score": 10.0,
       "token_permissions_score": 10.0,
       "fuzzing_enabled": true,
-      "sast_enabled": false,
+      "sast_enabled": true,
       "cii_badge": true
     },
     "project_metrics": {
-      "stars": 35365,
-      "forks": 2548,
-      "open_issues": 109,
-      "license": "non-standard",
+      "stars": 35798,
+      "forks": 2612,
+      "open_issues": 106,
+      "license": "MIT",
       "description": "Fast and low overhead web framework, for Node.js",
       "oss_fuzz_line_count": 0,
       "oss_fuzz_line_cover_count": 0
@@ -4086,7 +4205,7 @@
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-01-09T16:20:56.477471Z",
+    "fetched_at": "2026-03-14T18:28:38.881663Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -4095,33 +4214,32 @@
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",
-    "security_summary": "5 known CVEs, has SECURITY.md, Dependabot enabled",
-    "doc_summary": "The Fastify README provides a clear and concise introduction to the framework, with good installation and quick start instructions, but lacks comprehensive examples and troubleshooting guidance.",
+    "security_summary": "8 known CVEs, has SECURITY.md, Dependabot enabled",
+    "doc_summary": "",
     "concerns": [
-      "Docs: Insufficient troubleshooting documentation",
-      "Community: breaking change",
-      "Communication: Some responses are brief and may not fully address the issue",
-      "Communication: There is a mix of technical depth and surface-level explanations",
-      "Security: Potential template injection vulnerabilities in multiple endpoints",
-      "Supply Chain: New scripts added: build:sync-version",
+      "Community: Incompatibility between passport \"authenticate\" method return type and \"preValidation\" type",
+      "Communication: Some responses are brief and could be more detailed for complex issues",
+      "Communication: A few responses seem to assume a high level of prior knowledge",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "High number of commits in the past six months (103)",
-      "A significant number of merged PRs in the past six months (97)",
-      "Multiple contributors active in the past six months (47)",
+      "Frequent commits (154 in the last 6 months)",
+      "Regular releases",
+      "High number of merged PRs (137 in the last 6 months)",
+      "Active contributors (55 in the last 6 months)",
       "Actively maintained",
       "CI/CD configured",
-      "OpenSSF Scorecard: 8.7/10",
+      "OpenSSF Scorecard: 8.8/10",
       "Has CII Best Practices badge",
-      "Fuzzing enabled"
+      "Fuzzing enabled",
+      "SAST enabled"
     ],
-    "community_sentiment": "neutral",
-    "communication_style": "adequate",
+    "community_sentiment": "mixed",
+    "communication_style": "good",
     "supply_chain_risk": "low",
-    "scorecard_score": 8.7,
+    "scorecard_score": 8.8,
     "dependency_count": 46
   },
-  "analyzed_at": "2026-01-09T16:22:38.054812Z",
-  "data_fetched_at": "2026-01-09T16:22:38.054813Z"
+  "analyzed_at": "2026-03-14T18:33:43.655489Z",
+  "data_fetched_at": "2026-03-14T18:33:43.655490Z"
 }

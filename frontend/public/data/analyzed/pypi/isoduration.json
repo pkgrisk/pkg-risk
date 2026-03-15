@@ -186,49 +186,50 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 3,
+      "installation": 4,
       "quick_start": 9,
       "examples": 8,
-      "configuration": 10,
-      "troubleshooting": 9,
-      "overall": 8,
-      "summary": "Excellent clarity and examples with a comprehensive FAQ, but lacks standard installation instructions for end users.",
-      "top_issue": "No installation instructions for end users - only development setup is documented, missing basic 'pip install isoduration' command"
+      "configuration": 5,
+      "troubleshooting": 6,
+      "overall": 7,
+      "summary": "Well-written README with clear purpose and good usage examples, but lacks pip installation instructions and has no configuration documentation.",
+      "top_issue": "No pip installation instructions \u2014 the README only shows how to set up a dev environment, leaving regular users without guidance on how to install the package."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
+      "frustration_level": 7,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Critical bugs in core functionality (adding duration to datetime fails)",
-        "Incorrect parsing behavior (0.5 values, trailing garbage, invalid durations accepted)",
-        "Equality comparison issues preventing use with other object types",
-        "Lack of proper error handling and validation",
-        "Missing documentation and infrastructure"
+        "Core functionality broken: datetime addition fails with ValueError",
+        "Fractional duration values (0.5) parsed but interpreted incorrectly as 1",
+        "Invalid input silently accepted (e.g., P1 without units, trailing garbage)",
+        "API design issues: __eq__ raises NotImplementedError instead of returning False",
+        "Lack of documentation and poor test organization",
+        "Missing tests in released tarball"
       ],
       "praise_themes": [
-        "Library concept appreciated (user thanks in issue)"
+        "Library is appreciated when it works"
       ],
       "abandonment_signals": true,
-      "summary": "The isoduration project shows severe abandonment with 10+ open critical bugs dating back 3+ years, minimal maintainer engagement (only 2 comments total across 14 issues), and fundamental arithmetic operation failures that make the library unreliable for production use."
+      "summary": "The isoduration library shows clear signs of abandonment with multiple critical bugs (including a recent December 2024 issue preventing basic datetime arithmetic) remaining unfixed for months to years, zero-comment issues from 2020 still open, and no meaningful maintainer engagement pattern."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 10,
       "concerns": [
-        "No commits in over 4 years (last commit November 2021)",
-        "13 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "No releases recorded",
-        "Complete stagnation across all activity metrics"
+        "No commits for 4+ years (last commit November 2021)",
+        "13 open issues with zero resolution in 6 months",
+        "Zero contributors active in past 6 months",
+        "No merged PRs or pull request activity in 6 months",
+        "No releases tracked",
+        "Repository appears unmaintained and unresponsive to issues"
       ],
       "positive_signals": [],
-      "summary": "This package is effectively abandoned with no maintenance activity since late 2021 and unresolved issues accumulating."
+      "summary": "The isoduration package is abandoned with over 4 years of inactivity, unresolved issues, and no active maintenance or contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:01:39.942528+00:00"
+    "llm_analyzed_at": "2026-03-15T17:06:40.495613+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

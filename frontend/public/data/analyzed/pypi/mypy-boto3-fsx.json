@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool (mypy-boto3-builder) rather than the actual package (mypy-boto3-fsx), leaving users unsure what they installed or how to use it.",
-      "top_issue": "Wrong README - this is the builder tool's documentation, not the mypy-boto3-fsx package documentation, causing complete confusion about what the package does and how to use it for FSx type stubs"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-fsx` service stub package, creating confusion and providing little actionable guidance for FSx-specific usage.",
+      "top_issue": "README describes the parent builder project rather than this specific FSx type stubs package \u2014 a new user gets no FSx-specific install command, usage example, or explanation of what FSx operations are covered."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Duplicate .py and .pyi stub files causing tooling confusion",
-        "Type definition accuracy issues (aioboto3 async, ToolUseBlockTypeDef, FileobjTypeDef)",
-        "Missing extras/features in published packages",
-        "Outdated documentation and build instructions"
+        "Type definition mismatches with actual AWS SDK behavior (ToolUseBlockTypeDef, aioboto3.get_credentials)",
+        "Duplicate stub files shipped as both .pyi and .py causing editor confusion",
+        "Package version mismatches across submodules (types-boto3 1.42 missing for some modules)",
+        "Broken or outdated documentation (generate locally instructions)",
+        "Type definitions too broad (FileobjTypeDef for S3)",
+        "Missing extras declaration in types-aiobotocore"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active release cycles addressing reported issues",
+        "Good issue tracking with proper labels and categorization"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderately active project with recurring issues around type accuracy, packaging structure, and documentation quality; maintainers appear engaged but with slower response times on some tickets."
+      "summary": "Project shows moderate maintenance with 3 issues resolved but 7 open bugs including type definition mismatches and documentation problems, indicating reactive rather than proactive maintenance."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
+        "No commits in past 6 months despite 16 open issues",
         "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "15 open issues with no recent activity",
-        "Unknown last release date indicates lack of versioning"
+        "No closed issues or merged PRs in past 6 months",
+        "Unknown release status suggests broken release pipeline",
+        "Accumulating unresolved issues without triage"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-12), though appears to be a single isolated commit"
+        "Last commit date is relatively recent (2026-01-12)"
       ],
-      "summary": "This package appears abandoned with a single recent commit but no ongoing maintenance activity, active development, issue resolution, or releases over the past 6 months."
+      "summary": "Package appears stale with no maintenance activity in 6 months and accumulating open issues despite a recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T18:31:46.504762+00:00"
+    "llm_analyzed_at": "2026-03-15T16:24:07.635788+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

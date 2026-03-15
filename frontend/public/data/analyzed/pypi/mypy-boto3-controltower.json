@@ -191,48 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it documents mypy-boto3-builder (a generator tool) but the package is mypy-boto3-controltower (a generated type stub), creating severe mismatch between content and actual package purpose.",
-      "top_issue": "Wrong README - this appears to be the builder tool's README included in a generated type stub package, leaving users with no information about how to actually use mypy-boto3-controltower for AWS Control Tower type hints."
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific service stub package, leaving users confused about what mypy-boto3-controltower does on its own.",
+      "top_issue": "This README is for the generic builder tool, not the specific controltower stub package \u2014 there are no examples, configuration docs, or troubleshooting specific to AWS Control Tower usage."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/metadata in published packages",
-        "Duplicate file formats (.pyi and .py) causing tooling conflicts",
-        "Type definition inaccuracies (async/await, literal values, type protocols)",
-        "Packaging/build system issues (setup.py vs pyproject.toml)"
+        "Type stub accuracy (wrong async definitions, overly broad types, missing extras)",
+        "Duplicate stub files (.pyi and .py) causing editor confusion",
+        "Version mismatch between submodule stubs and main package",
+        "Breaking changes from setuptools updates affecting deterministic builds",
+        "Documentation instructions for local generation don't work",
+        "Naming confusion between types-boto3 and boto3-stubs packages"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Modernization efforts (pyproject.toml migration completed)"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderate community health with active technical issues around type accuracy and packaging, but no signs of abandonment; maintainers respond to issues but with slow resolution timelines for complex problems."
+      "summary": "Project shows active maintenance with some releases, but struggles with type stub correctness and slow issue resolution, leaving developers frustrated with broken docs and IDE integration problems."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity to address them",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release history is not tracked or outdated"
+        "Zero commits in past 6 months despite repository activity",
+        "16 open issues with no resolution activity",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date - unclear if releases are even being published",
+        "Zero pull request activity suggests no active development"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity in the past 6 months despite accumulating open issues."
+      "positive_signals": [
+        "Last commit exists at 2026-01-12 (2 months ago), indicating not completely abandoned",
+        "No open PRs suggests the maintainer is not overwhelmed with pending changes"
+      ],
+      "summary": "This package shows signs of stagnation with mounting unresolved issues and no recent development activity over the past 6 months, despite a minor commit 2 months ago."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T02:27:31.321195+00:00"
+    "llm_analyzed_at": "2026-03-15T03:18:46.780832+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

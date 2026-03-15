@@ -175,47 +175,49 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
-      "quick_start": 9,
-      "examples": 7,
-      "configuration": 3,
-      "troubleshooting": 2,
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "Excellent clarity and installation guidance with good basic examples, but lacks configuration details and troubleshooting support.",
-      "top_issue": "No troubleshooting section for common errors like incompatible ZIP files, extraction failures, or platform-specific issues despite handling a complex edge case (Deflate64 compression)"
+      "summary": "Clear, concise docs covering the core use case well, but lack troubleshooting guidance and advanced usage examples.",
+      "top_issue": "No troubleshooting section \u2014 users hitting issues (e.g. unsupported Python versions, extraction errors) have no documented guidance."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Build failures and compilation issues (zlib outdated, Xcode 16.3 incompatibility, Python 3.13 failures)",
-        "Installation problems (wheel building failures, missing pre-built binaries)",
-        "Import/runtime errors (circular import issues in AWS Lambda)",
-        "Missing features (write support for deflate64, Windows path length limitations)",
-        "Lack of conda support"
+        "Installation/wheel building failures for Python 3.10+ and ARM64",
+        "Critical security vulnerability: outdated zlib (CVE-2022-37434 CVSS 9.8)",
+        "Platform compatibility issues (Xcode 16.3, Windows 260-char path limit)",
+        "Recurring circular import errors in AWS Lambda",
+        "No write support for deflate64 compression"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The project shows signs of maintenance neglect with multiple unresolved critical issues (outdated zlib with known CVEs, build failures across platforms, and missing write support), minimal maintainer engagement on recent issues, and a backlog spanning 3+ years with no clear resolution path."
+      "summary": "Project appears unmaintained with critical unpatched security vulnerabilities, multiple compatibility issues spanning 2022-2024 that remain unresolved, and minimal maintainer engagement on recent requests."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being from 2023-12-05",
-        "19 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release history is not accessible or outdated"
+        "No commits in past 6+ months (last commit 2023-12-05)",
+        "20 unresolved open issues with no recent triage",
+        "No closed issues or merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "The project is stale with no maintenance activity for over a year and mounting unresolved issues."
+      "positive_signals": [
+        "Repository exists and has historical commits",
+        "No abandoned PRs (0 open)"
+      ],
+      "summary": "Package is stale with no maintenance activity for 6+ months despite 20 unresolved issues and no active contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:04:28.060560+00:00"
+    "llm_analyzed_at": "2026-03-15T03:51:32.093761+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

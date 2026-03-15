@@ -177,48 +177,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 3,
+      "clarity": 8,
+      "installation": 2,
       "quick_start": 9,
       "examples": 7,
-      "configuration": 4,
+      "configuration": 3,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "Excellent quick-start examples for basic usage, but lacks installation instructions, configuration documentation, and troubleshooting guidance.",
-      "top_issue": "No installation instructions provided - users must guess to use pip/poetry/etc to install aiokafka"
+      "overall": 5,
+      "summary": "Strong quick-start examples for both producer and consumer, but lacks installation instructions, configuration reference, and troubleshooting guidance entirely.",
+      "top_issue": "No installation instructions whatsoever \u2014 a new user has no idea how to install the package before using the examples."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Breaking API changes without deprecation (api_version parameter removal)",
-        "Broker failover and coordinator recovery issues causing stuck transactions",
-        "Connection handling and recovery problems in edge cases",
-        "Linger time behavior causing timeouts for large messages",
-        "Protocol version compatibility concerns with Kafka 4.0"
+        "Consumer/transactions stuck after broker restart or rebalance with no recovery",
+        "Tight fetch loops and missing backoff during broker failures",
+        "Breaking API changes without deprecation warnings",
+        "Lack of public health check APIs (users forced to inspect private internals)",
+        "Missing Kafka 4.0 compatibility clarity",
+        "Accumulated technical debt (deprecated async-timeout, type hints)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Moderate community health with ongoing maintenance but several unresolved production issues around broker failover, connection recovery, and recent breaking changes that are causing user frustration."
+      "abandonment_signals": true,
+      "summary": "Critical resilience bugs remain unresolved for extended periods while maintainers slowly address issues, creating community frustration around blocking production failures and unresponsive breaking changes."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-02)",
-        "184 open issues with no recent resolution activity",
-        "Zero closed issues in past 6 months indicating no active maintenance",
-        "No merged PRs in past 6 months suggesting stalled development",
-        "No active contributors in past 6 months",
-        "Unknown last release date indicates release process has stalled"
+        "Zero commits in the past 6 months despite 185 open issues",
+        "185 unresolved issues with zero closed in past 6 months",
+        "No merged pull requests in 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "The project appears abandoned with no maintenance activity over the past 6 months despite a recent commit timestamp, suggesting either a data anomaly or true abandonment."
+      "positive_signals": [
+        "Recent commit activity (2026-03-03)",
+        "No stalled open pull requests"
+      ],
+      "summary": "Project is effectively abandoned with stale development\u2014minimal maintenance evident from zero activity metrics over 6 months despite high issue volume."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:19:19.021896+00:00"
+    "llm_analyzed_at": "2026-03-15T02:23:59.456044+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

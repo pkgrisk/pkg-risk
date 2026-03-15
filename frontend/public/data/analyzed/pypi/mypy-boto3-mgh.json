@@ -191,49 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool rather than the actual package (mypy-boto3-mgh), leaving users unclear about what they're installing and how to use it.",
-      "top_issue": "Wrong README - this appears to be the mypy-boto3-builder README, not the mypy-boto3-mgh package README, causing complete confusion about the package's actual purpose and usage"
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific mypy-boto3-mgh service stub package, leaving users confused about what this particular package does or how to use it.",
+      "top_issue": "The README is for the upstream builder project, not the mypy-boto3-mgh service-specific package \u2014 there are no examples, API docs, or usage instructions for the MGH (Migration Hub) service stubs themselves."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type definition mismatches between stubs and actual library behavior",
-        "Packaging/distribution issues (duplicate .py/.pyi files, missing extras)",
-        "Version compatibility problems with submodules",
-        "Documentation outdated or incomplete"
+        "Type stub accuracy issues (wrong async signatures, incorrect literal types for bedrock/aioboto3)",
+        "Packaging problems (duplicate .pyi and .py files causing editor conflicts, missing extras)",
+        "Documentation/tooling issues (generate locally instructions broken, pyproject.toml migration incomplete)",
+        "Version mismatches between main package and submodules"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues get resolved when addressed (some closed with 'released' label)",
+        "Consistent user engagement reporting bugs"
+      ],
       "abandonment_signals": false,
-      "summary": "Community is moderately engaged with legitimate technical concerns about type stub accuracy and packaging, but maintainers are responding to issues and releasing fixes, indicating active maintenance despite some unresolved bugs."
+      "summary": "Project has active users and partial responsiveness, but several critical type-safety bugs linger open for months despite 'response needed' labels, indicating capacity constraints."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No active contributors in past 6 months",
-        "15 open issues with no recent closure activity",
-        "No merged PRs in past 6 months indicating no active development",
-        "Unknown last release date suggests release pipeline is stalled",
-        "No response to community issues or pull requests"
+        "No commits in past 6 months despite last commit 2 months ago suggests initial activity then abandonment",
+        "16 open issues with zero closed issues in past 6 months indicates no triage or maintenance",
+        "No active contributors or merged PRs in 6 months shows project is dormant",
+        "Unknown last release suggests releases may not be tracked or haven't occurred recently",
+        "No open PRs indicates community is not attempting to submit improvements"
       ],
       "positive_signals": [
-        "Repository still exists and was touched recently (2026-01-12)"
+        "Last commit is relatively recent (2 months ago), not years old"
       ],
-      "summary": "This package is effectively abandoned with unresolved issues and no active maintenance despite a recent timestamp, suggesting the repository may be inactive or orphaned."
+      "summary": "mypy-boto3-mgh appears to be stale with unresolved issues accumulating and no active maintenance despite a recent final commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:46:51.400875+00:00"
+    "llm_analyzed_at": "2026-03-15T07:57:48.913496+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

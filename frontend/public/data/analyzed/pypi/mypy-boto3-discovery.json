@@ -191,48 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 3,
-      "quick_start": 2,
-      "examples": 1,
-      "configuration": 1,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 2,
-      "summary": "The README is confusing because it documents the builder tool (mypy-boto3-builder) but the package name is mypy-boto3-discovery, creating fundamental clarity issues about what the user actually installed.",
-      "top_issue": "Package identity mismatch - the README describes 'mypy-boto3-builder' (a code generator) but the package name is 'mypy-boto3-discovery' (likely pre-generated type stubs for AWS Discovery service), leaving users completely confused about what they installed and how to use it."
+      "overall": 4,
+      "summary": "The README is a decent overview of the builder tool but is mismatched for this specific sub-package (mypy-boto3-discovery), with no examples, no configuration docs, and no troubleshooting.",
+      "top_issue": "This is a generated sub-package README that describes the parent builder tool rather than the specific `mypy-boto3-discovery` package, leaving users without any guidance on how to use Discovery service type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules (1.42 not available for all modules)",
-        "Incorrect type definitions in stubs (e.g., async methods typed as sync, overly broad type definitions)",
-        "Duplicate .pyi and .py files causing IDE confusion",
-        "Missing extras metadata in types-aiobotocore package",
-        "Documentation/setup issues (setup.py deprecation, local generation instructions broken)"
+        "Type stub inaccuracies (wrong method signatures, missing extras, duplicate .py/.pyi files)",
+        "Packaging and versioning issues (missing submodule versions, non-deterministic wheels)",
+        "Documentation problems (outdated generation instructions, package naming confusion)",
+        "Unresolved typing bugs blocking dependent projects"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are being triaged and closed",
+        "Some fixes released to production",
+        "Community actively reporting bugs"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate health with active issue reporting around type stub accuracy and packaging problems, but maintainers are responding and issues are being closed, though some concerning patterns with type definitions suggest quality control gaps."
+      "summary": "Moderately healthy project with responsive maintenance but concerning open type definition bugs and packaging issues that require user workarounds."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release history may be unavailable or stale"
+        "Zero commits in past 6 months",
+        "Zero closed issues in past 6 months",
+        "16 open issues with no maintainer response",
+        "Zero merged PRs in past 6 months",
+        "Zero active contributors for 6+ months",
+        "Last release unknown - no recent version published",
+        "Last commit 2+ months ago followed by complete inactivity"
       ],
       "positive_signals": [],
-      "summary": "Package appears abandoned with no maintenance activity for at least 6 months despite accumulating unresolved issues."
+      "summary": "This package is abandoned with no maintenance activity for 6+ months, 16 unresolved issues, and no recent releases."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T10:02:44.171946+00:00"
+    "llm_analyzed_at": "2026-03-15T11:09:50.569920+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

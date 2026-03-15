@@ -191,47 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs rather than the actual mypy-boto3-iottwinmaker package users are installing.",
-      "top_issue": "Major identity confusion - users installing mypy-boto3-iottwinmaker get a README about mypy_boto3_builder instead of documentation for the IoT TwinMaker type stubs they actually installed"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-iottwinmaker without direct guidance on installation or usage of this particular package.",
+      "top_issue": "This README describes the mypy-boto3-builder generator tool, not the mypy-boto3-iottwinmaker service stub package itself \u2014 a new user has no idea how to install or use the IoT TwinMaker-specific stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Type stub accuracy issues (wrong signatures, overly broad types)",
-        "Package metadata and distribution problems (missing extras, version mismatches)",
-        "Duplicate .pyi and .py files causing tooling conflicts",
-        "Documentation and setup issues (deprecated setup.py, outdated instructions)"
+        "Type definition accuracy (wrong types for async methods, incorrect Literal values)",
+        "Duplicate stub files (.pyi and .py causing tool confusion)",
+        "Missing or incorrect package extras declarations",
+        "Documentation and usability (outdated 'generate locally' instructions)",
+        "Package naming confusion (types-boto3 vs boto3-stubs identity unclear)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with real technical issues being reported, but maintainers have gaps in responsiveness and the project has accumulating quality issues around type accuracy and packaging that suggest slower development velocity."
+      "praise_themes": [
+        "Active bug reporting from engaged users",
+        "Willingness to migrate to modern standards (pyproject.toml completed)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is declining with multiple unresolved bugs (some 6+ months old), unanswered 'response needed' issues, and documentation gaps, though sporadic maintenance activity suggests the project is not entirely abandoned."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
+        "No commits in past 6 months despite activity",
+        "16 open issues accumulating with zero resolutions in 6 months",
+        "Zero merged PRs in past 6 months",
         "Zero active contributors in past 6 months",
-        "Unknown last release date suggests infrequent or stalled release cycle"
+        "Unknown last release date suggests no recent version bumps",
+        "No maintenance activity despite existing issue backlog"
       ],
-      "positive_signals": [],
-      "summary": "Package is abandoned with no maintenance activity for 6 months despite unresolved issues accumulating."
+      "positive_signals": [
+        "Repository still exists and has minimal recent commit activity (2 months ago)"
+      ],
+      "summary": "This package shows clear signs of stagnation with no issue resolution, no PR activity, and no active contributors over the past 6 months, indicating it is no longer actively maintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:06:18.443721+00:00"
+    "llm_analyzed_at": "2026-03-15T10:22:00.089947+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

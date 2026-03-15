@@ -191,50 +191,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "This README is for the builder tool (mypy-boto3-builder) but appears in a package for AWS geo-places type stubs, creating massive confusion about what this specific package actually does.",
-      "top_issue": "Wrong README: this is the mypy-boto3-builder README, not the mypy-boto3-geo-places README, so users installing mypy-boto3-geo-places get documentation for an entirely different package"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-geo-places without relevant installation or usage guidance.",
+      "top_issue": "README describes the mypy-boto3-builder generator, not the mypy-boto3-geo-places service stub \u2014 a new user gets no guidance on how to install or use the geo-places-specific package."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Missing extras/metadata in PyPI distributions",
-        "Duplicate .pyi and .py stub files causing editor confusion",
-        "Type definitions not matching actual runtime behavior",
-        "Documentation outdated (setup.py vs pyproject.toml migration)",
-        "Overly broad type signatures lacking precision"
+        "Type definitions don't match actual runtime behavior (aioboto3 async get_credentials, ToolUseBlockTypeDef, FileobjTypeDef)",
+        "Documentation is outdated or incorrect (Generate locally instructions, types-boto3 vs boto3-stubs naming confusion)",
+        "Duplicate stub files (.pyi and .py) in generated packages",
+        "Version/packaging issues with submodules and extras"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Active but struggling project with recurring type accuracy and packaging issues; maintainers respond but underlying architectural problems suggest need for better QA processes."
+      "summary": "Project shows moderate maintenance with some issues closed but multiple unresolved type definition and documentation bugs creating user friction."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months despite being a recent package",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in the past 6 months",
-        "No merged pull requests in the past 6 months",
-        "No active contributors in the past 6 months",
-        "Unknown last release date suggests no versioning activity",
-        "Last commit over 2 weeks ago with no follow-up activity"
+        "No commits in past 6 months despite last commit 2 months ago",
+        "16 open issues unresolved with zero closed in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date\u2014cannot verify release cadence"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity, unresolved issues, and no contributor engagement for at least 6 months."
+      "positive_signals": [
+        "Last commit exists (2026-01-12, approximately 2 months ago)",
+        "Repository has historical maintenance activity"
+      ],
+      "summary": "Package is stale with 2+ months of inactivity, unaddressed issues, and no recent releases\u2014maintenance has effectively ceased."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:39:26.426192+00:00"
+    "llm_analyzed_at": "2026-03-15T04:26:19.658596+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

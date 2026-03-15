@@ -177,51 +177,49 @@
   "llm_assessments": {
     "readme": {
       "clarity": 7,
-      "installation": 9,
+      "installation": 5,
       "quick_start": 3,
-      "examples": 2,
+      "examples": 4,
       "configuration": 8,
-      "troubleshooting": 6,
-      "overall": 6,
-      "summary": "Well-structured documentation for installation and building wheels, but severely lacks actual usage examples of the faiss library itself.",
-      "top_issue": "No code examples showing how to actually use faiss (creating indices, searching vectors, etc.) - only refers users to external documentation"
+      "troubleshooting": 5,
+      "overall": 5,
+      "summary": "The README is well-structured for build customization but poorly suited for the faiss-gpu package specifically, since GPU support is discontinued on PyPI and requires building a custom wheel with minimal end-to-end guidance.",
+      "top_issue": "The package being scored (faiss-gpu) is explicitly discontinued on PyPI as of v1.7.3, yet the README provides no clear migration path or alternative\u2014users landing here are left without actionable next steps."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Build and wheel distribution issues (Windows ABI3, FreeBSD compatibility)",
-        "Missing source distributions for older versions",
-        "Delayed release cycles blocking downstream consumers",
-        "Platform-specific compatibility problems (arm64 vs x86)",
-        "Dependency deprecation warnings (numpy)"
+        "Architecture compatibility issues (arm64 vs x86)",
+        "Missing kernel support (H100/Hopper sm_90)",
+        "Documentation mismatch (claimed vs actual capabilities)",
+        "Broken Windows wheels with ImportError",
+        "Removed source distributions blocking installation"
       ],
-      "praise_themes": [
-        "Appreciation for maintainer work (Red Hat contributor)"
-      ],
+      "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "faiss-gpu shows signs of maintenance challenges with unresolved build issues, delayed releases, removed historical distributions, and slow issue resolution despite community interest."
+      "summary": "Project shows critical maintenance issues with multiple unresolved bugs spanning years (arm64 issue from 2023), zero response to platform-specific failures (Windows ABI3), and a pattern of marking issues wontfix rather than addressing them."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-05)",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months indicating no ongoing development",
-        "No closed issues in past 6 months showing lack of maintenance activity",
-        "6 open issues with no resolution activity",
-        "Unknown last release date suggests release tracking may be broken or project unmaintained"
+        "No commits in past 6 months despite 10 open issues",
+        "No issues closed in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases available",
+        "Recent commit (2026-03-09) appears to be isolated activity"
       ],
       "positive_signals": [
-        "Last commit is recent (2026-01-05), though appears to be from before maintenance stopped"
+        "Very recent commit within last week suggests some activity"
       ],
-      "summary": "The faiss-gpu package appears abandoned with zero maintenance activity over the past 6 months despite recent historical commits, accumulating unresolved issues without any response or development."
+      "summary": "Project shows patterns of stagnation with no meaningful maintenance activity over 6 months; recent commit appears to be isolated activity rather than resumed active maintenance given lack of issue resolution or contribution momentum."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:13:30.794812+00:00"
+    "llm_analyzed_at": "2026-03-15T13:56:46.641541+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

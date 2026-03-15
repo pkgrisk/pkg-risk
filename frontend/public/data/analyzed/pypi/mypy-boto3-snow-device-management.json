@@ -191,50 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool while the package name suggests it's a pre-built type stub for a specific AWS service (snow-device-management).",
-      "top_issue": "Critical mismatch between package name (mypy-boto3-snow-device-management, a specific service stub) and README content (mypy-boto3-builder, the generator tool) - users will be completely confused about what they actually installed."
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific service stub package, leaving users confused about what mypy-boto3-snow-device-management itself does or how to use it.",
+      "top_issue": "This README is for the upstream builder project, not the specific snow-device-management stubs package \u2014 there are no examples, configuration docs, or troubleshooting guidance specific to this package's actual use case."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Broken or incomplete type stubs causing validation errors",
-        "Duplicate .pyi and .py files causing IDE conflicts",
-        "Missing extras/optional dependencies not properly declared",
-        "Incorrect async/await type annotations",
-        "Outdated documentation with broken instructions",
-        "Overly broad type definitions reducing type safety"
+        "Type annotation errors (wrong signatures, overly broad types, missing metadata)",
+        "Package versioning and dependency resolution mismatches",
+        "Documentation and CLI instructions out of date",
+        "Build reproducibility and wheel generation issues",
+        "Duplicate/malformed stub file generation"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Community health is poor with multiple unresolved critical bugs, slow maintainer responsiveness, and evidence of stagnation despite a large auto-generated package ecosystem."
+      "praise_themes": [
+        "Comprehensive AWS service coverage maintained",
+        "Some issues resolved and released over time",
+        "Active community reporting bugs and requesting features"
+      ],
+      "abandonment_signals": false,
+      "summary": "Moderate health: active development with some fixes shipped, but growing backlog of unresolved bugs (6+ open issues with 'response needed' tags) and type annotation problems suggest maintainers are under-resourced relative to project scope."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months",
-        "No closed issues in the past 6 months despite 15 open issues",
-        "No merged PRs in the past 6 months",
-        "No active contributors in the past 6 months",
-        "No releases tracked",
-        "Accumulating unresolved issues indicates lack of triage"
+        "No commits in past 6 months despite 16 open issues",
+        "Zero issue resolutions in past 6 months",
+        "No active contributors or maintainers in 6-month period",
+        "Last release date unknown",
+        "No PR activity or merges in past 6 months"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero activity across all maintenance indicators for the past 6 months and unaddressed issue backlog."
+      "positive_signals": [
+        "Last commit was recent (January 2026, ~2 months ago)",
+        "No pending PRs creating technical debt"
+      ],
+      "summary": "Package is stale with no maintenance activity in 6 months and accumulating unresolved issues, though not completely abandoned given recent commits."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T19:42:49.336243+00:00"
+    "llm_analyzed_at": "2026-03-15T00:00:01.109594+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

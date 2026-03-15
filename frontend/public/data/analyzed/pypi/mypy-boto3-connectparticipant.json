@@ -191,48 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool rather than the actual package (mypy-boto3-connectparticipant), lacking specific installation instructions, usage examples, or any service-specific documentation.",
-      "top_issue": "Wrong README content - this appears to be the builder tool's README, not the type stubs package README, leaving users with no information about how to use mypy-boto3-connectparticipant specifically"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific sub-package, providing minimal guidance for users of mypy-boto3-connectparticipant specifically.",
+      "top_issue": "README describes the parent builder project rather than the specific connectparticipant stubs package, leaving users without concrete usage examples or API documentation for this service."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules (1.42 discrepancy)",
-        "Duplicate .pyi and .py files causing tooling conflicts",
-        "Missing or incorrect type definitions (async/await, type literals, required fields)",
-        "Extras/optional dependencies not properly declared in metadata",
-        "Documentation and tooling outdated (setup.py deprecation, uvx instructions)"
+        "Type definition bugs (incorrect async signatures, overly broad types)",
+        "Version/dependency mismatches between boto3 and types-boto3 submodules",
+        "Documentation inaccuracies (generate locally instructions don't work)",
+        "Package naming confusion (types-boto3 vs boto3-stubs duplicates)",
+        "File duplication issues (both .pyi and .py files shipped)",
+        "Missing package metadata (extras not provided)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Moderately active project with persistent packaging/versioning issues and type definition accuracy problems, but maintenance continues with fixes being released."
+      "summary": "Actively maintained project with moderate responsiveness, but growing backlog of type system and versioning issues that need attention, plus outdated documentation creating user friction."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite package being on PyPI",
+        "16 open issues with zero closed in past 6 months indicates no active maintainer engagement",
+        "Zero commits and merged PRs in past 6 months despite recent activity",
         "No active contributors in past 6 months",
-        "Zero merged PRs in past 6 months indicating no maintenance activity",
-        "15 open issues with no recent resolution",
-        "No releases in the past 6 months",
-        "Last commit over 3 days ago but no ongoing development pattern"
+        "Unknown last release makes it impossible to track release cadence"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero maintenance activity over the past 6 months and unresolved open issues."
+      "positive_signals": [
+        "Recent commit on 2026-01-12 suggests project has not been completely abandoned",
+        "Package still available on PyPI"
+      ],
+      "summary": "Package shows minimal maintenance with a recent commit but zero issue resolution, no contributor activity, and 16 unaddressed open issues in the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:31:45.434295+00:00"
+    "llm_analyzed_at": "2026-03-15T15:16:11.448883+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

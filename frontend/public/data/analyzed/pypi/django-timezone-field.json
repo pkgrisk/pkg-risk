@@ -177,46 +177,50 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 9,
-      "quick_start": 9,
-      "examples": 10,
-      "configuration": 8,
-      "troubleshooting": 7,
-      "overall": 9,
-      "summary": "Excellent documentation with comprehensive examples and clear explanations, though troubleshooting could be more prominent.",
-      "top_issue": "Troubleshooting information is embedded within explanatory sections rather than consolidated in a dedicated section for easy reference."
+      "installation": 8,
+      "quick_start": 7,
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Well-documented package with excellent code examples covering all three field types, though it lacks a dedicated troubleshooting section and configuration reference beyond inline comments.",
+      "top_issue": "No troubleshooting section \u2014 the pytz/zoneinfo migration gotcha (ZoneInfoNotFoundError) is buried in a transition explanation rather than a dedicated problems/solutions section."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version compatibility issues with newer Django releases",
-        "Missing type hints causing mypy errors",
-        "Buggy __isnull lookup behavior with null=True",
-        "Limited admin UI functionality (no autocomplete support)"
+        "Missing typing support (py.typed marker)",
+        "Bug: unhandled OSError in timezone parsing (security concern)",
+        "Bug: __isnull lookup returns incorrect results with null=True",
+        "Django version compatibility friction",
+        "Admin UI lacks autocomplete/search for timezone selection"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Maintainers actively update for new Django versions"
+      ],
       "abandonment_signals": false,
-      "summary": "The project shows moderate maintenance activity with timely Django version support, but has unresolved bugs and feature gaps causing user friction."
+      "summary": "Maintainers are engaged enough to ship Django version updates but appear under-resourced, evidenced by a recent unaddressed security bug (Feb 2026 OSError), missing type hints, and unresolved query bugs with no maintainer response."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite recent activity timestamp",
+        "10 unresolved open issues with zero closure in past 6 months",
+        "Zero commits, merged PRs, and closed issues in the past 6 months despite 10 open issues",
         "No active contributors in past 6 months",
-        "No merged pull requests in past 6 months",
-        "No closed issues in past 6 months",
-        "8 open issues with no resolution activity",
-        "Unknown last release date suggests stale release cycle"
+        "Unknown/unreleased final version",
+        "Recent commit appears isolated with no sustained maintenance activity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with zero maintenance activity over the past 6 months and multiple unresolved issues."
+      "positive_signals": [
+        "One commit within the last two weeks (2026-03-04) suggests potential recent touch"
+      ],
+      "summary": "Package is effectively abandoned; a recent commit notwithstanding, the absence of any meaningful maintenance activity (closed issues, merged PRs, active contributors) over 6 months combined with 10 stale open issues indicates the maintainer is no longer actively supporting this project."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:23:15.584869+00:00"
+    "llm_analyzed_at": "2026-03-15T10:50:52.693002+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

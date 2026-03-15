@@ -191,48 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 4,
+      "quick_start": 6,
       "examples": 2,
       "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but the package name suggests it's a pre-built type stub package, with minimal practical usage examples and no troubleshooting guidance.",
-      "top_issue": "Package identity confusion - the README discusses 'mypy-boto3-builder' extensively but the actual package is 'mypy-boto3-payment-cryptography', leaving users unclear whether this is a builder tool or a ready-to-use type stubs package for AWS Payment Cryptography service."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-payment-cryptography without targeted guidance on installing or using payment cryptography type stubs.",
+      "top_issue": "The README describes the generic mypy-boto3-builder project, not the specific mypy-boto3-payment-cryptography package \u2014 there are no examples, configuration details, or troubleshooting specific to the payment cryptography service."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Package metadata and configuration problems (setup.py vs pyproject.toml, missing extras)",
-        "Duplicate stub files (.pyi and .py) causing IDE conflicts",
-        "Type definition inaccuracies in generated stubs",
-        "Documentation and tooling issues"
+        "Incorrect type stub definitions (ToolUseBlockTypeDef, FileobjTypeDef, get_credentials)",
+        "Duplicate .pyi and .py files shipped in packages",
+        "Confusing package naming (types-boto3 vs boto3-stubs)",
+        "Documentation/tooling issues (pyproject.toml generation, generate locally instructions)",
+        "Missing extras metadata in published packages"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Responsiveness to enhancement requests (pyproject.toml migration completed and released)",
+        "Active maintenance with regular releases",
+        "Comprehensive type stub coverage for boto3 ecosystem"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows persistent frustration with auto-generated type stub accuracy and packaging metadata, but maintainers demonstrate moderate responsiveness with some issues reaching resolution."
+      "summary": "Project shows moderate engagement with some enhancements implemented, but several type accuracy bugs and documentation issues from 6+ months ago remain open despite user reports, suggesting maintainer capacity constraints."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite package existing",
-        "15 open issues with no recent activity or triage",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests stale release cycle"
+        "No commits, closed issues, or merged PRs in the past 6 months",
+        "16 open issues with no recent activity or closure",
+        "Zero active contributors in the past 6 months",
+        "Unknown or missing last release information",
+        "No pull request activity despite open issues"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity, issue resolution, or releases in the past 6 months."
+      "positive_signals": [
+        "Last commit exists (2026-01-12), indicating project was not completely wiped",
+        "No open PRs to indicate pending breaking changes"
+      ],
+      "summary": "This package appears abandoned with no maintenance activity for at least 6 months, 16 unresolved issues, and no recent releases."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:30:37.795847+00:00"
+    "llm_analyzed_at": "2026-03-15T06:21:41.499079+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

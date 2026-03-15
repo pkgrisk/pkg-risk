@@ -191,50 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs rather than the actual mypy-boto3-socialmessaging package that users installed, with minimal practical usage examples.",
-      "top_issue": "Critical mismatch: users installing 'mypy-boto3-socialmessaging' see documentation for 'mypy-boto3-builder' (the generator tool), not for how to actually use the socialmessaging type stubs they just installed."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-socialmessaging without relevant installation or usage guidance.",
+      "top_issue": "README belongs to the parent builder project, not the specific socialmessaging stub package \u2014 no package-specific installation, usage examples, or API coverage documented."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/metadata in generated packages",
-        "Duplicate .pyi and .py files causing IDE conflicts",
-        "Type stub accuracy issues (async/await, type definitions)",
-        "Documentation and build system outdated (setup.py vs pyproject.toml)"
+        "Type definition accuracy bugs (incorrect types for get_credentials, ToolUseBlockTypeDef, FileobjTypeDef)",
+        "Package confusion (types-boto3 vs boto3-stubs positioning unclear)",
+        "Documentation outdated (generate locally instructions broken)",
+        "Package versioning mismatches between main and submodules",
+        "Distribution issues (duplicate .pyi and .py files, missing extras metadata)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Community experiences moderate frustration with generated type stubs due to version management, packaging metadata, and type accuracy issues, but maintainers show responsiveness with some issues marked as released."
+      "praise_themes": [
+        "Some issues are being fixed and released (pyproject.toml migration, aioboto3 types)",
+        "Detailed bug reports with reproducible steps from users"
+      ],
+      "abandonment_signals": true,
+      "summary": "Moderate community health with mixed signals: maintainers are addressing some issues and shipping fixes, but multiple bugs remain unresolved for 4+ months, several issues flagged 'response needed' lack follow-up, and a recent enhancement has zero engagement."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no resolution activity",
-        "No merged PRs in past 6 months indicating no active development",
-        "Zero active contributors in past 6 months",
-        "No releases recorded, suggesting version stagnation",
-        "No closed issues in past 6 months indicating unaddressed problems"
+        "No commits in past 6 months",
+        "16 open issues with zero closure rate",
+        "No merged PRs in 6 months",
+        "Zero active contributors past 6 months",
+        "Unknown release history",
+        "No response to community contributions"
       ],
       "positive_signals": [
-        "Recent last commit date suggests repository still exists"
+        "Single recent commit in January 2026",
+        "Package exists and is installable"
       ],
-      "summary": "This package is abandoned with no active maintenance, development, or issue resolution despite recent repository activity dates."
+      "summary": "Package is stale with no meaningful maintenance activity for 6+ months despite open issues and community engagement attempts."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:39:24.804014+00:00"
+    "llm_analyzed_at": "2026-03-15T05:35:15.239677+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

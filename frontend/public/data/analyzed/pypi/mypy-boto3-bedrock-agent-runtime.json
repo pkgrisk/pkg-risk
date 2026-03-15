@@ -191,49 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool rather than the actual package (mypy-boto3-bedrock-agent-runtime), provides minimal usage guidance, and lacks concrete examples or configuration details.",
-      "top_issue": "README describes the wrong package - it's for mypy-boto3-builder (a code generator) not mypy-boto3-bedrock-agent-runtime (generated type stubs for AWS Bedrock Agent Runtime)"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific package (mypy-boto3-bedrock-agent-runtime), providing only high-level pointers to external docs with no concrete usage examples for the actual package.",
+      "top_issue": "The README describes the parent builder project rather than the specific stubs package, so a user installing mypy-boto3-bedrock-agent-runtime gets no guidance on how to actually use the Bedrock Agent Runtime type stubs in their code."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type definition accuracy issues (wrong types for async methods, overly broad types)",
-        "Package distribution problems (version mismatches, missing extras, duplicate .py/.pyi files)",
-        "Documentation and tooling gaps (outdated build instructions, unclear package naming)",
-        "Packaging modernization needed (still generating setup.py instead of pyproject.toml)"
+        "Type stub mismatches with actual runtime behavior",
+        "Package duplication confusion (types-boto3 vs boto3-stubs)",
+        "Outdated/incorrect documentation",
+        "Version mismatches between submodules",
+        "File duplication (.pyi and .py shipped together)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active but struggling project with persistent type accuracy and packaging issues causing user frustration, though some issues have been resolved."
+      "praise_themes": [
+        "Modern build system improvements implemented (pyproject.toml migration)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project is actively developed with some improvements released, but community frustration is moderate due to unresolved type definition bugs, documentation gaps, and several issues labeled 'response needed' without apparent engagement from maintainers."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite being a recent package",
-        "15 open issues with no resolution activity",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months showing no active development",
+        "Zero commits in past 6 months despite repository existence",
+        "16 open issues with no issues closed in past 6 months",
+        "No merged pull requests or PR activity in past 6 months",
         "Zero active contributors in past 6 months",
-        "Unknown last release date suggests potential versioning issues"
+        "Unknown last release date suggests version stagnation"
       ],
       "positive_signals": [
-        "Recent last commit (Jan 12, 2026) shows package exists and was updated at some point"
+        "Repository still exists (not deleted)",
+        "Recent commit on 2026-01-12 shows some minimal activity"
       ],
-      "summary": "This package is stale with no maintenance activity for at least 6 months despite having 15 unresolved issues."
+      "summary": "Package is stale with no meaningful maintenance activity; open issues are unaddressed and there is no development momentum."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:09:51.982484+00:00"
+    "llm_analyzed_at": "2026-03-15T10:28:02.536428+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

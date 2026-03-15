@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool (mypy-boto3-builder) rather than the actual package (mypy-boto3-iot), leaving users unclear about what they've installed and how to use it.",
-      "top_issue": "Critical mismatch: the README describes a builder tool for generating type stubs, but the package name suggests this IS a generated type stub for AWS IoT service - users need basic usage examples like 'import mypy_boto3_iot' and how to use it with boto3, not instructions for running a stub generator."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-iot package, providing only high-level orientation with most detail deferred to external docs.",
+      "top_issue": "The README describes the parent builder project rather than the specific mypy-boto3-iot package, leaving users without any IoT-specific usage examples, configuration, or context."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py stub files causing tooling conflicts",
-        "Missing or incorrect type definitions in generated stubs",
-        "Extras/metadata not properly declared in package metadata",
-        "Documentation and setup instructions are outdated"
+        "Type stub inaccuracies (e.g., get_credentials marked as sync instead of async)",
+        "Package version management issues (missing submodules, version mismatches between types-boto3 and submodules)",
+        "Documentation outdated (local generation instructions don't work)",
+        "Duplicate stub files shipped (.pyi and .py causing tool confusion)",
+        "Confusing package naming (types-boto3 vs boto3-stubs, unclear which to use)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active ongoing development with recent issues filed",
+        "Enhancements implemented (pyproject.toml migration completed)",
+        "Issues are being closed and resolved"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderately active project with maintenance attention, but struggling with quality control in auto-generated type stubs and occasional documentation/metadata issues that frustrate users."
+      "summary": "Project shows moderate health with active development and issue resolution, but maintainers appear stretched with multiple 'response needed' issues pending, indicating users want faster engagement on bug fixes and clarifications."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "No merged pull requests in past 6 months",
-        "No closed issues in past 6 months indicating no maintenance activity",
-        "Unknown last release date suggests release history may be incomplete or stale"
+        "No commits in past 6 months despite 16 open issues",
+        "Zero contributors active in past 6 months",
+        "No closed issues or merged PRs in past 6 months",
+        "Unknown last release date",
+        "Growing stale issue backlog"
       ],
-      "positive_signals": [],
-      "summary": "Package appears abandoned with no maintenance activity over the past 6 months despite having unresolved open issues."
+      "positive_signals": [
+        "Last commit is recent (2 months ago)"
+      ],
+      "summary": "Package appears abandoned with no maintenance activity over 6 months despite unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:46:02.821177+00:00"
+    "llm_analyzed_at": "2026-03-15T09:47:54.370097+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

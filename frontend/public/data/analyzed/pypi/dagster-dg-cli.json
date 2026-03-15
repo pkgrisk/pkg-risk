@@ -190,46 +190,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "Excellent clarity and quick start with strong examples, but lacks configuration details and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section or common problems documented; configuration options are not explained beyond basic installation"
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 7,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The README does a good job explaining Dagster's core value proposition with a solid code example, but as docs for the specific `dagster-dg-cli` package it fails entirely \u2014 there's no explanation of what the CLI does, its commands, or how to use it.",
+      "top_issue": "The README is for the Dagster monorepo/main package, not specifically for `dagster-dg-cli` \u2014 the CLI tool's purpose, commands, and usage are completely undocumented."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Performance bottlenecks in asset job resolution causing timeouts",
-        "Feature gaps in test sensor functionality"
+        "GraphQL schema compatibility issues after version upgrades (breaking changes)",
+        "Resource loading failures from new features (DefsFolderComponent breaking resolution)",
+        "Data cleanup bugs leaving orphaned assets in catalog (wipeAssets incomplete)",
+        "Feature parity gaps between @dbt_assets and standard @asset decorators",
+        "Missing critical integrations blocking adoption (OIDC/federated auth for Databricks)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Dagster shows moderate community health with active issue management, resolved features, and documented performance concerns that are being tracked but not yet resolved."
+      "abandonment_signals": true,
+      "summary": "Mixed health with active users but slow maintainer triage; multiple marked-stale issues combined with zero engagement on recent blocking bugs suggests capacity constraints impacting critical functionality."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being very recent (2026-01-17)",
-        "2780 open issues with zero closed in past 6 months indicates no active issue triage",
-        "Zero merged PRs in past 6 months shows no active development or community contributions being integrated",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process may be stalled"
+        "2789 open issues with zero closed in 6 months indicates issues are unmanaged",
+        "No commits in past 6 months despite recent last commit timestamp",
+        "Zero merged PRs and zero active contributors in 6 months shows no maintenance activity",
+        "No recent releases tracked",
+        "Issue backlog accumulating with no triage or resolution"
       ],
       "positive_signals": [
-        "Recent commit activity exists (2026-01-17), though appears to be an outlier"
+        "Most recent commit timestamp is current (2026-03-14)"
       ],
-      "summary": "This package is effectively abandoned with massive backlog of open issues, zero recent development activity, and no evidence of maintenance despite a single recent commit."
+      "summary": "dagster-dg-cli is abandoned with an unmanaged backlog of 2789 issues and zero maintenance activity over 6 months despite recent commit metadata."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T03:49:53.315371+00:00"
+    "llm_analyzed_at": "2026-03-15T01:07:12.933371+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

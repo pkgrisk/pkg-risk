@@ -191,49 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool rather than the actual package (mypy-boto3-accessanalyzer), lacks concrete usage examples, and provides no configuration or troubleshooting guidance.",
-      "top_issue": "Fundamental mismatch: README describes mypy-boto3-builder (a generator tool) but package is mypy-boto3-accessanalyzer (a generated type stubs package), causing severe confusion about what this package actually does and how to use it."
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific sub-package (mypy-boto3-accessanalyzer), leaving users unclear on what this particular package does or how to use it directly.",
+      "top_issue": "README is for the parent builder project, not this specific service stub package \u2014 no documentation of what mypy-boto3-accessanalyzer provides, how to install it standalone, or how to use its type annotations."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/optional dependencies not declared",
-        "Duplicate .pyi and .py stub files causing IDE conflicts",
-        "Type definitions don't match actual runtime behavior",
-        "Confusing package naming (types-boto3 vs boto3-stubs)",
-        "Overly broad type hints reducing type safety"
+        "Type annotation mismatches between stubs and runtime behavior",
+        "Duplicate .pyi and .py files shipped in packages",
+        "Outdated/incorrect documentation and examples",
+        "Missing metadata (extras) in package definitions",
+        "Version incompatibility with dependency updates"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active but struggling project with recurring packaging and type accuracy issues; maintainers are responding but fixes are slow and some issues remain open for months."
+      "praise_themes": [
+        "Well-documented bug reports with reproduction steps",
+        "Community engagement with enhancement requests (pyproject.toml modernization)",
+        "Some issues successfully resolved and released"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community reports genuine technical issues (type mismatches, packaging problems) with some fixes delivered, but several bugs remain unaddressed despite being marked 'response needed' and a recent issue has zero engagement."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests outdated or unmaintained package"
+        "Zero commits in past 6 months despite recent commit 2 months ago suggests sporadic updates, not active maintenance",
+        "16 open issues with zero closed in 6 months indicates issues accumulating without resolution",
+        "Zero contributors active in past 6 months - no maintainer engagement",
+        "Zero merged PRs in 6 months - no active development or community contributions",
+        "Unknown last release date - unclear release cadence"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero development activity over the past 6 months and accumulating unresolved issues."
+      "positive_signals": [
+        "Last commit relatively recent (2 months ago) suggests package is not completely abandoned",
+        "No open PRs blocking progress"
+      ],
+      "summary": "Package shows signs of abandonment with no active maintenance in 6 months; only sporadic commits and growing unresolved issues suggest inactive stewardship."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:33:08.082752+00:00"
+    "llm_analyzed_at": "2026-03-15T06:23:45.363986+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

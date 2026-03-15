@@ -179,51 +179,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 6,
       "installation": 7,
-      "quick_start": 3,
+      "quick_start": 4,
       "examples": 2,
-      "configuration": 1,
-      "troubleshooting": 1,
+      "configuration": 2,
+      "troubleshooting": 3,
       "overall": 4,
-      "summary": "Clear purpose and installation instructions, but lacks usage examples, configuration details, and troubleshooting guidance for end users.",
-      "top_issue": "No quick start code examples showing how to actually connect to PostgreSQL or execute queries - just installation commands and developer setup instructions"
+      "summary": "This README is primarily a contributor/hacking guide rather than user documentation, with minimal end-user guidance and heavy reliance on external docs links.",
+      "top_issue": "No usage examples or code snippets showing how to actually connect to a database and run queries \u2014 a new user has no idea how to use the library after installing it."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 3,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Connection pooling issues with RDS Proxy (DEALLOCATE ALL causing pinning)",
-        "Connection timeout bugs and timing inconsistencies",
-        "Missing Python 3.15 wheel support",
-        "Pool state management issues with async code",
-        "Missing OAuth authentication support"
+        "Platform/architecture compatibility (32-bit systems, Python versions)",
+        "Parameter limits (32,767 parameter restriction)",
+        "Missing numpy array support",
+        "Race conditions in async pool management",
+        "Free-threaded Python support lacking"
       ],
       "praise_themes": [
-        "Active issue triage and closure of resolved problems",
-        "Feature requests being considered and labeled",
-        "Cross-version compatibility awareness"
+        "Active engagement on technical issues",
+        "Community interest in features (numpy request has 22 comments over 4 years)",
+        "Responsive to recent bug reports"
       ],
       "abandonment_signals": false,
-      "summary": "psycopg-c shows moderate health with active issue management and recent fixes, but has notable unresolved infrastructure issues (RDS Proxy compatibility, connection timeouts) and missing modern features (Python 3.15, OAuth) that indicate some feature parity gaps."
+      "summary": "psycopg-c is actively maintained with good recent responsiveness to bugs, though some long-standing feature requests (numpy from 2022) remain deprioritized without clear timeline."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in the past 6 months despite last commit being on 2026-01-01",
-        "43 open issues with no recent closure activity",
-        "Zero merged PRs in past 6 months indicating no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process is stalled"
+        "50 open issues with zero resolved in past 6 months",
+        "No active contributors for 6 months despite recent commit",
+        "Unknown or unavailable last release information",
+        "Zero merged pull requests in past 6 months"
       ],
-      "positive_signals": [],
-      "summary": "psycopg-c appears abandoned with no development activity, issue triage, or releases in at least 6 months."
+      "positive_signals": [
+        "Recent commit activity (2026-03-10, 4 days ago)"
+      ],
+      "summary": "psycopg-c has minimal maintenance with a recent isolated commit but significant backlog of unresolved issues and no active contributor engagement for 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-13T18:07:02.882823+00:00"
+    "llm_analyzed_at": "2026-03-14T22:45:50.950168+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,48 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) but the package name is mypy-boto3-qbusiness, creating severe mismatch between content and actual package identity.",
-      "top_issue": "Critical identity mismatch: README describes 'mypy-boto3-builder' (a code generation tool) but package is 'mypy-boto3-qbusiness' (presumably pre-generated type stubs for AWS Q Business service), leaving users completely confused about what they actually installed."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-qbusiness without relevant installation or usage guidance.",
+      "top_issue": "README describes the upstream builder project, not the specific mypy-boto3-qbusiness package \u2014 no examples, configuration, or troubleshooting for the QBusiness service stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Packaging/distribution issues (setup.py vs pyproject.toml, duplicate .pyi/.py files)",
-        "Type definition inaccuracies (async/await, overly broad types, missing required fields)",
-        "Documentation and tooling gaps (generate locally instructions broken)",
-        "Confusion between similar packages (types-boto3 vs boto3-stubs)"
+        "Type definition inaccuracies (e.g., get_credentials, ToolUseBlockTypeDef)",
+        "Documentation issues (generate locally instructions don't work)",
+        "Packaging/versioning confusion (types-boto3 vs boto3-stubs, version mismatches)",
+        "Duplicate files in distributions (.pyi and .py files shipped together)",
+        "Missing extras/metadata in published packages"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with technical type stub accuracy issues, but maintainers demonstrate moderate responsiveness with some issues resolved while structural packaging concerns remain unaddressed."
+      "summary": "Active project with moderate engagement, but struggling with type stub accuracy, documentation quality, and version management across multiple package variants."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests lack of versioning activity"
+        "No commits in past 6 months despite open issues",
+        "16 open issues with zero recent closure activity",
+        "No active contributors in the past 6 months",
+        "Zero merged PRs in the past 6 months",
+        "No releases tracked",
+        "Last commit is 2+ months old with no follow-up activity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity for at least 6 months despite having open issues."
+      "positive_signals": [
+        "Last commit exists (January 2026, though dated)"
+      ],
+      "summary": "This package shows no maintenance activity for 6+ months with mounting unresolved issues, indicating it has been abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:32:37.806943+00:00"
+    "llm_analyzed_at": "2026-03-15T15:17:33.455849+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

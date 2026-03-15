@@ -179,48 +179,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
+      "installation": 9,
       "quick_start": 9,
       "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 3,
-      "overall": 8,
-      "summary": "Excellent clarity and quick start with a concrete example, but lacks inline configuration documentation and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section or common error documentation; relies entirely on external docs links"
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Excellent getting-started experience with a clear purpose, installation, and a realistic quick-start example, but configuration and troubleshooting are nearly absent in the README (deferred entirely to external docs).",
+      "top_issue": "No troubleshooting section and no configuration examples in the README \u2014 users hitting common problems (dialect selection, rule customization, .sqlfluff config) must find their way to external documentation with no guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 4,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Parser failures with dialect-specific SQL syntax (ClickHouse, T-SQL, Databricks)",
-        "Alignment and formatting issues in CREATE TABLE statements",
-        "Rule false positives (AL03 aliasing rule triggering incorrectly in T-SQL)"
+        "dialect-specific parser errors (T-SQL, Redshift, SparkSQL)",
+        "dbt templater limitations and symlink handling",
+        "indentation and formatting edge cases",
+        "build/installation tooling issues",
+        "configuration bugs with rule ignoring"
       ],
       "praise_themes": [
-        "Proactive feature requests for new SQL dialect support",
-        "Well-documented issues with clear examples"
+        "strong interest in dbt templater integration",
+        "community demand for Node.js/JavaScript bindings"
       ],
       "abandonment_signals": false,
-      "summary": "Active project with regular issues across multiple SQL dialects; moderate community engagement with some long-standing bugs (2+ years old) indicating potential maintenance debt in specific areas."
+      "summary": "Moderately healthy project showing active recent maintenance (6 closed issues) but concerning backlog of older issues from July-August 2024 still open; strong user engagement evident from Node package request (17 comments) suggests community trust, though maintenance capacity may be stretched."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite recent activity timestamp",
-        "620 open issues with no recent closure activity",
-        "No merged PRs in past 6 months indicating no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure may be unmaintained",
-        "Timestamp discrepancy (2026-01-12) suggests stale or corrupted data"
+        "Zero commits in past 6 months despite 507 open issues",
+        "No maintainer activity: 0 closed issues, 0 merged PRs, 0 active contributors in 6 months",
+        "No pull requests open (suggesting community has given up contributing)",
+        "Unknown last release version",
+        "High issue backlog with zero triage"
       ],
-      "positive_signals": [],
-      "summary": "Package appears abandoned with no development activity, contributor engagement, or issue resolution in the past 6 months despite high open issue count."
+      "positive_signals": [
+        "Last commit timestamp appears recent (today's date)"
+      ],
+      "summary": "collate-sqlfluff is abandoned with severe maintenance debt: 507 open issues, zero activity (commits, PRs, issue resolution, contributors) over the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-13T18:10:53.652481+00:00"
+    "llm_analyzed_at": "2026-03-14T22:51:02.115037+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

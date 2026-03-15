@@ -176,54 +176,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 3,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 8,
-      "overall": 6,
-      "summary": "Excellent installation documentation and system setup guidance, but lacks concrete code examples showing how to actually use the library for reading/writing GRIB and BUFR files.",
-      "top_issue": "No quick start code example in the README - users must navigate to separate markdown files to see any actual usage code, making it hard to evaluate if this package meets their needs."
+      "clarity": 7,
+      "installation": 8,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 5,
+      "troubleshooting": 6,
+      "overall": 5,
+      "summary": "Installation is thorough and well-documented, but the README provides almost no usage examples or quick-start code, redirecting users to external links instead.",
+      "top_issue": "No inline code examples \u2014 basic usage requires following external links to BUFR_Tour.md or the ECMWF documentation pages."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Installation and import failures on various platforms (Ubuntu, aarch64)",
-        "Build system issues (gcc errors, sphinx build failures)",
-        "Data encoding corruption with specific parameters",
-        "Missing binary distributions for non-x86 architectures",
-        "Circular import issues between modules"
+        "eccodeslib dependency version pinning not respected across releases",
+        "Critical missing eccodeslib dependency in 2.45.0+ breaks installations at runtime",
+        "Docker base image severely outdated (6 years), blocking wheel builds",
+        "Python version support inconsistent across setup.py, GitHub Actions, and tox",
+        "Dropped wheel support for legacy Linux distributions due to manylinux version bump"
       ],
-      "praise_themes": [
-        "Active feature requests for Python version support (3.14)",
-        "User engagement with detailed bug reports and reproducible examples",
-        "Discussion of API improvements and feature expansions"
-      ],
-      "abandonment_signals": false,
-      "summary": "The eccodes project shows moderate community health with active issue reporting and maintenance, though platform compatibility and installation problems represent significant pain points affecting user adoption."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Project shows concerning maintenance patterns: recent releases have critical dependency bugs, infrastructure is severely outdated, and multiple unresolved issues suggest inadequate maintainer capacity."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent",
-        "No closed issues in past 6 months indicating lack of issue resolution",
-        "No merged PRs in past 6 months suggesting no active development",
-        "No active contributors in past 6 months",
-        "6 open issues with no resolution activity",
-        "Unknown last release date prevents assessment of release cycle"
+        "Unknown last release date - cannot verify when users can access fixes",
+        "12 open issues accumulating without resolution (0 closed in 6 months)",
+        "Zero active contributors in past 6 months despite recent commit",
+        "No merged PRs in past 6 months - no integration of external contributions",
+        "Apparent disconnect between recent commit (2026-03-05) and 0 commits in 6-month window suggests infrequent/sporadic activity"
       ],
       "positive_signals": [
-        "Repository exists and has some historical activity"
+        "Very recent commit activity (9 days ago)",
+        "No abandoned open pull requests"
       ],
-      "summary": "The eccodes package appears abandoned with no maintenance activity in the past 6 months despite unresolved open issues."
+      "summary": "Package receives occasional commits but shows minimal active maintenance with growing unresolved issues and no recent contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-13T18:00:24.143214+00:00"
+    "llm_analyzed_at": "2026-03-14T22:36:34.287622+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

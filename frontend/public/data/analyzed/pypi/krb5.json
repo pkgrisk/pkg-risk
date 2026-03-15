@@ -168,51 +168,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 4,
-      "examples": 3,
+      "clarity": 7,
+      "installation": 8,
+      "quick_start": 2,
+      "examples": 2,
       "configuration": 7,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 5,
-      "summary": "Clear overview and installation guide, but lacks practical usage examples and troubleshooting information for developers trying to use the library.",
-      "top_issue": "No quick start code example showing basic usage - only describes how to call functions (e.g., 'krb5.init_context()') without demonstrating a complete working example"
+      "summary": "The README covers installation and build configuration well but lacks any usage examples or quick-start code, making it difficult for new users to understand how to actually use the library.",
+      "top_issue": "No quick-start example or usage code \u2014 users are told the API mirrors krb5_ C functions but given no Python examples demonstrating actual usage patterns."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
+      "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Build failures with newer Python versions (3.11, 3.13)",
-        "Cython compatibility issues (0.29.* incompatibility)",
-        "Compatibility with older Heimdal versions",
-        "Delayed releases blocking users on outdated platforms",
-        "ImportError and TypeError during basic import operations"
+        "Build failures across Python versions (3.11.10, 3.13.9)",
+        "Critical import TypeError preventing library usage",
+        "Cython compatibility issues blocking installations",
+        "Platform-specific incompatibilities (Heimdal versions, RHEL 7, FreeBSD)",
+        "Dependency version conflicts in transitive chains"
       ],
       "praise_themes": [
-        "Library usefulness acknowledged",
-        "Appreciation for the project's existence"
+        "Library functionality appreciated when working"
       ],
       "abandonment_signals": true,
-      "summary": "The krb5 package shows signs of maintenance neglect with unresolved critical build failures across Python versions, slow responsiveness to breaking changes, and a backlog of compatibility issues that prevent users from using newer releases."
+      "summary": "krb5 shows signs of abandonment with critical unresolved issues open for 11-17 months (e.g., import TypeError since March 2025), multiple Python/platform compatibility problems, and slow response times despite some recent fixes, indicating insufficient maintenance."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "10 open issues suggest unresolved problems",
-        "Unknown last release date indicates stalled release cycle"
+        "10 open issues with no resolution activity in the past 6 months",
+        "Zero contributors actively engaged in the past 6 months",
+        "No pull requests or merged PRs in the past 6 months",
+        "Last release date unknown, indicating potential versioning/release lag",
+        "One isolated recent commit (Nov 2025) with no followup activity suggests reactive rather than proactive maintenance"
       ],
-      "positive_signals": [],
-      "summary": "The krb5 package shows clear signs of abandonment with zero maintenance activity over the past 6 months, unresolved issues, and no active contributors."
+      "positive_signals": [
+        "Recent commit activity (Nov 25, 2025) indicates project is not completely abandoned",
+        "Repository still exists and maintains open visibility"
+      ],
+      "summary": "Package shows minimal maintenance with a single recent commit but no sustained development, issue resolution, or contributor engagement over 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:05:24.756096+00:00"
+    "llm_analyzed_at": "2026-03-15T17:16:08.328297+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,51 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) but the package name is mypy-boto3-waf-regional, which appears to be a generated type stub package, not the builder itself.",
-      "top_issue": "Critical mismatch: the README describes the wrong package entirely - it's for the builder tool that generates type stubs, not for this specific AWS WAF Regional service type stub package that users are actually installing."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, providing little documentation relevant to mypy-boto3-waf-regional users.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-waf-regional package itself \u2014 users get no WAF Regional-specific usage examples, API coverage, or type annotation guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch and dependency resolution issues with submodules",
-        "Packaging and build system outdated (setup.py instead of pyproject.toml)",
-        "Incorrect type definitions not matching actual API behavior",
-        "Duplicate stub files (.pyi and .py) causing tooling conflicts",
-        "Missing or incorrect metadata (extras, type information)",
-        "Confusion between related packages (types-boto3 vs boto3-stubs)"
+        "Type stub inaccuracy (wrong types, overly broad types, missing types)",
+        "Duplicate stub files (.pyi and .py shipped together)",
+        "Missing package metadata (extras, provides-extra field)",
+        "Version mismatch between submodules and main package",
+        "Outdated/incorrect documentation and examples",
+        "Confusing package naming (types-boto3 vs boto3-stubs overlap)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues eventually resolved and released",
+        "Maintainers do address reported bugs"
+      ],
       "abandonment_signals": false,
-      "summary": "Community health is moderate with active bug reporting but persistent technical debt around packaging standards, type accuracy, and dependency management that causes friction for users."
+      "summary": "Moderate health: maintainers address issues but with slow response times (months between report and fix), leaving multiple unresolved type stub bugs and documentation gaps that frustrate users awaiting acknowledgment."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in the past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero merged PRs in past 6 months indicating no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release process is stalled",
-        "No closed issues in 6 months showing lack of maintenance"
+        "16 open issues with zero closed in past 6 months indicate issues are not being addressed",
+        "Zero commits and zero contributor activity in past 6 months despite recent prior commit",
+        "No merged PRs in past 6 months suggests no active development or code review",
+        "Unknown last release date raises questions about release cadence and versioning"
       ],
       "positive_signals": [
-        "Recent commit timestamp (2026-01-12) indicates some level of access to repository"
+        "Most recent commit from January 2026 is only ~2 months old, preventing complete abandonment classification"
       ],
-      "summary": "This package appears abandoned with recent commit activity but no actual development work, merged PRs, or issue resolution in the past 6 months."
+      "summary": "Package is stale with minimal maintenance; 16 unaddressed issues and no development activity in 6 months indicate the maintainer is not actively engaged despite recent prior work."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T20:00:39.745482+00:00"
+    "llm_analyzed_at": "2026-03-15T00:03:46.561334+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

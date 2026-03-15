@@ -176,46 +176,50 @@
   "llm_assessments": {
     "readme": {
       "clarity": 7,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 3,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "Clear purpose statement but README is primarily a link directory requiring users to navigate external documentation for all practical information.",
-      "top_issue": "No installation instructions or basic usage example in the README itself - users must click through to external docs for even the most basic getting started information"
+      "overall": 2,
+      "summary": "The README is essentially a link-only stub that defers all content to external docs, providing no standalone value.",
+      "top_issue": "No installation instructions, code examples, or usage information are present in the README itself \u2014 everything is offloaded to external URLs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 4,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Concurrency/race condition issues causing file corruption and random failures",
-        "Regression from previous versions (Spark Execution Engine, GX 1.x issues)",
-        "Missing packaging/distribution files (LICENSE.txt)",
-        "Limited database/connection support and workarounds needed"
+        "Parallel execution race conditions (file corruption)",
+        "Missing Trino support (requested twice: 2023 and 2026, still unresolved)",
+        "Packaging issues (LICENSE.txt missing from PyPI source)",
+        "Database/schema name handling complexity"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Community shows moderate health with responsiveness to issues, but faces recurring concurrency problems and version upgrade regressions that cause frustration among active users."
+      "praise_themes": [
+        "Multiple database backend support (PostgreSQL, MySQL, MSSQL, Redshift, Snowflake, BigQuery, Athena)",
+        "Good bug resolution rate (8 of 12 issues closed)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows adequate maintenance for bug fixes but struggles with feature prioritization\u2014notably Trino support requested twice (2023, 2026) remains unimplemented, and a packaging issue sits open for 6 weeks with minimal engagement."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in the past 6 months despite having 1 open issue",
-        "No closed issues in the past 6 months indicating lack of maintenance activity",
-        "No merged PRs in the past 6 months showing no development progress",
-        "Zero active contributors in the past 6 months",
-        "Unknown last release date suggests outdated release information",
-        "Open issues remain unaddressed with no recent activity"
+        "No commits recorded in past 6 months despite recent commit date (data inconsistency suggests tracking issues)",
+        "Zero closed issues in past 6 months while 3 remain open",
+        "No merged PRs or active contributors in past 6 months",
+        "Unknown last release date indicates poor release management",
+        "Recent commit appears isolated with no ongoing maintenance activity"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero maintenance activity over the past 6 months across all metrics (commits, issue resolution, PRs, and contributors)."
+      "positive_signals": [
+        "One commit within past 2 months shows minimal recent activity"
+      ],
+      "summary": "Package exhibits characteristics of a stale, minimally-maintained project with no recent issue resolution, PR merges, or contributor activity despite a single recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:14:30.656116+00:00"
+    "llm_analyzed_at": "2026-03-15T17:38:24.002309+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

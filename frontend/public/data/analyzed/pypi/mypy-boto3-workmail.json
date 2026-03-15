@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) rather than the actual package (mypy-boto3-workmail), making it unclear what this specific package does or how to use it.",
-      "top_issue": "Complete package identity mismatch - the README describes mypy-boto3-builder (a code generator) instead of mypy-boto3-workmail (a generated type stubs package), leaving users with no information about the actual package they're installing"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-workmail package, leaving users without targeted guidance for this service-specific stub.",
+      "top_issue": "The README describes the mypy-boto3-builder generator, not the mypy-boto3-workmail package itself \u2014 there are no WorkMail-specific usage examples, type annotation demos, or configuration details for this particular service stub."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type definition inaccuracies (async/await, Literal types, TypedDict requirements)",
-        "Packaging/distribution issues (version mismatches, duplicate .py/.pyi files, missing extras)",
-        "Documentation and tooling gaps (pyproject.toml migration, local generation instructions)",
-        "Confusion between parallel packages (types-boto3 vs boto3-stubs, types-aiobotocore vs alternatives)"
+        "Type annotation accuracy issues (wrong definitions in stubs causing validation failures)",
+        "Build/packaging problems (duplicate .pyi/.py files, non-deterministic outputs)",
+        "Documentation and usability gaps (confusing package naming, broken local generation instructions)",
+        "Missing package metadata (extras not properly declared)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Willingness to adopt modern Python standards (pyproject.toml migration completed)",
+        "Technical depth of type system coverage"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with engaged users reporting legitimate type definition and packaging bugs, but moderate maintainer responsiveness and persistent documentation gaps create friction in the community."
+      "summary": "Active but stretched: project resolves major enhancements but has accumulated technical debt with multiple type annotation bugs and documentation issues marked 'response needed' remaining unaddressed."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "No merged PRs in past 6 months",
-        "No releases in the tracked period",
-        "Zero closed issues in past 6 months indicates no maintenance activity"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No issues resolved or closed in past 6 months",
+        "No pull requests merged in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown release history - no documented releases",
+        "Open issues accumulating without triage or response"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-12), though appears to be a one-time event",
-        "No open PRs suggests minimal pending work"
+        "Had some development activity at one point (last commit exists)",
+        "Package exists on PyPI and was previously maintained"
       ],
-      "summary": "This package appears abandoned with no maintenance activity over the past 6 months despite recent repository activity."
+      "summary": "This package is stale with complete absence of maintenance activity over 6 months, leaving 16 issues unaddressed and no releases tracked."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T18:30:30.686025+00:00"
+    "llm_analyzed_at": "2026-03-15T16:22:39.345897+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

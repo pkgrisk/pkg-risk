@@ -191,50 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 5,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it's for the builder tool (mypy-boto3-builder) but the package name is types-boto3-sqs, causing severe mismatch between what users expect and what's documented.",
-      "top_issue": "Critical package identity confusion - README describes mypy-boto3-builder (the generator tool) but the package is types-boto3-sqs (a generated type stub package for AWS SQS service), making the entire README misleading for users who installed this specific package"
+      "summary": "The README is for the builder tool rather than the specific `types-boto3-sqs` package, leaving users without direct guidance on installing or using SQS type stubs.",
+      "top_issue": "README is mismatched \u2014 it documents the mypy-boto3-builder generator, not the types-boto3-sqs package itself, so there are no SQS-specific installation, usage, or configuration examples."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/metadata in package definitions",
-        "Duplicate stub files (.pyi and .py) causing IDE confusion",
-        "Type definition inaccuracies (wrong async signatures, overly broad types)",
-        "Documentation/tooling issues (outdated instructions, setup.py deprecation)"
+        "Type stub inconsistencies (both .pyi and .py files shipped)",
+        "Version/dependency resolution issues (1.42 submodules not found)",
+        "Missing or incorrect type definitions (ToolUseBlockTypeDef, get_credentials)",
+        "Missing package metadata (extras not declared)",
+        "Outdated documentation (generate locally instructions broken)",
+        "Confusion between related packages (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Well-documented bug reports with reproduction steps",
+        "Eventually addresses issues (some marked released)"
+      ],
       "abandonment_signals": false,
-      "summary": "The types-boto3 project shows moderate community health with active bug reports and some responsiveness, but faces recurring structural issues around version management, packaging standards, and type accuracy that suggest maintenance strain on a large auto-generated stub collection."
+      "summary": "Moderately maintained project with recurring type definition and dependency issues; maintainers address problems eventually but response times are slow, leaving users waiting on several \"response needed\" issues open for months."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being 2 weeks ago",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no active issue management",
-        "No merged PRs in past 6 months showing no code changes",
+        "No commits in past 6 months",
+        "16 open issues with no recent triage or resolution",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests release process has stalled"
+        "Unknown last release date makes it unclear if users can get fixes"
       ],
       "positive_signals": [
-        "Recent commit activity 2 weeks ago indicates some level of attention"
+        "Type stub packages (types-boto3-sqs) have lower maintenance burden than full SDKs",
+        "Last commit within 2 months suggests minimal ongoing activity but not completely abandoned"
       ],
-      "summary": "This package appears abandoned with no meaningful maintenance activity over the past 6 months despite a recent commit, suggesting the repository may be dormant or only receiving minimal sporadic updates."
+      "summary": "Package shows signs of stagnation with six months of zero development activity, no issue resolution, and open issues accumulating without maintainer response."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T12:13:37.031419+00:00"
+    "llm_analyzed_at": "2026-03-15T13:26:44.107012+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

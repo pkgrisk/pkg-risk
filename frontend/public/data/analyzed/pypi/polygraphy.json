@@ -178,51 +178,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 5,
       "installation": 7,
-      "quick_start": 8,
-      "examples": 3,
-      "configuration": 5,
+      "quick_start": 4,
+      "examples": 4,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The README provides a clear quick-start for Python users but confuses readers by focusing heavily on building TensorRT OSS from source when most users need the prebuilt package.",
-      "top_issue": "The README is for TensorRT OSS (a subset for building from source) but appears under the 'polygraphy' package name, causing confusion about what this package actually is and whether users need to build from source or can just pip install."
+      "overall": 4,
+      "summary": "The README covers TensorRT OSS build prerequisites and installation reasonably well but is mismatched to the package name 'polygraphy' and lacks quick-start examples, configuration docs, and troubleshooting guidance.",
+      "top_issue": "The README appears to be for the TensorRT OSS repository, not specifically for the 'polygraphy' package, leaving users with no clear explanation of what polygraphy does or how to use it."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Performance optimization challenges (FP8/FP4 quantization not delivering expected gains)",
-        "Compatibility issues (Python 3.14 support request, version mismatches)",
-        "Feature gaps (FormattedArray not supporting reformatted tensor types)",
-        "Memory consumption problems (virtual CPU memory exhaustion with multiple execution contexts)",
-        "Documentation clarity (unclear best practices for dynamic shape handling)"
+        "Performance regressions in TensorRT v10.x (visualization, FP16 speedup)",
+        "Critical accuracy bugs (BF16 inaccuracy at Slice nodes, modulus operation returning -1)",
+        "Engine build and inference failures (Myelin compiler failures, null inference outputs)",
+        "Quantization support limitations and incompatibilities",
+        "Custom plugin performance not matching official implementations"
       ],
-      "praise_themes": [
-        "Active issue reporting and community engagement",
-        "Technical depth of discussions"
-      ],
-      "abandonment_signals": false,
-      "summary": "Healthy but resource-constrained community with active users reporting technical issues; maintainers respond but with delays, indicating moderate capacity or prioritization challenges."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "The polygraphy project shows signs of maintenance concern with multiple critical bugs (accuracy regressions, performance failures) remaining open for months, minimal maintainer engagement across most issues, and no visible community enthusiasm or positive feedback."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being from December 2025",
-        "561 open issues with no recent activity or triage",
-        "Zero closed issues in past 6 months indicating no bug fixes",
-        "No merged PRs in past 6 months showing no feature development or maintenance",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure may be neglected"
+        "579 open issues with zero closed in 6 months",
+        "No merged PRs or contributor activity in 6 months",
+        "Zero response to issue backlog despite high volume",
+        "No pull request activity despite large unresolved issue queue"
       ],
-      "positive_signals": [],
-      "summary": "Polygraphy appears to be abandoned with no maintenance activity for at least 6 months, a large backlog of unresolved issues, and no recent releases or contributor engagement."
+      "positive_signals": [
+        "Recent commit activity (March 9, 2026)",
+        "Repository still exists and is accessible"
+      ],
+      "summary": "Polygraphy appears abandoned with a massive unaddressed issue backlog and no maintenance activity for 6 months despite recent code activity."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T12:01:16.030848+00:00"
+    "llm_analyzed_at": "2026-03-15T13:15:08.390712+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,48 +191,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) while the package name suggests it's a pre-built type stub package (mypy-boto3-iotwireless), leaving users uncertain what they actually installed.",
-      "top_issue": "Package name/README mismatch: users installing 'mypy-boto3-iotwireless' get documentation for 'mypy-boto3-builder', with no explanation of what IoT Wireless service types are included or how to use them directly"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific service stub package, leaving users of mypy-boto3-iotwireless with no package-specific guidance.",
+      "top_issue": "This README belongs to the parent builder project, not the mypy-boto3-iotwireless package itself \u2014 there are no examples, API references, or usage instructions specific to the IoT Wireless service stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/dependencies not properly exposed",
-        "Duplicate .pyi and .py files causing tooling confusion",
-        "Type definitions don't match actual runtime behavior",
-        "Documentation and setup instructions are outdated/broken"
+        "Type hints not matching actual runtime behavior (async/await, Literal values)",
+        "Duplicate stub files (.pyi and .py) shipped together causing IDE conflicts",
+        "Outdated documentation and generate locally instructions",
+        "Version mismatches between related packages (types-boto3 vs submodules)",
+        "Missing extras/features in package metadata",
+        "Packaging confusion (types-boto3 vs boto3-stubs naming)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues systematically tracked and many resolved with releases",
+        "Well-structured, detailed bug reports from users"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with several unresolved type definition bugs and packaging issues, but no critical abandonment signals; maintainers are responding but issues persist across versioning, metadata exposure, and type accuracy."
+      "summary": "Moderately maintained project showing active issue resolution and releases, but users express frustration with type stub accuracy, documentation gaps, and several issues marked 'response needed' remaining unaddressed for months."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months",
-        "No merged PRs in the past 6 months",
-        "No closed issues in the past 6 months",
-        "15 open issues with no activity",
-        "No active contributors in the past 6 months",
-        "Unknown last release date"
+        "No commits in past 6 months despite last commit 2 months ago suggests data inconsistency or stalled development",
+        "Zero merged PRs in past 6 months indicates no active development or review",
+        "Zero contributors active in past 6 months shows no maintainer engagement",
+        "16 open issues with zero closed in 6 months suggests issues are not being triaged or addressed",
+        "Unknown last release date may indicate no recent releases or poor release tracking",
+        "No pull request activity indicates low community engagement"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity for at least 6 months despite having unresolved open issues."
+      "positive_signals": [
+        "Repository still exists (has a last commit timestamp)",
+        "No indication of repository deletion or archival"
+      ],
+      "summary": "This package shows no meaningful maintenance activity over the past 6 months with accumulating open issues and no release information, indicating it is effectively stale and potentially abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:48:06.627582+00:00"
+    "llm_analyzed_at": "2026-03-15T16:32:14.729597+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

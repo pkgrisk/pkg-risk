@@ -168,49 +168,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 7,
-      "installation": 6,
-      "quick_start": 2,
+      "clarity": 5,
+      "installation": 4,
+      "quick_start": 1,
       "examples": 1,
-      "configuration": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README clearly explains what the plugin does but completely lacks usage examples and focuses heavily on development/testing rather than user guidance.",
-      "top_issue": "No quick start guide or usage examples showing how to actually use the plugin with MLflow and SageMaker after installation"
+      "overall": 2,
+      "summary": "Developer-focused README that explains internals but provides no usage examples, configuration guidance, or quick start for end users.",
+      "top_issue": "No quick start or usage examples showing how to actually connect MLflow to SageMaker tracking servers after installation."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Authentication and credential handling issues (missing credentials, expired signatures)",
-        "Performance problems with repeated authentication calls",
-        "Missing or incomplete API methods",
-        "Heavy dependency footprint (full mlflow vs mlflow-skinny)",
-        "Lack of documentation and usage examples",
-        "Integration issues with other tools (genai.evaluate)"
+        "Heavy dependency set (full mlflow vs mlflow-skinny)",
+        "Version incompatibilities (scikit-learn, mlflow 3.8.x)",
+        "Authentication failures and credential management issues",
+        "AuthBoto performance problem (session recreation on every call)",
+        "Missing documentation and examples",
+        "Integration issues with downstream tools (genai.evaluate, pytorch lightning)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "sagemaker-mlflow shows poor community health with persistent unresolved authentication issues, performance problems, minimal documentation, and slow maintainer engagement despite critical bugs remaining open for extended periods."
+      "summary": "Mixed health with concerning lack of response to critical production issues: a documentation request sits unfixed for 8+ months, recent scikit-learn incompatibility has zero engagement, and a critical credentials failure on EC2 remains unanswered despite impacting long-running training jobs."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months despite last commit being from December 2025",
-        "Zero contributors active in the past 6 months",
-        "No merged PRs in the past 6 months",
-        "No closed issues in the past 6 months",
-        "5 open issues with no activity",
+        "No commits in past 6 months despite recent activity",
+        "8 open issues with no resolution activity",
+        "No closed issues in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors",
         "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity in at least 6 months and unresolved open issues accumulating."
+      "positive_signals": [
+        "Last commit relatively recent (3.5 months ago)",
+        "Project still exists and is not completely abandoned"
+      ],
+      "summary": "Package shows signs of neglect with accumulating unresolved issues and no recent maintenance activity, though not entirely abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T19:33:50.026561+00:00"
+    "llm_analyzed_at": "2026-03-14T23:50:28.140736+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

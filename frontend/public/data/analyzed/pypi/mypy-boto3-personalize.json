@@ -191,50 +191,56 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README describes a builder tool for generating type stubs rather than the actual mypy-boto3-personalize package that users installed, causing massive confusion about what the package actually does.",
-      "top_issue": "This is the wrong README - users installing mypy-boto3-personalize get documentation for mypy-boto3-builder (the generator), not for how to use the generated type stubs for AWS Personalize service"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-personalize package, leaving users without package-specific context, examples, or configuration guidance.",
+      "top_issue": "README describes the parent builder project, not the specific mypy-boto3-personalize package \u2014 no Personalize-specific usage examples, type stubs, or API coverage are shown."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate stub files (.pyi and .py) causing editor confusion",
-        "Incorrect type definitions for async methods and AWS API responses",
-        "Missing or incorrect extras/optional dependencies",
-        "Documentation and tooling issues (setup.py deprecation, broken generate locally instructions)"
+        "Type stub accuracy issues (wrong async signatures, overly broad type definitions, incorrect literal values)",
+        "Duplicate stub files (.pyi and .py shipped together causing IDE conflicts)",
+        "Missing or mismatched type stub versions for submodules",
+        "Package metadata issues (missing extras, inconsistent Provides-Extra declarations)",
+        "Outdated and incorrect documentation/build instructions",
+        "Confusion between multiple similar packages (types-boto3 vs boto3-stubs naming)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Responsive to large-scale feature requests (pyproject.toml migration completed and released)",
+        "Users provide detailed, actionable bug reports with reproduction steps",
+        "Active community engagement and participation in discussions"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with moderate maintainer engagement addressing legitimate technical issues around type accuracy and packaging standards, though some bugs remain open with incomplete resolutions."
+      "summary": "Project shows moderate activity with some resolved issues but persistent struggles around type stub correctness and documentation maintenance create moderate user frustration in a type-critical codebase."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months indicating no active development",
-        "No closed issues in past 6 months despite 15 open issues",
-        "Unknown last release date suggests release infrastructure may be broken",
-        "High number of open issues (15) with no resolution activity"
+        "Zero commits in past 6 months despite last commit 2 months ago",
+        "16 open issues with no resolution activity",
+        "No closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors for 6+ months",
+        "Unknown or missing last release date",
+        "Complete stagnation suggests active maintenance has ceased"
       ],
       "positive_signals": [
-        "Recent commit exists (2026-01-12), suggesting repository is not completely deleted"
+        "At least one recent commit exists (2026-01-12), indicating not completely deleted"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for at least 6 months, no contributor engagement, and unresolved issues accumulating."
+      "summary": "Package is effectively abandoned with no maintenance activity for 6+ months and accumulating unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:03:19.550927+00:00"
+    "llm_analyzed_at": "2026-03-15T01:20:42.877753+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -170,47 +170,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 10,
-      "quick_start": 9,
-      "examples": 9,
-      "configuration": 8,
-      "troubleshooting": 3,
-      "overall": 8,
-      "summary": "Excellent README with clear explanations and practical examples, but lacks troubleshooting guidance and edge case documentation.",
-      "top_issue": "No troubleshooting section covering common issues like invalid replacement IDs, circular references, or performance considerations for large JSON objects"
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 8,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 1,
+      "overall": 7,
+      "summary": "Well-structured docs with clear API signatures and concrete examples, but lacks troubleshooting guidance and context on when/why you'd use this library.",
+      "top_issue": "No troubleshooting section and no real-world motivation explaining why you'd want to condense JSON (e.g., LLM token reduction), making the use case unclear to new users."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Edge cases with blank/null string replacements causing KeyErrors",
-        "Conflicts with reserved JSON keys ($r, $) not handled gracefully"
+        "Edge case handling for null/blank values in replacements",
+        "JSON key collision when input contains reserved keys ($r, $)",
+        "Type safety gaps"
       ],
       "praise_themes": [
-        "Quick issue resolution and bug fixes",
-        "Proactive enhancement implementation"
+        "Quick bug fixes being deployed"
       ],
       "abandonment_signals": false,
-      "summary": "Young but actively maintained project with engaged maintainer addressing bug reports promptly; core issues relate to handling edge cases in string replacement logic rather than abandonment or poor responsiveness."
+      "summary": "Early-stage library (launched Feb 2025) with decent momentum but an unresolved core limitation: it breaks when JSON already contains its reserved compression keys, and edge cases around null/empty values need more robustness."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits for over 8 months (last commit May 2025, current date Feb 2026)",
-        "No activity on issues - 2 open issues remain unaddressed",
-        "No merged PRs in past 6 months indicates no active development",
-        "No new releases despite having open issues",
-        "Zero active contributors in the past 6 months"
+        "No commits in past 6 months (last commit ~9.5 months ago)",
+        "2 unresolved open issues with no activity",
+        "No closed issues in past 6 months",
+        "Zero active contributors",
+        "No merged PRs in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "The project is effectively abandoned with no maintenance activity for over 8 months and unresolved open issues accumulating."
+      "positive_signals": [
+        "Last commit within past year suggests not completely abandoned",
+        "No recent broken PRs or failing changes",
+        "Stable codebase with no recent churn"
+      ],
+      "summary": "Package shows stale maintenance with no activity for 6+ months despite open unresolved issues and no active contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:35:42.680192+00:00"
+    "llm_analyzed_at": "2026-03-15T09:29:47.441084+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

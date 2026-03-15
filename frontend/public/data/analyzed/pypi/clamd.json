@@ -175,46 +175,49 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
+      "installation": 5,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 6,
-      "summary": "Clear purpose and excellent quick start examples, but lacks configuration options, troubleshooting guidance, and complete installation instructions for the Python package itself.",
-      "top_issue": "Missing installation instructions for the Python package (pip install clamd) and no documentation of configuration options like specifying socket paths, timeouts, or connection parameters."
+      "overall": 5,
+      "summary": "README covers basic usage well with clear examples but lacks Python package installation instructions, configuration docs, and any troubleshooting guidance.",
+      "top_issue": "No Python package installation instructions (e.g., `pip install clamd`) \u2014 only shows how to install the ClamAV system daemon, leaving users to guess how to install the Python module itself."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "unresponsive",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Unmaintained project with stale PRs",
-        "Critical dependency issue (pkg_resources deprecation)",
-        "Buffer/streaming bugs with large files",
-        "Unclear documentation and fork differentiation",
-        "Missing error handling in instream() method"
+        "Stale/unprocessed pull requests due to lack of maintainer capacity",
+        "Bugs in instream() error handling and return values (unfixed since 2019-2021)",
+        "Large file handling failures (BrokenPipeError on >500MB files)",
+        "Technical debt: pkg_resources deprecation deadline (2025-11-30) not addressed",
+        "Ecosystem fragmentation with multiple unmaintained forks"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Library works fine despite maintenance issues"
+      ],
       "abandonment_signals": true,
-      "summary": "The clamd project shows severe signs of abandonment with multiple critical issues, deprecated dependencies, unresolved bugs spanning years, and explicit maintainer capacity concerns raised by contributors."
+      "summary": "The clamd project exhibits concerning signs of maintenance collapse: a maintainer explicitly pleaded for additional resources in 2023, critical bugs remain unfixed for 5-7 years, a deprecation deadline is approaching unaddressed, and multiple ecosystem forks suggest user confusion about which version to use."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in over 12 months (last commit January 4, 2024)",
-        "Zero activity in past 6 months across all metrics",
-        "13 open issues with no resolution or triage",
-        "No merged PRs or releases in past 6 months",
-        "Zero active contributors in past 6 months"
+        "No commits or activity for over 14 months",
+        "Zero activity in past 6 months (no commits, closed issues, or merged PRs)",
+        "13 open issues with no recent resolution",
+        "No active contributors or maintainers",
+        "Unknown last release date suggests release pipeline is stalled",
+        "No response to user-submitted issues"
       ],
       "positive_signals": [],
-      "summary": "This package appears abandoned with no development activity, issue resolution, or maintainer engagement for over a year."
+      "summary": "The clamd package is effectively abandoned with no maintenance activity for over a year and a growing backlog of unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T20:10:00.599504+00:00"
+    "llm_analyzed_at": "2026-03-15T00:12:39.982155+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

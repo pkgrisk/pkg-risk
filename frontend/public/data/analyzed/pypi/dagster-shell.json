@@ -190,48 +190,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 9,
-      "quick_start": 10,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 8,
-      "summary": "Excellent clarity and quick start with a compelling example, but lacks configuration details and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section or common issues documentation; users must rely on external docs or community for problem resolution"
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 6,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "This README is for the core dagster package and provides good high-level context, but as documentation for dagster-shell specifically it fails entirely \u2014 no shell-specific usage, configuration, or examples are present.",
+      "top_issue": "The README is the generic dagster monorepo README, not specific to dagster-shell \u2014 it contains zero information about what dagster-shell does, how to use shell ops/assets, or any shell-specific configuration options."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "UI regressions between minor versions",
-        "Complex configuration and resource initialization bugs",
-        "Kubernetes/container environment compatibility issues",
-        "Dependency version conflicts",
-        "Asset loading and import handling edge cases"
+        "Asset lifecycle management issues (cleanup, wiping assets)",
+        "Partitioned asset check execution loading wrong partitions",
+        "Critical code location loading failures with new features",
+        "Integration limitations (Databricks auth, dbt asset features parity)",
+        "UI/UX clutter with large numbers of objects"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Dagster shows active maintenance with recent bug reports (Jan 2026) and community engagement, but moderate responsiveness with unresolved issues spanning configuration, UI, and infrastructure compatibility that suggest some technical debt."
+      "praise_themes": [
+        "Users actively adopting Dagster for ETL/orchestration",
+        "Incremental feature requests suggest satisfaction with core product"
+      ],
+      "abandonment_signals": true,
+      "summary": "Mixed health: active user adoption with legitimate bugs and feature requests, but concerning lag in responding to recent critical issues and accumulating 'stale' labels suggests maintenance capacity constraints."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 10,
+      "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-23)",
-        "2776 open issues with no activity to address them",
-        "No closed issues in past 6 months indicating no maintenance effort",
-        "No merged PRs in past 6 months showing no development activity",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure may be inactive"
+        "No commits in past 6 months despite last commit timestamp of today",
+        "Massive backlog of 2789 open issues with zero closed issues in 6 months",
+        "No merged PRs or pull request activity in past 6 months",
+        "Zero active contributors for 6 months",
+        "Unknown release schedule with no recent releases",
+        "Data inconsistency suggests stale repository state"
       ],
-      "positive_signals": [],
-      "summary": "Package is abandoned with no maintenance activity for at least 6 months despite a recent commit timestamp, indicating the repository may be stale or the timestamp unreliable."
+      "positive_signals": [
+        "Repository exists and has a recent timestamp"
+      ],
+      "summary": "dagster-shell appears abandoned with a severe maintenance backlog of 2789 unresolved issues and zero development activity for 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:56:49.461482+00:00"
+    "llm_analyzed_at": "2026-03-15T04:42:15.501551+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

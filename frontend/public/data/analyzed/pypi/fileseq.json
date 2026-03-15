@@ -179,51 +179,52 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 2,
+      "installation": 5,
       "quick_start": 8,
       "examples": 9,
       "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 6,
-      "summary": "Excellent clarity and examples for VFX professionals, but completely missing installation instructions and minimal troubleshooting guidance.",
-      "top_issue": "No installation instructions provided - users don't know how to install the package (pip install fileseq?)"
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Excellent example coverage for core functionality with clear explanations, but lacks installation instructions for end users and has no troubleshooting section.",
+      "top_issue": "No end-user installation instructions (e.g., `pip install fileseq`) \u2014 the Development section only covers contributor setup, leaving regular users without guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Path handling inconsistencies across platforms (Windows/POSIX)",
-        "Frame range parsing edge cases (negative ranges, no basename sequences)",
-        "API behavior inconsistencies (FileSequence vs FrameSet comparison, padding handling)",
-        "Limited extensibility for custom syntax formats",
-        "Documentation generation issues"
+        "Path handling regressions in v3.1.0 (UNC paths, dots in directory names)",
+        "Edge cases with filenames containing multiple dots",
+        "Cross-platform path separator inconsistencies",
+        "Serialization/deserialization data loss"
       ],
       "praise_themes": [
-        "Interest in type safety improvements (type stubs requested)",
-        "Community willingness to contribute fixes",
-        "Functional library despite edge cases"
+        "Extensive use in production studios",
+        "Active v3 migration with architectural improvements (ANTLR4 grammar)",
+        "Performance optimizations (Range-Based FrameSet with 99.9% memory reduction)"
       ],
       "abandonment_signals": false,
-      "summary": "The fileseq project shows moderate health with active issue handling but recurring edge-case bugs suggest the codebase may benefit from refactoring core parsing logic to handle platform differences and complex frame ranges more robustly."
+      "summary": "Project is actively maintained with ongoing v3 migration, but recent releases introduced path-handling regressions that need urgent attention to prevent user churn."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 5,
       "concerns": [
-        "No commits in the past 6 months despite last commit being from December 2024",
-        "4 open issues with no recent activity or resolution",
-        "No merged pull requests in the past 6 months",
-        "No closed issues in the past 6 months indicating lack of issue triage",
-        "Zero active contributors in the past 6 months",
-        "Unknown last release date suggests lack of release management"
+        "No commits in past 6 months despite recent commit (data inconsistency)",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "No closed issues or merged PRs in past 6 months",
+        "1 open unaddressed issue"
       ],
-      "positive_signals": [],
-      "summary": "The project appears abandoned with no development activity, issue resolution, or contributor engagement in the past 6 months."
+      "positive_signals": [
+        "Very recent commit (2 days ago)",
+        "Repository is not archived"
+      ],
+      "summary": "Package shows minimal activity with a single recent commit but no sustained development, no contributor engagement, and unclear release history suggesting either recently revived or dormant with occasional touches."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T07:08:13.683723+00:00"
+    "llm_analyzed_at": "2026-03-15T09:16:04.879809+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

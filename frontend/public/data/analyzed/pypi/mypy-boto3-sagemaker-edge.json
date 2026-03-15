@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README is confusing because it describes the builder tool rather than the actual package (mypy-boto3-sagemaker-edge), leaving users unclear about what they actually installed.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder tool's README, not documentation for the mypy-boto3-sagemaker-edge package itself, causing complete confusion about the package's purpose and usage"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-sagemaker-edge package, leaving users confused about what this particular package does and how to use it.",
+      "top_issue": "The README describes the parent builder project rather than the specific sagemaker-edge stubs package \u2014 a new user cannot determine what this package provides or how to use it for SageMaker Edge type annotations."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type stub generation and packaging inconsistencies (duplicate .pyi/.py files, missing extras)",
-        "Version mismatch between main and submodule packages",
-        "Inaccurate type definitions for AWS API responses (tool_use vs server_tool_use, async/await mismatches)",
-        "Documentation and tooling issues (setup.py deprecation, local generation instructions broken)",
-        "Confusion between package variants (types-boto3 vs boto3-stubs, types-aiobotocore vs aiobotocore-stubs)"
+        "Type annotation accuracy (wrong types for async functions, overly broad type definitions)",
+        "Duplicate .pyi and .py files causing tooling conflicts",
+        "Documentation/setup instructions outdated or incorrect",
+        "Version mismatches between main and submodule packages",
+        "Missing package metadata (extras/provides-extra fields)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active issue resolution (4 of 10 closed)"
+      ],
       "abandonment_signals": false,
-      "summary": "Moderately healthy project with active issues but slow resolution; users are frustrated with type accuracy, packaging inconsistencies, and lack of clarity around multiple similar packages, though maintainers are addressing concerns."
+      "summary": "The project shows moderate health with active maintenance addressing some issues, but several open bugs around type accuracy, packaging duplication, and documentation remain unresolved, indicating ongoing community friction."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite being a generated package that should track upstream changes",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "No active contributors in past 6 months",
-        "Unknown last release suggests tracking has been lost"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No issue resolution activity (0 closed issues in 6 months)",
+        "No merged PRs in 6 months",
+        "No active contributors in 6 months",
+        "Unknown last release version",
+        "Accumulating unresolved issues suggests no active maintenance"
       ],
       "positive_signals": [
-        "Open issues exist, indicating the package was once monitored"
+        "Repository still exists and has not been deleted",
+        "One commit within last 2 months suggests minimal recent activity"
       ],
-      "summary": "This auto-generated boto3 wrapper package appears abandoned with no maintenance activity for 6+ months despite 15 unresolved issues."
+      "summary": "Package appears abandoned with no meaningful maintenance activity for 6+ months, 16 unresolved issues, and no contributor engagement."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:03:11.789035+00:00"
+    "llm_analyzed_at": "2026-03-15T07:15:24.303981+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

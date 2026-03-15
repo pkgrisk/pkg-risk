@@ -189,14 +189,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The documentation is comprehensive and well-structured, but may be overwhelming for new users due to its complexity and lack of concise troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting guidance"
+      "installation": 5,
+      "quick_start": 3,
+      "examples": 5,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 5,
+      "summary": "Comprehensive feature coverage and good navigation links, but relies heavily on external documents with no inline quick-start or troubleshooting guidance.",
+      "top_issue": "No inline quick-start example \u2014 users must follow multiple external links just to run a basic Wasm module, creating a steep initial barrier."
     },
     "security": {
       "overall_score": 7,
@@ -223,15 +223,20 @@
       "summary": "The wamr-compiler/main.c file has some security concerns, including potential injection risks and lack of input validation, but overall the code appears to be well-structured and follows good practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "relocation fails on RISC-V AOT with opt level > 0"
+        "Platform-specific bugs (Windows LLVM-PGO, ARM64 runtime exceptions)",
+        "Missing platform support and examples (Zephyr OS WASI-NN)",
+        "Incomplete debugging features (qWasmStackValue command)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively discussing issues, but there are unresolved technical problems that may cause frustration."
+      "praise_themes": [
+        "Feature development progress (WASI-NN milestones completed)",
+        "Active release cycle (v2.4.4)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows mixed health: recent bug reports and completed features indicate active development, but slow response times and a 5-year-old unresolved issue suggest inadequate maintainer capacity for community support."
     },
     "communication": {
       "helpfulness": 8,
@@ -244,14 +249,19 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors are actively involved"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "553 open issues with zero closed in past 6 months indicates complete triage backlog",
+        "Zero active contributors in past 6 months despite massive issue backlog",
+        "No merged PRs in 6 months suggests external contributions not being integrated",
+        "No releases indicates users cannot get bug fixes or improvements",
+        "Open PRs at 0 despite hundreds of open issues suggests development has stalled"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Very recent commit (2026-03-12, only 3 days ago) shows some activity"
+      ],
+      "summary": "Project appears stale with a recent commit, but overwhelming issue backlog, zero contributor engagement, and no releases indicate it is not actively maintained."
     },
     "changelog": null,
     "governance": {
@@ -261,7 +271,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision-making process and indicates multiple maintainers, but lacks a succession plan or contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T18:56:01.167519+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

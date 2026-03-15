@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) rather than the actual package (types-boto3-lambda), leaving users unclear about what they installed and how to use it.",
-      "top_issue": "Package name mismatch - user installed 'types-boto3-lambda' but README is for 'mypy-boto3-builder', with no clear explanation of the relationship or how to actually use type stubs for AWS Lambda"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `types-boto3-lambda` package, leaving users confused about what this particular package does and how to use it directly.",
+      "top_issue": "The README describes the mypy-boto3-builder generator, not the `types-boto3-lambda` stub package itself \u2014 a new user has no idea what this specific package provides or how to install/use it directly with boto3's Lambda client."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Packaging/distribution issues (setup.py vs pyproject.toml, duplicate .py/.pyi files)",
-        "Type stub accuracy problems (incorrect method signatures, overly broad types)",
-        "Missing or incomplete package metadata (extras not provided)",
-        "Documentation and tooling gaps (generate locally instructions don't work)"
+        "Type definition inaccuracies (wrong async/await signatures, overly broad types)",
+        "Package distribution/versioning inconsistencies across submodules",
+        "Duplicate stub files (.pyi and .py causing tool confusion)",
+        "Documentation errors (instructions don't work as written)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues get resolved (pyproject.toml migration completed)",
+        "Detailed technical engagement from community members",
+        "Some bugs marked as released/fixed"
+      ],
       "abandonment_signals": false,
-      "summary": "Active but struggling project with legitimate technical issues around version management, packaging standards, and type accuracy that create friction for users, though maintainers are responding to reports and have closed several issues."
+      "summary": "Active project with moderate maintenance responsiveness; several unresolved type definition and packaging bugs suggest the maintainers are responsive to enhancements but lag on bug fixes across distributed submodules."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicates no maintenance work",
-        "No merged PRs in past 6 months shows no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release history is unavailable or stale"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No closed issues or PR activity in 6 months indicates abandoned issue triage",
+        "No active contributors for 6 months",
+        "Unknown last release - may be significantly outdated",
+        "Accumulating open issues with no resolution pathway"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with zero maintenance activity over the past 6 months despite having unresolved issues."
+      "positive_signals": [
+        "Last commit relatively recent (2 months ago)",
+        "Has open issues suggesting package is still used"
+      ],
+      "summary": "Package is stale with zero maintenance activity over 6 months and 16 unresolved issues, indicating the maintainers are not actively managing this library."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:24:13.637064+00:00"
+    "llm_analyzed_at": "2026-03-15T07:01:37.582407+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,50 +191,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool rather than the mypy-boto3-dynamodb package itself, with minimal concrete usage examples and unclear target audience differentiation.",
-      "top_issue": "Wrong README content - this describes mypy-boto3-builder (a code generator) but the package is mypy-boto3-dynamodb (generated type stubs), causing fundamental confusion about what the package actually does and how to use it"
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-dynamodb package, providing minimal actionable guidance and deferring almost everything to external documentation links.",
+      "top_issue": "This README describes the builder project, not the specific mypy-boto3-dynamodb package \u2014 a new user has no idea how to install or use DynamoDB type stubs specifically."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version synchronization issues between main package and submodules",
-        "Duplicate file formats (.pyi and .py) causing tooling conflicts",
-        "Incorrect type definitions not matching actual AWS API behavior",
-        "Missing or incorrect metadata (extras, version constraints)",
-        "Documentation and tooling gaps (local generation instructions outdated)"
+        "Type annotation/stub accuracy issues (duplicate .pyi/.py files, incorrect type definitions, missing type information)",
+        "Dependency version mismatches and compatibility issues (1.42 submodule versions, setuptools changes breaking builds)",
+        "Documentation outdated (generate locally instructions don't work)",
+        "Package ecosystem confusion (types-boto3 vs boto3-stubs naming and relationship unclear)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with persistent technical issues around type accuracy, packaging consistency, and documentation; maintainers are responsive but struggling with complexity of managing ~400 generated packages."
+      "summary": "Project shows active maintenance with some resolved issues, but has a growing backlog of type-annotation bugs and unresolved compatibility issues causing user friction, with several issues awaiting maintainer response."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "Zero contributors active in past 6 months",
-        "No merged PRs in past 6 months indicating no active development",
-        "No closed issues in past 6 months despite 15 open issues",
-        "Unknown last release date suggests release history is not current",
-        "15 open issues are not being addressed"
+        "No commits in past 6 months despite recent activity on Jan 12",
+        "16 open issues with zero closed in 6 months",
+        "Zero active contributors in past 6 months",
+        "No merged PRs or releases in past 6 months",
+        "Unknown last release status"
       ],
       "positive_signals": [
-        "Recent commit activity exists (though stale relative to 6-month window)"
+        "Recent commit on 2026-01-12 indicates project not completely abandoned",
+        "No open PRs suggests either maintenance is blocked or issues aren't being reported"
       ],
-      "summary": "This package appears abandoned with no maintenance activity for at least 6 months, unresolved open issues, and no active contributors."
+      "summary": "Package shows signs of stalling maintenance with unresolved issues and no developer activity over 6 months, though a recent commit prevents classification as fully abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:16:27.645341+00:00"
+    "llm_analyzed_at": "2026-03-15T06:08:56.109226+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

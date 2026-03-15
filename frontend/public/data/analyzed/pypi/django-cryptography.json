@@ -178,48 +178,49 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 8,
-      "examples": 5,
-      "configuration": 3,
+      "examples": 4,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 6,
-      "summary": "Clear introduction and installation with a solid basic example, but lacks configuration details, additional use cases, and any troubleshooting guidance.",
-      "top_issue": "No configuration documentation (e.g., encryption keys setup, settings.py configuration) and zero troubleshooting content for common issues"
+      "overall": 5,
+      "summary": "The README provides a clear intro and quick example but defers nearly all detail to external docs, leaving configuration, advanced usage, and troubleshooting completely undocumented.",
+      "top_issue": "No configuration documentation \u2014 key setup steps like adding to INSTALLED_APPS, setting encryption keys, or migration guidance are entirely absent."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Django version compatibility issues (Django 5.0 baseconv deprecation unresolved since 2022)",
-        "Signature validation failures and BadSignature errors with unclear root causes",
-        "Encryption not working or fields appearing unencrypted despite following documentation",
-        "max_length field validation causing database errors with encrypted data",
-        "SECRET_KEY rotation and key management issues with incomplete documentation",
-        "Lack of clarity on proper configuration and usage patterns"
+        "Django 5.0/5.x version compatibility - baseconv deprecated (open 4 years)",
+        "BadSignature errors during decryption operations",
+        "Encryption not actually encrypting data - stored as plaintext",
+        "SECRET_KEY vs CRYPTOGRAPHY_KEY configuration confusion",
+        "max_length validation applying to plaintext instead of encrypted value",
+        "Unclear documentation on manual decryption and key rotation"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "django-cryptography shows signs of abandonment with critical Django 5.0 compatibility issues open since 2022, persistent user confusion about encryption functionality, and minimal maintainer engagement on recurring signature validation problems."
+      "summary": "Project shows clear signs of abandonment with critical Django 5.0 compatibility issues unresolved since April 2022, multiple encryption/signature bugs from 2020+ still open, zero maintainer engagement on recent issues, and no apparent releases addressing version compatibility requests."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from November 2024",
-        "48 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicates no maintenance activity",
-        "No merged PRs in past 6 months shows no active development",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure may be stale"
+        "Zero commits in past 6 months despite last commit 4 months ago",
+        "48 open issues with no closed issues in 6 months",
+        "No merged PRs or active contributors in 6 months",
+        "Unknown last release date suggests release cycle has stopped",
+        "No pull requests being worked on"
       ],
-      "positive_signals": [],
-      "summary": "django-cryptography appears abandoned with no maintenance activity, development, or issue resolution in the past 6 months despite a backlog of 48 open issues."
+      "positive_signals": [
+        "Repository still exists and had recent activity 4 months ago (not completely abandoned)"
+      ],
+      "summary": "django-cryptography is stale with no maintenance activity in the past 6 months and numerous unaddressed issues indicating the project is no longer actively maintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:57:32.903087+00:00"
+    "llm_analyzed_at": "2026-03-15T16:56:09.441183+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

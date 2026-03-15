@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README focuses heavily on the builder tool rather than the actual package (mypy-boto3-rum), leaving users confused about what they're installing and how to use it.",
-      "top_issue": "This appears to be the wrong README - it describes mypy-boto3-builder (a code generator) rather than mypy-boto3-rum (a type stubs package for AWS RUM service), causing complete confusion about the package's purpose and usage."
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-rum service stub package, creating confusion and lacking any RUM-specific usage examples.",
+      "top_issue": "This README describes the mypy-boto3-builder generator tool, not the mypy-boto3-rum package itself \u2014 a new user has no idea what RUM-specific type stubs are provided or how to use them."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Missing extras/optional dependencies not properly declared",
-        "Duplicate .pyi and .py files causing tooling confusion",
-        "Incorrect type definitions that don't match runtime behavior",
-        "Documentation and tooling issues with package generation"
+        "Type definition inaccuracies (async/await, wrong literal values for enums)",
+        "Packaging issues (deterministic wheel builds, duplicate .pyi/.py files, missing extras metadata)",
+        "Version resolution failures (submodule version mismatches, dependency conflicts)",
+        "Documentation/instructions outdated (Generate locally command incorrect)",
+        "API naming confusion (types-boto3 vs boto3-stubs, unclear which to use)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are tracked, labeled, and some are resolved",
+        "Enhancement requests are considered (pyproject.toml migration completed)",
+        "Bug fixes get released and marked"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with legitimate technical issues around type stub accuracy and packaging, but maintainers are responding to issues with a moderate pace and some concerns remain unresolved for extended periods."
+      "summary": "Project shows active maintenance with completed features and closed issues, but struggles with unresolved technical debt, multiple open bugs labeled 'response needed', and slow engagement with recent community reports."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicating no active maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release history is unavailable"
+        "No commits in past 6 months despite last commit only 2 months ago, indicating project is inactive",
+        "16 open issues with zero recent closures or triage activity",
+        "No merged PRs or active contributors in the past 6 months",
+        "Unknown release schedule prevents assessment of planned updates",
+        "Extended silence (2+ months) since last activity suggests maintenance has stopped"
       ],
-      "positive_signals": [],
-      "summary": "Package appears abandoned with no maintenance activity, issue resolution, or development in the past 6 months despite having unresolved open issues."
+      "positive_signals": [
+        "One recent commit in January 2026 indicates the project has not been completely abandoned"
+      ],
+      "summary": "The package appears stale with no active maintenance despite a recent commit; 16 unaddressed open issues and zero PR/issue activity over 6 months suggest the project is no longer actively maintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:23:40.807280+00:00"
+    "llm_analyzed_at": "2026-03-15T12:35:44.319667+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

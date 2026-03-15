@@ -191,48 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 7,
       "installation": 6,
-      "quick_start": 3,
-      "examples": 2,
-      "configuration": 1,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README confusingly presents a builder tool while the package name suggests a specific boto3 service stub, with minimal concrete usage examples and missing key documentation.",
-      "top_issue": "Major confusion between package identity (mypy-boto3-config suggests AWS Config service stubs) and README content (describes mypy-boto3-builder tool for generating stubs), making it unclear what this package actually does"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-config package, providing a confusing mismatch that leaves users without config-service-specific guidance.",
+      "top_issue": "README describes the generic builder tool, not the mypy-boto3-config package specifically \u2014 no examples, configuration, or troubleshooting for the AWS Config service type stubs."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Duplicate stub files (.pyi and .py) causing tool confusion",
-        "Missing or incorrect type definitions in generated stubs",
-        "Package metadata issues (missing extras, outdated setup.py)",
-        "Confusing package naming (types-boto3 vs boto3-stubs, types-aiobotocore vs aiobotocore-stubs)"
+        "Type stub accuracy issues (wrong async signatures, overly broad types)",
+        "Version mismatches between types-boto3 and submodules",
+        "Duplicate stub files (.pyi and .py) in distributions",
+        "Outdated/incorrect documentation and instructions",
+        "Package naming confusion (types-boto3 vs boto3-stubs)",
+        "Missing package metadata (extras not provided)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active but struggling project with significant quality issues in auto-generated type stubs, some maintainer responsiveness but unresolved bugs accumulating in critical areas like type accuracy and packaging standards."
+      "abandonment_signals": true,
+      "summary": "Active project with legitimate type stub and distribution issues; moderate responsiveness with several months-old open issues awaiting maintainer response despite some recent resolution."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release pipeline inactive"
+        "No commits in past 6 months despite recent commit 2 months ago",
+        "16 open issues with zero closed in past 6 months",
+        "No merged PRs or development activity in 6 months",
+        "No active contributors",
+        "Unknown last release date"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity for 6+ months despite having unresolved issues."
+      "positive_signals": [
+        "Recent commit from January 2026 suggests not completely abandoned"
+      ],
+      "summary": "Package is stale with no maintenance activity for 6+ months; open issues are accumulating without resolution."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:10:19.753473+00:00"
+    "llm_analyzed_at": "2026-03-15T05:10:23.539835+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

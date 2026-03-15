@@ -169,46 +169,50 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 3,
-      "overall": 7,
-      "summary": "Excellent clarity and quick start examples, but lacks configuration details and troubleshooting guidance.",
-      "top_issue": "No troubleshooting section for common issues like image loading errors, format detection problems, or build/linking failures"
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Well-structured README with clear purpose and good C++ examples, but lacks Python-specific installation/usage guidance despite being listed on PyPI, and has virtually no troubleshooting content.",
+      "top_issue": "No Python-specific installation or usage examples despite being a PyPI package \u2014 the README is C++-centric and points Python users to a separate wrapper README without inline guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Package version synchronization issues (CocoaPods lagging behind GitHub releases)",
-        "Barcode detection accuracy problems (false positives and recognition failures)",
-        "Post-processing compatibility issues with generated barcodes"
+        "Critical security vulnerabilities (heap buffer overflows, out-of-bounds access in PDF417 decoder)",
+        "Barcode decoding robustness issues (deformed DataMatrix symbols failing)",
+        "Platform compatibility problems (Windows symlink issues)"
       ],
       "praise_themes": [
-        "Appreciation for maintainer effort and work quality"
+        "Active fuzzing and security testing catching real bugs",
+        "Continued interest in feature parity (Pharmacode, free-threaded Python support)"
       ],
       "abandonment_signals": false,
-      "summary": "Community is engaged and appreciative but experiencing moderate friction around package distribution delays and barcode detection accuracy regressions in recent versions."
+      "summary": "Library shows mixed health: recent critical security fixes (3 closed) are positive, but 3 open heap buffer overflows in PDF417 decoder raise concerns about incomplete security patch cycles and moderate maintainer responsiveness."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being today (suggests stale data or inactive repository)",
-        "48 open issues with zero closed issues in past 6 months indicates issues are not being triaged",
-        "Zero merged PRs in past 6 months shows no active development or review process",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests no recent version updates"
+        "52 open issues with zero closed in 6 months indicates issues are not being addressed",
+        "Zero commits in past 6 months despite recent activity suggests sporadic, non-maintenance commits",
+        "No merged PRs in 6 months indicates no active development or review process",
+        "Unknown last release - likely stale or abandoned versioning",
+        "Zero active contributors in 6 months despite issue backlog"
       ],
-      "positive_signals": [],
-      "summary": "zxing-cpp appears to be abandoned with no maintenance activity, issue resolution, or development in the past 6 months despite a large backlog of open issues."
+      "positive_signals": [
+        "Very recent commit (2026-03-13) shows some repository access",
+        "Repository still accessible and not archived"
+      ],
+      "summary": "Project is stale with a significant unaddressed issue backlog and no meaningful development activity, despite a single recent commit that appears disconnected from maintenance efforts."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-13T18:33:58.949337+00:00"
+    "llm_analyzed_at": "2026-03-14T23:23:10.873512+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 3,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it documents the builder tool that generates this package rather than the package itself (types-aiobotocore-ses), with minimal actionable information for users who just want type stubs.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder README, not documentation for types-aiobotocore-ses; users need installation instructions like 'pip install types-aiobotocore-ses' and import examples, not builder documentation"
+      "summary": "The README is for the builder tool rather than the specific `types-aiobotocore-ses` package, leaving users without any SES-specific usage, examples, or configuration guidance.",
+      "top_issue": "README describes the mypy-boto3-builder generator, not the types-aiobotocore-ses package itself \u2014 there are no SES-specific type usage examples, no API coverage details, and no package-level installation instructions."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules",
-        "Missing extras/metadata in package distribution",
-        "Duplicate .pyi and .py files causing tooling conflicts",
-        "Type stub inaccuracies (async/coroutine, literal values, overly broad types)",
-        "Documentation outdated (Generate locally instructions don't work)"
+        "Type definitions don't match actual API behavior (get_credentials, ToolUseBlockTypeDef, FileobjTypeDef)",
+        "Package metadata issues (missing extras field, setup.py not deprecated)",
+        "Stub files shipped as both .pyi and .py causing editor confusion",
+        "Dependency/version resolution problems across submodules",
+        "Documentation outdated or incorrect"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "The project shows signs of maintenance slowdown with accumulating technical debt, versioning issues, and type definition bugs that persist after being reported, suggesting limited active development and user frustration despite the package's importance in the Python AWS ecosystem."
+      "praise_themes": [
+        "Issues eventually get resolved and closed",
+        "Modern Python standards adoption (pyproject.toml migration completed)"
+      ],
+      "abandonment_signals": false,
+      "summary": "Project is actively maintained with recent commits, but has moderate responsiveness gaps\u2014multiple open issues (including 5+ months old) tagged 'response needed' remain unaddressed, and recent type definition bugs suggest quality control challenges."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite being on PyPI",
-        "15 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicates no maintenance",
-        "No merged PRs in past 6 months shows no active development",
-        "Zero active contributors in past 6 months",
-        "Last commit was 6 days ago but no ongoing activity pattern"
+        "No commits or merged PRs in past 6 months despite recent last commit",
+        "16 open issues with zero resolution in past 6 months",
+        "No active contributors",
+        "Unknown or missing last release information",
+        "No pull requests or development activity"
       ],
       "positive_signals": [
-        "Package exists and was recently committed to (though may be auto-generated)"
+        "Last commit was relatively recent (2 months ago)",
+        "Package still exists and repository is accessible"
       ],
-      "summary": "This package appears abandoned with no maintenance activity, unresolved issues, or development in the past 6 months."
+      "summary": "This type stub package appears stale with 16 unresolved issues and no recent development activity, despite a commit from 2 months ago."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:04:44.477712+00:00"
+    "llm_analyzed_at": "2026-03-15T01:21:47.953206+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

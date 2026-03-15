@@ -191,51 +191,48 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
       "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool but is shown for a specific service package (mypy-boto3-backup-gateway), lacks concrete usage examples, and provides no troubleshooting guidance.",
-      "top_issue": "Critical confusion: this appears to be the wrong README - it documents mypy-boto3-builder (a code generator) but the package name is mypy-boto3-backup-gateway (a generated type stub package for AWS Backup Gateway service)"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-backup-gateway` package, leaving users confused about the actual package's purpose and usage.",
+      "top_issue": "README describes the parent builder project, not this specific service stub package \u2014 a new user has no idea what `mypy-boto3-backup-gateway` does or how to use it directly."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Incomplete/missing package extras and metadata",
-        "Duplicate stub files (.pyi and .py) causing IDE confusion",
-        "Incorrect type definitions not matching actual runtime behavior",
-        "Type definitions too broad or overly narrow for actual usage",
-        "Documentation and tooling instructions outdated/broken",
-        "Confusion between similar packages (types-boto3 vs boto3-stubs)"
+        "Type stub accuracy (wrong types, missing async definitions, overly broad protocols)",
+        "Packaging/versioning inconsistencies (missing extras, version mismatches between packages)",
+        "Documentation quality and clarity (unclear instructions, confusion between types-boto3 and boto3-stubs)",
+        "Build reproducibility and file duplication issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "Community frustration is moderate-to-high due to type definition accuracy issues, packaging inconsistencies, and maintenance concerns around ~400 generated packages, though maintainers appear to be addressing issues albeit with moderate responsiveness."
+      "summary": "The project maintains active engagement with issues being triaged and some resolved, but several open bugs marked 'response needed' indicate the maintainers may be falling behind on triage pace."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no resolution activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release tracking issues or stagnation",
-        "No pull request activity indicating lack of community engagement"
+        "Zero commits in the past 6 months despite issues remaining open",
+        "16 open issues with zero closed issues in 6 months",
+        "No active contributors in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "Unknown last release date indicates lack of versioning clarity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity over the past 6 months despite recent repository timestamp."
+      "positive_signals": [
+        "Repository exists and has had some historical activity"
+      ],
+      "summary": "This package is stale with no maintenance activity for 6 months and accumulating unresolved issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:33:22.435537+00:00"
+    "llm_analyzed_at": "2026-03-15T06:24:11.676232+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

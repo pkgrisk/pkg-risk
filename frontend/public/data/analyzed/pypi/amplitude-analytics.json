@@ -172,47 +172,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 3,
-      "quick_start": 2,
-      "examples": 2,
+      "clarity": 6,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 1,
       "configuration": 1,
-      "troubleshooting": 4,
-      "overall": 3,
-      "summary": "Clear purpose but lacks essential usage documentation, directing users to external sites instead of providing inline guidance.",
-      "top_issue": "No installation instructions or usage examples in the README\u2014users must visit external Developer Center link"
+      "troubleshooting": 2,
+      "overall": 2,
+      "summary": "The README is essentially a placeholder that defers all meaningful documentation to external links, providing no actual usage guidance.",
+      "top_issue": "Installation and quick start sections contain no content \u2014 they just redirect to an external Developer Center URL with no inline examples or instructions."
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "unresponsive",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Events going missing or not being tracked",
-        "Silent failures with no logging or error feedback",
-        "Invalid event properties causing all properties to be dropped",
-        "Type validation issues (integer user IDs not working)",
-        "Lack of visibility into why events fail to appear in dashboard"
+        "Events going missing in production (especially AWS Lambda cold starts)",
+        "Silent failures with no error feedback or logging mechanism",
+        "Data loss when any event property is None",
+        "Integer user_id not being accepted (only strings work)",
+        "Missing async/await support for async frameworks (FastAPI, aiohttp)",
+        "Inadequate retry logic for transient network errors"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "Severe community health crisis: repository appears compromised with spam issues, multiple critical bugs remain unfixed for 1-2 years, maintainers are unresponsive to user complaints about events silently failing to track."
+      "summary": "Community health is poor; critical data-loss bugs and event-tracking failures remain unresolved for 12-24+ months with minimal maintainer engagement and escalating user frustration."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being from November 2025",
-        "8 open issues with no recent activity or resolution",
-        "No merged PRs in past 6 months indicating no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure may be inactive"
+        "Zero commits in the past 6 months despite having a repository",
+        "No active contributors in the past 6 months",
+        "Five open issues with no recent resolution",
+        "No merged pull requests or releases in the past 6 months",
+        "Unknown last release date suggests lost release history"
       ],
-      "positive_signals": [],
-      "summary": "The amplitude-analytics package appears abandoned with zero development activity, no issue resolution, and no contributor engagement over the past 6 months."
+      "positive_signals": [
+        "Recent commit on 2026-02-17 indicates repository is not completely abandoned"
+      ],
+      "summary": "This package is stale with no active maintenance; a recent commit suggests minimal activity but the complete absence of contributions, merged PRs, and closed issues over 6 months indicates the project is dormant."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:52:44.054233+00:00"
+    "llm_analyzed_at": "2026-03-15T05:47:31.585051+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

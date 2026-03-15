@@ -191,49 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README describes a type annotation builder tool but confusingly shows content for mypy-boto3-builder when the package is mypy-boto3-appfabric, with minimal installation guidance and no concrete usage examples.",
-      "top_issue": "Package name mismatch - README is for mypy-boto3-builder but package is mypy-boto3-appfabric, causing severe confusion about what this package actually is and does"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-appfabric` sub-package, leaving users confused about what this particular package does and how to use it directly.",
+      "top_issue": "The README describes the parent builder project, not the specific `mypy-boto3-appfabric` package \u2014 there are no examples, API docs, or usage instructions for the AppFabric service stubs themselves."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Missing or incorrect type definitions in stubs",
-        "Duplicate .pyi and .py files causing tooling conflicts",
-        "Package metadata and extras not properly exposed",
-        "Documentation outdated (generate locally instructions broken)"
+        "Type definition mismatches (aioboto3, Bedrock Runtime, S3 methods)",
+        "Duplicate/missing package contents (.pyi and .py files, missing extras)",
+        "Version incompatibilities between packages and submodules",
+        "Outdated documentation (setup.py vs pyproject.toml migration)",
+        "Confusion about package naming (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues do get resolved and marked as released",
+        "User reports are detailed and well-documented"
+      ],
       "abandonment_signals": false,
-      "summary": "Project is actively maintained with periodic releases but experiences ongoing quality issues with type stub accuracy, packaging metadata, and duplicate file distributions that affect developer experience."
+      "summary": "Moderately healthy community with active bug reporting and some fixes being released, but maintainer responsiveness is inconsistent with 4 open issues labeled 'response needed' and several design confusion points needing clarification."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in the last 6 months despite being a recent package",
-        "15 open issues with no resolution activity",
-        "No closed issues in the past 6 months indicating lack of maintenance",
-        "No merged PRs in the past 6 months showing no active development",
-        "Zero active contributors in the past 6 months",
-        "No releases in the past 6 months",
-        "Last commit was 3+ days ago but preceded by apparent inactivity"
+        "No commits in past 6 months despite active issue backlog",
+        "16 open issues with zero closures in 6 months",
+        "No merged pull requests or active contributors in 6 months",
+        "Last release date unknown, creating uncertainty about versioning",
+        "No development activity to address reported problems"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity, issue resolution, or development over the past 6 months despite having unresolved open issues."
+      "positive_signals": [
+        "Last commit was 2 months ago (January 2026), not completely abandoned",
+        "Issues are being reported, indicating some user engagement"
+      ],
+      "summary": "Package is effectively stalled with a growing unaddressed issue backlog and zero development activity over the past 6 months, though not entirely abandoned."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:02:47.670914+00:00"
+    "llm_analyzed_at": "2026-03-15T13:45:20.981673+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

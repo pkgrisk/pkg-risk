@@ -184,47 +184,48 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
-      "quick_start": 10,
+      "installation": 9,
+      "quick_start": 9,
       "examples": 9,
       "configuration": 8,
-      "troubleshooting": 7,
-      "overall": 9,
-      "summary": "Excellent documentation with clear examples and progressive complexity, though it appears incomplete at the end.",
-      "top_issue": "README is truncated mid-sentence at the end ('For PyYAML to be able to resolve environment variables, we need three main things: A regex pattern for t'), suggesting the document is incomplete."
+      "troubleshooting": 6,
+      "overall": 8,
+      "summary": "Excellent documentation with a clear TL;DR, concise install instructions, and multiple well-structured examples covering all major features.",
+      "top_issue": "Troubleshooting is minimal \u2014 only a brief note about N/A defaults and raise_if_na; no guidance on common errors like missing env vars, loader issues, or YAML parse failures."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Type conversion not working (values stay as strings instead of converting to int/float)",
-        "Tag parameter doesn't work as documented (parse_config with tag=None/empty string fails)",
-        "Breaking changes in API (__getattr__ override breaking getattr/hasattr)",
-        "Syntax warnings with Python 3.12 compatibility",
-        "No way to preserve original variable syntax when saving modified configs"
+        "Type conversion: all values returned as strings instead of native types",
+        "Tag parsing issues with empty or None tags not working",
+        "Breaking changes in BaseConfig implementation (getattr/hasattr errors)",
+        "Cannot preserve original variable syntax when saving modified configs",
+        "Version constraint conflicts in dependencies"
       ],
       "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Community health is poor with multiple unresolved bugs, slow maintainer response, and apparent project stagnation indicated by old open issues without activity."
+      "abandonment_signals": false,
+      "summary": "Community health is concerning: the library shows sporadic maintenance with multiple bugs open for 2+ years, a recent critical issue (June 2025) receiving zero response, and low engagement (0-2 comments per issue), yet some issues do eventually get closed suggesting incomplete rather than abandoned maintenance."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2025-01-13)",
-        "7 open issues with no activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months showing no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests no recent versioning"
+        "No commits in past 6 months (last commit January 2025)",
+        "7 open issues with zero resolution activity",
+        "No active contributors for 6+ months",
+        "Unknown last release date",
+        "No merged PRs in past 6 months"
       ],
-      "positive_signals": [],
-      "summary": "Package appears abandoned with no maintenance activity for 6+ months despite having unresolved open issues."
+      "positive_signals": [
+        "No open pull requests suggests no active effort to patch critical issues"
+      ],
+      "summary": "pyaml-env is abandoned with complete absence of maintenance activity, open issues, and contributor engagement for over 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T03:07:15.257489+00:00"
+    "llm_analyzed_at": "2026-03-15T03:54:53.383277+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

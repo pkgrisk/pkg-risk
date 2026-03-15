@@ -171,47 +171,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 9,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 5,
-      "overall": 8,
-      "summary": "Excellent high-level documentation with clear installation and quick start, but lacks detailed configuration options and troubleshooting guidance.",
-      "top_issue": "Configuration documentation is minimal - while examples show basic flags like -m and -hf, there's no comprehensive reference for available options, parameters, or how to configure the server or CLI tools for different use cases."
+      "installation": 8,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Well-structured README for llama.cpp itself, but as documentation for the 'gguf' PyPI package it is largely mismatched \u2014 covering the C/C++ CLI tool rather than the Python library's API.",
+      "top_issue": "The README is for the llama.cpp project, not the gguf Python package specifically \u2014 Python API usage, configuration options, and troubleshooting for the gguf library are entirely absent."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "GPU backend stability issues (ROCm, CUDA, SYCL hangs and crashes)",
-        "Multi-modal model support bugs (vision models, image encoding crashes)",
-        "Build failures with newer GPU compiler versions",
-        "Performance regressions in recent commits"
+        "Build b8354 regressions (crashes, performance degradation)",
+        "Segmentation faults with MoE model architectures (Qwen 3.5, GLM-4)",
+        "AMD GPU backend instability (Vulkan and ROCm)",
+        "Performance regression: 40% throughput drop on AMD cards",
+        "Memory usage regression in router mode",
+        "Models getting stuck in infinite loops"
       ],
       "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Active project with moderate maintainer engagement, but accumulating stale issues with GPU backends and multi-modal features showing concerning stability patterns and slow resolution times."
+      "abandonment_signals": false,
+      "summary": "Community experiencing critical regressions in latest build (b8354) with crashes, severe performance degradation, and backend-specific failures across multiple GPU vendors, but project remains actively maintained with same-day bug reports."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months despite last commit being dated 2026-02-12 (future date suggests data inconsistency)",
-        "1101 open issues with zero closed issues in past 6 months indicates unresponsive maintainers",
-        "No active contributors in the past 6 months",
-        "No merged PRs in the past 6 months shows lack of development activity",
-        "Unknown last release date compounds maintenance concerns"
+        "1280 open issues with zero closed in past 6 months indicates complete lack of issue triage",
+        "Zero commits in past 6 months despite recent commit today (data inconsistency or stalled development)",
+        "Zero merged PRs in past 6 months showing no code contributions accepted",
+        "No active contributors in past 6 months",
+        "Last release unknown - cannot verify currency of published version",
+        "Massive backlog of open issues with no maintenance response"
       ],
       "positive_signals": [
-        "Has received some historical development (evidenced by existence of issues and PRs)"
+        "Project still exists on PyPI (not removed)",
+        "One commit recorded for today (though contradicts 6-month activity data)"
       ],
-      "summary": "The package appears abandoned with a massive backlog of 1101 unaddressed issues, no recent commits or contributor activity, and no recent releases."
+      "summary": "Package is effectively abandoned with massive maintenance debt - 1280 open issues and zero maintenance activity over 6 months indicates active development and support have ceased."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T04:51:19.176290+00:00"
+    "llm_analyzed_at": "2026-03-15T16:39:57.187503+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

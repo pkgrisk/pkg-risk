@@ -191,50 +191,54 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 5,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "This README is for the wrong package\u2014it documents mypy-boto3-builder (a generator tool) rather than types-aiobotocore-elasticache (a generated type stubs package), causing severe confusion about what the package actually does.",
-      "top_issue": "Package identity mismatch: the README describes a builder tool for generating type annotations, but the package name 'types-aiobotocore-elasticache' suggests this is actually a generated type stubs package for AWS ElastiCache, not the builder itself"
+      "summary": "The README is for the builder tool rather than the specific `types-aiobotocore-elasticache` package, leaving users without targeted guidance on installing or using ElastiCache type stubs.",
+      "top_issue": "README describes the parent builder project, not the specific package \u2014 there are no examples, configuration docs, or usage instructions specific to `types-aiobotocore-elasticache`."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules causing pip resolution failures",
-        "Missing or incomplete package extras/metadata in PyPI distribution",
-        "Duplicate .pyi and .py stub files causing IDE conflicts",
-        "Incorrect type definitions for async methods and AWS API responses",
-        "Documentation inaccuracies (generate locally instructions outdated)"
+        "Type definition errors and inconsistencies (async markers, overly broad types, wrong literal values)",
+        "Missing package extras and metadata (Provides-Extra field)",
+        "Documentation/instructions that don't work",
+        "Duplicate file delivery (.pyi and .py files shipped together)",
+        "Package naming confusion (types-boto3 vs boto3-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Features eventually get implemented (pyproject.toml migration completed)",
+        "Bugs are being triaged and resolved (several closed issues)",
+        "Some maintainer engagement and discussion on issues"
+      ],
       "abandonment_signals": false,
-      "summary": "Community health is mixed with moderate maintainer engagement; users face real integration problems with type stubs accuracy and package distribution, but issues are being tracked and some have been resolved."
+      "summary": "Moderate health: Active maintenance with completed features, but moderate resolution pace and growing backlog of open type-definition and metadata issues, some marked as needing response for weeks."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months despite being a recent package",
-        "15 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months",
-        "No active contributors in past 6 months",
-        "No releases recorded"
+        "16 open issues with zero closed in past 6 months",
+        "Zero contributors active in past 6 months",
+        "Zero merged PRs in past 6 months despite open issues",
+        "Unknown/missing last release information",
+        "No development activity despite recent single commit"
       ],
       "positive_signals": [
-        "Last commit exists (2026-01-12), indicating project is not completely deleted"
+        "One recent commit on 2026-01-12 suggests minimal baseline activity",
+        "No blocking errors reported in open PRs (0 open PRs)"
       ],
-      "summary": "This package appears to be abandoned with no maintenance activity over the past 6 months and a growing backlog of unresolved issues."
+      "summary": "Package is effectively abandoned with unresolved issues and no contributor engagement; a single recent commit is insufficient to indicate active maintenance."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T18:02:11.316423+00:00"
+    "llm_analyzed_at": "2026-03-15T15:50:28.335242+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

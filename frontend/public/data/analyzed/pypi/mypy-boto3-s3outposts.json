@@ -191,50 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 7,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README focuses on the builder tool rather than the actual package (mypy-boto3-s3outposts), leaving users confused about what they're installing and how to use it.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder README, not the mypy-boto3-s3outposts package README, causing complete confusion about the package's purpose and usage"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific sub-package (mypy-boto3-s3outposts), leaving users without any context on what this particular package does or how to use it.",
+      "top_issue": "The README is mismatched \u2014 it describes the mypy-boto3-builder generator, not the mypy-boto3-s3outposts sub-package, so a user has no idea what S3 Outposts type stubs are, how to install this specific package, or how to use it."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatches between main package and submodules causing installation failures",
-        "Duplicate .pyi and .py stub files causing tool confusion",
-        "Incorrect type definitions not matching actual runtime behavior",
-        "Missing extras/metadata in packages",
-        "Documentation and tooling discrepancies"
+        "Type stub accuracy and incorrect type definitions (Bedrock, aioboto3, S3 methods)",
+        "Package versioning/naming confusion (types-boto3 vs boto3-stubs, version 1.42 mismatches)",
+        "Documentation gaps (generate locally instructions outdated)",
+        "Duplicate stub outputs (.pyi and .py files causing tool conflicts)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are addressed and released (pyproject.toml migration, aioboto3 type fixes)",
+        "Community engagement with substantive technical discussions"
+      ],
       "abandonment_signals": false,
-      "summary": "The project shows moderate maintenance with active issue tracking and some resolution, but users are experiencing frustration with version management, type accuracy, and packaging inconsistencies that suggest the large scale of ~400 packages may be overwhelming the maintenance effort."
+      "summary": "Project is maintained with periodic releases, but slow issue responsiveness (4-8 months) and lingering type stub accuracy problems indicate capacity constraints creating moderate user frustration."
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (Jan 12, 2026)",
-        "15 open issues with no recent activity to address them",
-        "Zero closed issues in past 6 months indicating no bug fixes or maintenance",
-        "No merged PRs in past 6 months suggesting no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date makes it unclear if package is still being released"
+        "No commits in past 6 months despite 16 open issues",
+        "16 unresolved open issues with no activity",
+        "No PRs merged or closed in 6 months",
+        "Zero active contributors in past 6 months",
+        "No closed issues in 6 months indicating no maintenance",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent commit exists (Jan 12, 2026) suggesting some minimal recent activity"
+        "Last commit relatively recent (2026-01-12)",
+        "Package exists and has had historical maintenance"
       ],
-      "summary": "Package appears abandoned or in minimal maintenance mode with unaddressed issues and no development activity over the past 6 months."
+      "summary": "mypy-boto3-s3outposts is stale with no active maintenance\u2014no commits, PR activity, or issue resolution in 6 months despite 16 pending issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T04:34:15.601927+00:00"
+    "llm_analyzed_at": "2026-03-15T01:43:21.677578+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

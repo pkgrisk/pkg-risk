@@ -178,49 +178,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 7,
       "installation": 2,
       "quick_start": 1,
-      "examples": 3,
+      "examples": 2,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "Clear description of what the package does but completely lacks inline installation instructions, quick start code, or any practical examples in the README itself.",
-      "top_issue": "No installation instructions in README - users must navigate to external documentation to learn how to install or use the package"
+      "summary": "The README provides a high-level overview but defers almost all useful content to external documentation, leaving users with no actionable guidance in the README itself.",
+      "top_issue": "No installation instructions, code examples, or quick start \u2014 the README is essentially just a pointer to external docs."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "API compatibility gaps between TSC library and current Tableau REST API",
-        "Filter functionality issues and limitations",
-        "Missing features or incomplete implementations (webhooks, BigQuery, custom views)",
-        "Backward compatibility breaking in newer Tableau Server versions"
+        "Package installation failures (v0.39 release broke package structure and imports)",
+        "Missing support for new Tableau Server features (Collections endpoint, ExtractRefresh permission)",
+        "Limited API feature coverage (range filters in PDF generation, Cloud vs on-prem parity gaps)",
+        "API completeness gaps requiring workarounds"
       ],
-      "praise_themes": [],
-      "abandonment_signals": true,
-      "summary": "Community shows moderate health with responsiveness to bug reports, but reveals concerning gaps in feature parity with Tableau REST APIs and some unresolved long-standing feature requests (BigQuery support open since 2021, webhooks still incomplete)."
+      "praise_themes": [
+        "Issues are triaged and labeled promptly",
+        "Reported bugs get fixed (MonthlyInterval bug, package structure issue)",
+        "Process improvements being implemented (PyPI smoke tests added post-incident)"
+      ],
+      "abandonment_signals": false,
+      "summary": "Moderate health with responsive maintainers who fix bugs and triage issues, but a critical v0.39 release incident exposed quality control gaps and frustrated users unable to install/import the package."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-14)",
-        "195 open issues with no recent activity",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests release tracking gap"
+        "189 open issues with zero closed in past 6 months indicates no issue triage or maintenance",
+        "Zero commits in past 6 months shows no active development",
+        "Zero merged PRs in past 6 months indicates no code reviews or feature integration",
+        "Zero active contributors in past 6 months confirms lack of maintainer engagement",
+        "Unknown last release makes it unclear when users received last stable version"
       ],
       "positive_signals": [
-        "Recent commit exists (though appears to be isolated)"
+        "Last commit timestamp is recent (2026-02-27), though appears isolated with no sustained activity"
       ],
-      "summary": "This package is abandoned with no active maintenance, zero recent development activity, and a large backlog of unaddressed issues."
+      "summary": "tableauserverclient shows clear signs of abandonment with 189 unresolved issues, zero maintenance activity over 6 months, and no active contributors despite a recent commit timestamp."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T16:37:56.556714+00:00"
+    "llm_analyzed_at": "2026-03-15T14:22:36.174272+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -286,48 +286,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 3,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
+      "clarity": 8,
+      "installation": 4,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 3,
       "troubleshooting": 2,
       "overall": 5,
-      "summary": "Excellent clarity about the project's purpose and scope, but lacks Python-specific installation instructions for PyPI users and has minimal troubleshooting guidance.",
-      "top_issue": "No pip installation instructions or Python usage examples despite being a PyPI package - only shows C++ code and CMake build instructions"
+      "summary": "The README clearly explains what OpenEXR is and provides a C++ quick-start example, but defers most practical guidance to external docs and lacks configuration, troubleshooting, and Python-specific usage details despite being listed on PyPI.",
+      "top_issue": "The README is written entirely for C++ users but is listed on PyPI \u2014 there are no Python installation instructions, no Python usage examples, and no indication of how the PyPI package relates to the C++ library."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Performance issues with small tile sizes and compression",
-        "Data corruption and race conditions in tools",
-        "Build failures with specific compiler flags",
-        "Dependency management issues (OpenJPH breaking changes)",
-        "Unclear specification documentation for compression behavior"
+        "Python bindings bugs (vec3 validation, Box2f metadata, part naming)",
+        "Build system issues (Windows CI, MinGW 32-bit, cmake dependency management)",
+        "Critical bugs reaching stable releases (3.3.2 crash on channel reading)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are addressed and closed",
+        "Community engagement through 'good first issue' labels",
+        "Detailed technical bug reports from users"
+      ],
       "abandonment_signals": false,
-      "summary": "OpenEXR has active technical discussions around performance and stability issues with moderate maintainer engagement, but lacks user appreciation signals and shows some friction with upstream dependency management."
+      "summary": "OpenEXR shows moderate community health with issues being actively closed and community participation encouraged, but recurring Python bindings and build system problems suggest gaps in testing coverage and cross-platform CI validation."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months despite being a critical graphics library",
-        "238 open issues with no recent activity or triage",
-        "Zero closed issues in the past 6 months indicates no maintenance effort",
-        "No merged PRs in 6 months suggests development has stalled",
-        "No active contributors in the past 6 months",
-        "Unknown last release date suggests releases may be stale"
+        "Zero commits in past 6 months despite 215 open issues",
+        "No closed issues in 6 months - backlog not being addressed",
+        "No merged pull requests in 6 months - contributions not being integrated",
+        "Zero active contributors - no active development team",
+        "Unknown last release - version history unclear"
       ],
-      "positive_signals": [],
-      "summary": "OpenEXR appears to be abandoned with no maintenance activity for at least 6 months despite significant open issue backlog."
+      "positive_signals": [
+        "Very recent commit (2026-03-14) - suggests possible revival or automated activity",
+        "Zero open PRs - no stalled pull requests accumulating"
+      ],
+      "summary": "Package appears abandoned with six months of zero maintenance activity, large unaddressed issue backlog, and no active contributors, though a recent commit suggests possible revival."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T10:55:38.086680+00:00"
+    "llm_analyzed_at": "2026-03-15T12:05:35.777502+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

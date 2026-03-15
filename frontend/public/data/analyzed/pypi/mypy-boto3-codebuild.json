@@ -191,49 +191,50 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README focuses heavily on branding and metadata for multiple related projects but provides minimal actionable documentation for the actual package being installed (mypy-boto3-codebuild).",
-      "top_issue": "Critical mismatch between package name (mypy-boto3-codebuild) and README content (describes mypy-boto3-builder tool) - user cannot understand what this specific package does or how to use it for CodeBuild type hints"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific `mypy-boto3-codebuild` stub package, making it mismatched and unhelpful for users who just want to use CodeBuild type stubs.",
+      "top_issue": "The README describes the builder generator, not the `mypy-boto3-codebuild` package itself \u2014 there are no usage examples, no API surface documentation, and no explanation of what CodeBuild-specific stubs are provided."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate stub files (.pyi and .py) causing tooling conflicts",
-        "Missing or incorrect type definitions for async operations",
-        "Extras/optional dependencies not properly declared",
-        "Documentation and tooling issues (generate locally instructions broken)",
-        "Type accuracy issues in AWS service stubs"
+        "Type stub accuracy and completeness issues (wrong method signatures, missing types)",
+        "Duplicate stub files causing IDE tooling confusion (.pyi and .py files shipped together)",
+        "Documentation outdated or incorrect (Generate locally instructions fail)",
+        "Package naming confusion (types-boto3 vs boto3-stubs identity unclear)",
+        "Version mismatches between related packages (types-boto3 submodules)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Active project with responsive maintainers addressing bugs, but ongoing technical debt around stub generation quality, dependency management, and tooling integration create moderate user frustration."
+      "abandonment_signals": true,
+      "summary": "Project shows moderate maintenance with some resolved issues, but struggles with type stub accuracy, documentation quality, and user communication\u2014several open bugs and 'response needed' labels suggest maintainers are lagging on community engagement."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "Zero commits in past 6 months despite package being on PyPI",
-        "15 open issues with no activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months showing no development activity",
-        "Zero active contributors in past 6 months",
-        "Unknown last release date suggests outdated version"
+        "Zero commits in past 6 months despite 16 open issues",
+        "No issue resolution activity (0 closed issues in 6 months)",
+        "No merged PRs or active contributors in past 6 months",
+        "Last release date unknown - unable to assess recency",
+        "Open issues accumulating without triage or response"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be completely abandoned with no maintenance activity, issue resolution, or development in the past 6 months."
+      "positive_signals": [
+        "Project repository still exists",
+        "Last commit exists (2026-01-12, though outside recent activity window)"
+      ],
+      "summary": "This package shows signs of abandonment with no maintenance activity over 6 months, unaddressed issues, and no active contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-15T17:24:24.891686+00:00"
+    "llm_analyzed_at": "2026-03-15T15:09:21.971687+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

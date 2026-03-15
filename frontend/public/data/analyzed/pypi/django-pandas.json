@@ -173,48 +173,55 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 7,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 8,
+      "clarity": 6,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 7,
       "configuration": 4,
       "troubleshooting": 3,
-      "overall": 6,
-      "summary": "Good examples and clear purpose, but installation instructions are scattered, dependencies are confusing, and troubleshooting is minimal.",
-      "top_issue": "Installation section is unclear and contradictory - mentions numpy must be installed before the package, suggests multiple installation paths without clear guidance, and has a confusing note about Django 2/Python 2 that seems outdated."
+      "overall": 5,
+      "summary": "Covers basic API usage with decent examples but lacks a concise intro, is missing sections (to_timeseries appears cut off), has no troubleshooting guide, and contains outdated dependency info.",
+      "top_issue": "The README is truncated mid-section (to_timeseries is referenced but undocumented), and there is no troubleshooting section despite known setup complexity with numpy/scipy."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "unresponsive",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "ForeignKey lookup bugs with null values",
-        "Non-integer primary key support issues",
-        "Deprecation warnings from pandas not addressed",
-        "Field name handling bugs with FK references",
-        "Lack of modern features (COPY TO/FROM support)"
+        "ForeignKey/relationship handling with null values and non-integer primary keys",
+        "Pandas API deprecation warnings not addressed",
+        "Field type conversion inconsistencies (DateField to datetime64)",
+        "Parameter combination bugs (fieldnames + column_names with FK references)",
+        "Edge cases with binary fields and pivot operations"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Users seeking feature enhancements indicates perceived value",
+        "Feature request for performance improvements (COPY TO/FROM) shows active use cases"
+      ],
       "abandonment_signals": true,
-      "summary": "django-pandas shows signs of abandonment with multiple unresolved bugs spanning years, unanswered feature requests, and no maintainer engagement on critical issues."
+      "summary": "django-pandas shows signs of minimal maintenance with slow responsiveness to newer issues (2024 feature requests have zero engagement), several bugs unresolved for 2-4+ years, and no recent closes despite historical activity through 2023."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from September 2025",
-        "18 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months showing no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests outdated version tracking"
+        "No commits in past 6 months",
+        "No closed issues in past 6 months despite 18 open issues",
+        "No merged PRs in past 6 months",
+        "Zero active contributors for 6 months",
+        "Unknown last release date",
+        "Accumulating unresolved issues"
       ],
-      "positive_signals": [],
-      "summary": "django-pandas appears to be in a stale state with no maintenance activity for at least 6 months and an accumulating backlog of unresolved issues."
+      "positive_signals": [
+        "Last commit exists (2025-09-04)",
+        "No open PRs indicating development stopped cleanly",
+        "Package still published on PyPI"
+      ],
+      "summary": "django-pandas has been inactive for 6 months with no commits, issue resolution, or active contributors, indicating abandoned maintenance."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-13T18:12:46.767769+00:00"
+    "llm_analyzed_at": "2026-03-14T22:53:27.669520+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

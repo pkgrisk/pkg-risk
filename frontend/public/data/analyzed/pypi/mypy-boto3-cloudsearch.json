@@ -191,48 +191,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "README confuses users by describing the builder tool rather than the actual package (mypy-boto3-cloudsearch), with minimal actionable documentation for package usage.",
-      "top_issue": "Wrong README content - this describes the builder tool, not the mypy-boto3-cloudsearch package itself, leaving users unclear about how to install or use type stubs for AWS CloudSearch"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific package (mypy-boto3-cloudsearch), providing minimal package-specific documentation and deferring almost everything to external links.",
+      "top_issue": "This README describes the parent builder project, not the specific mypy-boto3-cloudsearch package \u2014 there are no CloudSearch-specific usage examples, type stubs documentation, or installation instructions for this particular package."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules (1.42 not available for all submodules)",
-        "Missing extras/metadata in packages (types-aiobotocore doesn't provide extras)",
-        "Duplicate .pyi and .py files causing tool conflicts",
-        "Type definition inaccuracies (async/coroutine, overly broad IO types, missing NotRequired)",
-        "Documentation and build process issues (setup.py vs pyproject.toml, uvx instructions broken)"
+        "Type definition bugs causing runtime mismatches (e.g., async/await, Literal types)",
+        "Type stubs duplicated as both .pyi and .py files creating tool confusion",
+        "Documentation and instructions are outdated or incorrect",
+        "Confusing package naming (types-boto3 vs boto3-stubs)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The mypy-boto3 ecosystem shows moderate maintainer engagement with resolved issues, but faces recurring structural problems around version synchronization, type accuracy, and package metadata that suggest ongoing quality control challenges."
+      "summary": "Active but inconsistent maintenance: some issues resolved, others linger for months; type accuracy bugs and documentation gaps suggest the project is being used in production but needs better quality control."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or closure",
-        "No merged PRs in the past 6 months indicating no active development",
-        "No contributors active in the past 6 months",
-        "No releases in the tracked period",
-        "Unknown last release date suggests missing release history"
+        "No commits in past 6 months despite recent January 2026 commit",
+        "16 open issues with zero closures in past 6 months",
+        "No PR activity or merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date indicates possible release stagnation"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with no development activity, issue resolution, or contributor engagement over the past 6 months despite having unresolved issues."
+      "positive_signals": [
+        "Recent commit from January 2026 indicates not completely abandoned",
+        "Package exists on PyPI and has been released at some point"
+      ],
+      "summary": "Package shows signs of staleness with no maintenance activity (commits, PRs, issue resolution) over 6 months and 16 unaddressed open issues, despite a recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:36:12.237933+00:00"
+    "llm_analyzed_at": "2026-03-15T12:47:51.066105+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

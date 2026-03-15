@@ -236,50 +236,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 3,
-      "examples": 2,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 2,
+      "examples": 1,
       "configuration": 2,
-      "troubleshooting": 5,
-      "overall": 5,
-      "summary": "Well-structured README with excellent clarity and installation instructions, but severely lacking in quick-start examples and usage documentation for end users.",
-      "top_issue": "No actual usage examples showing how to create or use an SMTP server - README focuses heavily on development/testing setup rather than basic usage"
+      "troubleshooting": 3,
+      "overall": 3,
+      "summary": "The README explains what the package is and how to install it, but is dominated by developer/contributor content with virtually no usage examples or quick-start guide for end users.",
+      "top_issue": "No quick-start example or code snippet showing how to actually use the library \u2014 a new user cannot tell how to send or receive SMTP messages with it."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "RFC 5321 compliance violations (invalid SMTP syntax acceptance)",
-        "Data handling bugs (dot-stuffing, BCC field exposure, multipart attachments crash)",
-        "Test suite using deprecated dependencies (pkg_resources)",
-        "TLS/STARTTLS incompatibilities with proxy protocol",
-        "Regressions introduced in recent versions (v1.4.5+)"
+        "RFC 5321/2822 compliance violations (MAIL FROM/RCPT TO syntax rejection, missing header validation)",
+        "AUTH protocol bugs (trailing null bytes breaking Go/Alertmanager clients)",
+        "Message handling crashes (AttributeError with multipart attachments, dot-stuffing regression)",
+        "Protocol compatibility issues (STARTTLS session corruption, proxy protocol TLS incompatibility)",
+        "Deprecated test dependencies (pkg_resources, unfixed since May 2024)",
+        "Bcc header visibility leaking to To field, incorrect Bcc handling"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "Critical SMTP protocol compliance issues, unaddressed regressions, and zero maintainer engagement on open bugs indicate potential project abandonment."
+      "summary": "aiosmtpd shows signs of abandonment with multiple serious RFC compliance bugs and crashes remaining unresolved since 2021, recent issues (Jan-Feb 2026) receiving zero engagement, and a deprecated test dependency unfixed for 8+ months."
     },
     "maintenance": {
       "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from June 2025",
-        "101 open issues with no closed issues in past 6 months indicates issues are not being addressed",
-        "Zero active contributors in past 6 months shows no ongoing development",
-        "No merged PRs in past 6 months suggests pull requests are not being reviewed or accepted",
-        "Unknown last release date prevents assessment of release cadence"
+        "No commits in past 6 months despite 101 open issues",
+        "No closed issues or merged PRs in past 6 months indicates no active maintenance",
+        "No active contributors in the past 6 months",
+        "Unknown last release - no recent version updates",
+        "Large backlog of unaddressed issues (101 open)"
       ],
       "positive_signals": [
-        "No open pull requests suggests the maintainer may be intentionally limiting new work",
-        "The project exists and has a history (evidenced by open issues and prior commits)"
+        "Repository still exists with commit history available",
+        "No external blockers preventing maintenance (0 open PRs allows potential contributors)"
       ],
-      "summary": "aiosmtpd appears to be in stale/dormant status with no active development, issue resolution, or community engagement over the past 6 months."
+      "summary": "aiosmtpd appears abandoned with zero maintenance activity for 9 months and a substantial unresolved issue backlog."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T06:39:21.228902+00:00"
+    "llm_analyzed_at": "2026-03-15T08:48:39.636189+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

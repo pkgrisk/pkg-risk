@@ -175,49 +175,50 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 3,
-      "quick_start": 8,
+      "installation": 2,
+      "quick_start": 7,
       "examples": 8,
-      "configuration": 5,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "Excellent clarity and motivation with strong code examples, but critically missing installation instructions and troubleshooting guidance.",
-      "top_issue": "No installation instructions provided - users cannot actually install the package without searching elsewhere"
+      "overall": 5,
+      "summary": "Strong feature descriptions and code examples, but critically missing installation instructions, configuration reference, and troubleshooting guidance.",
+      "top_issue": "No installation instructions anywhere in the README \u2014 pip install command or setup steps are completely absent."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Blocking issues in recent versions (2.13.0, 2.8.2+)",
-        "Dependency compatibility problems (httpx SSL errors)",
-        "Missing features in async/OAuth implementations",
-        "Type hints and error constants incomplete in generated code",
-        "Memory leaks in core functionality",
-        "Platform-specific bugs (Windows) not quickly resolved"
+        "Async/concurrent functionality issues (AIOProducer oauth_cb, AIOConsumer deadlock, poll timeout regression)",
+        "Schema Registry integration gaps (protobuf options support, schema normalization inconsistencies)",
+        "Consumer offset management edge cases (race conditions, ambiguous errors)",
+        "Recent regressions introduced in v2.13.0 (poll blocking behavior)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "confluent-kafka shows moderate community health with active issue reporting but concerning regression bugs in recent versions (2.13.0, 2.8.2+) that remain unresolved, suggesting either quality control gaps or maintainer bandwidth constraints."
+      "praise_themes": [
+        "Appreciation for async module development effort",
+        "Recognition of library quality and maintenance"
+      ],
+      "abandonment_signals": true,
+      "summary": "Actively maintained but showing strain: recent bug fixes and closed issues indicate engagement, but critical regressions in async features, 6-year-old stalled issues, and zero response to newly reported regression suggest backlog pressure and incomplete async implementation maturity."
     },
     "maintenance": {
       "status": "abandoned",
-      "confidence": 9,
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit timestamp being recent",
-        "195 open issues with zero closed in past 6 months indicates no active triage",
-        "Zero active contributors in past 6 months",
-        "No merged PRs in past 6 months suggests no development activity",
-        "Unknown last release date indicates potential versioning issues or stalled releases"
+        "204 open issues with zero closed in past 6 months - issues not being triaged",
+        "Zero merged PRs in past 6 months despite having open pull requests",
+        "Zero active contributors for 6 months - no team engagement",
+        "Unknown last release - no version history available",
+        "Contradiction: last commit is recent (2026-03-13) but zero commits recorded in 6-month window suggests possible bot/automation activity without meaningful maintenance"
       ],
       "positive_signals": [
-        "Repository exists and has historical commit activity"
+        "One very recent commit (2026-03-13), though appears to be automated or isolated activity"
       ],
-      "summary": "confluent-kafka appears abandoned with no maintenance activity, issue resolution, or development in the past 6 months despite a large backlog of 195 open issues."
+      "summary": "Project shows clear signs of abandonment with no issue resolution, PR merging, or contributor activity for 6 months, despite a recent anomalous commit suggesting possible bot activity rather than active maintenance."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:14:27.281426+00:00"
+    "llm_analyzed_at": "2026-03-15T06:06:38.100816+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

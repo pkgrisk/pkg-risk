@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it documents the mypy-boto3-builder tool rather than the actual package (mypy-boto3-migrationhuborchestrator), which is a generated type stub library.",
-      "top_issue": "Wrong README entirely - this is the builder tool's README, not the documentation for the generated mypy-boto3-migrationhuborchestrator type stubs package that users actually installed"
+      "overall": 4,
+      "summary": "The README describes the builder tool rather than the specific service stub package, leaving users confused about what mypy-boto3-migrationhuborchestrator itself does or how to use it.",
+      "top_issue": "This README is for the mypy-boto3-builder generator project, not for the mypy-boto3-migrationhuborchestrator service stub \u2014 there are no examples, configuration docs, or troubleshooting specific to the MigrationHubOrchestrator service type annotations."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .pyi and .py files causing tool conflicts",
-        "Missing or incorrect type definitions in generated stubs",
-        "Documentation and setup process outdated",
-        "Confusing package naming (types-boto3 vs boto3-stubs)"
+        "Type stub accuracy errors (wrong type definitions in ToolUseBlockTypeDef, FileobjTypeDef, aioboto3 async signatures)",
+        "Package versioning mismatches (1.42 versions not available for submodules)",
+        "Missing/incorrect package extras and metadata (types-aiobotocore extras missing)",
+        "Documentation and instructions outdated (incorrect uvx command, pyproject.toml not generated)",
+        "Package naming confusion (types-boto3 vs boto3-stubs, types-botocore vs botocore-stubs)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Maintainers do address issues eventually (pyproject.toml migration completed and released)",
+        "Multiple bugs marked as fixed/released despite large generated package ecosystem"
+      ],
       "abandonment_signals": false,
-      "summary": "Project shows moderate maintenance with technical issues being addressed, but users express frustration with type definition accuracy, packaging inconsistencies, and unclear package relationships across the boto3 stub ecosystem."
+      "summary": "Moderate health with periodic maintenance and issue resolution, but struggling with type stub accuracy, documentation currency, and package metadata consistency across ~400 auto-generated packages."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no recent activity or resolution",
-        "Zero closed issues in past 6 months indicates no maintenance",
-        "No merged PRs in past 6 months shows no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests release history is unavailable or stale"
+        "No commits or activity in the past 6 months despite recent commit history",
+        "16 open issues accumulating with zero closed in 6 months",
+        "No merged PRs or contributor activity in 6 months",
+        "Unknown last release date makes version currency unclear",
+        "No pull request activity suggests maintainers may not be reviewing contributions"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity in the past 6 months despite having 15 unresolved open issues."
+      "positive_signals": [
+        "Recent commit 2 months ago indicates project is not entirely dormant",
+        "No open PRs suggests intentional pause rather than chaotic abandonment"
+      ],
+      "summary": "Package appears stale with no meaningful maintenance activity in 6 months and accumulating unresolved issues despite a recent commit 2 months ago."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T05:35:16.127822+00:00"
+    "llm_analyzed_at": "2026-03-15T02:39:50.864625+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

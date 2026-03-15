@@ -191,49 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 7,
-      "quick_start": 4,
+      "clarity": 7,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 3,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 4,
-      "summary": "The README provides basic installation steps but lacks concrete examples, configuration details, and any troubleshooting guidance for a tool that generates type annotations.",
-      "top_issue": "No actual code examples showing what the generated output looks like or how to use it in a real project, making it difficult for users to understand the practical value."
+      "summary": "The README identifies the tool's purpose and provides a minimal quickstart, but relies heavily on external documentation links rather than providing inline examples, configuration guidance, or troubleshooting help.",
+      "top_issue": "Almost no inline examples or configuration documentation \u2014 users are immediately redirected to external docs for anything beyond installation, making the README itself largely a table of contents."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch between main package and submodules",
-        "Duplicate .py and .pyi stub files causing IDE conflicts",
-        "Missing or incorrect type definitions in generated stubs",
-        "Package metadata issues (missing extras, setup.py deprecation)",
-        "Confusion between types-boto3 and boto3-stubs packages",
-        "Documentation and tooling bugs (generate locally instructions)"
+        "Type annotation accuracy (wrong types in stubs, overly broad type definitions)",
+        "Version/compatibility issues between main package and submodules",
+        "Duplicate file shipping (.pyi and .py files causing conflicts)",
+        "Missing package metadata (extras not provided, unclear naming)",
+        "Documentation gaps (generate locally instructions broken)",
+        "Build reproducibility concerns (non-deterministic wheel output)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Willingness to implement standards-based improvements (pyproject.toml migration completed)"
+      ],
       "abandonment_signals": false,
-      "summary": "Active project with responsive maintainers addressing bugs, but users encounter frustration with versioning inconsistencies, duplicate stub files, and type definition accuracy in auto-generated type stubs."
+      "summary": "Project demonstrates baseline maintenance activity with some closed issues and released enhancements, but has moderate responsiveness with several unresolved technical bugs, type definition issues, and documentation gaps that have accumulated over months with limited community engagement."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance",
-        "No merged PRs in past 6 months showing stalled development",
+        "No commits in past 6 months despite being a type stub package that may require boto3 updates",
+        "16 unresolved open issues with no recent closure activity",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests version tracking has ceased"
+        "No merged PRs in past 6 months indicating no code review or updates",
+        "Unknown release cycle suggests no clear maintenance plan"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity, unresolved issues, and no recent releases despite having a recent commit timestamp."
+      "positive_signals": [
+        "One commit present within last 2 months indicates project is not completely abandoned",
+        "Type stubs inherently require less frequent maintenance than source packages"
+      ],
+      "summary": "This types-boto3 package is stale with no sustained maintenance activity, 16 unresolved issues, and no contributors active in the past 6 months."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-14T20:29:12.472545+00:00"
+    "llm_analyzed_at": "2026-03-15T00:32:05.480523+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

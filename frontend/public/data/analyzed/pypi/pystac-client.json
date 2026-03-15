@@ -177,50 +177,49 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 7,
-      "installation": 9,
-      "quick_start": 2,
+      "clarity": 6,
+      "installation": 8,
+      "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "Clear purpose and excellent installation instructions, but completely lacks inline examples, forcing users to visit external documentation for basic usage.",
-      "top_issue": "No quick start example showing how to connect to a STAC API or search for items - users must navigate to external docs to understand basic usage"
+      "overall": 3,
+      "summary": "The README covers installation adequately but provides no usage examples, quick start, or inline documentation beyond directing users to external docs.",
+      "top_issue": "No quick start or usage examples \u2014 a new user has no idea how to actually use the client after installing it."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Documentation/API discrepancies (KeyError vs NotFoundError)",
-        "External dependency reliability (Planetary Computer intermittent errors)",
-        "Performance issues (linear memory growth in long-lived processes)",
-        "Compatibility issues with external STAC endpoints (LandsatLook, paging failures)"
+        "Memory leaks in long-running processes (100MB/min growth)",
+        "Intermittent failures with external STAC servers",
+        "Missing error handling for HTTP 429 throttling",
+        "Documentation bugs (exceptions don't match docs)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "pystac-client shows moderate health with active issue tracking but reveals systemic problems around external API reliability, performance at scale, and documentation accuracy that impact production usage."
+      "summary": "Active but inconsistent maintenance: recent issues are resolved quickly, but a critical 5-month-old memory leak remains unaddressed, indicating prioritization or resource constraints rather than abandonment."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 6,
       "concerns": [
-        "Zero commits in past 6 months despite last commit being very recent (2026-02-04)",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "25 open issues with no resolution activity",
-        "Unknown last release date",
-        "No open PRs indicates lack of ongoing development"
+        "24 open issues with no recent closures (0 closed in past 6 months)",
+        "No merged PRs or active contributors in past 6 months",
+        "Long dormancy period before recent commit suggests sporadic activity",
+        "No recent releases documented",
+        "Lack of sustained development velocity"
       ],
       "positive_signals": [
-        "Recent commit activity (2026-02-04) suggests repository is not completely dormant"
+        "Recent commit activity (2026-03-13) indicates project is not completely abandoned",
+        "No open PRs suggests maintainer may be controlling merge cadence"
       ],
-      "summary": "pystac-client appears abandoned with recent commit activity but no development, issue resolution, or PR activity over the past 6 months, suggesting the repository may be in a stalled or unmaintained state."
+      "summary": "Project shows signs of abandonment with a 6+ month gap in activity before a recent commit, combined with unresolved issue backlog and no recent releases, indicating minimal or sporadic maintenance at best."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:24:06.271972+00:00"
+    "llm_analyzed_at": "2026-03-15T10:52:08.819310+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

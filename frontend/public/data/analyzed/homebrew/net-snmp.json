@@ -173,19 +173,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 5,
+      "installation": 2,
+      "quick_start": 1,
+      "examples": 2,
+      "configuration": 3,
+      "troubleshooting": 3,
+      "overall": 2,
+      "summary": "The README is essentially a table of contents that defers all actual documentation to external files, leaving users with no actionable information.",
+      "top_issue": "No inline installation instructions, usage examples, or configuration details \u2014 everything is redirected to separate files (INSTALL, FAQ, man pages) that may not be available in the user's context."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
+      "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Session reuse broken in 5.9.5",
-        "Heap buffer over-read in `usm_process_in_msg()`"
+        "Critical security vulnerabilities (heap buffer overflows, NULL pointer dereference, buffer over-read)",
+        "Regression bugs breaking existing functionality (session reuse broken in 5.9.5)",
+        "RFC compliance issues and incorrect error responses",
+        "Documentation gaps and incomplete specification"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health of the net-snmp package on Homebrew is negative due to open issues with significant bugs and a lack of recent activity from maintainers, indicating frustration among users."
+      "abandonment_signals": true,
+      "summary": "Community health is concerning: critical security vulnerabilities remain open for 2+ months with minimal maintainer engagement, and recent issues show no responses."
     },
     "communication": {
       "helpfulness": 8,
@@ -201,17 +213,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and welcoming to contributors. They provide technical depth in explaining decisions but sometimes lack detail or patience with repeated questions."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "High number of open issues (280) which may indicate unresolved problems",
-        "Unknown last release date, making it unclear when the latest stable version was published"
+        "361 open issues with zero closed in past 6 months - issues accumulating unchecked",
+        "Zero active contributors in past 6 months despite issue backlog",
+        "Zero merged PRs in past 6 months - no pull request activity or review",
+        "Unknown last release date - unclear when last stable version shipped",
+        "Data inconsistency: last commit very recent but zero commits recorded in 6-month window"
       ],
       "positive_signals": [
-        "Frequent commits in the past 6 months (144)",
-        "Active contributors (13) and merged PRs (20) over the same period"
+        "Very recent commit activity (2026-03-14, yesterday)"
       ],
-      "summary": "The net-snmp package is considered maintained due to frequent updates and active contributions, though it has a high number of open issues and an unclear release schedule."
+      "summary": "Despite a recent commit, this Homebrew package appears stale with 361 unaddressed issues, no contributor activity, and no PR merges in six months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -223,9 +237,9 @@
       "summary": "The changelog is well-categorized but lacks clarity and completeness, with no breaking changes or migration guides."
     },
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T18:50:48.567891+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

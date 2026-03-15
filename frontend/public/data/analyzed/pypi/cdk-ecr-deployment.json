@@ -182,46 +182,48 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 4,
+      "installation": 3,
       "quick_start": 7,
       "examples": 8,
       "configuration": 5,
-      "troubleshooting": 6,
+      "troubleshooting": 4,
       "overall": 6,
-      "summary": "Clear purpose and good examples, but lacks standard installation instructions and assumes familiarity with CDK ecosystem.",
-      "top_issue": "No explicit installation instructions (pip install/npm install) - jumps directly to usage examples assuming the package is already installed"
+      "summary": "Good examples for common use cases but lacks installation instructions and assumes significant CDK/AWS familiarity.",
+      "top_issue": "No installation instructions \u2014 the README jumps straight to usage without explaining how to install the package (e.g., `pip install cdk-ecr-deployment` or npm equivalent)."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Unclear error messages that obscure underlying issues",
-        "Missing support for multi-architecture container images",
-        "Security vulnerability (CVE-2025-22871) in Go stdlib dependencies",
-        "Runtime errors with Lambda handler execution"
+        "Rate limiting and ECR service quota errors when deploying multiple images concurrently",
+        "Poor error handling and visibility (PhysicalResourceId masking actual errors)",
+        "Security vulnerabilities in pre-compiled dependencies"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The project shows moderate health with active maintenance (v3.3.0 recent changes), but has unresolved bugs affecting error handling, multi-arch support, and security patching that indicate either resource constraints or deprioritization of certain issues."
+      "summary": "Project shows some maintenance (security fixes addressed) but concerning lack of response to recent critical rate-limiting issue opened 7 days ago with zero engagement."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being 5 days ago (suggests repository may be archived or ownership changed)",
-        "13 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months indicating no maintenance activity",
-        "No merged PRs in past 6 months showing no active development",
+        "Zero commits in past 6 months despite existence of repository",
+        "14 open issues with zero closed issues in past 6 months",
+        "No pull request activity (zero merged PRs in past 6 months)",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests release infrastructure is not maintained"
+        "Unknown last release date - cannot verify if users have updates",
+        "Recent commit (March 9) appears isolated with no sustained activity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity for at least 6 months despite a recent commit timestamp anomaly, 13 unresolved issues, and no contributor engagement."
+      "positive_signals": [
+        "Repository has a very recent commit (March 9, 2026)",
+        "Repository still exists and is accessible"
+      ],
+      "summary": "Repository has stalled with minimal maintenance activity; recent commit is anomalous and not accompanied by sustainable development patterns such as issue resolution, PR merges, or active contributors."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T09:39:49.933777+00:00"
+    "llm_analyzed_at": "2026-03-15T05:35:45.584539+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

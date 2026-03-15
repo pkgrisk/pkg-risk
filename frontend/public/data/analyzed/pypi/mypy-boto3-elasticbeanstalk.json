@@ -191,48 +191,51 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 3,
-      "installation": 6,
-      "quick_start": 4,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 6,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool (mypy-boto3-builder) rather than the actual package (mypy-boto3-elasticbeanstalk), making it nearly impossible for users to understand what this specific package does or how to use it.",
-      "top_issue": "Wrong README content - this appears to be the mypy-boto3-builder project README, not the README for the mypy-boto3-elasticbeanstalk package, leaving users with no information about Elastic Beanstalk type stubs specifically"
+      "overall": 4,
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-elasticbeanstalk package, leaving users confused about how to actually use the service-specific stubs.",
+      "top_issue": "The README describes the parent builder project rather than the specific elasticbeanstalk stubs package \u2014 there are no usage examples, type annotation snippets, or configuration details specific to the Elastic Beanstalk service."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between submodules and main package",
-        "Type stubs inaccuracies (missing async, wrong literal values, overly broad types)",
-        "Packaging issues (duplicate .py and .pyi files, missing extras metadata)",
-        "Documentation outdated (generate locally instructions broken)",
-        "Confusion between boto3-stubs and types-boto3 packages"
+        "Type definition errors (wrong async/await, overly broad types, missing type exports)",
+        "Inaccurate or outdated documentation and usage instructions",
+        "Package naming confusion between types-boto3 and boto3-stubs variants",
+        "Duplicate stub file shipping (.pyi and .py files together)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Moderately healthy community with active bug reporting and occasional maintainer engagement, but recurrent type accuracy issues and packaging problems suggest the project needs stronger quality assurance processes."
+      "abandonment_signals": true,
+      "summary": "Community health is mixed with recurring type definition accuracy issues and documentation gaps; several issues labeled 'response needed' remain open for months despite some releases, indicating inconsistent maintainer engagement."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
+        "Zero commits in the past 6 months indicates no active development",
+        "Zero closed issues in past 6 months - issues are not being addressed",
+        "16 open unresolved issues accumulating without triage",
+        "Zero merged PRs in past 6 months - no pull requests being integrated",
         "No active contributors in past 6 months",
-        "15 open issues with no activity",
-        "Last commit over 2 weeks ago with no follow-up activity"
+        "Unknown last release - unclear release cadence and versioning",
+        "Last commit was 2 months ago but no sustained activity pattern"
       ],
-      "positive_signals": [],
-      "summary": "This package appears to be abandoned with no maintenance activity for at least 6 months despite having unresolved open issues."
+      "positive_signals": [
+        "Recent commit (January 2026) shows minimal recent activity",
+        "No competing PRs indicates either clean state or low engagement"
+      ],
+      "summary": "Package is effectively stale with no meaningful maintenance activity over 6 months and accumulating unresolved issues despite recent commit."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T05:44:10.803944+00:00"
+    "llm_analyzed_at": "2026-03-15T07:56:02.108166+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

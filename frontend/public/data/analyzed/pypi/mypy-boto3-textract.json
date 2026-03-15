@@ -191,48 +191,53 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes mypy-boto3-builder (a generator tool) rather than mypy-boto3-textract (the actual package), providing almost no information about using the Textract type stubs.",
-      "top_issue": "Wrong README content - describes the builder tool instead of the actual mypy-boto3-textract package, leaving users with no information about how to use Textract type annotations"
+      "summary": "This README is for the builder tool, not the specific mypy-boto3-textract package, leaving users confused about what they actually installed.",
+      "top_issue": "The README describes the mypy-boto3-builder generator, not the mypy-boto3-textract service stub package itself \u2014 there are no Textract-specific usage examples, type annotation examples, or configuration guidance."
     },
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Version mismatch issues between main package and submodules",
-        "Duplicate .pyi and .py files causing tool confusion",
-        "Incorrect type definitions in stubs (async/await, literal types)",
-        "Documentation and tooling gaps (pyproject.toml migration, generate locally instructions)",
-        "Package naming confusion (types-boto3 vs boto3-stubs)"
+        "Type stub accuracy issues (wrong type definitions, missing async markers)",
+        "Duplicate stub files (.pyi and .py files shipped together)",
+        "Missing package extras in type stub distributions",
+        "Outdated or broken documentation/instructions",
+        "Package versioning mismatches between boto3 and type stubs",
+        "Non-deterministic wheel builds"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "Project maintains active development with moderate responsiveness, but struggles with version synchronization issues, type accuracy problems, and documentation clarity that frustrate users."
+      "praise_themes": [
+        "Responsive to PEP standards updates (pyproject.toml migration completed and released)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows selective maintenance with resolved enhancements, but multiple type-correctness bugs remain open for 6+ months without resolution, indicating moderate backlog and inconsistent responsiveness to community issues."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months",
-        "No merged PRs in past 6 months",
-        "No closed issues in past 6 months",
-        "No active contributors in past 6 months",
-        "15 open issues with no resolution activity",
-        "Unknown last release date suggests outdated release information"
+        "0 commits merged in the past 6 months despite open issues",
+        "16 unaddressed open issues with no recent activity",
+        "0 closed issues in the past 6 months",
+        "No active contributors for 6+ months",
+        "Unknown last release date",
+        "0 merged PRs in past 6 months suggests no development activity"
       ],
-      "positive_signals": [],
-      "summary": "This package shows no maintenance activity over the past 6 months with accumulating unresolved issues and no contributor engagement."
+      "positive_signals": [
+        "Last commit timestamp (2026-01-12) is relatively recent, suggesting some minimal update activity"
+      ],
+      "summary": "Package shows signs of abandonment with no merged commits or PRs in 6 months and mounting unaddressed issues, despite a recent single commit timestamp."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-19T10:05:14.784460+00:00"
+    "llm_analyzed_at": "2026-03-15T05:58:00.418670+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

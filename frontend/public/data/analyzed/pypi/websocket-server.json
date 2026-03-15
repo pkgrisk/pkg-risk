@@ -176,50 +176,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
-      "quick_start": 9,
+      "installation": 8,
+      "quick_start": 7,
       "examples": 8,
       "configuration": 8,
-      "troubleshooting": 3,
-      "overall": 8,
-      "summary": "Excellent clarity and API documentation with clear examples, but lacks troubleshooting guidance and edge case handling.",
-      "top_issue": "No troubleshooting section for common issues like connection failures, SSL setup problems, or firewall configuration"
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Well-structured README with clear API docs and examples, but completely lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like SSL setup errors, connection problems, or port conflicts are not addressed."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Socket/connection handling errors (BrokenPipeError, unclosed sockets)",
-        "Client disconnection and connection stability issues",
-        "Callback failures leading to memory leaks",
-        "KeyError and exception handling with malformed requests",
-        "Resource management (socket cleanup, client list management)",
-        "Missing features (IPv6 support, query parameters, SSL configuration)"
+        "Connection stability issues (BrokenPipeError, sporadic disconnections)",
+        "Resource leaks and unclosed sockets",
+        "Client lifecycle management bugs (improper disconnect handling)",
+        "Error handling failures (KeyError, exception during send_message_to_all)",
+        "Missing callback execution on connection close (memory leak risk)"
       ],
       "praise_themes": [
-        "Library functionality appreciated when working"
+        "Minimal praise (one passing mention of \"great lib\")"
       ],
       "abandonment_signals": true,
-      "summary": "The websocket-server project shows signs of abandonment with 13 open issues spanning 4+ years, critical resource management bugs unfixed, zero maintainer engagement, and no recent activity to address fundamental connection stability problems."
+      "summary": "Project is effectively abandoned with 12 of 13 issues still open, including critical 8-year-old bugs and ongoing connection stability failures, indicating no active maintenance."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being from October 2025",
-        "41 open issues with no recent activity",
-        "No closed issues in past 6 months indicating lack of bug fixes",
-        "No merged PRs in past 6 months suggesting no development activity",
+        "No commits in past 6 months despite last commit being ~5 months ago",
+        "41 open issues with zero closed issues in past 6 months - issues accumulating without triage",
+        "No merged PRs in past 6 months - no active contribution or maintenance",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests release cycle has stalled"
+        "Unknown last release date - unclear if stable version exists"
       ],
-      "positive_signals": [],
-      "summary": "The websocket-server package appears abandoned with zero maintenance activity over the past 6 months despite a backlog of 41 unresolved issues."
+      "positive_signals": [
+        "Last commit was within the past 6 months (October 2025), suggesting not completely abandoned",
+        "Project has enough usage to generate issue reports"
+      ],
+      "summary": "Package is stale with no active maintenance for 6+ months; significant backlog of unaddressed issues indicates lack of triage or care."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-13T17:58:36.435337+00:00"
+    "llm_analyzed_at": "2026-03-14T22:33:37.854243+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

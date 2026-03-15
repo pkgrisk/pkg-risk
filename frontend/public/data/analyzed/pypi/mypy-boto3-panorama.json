@@ -191,48 +191,52 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 4,
-      "installation": 6,
-      "quick_start": 3,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 5,
       "examples": 2,
-      "configuration": 1,
+      "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README is confusing because it describes a builder tool for generating type stubs rather than the actual mypy-boto3-panorama package itself, leaving users unclear about what they're installing.",
-      "top_issue": "Major mismatch: this appears to be a generic README for mypy_boto3_builder that was incorrectly included in the mypy-boto3-panorama package, providing no information about using Panorama-specific type stubs"
+      "summary": "The README is for the builder tool rather than the specific mypy-boto3-panorama package, leaving users confused about what this particular package does and how to use it.",
+      "top_issue": "This README describes the mypy-boto3-builder generator, not the mypy-boto3-panorama package itself \u2014 a user installing mypy-boto3-panorama gets no guidance on how to actually use Panorama type stubs in their code."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 7,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Type stub accuracy and correctness issues (missing async def, wrong type definitions, overly broad types)",
-        "Packaging and distribution problems (duplicate .pyi/.py files, missing extras, version mismatches)",
-        "Documentation and tooling gaps (outdated generation instructions, confusing package naming)",
-        "Breaking changes without proper communication (version 1.42 submodule unavailability)"
+        "Type stub accuracy and correctness (wrong type definitions, missing async markers)",
+        "Duplicate stub files shipped as both .pyi and .py causing IDE conflicts",
+        "Version/dependency resolution issues with submodules",
+        "Package naming confusion (types-boto3 vs boto3-stubs, types-aiobotocore variants)",
+        "Outdated documentation and tooling instructions"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Features eventually reach release status when addressed"
+      ],
       "abandonment_signals": false,
-      "summary": "Community shows moderate engagement with maintainers actively addressing issues, but recurring type accuracy problems and packaging inconsistencies indicate maintenance challenges with a large auto-generated stub package ecosystem (~400 packages)."
+      "summary": "Project is actively maintained with regular releases, but struggling with type stub accuracy issues and documentation clarity; several bugs languish with unresolved 'response needed' tags suggesting maintainer capacity constraints."
     },
     "maintenance": {
-      "status": "abandoned",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2026-01-12)",
-        "15 open issues with no activity or resolution",
-        "Zero closed issues in past 6 months",
-        "No merged PRs in past 6 months",
-        "Zero active contributors in past 6 months",
-        "No releases tracked",
-        "No PR activity indicates lack of development"
+        "Zero commits in the past 6 months indicates no active development",
+        "16 open issues with zero closed in the past 6 months suggests issues are not being triaged or resolved",
+        "No merged pull requests in 6 months indicates no contributions are being integrated",
+        "Zero active contributors in the past 6 months shows the project has no maintainers engaged",
+        "Unknown last release date prevents verification of recent release activity"
       ],
-      "positive_signals": [],
-      "summary": "This package appears abandoned with no maintenance activity, issue resolution, or development in the past 6 months despite recent timestamp anomalies."
+      "positive_signals": [
+        "Last commit was relatively recent (approximately 2 months ago)",
+        "Repository still exists and has some tracked issues"
+      ],
+      "summary": "This package shows clear signs of stagnation with no commits, PRs, or issue resolution in the past 6 months despite 16 unresolved issues, indicating it is abandoned or unmaintained."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T03:26:52.784950+00:00"
+    "llm_analyzed_at": "2026-03-15T10:57:16.433468+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

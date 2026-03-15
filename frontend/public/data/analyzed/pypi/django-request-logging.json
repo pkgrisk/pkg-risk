@@ -177,48 +177,52 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 8,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 7,
-      "summary": "Well-structured documentation with clear installation and basic setup, but lacks practical examples, troubleshooting guidance, and has a confusing maintenance section.",
-      "top_issue": "No troubleshooting section for common issues like logs not appearing, middleware ordering problems, or performance impacts"
+      "quick_start": 7,
+      "examples": 5,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Well-structured docs covering installation and configuration thoroughly, but lacks real-world usage examples and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like ANSI color in log files, missing logs, or middleware ordering problems are not addressed."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
-      "maintainer_responsiveness": "unresponsive",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Thread safety issues with shared state (cached_request_body, boundary)",
-        "Decorator (no_logging) difficult to use and doesn't work in certain scenarios",
-        "Request body logging cannot be selectively disabled",
-        "Memory/performance issues with large uploads",
-        "RawPostDataException errors",
-        "Logging format creates sequence issues with concurrent requests",
-        "Empty log entries for requests without bodies"
+        "Thread safety issues and empty body logging bugs (5+ years unresolved)",
+        "no_logging decorator doesn't work correctly or is difficult to use",
+        "Sensitive data logging (passwords, query strings) cannot be fully disabled",
+        "RawPostDataException crashes on POST requests (15 comments, 5+ years open)",
+        "Concurrent request logging sequence/ordering issues",
+        "Middleware interferes with Django's file upload memory limits"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Gratitude for package existence despite issues"
+      ],
       "abandonment_signals": true,
-      "summary": "Community health is poor with 12 issues spanning 5+ years, critical unresolved thread safety bugs, and apparent maintainer abandonment with minimal responsiveness to security and functionality concerns."
+      "summary": "Community health is poor: critical unresolved bugs dating back 5+ years (thread safety, RawPostDataException), security concerns (password/query string logging), minimal maintainer responsiveness to recent issues, and growing user frustration with functionality gaps."
     },
     "maintenance": {
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months",
-        "No merged PRs in the past 6 months",
-        "No closed issues in the past 6 months",
-        "No active contributors in the past 6 months",
-        "18 open issues with no activity",
-        "No recent releases"
+        "No commits for 7+ months (last commit 2024-08-12)",
+        "18 open issues with zero closure activity",
+        "Zero contributors active in past 6 months",
+        "No merged PRs or PR activity in 6 months",
+        "Unknown or missing recent releases",
+        "Complete absence of maintenance signals"
       ],
-      "positive_signals": [],
-      "summary": "This package shows clear signs of abandonment with zero maintenance activity over the past 6 months and accumulating unresolved issues."
+      "positive_signals": [
+        "Was recently active ~7 months ago (not completely dead)",
+        "Has open issues tracked (vs completely forgotten)"
+      ],
+      "summary": "django-request-logging is abandoned with zero maintenance activity for 6+ months and an unresolved backlog of 18 issues."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-12T05:10:05.880255+00:00"
+    "llm_analyzed_at": "2026-03-15T17:27:57.468762+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

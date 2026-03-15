@@ -184,48 +184,51 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 3,
-      "quick_start": 2,
+      "installation": 2,
+      "quick_start": 1,
       "examples": 1,
-      "configuration": 2,
+      "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "Clear high-level overview but delegates all practical information to external documentation without any inline examples or quick-start code.",
-      "top_issue": "No code examples or quick-start guide in README - users must navigate to external docs to see any actual usage"
+      "summary": "The README clearly describes what dj-stripe does but serves almost entirely as a pointer to external documentation, providing no actionable content for installation, usage, or configuration.",
+      "top_issue": "Installation section contains only a link with no inline instructions, and there are zero code examples or quick-start guidance in the README itself."
     },
     "sentiment": {
       "sentiment": "negative",
       "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Data integrity issues after upgrades (null constraint violations, missing fields)",
-        "Breaking changes between minor versions (2.9\u21922.10) without adequate migration guidance",
-        "Type comparison bugs (int vs DateTime)",
-        "API schema drift from Stripe (current_period_start/end field location changes)",
-        "Webhook processing failures and data sync issues",
-        "Django 5 compatibility problems"
+        "Breaking changes in minor versions (2.8\u21922.9, 2.10) causing production failures",
+        "Database migration and constraint violations after upgrades",
+        "Webhook synchronization failures and event processing broken",
+        "Removed fields/APIs without deprecation warnings (status field, public webhook API)",
+        "Missing documentation on changes and upgrade paths",
+        "API key handling and sync command issues (publishable keys, unknown parameters)",
+        "Incomplete feature implementation (currency_options not expanded)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "Community is experiencing significant frustration with recent versions (2.9-2.10) marked by data loss bugs, breaking changes, and slow maintainer response, creating hesitation around production deployments."
+      "summary": "Significant community health decline with recent destabilizing releases, multiple critical unresolved issues, zero maintainer engagement on new bugs, and evidence of team transition causing quality and communication breakdown."
     },
     "maintenance": {
-      "status": "abandoned",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "No commits in past 6 months despite last commit being from January 2026",
-        "76 open issues with no recent activity or resolution",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months suggesting no active development",
-        "No active contributors in past 6 months",
-        "Unknown last release date suggests stalled release cycle"
+        "72 open issues with zero closed in past 6 months",
+        "No commits merged in past 6 months despite recent isolated commit",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date",
+        "Backlog accumulation with no triage"
       ],
-      "positive_signals": [],
-      "summary": "dj-stripe appears to be abandoned with no maintenance activity, commits, or issue resolution in the past 6 months despite a substantial backlog of 76 open issues."
+      "positive_signals": [
+        "Isolated recent commit 15 days ago suggests minimal activity"
+      ],
+      "summary": "Project shows stale maintenance with growing issue backlog, no active contributors or PR merging activity in 6 months, though isolated recent commit activity may indicate periodic maintenance."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-02-04T02:57:29.857444+00:00"
+    "llm_analyzed_at": "2026-03-15T10:07:32.219489+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

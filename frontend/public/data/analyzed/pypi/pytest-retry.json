@@ -169,53 +169,54 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
+      "installation": 9,
       "quick_start": 9,
-      "examples": 10,
-      "configuration": 10,
-      "troubleshooting": 6,
-      "overall": 9,
-      "summary": "Exceptionally clear and comprehensive documentation with excellent examples and configuration options, though lacking dedicated troubleshooting guidance.",
-      "top_issue": "No troubleshooting section - missing guidance on common issues like conflicts with other pytest plugins, debugging why retries aren't triggering, or handling edge cases with fixtures"
+      "examples": 9,
+      "configuration": 9,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Exceptionally well-documented plugin with clear installation, comprehensive examples covering both global and per-test usage, and good configuration coverage across multiple file formats, let down only by minimal troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like fixture interactions, plugin compatibility conflicts, or debugging retry behavior are not addressed."
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Incompatibility with pytest ecosystem plugins (pytest-subtests, pytest-timeout, pytest-check, pytest-html)",
-        "Retry mechanism breaks in specific edge cases (unittest.TestCase, fixture parameters, in-process pytester)",
-        "Test result reporting inaccuracies across different pytest versions",
-        "Limited exception filtering (no inheritance support)"
+        "Incompatibility with pytest plugins (pytest-subtests, pytest-timeout, pytest-html, pytest-check, allure)",
+        "Incorrect test result reporting (shows passed when actually failed)",
+        "Missing Python 3.13/3.14 version testing and support",
+        "Test timeouts not enforced across retries",
+        "Infinite loops/hangs with certain pytest features",
+        "KeyError and ValueError exceptions in edge cases"
       ],
       "praise_themes": [
-        "Appreciated as a useful library for handling flaky tests",
-        "Works well with pytest-xdist as alternative to built-in rerunfailures",
-        "Generally functional for basic use cases"
+        "Effective for handling flaky tests and network issues",
+        "Better alternative to pytest's built-in rerunfailures with xdist support",
+        "Package fundamentally solves a real problem"
       ],
-      "abandonment_signals": false,
-      "summary": "pytest-retry has moderate community engagement with several unresolved compatibility issues causing user frustration, particularly around pytest ecosystem integration and edge case handling, though the project is actively maintained."
+      "abandonment_signals": true,
+      "summary": "pytest-retry addresses a real need but suffers from multiple unresolved plugin compatibility issues and outdated Python version support, with the maintainer showing slow responsiveness to critical bugs open for 6+ months."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No commits in past 6 months despite last commit being recent (2025-01-19)",
-        "9 open issues with no recent resolution activity",
-        "No closed issues in past 6 months indicating lack of maintenance",
-        "No merged PRs in past 6 months showing no active development",
+        "No commits merged in past 6 months despite having a recent commit",
+        "10 open issues with no resolution in past 6 months",
         "No active contributors in past 6 months",
-        "Unknown last release date suggests release tracking may not be current"
+        "No releases recorded",
+        "0 closed issues in past 6 months suggests issues are not being triaged"
       ],
       "positive_signals": [
-        "Recent commit activity from January 2025 shows some minimal recent work",
-        "No indication of project abandonment (still has some commits)"
+        "Last commit from January 2025 shows some recent activity",
+        "No open pull requests indicates the maintainer may still be reviewing/merging occasionally"
       ],
-      "summary": "pytest-retry appears stale with a recent commit but no sustained maintenance activity, unresolved issues, or development over the past 6 months."
+      "summary": "pytest-retry appears minimally maintained with a stale codebase; while there was a recent commit, the complete lack of issue resolution, merged PRs, and active contributors over 6 months indicates the project is not actively developed."
     },
     "llm_provider": "claude",
     "llm_model": "haiku/sonnet",
-    "llm_analyzed_at": "2026-01-26T11:01:47.201823+00:00"
+    "llm_analyzed_at": "2026-03-15T12:11:19.787687+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
