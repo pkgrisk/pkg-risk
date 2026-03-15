@@ -1,9 +1,10 @@
 import { useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
-import type { MatchedDependency } from '../types/package';
+import type { MatchedDependency, Ecosystem } from '../types/package';
 import { GradeBadge } from './GradeBadge';
 import { RiskBadges } from './RiskBadges';
+import { PackageManagerCompat } from './PackageManagerCompat';
 
 interface PackageDetailModalProps {
   dependency: MatchedDependency;
@@ -100,6 +101,7 @@ export function PackageDetailModal({ dependency, ecosystem, onClose }: PackageDe
           <div className="modal-meta">
             <span className="version">v{displayVersion}</span>
             <span className="ecosystem-tag">{ecosystem}</span>
+            <PackageManagerCompat ecosystem={ecosystem as Ecosystem} />
           </div>
         </div>
 

@@ -4,13 +4,15 @@ import { parseRequirementsTxt } from './requirements';
 import { parsePyProjectToml } from './pyproject';
 import { parsePipfile } from './pipfile';
 import { parseBrewfile } from './brewfile';
+import { parseBunLock } from './bunlock';
 
 export type SupportedFilename =
   | 'package.json'
   | 'requirements.txt'
   | 'pyproject.toml'
   | 'Pipfile'
-  | 'Brewfile';
+  | 'Brewfile'
+  | 'bun.lock';
 
 const SUPPORTED_FILES: Record<SupportedFilename, (content: string, filename: string) => ParserResult> = {
   'package.json': parsePackageJson,
@@ -18,6 +20,7 @@ const SUPPORTED_FILES: Record<SupportedFilename, (content: string, filename: str
   'pyproject.toml': parsePyProjectToml,
   'Pipfile': parsePipfile,
   'Brewfile': parseBrewfile,
+  'bun.lock': parseBunLock,
 };
 
 export function isSupportedFile(filename: string): filename is SupportedFilename {
@@ -50,3 +53,4 @@ export { parseRequirementsTxt } from './requirements';
 export { parsePyProjectToml } from './pyproject';
 export { parsePipfile } from './pipfile';
 export { parseBrewfile } from './brewfile';
+export { parseBunLock } from './bunlock';

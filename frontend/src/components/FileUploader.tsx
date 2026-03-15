@@ -20,6 +20,13 @@ export function FileUploader({ onFilesParsed, disabled = false }: FileUploaderPr
       const results: ParserResult[] = [];
 
       for (const file of Array.from(files)) {
+        if (file.name === 'bun.lockb') {
+          setError(
+            'bun.lockb is a binary format that can\'t be parsed in the browser. Convert to text format with: bun install --save-text-lockfile'
+          );
+          continue;
+        }
+
         if (!isSupportedFile(file.name)) {
           setError(
             `Unsupported file: ${file.name}. Supported: ${getSupportedFilenames().join(', ')}`
