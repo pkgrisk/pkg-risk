@@ -189,14 +189,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 8,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but could benefit from more detailed installation instructions and configuration documentation.",
-      "top_issue": "Lack of clear and concise installation instructions for the dumpling package, which is not even mentioned in the provided README content."
+      "installation": 4,
+      "quick_start": 5,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 4,
+      "overall": 4,
+      "summary": "This is TiDB's README, not dumpling's \u2014 the docs are well-structured for TiDB but entirely irrelevant to the dumpling package being evaluated.",
+      "top_issue": "README is for the wrong package (TiDB instead of dumpling, a MySQL-compatible data export tool), so it provides no useful documentation for dumpling users."
     },
     "security": {
       "overall_score": 7,
@@ -223,26 +223,34 @@
       "summary": "The code has some security concerns, including SQL query string concatenation and potential error exposure, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "moderate",
-      "common_complaints": [],
-      "praise_themes": [
-        "feature request"
+      "common_complaints": [
+        "Test flakiness/unreliability across multiple components",
+        "Performance timeout issues in test execution",
+        "Testing infrastructure instability"
       ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is currently focused on a feature request for DXF service in the nextgen kernel, with no signs of frustration or abandonment."
+      "summary": "Project exhibits significant test reliability issues with 9 critical flaky tests reported simultaneously, suggesting systemic testing infrastructure problems that impede development velocity."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors active in the past six months"
+      "concerns": [
+        "5,859 open issues with zero closed in past 6 months",
+        "Zero commits in past 6 months despite recent timestamp",
+        "No active contributors in past 6 months",
+        "Zero merged pull requests in past 6 months",
+        "Unknown last release date",
+        "No pull request activity whatsoever"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Last commit timestamp is recent (2026-03-15)"
+      ],
+      "summary": "Project is effectively abandoned with massive issue backlog and zero maintenance activity over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -252,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:58:18.561507+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

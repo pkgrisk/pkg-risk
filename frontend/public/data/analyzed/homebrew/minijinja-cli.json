@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a good introduction to the package and its features, but could be improved with clearer installation instructions and more comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of clear and concise installation instructions for users who are not familiar with Rust or Cargo."
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 6,
+      "summary": "Excellent high-level overview of the library with a good quick-start snippet, but this README covers the parent minijinja library rather than minijinja-cli specifically, leaving CLI-specific configuration and troubleshooting entirely undocumented.",
+      "top_issue": "The README is for the parent minijinja library, not minijinja-cli \u2014 CLI-specific flags, input formats, data sources, and configuration options are absent."
     },
     "security": {
       "overall_score": 7,
@@ -212,16 +212,21 @@
       "summary": "The minijinja-cli code has some security concerns, including path traversal and denial-of-service vulnerabilities, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Render discrepancies with Python Jinja2",
-        "Bool filter not working as expected"
+        "Jinja2 compatibility gaps (filters, string escapes, dotted syntax)",
+        "Missing standard Jinja2 functions (environ(), indent kwargs)",
+        "Incomplete feature parity with Jinja2",
+        "Limited platform binary support"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Precompiled binaries appreciated by non-Rust users",
+        "Project serves a real need for Jinja2 templating in Rust ecosystem"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged, but there are open issues that need attention, particularly regarding rendering discrepancies and boolean filtering."
+      "summary": "Moderately healthy community with respect and polite engagement, but underlying concern about jinja2 compatibility gaps and one lingering 3-year-old bug suggests uneven maintenance."
     },
     "communication": {
       "helpfulness": 6,
@@ -237,15 +242,20 @@
       "summary": "The maintainer's responses are generally adequate but could be more helpful, clearer, and more welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (38)",
-        "Significant number of merged PRs in the past six months (20)",
-        "Multiple contributors active in the past six months (14)"
+      "status": "stale",
+      "confidence": 7,
+      "concerns": [
+        "No commits in past 6 months despite 29 open issues",
+        "29 open issues with zero closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date suggests no recent releases"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Very recent commit (2026-03-15) indicates minimal ongoing activity",
+        "No open pull requests suggests completed review backlog"
+      ],
+      "summary": "Package appears stale with unaddressed issues; recent commit activity contradicts lack of historical commits, suggesting minimal sporadic maintenance rather than active development."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -263,7 +273,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:17:10.111234+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 6,
+      "quick_start": 7,
       "examples": 9,
       "configuration": 8,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is comprehensive and detailed, but could benefit from a clearer quick start section and more troubleshooting information.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Well-structured documentation with excellent examples and a useful cron comparison, but lacks troubleshooting guidance and installation details beyond a basic make command.",
+      "top_issue": "No troubleshooting section \u2014 common issues like service supervision setup, timefile permissions, or timezone edge cases are undocumented."
     },
     "security": {
       "overall_score": 5,
@@ -195,18 +195,23 @@
       "summary": "The snooze.c code has a high-risk command injection vulnerability and lacks proper input validation, but does not expose sensitive information or use insecure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Missing version option",
-        "Issues with `-T` and anacron-style usage"
+        "Missing -V/--version flag for version display",
+        "Confusing syntax (inconsistent time unit representations: -s uses 'm', -M for minutes)",
+        "Bugs with flag combinations (-R, -s, -t interaction)",
+        "Unclear best practices for supervision/integration methods",
+        "Missing anacron-style execution support"
       ],
       "praise_themes": [
-        "Users appreciate the project's flexibility and are contributing ideas for improvement"
+        "Users appreciate core snooze concept ('i very much like the idea of snooze')",
+        "Tool is actively used across different init systems (systemd, runit, i3)",
+        "Community engaged with thoughtful, constructive feature requests"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, suggesting improvements but facing some unresolved issues."
+      "abandonment_signals": true,
+      "summary": "Community appreciates snooze's functionality but maintainer is largely unresponsive, leaving multiple feature requests and bugs unaddressed for 4+ years."
     },
     "communication": {
       "helpfulness": 7,
@@ -222,20 +227,25 @@
       "summary": "The maintainer provides useful information but could be more welcoming and open to new ideas."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No recent releases",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months",
+        "No activity on 8 open issues",
+        "No merged PRs or closed issues in 6+ months",
+        "No active contributors",
+        "Last release information unknown"
       ],
       "positive_signals": [
-        "Commits in the past six months",
-        "Contributors active in the past six months"
+        "Has commit history indicating past development"
       ],
-      "summary": "The package is minimally maintained with occasional commits and contributors, but lacks recent releases and merged PR activity."
+      "summary": "Project is stale with zero maintenance activity over the past 6+ months despite 8 unresolved open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:47:00.998395+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 9,
+      "quick_start": 9,
+      "examples": 8,
       "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and detailed information on installation, usage, and examples, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Well-structured README with clear purpose, multi-platform installation, and practical examples, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like quota not taking effect, permission errors, or filesystem compatibility problems are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -203,16 +203,19 @@
       "summary": "The quotatool package has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure program."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "installation issues on macOS",
-        "quota setting not working"
+        "macOS compatibility broken (Sonoma installation, compilation errors)",
+        "Core logic bugs in grace period handling and quota operations",
+        "Input validation issues (ambiguous timespan parsing, operator precedence)",
+        "Platform-specific build failures (musl, BSD, macOS)",
+        "Undocumented behavior causing user confusion"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness from maintainers, focusing mainly on installation and usage issues."
+      "abandonment_signals": true,
+      "summary": "Quotatool shows signs of abandoned maintenance with 6+ critical bugs open since March 2026, unresolved macOS support issues dating to 2023, and a deferred BSD fix with no timeline."
     },
     "communication": {
       "helpfulness": 8,
@@ -225,20 +228,27 @@
       "summary": "Maintainer responses are generally clear, helpful, and patient. Technical depth could be improved in some cases."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No recent commits or PR activity",
-        "Only one open issue"
+        "No commits in past 6 months despite 6 open issues",
+        "No active contributors in past 6 months",
+        "No issue resolution activity (0 closed issues in 6 months)",
+        "No merged PRs in past 6 months",
+        "Unknown release history",
+        "Issues accumulating without maintenance attention"
       ],
       "positive_signals": [
-        "Recent release on 2024-07-24T09:27:12+00:00",
-        "Four contributors active in the past six months"
+        "Project repository still exists",
+        "No pending/conflicting pull requests"
       ],
-      "summary": "The package is minimally maintained with recent contributions but lacks recent code updates."
+      "summary": "The project is stale with complete absence of development, issue resolution, and maintainer activity over the past 6 months despite accumulating 6 open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:04:34.257583+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

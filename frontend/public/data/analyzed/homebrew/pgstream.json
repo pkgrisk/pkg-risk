@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 8,
-      "configuration": 9,
-      "troubleshooting": 2,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The documentation is comprehensive and well-structured, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Well-structured README with clear purpose, multiple installation methods, and solid examples, but lacks any troubleshooting section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like replication slot conflicts, permission errors, or connection failures are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -205,15 +205,20 @@
       "summary": "The code has some security concerns, including potential SQL injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Replication slot flag does not work with the run command"
+        "Performance degradation in WAL streaming during high-churn catch-up phase",
+        "Data type handling issues with JSONB JSON string scalars",
+        "Logic bug in schema filtering with global database objects"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Well-documented technical bug reports with clear reproduction paths",
+        "Issues demonstrate active use and testing of non-trivial features"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with a minor issue reported and an open enhancement request."
+      "summary": "Project shows active usage with legitimate technical bugs reported; one issue was closed but two critical bugs remain unaddressed for 4-6 days despite recent activity."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,15 +231,20 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "A large number of merged PRs in the past six months (131)",
-        "Recent activity with a release on the same day as the last commit"
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "52 open issues with no closures in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs or pull request activity in past 6 months",
+        "Last release date unknown",
+        "Potential contradiction: recent commit but zero commits counted in 6-month window"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Very recent commit on 2026-03-12 suggests code activity",
+        "Repository still exists and has activity history"
+      ],
+      "summary": "Project shows minimal maintenance with a recent commit but 52 unresolved issues and no contributor activity, indicating reactive rather than proactive development."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +254,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:36:02.020324+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -169,15 +169,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The README provides clear installation instructions and some basic usage examples, but lacks comprehensive documentation on configuration options and troubleshooting.",
-      "top_issue": "Insufficient documentation on configuration options"
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 3,
+      "troubleshooting": 5,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose, strong installation coverage across multiple platforms, and practical usage examples, but lacks configuration documentation and deeper troubleshooting guidance.",
+      "top_issue": "Configuration options are not documented in the README \u2014 users are pointed to a man page with no inline summary of available flags or config file format."
     },
     "security": {
       "overall_score": 7,
@@ -204,16 +204,21 @@
       "summary": "The Detox package has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "file path and tilde expansion issues",
-        "version-specific bugs"
+        "Configuration path handling (tilde expansion, XDG spec non-compliance)",
+        "Character encoding/replacement inconsistencies (0x202F on macOS, equal signs)",
+        "Crashes with certain inputs (malloc errors)",
+        "Inability to preserve spaces in filenames (repeated requests)",
+        "Documentation gaps and usability barriers"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Software recognized as useful and high-quality"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to open issues related to file paths, version-specific bugs, and lack of clear resolution."
+      "summary": "Detox has an engaged user base discovering edge cases and requesting features, but experiences slow and inconsistent maintainer response with several issues lingering open for 2+ years without resolution."
     },
     "communication": {
       "helpfulness": 7,
@@ -229,17 +234,20 @@
       "summary": "The maintainer provides some useful technical insights but could be more proactive in encouraging and guiding new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
+      "status": "stale",
       "confidence": 7,
       "concerns": [
-        "High number of open issues (36)",
-        "Low number of merged PRs in the past six months (1)"
+        "39 open issues with no closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release date",
+        "Conflicting data: zero commits logged for 6 months but last commit is recent"
       ],
       "positive_signals": [
-        "Recent commit and release dates",
-        "Single active contributor over the past six months"
+        "Last commit is relatively recent (February 2026, 42 days ago)",
+        "No stale open pull requests accumulating"
       ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns due to a high issue count."
+      "summary": "Project appears stale with issues accumulating and no contributor engagement despite a single recent commit."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -250,7 +258,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-organized and clearly marks breaking changes, but lacks migration guides for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:10:03.144868+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

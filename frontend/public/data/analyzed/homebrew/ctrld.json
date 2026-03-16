@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 8,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides a good overview of the package and its features, but could benefit from more detailed configuration documentation and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Well-structured README with clear use cases and solid installation coverage, but configuration docs appear truncated and troubleshooting is nearly absent.",
+      "top_issue": "Configuration section is cut off mid-sentence, and there is no troubleshooting guidance for common issues like DNS conflicts, service failures, or firewall rules."
     },
     "security": {
       "overall_score": 7,
@@ -201,18 +201,22 @@
       "summary": "The codebase has some security concerns, including potential injection risks and insufficient input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "latency issues with DoT/DoQ",
-        "installation and configuration issues on various systems"
+        "v1.5.0 regressions breaking DNS functionality (JDownloader, query blocking)",
+        "Platform-specific crashes (EdgeOS MIPS segfault, MikroTik container crashes)",
+        "DNS not restored after VPN disconnect/laptop suspend",
+        "OpenWRT compatibility claims not working",
+        "Missing ARM64 builds for specific platforms (MikroTik RouterOS)"
       ],
       "praise_themes": [
-        "feature requests for improvements"
+        "v1.4.8 worked reliably on MikroTik container",
+        "Community contributing installation scripts"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but the project seems to have ongoing feature development. Overall sentiment is neutral due to mixed feedback."
+      "summary": "Project shows active development but concerning v1.5.0 quality regression with DNS-breaking bugs on multiple platforms, suggesting quality control gaps despite recent release activity."
     },
     "communication": {
       "helpfulness": 7,
@@ -225,20 +229,26 @@
       "summary": "The responses are generally clear and helpful, showing a good level of patience with users."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs compared to open PRs"
+        "Zero commits in past 6 months despite 33 open issues",
+        "Zero closed issues in past 6 months - issues accumulating unanswered",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date",
+        "No open PRs suggests maintainer is not reviewing external contributions"
       ],
       "positive_signals": [
-        "Recent commit in the last month",
-        "Regular contribution from multiple contributors over the past six months"
+        "Recent commit activity 5 days ago suggests repository is not completely dormant"
       ],
-      "summary": "The package is maintained with recent activity, but there are concerns about unresolved issues and PRs."
+      "summary": "Project appears abandoned with no meaningful maintenance activity for 6+ months; recent commit is isolated and not part of an ongoing development pattern."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:04:24.018106+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

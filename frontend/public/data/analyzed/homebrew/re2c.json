@@ -160,15 +160,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
-      "examples": 4,
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
       "configuration": 2,
-      "troubleshooting": 3,
-      "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks clear installation instructions and examples for common use cases.",
-      "top_issue": "Lack of clear installation instructions and quick start example"
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README provides a decent high-level description but defers nearly all practical content to external links, leaving users without any in-place examples, installation steps, or usage guidance.",
+      "top_issue": "No quick-start example or basic usage demonstration \u2014 users must navigate to an external website to learn how to actually use the tool."
     },
     "security": {
       "overall_score": 8,
@@ -179,16 +179,23 @@
       "summary": "The libre2c code appears to be generally secure, with no major injection risks or secrets exposure, but could benefit from more explicit input validation."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "bugs and errors",
-        "compatibility issues"
+        "Breaking changes in minor releases (4.3.1 regression)",
+        "Critical bugs in core functionality (NULL dereference in determinization)",
+        "Incorrect DFA generation in edge cases",
+        "Documentation inconsistencies (signedness of char types)",
+        "Missing language feature support ($ in regexp, traps after actions)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Reliable cross-platform builds (successful ARM64 testing)",
+        "Proactive maintenance of language integrations (Zig examples)",
+        "Bugs are fixed when reported"
+      ],
       "abandonment_signals": false,
-      "summary": "The re2c community is actively addressing bugs and compatibility issues, with maintainers responding promptly to user reports."
+      "summary": "re2c is actively maintained with regular releases and bug fixes, but users experience occasional regressions and some feature requests linger unfulfilled for years, indicating selective prioritization rather than comprehensive coverage."
     },
     "communication": {
       "helpfulness": 9,
@@ -201,15 +208,20 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past 6 months (51)",
-        "Recent last commit and release dates",
-        "Active contributors (4) and merged PRs (10) in the past 6 months"
+      "status": "stale",
+      "confidence": 7,
+      "concerns": [
+        "0 commits in past 6 months indicating long period of inactivity",
+        "32 open issues unresolved with no closed issues in 6 months",
+        "0 active contributors in past 6 months",
+        "0 merged PRs in past 6 months",
+        "Unknown release information prevents verification of release cadence"
       ],
-      "summary": "The re2c package appears to be actively maintained with regular updates, fixes, and contributions."
+      "positive_signals": [
+        "Recent commit activity 3 days ago suggests possible revival",
+        "No open PRs indicate cleaner state for potential future work"
+      ],
+      "summary": "Package was abandoned for 6+ months but shows a single recent commit, indicating possible revival though insufficient evidence of sustained maintenance."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -227,7 +239,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The re2c project lacks a clear succession plan and decision-making process, but indicates multiple maintainers with merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:29:01.155349+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

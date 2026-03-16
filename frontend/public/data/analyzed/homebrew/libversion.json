@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
       "examples": 9,
-      "configuration": 5,
+      "configuration": 7,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides many examples, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting section"
+      "overall": 7,
+      "summary": "Well-structured C library documentation with excellent API coverage and examples, but lacks troubleshooting guidance and assumes familiarity with CMake/pkg-config workflows.",
+      "top_issue": "No troubleshooting section \u2014 common build/linking issues (missing headers, pkg-config not found, CMake find_package failures) are undocumented."
     },
     "security": {
       "overall_score": 8,
@@ -190,18 +190,20 @@
       "summary": "The code appears to be secure with no major injection risks, but could benefit from additional input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "positive",
+      "sentiment": "mixed",
       "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "build issues on CentOS 8"
+        "Build/compilation issues (Windows linking, CentOS CMake)",
+        "Missing core features (hashing, version_sort utility, separator special handling)"
       ],
       "praise_themes": [
-        "community contributions",
-        "package requests for other languages"
+        "Library adopted for language bindings (Perl, Go, Raku implementations)",
+        "Used in production systems (ZEN SecDB Portal, Chromebrew)",
+        "Requested for official distribution packaging (Debian/Ubuntu)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively contributing and maintaining the project, with some ongoing build issues that are being addressed."
+      "abandonment_signals": true,
+      "summary": "libversion is actively used and extended by the community, but development appears intermittent with multiple feature requests from 2019-2022 still open and unaddressed despite recent issue closures."
     },
     "communication": {
       "helpfulness": 7,
@@ -216,18 +218,22 @@
       "summary": "The maintainer provides detailed and technically sound explanations but occasionally shows a dismissive attitude, which could be improved for better welcomingness."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "High number of open issues",
-        "Low number of merged PRs compared to open PRs"
+        "No commits in past 6 months despite last commit being October 2025",
+        "9 unresolved open issues with no resolution activity",
+        "Zero active contributors or maintainers in past 6 months",
+        "No merged PRs or community engagement in past 6 months",
+        "Last release date unknown, cannot assess release cadence",
+        "No response to issue backlog indicates possible abandonment"
       ],
       "positive_signals": [
-        "Recent commit and release dates",
-        "Regular commits in the past six months",
-        "Contributors active in the recent period"
+        "Had activity as recently as October 2025 (not completely dead)",
+        "Still receives issue reports from community",
+        "At least 1 commit exists in repository history"
       ],
-      "summary": "The package is maintained with regular updates, but there are concerns about unresolved issues and low PR merge activity."
+      "summary": "Package is stale with no development activity, issue resolution, or maintainer engagement in the past 6 months, indicating likely abandonment despite recent existence."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -238,7 +244,10 @@
       "overall_score": 7,
       "summary": "The changelog clearly marks breaking changes but lacks migration guides and detailed categorization, making it somewhat difficult to understand at first glance."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:15:30.995873+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

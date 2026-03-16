@@ -165,15 +165,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 5,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is clear and concise, but lacks detailed installation instructions, examples, configuration options, and troubleshooting guides.",
-      "top_issue": "Insufficient troubleshooting information"
+      "clarity": 9,
+      "installation": 4,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "The README excels at explaining what act does and why, but defers nearly all practical documentation to an external user guide, leaving the README itself sparse on installation, configuration, and examples.",
+      "top_issue": "No installation instructions in the README itself (e.g., `brew install act`) \u2014 only build-from-source steps are shown, and all real documentation is offloaded to an external site."
     },
     "security": {
       "overall_score": 5,
@@ -204,12 +204,17 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs",
-        "feature requests"
+        "Artifact server incompatibilities with latest upload-artifact versions",
+        "Docker-in-Docker runtime issues with container solutions like Colima",
+        "Missing support for alternative Linux virtualization tools (Lima)",
+        "Schema validation issues with GitHub Actions features"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues and feature requests, with maintainers responding moderately, indicating a relatively healthy but imperfect project ecosystem."
+      "praise_themes": [
+        "Some bugs actively fixed (step-if schema issue resolved recently)",
+        "Community engagement on issues"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows moderate health with recent bug fixes and active users, but accumulating unresolved issues (3-year-old feature requests, critical race conditions with zero engagement) suggest maintainer capacity constraints or shifting priorities."
     },
     "communication": {
       "helpfulness": 6,
@@ -226,18 +231,21 @@
       "summary": "The maintainer's responses are technically sound but often come across as abrupt and unwelcoming, which may discourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "low number of active contributors",
-        "low rate of issue closure"
+        "293 open issues with zero closed in past 6 months indicates no triage or maintenance",
+        "No commits in past 6 months (isolated commit 10 days ago is anomaly, not pattern)",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months suggests project not accepting contributions",
+        "Unknown last release indicates release cycle has stalled",
+        "Large issue backlog growing with no resolution activity"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "some merged PRs in the past 6 months"
+        "Single recent commit 10 days ago shows repository hasn't been fully archived",
+        "Repository still exists and accessible"
       ],
-      "summary": "The package receives some maintenance, but the high number of open issues and low contributor activity suggest that it may not be actively maintained."
+      "summary": "Project is abandoned with a stale issue backlog and no maintenance or development activity for 6 months despite 293 open issues requiring attention."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +255,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the homebrew package 'act' lacks a clear succession plan, decision-making process, and multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:40:17.623638+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

@@ -168,14 +168,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 5,
-      "configuration": 7,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The documentation is clear and informative, but lacks concise installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and step-by-step installation instructions for users without prior experience with command-line tools."
+      "installation": 4,
+      "quick_start": 2,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README clearly explains what Certbot does but defers almost all practical guidance to external links, leaving users without any in-document instructions, examples, or troubleshooting help.",
+      "top_issue": "No installation instructions, commands, or usage examples are included \u2014 the README is essentially a landing page that redirects users elsewhere for everything actionable."
     },
     "security": {
       "overall_score": 8,
@@ -202,15 +202,22 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs and errors",
-        "configuration issues"
+        "Unclear error messages (archive directory error, parsing errors)",
+        "Configuration file parsing failures (nginx.conf double-quote comment issue)",
+        "Performance problems with large deployments (OCSP check delays with 1000+ certs)",
+        "DNS/ACME edge cases (duplicate TXT records for apex+wildcard)",
+        "Plugin compatibility and installation issues"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Long-standing, actively maintained project with recent activity (March 2026)",
+        "Team proactively working on automation improvements",
+        "Community engagement on enhancement tasks"
+      ],
       "abandonment_signals": false,
-      "summary": "The Certbot community is active, but users are experiencing frustration with various bugs, configuration issues, and inconsistencies, indicating a need for improved maintenance and support."
+      "summary": "Active but friction-prone: certbot is actively maintained with recent bug reports and planned improvements, but users encounter recurring issues with unhelpful errors, configuration parsing edge cases, and DNS validation edge cases that hint at accumulated technical debt."
     },
     "communication": {
       "helpfulness": 9,
@@ -223,17 +230,21 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically deep, making them an exemplary communicator in the GitHub community."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent last commit (2025-12-17)",
-        "High number of commits in the past 6 months (110)",
-        "Active issue and PR management (71 closed issues, 89 merged PRs)",
-        "Recent last release (2025-12-10)",
-        "Multiple active contributors (10) in the past 6 months"
+      "status": "stale",
+      "confidence": 6,
+      "concerns": [
+        "186 open issues with no closure activity in 6 months",
+        "0 commits in past 6 months (contradicts recent commit timestamp)",
+        "0 merged PRs in past 6 months",
+        "0 active contributors in past 6 months",
+        "Unknown last release date",
+        "No recent PR activity or issue triage"
       ],
-      "summary": "The certbot package appears to be actively maintained with frequent updates, commits, and a responsive community."
+      "positive_signals": [
+        "Recent commit on 2026-03-11",
+        "No outstanding pull requests requiring review"
+      ],
+      "summary": "Likely reflects homebrew formula maintenance rather than upstream certbot; appears stale with aged issue backlog and no recent development activity."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -251,7 +262,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The Certbot project lacks a clear succession plan and decision-making process documentation, but provides a contributor ladder and relies on external resources for guidance."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:10:48.024560+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

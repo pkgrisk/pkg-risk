@@ -172,28 +172,34 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 7,
-      "overall": 7,
-      "summary": "The documentation is comprehensive and covers various installation methods, configuration options, and troubleshooting tips, but lacks a clear quick start guide.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the package quickly."
+      "quick_start": 4,
+      "examples": 4,
+      "configuration": 6,
+      "troubleshooting": 6,
+      "overall": 6,
+      "summary": "Excellent installation coverage with multiple well-documented methods, but lacks concrete usage examples and a quick-start workflow showing the full generate-and-use cycle.",
+      "top_issue": "No quick-start example showing a complete end-to-end workflow (e.g., run swiftgen on an asset catalog and show the resulting generated Swift code in use)"
     },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "crashes with specific string values",
-        "issues with Swift version compatibility"
+        "Swift 6 concurrency incompatibility blocks tool usage",
+        "Character escaping bugs break string generation (quotes, backslashes, unicode)",
+        "Missing support for Apple's new String catalog feature",
+        "Build failures and code generation errors",
+        "Installation/detection issues in build scripts"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The swiftgen community is experiencing mixed sentiment, with users reporting various issues and frustrations, but no clear signs of abandonment from maintainers."
+      "praise_themes": [
+        "Tool is \"almost irreplaceable for iOS projects\"",
+        "Appreciation for existence and functionality"
+      ],
+      "abandonment_signals": true,
+      "summary": "SwiftGen shows signs of maintainer decline with critical Swift 6 issues and string encoding bugs remaining unresolved for 1+ years, while Apple releases competing native alternatives (String catalogs, Xcode26 symbols), creating uncertainty about the tool's long-term relevance despite continued user appreciation."
     },
     "communication": {
       "helpfulness": 9,
@@ -207,16 +213,16 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "large number of open issues and PRs with little recent activity"
+        "No commits in past 6 months",
+        "156 open issues with zero closures in 6 months",
+        "Zero active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date"
       ],
-      "positive_signals": [
-        "recent release",
-        "multiple contributors active in the past 6 months"
-      ],
-      "summary": "The swiftgen package appears to be stale due to a lack of recent commits and significant open issue and PR backlogs despite a recent release and active contributors."
+      "positive_signals": [],
+      "summary": "Project has been inactive for 6+ months with no issue resolution or contributor activity, indicating abandoned maintenance."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -234,7 +240,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The SwiftGen project has a clear contributor ladder and indicates multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:47:01.636037+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "stale",

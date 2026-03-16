@@ -184,14 +184,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 8,
       "examples": 9,
-      "configuration": 6,
-      "troubleshooting": 5,
-      "overall": 7,
-      "summary": "The documentation is clear and provides many examples, but could be improved with more configuration details and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Well-exemplified with multiple practical C++ code samples and clear installation options, but lacks configuration reference, troubleshooting guidance, and API documentation.",
+      "top_issue": "No troubleshooting section or common error guidance beyond basic exception printing in examples."
     },
     "security": {
       "overall_score": 8,
@@ -202,18 +202,23 @@
       "summary": "The provided code appears to be a well-structured C++ library for handling HTTP cookies, with no major security concerns identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Do not hardcode C++ runtime library on Darwin",
-        "easy.get_info<CURLINFO_CONTENT_TYPE>(); not a std::pair"
+        "Build failures and CMake configuration issues (hardcoded C++ runtime, non-standard BUILD_SHARED_LIBS usage)",
+        "Compatibility with newer curl versions (deprecated options CURLOPT_OBSOLETE72, deprecation warnings)",
+        "Windows shared library compilation not supported",
+        "API usage clarity (type mismatches with get_info, multi-threading thread-safety unclear)",
+        "Multi-threaded usage guidance missing"
       ],
       "praise_themes": [
-        "suggestion libev"
+        "Clean, elegant API design",
+        "Good object-oriented wrapper around libcurl",
+        "Useful for learning C++ patterns"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and suggestions, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows clear abandonment patterns with most open issues (2023-2025) receiving zero maintainer responses, mounting compatibility problems with current curl versions, and unaddressed build issues across multiple platforms."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,20 +231,26 @@
       "summary": "Maintainer responses are generally clear, helpful, and patient, with a good balance of technical detail."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of new features or bug fixes.",
-        "Open issues and no closed issues in the past six months suggest unresolved problems."
+        "No commits in past 6 months despite active issues",
+        "10 open issues with no recent activity or resolution",
+        "No merged PRs in past 6 months - no ongoing contributions",
+        "Zero active contributors in past 6 months",
+        "Unknown last release - possibly stale dependencies",
+        "No response to open issues indicates maintainer absence"
       ],
       "positive_signals": [
-        "Commits in the past six months indicate some level of activity.",
-        "Two contributors active in the past six months show that there is still community involvement."
+        "Last commit exists (8 months ago), project is not deleted"
       ],
-      "summary": "The package shows minimal maintenance with occasional commits and contributions, but lacks recent issue resolution or feature updates."
+      "summary": "curlcpp appears abandoned with no maintenance activity for 6+ months and growing unaddressed issues despite ongoing interest."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:38:14.775396+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

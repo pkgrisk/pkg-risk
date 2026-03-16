@@ -181,12 +181,12 @@
       "clarity": 8,
       "installation": 9,
       "quick_start": 7,
-      "examples": 8,
-      "configuration": 9,
-      "troubleshooting": 6,
-      "overall": 8,
-      "summary": "The MPICH README provides detailed and comprehensive documentation, but could benefit from a clearer quick start section and more prominent troubleshooting guidance.",
-      "top_issue": "Lack of concise quick start example for new users"
+      "examples": 6,
+      "configuration": 7,
+      "troubleshooting": 7,
+      "overall": 7,
+      "summary": "Thorough, well-structured installation guide for an HPC library, though the build-from-source focus makes it less approachable for typical Homebrew users expecting a simpler setup.",
+      "top_issue": "The README assumes source tarball installation with manual configure/make steps, which is irrelevant for Homebrew users who get a pre-built binary \u2014 there are no usage examples showing how to actually compile or run an MPI program after a brew install."
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,23 @@
       "summary": "The code has a potential command injection vulnerability and lacks input validation, but does not expose sensitive information or use insecure defaults."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 6,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues",
-        "MPI functionality problems"
+        "Crashes at scale (MPI_Probe with 1500+ processes)",
+        "CUDA/Polaris ULFM failures at 128+ nodes",
+        "RDMA performance degradation with HMEM enabled",
+        "macOS ABI and dylib linking issues",
+        "Platform-specific failures (AMD EPYC SNC, CUDA compatibility)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are documented with reproducers and stack traces",
+        "4 of 7 issues closed/resolved (57% resolution rate)",
+        "Good engagement on complex architectural bugs (AMD EPYC had 9 comments)"
+      ],
       "abandonment_signals": false,
-      "summary": "The mpich community is actively reporting and discussing various technical issues, with maintainers showing moderate responsiveness to user concerns."
+      "summary": "Moderate health with active issue resolution, but persistent large-scale crashes and platform-specific bugs indicate architectural strain; newest issue (March 2026 ULFM/CUDA) unanswered."
     },
     "communication": {
       "helpfulness": 8,
@@ -231,21 +238,25 @@
       "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 6,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "306 open issues with zero closures in past 6 months indicates stalled issue triage",
+        "No active contributors in past 6 months despite recent commit",
+        "No merged PRs in past 6 months suggests lack of development activity",
+        "Unknown last release date raises concerns about release cadence",
+        "Data inconsistency: recent commit (2026-03-11) conflicts with 0 commits recorded in past 6 months"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors"
+        "Very recent commit 4 days ago indicates repository is not completely dormant"
       ],
-      "summary": "The mpich package appears to be actively maintained with regular updates, a sizable team of active contributors, and a recent release."
+      "summary": "Package shows isolated recent commit activity but lacks substantive maintenance indicators including issue resolution, contributor engagement, and PR merges, suggesting minimal active maintenance."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:56:39.326773+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

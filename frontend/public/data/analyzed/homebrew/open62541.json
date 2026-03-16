@@ -187,14 +187,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
+      "installation": 5,
+      "quick_start": 3,
+      "examples": 3,
       "configuration": 5,
-      "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The README provides a good overview of the open62541 library, but lacks clear and concise installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and step-by-step installation instructions for various platforms"
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README provides solid high-level context about the library but the README is cut off mid-sentence, leaving installation and quick-start examples incomplete.",
+      "top_issue": "The README is truncated mid-sentence during the installation/examples section, so users never see working code examples or complete build instructions."
     },
     "security": {
       "overall_score": 8,
@@ -205,16 +205,20 @@
       "summary": "The provided code snippet appears to be secure with no major injection risks or secrets exposure, but lacks input validation and has some potential issues with error handling and default configurations."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "async method handling in 1.5.x",
-        "CMake build errors"
+        "Bug regressions introduced by commits (EventId not being set)",
+        "Unpredictable behavior (UserIdentityToken IDs)",
+        "Design issues in core functionality (Logger format causing structural problems)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active release maintenance across multiple versions (v1.5.2, v1.4.16, v1.3.17)",
+        "Structured roadmap tracking via meta-issue"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is facing some issues with the recent release, particularly around async methods and CMake builds, but overall sentiment remains neutral."
+      "summary": "Project maintains active development with regular releases and roadmap tracking, but recent bug reports lack immediate responses, indicating possible resource constraints or response lag in the maintenance team."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,15 +231,20 @@
       "summary": "The maintainer's responses are clear, helpful, and patient, with a good level of technical depth. They encourage new contributors without any signs of hostility."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent release date",
-        "Multiple contributors are actively involved"
+      "concerns": [
+        "841 open issues with zero closures in past 6 months indicates severe backlog and lack of triage",
+        "Zero commits in past 6 months despite significant unresolved issue count",
+        "Zero active contributors for the past 6 months",
+        "No merged pull requests in past 6 months",
+        "Unknown last release date suggests no versioned releases recently",
+        "Zero open PRs may indicate community has stopped contributing"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Recent commit activity detected (2026-03-14)"
+      ],
+      "summary": "open62541 is effectively abandoned with a massive unresolved issue backlog (841 issues) and zero maintenance activity over the past 6 months, despite a recent commit timestamp that may represent automated or stale activity."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -253,7 +262,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents the decision-making process but lacks a clear path for contributors to become maintainers and does not explicitly outline what happens if key maintainers leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:38:08.652046+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

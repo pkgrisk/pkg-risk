@@ -174,7 +174,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "The README clearly describes what HandBrake does but defers nearly all practical documentation to an external site, leaving the README itself nearly useless for getting started.",
+      "top_issue": "No installation instructions, quick start, examples, or configuration docs \u2014 everything is offloaded to external links with no inline content."
+    },
     "security": {
       "overall_score": 5,
       "injection_risks": [
@@ -204,12 +214,17 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "encoding issues",
-        "memory usage"
+        ".NET runtime dependency conflicts (v1.11.0 requires both .NET 8 and 10)",
+        "Hardware encoding not detected (NVENC/GPU issues on capable devices)",
+        "Subtitle quality regression in v1.11.0",
+        "Performance issues on modern hardware (VideoToolbox, Apple M-series)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Accessibility improvements being addressed (screen reader support fixes)",
+        "Users providing detailed technical diagnostics"
+      ],
       "abandonment_signals": false,
-      "summary": "The HandBrake community is experiencing a mix of frustration and engagement, with users reporting various encoding issues and memory usage problems, but maintainers are moderately responsive to these concerns."
+      "summary": "Moderate community health with active maintenance (issues being closed) but concerning v1.11.0 regressions causing frustration around .NET dependencies and subtitle encoding quality, paired with minimal maintainer engagement in issue discussions."
     },
     "communication": {
       "helpfulness": 6,
@@ -225,17 +240,21 @@
       "summary": "The maintainer responses are generally informative but often come across as abrupt and uninviting, which may deter users from seeking help or contributing to the project."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (222 in the last 6 months)",
-        "Recent release (2025-09-06)",
-        "Active issue closure (215 closed in the last 6 months)",
-        "Merged PRs (67 in the last 6 months)",
-        "Multiple active contributors (11 in the last 6 months)"
+      "concerns": [
+        "Zero commits in past 6 months despite 274 open issues",
+        "No closed issues in past 6 months - user concerns unaddressed",
+        "No merged PRs in past 6 months - pull requests not being reviewed",
+        "No active contributors for 6+ months",
+        "Unknown last release date",
+        "Large backlog of open issues accumulating"
       ],
-      "summary": "The handbrake package appears to be actively maintained with frequent updates, releases, and issue closures."
+      "positive_signals": [
+        "Very recent commit activity (2026-03-15, today)",
+        "Project repository still exists and accessible"
+      ],
+      "summary": "Project shows no active maintenance for 6+ months with 274 unresolved issues, indicating stale/unmaintained status despite recent timestamp."
     },
     "changelog": null,
     "governance": {
@@ -245,7 +264,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The Handbrake project lacks a clear succession plan and decision-making process, posing a high bus factor risk despite having a contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:21:12.457617+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

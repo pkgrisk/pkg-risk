@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 9,
-      "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is clear and concise, but lacks comprehensive troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting section"
+      "quick_start": 10,
+      "examples": 8,
+      "configuration": 9,
+      "troubleshooting": 6,
+      "overall": 9,
+      "summary": "Excellent, well-structured documentation that clearly explains purpose, installation, usage, and configuration with concrete examples.",
+      "top_issue": "Troubleshooting section is absent; the Disclaimer covers a subtle macro hygiene edge case but common issues like build errors or rustfmt problems are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -208,18 +208,19 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but no critical secrets or sensitive information exposure was found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "documentation needs update",
-        "VSCode extension support"
+        "No fine-grained control over macro expansion scope (only expand certain macros/crates)",
+        "Nested macros like format_args! not fully expanded",
+        "Terminal output color issues make output unreadable on light backgrounds",
+        "Documentation outdated regarding nightly compiler requirement",
+        "Limited tooling support for expanding specific targets (tests, impl methods)"
       ],
-      "praise_themes": [
-        "working without nightly compiler"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some common complaints about documentation and VSCode extension support, but the project seems to be actively maintained as issues are being addressed."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Cargo-expand shows signs of stable maintenance with some issues resolved, but several feature requests languish unaddressed for 5-7 years and recent issues receive minimal engagement, suggesting lower priority or bandwidth constraints."
     },
     "communication": {
       "helpfulness": 6,
@@ -235,20 +236,26 @@
       "summary": "The maintainer is generally helpful but could be more encouraging and provide clearer explanations."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "minimal-maintenance",
       "confidence": 7,
       "concerns": [
-        "Low open PRs",
-        "No recent contributors"
+        "No commits in 6 months prior to recent activity",
+        "9 open issues with no recent closure",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent commits and releases",
-        "Moderate number of issues and PRs in the past six months"
+        "Recent commit 1 month ago suggests some activity",
+        "No stale dependencies indicate selective maintenance approach"
       ],
-      "summary": "The package is maintained with regular updates, but there are concerns about potential stagnation."
+      "summary": "Package exhibits minimal maintenance with sporadic recent activity and unaddressed open issues, suggesting low maintainer engagement despite occasional commits."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:28:38.299152+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

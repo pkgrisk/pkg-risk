@@ -181,28 +181,30 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 6,
-      "quick_start": 9,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its capabilities, but could be improved with more detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise troubleshooting documentation"
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Well-structured README with clear purpose and quick-start examples, but installation relies heavily on external docs and troubleshooting is nearly absent.",
+      "top_issue": "No troubleshooting section for common errors (Java version issues, Maven build failures, spec validation errors)"
     },
     "security": null,
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "bug fixes",
-        "lack of support for newer OpenAPI versions"
+        "Regression in 3.0.78 causing JsonParseException",
+        "Java 25 compatibility and build errors",
+        "Configuration options not working (booleanGetterPrefix, importMappings)",
+        "Feature/usage questions unanswered"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration due to open issues and slow maintainer responsiveness, indicating a need for more active maintenance."
+      "abandonment_signals": true,
+      "summary": "The project shows severe signs of abandonment with zero maintainer responses to recent issues, a regression in the latest version (3.0.78), and a 6-year-old unresolved bug still open."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,17 +220,19 @@
       "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "low issue closure rate",
-        "high number of open issues and PRs"
+        "3443 open issues with zero closed in past 6 months indicates severe maintenance neglect",
+        "No commits, PRs, or contributors in past 6 months despite massive issue backlog",
+        "Last release date unknown, making it unclear when last stable version was published",
+        "Zero merged PRs suggests no active development or community contributions being accepted",
+        "Recent commit contradicts 6-month inactivity metrics, possibly automated"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors in the past 6 months"
+        "One commit within last 24 hours (2026-03-14), though unclear if meaningful maintenance"
       ],
-      "summary": "The package receives some maintenance with recent commits and releases, but the low issue closure rate and high number of open issues and PRs suggest that maintenance efforts are not keeping pace with community needs."
+      "summary": "Swagger-codegen is effectively abandoned with thousands of unresolved issues and zero maintenance activity over the past 6 months, despite a recent commit of uncertain origin."
     },
     "changelog": null,
     "governance": {
@@ -238,7 +242,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project has a clear contributor path and multiple maintainers, but lacks a documented decision process and succession plan."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:29:29.171035+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

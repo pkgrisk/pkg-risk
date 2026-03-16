@@ -195,25 +195,33 @@
     "readme": {
       "clarity": 8,
       "installation": 9,
-      "quick_start": 6,
+      "quick_start": 7,
       "examples": 4,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 5,
-      "summary": "The README provides a good introduction to the Enzyme package, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Insufficient documentation of common use cases and troubleshooting"
+      "summary": "The README clearly explains what Enzyme does and provides excellent multi-platform installation options, but defers almost all substantive documentation to an external website with minimal examples and no troubleshooting guidance.",
+      "top_issue": "Nearly all usage documentation is offloaded to an external website, leaving the README with only a single trivial code example and no configuration or troubleshooting content."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Lack of support for autodiffing MLIR regions"
+        "Compilation errors dependent on optimization levels (-O1 vs -O2/-O3)",
+        "Build system issues (missing generated files, dependency ordering)",
+        "Type mismatches in BLAS bitcode replacements",
+        "LLD linker failures",
+        "PHI node ordering bugs",
+        "OpenMP reductions unsupported"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Rust support being actively developed",
+        "Good bug report quality with minimal reproducers"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is expressing a specific feature request, and the issue has been closed with no clear resolution or roadmap provided."
+      "summary": "Enzyme shows moderate health with recent issue triage and active Rust development, but harbors several unresolved edge cases (phi node bug since Oct 2025, linking failures) and feature gaps (OpenMP reductions) that may frustrate users."
     },
     "communication": {
       "helpfulness": 7,
@@ -229,15 +237,17 @@
       "summary": "The maintainer provides technically sound explanations but could be more patient and clear in handling repeated questions."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (254)",
-        "A significant number of merged PRs in the past six months (207)",
-        "Recent last release date (2026-01-03)"
+      "concerns": [
+        "Zero commits in past 6 months despite 246 open issues",
+        "No issue resolution activity (246 open, 0 closed in 6 months)",
+        "No active contributors or merged PRs in past 6 months",
+        "Unknown last release indicates incomplete release tracking",
+        "Discrepancy between recent commit timestamp and zero recent activity"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [],
+      "summary": "The enzyme package shows clear abandonment with no maintenance activity, issue resolution, or contributor engagement over the past 6 months despite a large backlog of 246 open issues."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +257,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a clear succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:48:56.668327+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

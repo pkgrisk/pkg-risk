@@ -178,11 +178,11 @@
       "installation": 9,
       "quick_start": 9,
       "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "configuration": 5,
+      "troubleshooting": 3,
       "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, with good installation and quick start instructions, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "summary": "Well-structured README with clear installation and quick-start steps, but lacks inline configuration documentation and troubleshooting guidance, relying heavily on external support links.",
+      "top_issue": "Configuration is not documented inline \u2014 users are directed to external URLs for push/pull source and target configuration, leaving the README incomplete for self-service setup."
     },
     "security": {
       "overall_score": 7,
@@ -210,15 +210,21 @@
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "intermittent errors",
-        "formatting inconsistencies",
-        "feature gaps"
+        "Intermittent/hard-to-reproduce errors (weekly phrase pull failures)",
+        "Data format corruption (whitespace stripping, string-array conversion to plain string)",
+        "Platform-specific crashes (Apple silicon SIGSEV)",
+        "Missing release binaries affecting CI/CD workflows",
+        "Hanging operations with specific flag combinations (-B push -w)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Quick resolution turnaround on reported issues",
+        "Acceptance of feature requests and enhancements",
+        "Support for modern file formats (.xcstrings, string catalogs)"
+      ],
       "abandonment_signals": false,
-      "summary": "The phrase-cli community is moderately active with some open issues and frustrations, but maintainers are responsive and addressing concerns."
+      "summary": "Active maintenance with strong issue resolution, but a persistent year-old intermittent bug and data corruption issues indicate challenges with edge cases."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,16 +240,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, but could improve in providing technical depth and transparency in issue resolution."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past 6 months (39)",
-        "Recent last commit and release dates",
-        "Active contributors (4) in the past 6 months",
-        "Closed issues exceeding open ones"
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "Zero commits in past 6 months despite recent commit date (data inconsistency)",
+        "No closed issues in past 6 months with 5 open issues pending",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The phrase-cli package appears to be actively maintained with regular updates, fixes, and contributions."
+      "positive_signals": [
+        "Very recent commit activity (2 days ago on 2026-03-13)"
+      ],
+      "summary": "Package appears minimally maintained with contradictory signals: a very recent commit but no recorded activity metrics over the past 6 months, with open issues remaining unaddressed."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -254,7 +263,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:51:31.294105+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

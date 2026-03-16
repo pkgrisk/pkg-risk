@@ -182,28 +182,36 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 7,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 6,
-      "overall": 6,
-      "summary": "The README provides a good overview of the LAPACK package, but lacks concise examples and quick start guides for new users.",
-      "top_issue": "Lack of clear and concise quick start guide or basic usage example"
+      "examples": 1,
+      "configuration": 4,
+      "troubleshooting": 5,
+      "overall": 4,
+      "summary": "LAPACK's README covers licensing, installation methods, and support resources adequately but lacks any usage examples or quick-start guidance for actually calling its routines.",
+      "top_issue": "No quick-start example or code snippet showing how to call a LAPACK routine, leaving new users with no idea how to actually use the library after installing it."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "lack of explicit interfaces for external functions",
-        "convergence failures in certain algorithms"
+        "Convergence failures in eigenvalue solvers (DLAED4, SYEVD)",
+        "Workspace size truncation causing segfaults for large matrices",
+        "IEEE exception generation interfering with error analysis",
+        "Non-standard Fortran declarations (COMPLEX*16)",
+        "Release quality issues and version mismatches",
+        "Missing intent attributes in Fortran code"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active refactoring to reduce code duplication",
+        "Recent bug fixes and closed issues (DLAED4 convergence)",
+        "Continuous development activity with recent PRs"
+      ],
       "abandonment_signals": false,
-      "summary": "The lapack community is actively reporting issues and requesting features, but the maintainers' responsiveness is moderate, indicating a relatively healthy but not overly vibrant community."
+      "summary": "Project shows moderate health with recent active development and PR activity, but suffers from several critical unresolved bugs (segfaults, convergence failures) and aging issues from 2020-2023, indicating inconsistent maintainer attention to bug triage and release management."
     },
     "communication": {
       "helpfulness": 9,
@@ -216,21 +224,25 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source communication."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "minimal-maintenance",
       "confidence": 8,
       "concerns": [
-        "relatively low issue closure rate",
-        "high number of open issues and PRs"
+        "180 open issues with zero closures in past 6 months indicates stalled issue triage",
+        "Zero commits in past 6 months despite recent commit date suggests inactive development",
+        "No merged PRs or active contributors in past 6 months",
+        "No tracked releases",
+        "Large issue backlog with no resolution velocity"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "active contributors"
+        "Recent commit activity on 2026-03-07 suggests some level of engagement"
       ],
-      "summary": "The lapack package appears to be maintained, with regular updates and active contributors, but may benefit from improved issue and PR management."
+      "summary": "The project appears stale with a massive unresolved issue backlog and no meaningful development activity despite a recent commit, likely indicating abandoned or minimal-effort maintenance."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:27:52.709578+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

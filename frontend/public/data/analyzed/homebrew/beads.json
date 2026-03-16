@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 9,
+      "installation": 8,
       "quick_start": 9,
       "examples": 7,
       "configuration": 6,
-      "troubleshooting": 8,
-      "overall": 8,
-      "summary": "The README provides a clear and concise introduction to the package, with good installation instructions and quick start examples, but could benefit from more detailed configuration documentation.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "troubleshooting": 5,
+      "overall": 7,
+      "summary": "Well-structured README with a clear value proposition, quick start, and essential commands table, but configuration details are sparse and troubleshooting is only referenced externally.",
+      "top_issue": "Configuration options (e.g., BEADS_DIR, stealth mode, contributor vs maintainer roles) are scattered and not consolidated \u2014 no single reference for all config knobs."
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,22 @@
       "summary": "The code sample has some potential security issues, including input validation and error exposure concerns, but no critical findings were identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "gitignore management",
-        "sync divergence warnings"
+        "Build/infrastructure issues (Nix flake outdated Go version)",
+        "Initialization bugs (bd init with git clones, dolt pull failures)",
+        "Doctor command reliability (false positives and auto-start bypass)",
+        "Code organization and documentation overlap (init/setup/prime)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Conda-forge adoption and cross-platform package distribution",
+        "Detailed and reproducible bug reports from engaged users",
+        "Prompt issue resolution and active maintenance"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing moderate frustration with sync divergence and gitignore issues, but overall the project seems to be actively maintained."
+      "summary": "Healthy active project with engaged maintainers addressing technical debt and reported bugs promptly; strong community interest shown by conda-forge packaging initiative."
     },
     "communication": {
       "helpfulness": 9,
@@ -223,15 +229,20 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "A large number of merged PRs in the past six months (223)",
-        "Recent activity with a release on 2026-01-05"
+      "concerns": [
+        "Zero commits in past 6 months despite repository existing",
+        "28 open issues with no resolution activity",
+        "No active contributors for 6+ months",
+        "No PR activity (merged or open) in past 6 months",
+        "No closed issues in past 6 months indicates stalled issue triage",
+        "Unknown last release date suggests unreliable release cycle"
       ],
-      "summary": "The package 'beads' appears to be actively maintained."
+      "positive_signals": [
+        "Repository still exists (not deleted)"
+      ],
+      "summary": "The beads package is effectively abandoned with zero development activity, contributor engagement, or issue resolution for at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -249,7 +260,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan but has documented decision-making processes and a contributor path, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:10:11.342048+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -169,15 +169,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
+      "clarity": 5,
+      "installation": 6,
       "quick_start": 2,
-      "examples": 4,
+      "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides some basic information, but lacks clear explanations and examples for users to quickly understand and use the package.",
-      "top_issue": "Lack of clear and concise usage examples and configuration documentation"
+      "summary": "Minimal README that explains what codecs are supported and how to build from source, but lacks any API documentation, usage examples, or guidance on how to actually use the library.",
+      "top_issue": "No API documentation or usage examples showing how to integrate the library into a project after installation."
     },
     "security": {
       "overall_score": 6,
@@ -188,16 +188,18 @@
       "summary": "The provided C++ code snippet appears to be a data definition and does not contain any obvious security vulnerabilities, but lacks input validation and error handling."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "cmake version compatibility issues",
-        "lack of support for AMBE encoding"
+        "Build system incompatibilities (CMake 4, platform-specific)",
+        "Unclear library capabilities (encode vs decode only, AMBE version support)",
+        "Missing CI/testing infrastructure",
+        "Platform compatibility issues (Windows, STM32, Raspberry Pi)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project exhibits clear signs of abandonment with recent build failures (Sept 2025) unanswered, CI infrastructure still absent despite Dec 2024 request, and fundamental capability questions from 2018-2019 remaining unresolved."
     },
     "communication": {
       "helpfulness": 7,
@@ -210,17 +212,17 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "Last commit over 5 years ago (2020-10-31)",
+        "13 unresolved open issues with no recent activity",
+        "Zero commits, merged PRs, and contributor activity in past 6 months",
+        "No recent releases",
+        "No response to user issues or pull requests"
       ],
-      "positive_signals": [
-        "Contributors are active, but only for issue management and PRs",
-        "There have been no merged PRs recently, which could indicate a bottleneck or lack of consensus"
-      ],
-      "summary": "The package shows minimal maintenance with active contributors focusing on issues and PRs, but lacks recent code updates."
+      "positive_signals": [],
+      "summary": "mbelib is abandoned with no activity since October 2020 and unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -231,7 +233,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks breaking change and migration guides, making it less user-friendly."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:43:29.327522+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

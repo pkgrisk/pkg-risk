@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 9,
       "examples": 9,
       "configuration": 9,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is clear and comprehensive, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problems and solutions"
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, comprehensive examples, and thorough configuration reference, but lacks any troubleshooting or FAQ section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like unrecognized types, output path problems, or Go module resolution errors are undocumented."
     },
     "security": {
       "overall_score": 7,
@@ -204,19 +204,19 @@
       "summary": "Tygo has some potential security concerns, including a medium-severity injection risk and lack of input validation, but overall it appears to be a relatively secure package."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug: generating structs: fields with commas are ignored",
-        "bug: generating embedded types doesn't conform to the json package"
+        "Selective struct field generation and filtering (only certain structs/fields with tags)",
+        "Optional type handling with null union types not working as expected",
+        "Cross-package type references not properly linked",
+        "Edge cases in struct parsing (comma-separated fields, embedded structs)",
+        "JSON tag handling and inline struct embedding"
       ],
-      "praise_themes": [
-        "Feature request for advanced struct handling",
-        "Advice on integrating Go and TypeScript"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with feature requests, but there are ongoing issues that indicate moderate frustration due to unresolved bugs."
+      "summary": "Tygo shows moderate community health with respectful, constructive engagement but slow resolution velocity\u2014feature requests dating to 2023 remain open while some recent closures (Feb-May 2025) suggest active but resource-constrained maintenance."
     },
     "communication": {
       "helpfulness": 9,
@@ -229,17 +229,21 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "High number of open issues (11) compared to merged PRs (3)",
-        "Only one closed issue in the past six months"
+        "No commits in past 6 months despite open issues accumulating",
+        "15 open issues with zero closed issues in past 6 months",
+        "No merged PRs in the past 6 months indicates no active development",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release version",
+        "No response to community contributions or bug reports"
       ],
       "positive_signals": [
-        "Recent activity with a commit and release on 2025-11-19",
-        "Three contributors have been active in the past six months"
+        "Last commit was recent (2026-02-03, approximately 40 days ago)",
+        "Issues and PRs are still being tracked on the repository"
       ],
-      "summary": "The package shows minimal maintenance efforts with recent activity but faces concerns due to unresolved issues."
+      "summary": "Tygo appears stale with recent commit history but no meaningful maintenance activity\u2014open issues accumulate without resolution and no development has occurred in the past six months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -250,7 +254,10 @@
       "overall_score": 5,
       "summary": "The changelog lacks clear marking of breaking changes, migration guides, and proper categorization but is relatively complete and understandable."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:16:14.329706+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

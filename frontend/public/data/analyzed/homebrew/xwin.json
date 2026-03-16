@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 9,
+      "installation": 8,
+      "quick_start": 4,
+      "examples": 4,
+      "configuration": 8,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section to help users resolve common issues."
+      "overall": 6,
+      "summary": "Well-structured reference documentation with thorough option coverage but lacks practical end-to-end usage examples showing how to actually cross-compile a project.",
+      "top_issue": "No quick-start example showing the typical workflow (e.g., running `xwin splat` and then using the output with clang to compile a real program)"
     },
     "security": {
       "overall_score": 7,
@@ -208,16 +208,23 @@
       "summary": "The code has some potential security issues, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 5,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Breaking changes in patch releases",
-        "Download performance issues"
+        "SSL/TLS certificate handling failures",
+        "Casing and symlink mismatches on case-sensitive filesystems",
+        "Missing symlinks for debug libraries",
+        "Undocumented command-line options",
+        "Performance issues with parallel downloads",
+        "Semantic versioning violations causing breaking changes in patch releases"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing some frustration with breaking changes and download performance, but the project appears to be actively maintained."
+      "praise_themes": [
+        "Project quality and usefulness appreciated by users",
+        "Active community engagement with feature requests"
+      ],
+      "abandonment_signals": true,
+      "summary": "xwin has an active user base and some ongoing maintenance, but is accumulating unresolved technical debt with several bugs lingering 6+ months unanswered and recent critical issues like SSL certificate failures receiving no engagement."
     },
     "communication": {
       "helpfulness": 6,
@@ -233,17 +240,20 @@
       "summary": "The maintainer's responses are generally adequate but show signs of impatience and can be hostile, which may discourage new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "High number of open issues",
-        "Low merged PRs compared to open PRs"
+        "0 commits in past 6 months despite last commit 37 days ago",
+        "20 open issues with zero closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in the past 6 months",
+        "Unknown last release indicates no formal release process"
       ],
       "positive_signals": [
-        "Recent commits and releases",
-        "Regular contributor activity"
+        "Recent commit activity (2026-02-06, ~37 days ago)",
+        "No accumulating open PRs"
       ],
-      "summary": "The package is maintained with recent updates, but there are concerns about the backlog of issues."
+      "summary": "Project is stale with abandoned issue triage despite recent commit activity; 20 open issues suggest lack of active maintenance."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -261,7 +271,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a clear succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:33:52.944257+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

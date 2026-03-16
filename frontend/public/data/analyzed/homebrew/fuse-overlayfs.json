@@ -165,15 +165,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 5,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is somewhat clear and provides installation instructions, but lacks sufficient examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Functional but minimal documentation covering basic usage and static build, lacking configuration reference and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section for common failures (permission errors, kernel version issues, FUSE device problems) that rootless container users frequently encounter."
     },
     "security": {
       "overall_score": 8,
@@ -185,16 +185,18 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
+      "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "symbol relocation errors",
-        "kernel crashes",
-        "file system issues"
+        "Permission and write-access failures on overlay files",
+        "Kernel crashes and system freezes with certain filesystems (tmpfs, squashfs)",
+        "Symbol relocation and library loading errors with multiple layers",
+        "Filesystem compatibility issues across different mount scenarios",
+        "API inconsistencies (auto_unmount parameter ignored)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The fuse-overlayfs community is experiencing frustration with unresolved issues and slow maintainer responsiveness, indicating a decline in overall community health."
+      "abandonment_signals": true,
+      "summary": "Community health is poor: critical bugs from 2022-2023 remain unresolved for 3+ years, recent issues (Jan 2026) have zero engagement, only 2 of 10 issues closed, and real-world usage in podman/GitLab deployments is blocked by unaddressed bugs."
     },
     "communication": {
       "helpfulness": 9,
@@ -209,20 +211,27 @@
       "summary": "The maintainer provides generally helpful and clear responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "low issue closure rate",
-        "small number of active contributors"
+        "No commits in past 6 months despite 30 open issues",
+        "30 unresolved open issues with zero closures in 6 months",
+        "No active contributors in the past 6 months",
+        "No merged pull requests in 6 months",
+        "Unknown release information indicating lack of versioning",
+        "Last commit 2 months ago followed by complete inactivity"
       ],
       "positive_signals": [
-        "recent commits and release",
-        "some merged PRs in the past 6 months"
+        "Repository still exists with some git history",
+        "At least one commit exists from early 2026"
       ],
-      "summary": "The package receives occasional updates and has some activity, but the low issue closure rate and limited contributor base raise concerns about its long-term maintenance."
+      "summary": "This repository appears abandoned or in deep hibernation with significant unresolved issues and no maintenance activity for 6+ months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:32:37.379085+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

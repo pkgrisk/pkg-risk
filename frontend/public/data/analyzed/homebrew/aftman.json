@@ -168,15 +168,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 9,
       "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
+      "configuration": 7,
+      "troubleshooting": 5,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Well-structured README with clear purpose, good examples, and solid command reference, though troubleshooting coverage is minimal and installation could better address PATH configuration issues.",
+      "top_issue": "Troubleshooting is nearly absent \u2014 only GitHub rate limits are addressed, with no guidance on common issues like PATH not updating, tools not found, or platform-specific problems."
     },
     "security": {
       "overall_score": 7,
@@ -203,18 +203,19 @@
       "summary": "The aftman package has some security concerns, including potential injection risks and insufficient input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "installation issues on WSL",
-        "lack of uninstall functionality"
+        "Cross-platform/cross-volume compatibility issues (tmpfs, /home on separate filesystem)",
+        "Documentation gaps (uninstall functionality unclear to users)",
+        "Platform-specific dependency issues (libssl.so.1.1 on WSL, Rosetta on M1/M2)",
+        "Missing feature parity with similar tools (GitHub Action, parallel installation)",
+        "Asset selection logic fallback too permissive"
       ],
-      "praise_themes": [
-        "enhancement requests for better error messages and parallel downloads"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the project's progress, but there are some recurring installation issues that could benefit from more detailed documentation or fixes."
+      "summary": "Active, responsive maintainer addressing all reported issues with good engagement; project shows healthy development despite gaps in documentation and platform compatibility edge cases."
     },
     "communication": {
       "helpfulness": 2,
@@ -230,16 +231,20 @@
       "summary": "The maintainer's responses are repetitive and lack new information, but they are patient and clear."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Only one open issue and no merged PRs in the past six months suggest limited community engagement."
+        "No commits in 8+ months (last commit July 2025)",
+        "Zero commits, PRs, or issue resolutions in past 6 months",
+        "No active contributors in past 6 months",
+        "One unresolved open issue with no recent activity",
+        "Unknown release date - likely no recent releases"
       ],
       "positive_signals": [
-        "Ten contributors active over the past six months indicate some level of ongoing interest from the community."
+        "One open issue indicates some user engagement",
+        "Repository still exists and hasn't been archived"
       ],
-      "summary": "The package is minimally maintained with occasional contributions but lacks recent development or updates."
+      "summary": "The project is stale with no maintenance activity for 8 months and unresolved user issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -250,7 +255,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:18:34.004279+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

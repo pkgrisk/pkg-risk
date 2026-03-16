@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 8,
       "examples": 9,
       "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides clear and concise information about the package, its usage, and configuration options, but lacks troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Comprehensive, well-structured documentation with clear installation steps, extensive examples, and full CLI reference, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section documenting common errors or problems users encounter during setup or annotation parsing."
     },
     "security": {
       "overall_score": 8,
@@ -211,16 +211,19 @@
       "summary": "The code has some potential security issues, including a possible template injection vulnerability and lack of thorough input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "version updates",
-        "bug reports"
+        "v2 schema generation issues (parsing float64, empty body schemas, composition overrides)",
+        "Documentation/annotation inconsistencies (route mismatch, @schemes not populated)",
+        "Docker image missing Go binary dependency",
+        "OpenAPI version support gaps",
+        "Limited .swaggo override capabilities"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues, but there's no clear sign of frustration or abandonment yet."
+      "abandonment_signals": true,
+      "summary": "v2 has multiple stability issues with declining maintainer engagement\u2014recent bugs (Feb-Mar 2026) receive no responses, oldest feature request (2019) unresolved, and Docker tooling is broken."
     },
     "communication": {
       "helpfulness": 7,
@@ -233,15 +236,19 @@
       "summary": "Responses are generally clear and helpful, showing a willingness to assist contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "A moderate number of merged PRs in the past six months",
-        "Active contributors in the past six months"
+      "concerns": [
+        "429 open issues with zero closures in past 6 months indicates accumulating, unresolved problems",
+        "No commits in past 6 months despite the recent commit suggests sporadic activity rather than active maintenance",
+        "Zero contributors active in past 6 months indicates no active development team",
+        "No merged PRs in 6 months suggests pull requests are not being reviewed or integrated",
+        "Unknown last release makes it impossible to assess release cadence or stability"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Very recent commit 4 days ago indicates some level of repository activity"
+      ],
+      "summary": "Project is functionally stale with massive backlog of 429 unresolved issues and no substantive maintenance activity over 6 months despite a single recent commit."
     },
     "changelog": null,
     "governance": {
@@ -251,7 +258,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:39:15.626128+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

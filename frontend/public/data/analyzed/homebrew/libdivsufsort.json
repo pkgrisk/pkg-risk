@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 8,
-      "examples": 7,
+      "installation": 8,
+      "quick_start": 7,
+      "examples": 6,
       "configuration": 4,
-      "troubleshooting": 2,
+      "troubleshooting": 1,
       "overall": 6,
-      "summary": "The documentation is generally clear and provides a good introduction to the library, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section and limited configuration documentation"
+      "summary": "Well-structured README covering the core API and build steps clearly, but lacks configuration details and any troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common build or integration issues (e.g. CMake version mismatches, 64-bit index support, linking errors) are entirely undocumented."
     },
     "security": {
       "overall_score": 8,
@@ -194,16 +194,19 @@
       "summary": "The code appears to be generally secure, but lacks input validation and bounds checking in some areas."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "linking issues",
-        "missing benchmark programs"
+        "Build and linking issues on macOS and Ubuntu",
+        "Missing libdivsufsort64 library detection in dependent packages",
+        "Performance regression in 64-bit variant",
+        "Unresolved algorithmic concerns and potential sorting bugs",
+        "Poor documentation of build process and benchmarking"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open issues and complaints, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows moderate engagement with recent activity (2024), but contains unresolved issues dating back to 2015-2016 and recurring build/linking complaints across platforms, indicating maintenance gaps rather than active community support."
     },
     "communication": {
       "helpfulness": 8,
@@ -216,17 +219,18 @@
       "summary": "The maintainer responses are clear, helpful, and demonstrate a high level of technical expertise while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 10,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest potential problems"
+        "No commits in nearly 6 years (since March 2020)",
+        "18 open issues with zero activity in past 6 months",
+        "No merged PRs or releases in the past 6 months",
+        "Unknown last release date suggests no versioning maintenance",
+        "Zero active contributors in the past 6 months",
+        "No issue resolution activity despite open bug reports"
       ],
-      "positive_signals": [
-        "Contributors are still active, though infrequently",
-        "Some recent activity with open PRs"
-      ],
-      "summary": "The package shows minimal maintenance with occasional contributions but lacks recent updates."
+      "positive_signals": [],
+      "summary": "Repository is completely abandoned with no maintenance activity for 6 years, unresolved issues, and no contributors."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -237,7 +241,10 @@
       "overall_score": 5,
       "summary": "The changelog is well-categorized but lacks information on breaking changes and migration guides, making it incomplete and somewhat unclear."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:35:32.088783+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -165,14 +165,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 6,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
-      "troubleshooting": 5,
-      "overall": 6,
-      "summary": "The documentation is thorough but lacks a clear quick start guide and sufficient examples for common use cases.",
-      "top_issue": "Lack of a concise quick start example to help new users get started with the library."
+      "examples": 1,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 4,
+      "summary": "The README covers project overview and build instructions well but lacks any usage examples or API quickstart for developers integrating the library.",
+      "top_issue": "No code examples or quickstart guide showing how to actually use the library API in an application"
     },
     "security": {
       "overall_score": 8,
@@ -185,16 +185,22 @@
       "summary": "The libseccomp API appears to be well-structured and secure, with proper input validation and error handling mechanisms in place, but may benefit from additional syscall number validation checks."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build issues",
-        "bug reports"
+        "Documentation and process clarity for contributors (syscalls.csv update process)",
+        "Architecture-specific bugs and edge cases (socketcall multiplexer, x32 test failures)",
+        "Build compatibility issues across different kernel/Ubuntu versions",
+        "Long-standing feature requests not prioritized"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The libseccomp community is actively reporting and discussing issues, but the maintainers' responsiveness is moderate, indicating a relatively healthy but not overly vibrant community."
+      "praise_themes": [
+        "Active real-world usage by other projects (syd sandbox implementation)",
+        "Issues receive technical discussion and engagement when reported",
+        "Bug fixes do get completed and closed"
+      ],
+      "abandonment_signals": true,
+      "summary": "libseccomp shows signs of active usage and some maintenance, but multiple unresolved issues dating back to 2016-2017, inconsistent response times to recent issues, and lack of clarification on contribution processes suggest slow or strained maintenance capacity."
     },
     "communication": {
       "helpfulness": 9,
@@ -207,18 +213,19 @@
       "summary": "The maintainer's responses are highly helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low number of closed issues",
-        "high number of open issues and PRs",
-        "limited number of active contributors"
+        "No commits in the past 6 months despite being a critical security library",
+        "58 open issues with zero closed issues in 6 months indicates no triage or maintenance",
+        "Zero merged PRs in 6 months shows no active development or community contribution acceptance",
+        "No active contributors in 6 months signals abandonment by maintainers",
+        "Unknown last release makes it impossible to track security fixes"
       ],
       "positive_signals": [
-        "recent commits within the past 6 months",
-        "recent release within the past year"
+        "Recent commit activity (2026-01-08) suggests the repository hasn't been completely abandoned"
       ],
-      "summary": "The libseccomp package appears to be receiving some maintenance, but the low rate of issue closure and limited contributor activity raise concerns about its overall health."
+      "summary": "libseccomp appears stale with a large unaddressed issue backlog and no maintenance activity over the past 6 months, despite being a security-critical library."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -236,7 +243,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The libseccomp project lacks a clear succession plan and decision-making process, but provides a path for contributors to become maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:15:38.710301+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

@@ -160,27 +160,31 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 4,
-      "quick_start": 2,
-      "examples": 3,
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
       "configuration": 2,
       "troubleshooting": 1,
       "overall": 3,
-      "summary": "The README provides a good introduction to the LLVM project, but lacks clear installation instructions and examples for users to get started quickly.",
-      "top_issue": "Lack of clear installation instructions and quick start guide"
+      "summary": "The README provides a decent high-level description of LLVM's components but defers nearly all practical guidance to external documentation links, leaving users without actionable instructions.",
+      "top_issue": "No installation instructions, quick start, or usage examples are included \u2014 everything is delegated to external URLs with no inline guidance."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "missed optimizations"
+        "Performance inefficiencies (string concatenation, vector operations)",
+        "AArch64 backend compilation bugs affecting low-level operations",
+        "File descriptor resource exhaustion in test infrastructure",
+        "Missing dependencies and header files (ISL integration)",
+        "Stale unresolved tickets (7-year-old polly/ISL issue)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively engaged with the project, reporting issues and suggesting improvements, indicating a healthy and maintained project."
+      "abandonment_signals": true,
+      "summary": "LLVM shows active engagement on recent issues but exhibits concerning abandonment of older tickets (7-year-old ISL bug still unresolved), suggesting selective maintenance focused on current priorities rather than comprehensive issue resolution."
     },
     "communication": {
       "helpfulness": 8,
@@ -196,16 +200,19 @@
       "summary": "The maintainer responses are technically detailed and somewhat helpful, but could improve in terms of clarity, patience, and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (1000)",
-        "Large number of contributors active in the past 6 months (340)",
-        "Recent last commit (2026-01-01) and last release (2025-12-16)",
-        "Significant number of merged PRs in the past 6 months (273)"
+      "concerns": [
+        "0 commits in past 6 months despite being a critical compiler package",
+        "34,909 open issues with 0 closed in past 6 months",
+        "0 active contributors in past 6 months",
+        "No merged PRs in past 6 months indicates no maintenance or feature work",
+        "Unknown last release - no clear versioning or release process"
       ],
-      "summary": "The llvm package is actively maintained with a high volume of commits, contributors, and recent releases."
+      "positive_signals": [
+        "Recent last commit timestamp suggests formula exists in repository"
+      ],
+      "summary": "The llvm@18 homebrew formula appears stale with zero maintenance activity over 6 months despite tens of thousands of unresolved issues, indicating potential abandonment or severe resource constraints."
     },
     "changelog": null,
     "governance": {
@@ -215,7 +222,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for llvm@18 lacks a clear succession plan and decision-making process, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:19:54.167372+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

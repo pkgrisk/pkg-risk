@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 9,
-      "configuration": 10,
+      "clarity": 7,
+      "installation": 1,
+      "quick_start": 2,
+      "examples": 7,
+      "configuration": 9,
       "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The README provides detailed information on the package's features and configuration, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions"
+      "overall": 5,
+      "summary": "Thorough configuration and schema association docs, but completely lacks installation instructions and a quick-start guide for new users.",
+      "top_issue": "No installation instructions whatsoever \u2014 a new user has no idea how to install or connect this language server to their editor."
     },
     "security": {
       "overall_score": 7,
@@ -209,31 +209,35 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or sensitive information are exposed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug fixes",
-        "feature updates"
+        "Kubernetes resource validation errors (incorrect CRD schema fetching for builtin resources)",
+        "Schema fetching failures due to rate limiting (429 Too Many Requests with remote schemas)",
+        "False positive validation errors (BigInt duplicate key detection, enum keys skipped in completion)",
+        "Schema modeline spam to logs",
+        "Upstream schema compatibility issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The yaml-language-server community is moderately active with some open issues and recent bug fixes, indicating a relatively healthy project."
+      "summary": "Moderate community health with active recent bug fixes, but several validation issues and schema-caching problems remain unresolved, suggesting either resource constraints or deprioritization of edge cases."
     },
     "communication": null,
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "minimal-maintenance",
+      "confidence": 7,
       "concerns": [
-        "high number of open issues",
-        "unknown last release"
+        "199 open issues with no resolution in past 6 months",
+        "0 merged PRs and 0 commits recorded for 6-month period despite recent activity",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "Issues not being triaged or addressed"
       ],
       "positive_signals": [
-        "recent commits",
-        "active contributors",
-        "merged PRs"
+        "Recent commit activity on 2026-03-12 shows some ongoing work"
       ],
-      "summary": "The yaml-language-server package appears to be maintained, with recent activity and a decent number of contributors, but has some concerns regarding open issues and lack of release information."
+      "summary": "Project has minimal maintenance with sporadic commits but lacks systematic issue resolution, no recent releases, and no active contributor engagement."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +255,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for yaml-language-server lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:33:09.048259+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

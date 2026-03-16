@@ -169,14 +169,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 9,
-      "examples": 10,
-      "configuration": 8,
+      "installation": 8,
+      "quick_start": 7,
+      "examples": 7,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is comprehensive and provides a good understanding of the package's functionality, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problems and solutions documentation"
+      "overall": 6,
+      "summary": "Well-structured README with clear concept explanations and multiple install paths, but lacks configuration documentation and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 complex multi-dependency setup (Go, Dolt, beads, tmux, Claude CLI) will generate common failure modes with no documented solutions."
     },
     "security": {
       "overall_score": 7,
@@ -202,18 +202,22 @@
       "summary": "The gastown package has some security concerns related to input validation and potential injection risks, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "stop-hook error",
-        "GT_SESSION env var not set"
+        "Database routing inconsistencies (convoy visibility, cross-DB routing failures)",
+        "Windows CI consistently failing on main branch",
+        "Database naming conflicts causing split-brain scenarios",
+        "Complex bootstrap workflows with multiple failure points"
       ],
       "praise_themes": [
-        "gastown working with changes made"
+        "Well-organized work decomposition with clear parent epics and dependencies",
+        "Thorough technical documentation and scope clarity in issues",
+        "Active systematic development on infrastructure improvements"
       ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing some technical issues but generally finds the project functional, indicating a neutral sentiment."
+      "summary": "Project is actively developed with systematic engineering work, but struggling with infrastructure reliability issues (database routing, CI stability) that remain in needs-triage backlog."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,15 +230,20 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (300)",
-        "Multiple contributors active in the past six months (23)",
-        "Significant number of merged PRs in the past six months (48)"
+      "concerns": [
+        "163 open issues with zero closed in the past 6 months",
+        "Zero commits in the past 6 months (despite recent last commit timestamp being potentially a data artifact)",
+        "No active contributors in the past 6 months",
+        "Zero merged PRs in the past 6 months",
+        "Unknown last release; no recent release history",
+        "No maintainer response to issue backlog"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Repository still accessible"
+      ],
+      "summary": "The gastown package is abandoned with a massive unresolved issue backlog and complete absence of maintenance activity over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +261,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan but documents the decision-making process and contributor path, indicating low risk for bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:45:28.076150+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

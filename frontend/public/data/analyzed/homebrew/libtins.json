@@ -181,14 +181,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The README provides clear and detailed information on installation, configuration, and examples, but lacks a quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a quick start guide to help new users get started with the library quickly"
+      "examples": 3,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README covers compilation and build configuration well but defers all usage examples and tutorials to an external website, leaving the README itself nearly useless for getting started.",
+      "top_issue": "No inline quick-start or code example \u2014 users must visit an external URL to see any actual usage of the library."
     },
     "security": {
       "overall_score": 8,
@@ -202,15 +202,17 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build issues",
-        "exception handling"
+        "Build system incompatibility (CMake version, C++11 configuration issues)",
+        "DNS/packet parsing bugs (ip6.arpa PTR records, IPv6 truncated payloads)",
+        "Feature non-functionality (immediate_mode, get_fd() raising exceptions)",
+        "Compiler compatibility (gcc 13.3 std::uint32_t issue)"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The community is experiencing significant frustration with ongoing build and exception handling issues, suggesting potential abandonment of the project."
+      "summary": "libtins shows signs of abandonment with 9 open issues spanning 3+ years, zero maintainer responses on 5 issues, modern build tool incompatibilities (CMake, gcc 13.3), and unresolved critical bugs in packet parsing and core functionality."
     },
     "communication": {
       "helpfulness": 8,
@@ -224,16 +226,19 @@
     },
     "maintenance": {
       "status": "minimal-maintenance",
-      "confidence": 7,
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Last release was over a year ago"
+        "No commits in past 6 months despite 173 open issues",
+        "Zero closed issues in 6 months indicates lack of triage and responsiveness",
+        "No active contributors or merged PRs in past 6 months",
+        "Unknown last release suggests no recent version for users",
+        "Large backlog of unaddressed issues accumulating"
       ],
       "positive_signals": [
-        "Recent commits and open issues indicate some level of activity",
-        "Multiple contributors, even if infrequent"
+        "Repository is not completely abandoned (last commit ~3 months ago)",
+        "Project has historical releases indicating established codebase"
       ],
-      "summary": "The package shows minimal maintenance with occasional updates but lacks recent contributions."
+      "summary": "libtins is minimally maintained with a stagnant issue backlog, no recent development activity, and no active contributor engagement over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -251,7 +256,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks clear succession plans, decision-making processes, and paths for contributors to become maintainers, indicating a high risk of bus factor."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:51:24.184780+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

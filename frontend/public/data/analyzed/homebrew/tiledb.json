@@ -186,15 +186,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 7,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its features, but lacks detailed configuration and troubleshooting documentation.",
-      "top_issue": "Lack of comprehensive configuration and troubleshooting guides"
+      "clarity": 9,
+      "installation": 6,
+      "quick_start": 5,
+      "examples": 5,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The README excels at explaining what TileDB is and listing features, but defers nearly all practical guidance (installation for non-conda, quickstart code, configuration, troubleshooting) to external links.",
+      "top_issue": "No inline code examples demonstrating actual usage \u2014 the quickstart only links to external files rather than showing even a minimal working snippet."
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,20 @@
       "summary": "The code appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed to improve its overall security posture."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "documentation issues",
-        "build failures"
+        "CI/build failures (nightly and release jobs)",
+        "Data corruption during fragment deletion operations",
+        "Core engine crashes in commit consolidation"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Well-documented bug reports with reproduction steps",
+        "Automated CI monitoring and failure reporting"
+      ],
       "abandonment_signals": false,
-      "summary": "The tiledb community is actively reporting and discussing issues, but maintainers could improve responsiveness to address user concerns in a timely manner."
+      "summary": "Active project with good automation and responsiveness, but recent critical bugs (data corruption, core crashes) with one still unresolved suggest underlying stability concerns."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,19 +231,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a good level of technical depth, but could improve in welcoming new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "low ratio of closed to open issues"
+        "113 open issues with zero closed in past 6 months",
+        "Zero commits in past 6 months despite recent commit (likely anomaly)",
+        "Zero active contributors for 6 months",
+        "No merged PRs or active pull requests",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "high number of merged PRs",
-        "multiple active contributors"
+        "One recent commit (2026-03-14) though isolated and likely not part of active maintenance"
       ],
-      "summary": "The tiledb package appears to be actively maintained with frequent updates, a recent release, and multiple active contributors, despite some concerns regarding open issues."
+      "summary": "Project is abandoned with no substantive maintenance activity, evidenced by 113 unresolved issues, zero contributor activity, and no releases for an extended period."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -257,7 +261,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The TileDB project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:25:11.686551+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -171,15 +171,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 7,
       "examples": 7,
       "configuration": 5,
       "troubleshooting": 2,
       "overall": 6,
-      "summary": "The README provides a good overview of the package's features, but lacks clear and concise instructions for getting started and troubleshooting.",
-      "top_issue": "Lack of clear troubleshooting documentation"
+      "summary": "Well-structured README with clear feature descriptions and multiple installation options, but lacks troubleshooting guidance and configuration documentation.",
+      "top_issue": "No troubleshooting section \u2014 common issues like AWS credential setup, permission errors, or Bedrock setup failures are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -207,17 +207,15 @@
     },
     "sentiment": {
       "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "feature requests for improved file extension handling",
-        "desire for integration with CI/CD pipelines"
+        "SIGSEGV crash when deleting stacksets with certain IAM role configurations",
+        "YAML parsing/serialization incompatibility (YAML 1.1 vs 1.2) causing false enum validation errors"
       ],
-      "praise_themes": [
-        "user finds the project useful"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied but expresses some frustration and feature requests, indicating moderate engagement."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Two critical bugs (crash and validation failure) reported in early March with zero maintainer engagement, indicating limited or stalled project maintenance."
     },
     "communication": {
       "helpfulness": 7,
@@ -230,17 +228,19 @@
       "summary": "Responses are generally clear and helpful, showing patience with repeated notifications."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of community contribution.",
-        "High number of open issues (87) suggests potential unresolved problems."
+        "Zero commits in past 6 months despite recent last-commit timestamp suggests no active development",
+        "100 open issues with zero closed in past 6 months indicates issues are ignored",
+        "Zero active contributors for 6+ months shows no maintenance team",
+        "Zero merged pull requests in past 6 months means contribution backlog unprocessed",
+        "Unknown last release date suggests no recent version published"
       ],
       "positive_signals": [
-        "Recent commit and release dates suggest some level of activity.",
-        "Single contributor is actively maintaining the package."
+        "Last commit timestamp is recent (2026-03-10), though this may reflect homebrew recipe sync rather than upstream development"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but faces concerns due to a lack of community contribution and numerous open issues."
+      "summary": "Package appears abandoned with no active development, ignored issues, or contributor engagement for at least 6 months."
     },
     "changelog": null,
     "governance": {
@@ -250,7 +250,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project documents the decision-making process but lacks a succession plan, contributor ladder, and indications of multiple maintainers, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:30:04.364643+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

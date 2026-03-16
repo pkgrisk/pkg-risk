@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
       "examples": 8,
-      "configuration": 6,
+      "configuration": 5,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The documentation is generally clear and provides good installation instructions, but lacks sufficient troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Well-structured README with clear purpose, multiple installation methods, and good usage examples, but lacks configuration documentation and troubleshooting guidance.",
+      "top_issue": "Configuration is mentioned (--config flag, checkmake.ini) but never documented \u2014 no explanation of available rules, how to configure them, or what options checkmake.ini supports."
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,20 @@
       "summary": "The code has some security concerns, including potential injection vulnerabilities and information disclosure issues, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "version conflicts",
-        "outdated releases"
+        "Parser incorrectly identifies targets in multi-line strings",
+        "False positives on legitimate Makefile patterns (target-specific variables)",
+        "Tool lacks flexibility in rule severity (treats all checks as hard errors)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The checkmake community is experiencing some technical issues and awaiting updates, but there are no strong indicators of abandonment or severe frustration."
+      "praise_themes": [
+        "Tool is valuable enough for active use and reporting",
+        "Community engagement on feature discussions"
+      ],
+      "abandonment_signals": true,
+      "summary": "Checkmake shows moderate community engagement with legitimate bugs and feature requests, but exhibits slow maintainer responsiveness with several issues unresolved for 3+ years."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,17 +233,20 @@
       "summary": "The maintainer responses are extremely helpful, clear, patient, and welcoming, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "last release is over 2 years old"
+        "No commits in past 6 months",
+        "30 unresolved open issues with zero closed",
+        "Zero merged PRs in past 6 months",
+        "No active contributors for 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "frequent commits",
-        "active issue and PR resolution",
-        "multiple recent contributors"
+        "No stale pull requests accumulating",
+        "Recent timestamp on last activity"
       ],
-      "summary": "The checkmake package appears to be actively maintained with regular updates, issue resolutions, and contributions from multiple developers."
+      "summary": "The checkmake project is stale with zero development, no issue resolution, and no active contributors despite a growing backlog of 30 open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -250,7 +257,10 @@
       "overall_score": 4,
       "summary": "The changelog is basic and lacks detail, but changes are somewhat categorized by version."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-15T23:30:41.220970+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
