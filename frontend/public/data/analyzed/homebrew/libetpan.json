@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 6,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 3,
       "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package and its features, but lacks clear examples and troubleshooting information.",
-      "top_issue": "Lack of quick start example and troubleshooting documentation"
+      "overall": 4,
+      "summary": "The README covers build instructions across platforms adequately but lacks code examples, API documentation, and any troubleshooting guidance for a C library.",
+      "top_issue": "No code examples showing actual API usage \u2014 for a C library, even a minimal IMAP connection snippet is essential to help developers evaluate and adopt it."
     },
     "security": {
       "overall_score": 7,
@@ -194,18 +194,23 @@
       "summary": "The libetpan library has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be a relatively secure library."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "security and reliability fixes not included in releases",
-        "self-signed SSL support issues"
+        "Critical security and licensing issues blocking distribution (RSA-MD license incompatibility, unreleased security fixes)",
+        "macOS/iOS compatibility breaking changes (legacy VoIP feature in iOS 17, CFNetwork requirements)",
+        "Real-world email service incompatibilities (Outlook.com IMAP protocol errors, Dovecot XLIST)",
+        "Production crashes on iOS 17.1 (iconv error, zero response)",
+        "Self-signed SSL certificate handling not supported",
+        "Deprecated authentication methods (DIGEST-MD5, CRAM-MD5) still in codebase"
       ],
       "praise_themes": [
-        "long-term maintenance and support by maintainers"
+        "Library persistence and longevity appreciated",
+        "Active indirect use in major projects (Claws Mail)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some frustration over timely release of security updates and self-signed SSL support, but overall the project appears to be well-maintained."
+      "abandonment_signals": true,
+      "summary": "libetpan shows severe abandonment with 11/12 open issues aging 2-5+ years, critical security fixes unreleased since 2023, zero maintainer responses to recent reports including production iOS crashes and GPL licensing violations, indicating the project is no longer actively maintained despite being used by established email clients."
     },
     "communication": {
       "helpfulness": 8,
@@ -218,17 +223,18 @@
       "summary": "Responses are generally helpful and clear, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs recently"
+        "No commits for 9+ months",
+        "Zero contributors active in past 6 months",
+        "74 open issues with no recent closures",
+        "No merged PRs in past 6 months",
+        "Unknown/missing last release date",
+        "No community activity or pull request attempts"
       ],
-      "positive_signals": [
-        "Recent open issues and PRs indicate some level of activity",
-        "Multiple contributors are still involved"
-      ],
-      "summary": "The package is receiving minimal maintenance with occasional contributions but no recent code updates."
+      "positive_signals": [],
+      "summary": "libetpan is abandoned with no maintenance activity for over 9 months, 74 unresolved issues, and no recent releases or contributor engagement."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -239,7 +245,10 @@
       "overall_score": 4,
       "summary": "The changelog lacks clear categorization, breaking changes, migration guides, and is incomplete with outdated entries."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:00:28.414855+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

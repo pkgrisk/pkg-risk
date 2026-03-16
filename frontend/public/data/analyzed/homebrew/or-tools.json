@@ -179,14 +179,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 7,
-      "quick_start": 6,
-      "examples": 9,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package and its components, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear and concise troubleshooting documentation"
+      "installation": 6,
+      "quick_start": 5,
+      "examples": 6,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "Well-structured README that clearly describes the suite's capabilities but defers most actionable content to external URLs rather than providing inline examples or troubleshooting guidance.",
+      "top_issue": "Quick start and installation sections redirect to external URLs instead of providing any inline example or getting-started code, leaving users with nothing if those links change or are unavailable."
     },
     "security": {
       "overall_score": 7,
@@ -219,16 +219,23 @@
       "summary": "The code appears to be generally secure, but there are some areas that require attention, such as input validation and potential error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "solver compatibility issues",
-        "platform support"
+        "Language binding gaps (C# and Java lagging behind Python features)",
+        "Critical crashes and segfaults in core solvers (CP-SAT, RoutingModel)",
+        "Breaking API changes between versions without clear migration paths",
+        "Solver-specific issues (Xpress, Gurobi) with minimal triage",
+        "Platform-specific problems (macOS code signing) unaddressed"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The or-tools community is experiencing some technical difficulties and awaiting maintainer responses, but there are no clear signs of abandonment or extreme frustration."
+      "praise_themes": [
+        "Active community reporting and engagement on recent critical issues",
+        "Some bugs are being closed, indicating ongoing maintenance",
+        "Multiple solver backends attract diverse use cases"
+      ],
+      "abandonment_signals": true,
+      "summary": "OR-Tools shows moderate health with active issue reporting but inconsistent maintainer responsiveness, unresolved critical bugs open for months, and neglected language bindings creating friction for non-Python users."
     },
     "communication": {
       "helpfulness": 8,
@@ -244,17 +251,20 @@
       "summary": "The maintainer responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to encourage more contributions."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "abandoned",
       "confidence": 8,
       "concerns": [
-        "relatively low number of active contributors",
-        "open issues outnumber recent closed issues"
+        "No commits in past 6 months despite 86 open issues",
+        "Zero contributors active in past 6 months",
+        "No closed issues or merged PRs in past 6 months",
+        "Unknown last release date - no release tracking",
+        "86 open issues accumulating without resolution"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "high volume of merged PRs"
+        "Recent commit 3 days ago (2026-03-12) suggests some activity",
+        "No stale open pull requests"
       ],
-      "summary": "The or-tools package appears to be maintained, with regular updates and a significant number of pull requests being addressed, despite some concerns about the contributor base and issue backlog."
+      "summary": "Project is effectively abandoned with 6 months of zero maintenance activity and no issue resolution, though a recent commit may indicate sporadic automation or one-off updates."
     },
     "changelog": null,
     "governance": {
@@ -264,7 +274,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The or-tools project lacks a clear succession plan and decision-making process, but indicates multiple maintainers with merge rights."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:12:34.727761+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

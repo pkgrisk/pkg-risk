@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 7,
       "examples": 7,
       "configuration": 9,
-      "troubleshooting": 2,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks troubleshooting information and could benefit from more concise quick start instructions.",
-      "top_issue": "Lack of troubleshooting information"
+      "summary": "Well-structured README with clear purpose, good configuration docs, and multiple install options, but lacks troubleshooting guidance and a concrete quick-start example.",
+      "top_issue": "No troubleshooting section \u2014 common issues like timezone name lookup failures or display problems are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -211,18 +211,21 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "unit test coverage",
-        "time zone handling issues"
+        "Multiple regressions in unreleased code affecting core functionality",
+        "Insufficient unit test coverage (48% at best, dropped to 31% after config feature)",
+        "Infrequent releases (over 1 year between versions, users forced to use @main)",
+        "DST handling bugs causing wrong hours, abbreviations, and navigation issues",
+        "UNIX convention violations (exit codes, missing features like UTC in default mode)"
       ],
       "praise_themes": [
-        "usefulness of the tool",
-        "appreciation for maintainers' efforts"
+        "Tool is genuinely useful and appreciated by long-term users",
+        "Functional for core use case when on stable releases"
       ],
-      "abandonment_signals": false,
-      "summary": "The tz project community is moderately active with a mix of positive and negative sentiments, indicating some frustration with ongoing issues but overall engagement and appreciation for the tool."
+      "abandonment_signals": true,
+      "summary": "The project shows active development but suffers from poor release cadence, quality control issues (low test coverage, multiple unaddressed regressions), and slow issue resolution, with at least 3 open issues from October 2024 still unresolved."
     },
     "communication": {
       "helpfulness": 9,
@@ -236,19 +239,26 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "no closed issues or merged PRs in the past 6 months"
+        "No commits in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "8 open issues remain unaddressed",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "recent release",
-        "10 active contributors"
+        "Most recent commit exists (2025-02-14)",
+        "No abandoned pull requests"
       ],
-      "summary": "The tz package appears to be stale due to a lack of recent activity, despite having a recent release and multiple active contributors."
+      "summary": "This package shows no maintenance activity for 6+ months with unaddressed issues and no active contributors, indicating it is stale and likely not being actively maintained."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:21:35.457414+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -172,19 +172,34 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 5,
+      "quick_start": 3,
+      "examples": 3,
+      "configuration": 4,
+      "troubleshooting": 6,
+      "overall": 5,
+      "summary": "A veteran C library README that explains what zlib is and where to find resources, but defers nearly all practical guidance to external files and URLs rather than providing inline examples or usage.",
+      "top_issue": "No inline code examples or API usage \u2014 users are pointed to test/example.c rather than shown even a minimal compress/decompress snippet."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "ZLIBConfig.cmake.in doesn't honor shared and static build setting",
-        "How to build zlibwapi.dll with zlib 1.3.2?"
+        "CMake build configuration failures in 1.3.2",
+        "Cross-compilation issues (ARM, s390x, 32-bit mingw-w64)",
+        "Platform-specific build inconsistencies (Windows DLL naming, Alpine/musl)",
+        "Build flags not propagated to tests"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Community actively reporting issues",
+        "Proper triage of false positives (OSS-Fuzz harness bug correctly identified)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health for the zlib package on Homebrew shows a mix of issues being addressed and new problems emerging, indicating moderate frustration levels and some unresolved concerns."
+      "summary": "The 1.3.2 release is experiencing growing pains with CMake support, generating multiple build failures across platforms, but active community engagement and resolved issues indicate the project remains actively maintained."
     },
     "communication": {
       "helpfulness": 6,
@@ -200,21 +215,25 @@
       "summary": "The maintainer responses provide some technical depth and clarity but often lack patience with repeated or basic questions and do not encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (146 in the past 6 months)",
-        "Regular releases",
-        "Active contributors"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "226 open issues with zero closures in 6 months indicates no issue triage or maintenance",
+        "Zero commits in past 6 months despite high issue volume shows no active development",
+        "No merged PRs in 6 months suggests the project is not accepting contributions",
+        "No active contributors in past 6 months indicates the maintainer(s) are inactive",
+        "Unknown release schedule creates uncertainty about when bugs/security issues will be addressed"
       ],
-      "summary": "The zlib package is actively maintained with frequent commits, regular releases, and active contributors."
+      "positive_signals": [
+        "One recent commit on 2026-02-22 (though outside the 6-month window per metrics)"
+      ],
+      "summary": "zlib is in deep maintenance stasis with no development activity, unaddressed issues, or contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:38:12.324115+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

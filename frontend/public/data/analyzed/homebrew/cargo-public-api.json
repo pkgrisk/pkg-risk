@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 10,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is clear and provides many examples, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "examples": 9,
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent, well-structured documentation with clear installation steps, multiple usage examples including CI integration, and a compatibility matrix, but lacks troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like nightly toolchain version mismatches, build failures, or CI environment problems are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -204,18 +204,19 @@
       "summary": "The cargo-public-api codebase appears to be generally secure, but there are some areas that require attention to prevent potential security issues."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 2,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "CI failures",
-        "Deprecation of `assert_cmd::cargo_bin`"
+        "Build directory lock serialization causing slow parallel execution",
+        "Bug in handling renamed lib targets with rlib crate-type"
       ],
       "praise_themes": [
-        "Enhancement suggestions"
+        "Project is actively used in production (vortex-data)",
+        "Users willing to contribute solutions"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaged, with both issues and enhancement requests, but there are ongoing CI problems."
+      "summary": "Healthy community with good engagement and real-world adoption, though maintainers could respond faster to newly reported bugs (0 comments on 4-day-old issue)."
     },
     "communication": {
       "helpfulness": 7,
@@ -228,15 +229,19 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing patience with repeated notifications."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged PRs in the past six months",
-        "No open issues or PRs"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months despite recent commit timestamp (suggests automated or orphaned commit)",
+        "Zero merged PRs in past 6 months indicates no active development or review process",
+        "Zero closed issues in past 6 months with 5 open issues unaddressed",
+        "No active contributors in past 6 months",
+        "Unknown last release - no versioned releases tracked"
       ],
-      "summary": "The package is actively maintained with recent activity and no outstanding concerns."
+      "positive_signals": [
+        "Recent commit timestamp (2026-03-14) suggests some minimal repository activity"
+      ],
+      "summary": "Project is stale with no meaningful maintenance activity over the past 6 months; the recent commit appears isolated and likely automated rather than indicative of active development."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -247,7 +252,10 @@
       "overall_score": 5,
       "summary": "The changelog lacks clear categorization, breaking change indicators, and migration guides, but it is relatively complete in listing changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:24:44.070935+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

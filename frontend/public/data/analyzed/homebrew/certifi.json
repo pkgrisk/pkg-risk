@@ -170,19 +170,30 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 3,
+      "overall": 7,
+      "summary": "Concise and well-structured README that clearly explains the package's narrow purpose with working examples, but lacks troubleshooting and advanced usage guidance.",
+      "top_issue": "No troubleshooting section for common issues like SSL verification failures or how to integrate with libraries other than Requests."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "SSL Verification Failure",
-        "SSL caching issues"
+        "SSL certificate verification failures due to missing or outdated CA certificates",
+        "Certificate bundle not including newer root certificates (Sectigo, Certigna, AAA)",
+        "Potential performance regressions with certificate caching in newer versions"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the certifi package shows a mix of resolved issues with some ongoing SSL verification and caching problems, indicating moderate frustration levels but no signs of abandonment."
+      "summary": "Active project managing legitimate technical issues around certificate currency and verification, though recurring SSL failures indicate ongoing challenges keeping the certificate bundle synchronized with real-world certificate infrastructure changes."
     },
     "communication": {
       "helpfulness": 7,
@@ -198,21 +209,26 @@
       "summary": "The maintainer responses are generally helpful and technically sound, providing clear explanations for most issues. However, they can sometimes be challenging for less technical users to understand fully."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past 6 months",
-        "All open issues are addressed within a reasonable timeframe",
-        "Regular merging of pull requests"
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "3 open issues with no resolution activity in 6 months",
+        "0 commits in past 6 months despite recent commit (data inconsistency)",
+        "0 active contributors in past 6 months",
+        "0 merged PRs - no external contribution integration",
+        "Unknown last release - cannot assess release cadence"
       ],
-      "summary": "The package is actively maintained with frequent updates, timely issue resolution, and regular integration of contributions."
+      "positive_signals": [
+        "Recent commit on 2026-03-03 (12 days ago)",
+        "Low open issue count (3)"
+      ],
+      "summary": "Package receives sporadic commits but lacks sustained maintenance with unresolved issues and no contributor engagement over the past 6 months."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:36:46.293970+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

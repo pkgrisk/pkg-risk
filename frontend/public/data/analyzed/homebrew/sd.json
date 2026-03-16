@@ -177,15 +177,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 10,
+      "installation": 7,
       "quick_start": 9,
       "examples": 10,
       "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 8,
-      "summary": "The README provides a clear and concise introduction to the package, with excellent examples and installation instructions, but lacks comprehensive configuration documentation and troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "troubleshooting": 8,
+      "overall": 9,
+      "summary": "Excellent documentation with clear pitch, rich examples, and benchmark data; installation is brief but relies on external links for detail.",
+      "top_issue": "Configuration/flags are not comprehensively documented \u2014 only a few flags (-F, -A, -p) are mentioned inline with examples rather than in a dedicated reference section."
     },
     "security": {
       "overall_score": 7,
@@ -211,18 +211,23 @@
       "summary": "The code has some security concerns related to input validation and potential injection risks, but overall it appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "build issues",
-        "feature requests not being addressed"
+        "Full-file memory loading causing OOM on large files (80GB+)",
+        "No streaming support - buffers entire input",
+        "Regex pattern matching issues (newlines, multiline)",
+        "Platform-specific failures (Windows paths, cloud drives)",
+        "Release infrastructure broken (version mismatch, missing from crates.io)",
+        "Binary byte handling limitations"
       ],
       "praise_themes": [
-        "fast and easy to use"
+        "Performance speed compared to sed when it works",
+        "Intuitive regex syntax"
       ],
       "abandonment_signals": true,
-      "summary": "The community is showing signs of frustration due to slow maintainer responsiveness and unaddressed feature requests, with signals indicating potential project abandonment."
+      "summary": "Project is effectively abandoned (maintainer stepped back Jan 2024), with recent bug reports unanswered and fundamental architectural limitations unresolved, indicating severe decline in community health."
     },
     "communication": {
       "helpfulness": 8,
@@ -238,18 +243,18 @@
       "summary": "The maintainer responses are generally helpful, clear, and technically sound, but sometimes lack patience and exhibit occasional dismissiveness."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "low number of contributors",
-        "high number of open issues",
-        "old last release"
+        "64 open issues with zero closed in past 6 months indicates unaddressed backlog",
+        "No commits, merged PRs, or closed issues in past 6 months shows lack of active maintenance",
+        "No active contributors in past 6 months",
+        "Unknown last release date prevents assessing update frequency"
       ],
       "positive_signals": [
-        "recent commits",
-        "merged PRs in the past 6 months"
+        "One recent commit on 2026-02-25 suggests sporadic activity"
       ],
-      "summary": "The package receives some maintenance, but the low number of contributors and high number of open issues suggest that it may not be actively maintained."
+      "summary": "The package is stale with a large backlog of unresolved issues and no sustained maintenance activity despite occasional commits."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -260,7 +265,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and easy to follow, but lacks migration guides for breaking changes."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:10:48.917710+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

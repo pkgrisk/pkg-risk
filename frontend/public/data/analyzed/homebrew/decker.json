@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 6,
-      "examples": 7,
+      "examples": 6,
       "configuration": 5,
-      "troubleshooting": 2,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The README provides detailed information on installation and usage, but lacks concise troubleshooting guidance and clear configuration documentation.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Well-structured README covering build instructions for multiple platforms and variants, but lacks a true quick-start guide and troubleshooting section.",
+      "top_issue": "No troubleshooting section \u2014 common build failures (missing SDL2, xxd not found, etc.) are not addressed."
     },
     "security": {
       "overall_score": 5,
@@ -204,16 +204,22 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "audio issues",
-        "crashes and segmentation faults"
+        "Memory crashes (GIF export, Canvas script access, Raspberry Pi segfaults)",
+        "Audio quality and timing issues across implementations",
+        "Platform-specific bugs (Linux touchpad menu, macOS energy drain)",
+        "Long-standing unfixed bugs (unicode support since 2023, energy usage since Dec 2024)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active cross-platform support (C, JS, web implementations)",
+        "Users building real projects (DAWs, interactive decks)",
+        "Technical depth (low-level audio and graphics work)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral with some ongoing issues, particularly related to audio functionality and crashes."
+      "summary": "Project is actively maintained with some issues resolved, but struggles with stability bugs and has unresolved technical debt spanning 2+ years that suggests maintenance may be stretched thin."
     },
     "communication": {
       "helpfulness": 8,
@@ -226,18 +232,27 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth while maintaining a welcoming tone."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (119)",
-        "Multiple contributors active in the past six months (2)",
-        "A moderate number of merged PRs in the past six months (2)"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "Zero commits in past 6 months despite recent check date",
+        "12 unresolved open issues with no closures in 6 months",
+        "No active contributors in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "Unknown last release - version management unclear",
+        "No maintenance activity visible"
       ],
-      "summary": "The package is actively maintained with frequent updates and contributions."
+      "positive_signals": [
+        "Repository still exists and accessible",
+        "Open issues indicate some community awareness"
+      ],
+      "summary": "The decker package is stale with no commits, contributors, or issue resolution over the past 6 months, indicating the project is not actively maintained."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:19:28.277380+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

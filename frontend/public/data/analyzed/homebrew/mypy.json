@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 8,
-      "overall": 8,
-      "summary": "The mypy README is well-structured and provides a clear introduction to the package, but could benefit from more detailed configuration documentation.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 6,
+      "overall": 7,
+      "summary": "Excellent introductory documentation with clear purpose, installation, and quick start, but relies heavily on external docs for configuration and advanced usage.",
+      "top_issue": "No configuration documentation in the README itself \u2014 mypy.ini, pyproject.toml settings, and common flags are absent, requiring users to immediately leave for external docs."
     },
     "security": {
       "overall_score": 7,
@@ -197,16 +197,21 @@
       "summary": "The mypy package appears to have a moderate security posture, with no injection risks or secrets found, but some potential issues with input validation and error exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs",
-        "inconsistent behavior"
+        "Type checking edge cases (isinstance unsound typing, Unpack expansion)",
+        "Performance issues with complex type annotations (pandas arithmetic)",
+        "Maintenance overhead (outdated packaging format with missed deadline)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active release planning and community discussion",
+        "Feature requests being seriously considered",
+        "Issues are tracked and some are being resolved"
+      ],
       "abandonment_signals": false,
-      "summary": "The mypy community is actively reporting and addressing bugs, with maintainers responding promptly to issues, indicating a healthy and engaged community."
+      "summary": "Mypy shows healthy community engagement with active release planning and technical discussion, but some responsiveness issues are emerging (missed Feb 18 packaging deadline, newer issues unanswered)."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,18 +227,21 @@
       "summary": "The maintainer's responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to foster a more inclusive community."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
+      "status": "stale",
+      "confidence": 7,
       "concerns": [
-        "high number of open issues",
-        "high number of open PRs"
+        "Massive open issue backlog (3,103 issues) with no resolution in 6 months",
+        "Zero commits in past 6 months contradicts recent commit date (data inconsistency)",
+        "No active contributors in past 6 months",
+        "Zero merged PRs in past 6 months indicates no active development",
+        "Zero closed issues in 6 months shows no maintenance activity",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "frequent commits in the past 6 months",
-        "large number of active contributors",
-        "significant number of merged PRs and closed issues"
+        "Recent commit activity detected (though date conflicts with 6-month metric)",
+        "No open PRs backlog (no stalled review queue)"
       ],
-      "summary": "The mypy package appears to be actively maintained with a high volume of recent activity, despite having a large number of open issues and PRs."
+      "summary": "Mypy shows signs of stagnation with a massive unresolved issue backlog, zero development activity over 6 months, and no active maintainers despite a recent commit anomaly."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -251,7 +259,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The mypy project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:23:09.302701+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

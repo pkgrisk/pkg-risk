@@ -182,13 +182,13 @@
     "readme": {
       "clarity": 8,
       "installation": 6,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally well-structured and informative, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start guide and troubleshooting section"
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 8,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "Configuration is well-documented but the README lacks any working examples or troubleshooting guidance, making it hard for new users to get started quickly.",
+      "top_issue": "No quick-start example showing a minimal working setup \u2014 users get CLI flags and config keys but no end-to-end walkthrough of deploying even a single node."
     },
     "security": {
       "overall_score": 7,
@@ -215,16 +215,20 @@
       "summary": "The code has some security concerns, including potential log injection and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "configuration issues",
-        "crashes and bugs"
+        "Crash/stability issues (redis-benchmark crashes, dynomite crashes on SET operations)",
+        "Configuration complexity and unclear IPv6/token setup",
+        "Compilation failures on modern Ubuntu versions",
+        "Data consistency bugs in distributed scenarios (SADD inconsistency)",
+        "Lack of documentation for metrics and configuration",
+        "Unsupported Redis commands (flushall)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some common configuration and crash issues, but there are no signs of severe frustration or abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows severe abandonment signals with critical bugs and user questions remaining unanswered for 5+ years, zero active maintainer engagement, and multiple unresolved crash/stability issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,17 +241,20 @@
       "summary": "Maintainer responses are clear, helpful, and patient, with a good level of technical depth and a welcoming tone."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months",
-        "High number of open issues and PRs"
+        "No commits in 6+ months (last commit ~9 months ago)",
+        "120 open issues with zero resolution activity",
+        "No merged PRs in 6+ months indicating no active development",
+        "No active contributors",
+        "Unknown last release - cannot assess version currency",
+        "Security vulnerabilities likely not being addressed"
       ],
       "positive_signals": [
-        "Recent contributors activity (past six months)"
+        "Repository exists and was previously maintained (commits prior to 6-month window)"
       ],
-      "summary": "The package is stale with little recent maintenance, but still has some level of contributor engagement."
+      "summary": "The project is abandoned with no development activity, issue triage, or releases for 6+ months despite significant open issues."
     },
     "changelog": null,
     "governance": {
@@ -257,7 +264,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, which increases the risk of losing progress if key contributors leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:11:16.359268+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -180,22 +180,37 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 3,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 2,
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "The README provides a thorough conceptual overview and scope definition but lacks any installation instructions, usage examples, or quick-start guidance, functioning more as a project description than actionable documentation.",
+      "top_issue": "No quick-start example or basic usage commands \u2014 a new user has no idea how to actually run a container after reading this."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Rootless podman trying to join a stale process PID from pause.pid and display `cannot set user namespace` error",
-        "Podman Machine Date gets behind after sleep"
+        "Documentation gaps (image save formats, chmod parsing)",
+        "Windows/macOS compatibility limitations (no native Windows containers, MSSQL AVX crash)",
+        "Missing features (environment interpolation, sandbox isolation, UNIX socket publishing)",
+        "Outdated roadmap (ends Q3 2025, Q1 2026 over)",
+        "CI infrastructure issues (personal image namespace, aarch64 test coverage)"
       ],
       "praise_themes": [
-        "Flaky tests in play_kube_test.go and play_build_test.go resolved",
-        "podman system df triggers panic issue closed"
+        "Active ongoing development (recent issues being filed, March 2026)",
+        "Bug resolution (MSSQL issue closed with 14 comments showing engagement)",
+        "Triage process in place (issues labeled with kind/triaged)",
+        "Community engagement on feature requests"
       ],
-      "abandonment_signals": false,
-      "summary": "The Podman community is experiencing a mix of ongoing issues and recent resolutions, indicating moderate frustration levels and some responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "Actively developed project with moderate maintainer engagement, but showing signs of resource constraints: stale-issue labels, outdated roadmap, and delayed responses to recent feature requests (3 unanswered issues from March 14-15)."
     },
     "communication": {
       "helpfulness": 7,
@@ -211,15 +226,19 @@
       "summary": "The maintainer responses provide technical insights and solutions but could benefit from more clarity, patience in handling repeated questions, and explicit encouragement for new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of recent commits (300 in the past 6 months)",
-        "Frequent releases (last release on 2026-02-12)",
-        "Active contributor base (54 contributors in the past 6 months)"
+      "concerns": [
+        "Massive backlog of 1,076 open issues with zero closed in past 6 months",
+        "Zero commits merged in past 6 months despite recent commit date",
+        "No active contributors in past 6 months",
+        "No pull request activity (0 open, 0 merged)",
+        "Unknown release history"
       ],
-      "summary": "The package is actively maintained with a high volume of recent activity, frequent releases, and an active community of contributors."
+      "positive_signals": [
+        "Recent commit on 2026-03-14 (though inconsistent with 6-month activity metrics)"
+      ],
+      "summary": "Project is stale with a massive unaddressed issue backlog and no meaningful maintenance activity over the past six months."
     },
     "changelog": null,
     "governance": {
@@ -230,9 +249,9 @@
       "bus_factor_risk": "medium",
       "summary": "The governance documentation outlines a contributor ladder and indicates multiple maintainers, but lacks detailed decision-making processes and succession plans."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:33:10.306354+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

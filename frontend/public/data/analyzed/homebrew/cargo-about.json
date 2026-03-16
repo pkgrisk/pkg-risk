@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 2,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 5,
+      "configuration": 3,
+      "troubleshooting": 1,
       "overall": 6,
-      "summary": "The documentation is clear and concise, but lacks comprehensive examples and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Clear and concise README covering the basics well, but defers most depth to an external book with minimal inline examples and no troubleshooting guidance.",
+      "top_issue": "Configuration is not documented in the README at all (about.toml is mentioned but not explained), with no troubleshooting section for common issues."
     },
     "security": {
       "overall_score": 7,
@@ -206,19 +206,20 @@
       "summary": "The code has some minor security concerns, but overall it appears to be well-structured and secure, with no critical findings or secrets exposed."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "version management and build reliability",
-        "workarounds needed for specific targets"
+        "License detection edge cases (Pixar workaround, windows-rs targets, libstd dependencies)",
+        "Configuration complexity - users want defaults and config file options",
+        "Output format limitations - markdown support missing"
       ],
       "praise_themes": [
-        "automated license file generation",
-        "CI integration"
+        "Users genuinely value the tool (\"we love it so much we have had a CI step\")",
+        "Critical for compliance workflows"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is generally satisfied with the tool but faces some issues with versioning and target-specific configurations."
+      "abandonment_signals": true,
+      "summary": "Moderately maintained project with loyal users but slow response to feature requests, with multiple issues open since 2019-2022 suggesting resource constraints or deprioritization."
     },
     "communication": {
       "helpfulness": 7,
@@ -231,15 +232,19 @@
       "summary": "Responses are generally clear and helpful, showing a good level of technical depth and patience."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active in the last six months",
-        "A moderate number of open issues, which is typical for actively developed projects"
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "No commits in past 6 months despite recent activity on Jan 28",
+        "26 open issues with zero closed in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date suggests long release cycle or stagnation"
       ],
-      "summary": "The package appears to be actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit activity (Jan 28, 2026) shows project is not completely abandoned"
+      ],
+      "summary": "cargo-about is in minimal maintenance with recent activity but no substantive work for 6+ months and accumulating unaddressed issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -257,7 +262,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:13:02.263234+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
+      "installation": 6,
+      "quick_start": 8,
+      "examples": 5,
+      "configuration": 4,
       "troubleshooting": 5,
-      "overall": 8,
-      "summary": "The README provides a clear and concise introduction to ZMap, but could benefit from more detailed configuration and troubleshooting documentation.",
-      "top_issue": "Lack of comprehensive configuration documentation"
+      "overall": 6,
+      "summary": "ZMap's README excels at quickly conveying what the tool does and showing a basic usage example, but defers most detail to external wiki/install docs rather than providing self-contained guidance.",
+      "top_issue": "Installation instructions are a stub \u2014 just a pointer to INSTALL.md \u2014 with no inline package manager commands or source build steps shown directly in the README."
     },
     "security": {
       "overall_score": 8,
@@ -197,16 +197,21 @@
       "summary": "The provided code appears to be generally secure, but there are some potential issues with input validation and error handling that could be improved."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "zmap not respecting rate limits",
-        "inconsistent scanning behavior across interfaces"
+        "Random segmentation faults and crashes",
+        "Stack smashing/buffer overflow on Docker systems",
+        "Rate limiting not enforced with --probes option",
+        "Interface selection not working as specified",
+        "IPv6 address parsing errors",
+        "Output format incompatibility with zgrab2",
+        "Outdated versions in package managers"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is generally neutral with some active issues, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "ZMap shows recent activity but exhibits moderate abandonment signals with critical unresolved bugs (segfaults, stack overflow), acknowledged outdated packages, and unanswered feature requests despite a mostly-closed issue history."
     },
     "communication": {
       "helpfulness": 8,
@@ -219,17 +224,20 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical insights and encourage further investigation when necessary."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Few open PRs",
-        "No recent releases"
+        "No commits in past 6 months",
+        "10 open issues with no activity or resolution",
+        "No contributors active in past 6 months",
+        "Last release information unknown",
+        "No merged PRs or issue closure in past 6 months"
       ],
       "positive_signals": [
-        "Regular commits in the past six months",
-        "Moderate number of merged PRs in the past six months"
+        "Last commit exists (2025-11-12, ~4 months ago) indicates project isn't completely abandoned",
+        "No open pull requests creating maintenance backlog"
       ],
-      "summary": "The package is maintained with regular updates and contributions, but could benefit from more active pull requests and release cycles."
+      "summary": "Project is stale with no maintenance activity for 6+ months despite having unresolved open issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -247,7 +255,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The project documents decision-making but lacks a succession plan and clear contributor ladder."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:05:47.142890+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

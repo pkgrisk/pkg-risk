@@ -183,29 +183,30 @@
   "llm_assessments": {
     "readme": {
       "clarity": 9,
-      "installation": 10,
+      "installation": 9,
       "quick_start": 8,
       "examples": 7,
-      "configuration": 9,
-      "troubleshooting": 6,
-      "overall": 8,
-      "summary": "The README is well-structured and informative, providing clear installation instructions and usage examples. However, it lacks direct troubleshooting information within the main document.",
-      "top_issue": "Troubleshooting section is not directly provided in the README; users must refer to external documentation."
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Excellent clarity and installation coverage with a solid quick-start example, but lacks any troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common problems like spec errors, missing Xcode version, or build setting conflicts are not addressed."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 5,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "excludes and includes are not working with syncedFolder type",
-        "Project generated from 2.44.1 could not be opened on Xcode 15.0.1: 'future Xcode project file format' error"
+        "Frequent regressions in recent versions (2.44.x, 2.45.x) breaking core functionality",
+        "Path handling bugs causing build failures (absolute paths, folder sources, synced folders)",
+        "Xcode version compatibility issues and object version mismatches",
+        "Silent failures (includes silently ignored, null entries not validated)",
+        "Performance degradation (4.5GB memory usage from null source entries)"
       ],
-      "praise_themes": [
-        "Add support for `buildArchitectures` of Scheme's Build action"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health is mixed, with some users reporting issues that have not been fully addressed and others suggesting improvements. The maintainer response rate seems moderate, as there are comments on some issues but no recent activity on others."
+      "summary": "Community health is concerning due to quality control issues with breaking regressions in consecutive releases, though issues are being closed indicating active maintenance rather than abandonment."
     },
     "communication": {
       "helpfulness": 8,
@@ -221,18 +222,19 @@
       "summary": "The maintainer provides helpful and clear guidance, with some technical depth, but could improve patience in handling repeated questions and welcomingness by offering more support or alternatives."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "minimal-maintenance",
       "confidence": 8,
       "concerns": [
-        "Low commit activity in the past 6 months",
-        "High number of open issues (266)",
-        "Few merged PRs in the past 6 months"
+        "376 open issues with zero resolution in past 6 months",
+        "No merged PRs or closed issues in past 6 months despite recent commit",
+        "Zero active contributors in past 6 months",
+        "Unknown or missing last release information",
+        "Large issue backlog suggests maintainer not triaging/responding"
       ],
       "positive_signals": [
-        "Recent last release in July 2025",
-        "One active contributor in the past 6 months"
+        "Recent commit 3 days ago indicates project is not completely abandoned"
       ],
-      "summary": "The xcodegen package shows signs of being stale with minimal recent activity, a high number of unresolved issues, and few merged pull requests."
+      "summary": "Project receives occasional commits but shows no community engagement or active maintenance, with 376 unresolved issues suggesting the maintainer is not actively managing the project."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -251,9 +253,9 @@
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for XcodeGen outlines a clear path for contributions but lacks details on succession planning, decision-making processes, and indicates a single maintainer with merge rights."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:30:15.260335+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

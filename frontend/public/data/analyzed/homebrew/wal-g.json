@@ -189,7 +189,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 3,
+      "configuration": 8,
+      "troubleshooting": 4,
+      "overall": 5,
+      "summary": "WAL-G has solid configuration documentation but critically lacks quick-start examples showing actual backup/restore workflows.",
+      "top_issue": "No quick-start or usage examples \u2014 a new user cannot determine how to perform a basic backup or restore without hunting through external docs."
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [
@@ -215,16 +225,20 @@
       "summary": "The code has some potential security concerns, including injection risks and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "[BUG] v3.0.7: libsodium fails to build",
-        "[BUG] s3 versioning breaks wal-g incemental backups"
+        "Backup ordering and restoration reliability issues (6-year-old critical bug still open)",
+        "Users unable to restore from backups in production environments",
+        "Y2K38 timestamp bug affecting backup functionality",
+        "Filesystem storage cleanup not working as expected"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing issues with recent versions of the package, indicating a negative sentiment and moderate frustration levels."
+      "praise_themes": [
+        "Security vulnerability disclosure handled promptly"
+      ],
+      "abandonment_signals": true,
+      "summary": "wal-g shows recent activity and some issue resolution, but critical backup/restoration functionality bugs have remained open for years (dating to 2020), suggesting maintenance attention gaps in core features despite ongoing user problems."
     },
     "communication": {
       "helpfulness": 7,
@@ -237,21 +251,26 @@
       "summary": "Maintainer responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
+      "status": "abandoned",
+      "confidence": 8,
       "concerns": [
-        "high number of open issues",
-        "low number of merged PRs compared to open PRs"
+        "335 open issues with zero closed in 6 months indicates severe backlog and no triage",
+        "No merged PRs in 6 months suggests no active development",
+        "Zero active contributors in 6 months indicates lack of maintainer engagement",
+        "Unknown last release - no release activity",
+        "Contradiction between recent commit and zero commits recorded in 6-month window"
       ],
       "positive_signals": [
-        "recent commits in the past six months",
-        "multiple contributors are active",
-        "regular issue and PR activity"
+        "Very recent commit (3 days ago) suggests some repository activity",
+        "No deprecated status or archived marker"
       ],
-      "summary": "The package is actively maintained with recent commits, multiple contributors, and regular PR activity, but there are concerns about the high number of open issues."
+      "summary": "Project appears abandoned despite a recent commit - massive unaddressed issue backlog (335 open), zero maintenance activity, and no active contributors indicate the repository is not being maintained."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:26:18.898496+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

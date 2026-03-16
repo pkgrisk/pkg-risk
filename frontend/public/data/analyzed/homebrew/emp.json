@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides good examples, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of comprehensive installation instructions and troubleshooting section"
+      "clarity": 7,
+      "installation": 4,
+      "quick_start": 5,
+      "examples": 4,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "README provides a reasonable high-level overview but lacks concrete installation steps, configuration details, and troubleshooting guidance, relying heavily on external links.",
+      "top_issue": "Installation instructions are essentially just a CloudFormation button and a link to an external guide \u2014 no self-contained setup steps, prerequisites, or configuration documentation."
     },
     "security": {
       "overall_score": 7,
@@ -212,18 +212,19 @@
       "summary": "The code has some security concerns, including potential command injection vulnerabilities and lack of input validation, but no sensitive secrets were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "bug fixes needed",
-        "documentation and compatibility issues"
+        "Outdated authentication mechanism (GitHub legacy access shutdown)",
+        "Go 1.17+ compatibility/module migration not addressed",
+        "AWS ECS ARN format changes breaking functionality",
+        "CI/CD integration issues with GitHub Actions",
+        "Poor error messaging for missing dependencies"
       ],
-      "praise_themes": [
-        "community support"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some frustration around bug fixes and documentation, but overall the project seems to have active support."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Project appears largely abandoned with critical unaddressed issues from 2020-2021 (Go modules, AWS ARN compatibility), zero maintainer engagement on open issues, and the recent vague 'Tiger' issue suggesting either spam or severely reduced attention."
     },
     "communication": {
       "helpfulness": 9,
@@ -236,18 +237,19 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "stale",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Zero merged PRs in the past six months",
-        "High number of open issues (88)",
-        "Last release was over five years ago"
+        "No commits for 16+ months (since Nov 2023)",
+        "90 open issues with zero closure in past 6 months",
+        "Zero contributor activity in past 6 months",
+        "No merged PRs or release activity",
+        "Unknown last release version"
       ],
       "positive_signals": [
-        "Ten contributors active in the past six months"
+        "No open PRs creating unresolved technical debt"
       ],
-      "summary": "The package is stale with no recent activity and a high number of unresolved issues, but has seen some contributor engagement."
+      "summary": "Project is abandoned with no maintenance activity in over a year and 90 unresolved issues accumulating without triage or resolution."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -265,7 +267,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, which increases the risk of losing progress if key contributors leave."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:02:07.689051+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

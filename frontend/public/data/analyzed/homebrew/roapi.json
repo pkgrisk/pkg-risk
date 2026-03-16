@@ -190,15 +190,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
       "examples": 8,
       "configuration": 8,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, with good installation instructions and examples, but lacks troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent documentation with clear purpose, multiple installation paths, rich examples across all query interfaces, and good configuration coverage, but lacks any troubleshooting section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like port conflicts, schema inference failures, auth errors, or unsupported data types are not addressed."
     },
     "security": {
       "overall_score": 7,
@@ -224,18 +224,22 @@
       "summary": "The code has some security concerns, including potential SQL injection vulnerabilities and insufficient input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Rust security issues",
-        "Missing dependencies for Docker Compose"
+        "Unmaintained dependencies (bincode, rustls-pemfile, rkyv)",
+        "Database/storage integration issues (Delta Lake, ADLS Gen2)",
+        "Missing database support (MongoDB)",
+        "PostgreSQL FDW compatibility limitations"
       ],
       "praise_themes": [
-        "Community contributions and fixes"
+        "Good PostgreSQL protocol implementation",
+        "Active collaboration with external projects (CrateDB)",
+        "Recent issue resolution on compatibility features"
       ],
-      "abandonment_signals": false,
-      "summary": "The community is actively contributing to the project, but there are ongoing security concerns and dependency issues that require attention."
+      "abandonment_signals": true,
+      "summary": "Project has recent activity and resolves issues promptly, but carries multiple unmaintained dependencies creating security risks and has long-standing feature requests (2022-2023) still pending, suggesting resource constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -248,20 +252,26 @@
       "summary": "The maintainer responses are clear, helpful, and encouraging to new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Long time since last release (6 months)",
-        "Few commits in the past six months"
+        "63 open issues with zero closed in past 6 months",
+        "No commits in past 6 months despite having a recent commit",
+        "Zero active contributors in past 6 months",
+        "Unknown last release indicates poor release hygiene",
+        "No merged PRs in past 6 months"
       ],
       "positive_signals": [
-        "Recent activity with open PRs and issues",
-        "Some contributors are still active"
+        "Recent commit on 2025-12-23 shows minimal ongoing activity",
+        "Repository exists and is not archived"
       ],
-      "summary": "The package shows minimal maintenance efforts but has recent activity."
+      "summary": "roapi is stale with 63 unresolved issues, no maintenance activity for 6 months, and no active contributors responding to the growing issue backlog."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:06:24.701248+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
