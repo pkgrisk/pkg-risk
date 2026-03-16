@@ -271,13 +271,17 @@ class NpmAdapter(BaseAdapter):
 
         # Clean up common npm URL patterns
         url = url.replace("git+", "").replace("git://", "https://").replace("ssh://git@", "https://")
+        # Strip username@ from authenticated URLs (e.g., https://user@github.com/...)
+        url = re.sub(r"(https?://)[^@]+@", r"\1", url)
         # Strip URL fragments (e.g., #main) and query strings before .git suffix
         url = url.split("#")[0].split("?")[0]
         url = url.removesuffix(".git")
 
-        # Handle GitHub shorthand
+        # Handle GitHub shorthand (github:owner/repo or bare owner/repo)
         if url.startswith("github:"):
             url = f"https://github.com/{url[7:]}"
+        elif re.match(r"^[\w.-]+/[\w.-]+$", url):
+            url = f"https://github.com/{url}"
 
         return url if url else None
 
