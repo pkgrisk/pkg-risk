@@ -181,19 +181,34 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 6,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README is a generic AWS SDK v3 overview rather than documentation specific to @aws-sdk/client-polly, making it largely unhelpful for users of this particular package.",
+      "top_issue": "All examples and getting-started content reference DynamoDB, not Polly \u2014 a user wanting to use client-polly gets no package-specific guidance on Polly operations, input/output shapes, or authentication setup."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "TypeError: A dynamic import callback was invoked without --experimental-vm-modules in jest",
-        "Checksum mismatch error fetching compressed files from S3 (browser SDK)"
+        "Release process issues (packages published out of order causing installation failures)",
+        "Performance regressions (Lambda coldstart latency not resolved for 1 year)",
+        "Test infrastructure flakiness (DynamoDB Local switching)",
+        "Documentation accuracy (broken table of contents links)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/client-polly package shows a mix of open and closed issues, with some high-frustration-level bugs and third-party integration problems. Maintainer responsiveness is moderate, as evidenced by the closure of some issues but the persistence of others."
+      "praise_themes": [
+        "Critical issues are eventually resolved (P1 issues marked released)",
+        "Systematic triaging with priority labels"
+      ],
+      "abandonment_signals": true,
+      "summary": "Mixed community health: critical release automation bugs are fixed promptly, but performance regressions can remain unresolved for extended periods, with newly reported issues sometimes languishing without triage."
     },
     "communication": {
       "helpfulness": 7,
@@ -209,15 +224,21 @@
       "summary": "The maintainer responses provide helpful information and handle repeated questions with patience, but they sometimes lack depth and clarity, especially for users who may not have a deep understanding of the SDK's architecture."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "Active contributors"
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "159 open issues with zero closures in past 6 months",
+        "Zero commits in past 6 months despite today's commit (indicates long dormancy)",
+        "No merged PRs and zero PR activity in 6 months",
+        "No active contributors in past 6 months",
+        "Last release unknown or undocumented",
+        "Issues accumulating without resolution"
       ],
-      "summary": "The package @aws-sdk/client-polly is actively maintained with frequent commits, regular releases, and active contributors."
+      "positive_signals": [
+        "Recent commit activity as of today (2026-03-16)",
+        "Official AWS SDK package with institutional backing"
+      ],
+      "summary": "Package exhibits stagnation with a backlog of 159 unresolved issues and no substantive activity for 6 months, though AWS institutional support and a recent commit suggest sporadic maintenance rather than abandonment."
     },
     "changelog": null,
     "governance": {
@@ -228,9 +249,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T18:21:49.395730+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

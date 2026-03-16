@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 6,
+      "installation": 8,
       "quick_start": 7,
       "examples": 4,
       "configuration": 2,
-      "troubleshooting": 6,
-      "overall": 6,
-      "summary": "The documentation is clear and provides good installation instructions but lacks sufficient examples and configuration details.",
-      "top_issue": "Lack of detailed examples and configuration documentation."
+      "troubleshooting": 4,
+      "overall": 5,
+      "summary": "The README is polished but describes the parent `algoliasearch` package rather than `@algolia/cache-common` itself, leaving users with no information about what this internal package actually does.",
+      "top_issue": "The README is entirely about the `algoliasearch` umbrella client \u2014 there is no documentation specific to `@algolia/cache-common`, its purpose, API, or when/why a developer would use it directly."
     },
     "security": {
       "overall_score": 10,
@@ -196,15 +196,18 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "[bug]: DEP0169 Uncaught Exception - url.parse() deprecation warning in algoliasearch-client-javascript",
-        "[bug]: `getObject` has no generic type"
+        "Build system incompatibility (CJS class fields, Metro bundler exports, VTEX IO pipeline)",
+        "Missing or incomplete TypeScript type definitions (generateSecuredApiKey, getObject generics)",
+        "Runtime compatibility issues (Bun/Hono crashes, Expo Agent constructor, Node.js deprecations)",
+        "Long-standing API limitations (multi-query >50 requests, secured API key handling)",
+        "Bundler and module resolution issues across different environments"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @algolia/cache-common package shows a mix of active and unresolved issues, indicating moderate frustration among users. While some bugs have been closed, others remain open with varying levels of engagement from maintainers."
+      "abandonment_signals": true,
+      "summary": "The project shows moderate maintenance with some resolved issues but concerning long-standing bugs (especially a 6-year-old secured API keys regression still open with 25 comments) and recurring compatibility problems across bundlers and runtimes."
     },
     "communication": {
       "helpfulness": 8,
@@ -221,16 +224,19 @@
     },
     "maintenance": {
       "status": "minimal-maintenance",
-      "confidence": 7,
+      "confidence": 6,
       "concerns": [
-        "Low number of contributors active in the past 6 months",
-        "High number of open issues compared to closed ones"
+        "27 open issues with zero addressed in past 6 months",
+        "No merged PRs or commits merged in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "Recent commit (3 days ago) appears isolated with no sustained activity pattern"
       ],
       "positive_signals": [
-        "Regular commits and releases",
-        "Some merged pull requests"
+        "Single recent commit 3 days ago shows some activity",
+        "No open pull requests suggests maintainers are not overwhelmed"
       ],
-      "summary": "The package @algolia/cache-common shows signs of minimal maintenance with regular updates but has a high number of unresolved issues and limited contributor activity."
+      "summary": "Package shows signs of abandonment with zero maintenance activity over 6 months despite a recent isolated commit, and 27 unaddressed open issues indicate lack of active stewardship."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -242,9 +248,9 @@
       "summary": "The changelog marks breaking changes and provides some details, but lacks migration guides, clear categorization, and completeness."
     },
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T18:24:47.898160+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

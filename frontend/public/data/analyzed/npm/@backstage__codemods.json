@@ -185,15 +185,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
+      "clarity": 7,
       "installation": 2,
-      "quick_start": 1,
-      "examples": 2,
+      "quick_start": 2,
+      "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README clearly explains Backstage but lacks specific details for @backstage/codemods.",
-      "top_issue": "Missing installation and usage instructions for the codemods package."
+      "overall": 2,
+      "summary": "This README describes the Backstage platform broadly but contains no documentation specific to the @backstage/codemods package itself.",
+      "top_issue": "The README is for the Backstage monorepo root, not the codemods package \u2014 it has no information about what codemods are included, how to run them, or what migrations they perform."
     },
     "security": {
       "overall_score": 4,
@@ -214,15 +214,22 @@
       "summary": "The code exhibits potential security risks primarily from eval() usage and insufficient input validation, warranting further review and remediation."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Module federation breaks frontend"
+        "Dependency management and deprecation handling",
+        "Performance issues with large-scale entity ingestion (MS Graph)",
+        "Rendering/compatibility issues with legacy app system",
+        "TypeScript type regressions in pre-release versions"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @backstage/codemods package shows a negative sentiment due to an open bug report indicating that module federation is breaking the frontend, with moderate maintainer responsiveness as evidenced by comments on the issue."
+      "praise_themes": [
+        "Structured issue labeling and triage process",
+        "Automated dependency management with Renovate",
+        "Continued active development with new releases"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows active development but concerning triage backlog with multiple stale issues (Nov 2024+) awaiting triage despite having documented processes."
     },
     "communication": {
       "helpfulness": 8,
@@ -237,15 +244,19 @@
       "summary": "The maintainer responses are generally helpful and clear, showing patience with repeated questions. They encourage new contributors but could benefit from more technical depth in explaining the rationale behind certain decisions."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "High number of open issues and PRs which might indicate a backlog or complexity in the codebase."
+        "Zero commits in past 6 months despite 510 open issues",
+        "No closed issues in 6 months - issue backlog accumulating",
+        "No merged pull requests in 6 months - zero PR activity",
+        "Zero active contributors in past 6 months",
+        "Last release unknown - uncertain release status"
       ],
       "positive_signals": [
-        "Frequent commits, regular releases, and multiple contributors actively working on the project."
+        "Last commit timestamp is recent (2026-03-16)"
       ],
-      "summary": "The package @backstage/codemods is actively maintained with frequent activity, recent releases, and a large number of contributors. However, there are concerns about the high number of open issues and PRs which might suggest a backlog."
+      "summary": "Package is abandoned with no maintainer activity for 6+ months and a growing backlog of 510 unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -256,9 +267,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a path for contributors to become maintainers and indicates multiple people with merge rights, but lacks details on succession planning and decision-making processes."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T18:06:53.779405+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

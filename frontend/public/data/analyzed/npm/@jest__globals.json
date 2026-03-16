@@ -175,35 +175,48 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 10,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent onboarding experience with clear installation and a complete end-to-end quick start, but lacks troubleshooting guidance and the README is for Jest itself rather than the @jest/globals subpackage specifically.",
+      "top_issue": "No troubleshooting section \u2014 common issues like ESM/CJS conflicts, transform errors, or module resolution failures are not addressed."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Stale issues",
-        "Build failures",
-        "Feature requests not being addressed"
+        "Performance regression in Jest 30 (1.5-2x slower than v29 despite marketing claims)",
+        "Memory leak when upgrading from v29 to v30",
+        "jest.spyOn() doesn't work with ESM outside test scope",
+        "jest-circus crashes with TypeError on plain object throws",
+        "Type definition issues with spyOn overload resolution"
       ],
-      "praise_themes": [
-        "Detailed issue reports",
-        "Community engagement in proposing features and fixes"
-      ],
+      "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The community health for @jest/globals shows mixed sentiment with a high frustration level due to numerous stale issues, build failures, and unaddressed feature requests. While there is detailed engagement from the community, the slow response from maintainers indicates potential abandonment signals."
+      "summary": "Mixed health with concerning regression: Jest 30 introduced critical memory leaks and performance regressions contradicting release claims; recent issues (Mar 2026) remain untouched while similar bugs from July 2025 linger open, signaling moderate but insufficient maintainer capacity."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past 6 months",
-        "Regular releases",
-        "Active contributors"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months despite 243 open issues",
+        "Zero issue resolution in past 6 months",
+        "No merged pull requests or PRs in the last 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package @jest/globals is actively maintained with frequent commits, regular releases, and an active community of contributors."
+      "positive_signals": [
+        "Very recent commit activity (2026-03-14)"
+      ],
+      "summary": "Package appears stale with no meaningful activity for 6 months; recent commit is outlier amid pervasive inactivity and growing unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -222,9 +235,9 @@
       "bus_factor_risk": "high",
       "summary": "The governance documentation for @jest/globals indicates a single maintainer with no succession plan, undocumented decision processes, and no indication of multiple maintainers, posing a high bus factor risk."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T18:28:05.451823+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

@@ -206,19 +206,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Concise and well-structured docs covering the core API and options thoroughly, but entirely lacking troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common pitfalls like type coercion surprises, boolean flag behavior, or alias conflicts are undocumented."
+    },
     "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 5,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "boolean silently converts string to true",
-        "Dot-separated parsing allows missing option name"
+        "Silent failures with boolean flag parsing (--bar=value converts to true)",
+        "No strict mode to catch typos in argument names",
+        "Edge case bugs with malformed input (--...==)",
+        "Unexpected behavior requires workarounds"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community for the minimist package is showing mixed sentiment with ongoing issues that have not received much attention, indicating a need for more active maintenance."
+      "abandonment_signals": true,
+      "summary": "minimist shows signs of maintenance decline with critical bug reports (24-comment boolean parsing issue) and feature requests lingering unresolved for 2+ years."
     },
     "communication": {
       "helpfulness": 8,
@@ -234,24 +246,27 @@
       "summary": "The maintainer provides helpful and technically detailed responses, though some could be clearer or more patient with repeated questions. There's a good balance between depth and accessibility."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
+      "status": "stale",
       "confidence": 7,
       "concerns": [
-        "Low commit activity in the past 6 months",
-        "No closed issues in the past 6 months",
-        "Unknown last release date"
+        "14 open issues with no recent resolution activity",
+        "Zero commits in past 6 months despite active use",
+        "No merged PRs in past 6 months - contributions not being integrated",
+        "No active contributors in past 6 months",
+        "Unknown last release date - unclear when users can expect updates",
+        "No indication of maintenance response to reported issues"
       ],
       "positive_signals": [
-        "Merged PRs in the past 6 months",
-        "Open PRs indicating ongoing interest or contributions"
+        "Recent commit on 2025-12-30 shows project is not completely abandoned",
+        "No open PRs suggests either deliberate filtering or low contribution pressure"
       ],
-      "summary": "The package minimist shows minimal maintenance with low commit activity and no recent issue resolution, but there are merged pull requests suggesting some level of engagement."
+      "summary": "Minimist shows signs of abandonment with stale maintenance despite a recent commit; 14 unresolved issues and zero activity in past 6 months indicate the package is no longer actively maintained."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T18:20:09.219505+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

@@ -175,19 +175,35 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 9,
+      "quick_start": 7,
+      "examples": 4,
+      "configuration": 2,
+      "troubleshooting": 4,
+      "overall": 6,
+      "summary": "Clean, well-structured README covering installation and basic initialization, but thin on examples and lacks any configuration or API usage documentation beyond a hello-world snippet.",
+      "top_issue": "No examples of actual search operations (queries, filters, index management) \u2014 the quick start only shows client initialization, not how to use the client"
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug: DEP0169 Uncaught Exception - url.parse() deprecation warning",
-        "Property 'generateSecuredApiKey' does not exist on type 'Algoliasearch'"
+        "Framework compatibility issues (VTEX IO, Metro bundler, Bun runtime, Expo)",
+        "TypeScript type definitions incomplete/missing (generateSecuredApiKey, getObject generics)",
+        "API regressions from v3/v4 to v5 (long API keys, missing generics)",
+        "Node.js deprecation warnings (url.parse() DEP0169)",
+        "Package.json exports configuration causing bundler warnings"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @algolia/client-search package shows a mix of active issue reporting and some unresolved bugs, indicating moderate frustration but no signs of abandonment."
+      "praise_themes": [
+        "Some issues show good community engagement (16-25 comments indicating discussion)",
+        "Recently closed critical issues (DEP0169 deprecation, production build errors)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Package shows signs of maintenance strain: 9/12 issues remain open including a 6-year-old unresolved issue, multiple production-breaking compatibility issues with major frameworks (Bun crash, VTEX IO build failure), and TypeScript type regressions in v5."
     },
     "communication": {
       "helpfulness": 8,
@@ -206,14 +222,17 @@
       "status": "minimal-maintenance",
       "confidence": 7,
       "concerns": [
-        "Low number of contributors active in the past 6 months",
-        "High ratio of open issues to closed issues"
+        "No commits in past 6 months despite 27 open issues",
+        "Zero closed issues in past 6 months indicates stalled issue resolution",
+        "No contributors active in past 6 months",
+        "No merged PRs in past 6 months suggests minimal development",
+        "Release schedule unknown and likely inactive"
       ],
       "positive_signals": [
-        "Frequent commits and releases in the last 6 months",
-        "Open PRs indicate ongoing interest from the community"
+        "Recent commit 3 days ago shows some ongoing attention",
+        "No abandoned open PRs to manage"
       ],
-      "summary": "The package @algolia/client-search shows signs of minimal maintenance with frequent updates but limited contributor activity and a high number of unresolved issues."
+      "summary": "Package receives occasional maintenance touches but lacks sustained development activity or issue resolution."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -225,9 +244,9 @@
       "summary": "The changelog marks breaking changes and includes detailed information, but lacks migration guides and clear categorization."
     },
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T18:49:01.645958+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {
