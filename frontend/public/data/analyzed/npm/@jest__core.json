@@ -175,34 +175,53 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 10,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 2,
+      "overall": 8,
+      "summary": "Excellent onboarding experience with a clear quick-start and good configuration coverage, but nearly no troubleshooting guidance.",
+      "top_issue": "No troubleshooting section \u2014 common issues like ESM/CJS conflicts, transform errors, or module resolution failures are not addressed."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Stale issues",
-        "Build failures",
-        "Feature requests not being addressed"
+        "Performance regression in v30 (1.5x slower than v29, contradicting marketing claims)",
+        "Memory leak after upgrading from v29 to v30",
+        "jest.spyOn() not working with ESM modules",
+        "Issues marked 'Needs Triage' not being prioritized",
+        "Slow upgrade path due to bugs in new releases"
       ],
       "praise_themes": [
-        "Active community engagement in discussions"
+        "Jest developer experience is highly valued",
+        "Community interest in features (AbortSignal, forceRerunTriggers)"
       ],
       "abandonment_signals": true,
-      "summary": "The @jest/core package has a mix of active and stale issues, with some build failures reported. While there is community engagement, the lack of recent activity on many open issues suggests slow maintainer responsiveness."
+      "summary": "Moderately active project with decent user engagement, but v30 release introduced performance regressions and memory leaks that are causing upgrade hesitation; multiple issues languish with 'Needs Triage' labels and 'Stale' markers, suggesting responsiveness gaps despite recent activity."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past 6 months",
-        "Regular releases",
-        "Active contributors"
+      "status": "minimal-maintenance",
+      "confidence": 8,
+      "concerns": [
+        "243 open issues with zero closed in past 6 months indicates unaddressed problems",
+        "No merged PRs in past 6 months despite having a repository",
+        "Zero active contributors in past 6 months",
+        "No commits attributed to development in past 6 months (recent commit appears automated)",
+        "Unknown last release date prevents tracking release cadence",
+        "No evidence of triage or issue management activity"
       ],
-      "summary": "The package @jest/core is actively maintained with frequent commits, regular releases, and an active community of contributors."
+      "positive_signals": [
+        "Very recent commit 2 days ago suggests some form of maintenance activity",
+        "No abandoned repository signs (still has data available)"
+      ],
+      "summary": "@jest/core exhibits stale maintenance patterns with hundreds of unresolved issues, no contributor activity, and no PR merges in 6 months, despite a recent automated commit."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -221,9 +240,9 @@
       "bus_factor_risk": "high",
       "summary": "The governance documentation for @jest/core indicates a single maintainer with no succession plan or documented decision process, posing a high bus factor risk."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T17:43:47.509381+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

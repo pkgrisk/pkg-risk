@@ -178,7 +178,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 6,
+      "installation": 7,
+      "quick_start": 5,
+      "examples": 3,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 4,
+      "summary": "This is a monorepo-level README for Angular CLI that provides a decent overview and setup instructions but offers almost nothing specific to @angular-devkit/build-angular itself.",
+      "top_issue": "The README is for the Angular CLI monorepo as a whole, not for @angular-devkit/build-angular specifically \u2014 it contains no documentation about build-angular's actual builders, configuration options (angular.json), or usage patterns."
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [],
@@ -188,16 +198,18 @@
       "summary": "The code demonstrates good security practices with proper input validation and no exposed secrets, but could improve error handling to prevent information leakage."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Dependency Dashboard",
-        "Extensionless static asset files fail with vite:import-analysis error during dev server"
+        "Security vulnerabilities (prompt injection, vulnerable webpack dependencies)",
+        "Configuration options silently overridden (angular.json overriding vitest.config.ts)",
+        "Generator schematic failures in interactive mode",
+        "Dependency update failures and stale automation issues"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for @angular-devkit/build-angular shows a neutral sentiment with low frustration levels, moderate maintainer responsiveness, and no clear signs of abandonment. Common complaints include dependency management issues and specific build errors."
+      "abandonment_signals": true,
+      "summary": "Mixed health: security issues are being addressed (2 closed), but recent functional bugs receive minimal engagement and a 2022 dependency dashboard issue remains open, indicating uneven maintenance attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -213,15 +225,21 @@
       "summary": "The maintainer responses generally help resolve issues, provide clear explanations, handle repeated questions with patience, offer some technical depth, and encourage new contributors. However, there is room for improvement in detail and context provision."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "High number of merged PRs (266 in the past 6 months)"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "291 open issues with 0 closed in past 6 months",
+        "0 commits in past 6 months (despite single commit today)",
+        "0 merged PRs in past 6 months",
+        "0 active contributors in past 6 months",
+        "Unknown last release date",
+        "No active issue triage or PR review"
       ],
-      "summary": "The package @angular-devkit/build-angular is actively maintained with frequent commits, regular releases, and a high volume of merged pull requests."
+      "positive_signals": [
+        "Single commit recorded today suggests repository is not completely abandoned",
+        "No accumulated merge conflicts (0 open PRs)"
+      ],
+      "summary": "@angular-devkit/build-angular shows signs of stalled maintenance with hundreds of unresolved issues and no development activity for 6 months despite an isolated commit today."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -240,9 +258,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights, but lacks a specific succession plan."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T17:43:36.859929+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

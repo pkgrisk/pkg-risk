@@ -196,7 +196,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 8,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Well-structured docs with clear CLI reference but lacks concrete usage examples and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section and minimal worked examples showing real minification workflows."
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [],
@@ -207,15 +217,18 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Specifying `unsafe` causes hang/freeze",
-        "Reassigned string variable is duplicated in the final output when concatenated"
+        "Minification bugs producing incorrect/invalid output",
+        "Performance issues and hangs with certain options",
+        "Unsafe optimizations removing side effects (Symbol.toPrimitive, property access)",
+        "CLI parsing edge cases",
+        "Inconsistent optimization behavior"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the terser package shows a mix of open and closed issues, indicating ongoing development but also some unresolved problems. The frustration level is moderate due to reported bugs and performance issues, while there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Active but under-resourced: Recent bug fixes and issue closures show ongoing development, but a growing backlog of critical issues dating back to 2020 (6+ years open) and unresolved enhancement requests with 20+ comments suggest maintenance capacity constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,17 +241,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth in explanations and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (273) and PRs (30), indicating unresolved problems.",
-        "Low activity in terms of merged PRs (1) over the past 6 months."
+        "327 open issues completely unaddressed",
+        "Zero commits for 6 months prior to today",
+        "Zero closed issues in past 6 months",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Regular commits (18) in the last 6 months, showing some level of ongoing development.",
-        "Two contributors have been active recently, suggesting continued interest from the community."
+        "Single commit made today (isolated activity, insufficient for maintenance)"
       ],
-      "summary": "The terser package shows minimal maintenance with regular commits but a high backlog of unresolved issues and PRs."
+      "summary": "Terser appears abandoned: 327 unresolved issues and zero maintenance activity for 6 months despite a single commit today, suggesting no ongoing support or development."
     },
     "changelog": null,
     "governance": {
@@ -249,9 +265,9 @@
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the npm package 'terser' outlines a clear decision-making process and code of conduct but lacks details on succession planning, contributor pathways to becoming maintainers, and indicates a single maintainer with merge rights, posing a high bus factor risk."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T17:22:53.743248+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

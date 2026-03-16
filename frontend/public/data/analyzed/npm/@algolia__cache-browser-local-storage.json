@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
-      "installation": 3,
-      "quick_start": 2,
-      "examples": 1,
-      "configuration": 1,
+      "clarity": 4,
+      "installation": 8,
+      "quick_start": 6,
+      "examples": 3,
+      "configuration": 2,
       "troubleshooting": 4,
-      "overall": 2,
-      "summary": "The README does not provide clear or specific documentation for the @algolia/cache-browser-local-storage package, leading to confusion and lack of guidance.",
-      "top_issue": "The README is for a different package (algoliasearch) and does not address the cache-browser-local-storage package."
+      "overall": 4,
+      "summary": "The README is for the parent algoliasearch package and does not document the actual @algolia/cache-browser-local-storage sub-package at all.",
+      "top_issue": "README describes the top-level algoliasearch client, not this specific cache adapter package \u2014 there is zero documentation about what @algolia/cache-browser-local-storage does, its API, or how to use it directly."
     },
     "security": {
       "overall_score": 7,
@@ -196,15 +196,19 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug: DEP0169 Uncaught Exception - url.parse() deprecation warning",
-        "Property 'generateSecuredApiKey' does not exist on type 'Algoliasearch'"
+        "Build tool compatibility issues (VTEX IO, Metro, Bun bundler warnings)",
+        "Missing TypeScript type definitions (getObject, generateSecuredApiKey)",
+        "Runtime environment incompatibilities (Expo, Bun, Hono)",
+        "Node.js API deprecation warnings (url.parse deprecation)",
+        "API key length limitations causing production issues",
+        "Invalid package.json export configurations causing warnings"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @algolia/cache-browser-local-storage package shows a mix of active issue reporting and some unresolved bugs, indicating moderate frustration levels. The maintainers are responding to issues but not as quickly as desired by some users."
+      "abandonment_signals": true,
+      "summary": "Mixed community health with moderate maintainer engagement but concerning backlog of unresolved compatibility issues spanning 6+ years, particularly long-standing API key length limitations and recent build system incompatibilities."
     },
     "communication": {
       "helpfulness": 8,
@@ -220,17 +224,19 @@
       "summary": "The maintainer responses generally help resolve issues but could benefit from more clarity, patience in handling repeated questions, and technical depth in explanations. New contributors are not explicitly encouraged."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of contributors active in the past six months",
-        "High number of open issues compared to closed ones"
+        "27 open issues with no closure activity in 6 months",
+        "No commits in past 6 months despite recent activity",
+        "No merged PRs or pull request activity in 6 months",
+        "No active contributors in past 6 months",
+        "No release history available"
       ],
       "positive_signals": [
-        "Regular commits and releases",
-        "Merged pull requests indicating some level of community contribution handling"
+        "Very recent commit on 2026-03-13 shows some activity"
       ],
-      "summary": "The package shows minimal maintenance with regular updates but has a low contributor base and a significant backlog of unresolved issues."
+      "summary": "Package appears stale with no meaningful maintenance activity over 6 months despite a very recent commit, accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -242,9 +248,9 @@
       "summary": "The changelog marks breaking changes but lacks migration guides, clear categorization, and completeness."
     },
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T17:16:07.802180+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

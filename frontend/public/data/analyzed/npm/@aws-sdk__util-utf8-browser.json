@@ -181,19 +181,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 4,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 4,
+      "summary": "The README documents the AWS SDK v3 monorepo well but is nearly irrelevant to the specific package @aws-sdk/util-utf8-browser, which is a low-level utility with no dedicated documentation.",
+      "top_issue": "The README contains no information specific to @aws-sdk/util-utf8-browser \u2014 its purpose, API, or usage \u2014 making it useless for someone trying to understand or use this particular package."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug",
-        "potential-regression"
+        "Release process failures (packages publishing out of order, unmet dependencies)",
+        "Performance regressions (Lambda Node 22 coldstart latency)",
+        "Documentation/navigation issues",
+        "Test infrastructure problems (DynamoDB Local integration)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health of the @aws-sdk/util-utf8-browser package shows a mix of open and closed issues, with some indicating bugs and potential regressions. While there are active discussions on several issues, the lack of recent activity on some open tickets suggests moderate responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "AWS SDK shows active issue resolution on recent P1 problems but signals maintenance strain with a 1-year-old open regression, untriaged recent bugs, and recurring release process failures."
     },
     "communication": {
       "helpfulness": 7,
@@ -209,15 +221,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary but sometimes lack detail or context, which can be confusing for less experienced users."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "Active contributors"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "160 open issues with zero closed in past 6 months indicates lack of maintenance",
+        "Zero commits, PRs, and active contributors for 6 months",
+        "No information on release history or version updates",
+        "High open issue ratio suggests issues are accumulating without resolution"
       ],
-      "summary": "The package @aws-sdk/util-utf8-browser is actively maintained with frequent commits, regular releases, and active contributors."
+      "positive_signals": [
+        "Recent commit on 2026-03-16 indicates some minimal activity",
+        "Part of official AWS SDK ecosystem (may have indirect organizational support)"
+      ],
+      "summary": "Package is effectively stale with minimal maintenance; 160 unaddressed issues and no activity for 6 months despite a recent isolated commit suggest it is no longer actively developed."
     },
     "changelog": null,
     "governance": {
@@ -228,9 +244,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T17:26:12.314758+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

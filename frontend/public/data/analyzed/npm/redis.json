@@ -194,19 +194,32 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 7,
+      "troubleshooting": 2,
+      "overall": 7,
+      "summary": "Excellent getting-started experience with clear installation, a working basic example, and good coverage of common patterns, but lacks troubleshooting guidance and some advanced configuration details are delegated to external docs.",
+      "top_issue": "No troubleshooting section \u2014 common problems like connection failures, auth errors, or reconnection behavior are not addressed in the README."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "TypeError: Cannot read properties of undefined (reading 'address') when subscribing to channels in Redis Cluster",
-        "`RedisClientType` type is slow to typecheck (TS performance issue)"
+        "Connection stability issues (hangs, socket errors, unexpected closures)",
+        "Redis Cluster and Sentinel failover failures",
+        "TypeScript type checking performance (OOM in CI)",
+        "Missing/incomplete documentation",
+        "API gaps requiring internal API workarounds"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the redis npm package shows a mix of ongoing issues and some unresolved bugs, with moderate frustration levels. There are no clear signs of praise or abandonment, but the slow response from maintainers is a concern."
+      "summary": "Redis npm client shows active but strained maintenance: critical connection stability bugs remain open with minimal engagement, while some issues are resolved, indicating moderate responsiveness under load."
     },
     "communication": {
       "helpfulness": 6,
@@ -222,15 +235,19 @@
       "summary": "The maintainer responses are generally helpful, clear, patient, and welcoming to new contributors. However, they sometimes lack technical depth and brevity can be an issue."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past 6 months",
-        "Regular releases",
-        "Active contributors"
+      "status": "minimal-maintenance",
+      "confidence": 8,
+      "concerns": [
+        "279 open issues with zero closed in past 6 months indicates issue backlog is not being managed",
+        "Zero commits in past 6 months despite recent commit (likely automated)",
+        "Zero active contributors in past 6 months",
+        "Zero merged PRs in past 6 months shows no development activity",
+        "Last release timestamp unknown, cannot verify release cadence"
       ],
-      "summary": "The redis package is actively maintained with frequent commits, regular releases, and an active community of contributors."
+      "positive_signals": [
+        "Single recent commit on 2026-03-11 (though unlikely to indicate active maintenance)"
+      ],
+      "summary": "Package appears abandoned or in minimal-maintenance state with large unresolved issue backlog and zero development activity over 6 months despite recent commit."
     },
     "changelog": null,
     "governance": {
@@ -241,9 +258,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a path for new contributors but lacks details on succession planning, decision-making processes, and indicates a single maintainer with merge rights, posing moderate risk."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T17:47:04.946786+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

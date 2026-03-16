@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 7,
-      "troubleshooting": 5,
-      "overall": 8,
-      "summary": "The README provides clear and comprehensive documentation with good examples, but lacks specific details for the hex-encoding package and troubleshooting.",
-      "top_issue": "Lack of dedicated troubleshooting section with common issues and solutions."
+      "clarity": 5,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README thoroughly covers the AWS SDK v3 monorepo but provides virtually no documentation specific to the @aws-sdk/util-hex-encoding utility package itself.",
+      "top_issue": "README is the generic AWS SDK v3 monorepo README, not specific to @aws-sdk/util-hex-encoding \u2014 the package's purpose, API, and usage are never explained."
     },
     "security": null,
     "sentiment": {
@@ -198,12 +198,15 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug",
-        "potential-regression"
+        "Release publishing not respecting topological order - causes installation failures for dependent packages",
+        "Dependency versioning issues - packages referencing unreleased versions",
+        "Performance regressions - Node 22 Lambda coldstart latency impact",
+        "Test failures and brittleness",
+        "Documentation link errors"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health of the @aws-sdk/util-hex-encoding package shows a mix of open and closed issues, with some indicating bugs and potential regressions. While there are active discussions on several issues, the lack of recent activity on some open issues suggests moderate responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "Mixed health: recent issues resolved quickly, but year-old open bug unresolved and newest bug (3 days old) untriaged, revealing gaps in release process quality and triaging consistency."
     },
     "communication": {
       "helpfulness": 7,
@@ -219,15 +222,20 @@
       "summary": "The maintainer responses provide useful information and solutions, but they vary in depth and clarity. They handle repeated questions patiently and encourage new contributors, though some explanations could benefit from additional detail."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "Active contributors"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "160 open issues with zero closed in past 6 months",
+        "No contributor activity in past 6 months",
+        "No merged PRs or pull request activity in past 6 months",
+        "Unknown last release date - no recent release history",
+        "Issues accumulating without resolution"
       ],
-      "summary": "The package @aws-sdk/util-hex-encoding is actively maintained with frequent commits, regular releases, and active contributors."
+      "positive_signals": [
+        "Recent commit on 2026-03-16 suggests some activity",
+        "Part of established AWS SDK ecosystem"
+      ],
+      "summary": "Package shows signs of abandonment with 160 unresolved issues and zero maintenance activity over 6 months, despite a recent single commit."
     },
     "changelog": null,
     "governance": {
@@ -238,9 +246,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, but lacks details on succession planning and indicates only one maintainer with merge rights."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T17:12:19.332241+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
+      "clarity": 6,
+      "installation": 7,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 5,
-      "overall": 7,
-      "summary": "The README provides a clear and comprehensive overview with good installation and configuration guidance, but lacks specific examples for the SSM client and detailed troubleshooting.",
-      "top_issue": "Lack of service-specific examples and limited troubleshooting information."
+      "examples": 7,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "The README covers SDK-wide concepts well but is generic to the entire AWS SDK v3 rather than specific to @aws-sdk/client-ssm, leaving SSM-specific usage undocumented.",
+      "top_issue": "The README contains no SSM-specific content \u2014 all examples use DynamoDB/Lambda, so a user trying to use the SSM client gets no relevant quick start, commands, or configuration guidance."
     },
     "security": null,
     "sentiment": {
@@ -198,12 +198,14 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "TypeError with dynamic imports in Jest",
-        "Checksum mismatch errors"
+        "Package dependency ordering causing installation failures during releases",
+        "Performance regression in Lambda Node 22 coldstart latency",
+        "Documentation linking issues",
+        "Test failures with DynamoDB Local"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/client-ssm package shows a mix of open and closed issues, indicating ongoing development but also some unresolved problems. Users report frustration with specific bugs and compatibility issues, while there are no explicit praises noted."
+      "summary": "Project shows active maintenance with quick turnarounds on most issues, but a critical Lambda performance regression remains unresolved after ~1 year despite community engagement, suggesting potential prioritization or resource constraints."
     },
     "communication": {
       "helpfulness": 7,
@@ -219,15 +221,21 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary but sometimes lack detail or context, which can be confusing for less experienced users."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases (last release on 2026-02-24)",
-        "Active PR merging (256 merged in the past 6 months)"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "159 open issues with no closure activity in 6 months",
+        "0 commits in past 6 months despite recent timestamp",
+        "0 merged PRs in 6 months - no active development",
+        "No contributors active in past 6 months",
+        "Unknown last release - can't assess release cadence",
+        "Backlog accumulation suggests abandonment or minimal triage"
       ],
-      "summary": "The package @aws-sdk/client-ssm is actively maintained with frequent commits, regular releases, and active pull request management."
+      "positive_signals": [
+        "Last commit timestamp is recent (though data inconsistency exists)",
+        "0 open PRs prevents stalled work accumulation"
+      ],
+      "summary": "Package is stale with no meaningful development activity over 6 months; recent timestamp contradicts commit history, suggesting possible abandoned state or automated sync."
     },
     "changelog": null,
     "governance": {
@@ -238,9 +246,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T17:37:28.544832+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {
