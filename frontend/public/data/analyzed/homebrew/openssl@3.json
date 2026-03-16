@@ -181,18 +181,29 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 5,
+      "quick_start": 2,
+      "examples": 3,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README provides a solid high-level overview and good links to external docs, but defers almost all practical guidance to separate files, leaving users with no quick-start examples or troubleshooting help in the README itself.",
+      "top_issue": "No quick-start or usage examples \u2014 a new user cannot do anything useful with OpenSSL from this README alone, as all build, configuration, and usage details are punted to external documents."
+    },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Documentation for removed APIs is missing"
+        "DSA signature verification failures with SHA384/SHA512",
+        "FIPS module installation and runtime issues in 4.0.0-alpha1"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health appears neutral with a minor concern about documentation completeness, and no signs of abandonment."
+      "summary": "OpenSSL maintains active engagement with critical cryptographic bugs being triaged and resolved, though recent regressions in FIPS support suggest quality challenges in alpha releases."
     },
     "communication": {
       "helpfulness": 8,
@@ -208,15 +219,19 @@
       "summary": "The maintainer provides helpful and technically detailed responses, though some explanations could be clearer and more concise for less experienced users."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months",
-        "Frequent releases",
-        "Active contributors"
+      "concerns": [
+        "Zero commits, merged PRs, and closed issues in past 6 months despite 1615 open issues",
+        "No active contributors for 6+ months",
+        "Massive unaddressed issue backlog",
+        "Unknown last release - no clear versioning/release process",
+        "Contradiction between recent 'last commit' timestamp and zero 6-month activity metrics"
       ],
-      "summary": "The package is actively maintained with a high frequency of commits, regular releases, and an active community of contributors."
+      "positive_signals": [
+        "Last commit timestamp exists (though contradicts activity data)"
+      ],
+      "summary": "Repository appears abandoned with zero maintenance activity over 6 months and a critical 1615-issue backlog."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -235,9 +250,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:45:42.827999+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

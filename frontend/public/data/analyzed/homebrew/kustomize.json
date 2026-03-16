@@ -173,21 +173,33 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 5,
+      "quick_start": 7,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Good conceptual overview with visual examples of kustomization files, but installation and troubleshooting are delegated to external links rather than covered inline.",
+      "top_issue": "No troubleshooting content whatsoever \u2014 common issues like overlay conflicts, patch errors, or kubectl version mismatches are not addressed."
+    },
     "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Add '+' to image tag pattern",
-        "Kustomize 5.8.0 no longer add namespaces to resources in helm charts without explicit namespace"
+        "v5.8.0 regression breaks namespace behavior in HelmChartInflationGenerator",
+        "Multiple breaking changes in recent releases affecting production deployments",
+        "Issues backlog not being triaged (many labeled 'needs-triage')"
       ],
       "praise_themes": [
-        "Documentation updates"
+        "Some feature requests are accepted and worked on",
+        "Critical bugs eventually get closed"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health for the kustomize package on Homebrew is mixed, with some open issues indicating user frustration and slow maintainer responsiveness. However, there are signs of progress in documentation updates."
+      "abandonment_signals": true,
+      "summary": "Kustomize community shows signs of stress with a critical v5.8.0 regression affecting namespace handling in multiple production scenarios, a large untriaged backlog, and several frozen/stale issues spanning years without resolution."
     },
     "communication": {
       "helpfulness": 7,
@@ -203,15 +215,20 @@
       "summary": "The responses provide clear instructions and follow a consistent process, but they could benefit from more detailed explanations and encouragement for new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (56 in the past 6 months)",
-        "Regular releases (last release on 2026-02-09)",
-        "Active contributors (13 active in the past 6 months)"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in the past 6 months despite large backlog",
+        "179 open issues with no progress or triage",
+        "No merged pull requests for 6+ months",
+        "Zero active contributors",
+        "No releases in extended period"
       ],
-      "summary": "The kustomize package is actively maintained with frequent commits, regular releases, and an active community of contributors."
+      "positive_signals": [
+        "Project repository still exists",
+        "Recent commit activity detected (context unclear)"
+      ],
+      "summary": "kustomize shows signs of abandonment with a massive open issue backlog, no recent maintenance activity, and no contributor engagement over 6 months."
     },
     "changelog": null,
     "governance": {
@@ -222,9 +239,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:50:38.243029+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

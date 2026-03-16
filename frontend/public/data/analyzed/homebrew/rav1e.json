@@ -177,19 +177,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 5,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Well-structured README covering building and basic usage, but focused on developers building from source rather than end-users installing via Homebrew.",
+      "top_issue": "No Homebrew-specific installation or usage instructions \u2014 the entire README assumes building from source with Rust/cargo, which is irrelevant for Homebrew users."
+    },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Dependency management",
-        "Security vulnerabilities"
+        "Security vulnerability (CVE-2025-4574) dismissed as invalid despite MEDIUM severity",
+        "Deprecated test APIs (assert_cmd::cargo_bin) creating future compatibility issues",
+        "Unresolved bugs in core encoder logic (buffer handling)",
+        "Stale dependency management (Renovate dashboard open since 2023 with no activity)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health of the rav1e project appears neutral, with moderate responsiveness to dependency and security issues. There are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "rav1e shows signs of maintenance mode with unresolved security vulnerabilities, accumulating technical debt, and minimal maintainer engagement on recent issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -205,18 +217,21 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide sufficient technical depth for most issues and encourage new contributors, though some responses could benefit from additional detail."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of commits in the past 6 months",
-        "High number of open issues",
-        "Few contributors active recently"
+        "259 open issues with zero closed in past 6 months",
+        "No commits in past 6 months despite recent commit 2 days ago (data inconsistency or sporadic activity)",
+        "Zero merged PRs in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date",
+        "Massive backlog of unaddressed issues suggests abandoned or severely deprioritized project"
       ],
       "positive_signals": [
-        "Regular releases",
-        "Some merged PRs"
+        "Very recent commit activity (2026-03-13, 2 days ago)",
+        "Repository still exists and has some minimal activity"
       ],
-      "summary": "The package rav1e shows minimal maintenance with infrequent commits, a high number of unresolved issues, and limited recent contributor activity, though it does have regular releases and some merged pull requests."
+      "summary": "rav1e appears abandoned or severely stalled with 259 unaddressed issues and no maintenance activity over 6 months, despite a recent isolated commit suggesting possible but infrequent oversight."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -235,9 +250,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:43:40.839375+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

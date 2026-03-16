@@ -178,7 +178,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "Excellent conceptual overview and feature descriptions, but critically lacks installation instructions, usage examples, and troubleshooting for end users.",
+      "top_issue": "No installation instructions or quick-start example visible in the provided README content \u2014 users cannot get started without hunting through linked docs."
+    },
     "security": {
       "overall_score": 7,
       "injection_risks": [],
@@ -188,16 +198,21 @@
       "summary": "The code has some input validation concerns but no critical security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "unresponsive",
+      "sentiment": "mixed",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "The functions called from destructor of CUDTUnited shall not refer to any global objects",
-        "Inconsistent unbinding of a closed socket from a group"
+        "Thread safety and synchronization issues (cleanup, socket closing, destructor crashes)",
+        "Architectural inconsistencies in packet filtering and socket state management",
+        "Documentation clarity on configuration parameters for high-bitrate scenarios"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Well-documented technical issues with clear reproduction steps",
+        "Proactive identification of maintenance and architectural improvements",
+        "Timely bug fixes (recent closure of srt_connect() race condition)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is negative due to multiple open issues without comments or resolution, indicating a lack of maintainer responsiveness and ongoing bugs affecting the core functionality."
+      "summary": "Project shows active maintenance with recent bug fixes and architectural improvements, but limited community discussion (5 of 8 open issues have zero comments) suggests a small core team and minimal broader community engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -213,18 +228,19 @@
       "summary": "The maintainer provides detailed and technically sound responses, helping resolve issues with clarity. However, there's room for improvement in handling repeated or basic questions more succinctly."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "High number of open issues (240) and PRs (66)",
-        "Moderate contributor activity in the past 6 months"
+        "351 open issues with zero closed in past 6 months - massive unresolved backlog",
+        "No active contributors in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "Last release unknown - version likely abandoned",
+        "Data inconsistency: 0 commits in 6 months but commit 3 days ago"
       ],
       "positive_signals": [
-        "Regular commits (16 in the last 6 months)",
-        "Frequent issue closure (21 closed in the last 6 months)",
-        "Recent release (September 2025)"
+        "One commit 3 days ago, though isolated"
       ],
-      "summary": "The srt package is maintained with regular activity, including frequent commits and issue resolution, but has a high backlog of open issues and PRs."
+      "summary": "Project is stale with accumulating unresolved issues and no active development, contributor engagement, or releases over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -235,9 +251,9 @@
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the Homebrew package 'srt' does not address succession planning, decision-making processes, or multiple maintainers. It provides a path from contributor to maintainer but lacks detailed guidance on how contributors can become maintainers."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:47:16.612517+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
+      "clarity": 6,
+      "installation": 8,
       "quick_start": 7,
       "examples": 5,
-      "configuration": 4,
-      "troubleshooting": 6,
-      "overall": 7,
-      "summary": "A clear and well-structured README with good installation instructions but lacking in examples and configuration details.",
-      "top_issue": "Lack of comprehensive examples and configuration documentation."
+      "configuration": 3,
+      "troubleshooting": 5,
+      "overall": 6,
+      "summary": "The README is polished and covers installation and basic usage well, but it describes the parent `algoliasearch` package rather than `@algolia/requester-common` itself, leaving the actual purpose of this specific package unexplained.",
+      "top_issue": "The README is entirely about `algoliasearch`, not `@algolia/requester-common` \u2014 a developer installing this package has no idea what it does, how to use it directly, or whether they should be using it at all versus the higher-level client."
     },
     "security": {
       "overall_score": 6,
@@ -199,12 +199,15 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "DEP0169 Uncaught Exception - url.parse() deprecation warning",
-        "Property 'generateSecuredApiKey' does not exist on type 'Algoliasearch'"
+        "Bundler compatibility issues (VTEX IO, Metro, Bun, Expo not supported)",
+        "Missing or incomplete TypeScript type definitions (generateSecuredApiKey, getObject)",
+        "Invalid package.json exports configuration causing build warnings",
+        "Deprecated Node.js API usage (url.parse deprecation)",
+        "Long API keys and multi-query request limitations"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @algolia/requester-common package shows a mix of resolved and ongoing issues, with some users experiencing frustration due to deprecation warnings and missing type definitions. Maintainer responsiveness is moderate, as evidenced by closed issues but open ones still awaiting resolution."
+      "abandonment_signals": true,
+      "summary": "Package has moderate health with multiple unresolved environment compatibility issues, incomplete type definitions, and evidence of slow maintenance (2020 issue still open with 25 comments)."
     },
     "communication": {
       "helpfulness": 8,
@@ -220,17 +223,20 @@
       "summary": "The maintainer responses provide useful information to resolve issues but often lack depth and clarity, especially for less experienced users. They handle repeated questions with a mix of helpfulness and brevity, and do not explicitly encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 8,
       "concerns": [
-        "Low number of contributors active in the past 6 months",
-        "High number of open issues compared to closed ones"
+        "Zero commits in past 6 months despite recent last commit timestamp (data inconsistency)",
+        "27 open issues accumulating with no activity",
+        "No contributors active for 6+ months",
+        "Zero merged PRs and zero closed issues in 6 months",
+        "No recent releases documented",
+        "Complete stagnation across all maintenance metrics"
       ],
       "positive_signals": [
-        "Frequent commits and releases in the last 6 months",
-        "Some merged pull requests indicating community contributions are being considered"
+        "Very recent last commit timestamp (2026-03-13)"
       ],
-      "summary": "The package @algolia/requester-common shows signs of minimal maintenance with frequent updates but a low contributor base and unresolved issues."
+      "summary": "Package is effectively abandoned with no maintenance activity for 6+ months and growing issue backlog, despite a recent commit timestamp that contradicts the activity metrics."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -242,9 +248,9 @@
       "summary": "The changelog marks breaking changes and includes detailed information, but lacks migration guides and clear categorization."
     },
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:55:44.366352+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

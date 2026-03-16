@@ -171,7 +171,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 8,
+      "installation": 7,
+      "quick_start": 6,
+      "examples": 8,
+      "configuration": 5,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Solid C library documentation with good examples and build instructions, but lacks troubleshooting guidance and deeper API configuration docs beyond the header file.",
+      "top_issue": "No troubleshooting section \u2014 common build or integration errors are undocumented, and API configuration options are deferred entirely to the header file."
+    },
     "security": {
       "overall_score": 8,
       "injection_risks": [],
@@ -181,16 +191,18 @@
       "summary": "The code demonstrates strong input validation and error handling practices, with minimal security risks identified."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Global OOB read in `utf8proc_map` via `CHARBOUND`+`COMPOSE`",
-        "Support using external/static bounded buffers for [de]composing"
+        "Hardcoded build flags (CFLAGS) reduce flexibility for embedded/corner cases",
+        "Unicode category regression in v2.11.3 (U+0295 misclassification)",
+        "Security vulnerability: global out-of-bounds read with CHARBOUND+COMPOSE",
+        "API limitation: no support for external/static bounded buffers for composition operations"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health of the utf8proc package is neutral, with some issues reported and resolved. The maintainer appears active in addressing concerns, but there are no explicit praises noted."
+      "summary": "Actively maintained project with responsive issue resolution including security vulnerabilities, but users identify legitimate technical constraints around build flexibility and API surface area."
     },
     "communication": {
       "helpfulness": 8,
@@ -203,21 +215,26 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth in addressing issues and encourage new contributors without being overly complex or dismissive."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past 6 months",
-        "Regular issue closure and PR merging",
-        "Recent release"
+      "status": "stale",
+      "confidence": 6,
+      "concerns": [
+        "31 open issues with zero closure or triage in 6 months indicates neglected bug/feature tracking",
+        "No merged PRs in 6 months suggests pull requests are not being reviewed or integrated",
+        "Zero active contributors in 6 months indicates maintainer(s) are not engaged",
+        "No releases recorded - unclear if package is actively versioned or distributed",
+        "Data inconsistency: last commit 6 days ago but zero commits in 6-month window suggests monitoring gaps"
       ],
-      "summary": "The package utf8proc is actively maintained with frequent updates, regular issue resolution, and recent releases."
+      "positive_signals": [
+        "Most recent commit is very recent (2026-03-09), suggesting some activity exists",
+        "No merge conflicts or stalled PRs indicates project isn't in active development conflict"
+      ],
+      "summary": "Project shows signs of abandonment with 31 unaddressed issues, no contributor activity for 6 months, and no PR merges, despite a recent commit that may not be reflected in historical metrics."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T01:46:44.664686+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
