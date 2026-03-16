@@ -52,17 +52,16 @@ class NpmAdapter(BaseAdapter):
                 await client.aclose()
 
     async def list_packages(self, limit: int | None = None) -> list[str]:
-        """Return list of NPM package names, sorted by dependents (most depended upon).
+        """Return list of NPM package names, sorted by popularity score.
 
-        Uses a curated list of highly-depended-upon packages as the npms.io search
-        API doesn't support wildcard listing. These are the most critical packages
-        in the npm ecosystem.
+        Fetches packages from npms.io API which provides quality/popularity scores.
+        Falls back to curated list if API is unavailable.
 
         Args:
-            limit: Maximum number of packages to return.
+            limit: Maximum number of packages to return (default 5000).
 
         Returns:
-            List of package names, most depended-upon first.
+            List of package names, most popular first.
         """
         if self._popular_packages_cache is not None:
             packages = self._popular_packages_cache
@@ -70,15 +69,76 @@ class NpmAdapter(BaseAdapter):
                 return packages[:limit]
             return packages
 
-        # Use curated list of most-depended-upon npm packages
-        # Source: npm "most dependents" list + GitHub data on usage
-        # These packages form the critical infrastructure of npm
-        packages = self._get_popular_packages()
+        # Default to 5000 packages for comprehensive coverage
+        target_limit = limit or 5000
+
+        # Try fetching from npms.io API
+        packages = await self._fetch_popular_from_npms(target_limit)
+
+        # Fall back to curated list if API fails
+        if not packages:
+            packages = self._get_popular_packages()
 
         self._popular_packages_cache = packages
 
         if limit is not None:
             return packages[:limit]
+        return packages
+
+    async def _fetch_popular_from_npms(self, limit: int) -> list[str]:
+        """Fetch popular packages from npms.io API.
+
+        Args:
+            limit: Maximum number of packages to fetch.
+
+        Returns:
+            List of package names sorted by popularity.
+        """
+        packages = []
+        page_size = 250  # Max allowed by npms.io
+        offset = 0
+
+        try:
+            client = await self._get_client()
+            try:
+                while len(packages) < limit:
+                    url = (
+                        f"{self.NPMS_URL}/search"
+                        f"?q=not:deprecated+not:insecure"
+                        f"&size={page_size}"
+                        f"&from={offset}"
+                    )
+                    response = await client.get(url, timeout=30.0)
+
+                    if response.status_code != 200:
+                        break
+
+                    data = response.json()
+                    results = data.get("results", [])
+
+                    if not results:
+                        break
+
+                    for obj in results:
+                        pkg = obj.get("package", {})
+                        name = pkg.get("name")
+                        if name and name not in packages:
+                            packages.append(name)
+                            if len(packages) >= limit:
+                                break
+
+                    offset += page_size
+
+                    # Safety limit to avoid infinite loops
+                    if offset > 10000:
+                        break
+            finally:
+                if self._client is None:
+                    await client.aclose()
+        except Exception:
+            # Fall back to curated list on any error
+            pass
+
         return packages
 
     def _get_popular_packages(self) -> list[str]:
@@ -210,8 +270,10 @@ class NpmAdapter(BaseAdapter):
             return None
 
         # Clean up common npm URL patterns
-        url = url.replace("git+", "").replace("git://", "https://")
-        url = url.rstrip(".git")
+        url = url.replace("git+", "").replace("git://", "https://").replace("ssh://git@", "https://")
+        # Strip URL fragments (e.g., #main) and query strings before .git suffix
+        url = url.split("#")[0].split("?")[0]
+        url = url.removesuffix(".git")
 
         # Handle GitHub shorthand
         if url.startswith("github:"):
@@ -308,8 +370,10 @@ class NpmAdapter(BaseAdapter):
 
         # Handle npm-specific patterns first
         # git+https://github.com/owner/repo.git
-        url = url.replace("git+", "").replace("git://", "https://")
-        url = url.rstrip(".git")
+        url = url.replace("git+", "").replace("git://", "https://").replace("ssh://git@", "https://")
+        # Strip URL fragments (e.g., #main) and query strings before .git suffix
+        url = url.split("#")[0].split("?")[0]
+        url = url.removesuffix(".git")
 
         # GitHub shorthand: github:owner/repo
         if url.startswith("github:"):
