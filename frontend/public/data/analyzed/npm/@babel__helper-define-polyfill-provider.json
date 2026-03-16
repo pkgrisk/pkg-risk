@@ -178,19 +178,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 7,
+      "installation": 3,
+      "quick_start": 6,
+      "examples": 8,
+      "configuration": 6,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "Good conceptual coverage with solid examples of injection methods, but lacks installation instructions and troubleshooting, and the README appears to be cut off mid-sentence.",
+      "top_issue": "No installation instructions \u2014 users must figure out on their own how to install the package and its dependencies"
+    },
     "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Babel/core-js URL polyfill breaks Webpack's new URL() for Web Workers",
-        "Cannot read properties of undefined (reading 'xxx')"
+        "Stack overflow regression in 0.6.7 breaking production builds",
+        "Polyfill injection fails in certain mode combinations (global-usage, usage-pure)",
+        "Webpack Web Worker integration broken by URL polyfill",
+        "Missing globalThis injection with built-ins"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health shows mixed sentiment with ongoing issues related to compatibility and unresolved bugs, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Critical regression in v0.6.7 causing production build failures with zero maintainer response across 4 open issues, combined with unresolved bugs from July 2025, indicating project abandonment or severe maintenance gaps."
     },
     "communication": {
       "helpfulness": 7,
@@ -206,18 +218,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary and encourage new contributors, though some could benefit from additional detail."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of commits in the past six months",
-        "No closed issues in the past six months",
-        "Unknown last release date"
+        "36 open issues with zero closed in past 6 months indicates unresolved problems accumulating",
+        "Zero commits in past 6 months despite recent timestamp suggests no active development",
+        "No merged PRs in 6 months indicates no active pull request workflow",
+        "Zero active contributors in past 6 months means no team engagement",
+        "Unknown last release suggests no versioning activity"
       ],
       "positive_signals": [
-        "Open pull requests indicating some level of interest or ongoing work",
-        "Contributors are still active"
+        "Repository still exists and has a recent commit timestamp",
+        "Zero open PRs indicates the project isn't accepting new contributions (avoids building on stale code)"
       ],
-      "summary": "The package @babel/helper-define-polyfill-provider shows minimal maintenance with recent activity but lacks frequent updates and issue resolution."
+      "summary": "This package is stale with 36 unresolved issues and zero maintenance activity over the past 6 months despite a recent commit timestamp."
     },
     "changelog": null,
     "governance": {
@@ -228,9 +242,9 @@
       "bus_factor_risk": "high",
       "summary": "The documentation does not address succession planning, decision-making processes, or multiple maintainers, indicating a high bus factor risk. However, it provides a path for contributors to become more involved."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:00:29.248870+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

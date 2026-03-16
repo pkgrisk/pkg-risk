@@ -175,36 +175,50 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 10,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Excellent onboarding experience with clear installation and a complete end-to-end quick start, but lacks troubleshooting guidance and the README is for the `jest` package rather than the scoped `@jest/expect` internal package.",
+      "top_issue": "The README is for the top-level `jest` package, not the `@jest/expect` sub-package \u2014 users looking for `@jest/expect`-specific API docs (matchers, `expect()` API) get no targeted information."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Stale issues",
-        "Build failures",
-        "Coverage collection issues"
+        "Jest 30 performance regression (1.5x slower than v29, contradicting marketing claims)",
+        "Memory leak on upgrade from v29 to v30 (100MB per test suite)",
+        "ESM module issues (jest.spyOn() mocking not working across module boundaries)",
+        "TypeScript type system crashes (spyOn overload selection, non-Error object handling)",
+        "Missing config file format support (jest.config.mts)"
       ],
       "praise_themes": [
-        "Feature proposals",
-        "Documentation suggestions"
+        "Superior developer experience in watch mode"
       ],
       "abandonment_signals": true,
-      "summary": "The community health for @jest/expect shows mixed sentiment with several open, stale issues indicating slow maintainer responsiveness and frustration among users. Common complaints include build failures and coverage collection problems, while there are also feature proposals and documentation suggestions."
+      "summary": "Jest shows active maintenance but is struggling with performance regressions in v30, critical memory leaks, and ESM/TypeScript edge cases; recent issues lack engagement despite clear blocker-level bugs."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits in the past six months",
-        "Regular releases",
-        "Active contributors",
-        "High number of closed issues"
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "243 open issues with zero resolution in past 6 months",
+        "No commits in past 6 months despite recent activity 2 days ago",
+        "No merged PRs or contributor activity in past 6 months",
+        "Unknown last release date suggests version management gap"
       ],
-      "summary": "The package @jest/expect is actively maintained with frequent commits, regular releases, and active contributions."
+      "positive_signals": [
+        "Very recent commit on 2026-03-14 (2 days ago)",
+        "Repository is still accessible and not archived"
+      ],
+      "summary": "Package appears minimally maintained with significant accumulated issues and no activity over 6 months, though a very recent commit suggests sporadic maintenance."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -223,9 +237,9 @@
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the npm package '@jest/expect' does not have a succession plan, lacks detailed decision-making processes, and indicates only one maintainer with merge rights, posing a high bus factor risk."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:45:09.058494+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

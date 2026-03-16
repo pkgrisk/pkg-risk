@@ -181,22 +181,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 6,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README covers the AWS SDK v3 generally well but is a generic monorepo README rather than documentation specific to @aws-sdk/client-rekognition, with all examples using DynamoDB instead of Rekognition.",
+      "top_issue": "This README is for the entire AWS SDK JS v3 monorepo, not for client-rekognition specifically \u2014 there are zero Rekognition-specific examples, API references, or use cases."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "TypeError: A dynamic import callback was invoked without --experimental-vm-modules in jest",
-        "Checksum mismatch error fetching compressed files from S3 (browser SDK)"
+        "Package publishing/dependency ordering issues causing installation failures",
+        "Performance regressions (Lambda Node 22 coldstart latency)",
+        "Documentation navigation links broken",
+        "Test reliability issues with DynamoDB Local"
       ],
-      "praise_themes": [
-        "workaround-available",
-        "pending-release"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/client-rekognition package shows a mix of active issues and resolved ones, with some users experiencing frustration due to unresolved bugs. Maintainers are moderately responsive, addressing issues over time."
+      "summary": "AWS SDK shows healthy maintenance with 3 of 5 issues resolved and released, though active concerns remain about release process reliability and performance regressions requiring ongoing attention."
     },
     "communication": {
       "helpfulness": 7,
@@ -212,15 +221,21 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary but sometimes lack detail or context, which can be confusing for less experienced users."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases (last release on 2026-02-24)",
-        "Active pull requests and merges (33 open, 256 merged in the past 6 months)"
+      "status": "minimal-maintenance",
+      "confidence": 8,
+      "concerns": [
+        "161 open issues with 0 closed in past 6 months indicates growing backlog",
+        "0 commits in past 6 months until today suggests erratic, infrequent updates",
+        "No active contributors in past 6 months",
+        "Unknown release schedule makes it unclear if fixes are actually shipped",
+        "No merged PRs in 6 months indicates no development activity"
       ],
-      "summary": "The package @aws-sdk/client-rekognition is actively maintained with frequent commits, regular releases, and active engagement from contributors."
+      "positive_signals": [
+        "Commit today shows package is not abandoned",
+        "AWS-maintained official SDK package typically has underlying stability",
+        "No open PRs means no pending work is stalled"
+      ],
+      "summary": "This AWS SDK package exhibits minimal maintenance with a growing backlog of 161 unaddressed issues and sporadic commits, suggesting limited active development."
     },
     "changelog": null,
     "governance": {
@@ -231,9 +246,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:22:35.353759+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

@@ -181,7 +181,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 6,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README covers the broader AWS SDK v3 well but fails as package-specific docs for @aws-sdk/client-cognito-identity, with all examples referencing DynamoDB instead of Cognito Identity.",
+      "top_issue": "README is generic AWS SDK v3 boilerplate \u2014 no Cognito Identity-specific examples, API calls, or configuration guidance anywhere in the content."
+    },
     "security": {
       "overall_score": 9,
       "injection_risks": [],
@@ -192,18 +202,17 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 4,
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "CVE-2026-26996 in crc64-nvme-crt via transitive dependency: minimatch 3.1.3",
-        "`visit` function of model namespaces disappeared"
+        "Release process issues (topological ordering of package dependencies)",
+        "Documentation problems (incorrect table of contents links)",
+        "Performance regressions (Node 22 Lambda coldstart latency)",
+        "Test suite flakiness (DynamoDB Local test failures)"
       ],
-      "praise_themes": [
-        "timely closure of some issues",
-        "active community engagement"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/client-cognito-identity package shows a mix of active issue reporting and timely resolution, with some open high-severity vulnerabilities and feature requests indicating ongoing development and user feedback."
+      "summary": "AWS SDK maintains active development with P1 issues resolved quickly, though recent test failures and untriaged bugs indicate growing technical debt in test infrastructure and release automation."
     },
     "communication": {
       "helpfulness": 7,
@@ -219,15 +228,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary but sometimes lack detail in addressing complex issues."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "Active contributors"
+      "concerns": [
+        "Zero commits in past 6 months despite large open issue backlog",
+        "161 open issues with no recent closures",
+        "No active contributors in past 6 months",
+        "No pull request activity in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The package @aws-sdk/client-cognito-identity is actively maintained with frequent commits, regular releases, and active contributors."
+      "positive_signals": [
+        "Last commit timestamp is recent (2026-03-16)",
+        "No open pull requests indicates clean state"
+      ],
+      "summary": "This AWS SDK package shows signs of abandonment with no commits, issue closures, or contributor activity in 6 months despite 161 unresolved issues, though the recent commit timestamp suggests possible data quality issues."
     },
     "changelog": null,
     "governance": {
@@ -238,9 +252,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:36:21.988330+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

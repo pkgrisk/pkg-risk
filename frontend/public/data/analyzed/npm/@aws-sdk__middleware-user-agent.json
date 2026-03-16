@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 8,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides a clear and comprehensive overview of the AWS SDK v3, with good installation and quick start guides. However, it lacks specific details about the middleware-user-agent package.",
-      "top_issue": "Lack of specific documentation for the @aws-sdk/middleware-user-agent package."
+      "clarity": 5,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README covers the broader AWS SDK v3 well but provides no specific documentation for the @aws-sdk/middleware-user-agent package itself.",
+      "top_issue": "This README is for the entire AWS SDK v3 monorepo, not for the specific middleware-user-agent package \u2014 there is zero documentation about what this middleware does, its API, or how to use/configure it."
     },
     "security": {
       "overall_score": 9,
@@ -203,14 +203,16 @@
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Checksum mismatch error fetching compressed files from S3 (browser SDK)",
-        "CVE-2026-26996 (high sev) in crc64-nvme-crt via transitive dependency: minimatch 3.1.3"
+        "Package publishing order causing dependency resolution failures",
+        "Documentation navigation bugs",
+        "Performance regressions in Lambda/Node.js environments",
+        "Test flakiness with local services"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/middleware-user-agent package shows a mix of open and closed issues, with some high-severity vulnerabilities reported. While there are active discussions and responses, the frustration level is moderate due to unresolved bugs and security concerns."
+      "summary": "Project demonstrates active maintenance with rapid issue resolution, but reveals systemic packaging automation issues and a recent untriaged test failure indicating potential backlog growth."
     },
     "communication": {
       "helpfulness": 7,
@@ -226,15 +228,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary but sometimes lack detail in addressing complex issues."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "Active contributors"
+      "concerns": [
+        "160 open issues with zero closed in past 6 months",
+        "Zero commits in past 6 months despite recent timestamp",
+        "No active contributors for 6+ months",
+        "No merged PRs in past 6 months",
+        "Unknown release date - likely very stale",
+        "No PR activity suggests contributions not being accepted"
       ],
-      "summary": "The package @aws-sdk/middleware-user-agent is actively maintained with frequent commits, regular releases, and active contributors."
+      "positive_signals": [
+        "Very recent last commit timestamp (though contradicts 0 commits in 6mo metric)"
+      ],
+      "summary": "Package is effectively abandoned with massive unaddressed issue backlog, zero maintenance activity for 6+ months, and no contributor engagement."
     },
     "changelog": null,
     "governance": {
@@ -245,9 +252,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:44:32.876716+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

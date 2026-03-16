@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
-      "quick_start": 9,
+      "clarity": 5,
+      "installation": 7,
+      "quick_start": 8,
       "examples": 7,
-      "configuration": 6,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides clear and concise information for getting started but lacks depth in configuration details and troubleshooting.",
-      "top_issue": "Lack of specific configuration documentation and troubleshooting section."
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "This README is for the entire AWS SDK JS v3 monorepo, not the specific `@aws-sdk/signature-v4-multi-region` package, so it provides no relevant documentation for this package's actual purpose or usage.",
+      "top_issue": "Complete mismatch: the README documents the general AWS SDK v3 with DynamoDB examples, with zero mention of signature-v4-multi-region functionality, what it does, when to use it, or how to configure it."
     },
     "security": null,
     "sentiment": {
@@ -198,12 +198,14 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "TypeError: A dynamic import callback was invoked without --experimental-vm-modules in jest",
-        "Checksum mismatch error fetching compressed files from S3 (browser SDK)"
+        "NPM publishing order causing installation failures and dependency conflicts",
+        "Documentation navigation bugs (incorrect anchor links)",
+        "Performance regression in Lambda Node 22 coldstart latency",
+        "Test failures and flaky infrastructure (DynamoDB Local)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/signature-v4-multi-region package shows a mix of open and closed issues, with some high-frustration-level bugs and security concerns. While there are no explicit praises, the maintainers seem to be moderately responsive, addressing some issues but leaving others unresolved."
+      "abandonment_signals": true,
+      "summary": "Active maintenance with shipping releases, but concerning patterns of stale issues, unresponded recent bugs, and performance regressions suggest coordination challenges in a complex monorepo ecosystem."
     },
     "communication": {
       "helpfulness": 7,
@@ -219,15 +221,21 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary but sometimes lack detailed examples or further clarification on complex points."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases (last release on 2026-02-24)",
-        "Active pull requests and merged PRs"
+      "concerns": [
+        "Zero commits in past 6 months despite recent timestamp",
+        "160 open issues accumulating with zero closed in 6 months",
+        "No active contributors or maintenance activity",
+        "Zero pull request activity (merged or open)",
+        "Unknown release timeline creates uncertainty",
+        "Critical AWS SDK package with deteriorating health"
       ],
-      "summary": "The package @aws-sdk/signature-v4-multi-region is actively maintained with frequent commits, regular releases, and active engagement from contributors."
+      "positive_signals": [
+        "Package still exists in registry",
+        "No indication of hostile takeover or security compromise"
+      ],
+      "summary": "This AWS SDK package is effectively stale with accumulating unresolved issues and zero maintenance activity over the past 6 months despite being a critical signing component."
     },
     "changelog": null,
     "governance": {
@@ -238,9 +246,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, but lacks details on succession planning and indicates a single maintainer with merge rights."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:58:20.176555+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

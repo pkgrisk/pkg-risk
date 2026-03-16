@@ -173,19 +173,32 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 4,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
+      "troubleshooting": 1,
+      "overall": 2,
+      "summary": "This README is a monorepo index page that barely mentions @grpc/proto-loader, providing no installation instructions, usage examples, or configuration docs specific to the package.",
+      "top_issue": "The README contains no package-specific documentation \u2014 no installation steps, no usage examples, and no API reference for @grpc/proto-loader itself."
+    },
     "security": null,
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Long-lived grpc-js channel degrades over time",
-        "Critical performance bottleneck with high-throughput GRPC stream handling"
+        "TypeScript type safety regressions (TS2345 errors, missing exports, type collisions)",
+        "Performance degradation with high-throughput streaming (250 events/sec vs 10-15k needed)",
+        "Stream connection instability (RST_STREAM, GOAWAY, persistent channel failures)",
+        "Unpatched security vulnerability (CVE-2023-32732 since Feb 2026)",
+        "Data transmission issues (missing chunks, metadata headers not transmitted)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @grpc/proto-loader package is negative, with multiple open issues indicating significant performance and stability problems. The lack of labels and minimal comments suggest slow maintainer responsiveness."
+      "summary": "The @grpc/proto-loader ecosystem shows moderate health with sporadic maintenance\u2014older issues get resolved (46-comment RST_STREAM thread closed), but critical recent issues (CVE, type errors, performance) languish with 0-2 comments, suggesting stretched maintainer capacity."
     },
     "communication": {
       "helpfulness": 8,
@@ -201,17 +214,21 @@
       "summary": "The maintainer provides helpful and technically detailed responses, but could improve in clarity for users of varying skill levels and patience with repeated queries."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "High number of open issues (214) which might indicate unresolved problems or feature requests",
-        "Low rate of issue closure and PR merging compared to the number of contributions"
+        "No commits in past 6 months despite recent activity",
+        "227 open issues with zero closed in 6 months",
+        "No active contributors in past 6 months",
+        "Zero merged pull requests in past 6 months",
+        "Unknown release status - unable to verify active releases",
+        "Large unresolved issue backlog indicates maintenance lag"
       ],
       "positive_signals": [
-        "Regular commits in the past six months (30)",
-        "Frequent releases, with the last one on December 11, 2025"
+        "Recent commit on 2026-01-07 shows package is not completely abandoned",
+        "No open PRs means no stalled contributions"
       ],
-      "summary": "The package @grpc/proto-loader shows signs of being maintained with regular updates and frequent commits, but has a high number of unresolved issues which could be a concern."
+      "summary": "Package shows signs of minimal maintenance with a large unresolved issue backlog and no active contributor engagement in 6 months, despite a recent commit."
     },
     "changelog": null,
     "governance": {
@@ -222,9 +239,9 @@
       "bus_factor_risk": "low",
       "summary": "The governance documentation for @grpc/proto-loader indicates a clear succession plan, documented decision-making process, path from contributor to maintainer, and multiple maintainers with merge rights, posing low bus factor risk."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:54:02.912450+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

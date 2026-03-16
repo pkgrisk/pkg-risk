@@ -176,15 +176,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 9,
-      "quick_start": 8,
-      "examples": 6,
-      "configuration": 5,
-      "troubleshooting": 7,
-      "overall": 8,
-      "summary": "The README is clear and well-structured but lacks detailed examples and configuration documentation.",
-      "top_issue": "Insufficient examples for common use cases beyond basic installation."
+      "clarity": 7,
+      "installation": 8,
+      "quick_start": 7,
+      "examples": 4,
+      "configuration": 2,
+      "troubleshooting": 4,
+      "overall": 5,
+      "summary": "Solid getting-started coverage for the parent `algoliasearch` package, but this README is for an internal `@algolia/client-common` sub-package and never explains what that package specifically does or when to use it directly.",
+      "top_issue": "The README describes the top-level `algoliasearch` package rather than `@algolia/client-common` itself, leaving users who landed on this package with no explanation of its specific purpose or API."
     },
     "security": {
       "overall_score": 7,
@@ -196,15 +196,20 @@
     },
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bug: DEP0169 Uncaught Exception - url.parse() deprecation warning",
-        "Property 'generateSecuredApiKey' does not exist on type 'Algoliasearch'"
+        "Bundler/build system compatibility (CJS class fields, Metro exports, Bun runtime crashes)",
+        "Missing or incomplete TypeScript type definitions (generateSecuredApiKey, getObject generics)",
+        "Framework integration issues (VTEX IO, Expo, Hono)",
+        "Long-standing unresolved bugs (API key handling from 2020 still open with 25 comments)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @algolia/client-common package shows a mix of active issue reporting and some unresolved bugs, indicating moderate frustration levels. While there are no explicit praises, the issues suggest that maintainers are responsive in closing bugs but may need to address open feature requests and bug reports more promptly."
+      "praise_themes": [
+        "Active community usage evidenced by consistent bug reports",
+        "Some maintainer engagement on newer issues (4+ comments on multiple bugs)"
+      ],
+      "abandonment_signals": true,
+      "summary": "Mixed health: Active community reports real integration issues across bundlers and frameworks, but maintainers show slow resolution patterns\u2014notably a critical 2020 API key issue remains open with 25 comments, and recent bundler compatibility bugs (2025-2026) remain unresolved despite engagement."
     },
     "communication": {
       "helpfulness": 8,
@@ -220,17 +225,20 @@
       "summary": "The maintainer responses provide useful information but often lack depth and clarity. They handle repeated questions with closure, which can be helpful but may not always address user concerns fully."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Low number of contributors active in the past 6 months",
-        "High number of open issues compared to closed ones"
+        "Zero commits recorded in past 6 months despite recent commit timestamp",
+        "27 open issues with no issues closed in past 6 months",
+        "Zero merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "No pull request activity indicates lack of development pipeline"
       ],
       "positive_signals": [
-        "Regular commits and releases",
-        "Some merged pull requests"
+        "Repository exists and contains one very recent commit (2026-03-13)"
       ],
-      "summary": "The package @algolia/client-common shows signs of minimal maintenance with regular updates but has a low contributor base and a significant backlog of open issues."
+      "summary": "Repository appears stale with no substantive maintenance activity over 6 months despite occasional commits; growing issue backlog suggests minimal active stewardship."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -242,9 +250,9 @@
       "summary": "The changelog marks breaking changes and includes detailed information, but lacks migration guides and clear categorization."
     },
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:48:42.875109+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

@@ -176,27 +176,29 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 2,
-      "installation": 2,
+      "clarity": 3,
+      "installation": 1,
       "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
       "overall": 1,
-      "summary": "The README provides minimal information specific to the BigQuery package, acting more as a directory of various Google Cloud packages without detailed documentation.",
-      "top_issue": "Lack of specific details for @google-cloud/bigquery, making it difficult for users to understand and use the package."
+      "summary": "This README is the monorepo index for all Google Cloud Node.js clients, not the BigQuery package documentation \u2014 it contains no BigQuery-specific content whatsoever.",
+      "top_issue": "Wrong README: this is the google-cloud-node monorepo root README listing 100+ packages, not the @google-cloud/bigquery package README, so it provides zero useful information for BigQuery users."
     },
     "security": null,
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "RetailApi Search Returning Empty fields"
+        "Transitive dependencies not updated since 2022",
+        "Outdated peer-dependencies requiring manual overrides",
+        "npm audit failures due to old dependencies"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health for the @google-cloud/bigquery package shows a neutral sentiment with moderate maintainer responsiveness. There is one open issue indicating frustration, but no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of neglected dependency maintenance with unmaintained transitive packages and years-old unaddressed process issues creating friction for consumers."
     },
     "communication": {
       "helpfulness": 6,
@@ -212,15 +214,20 @@
       "summary": "The maintainer responses are generally helpful but could improve in clarity, technical depth, and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "Active contributors"
+      "concerns": [
+        "Zero commits in the past 6 months despite being an actively-used Google Cloud library",
+        "455 open issues with zero closed in past 6 months indicates unaddressed problems",
+        "Zero active contributors and merged PRs in past 6 months shows no development activity",
+        "Unknown last release makes it impossible to determine release cadence or stability guarantees",
+        "No pull requests in review suggests development pipeline is inactive"
       ],
-      "summary": "The package @google-cloud/bigquery is actively maintained with frequent commits, regular releases, and active contributions."
+      "positive_signals": [
+        "Owned by Google Cloud, a major organization with resources",
+        "Last commit timestamp is recent (today), though inconsistent with zero 6-month commits"
+      ],
+      "summary": "This package is effectively abandoned in terms of active maintenance, with no development activity, no issue resolution, and a large backlog of unaddressed problems despite being a critical Google Cloud library."
     },
     "changelog": null,
     "governance": {
@@ -231,9 +238,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear process for contributing and decision-making but lacks details on succession planning and indicates a single point of contact for merging changes, posing moderate bus factor risk."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:26:26.572495+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

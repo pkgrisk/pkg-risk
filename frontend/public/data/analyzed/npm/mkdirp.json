@@ -173,22 +173,32 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 2,
+      "quick_start": 9,
+      "examples": 7,
+      "configuration": 8,
+      "troubleshooting": 7,
+      "overall": 7,
+      "summary": "Excellent API documentation with working examples and good edge-case coverage, but completely missing installation instructions.",
+      "top_issue": "No installation instructions anywhere in the README (no npm install command or Node.js version requirements stated upfront)"
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Vulnerable dependency (indirect security issue)",
-        "TypeError: mkdirp.sync is not a function"
+        "Breaking changes in major version upgrades (CJS\u2192ESM migration, v2.1 API changes, v3.0 sync removal)",
+        "TypeScript module resolution problems",
+        "Documentation accuracy issues (fs.mkdir behavior)",
+        "Dependency vulnerabilities (minimist CVE-2021-44906)",
+        "Backward compatibility regressions across minor versions"
       ],
-      "praise_themes": [
-        "hybrid module support",
-        "documentation"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health of the mkdirp package shows mixed sentiment with moderate frustration levels. While there are some unresolved issues, the maintainers respond to them moderately well. Common complaints include security vulnerabilities and breaking changes in newer versions."
+      "summary": "mkdirp has moderate health with recent activity (open 2024 issue) and closed backlog, but shows friction from poorly-managed migrations and sparse maintainer engagement (many 0-comment closures)."
     },
     "communication": {
       "helpfulness": 7,
@@ -205,23 +215,26 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 7,
+      "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months",
-        "Last release date is unknown",
-        "No merged PRs in the past 6 months"
+        "No commits in past 6+ months (last commit was Sept 2023)",
+        "Unknown last release status - unclear which version is current",
+        "Zero active contributors in the past 6 months",
+        "Open issue remains unaddressed with no resolution activity",
+        "No merged PRs or releases to address potential bugs"
       ],
       "positive_signals": [
-        "9 contributors were active in the past 6 months",
-        "There are open issues which might indicate ongoing interest or problems that need addressing"
+        "Only 1 open issue - not overwhelmed with unresolved bugs",
+        "No pending/stalled pull requests",
+        "Mature, stable utility package (mkdir functionality is simple and unlikely to need frequent updates)"
       ],
-      "summary": "The package mkdirp appears to be stale due to a lack of recent commits and releases, though there is some activity from contributors."
+      "summary": "mkdirp is a stale package with no maintenance activity in 6+ months; while it's a simple stable utility, the unknown release status and lack of maintainer responsiveness present risks for security updates or dependency incompatibilities."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:12:23.221174+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

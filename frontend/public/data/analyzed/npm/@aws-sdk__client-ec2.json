@@ -181,19 +181,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 7,
+      "installation": 8,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Solid getting-started coverage with good code examples, but the README is for the entire AWS SDK v3 monorepo rather than the specific @aws-sdk/client-ec2 package, leaving EC2-specific usage undocumented.",
+      "top_issue": "README is generic to the whole SDK (uses DynamoDB examples) rather than being specific to the EC2 client \u2014 a new user gets no EC2-specific commands, authentication setup, or common EC2 operation examples."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "TypeError: A dynamic import callback was invoked without --experimental-vm-modules in jest",
-        "Checksum mismatch error fetching compressed files from S3 (browser SDK)"
+        "Release/dependency management (packages published out of order causing npm errors)",
+        "Performance regressions (Lambda Node 22 coldstart latency)",
+        "Test failures (DynamoDB Local integration)",
+        "Documentation issues (broken table of contents links)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/client-ec2 package shows a mix of open and closed issues, with some high-frustration-level bugs and security vulnerabilities reported. Maintainers are responding to issues moderately, but there is room for improvement in addressing common complaints."
+      "summary": "Project is actively maintained with issues being closed and released, but shows moderate responsiveness gaps: a year-old performance regression remains pending, and recent bugs lack immediate triage attention."
     },
     "communication": {
       "helpfulness": 7,
@@ -209,15 +221,21 @@
       "summary": "The maintainer responses provide useful information and solutions, but they vary in depth and clarity. They handle repeated questions patiently and encourage new contributors, though some explanations could benefit from additional detail."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "Active merging of PRs (256 merged in the past 6 months)"
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "Zero commits in past 6 months despite 160 open issues",
+        "No active contributors in past 6 months",
+        "No merged PRs or closed issues in past 6 months",
+        "Large unaddressed issue backlog suggests problems not being resolved",
+        "Unknown last release date raises questions about release cadence"
       ],
-      "summary": "The package @aws-sdk/client-ec2 is actively maintained with frequent updates, regular releases, and active engagement from contributors."
+      "positive_signals": [
+        "Recent commit activity today (2026-03-16) suggests potential revival or active maintenance",
+        "No open PRs backlog indicates either strict review or low contribution rate",
+        "AWS SDK packages are typically critical infrastructure backed by AWS"
+      ],
+      "summary": "Package shows signs of dormancy with no activity for 6 months and 160 unresolved issues, though a commit today suggests possible re-engagement; assess with caution."
     },
     "changelog": null,
     "governance": {
@@ -228,9 +246,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:50:34.575332+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

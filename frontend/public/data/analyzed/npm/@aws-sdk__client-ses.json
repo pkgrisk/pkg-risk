@@ -182,28 +182,30 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
+      "clarity": 6,
+      "installation": 7,
       "quick_start": 7,
       "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 4,
-      "overall": 7,
-      "summary": "The README provides clear and comprehensive documentation with good installation and configuration details but lacks service-specific examples for SES and a dedicated troubleshooting section.",
-      "top_issue": "Lack of SES-specific examples and troubleshooting information."
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README covers SDK-level concepts well but is generic to the entire AWS SDK v3 rather than specific to @aws-sdk/client-ses, with no SES-specific examples, configuration, or troubleshooting.",
+      "top_issue": "All examples and getting-started content reference DynamoDB, not SES \u2014 a user looking to send emails has no package-specific guidance whatsoever."
     },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
       "frustration_level": 6,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "active",
       "common_complaints": [
-        "Checksum mismatch error fetching compressed files from S3 (browser SDK)",
-        "CVE-2026-26996 (high sev) in crc64-nvme-crt via transitive dependency: minimatch 3.1.3"
+        "Package release ordering causing installation failures",
+        "Documentation navigation issues",
+        "Performance regressions (Lambda Node 22 coldstart)",
+        "Test failures and integration issues"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/client-ses package shows a mix of active and unresolved issues, indicating moderate frustration among users with some common complaints about security vulnerabilities and data handling errors."
+      "summary": "Active project with responsive maintenance\u20143 recent issues resolved and released, but 2 open bugs including a lingering performance regression (12 comments) and newly triaged test failures suggest ongoing stability challenges."
     },
     "communication": {
       "helpfulness": 7,
@@ -219,15 +221,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth where necessary but sometimes lack detail or context that could benefit new contributors or users with less experience."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases (last release on 2026-02-24)",
-        "Active pull requests and merged PRs"
+      "status": "stale",
+      "confidence": 5,
+      "concerns": [
+        "160 open issues with zero resolved in past 6 months indicates issue backlog not being addressed",
+        "Zero commits, merged PRs, and active contributors in past 6 months despite 0 open pull requests suggests no active development",
+        "Unknown last release date indicates unclear versioning/release cadence",
+        "Data inconsistency: recent commit today but 0 commits recorded in past 6 months"
       ],
-      "summary": "The package @aws-sdk/client-ses is actively maintained with frequent commits, regular releases, and active engagement from contributors."
+      "positive_signals": [
+        "Very recent commit activity (2026-03-16 today)",
+        "Part of official AWS SDK v3 (typically enterprise-maintained)"
+      ],
+      "summary": "Despite a recent commit, absence of issue resolution, PR activity, and active contributors over 6 months combined with large open issue backlog suggests either stale maintenance or a data quality issue."
     },
     "changelog": null,
     "governance": {
@@ -238,9 +244,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:03:08.029620+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

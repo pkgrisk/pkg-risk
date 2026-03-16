@@ -167,7 +167,17 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 9,
+      "quick_start": 9,
+      "examples": 8,
+      "configuration": 8,
+      "troubleshooting": 3,
+      "overall": 8,
+      "summary": "Well-structured documentation with clear installation, multiple usage patterns, and practical demos, but lacks any troubleshooting section.",
+      "top_issue": "No troubleshooting section \u2014 common issues like source maps not being found, incorrect paths, or conflicts with other tools are not addressed."
+    },
     "security": {
       "overall_score": 6,
       "injection_risks": [
@@ -187,18 +197,22 @@
       "summary": "The package has a high-risk injection vulnerability due to unsafe module loading and needs improved input validation."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "negative",
+      "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "RangeError: Maximum call stack size exceeded",
-        "TypeError: Cannot read property 'Symbol(source-map-support/sharedData)' of undefined"
+        "RangeError: Maximum call stack size exceeded with long/complex inline source maps",
+        "TypeError: Cannot read property Symbol(source-map-support/sharedData) of undefined",
+        "Platform-specific failures (Windows vs Ubuntu behavior differences)",
+        "Incompatibility with specific tools (webpack eval sourcemaps, Emscripten, WebDriver)",
+        "TypeError reading error.stack property in edge cases"
       ],
       "praise_themes": [
-        "Improvements and bugfixes compared to `source-map-support`"
+        "Drop-in replacement for source-map-support with improvements",
+        "Community engagement on major issues (Yarn Berry PnP had 31 comments)"
       ],
-      "abandonment_signals": false,
-      "summary": "The community health for @cspotcode/source-map-support shows mixed sentiment with several open issues indicating frustration, particularly around stack size errors and undefined property access. While there are some improvements noted in the issues, the lack of recent activity from maintainers suggests a slow response rate."
+      "abandonment_signals": true,
+      "summary": "Package shows signs of maintenance stagnation with multiple critical bugs (stack overflows, type errors) from 2022-2023 remaining unresolved despite ongoing use; recent 2024 issue with minimal engagement suggests slow maintainer responsiveness."
     },
     "communication": {
       "helpfulness": 8,
@@ -214,18 +228,18 @@
       "summary": "The maintainer provides detailed technical explanations and is generally helpful, though some responses could benefit from more clarity and patience."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past 6 months",
-        "Last release date is unknown",
-        "No closed issues in the past 6 months"
+        "No commits in past 6 months (last commit 8+ months ago)",
+        "14 open issues with zero recent activity or triage",
+        "No merged PRs or PR activity in past 6 months",
+        "Zero active contributors in past 6 months",
+        "Unknown last release date suggests stale releases",
+        "No response to community issues or maintenance needs"
       ],
-      "positive_signals": [
-        "Open PRs and contributors are active",
-        "One merged PR in the past 6 months"
-      ],
-      "summary": "The package @cspotcode/source-map-support shows minimal maintenance activity with no recent commits or releases, but there is some ongoing contribution effort."
+      "positive_signals": [],
+      "summary": "Package is effectively abandoned with no maintenance activity, active contributors, or release history in the past 6 months despite 14 unresolved issues."
     },
     "changelog": null,
     "governance": {
@@ -236,9 +250,9 @@
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the npm package '@cspotcode/source-map-support' does not address succession planning, decision-making processes, contributor pathways to becoming a maintainer, or indicate multiple maintainers, posing a high bus factor risk."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T16:08:54.827213+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {
