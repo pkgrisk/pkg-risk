@@ -210,22 +210,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 2,
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 6,
+      "troubleshooting": 2,
+      "overall": 6,
+      "summary": "Strong on examples and clarity but missing installation instructions and troubleshooting entirely, relying on external docs for critical setup details.",
+      "top_issue": "No installation instructions (npm install knex) or database driver setup guidance anywhere in the README."
+    },
     "security": null,
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
+      "sentiment": "negative",
+      "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "SQL Injection via `searchPath` - double-quote breakout in `setSchemaSearchPath`",
-        "`whereJsonPath` throws on Redshift (`statement.path` is undefined)"
+        "Query parameter binding order issues with mixed raw and where clauses",
+        "Table name resolution bugs (undefined table names in migrations)",
+        "Database compatibility issues (Redshift whereJsonPath throwing)",
+        "Schema and naming issues"
       ],
-      "praise_themes": [
-        "Feature Request: Workers with SQLite synchronous connectors",
-        "Deno Module"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community health for the knex package shows a mix of active feature requests and unresolved bugs, indicating some frustration but also ongoing interest in new features."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Community health is concerning: critical unaddressed security vulnerability (SQL injection via searchPath), multiple open bugs with minimal maintainer engagement, and a 6-year-old feature request still open indicate slow or declining maintenance responsiveness."
     },
     "communication": {
       "helpfulness": 7,
@@ -240,17 +249,20 @@
       "summary": "The maintainer provides helpful, clear, and patient responses with a good level of technical depth. They encourage new contributors but some explanations could benefit from additional detail."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "High number of open issues and PRs",
-        "Last release was over a year ago"
+        "Zero commits in past 6 months despite recent last commit",
+        "710 open issues with zero closed issues in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Last release unknown - unable to verify recent stability releases"
       ],
       "positive_signals": [
-        "Regular commits in the past six months",
-        "Active contributors"
+        "Last commit exists from 26 days ago (not completely abandoned)",
+        "No open PRs indicates project isn't accumulating unreviewed work"
       ],
-      "summary": "The knex package shows signs of being maintained with regular activity, but has a backlog of unresolved issues and hasn't seen a new release in over a year."
+      "summary": "knex appears stale with a massive unfixed backlog of 710 issues and zero maintenance activity (no commits, closed issues, or merged PRs) in the past 6 months despite a recent commit, suggesting either dormant stewardship or potential data inconsistency."
     },
     "changelog": null,
     "governance": {
@@ -261,9 +273,9 @@
       "bus_factor_risk": "medium",
       "summary": "The governance documentation for Knex.js outlines a clear decision-making process and path for contributors to become maintainers, but lacks a succession plan and indicates only one maintainer with merge rights."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T15:48:14.241493+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {

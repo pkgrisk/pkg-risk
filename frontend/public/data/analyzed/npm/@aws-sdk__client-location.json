@@ -181,19 +181,31 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 6,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 4,
+      "troubleshooting": 3,
+      "overall": 5,
+      "summary": "The README is a generic AWS SDK v3 overview rather than documentation specific to @aws-sdk/client-location, leaving users with no guidance on the Location service itself.",
+      "top_issue": "The README contains zero content about the Location service \u2014 all examples, install instructions, and API references are for DynamoDB/Lambda, making it nearly useless for someone trying to use client-location."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 6,
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "API Gateway `PostToConnection` command seemingly hangs forever",
-        "Checksum mismatch error fetching compressed files from S3 (browser SDK)"
+        "Documentation navigation issues",
+        "Dependency version mismatches",
+        "Performance regressions in Node.js/Lambda environments",
+        "Test failures with specific service setups (DynamoDB Local)"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @aws-sdk/client-location package shows a mix of issues, with some being actively discussed and others closed. The frustration level is moderate due to unresolved bugs and security vulnerabilities, while there are no clear signs of abandonment."
+      "summary": "AWS SDK shows moderate health with active issue triage and resolution of documentation/dependency bugs, but has concerning performance regressions (Lambda coldstart) open for 12+ months despite community engagement."
     },
     "communication": {
       "helpfulness": 7,
@@ -209,15 +221,21 @@
       "summary": "The maintainer responses generally help resolve issues, provide clear explanations, handle repeated questions patiently, and offer technical depth. However, they could benefit from being more detailed and providing additional context to assist less experienced users."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Frequent commits (300 in the past 6 months)",
-        "Regular releases",
-        "Active contributors"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "Zero commits in past 6 months despite 160 open issues",
+        "Zero closed issues in past 6 months - no issue triage or fixes",
+        "Zero merged PRs in past 6 months - no active development",
+        "Zero active contributors in past 6 months",
+        "Last release date unknown - unclear if package is still being released",
+        "High open issue count with no resolution activity"
       ],
-      "summary": "The package @aws-sdk/client-location is actively maintained with frequent commits, regular releases, and active contributors."
+      "positive_signals": [
+        "Very recent commit (2026-03-16) suggests possible automated sync",
+        "Part of AWS SDK ecosystem, may receive batch updates"
+      ],
+      "summary": "Package is stale with 160 unresolved open issues and zero maintenance activity over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -228,9 +246,9 @@
       "bus_factor_risk": "medium",
       "summary": "The documentation outlines a clear decision-making process and path for contributors to become maintainers, indicating multiple people with merge rights. However, there is no explicit succession plan in place."
     },
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T15:43:49.506424+00:00"
   },
   "supply_chain": {
     "lifecycle_scripts": {
