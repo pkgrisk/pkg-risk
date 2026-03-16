@@ -178,14 +178,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 6,
       "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is thorough but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to get new users started with the package."
+      "examples": 2,
+      "configuration": 3,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README clearly identifies Pistache as a C++ HTTP/REST framework with decent installation options, but critically lacks any code examples or quick-start guide, instead deferring to external articles and partial documentation.",
+      "top_issue": "No code examples or quick-start section \u2014 a C++ library README with zero usage examples forces users to leave the README immediately to understand how to use the library."
     },
     "security": {
       "overall_score": 8,
@@ -197,15 +197,19 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "out of memory error",
-        "unreliable release schedule of RapidJSON"
+        "Stack smashing errors on multiple platforms (M1, Router, libevent)",
+        "Security vulnerabilities (buffer overflow, out-of-memory from controlled input)",
+        "Critical bugs unresolved for years (timeoutAfter bug from 2017)",
+        "Header parsing failures with specific formats",
+        "Missing binary data extraction for file uploads",
+        "Dependency management issues (RapidJSON abandoned for 6+ years)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing frustration due to open bugs and performance issues, but there are no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows concerning health with multiple critical memory safety bugs spanning 1-8+ years without resolution, recent security vulnerabilities, and minimal visible maintainer engagement despite ongoing issue activity."
     },
     "communication": {
       "helpfulness": 7,
@@ -221,20 +225,25 @@
       "summary": "The maintainer's responses are generally clear and technically sound, but could benefit from more patience and encouragement for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (200)",
-        "Low number of merged PRs in the past six months (2)"
+        "223 open issues with zero closed in 6 months indicates issues are accumulating without resolution",
+        "No commits, merged PRs, or active contributors in the past 6 months",
+        "No closed issues or PR activity suggests maintainers are not engaged",
+        "Unknown last release indicates no updates to users",
+        "No active development despite significant issue backlog"
       ],
       "positive_signals": [
-        "Recent commit within the last year",
-        "Regular contributor activity"
+        "Recent commit timestamp suggests some activity, though it contradicts 6-month metrics"
       ],
-      "summary": "The package is minimally maintained with recent commits and contributors, but a high issue count suggests potential maintenance challenges."
+      "summary": "Pistache appears abandoned with a massive unresolved issue backlog, zero maintenance activity over 6 months, and no active contributors or recent releases."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:53:53.601323+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

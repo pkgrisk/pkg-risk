@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 8,
       "quick_start": 6,
-      "examples": 7,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good overview of the package and its features, but lacks detailed configuration and troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting documentation"
+      "examples": 4,
+      "configuration": 2,
+      "troubleshooting": 1,
+      "overall": 5,
+      "summary": "The README gives a solid high-level overview and installation instructions but relies heavily on external links for real usage guidance, leaving configuration and troubleshooting almost entirely undocumented.",
+      "top_issue": "No troubleshooting section and no configuration documentation; users encountering errors or needing to customize behavior are pointed elsewhere with no inline help."
     },
     "security": {
       "overall_score": 7,
@@ -205,16 +205,23 @@
       "summary": "The code has some security concerns, including potential SQL injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Truncated Data Export",
-        "Fedora 41 packages use outdated Qt6 library versions"
+        "Data truncation/corruption in XML exports (2GB limit on long videos)",
+        "Critical crashes on specific platforms (M2 Mac, Debian)",
+        "Outdated dependencies and SDK versions across distributions",
+        "Configuration defaults pointing to inappropriate system paths",
+        "Distribution builds lagging behind latest releases"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Users file detailed, specific bug reports",
+        "Polite and constructive tone in feature requests",
+        "Appreciation for maintainer responses"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is generally neutral with some common complaints, but maintainers are actively addressing issues."
+      "summary": "Project shows moderate health with engaged users submitting detailed issues, but is hampered by recurring data integrity bugs (XML truncation) and platform-specific crashes that require urgent attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -227,17 +234,18 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of active development.",
-        "A high number of open issues (79) suggests potential bugs or feature requests that have not been addressed."
+        "80 unresolved open issues with zero closures in past 6 months",
+        "No commits in past 6 months despite recent activity",
+        "Zero merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "No response to bug reports or feature requests"
       ],
-      "positive_signals": [
-        "Commits in the past six months indicate some level of activity.",
-        "One merged PR in the past six months shows that contributions are being accepted."
-      ],
-      "summary": "The package is receiving minimal maintenance with occasional commits and PR merges, but a high number of open issues raises concerns about its stability and feature completeness."
+      "positive_signals": [],
+      "summary": "Package appears completely abandoned with 80 stale issues and zero maintenance activity over the past 6 months."
     },
     "changelog": null,
     "governance": {
@@ -247,7 +255,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project has a documented decision process and contributor path but lacks a succession plan and indicates only one maintainer."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:40:57.171060+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

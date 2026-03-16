@@ -180,14 +180,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
+      "installation": 7,
+      "quick_start": 5,
+      "examples": 4,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The README provides a good introduction to the package and its features, but lacks detailed examples and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "overall": 5,
+      "summary": "Well-structured overview with good feature coverage, but defers most practical details to external docs with minimal inline examples and no troubleshooting.",
+      "top_issue": "No working examples of actual API calls, task submission, or webhook setup \u2014 users must navigate to external docs to do anything beyond starting the server."
     },
     "security": {
       "overall_score": 7,
@@ -214,19 +214,22 @@
       "summary": "The code has some potential security issues, including a possible SQL injection vulnerability and lack of input validation, but overall it appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "positive",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "DB environment variable issue",
-        "Logging pre/post processing errors"
+        "PostgreSQL URI parsing fails - critical infrastructure bug affecting cluster deployment",
+        "Docker containerization issues (non-root user permissions, permissions model)",
+        "Database persistence and environment variable configuration not working as documented",
+        "Missing UI features that exist in API (webhooks management, preset parameters)"
       ],
       "praise_themes": [
-        "Feature requests for improvements",
-        "Suggestions for documentation enhancements"
+        "Well-documented API",
+        "Good preset and configuration system for transcoding workflows",
+        "Docker deployment support"
       ],
       "abandonment_signals": false,
-      "summary": "The community is engaged with positive feedback and feature suggestions, but there are some unresolved issues that could be improved."
+      "summary": "ffmate shows moderate community health with active issue resolution and responsive maintainers, but has critical bugs in PostgreSQL URI parsing and container permissions that impact production deployments."
     },
     "communication": {
       "helpfulness": 7,
@@ -239,17 +242,26 @@
       "summary": "The responses are generally clear and helpful, showing a good level of patience and technical depth while encouraging new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases within the last month",
-        "Multiple merged pull requests in the past six months indicate active contribution"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months despite recent activity",
+        "2 open issues unaddressed for 6+ months",
+        "No active contributors in past 6 months",
+        "Unknown last release date",
+        "No merged PRs in past 6 months"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent commit on 2026-02-20 suggests not completely abandoned",
+        "No open pull requests (clean state)"
+      ],
+      "summary": "ffmate is stale with minimal maintenance activity; while a recent commit exists, the lack of issue resolution, active contributors, and unknown release status indicate the project is not actively maintained."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:36:03.304677+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

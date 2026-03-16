@@ -175,15 +175,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 8,
+      "examples": 7,
       "configuration": 8,
-      "troubleshooting": 2,
+      "troubleshooting": 4,
       "overall": 7,
-      "summary": "The README provides a good introduction to the cruft package, but could benefit from more detailed examples and troubleshooting information.",
-      "top_issue": "Lack of comprehensive troubleshooting section"
+      "summary": "Well-structured docs that clearly explain the core value proposition with good examples for main workflows, but lack troubleshooting guidance.",
+      "top_issue": "No troubleshooting section covering common issues like merge conflicts during template updates or handling diverged projects."
     },
     "security": {
       "overall_score": 7,
@@ -215,17 +215,21 @@
       "summary": "The cruft package has some security concerns, including potential JSON injection vulnerabilities and lack of input validation, but overall it appears to be a well-structured and secure codebase."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "update issues",
-        "compatibility problems",
-        "lack of features"
+        "cruft update merge/rejection process broken (generates .rej files instead of clean merges)",
+        "Missing features present in pure cookiecutter (local paths, nested config files, multi-template support)",
+        "Caching issues with cookiecutter.json not reflecting latest template changes",
+        "Virtualenv namespace pollution breaking CLI",
+        "Hook execution order problems (.cruft.json created after post_gen_project hook)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The cruft community is experiencing frustration with ongoing issues and slow maintainer response, but the project shows no signs of abandonment."
+      "praise_themes": [
+        "Appreciation for the tool concept and cookiecutter enhancement"
+      ],
+      "abandonment_signals": true,
+      "summary": "Cruft exhibits critical abandonment signals with multiple unresolved issues dating back 5 years (2020-2022), zero maintainer responses to recent bug reports, and core functionality (template updates) broken or severely degraded."
     },
     "communication": {
       "helpfulness": 8,
@@ -242,16 +246,19 @@
     },
     "maintenance": {
       "status": "stale",
-      "confidence": 8,
+      "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unaddressed open issues and PRs"
+        "No commits in the past 6 months despite 89 open issues",
+        "Large backlog of 89 unresolved open issues with no recent closure",
+        "No merged pull requests in 6 months indicating no active development or review",
+        "Zero active contributors in the past 6 months",
+        "Unknown last release date suggests release process may be stalled"
       ],
       "positive_signals": [
-        "recent release",
-        "active contributors in the recent past"
+        "Last commit 2.5 months ago indicates repository is not completely abandoned",
+        "No open pull requests suggests maintainer is not ignoring the project entirely"
       ],
-      "summary": "The cruft package appears to be stale due to a lack of recent commits and unaddressed issues, despite having a recent release and active contributors."
+      "summary": "The cruft package shows signs of stalled maintenance with a large unaddressed issue backlog and no development activity over 6 months, despite a recent commit in December 2024."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -262,7 +269,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-organized and comprehensive, but lacks clear markings for breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:52:14.941435+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -186,15 +186,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 4,
-      "examples": 7,
-      "configuration": 5,
-      "troubleshooting": 2,
-      "overall": 5,
-      "summary": "The documentation is detailed but lacks a clear and concise introduction, making it difficult for new users to quickly understand the package's purpose and usage.",
-      "top_issue": "Lack of troubleshooting section and unclear quick start example"
+      "clarity": 5,
+      "installation": 7,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 4,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README is primarily in Chinese, covering features and installation well, but lacks English quick-start examples, usage demonstrations, and troubleshooting guidance.",
+      "top_issue": "No usage examples or quick-start guide \u2014 the README lists algorithms and protocols but never shows how to actually use the gmssl command-line tool or APIs."
     },
     "security": {
       "overall_score": 7,
@@ -232,36 +232,42 @@
       "summary": "The code has some security concerns, including potential injection risks, inadequate input validation, and exposure of sensitive information, but overall it appears to be a relatively secure implementation of a TLS server."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "\u7f13\u6162\u7684\u7ef4\u62a4\u54cd\u5e94",
-        "\u6280\u672f\u95ee\u9898\u672a\u5f97\u5230\u53ca\u65f6\u89e3\u51b3"
+        "SM2 signature verification failures across platforms (Java/Python)",
+        "Lack of documentation and demo code for common use cases",
+        "Missing cryptographic functions (x509_crl_from_pem, SM9-IBE)",
+        "Platform-specific bugs (ARM64 decryption errors)",
+        "Key generation requiring passwords despite design expectations",
+        "Memory leaks and resource management issues"
       ],
-      "praise_themes": [
-        "\u793e\u533a\u6210\u5458\u79ef\u6781\u53c2\u4e0e\u8ba8\u8bba\u548c\u89e3\u51b3\u95ee\u9898",
-        "\u5bf9\u65b0\u6280\u672f\u7684\u5b66\u4e60\u70ed\u60c5\u9ad8"
-      ],
-      "abandonment_signals": false,
-      "summary": "\u793e\u533a\u5728\u9762\u5bf9\u6280\u672f\u96be\u9898\u65f6\u8868\u73b0\u51fa\u4e00\u5b9a\u7684\u8010\u5fc3\uff0c\u4f46\u5e0c\u671b\u7ef4\u62a4\u8005\u80fd\u63d0\u9ad8\u54cd\u5e94\u901f\u5ea6\u3002"
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Critical abandonment indicators: unresponded security vulnerability (stack buffer overflow) and 7+ zero-response issues from Jan-Feb 2026, plus a 2.5-year-old unresolved TLS bug, suggesting minimal active maintenance."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (290)",
-        "Low number of merged PRs in the past six months (8)"
+        "391 open issues with zero closed in 6 months",
+        "No commits in past 6 months despite recent last commit date",
+        "Zero merged PRs in 6 months",
+        "No active contributors in past 6 months",
+        "No recent releases"
       ],
       "positive_signals": [
-        "Recent commit within the last year",
-        "Regular commits with 37 in the past six months"
+        "Last commit exists (2026-02-27, 16 days ago)"
       ],
-      "summary": "The package is minimally maintained with recent activity but faces significant issue backlog."
+      "summary": "Project is abandoned with no maintenance activity in 6 months despite critically high open issue count."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:03:11.643187+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

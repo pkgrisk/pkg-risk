@@ -180,15 +180,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 6,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 7,
       "configuration": 5,
       "troubleshooting": 2,
       "overall": 6,
-      "summary": "The README provides a good introduction to the uvw package, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Well-structured README with a clear purpose and working code example, but lacks troubleshooting guidance and configuration documentation.",
+      "top_issue": "No troubleshooting section \u2014 common setup issues (libuv version mismatches, CMake integration problems, header-only vs static library pitfalls) are undocumented."
     },
     "security": {
       "overall_score": 8,
@@ -199,16 +199,21 @@
       "summary": "The provided code appears to be generally secure, but lacks input validation in certain methods and may expose error details."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "IPv6 APIs don't work if the address is provided as a string",
-        "UDP send after connect not possible"
+        "Memory allocation API limitations (unique_ptr enforcement, custom allocator control)",
+        "Networking bugs with IPv6 and UDP (parsing from strings, send after connect)",
+        "Documentation and version mismatches (404 links, libuv release mismatch)",
+        "Lack of multi-threading examples and best practices"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health appears stable with moderate frustration and no clear signs of abandonment."
+      "praise_themes": [
+        "Library described as 'amazing' and 'promising' for specific use cases",
+        "Core event-driven networking functionality is functional"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows selective maintenance with recent activity but harbors multi-year-old unresolved bugs and broken documentation, suggesting capacity constraints or deprioritization of certain issue categories."
     },
     "communication": {
       "helpfulness": 7,
@@ -224,20 +229,26 @@
       "summary": "The maintainer's responses are generally adequate but could improve in terms of patience and providing more detailed explanations."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "Low number of merged PRs in the past six months",
-        "No recent releases"
+        "No commits in past 6 months despite recent commit date",
+        "12 open issues unaddressed with no recent resolution",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release information"
       ],
       "positive_signals": [
-        "Recent commits and active contributors",
-        "Moderate number of open issues and PRs indicating community interest"
+        "Recent commit exists within past year (2025-12-17)"
       ],
-      "summary": "The package shows minimal maintenance with recent activity but lacks recent releases."
+      "summary": "Project is stale with complete absence of maintenance activity over 6 months, including no issue/PR resolution and no active contributors, despite unresolved issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:33:54.371040+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

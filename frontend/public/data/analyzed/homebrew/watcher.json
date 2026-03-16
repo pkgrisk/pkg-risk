@@ -185,12 +185,12 @@
       "clarity": 8,
       "installation": 6,
       "quick_start": 9,
-      "examples": 10,
+      "examples": 9,
       "configuration": 4,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is comprehensive and provides many examples, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions for the Homebrew package"
+      "overall": 6,
+      "summary": "Excellent multi-language quick-start examples with clear output samples, but weak on configuration options and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section or documentation of common errors, edge cases, or configuration options beyond the basic API."
     },
     "security": {
       "overall_score": 7,
@@ -217,16 +217,23 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and follows good coding practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "FSEvents failing to monitor specific directories",
-        "Rename events in the inotify backend are not always associated"
+        "Platform inconsistencies: inotify (Linux), Windows, and FSEvents (macOS) report rename/move events differently",
+        "Directory rename tracking fails to update paths in subsequent events on inotify backend",
+        "Cross-folder move operations detected as remove+create on Windows instead of rename",
+        "Missing language bindings (Lua, Ruby, Haskell) limiting ecosystem adoption",
+        "Documentation ambiguity around correct include paths"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Efficient and reasonably well-tested filesystem monitoring implementation",
+        "Small and stable C API surface",
+        "Active production usage in FrankenPHP and PHP ecosystem"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is experiencing some issues, but there's no clear sign of abandonment or extreme frustration."
+      "summary": "Watcher is actively maintained with timely bug fixes, but has accumulated platform-specific edge cases in directory event handling and languishing feature requests indicating gaps in cross-platform consistency and polyglot ecosystem support."
     },
     "communication": {
       "helpfulness": 9,
@@ -239,18 +246,25 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases in the past month",
-        "Multiple contributors active over the last six months",
-        "A high number of merged PRs indicating community involvement"
+      "status": "abandoned",
+      "confidence": 8,
+      "concerns": [
+        "23 open issues with zero closed in past 6 months indicating unaddressed problems",
+        "Zero commits in past 6 months despite recent activity",
+        "No active contributors in past 6 months",
+        "No merged PRs or PR activity in past 6 months",
+        "Unknown last release - no versioning strategy evident"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Very recent commit (2026-03-11) suggests some minimal activity"
+      ],
+      "summary": "The watcher package appears abandoned with no substantive maintenance activity over 6 months while open issues accumulate unaddressed."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:37:08.700852+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

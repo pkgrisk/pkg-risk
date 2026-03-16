@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 9,
-      "examples": 10,
-      "configuration": 7,
-      "troubleshooting": 4,
+      "examples": 9,
+      "configuration": 6,
+      "troubleshooting": 5,
       "overall": 8,
-      "summary": "The README provides clear and concise information, with many examples, but lacks detailed troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common problems and solutions"
+      "summary": "Excellent documentation with clear purpose, comprehensive command reference, and realistic output examples, but light on configuration details and troubleshooting guidance.",
+      "top_issue": "Configuration options (whitelist management, paths config, environment variables like MO_NO_OPLOG) are mentioned but not documented in detail."
     },
     "security": {
       "overall_score": 8,
@@ -213,16 +213,22 @@
       "summary": "The provided bash scripts have a moderate security risk due to potential command injection and lack of input validation, but do not expose sensitive information or use insecure defaults."
     },
     "sentiment": {
-      "sentiment": "mixed",
-      "frustration_level": 6,
-      "maintainer_responsiveness": "active",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "cleaning functionality issues",
-        "compatibility problems with other tools"
+        "App silently deletes user configuration files with flawed 'orphan' detection logic",
+        "mo purge hangs indefinitely on 'Calculating sizes...' (reported multiple times)",
+        "Missing critical macOS directory paths (Library/Application Support, Library/Application Scripts, VLC prefs)",
+        "Log files stored in incorrect location (~/.config/mole instead of ~/Library/Logs)",
+        "Incomplete scanning logic causes data loss and compatibility issues (clash-verge-rev breakage)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The mole community is actively reporting and discussing various issues, but the maintainers are responsive and addressing them, indicating a relatively healthy project despite some frustration."
+      "praise_themes": [
+        "Tool is powerful enough to inspire community GUI wrapper (MoleVault)",
+        "Core cleaning functionality is valued by users"
+      ],
+      "abandonment_signals": true,
+      "summary": "Community health is poor: critical data destruction bugs, repeated unresolved hanging issues, missing path coverage, and slow maintainer response indicate the project needs urgent attention to data safety and stability concerns."
     },
     "communication": {
       "helpfulness": 9,
@@ -235,17 +241,20 @@
       "summary": "The maintainer's responses are consistently helpful, clear, patient, and technically sound, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (1000)",
-        "Recent last commit (2026-01-01)",
-        "Multiple contributors active in the past 6 months (25)",
-        "Regularly merged PRs (33) and closed issues (168) in the past 6 months",
-        "Recent last release (2025-12-30)"
+      "status": "minimal-maintenance",
+      "confidence": 8,
+      "concerns": [
+        "Zero commits in past 6 months",
+        "3 open issues with no recent resolutions",
+        "No merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The mole package appears to be actively maintained with frequent updates, a large number of contributors, and prompt issue resolution."
+      "positive_signals": [
+        "Very recent commit activity (today: 2026-03-15)",
+        "Repository still has access and being touched"
+      ],
+      "summary": "Package appears largely abandoned with no meaningful development activity for 6 months, despite today's timestamp suggesting minimal revival."
     },
     "changelog": null,
     "governance": {
@@ -255,7 +264,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the homebrew package 'mole' lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:06:04.890017+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

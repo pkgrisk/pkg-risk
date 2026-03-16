@@ -182,14 +182,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 7,
-      "quick_start": 9,
-      "examples": 9,
-      "configuration": 6,
+      "installation": 6,
+      "quick_start": 8,
+      "examples": 8,
+      "configuration": 5,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally clear and provides a good introduction to the library, but lacks comprehensive installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of detailed troubleshooting information"
+      "overall": 6,
+      "summary": "Well-written README with a solid code example and clear purpose, but installation defers to external files and troubleshooting is essentially absent.",
+      "top_issue": "No troubleshooting section \u2014 common issues like connection failures, compilation errors, or PostgreSQL version mismatches are not addressed anywhere."
     },
     "security": {
       "overall_score": 7,
@@ -220,12 +220,19 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "difficulty with version compatibility",
-        "issues with compilation"
+        "Critical memory safety bugs (double free crashes) impacting stability",
+        "Design limitations restricting usable patterns (work.stream storage constraints)",
+        "Lack of query parameter debugging/logging capabilities",
+        "Insufficient CI test coverage for build and install processes"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active bug fixes on critical issues (recent closures of SIGSEGV, regressions)",
+        "Engagement on recent bug reports with multiple comments",
+        "Thoughtful feature proposals being tracked and considered",
+        "CI/testing improvements being implemented"
+      ],
       "abandonment_signals": false,
-      "summary": "The libpqxx community is moderately active, but users are experiencing frustration with version compatibility and compilation issues, indicating a need for more responsive maintenance."
+      "summary": "libpqxx shows moderate maintenance health with active bug-fixing momentum on critical issues, though open memory safety crashes and backlogged feature requests suggest maintainer capacity constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -241,18 +248,26 @@
       "summary": "The maintainer provides generally helpful and clear responses, but with occasional lapses in clarity and welcomingness."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits and releases",
-        "High number of merged PRs and closed issues",
-        "Multiple active contributors"
+      "status": "minimal-maintenance",
+      "confidence": 6,
+      "concerns": [
+        "No commits in past 6 months despite recent activity",
+        "12 open issues with zero closed in past 6 months",
+        "No PR activity (merged or open) in past 6 months",
+        "No active contributors in past 6 months",
+        "Unknown last release date"
       ],
-      "summary": "The libpqxx package appears to be actively maintained with frequent updates, a high volume of pull requests and issue resolutions, and multiple active contributors."
+      "positive_signals": [
+        "Very recent commit (2026-03-14)",
+        "Active open issues indicate some user engagement"
+      ],
+      "summary": "Recent commit activity suggests minimal ongoing maintenance, but lack of issue resolution and zero contributor activity over 6 months indicates the project is dormant outside of sporadic updates."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:58:24.955112+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

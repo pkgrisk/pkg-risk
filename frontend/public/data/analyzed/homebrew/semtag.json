@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
+      "installation": 4,
       "quick_start": 6,
-      "examples": 9,
+      "examples": 7,
       "configuration": 7,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is detailed and provides many examples, but lacks clear installation instructions and troubleshooting guidance.",
-      "top_issue": "Installation instructions are incomplete and unclear."
+      "troubleshooting": 5,
+      "overall": 6,
+      "summary": "Well-structured README with good command coverage and examples, but installation is just 'copy the script' with no download instructions or package manager guidance.",
+      "top_issue": "Installation instructions are incomplete \u2014 no download link, no curl/wget command, no indication of where to get the script beyond 'copy it to your project directory'."
     },
     "security": {
       "overall_score": 7,
@@ -198,16 +198,18 @@
       "summary": "The release.sh script has some potential security issues related to command injection and error exposure, but overall it appears to be well-structured and follows good security practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "script does not exit on git tag failure",
-        "lack of feature to tag current branch"
+        "Silent failures - git tag errors don't cause script to fail, breaking CI pipelines",
+        "Hardcoded branch names (master/main) limiting modern Git workflows",
+        "Inflexible configuration - no way to disable git fetch, customize tag prefix, or tag non-main branches",
+        "Missing error handling in shell scripts"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with some minor issues and feature requests, but no signs of significant frustration or abandonment."
+      "abandonment_signals": true,
+      "summary": "The project exhibits signs of slow maintenance with critical unresolved bugs (silent CI failures) and multi-year-old feature requests lacking engagement, suggesting possible abandonment or minimal active development."
     },
     "communication": {
       "helpfulness": 7,
@@ -220,20 +222,26 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No recent commits or open PRs, indicating a lack of active development.",
-        "Only one contributor has been active in the past six months."
+        "Zero contributors active in past 6 months",
+        "Zero merged PRs in past 6 months indicates no development activity",
+        "Zero closed issues in past 6 months - open issues remain unaddressed",
+        "Last release date unknown, likely outdated",
+        "4 open issues with no resolution activity"
       ],
       "positive_signals": [
-        "There have been some merged pull requests in the last six months, showing that at least some level of maintenance is ongoing.",
-        "The package has had commits and releases in recent years, suggesting it was once actively maintained."
+        "One recent commit on 2026-02-11 suggests not completely abandoned",
+        "Repository still exists and accessible"
       ],
-      "summary": "The package shows signs of minimal maintenance with occasional updates but lacks active development."
+      "summary": "The project is stale with no active maintenance: despite a recent commit, there are no contributors, merged PRs, or issue resolution in the past 6 months, and the last release is unknown."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:21:19.578542+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

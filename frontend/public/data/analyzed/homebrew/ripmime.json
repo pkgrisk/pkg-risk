@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 5,
       "installation": 6,
-      "quick_start": 2,
+      "quick_start": 1,
       "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is lacking in several key areas, including usage examples and troubleshooting.",
-      "top_issue": "No clear usage instructions or examples are provided to help users understand how to use the package."
+      "overall": 2,
+      "summary": "Bare-bones README with a one-line feature description and build steps, but completely missing usage instructions, examples, or any operational guidance.",
+      "top_issue": "The Usage section exists but is entirely empty \u2014 there are no examples showing how to actually run or use the tool."
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,22 @@
       "summary": "The ripmime package has some security concerns, including potential injection risks and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Doesn't use STDIN",
-        "Content-Transfer-Encoding: binary is not decoded correctly"
+        "Binary data corruption (NUL byte handling)",
+        "Long filename support (>255 chars)",
+        "Exit codes not reflecting failures",
+        "STDIN input not working",
+        "Installation issues on specific platforms (Termux, AlmaLinux)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health appears stable with moderate frustration and no clear signs of abandonment, but there are open issues that need attention."
+      "praise_themes": [
+        "Utility and functionality appreciated",
+        "Tool considered useful for MIME extraction"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows signs of abandonment with multiple unresolved bugs dating back 5-8 years, no maintainer responses to recent issues, and minimal engagement on feature requests."
     },
     "communication": {
       "helpfulness": 7,
@@ -226,17 +232,19 @@
       "summary": "The maintainer is generally responsive but could provide more detailed explanations and be clearer in some cases."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Only two merged PRs in the past six months, suggesting limited community contribution and maintenance."
+        "No commits in past 6 months despite 18 open issues",
+        "Zero closed issues past 6 months - backlog accumulating",
+        "No merged PRs in 6 months - no maintenance or community contribution",
+        "No active contributors",
+        "Last release unknown - version history unavailable"
       ],
       "positive_signals": [
-        "Eight contributors active in the past six months, which shows some level of community involvement.",
-        "Regular issue reporting by users, indicating ongoing use and need for support."
+        "One commit in early February 2025 suggests minimal recent activity"
       ],
-      "summary": "The package is minimally maintained with occasional contributions but lacks recent development or updates."
+      "summary": "Ripmime appears abandoned with 18 unresolved issues and no maintenance activity for 6+ months despite a single commit in February."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -247,7 +255,10 @@
       "overall_score": 5,
       "summary": "The changelog lacks clear categorization, marked breaking changes, and migration guides, but it appears to be comprehensive with some clarity issues."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:07:51.656572+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

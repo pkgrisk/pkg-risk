@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 8,
-      "troubleshooting": 2,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 6,
+      "configuration": 5,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The README provides clear and detailed information on installation, configuration, and usage, but lacks comprehensive troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common problems and solutions"
+      "summary": "Solid foundational README covering installation and basic mounting workflows, but lacks troubleshooting guidance and deeper configuration documentation.",
+      "top_issue": "No troubleshooting section for common MTP issues (device not detected, permission errors, unmount failures), which are frequent pain points for FUSE/MTP setups."
     },
     "security": {
       "overall_score": 8,
@@ -194,16 +194,21 @@
     },
     "sentiment": {
       "sentiment": "negative",
-      "frustration_level": 8,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 9,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "Mounting issues with various devices and OS versions",
-        "Build and configuration problems",
-        "Device-specific compatibility issues"
+        "LIBMTP PANIC: Trying to dump the error stack of a NULL device (recurring across 2016-2024)",
+        "Mount failures and hanging on various Android devices",
+        "Build/compilation failures (configure/autogen issues)",
+        "Regression in 0.4.0 breaking partial object transfers",
+        "Platform-specific hangs (Arch Linux, macOS)",
+        "Mount directory left in bad state after connection failures"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Worked well historically before updates broke functionality"
+      ],
       "abandonment_signals": true,
-      "summary": "The community is experiencing significant frustration due to mounting and build issues, indicating potential abandonment of the project."
+      "summary": "Simple-mtpfs appears abandoned with decade-old critical panics still unresolved, zero maintainer engagement on recent issues, and recurring regressions in recent versions."
     },
     "communication": {
       "helpfulness": 6,
@@ -219,17 +224,18 @@
       "summary": "Responses are somewhat helpful but lack consistency and patience, especially with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 10,
       "concerns": [
-        "No commits in the past six months",
-        "Open issues and PRs suggest active community interest but lack resolution"
+        "No commits for over 2 years (last commit Oct 2023)",
+        "53 open issues with zero resolution in past 6 months",
+        "Zero PR activity and zero merged PRs",
+        "No active contributors for 6+ months",
+        "Unknown or missing release information",
+        "Growing backlog suggests maintenance has stopped entirely"
       ],
-      "positive_signals": [
-        "Recent contributors (past six months)",
-        "Active issue tracking"
-      ],
-      "summary": "The package shows minimal maintenance with recent contributor activity, but lacks recent code updates."
+      "positive_signals": [],
+      "summary": "This package is abandoned with no development activity, maintenance, or issue resolution for over 2 years and accumulating unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -240,7 +246,10 @@
       "overall_score": 6,
       "summary": "The changelog is mostly clear and comprehensive, but lacks explicit breaking changes and could be better organized."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:56:27.148884+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

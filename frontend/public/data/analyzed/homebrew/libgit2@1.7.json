@@ -183,15 +183,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
-      "examples": 4,
-      "configuration": 5,
-      "troubleshooting": 7,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 3,
+      "configuration": 4,
+      "troubleshooting": 5,
       "overall": 6,
-      "summary": "The README provides a good introduction to the library and its capabilities, but lacks detailed examples and configuration documentation.",
-      "top_issue": "Insufficient examples for common use cases"
+      "summary": "Well-structured README that clearly explains what libgit2 is and covers build prerequisites, but lacks code examples and configuration documentation.",
+      "top_issue": "No code examples showing actual API usage \u2014 a C library README should include at least one snippet demonstrating how to open a repo or make a commit."
     },
     "security": {
       "overall_score": 7,
@@ -206,13 +206,15 @@
       "frustration_level": 8,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "performance issues with git blame",
-        "memory leaks",
-        "cloning SHA256 repositories doesn't work"
+        "Performance regressions (cloning, delta resolution, packbuilder)",
+        "Critical bugs unfixed (memory corruption, operator precedence)",
+        "Platform-specific failures (Windows longpaths with submodules)",
+        "Missing API functionality (worktree reference support, bundle operations, ref parsing)",
+        "Build/integration issues (CMake FetchContent compatibility)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is experiencing significant performance and functionality issues, indicating a negative sentiment towards the project's current state."
+      "abandonment_signals": true,
+      "summary": "libgit2 exhibits maintenance strain: recent critical bugs (memory corruption, operator precedence) received zero responses, performance regressions persist from 2018-2019, Windows bugs unfixed since 2022, and an 'up for grabs' label suggests resource constraints."
     },
     "communication": {
       "helpfulness": 8,
@@ -225,18 +227,27 @@
       "summary": "Maintainer responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past six months (52)",
-        "Recent release date (2025-12-06)",
-        "Multiple contributors active in the past six months (12)"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months",
+        "539 open issues with zero closed in 6 months",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date",
+        "Large unresolved issue backlog suggests unresponsive maintenance"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Recent metadata timestamp (2026-03-14)",
+        "Issues are still being tracked"
+      ],
+      "summary": "libgit2 is stale with no maintenance activity for 6 months despite a large backlog of 539 open issues, indicating the project is not actively developed or responsive to community needs."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:45:44.414717+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

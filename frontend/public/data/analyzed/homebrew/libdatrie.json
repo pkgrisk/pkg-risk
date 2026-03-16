@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 6,
       "installation": 1,
       "quick_start": 1,
-      "examples": 2,
+      "examples": 1,
       "configuration": 1,
       "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The README provides a good introduction to the library's purpose and theory, but lacks practical information for users.",
-      "top_issue": "Lack of installation instructions, quick start guide, and examples"
+      "overall": 2,
+      "summary": "Academic-style README that explains the theory behind double-array tries but provides no installation instructions, usage examples, or API documentation.",
+      "top_issue": "No installation instructions, usage examples, or API documentation of any kind \u2014 the README reads as a historical note rather than user-facing documentation."
     },
     "security": {
       "overall_score": 7,
@@ -194,16 +194,22 @@
       "summary": "The libdatrie codebase appears to be generally secure, but some input validation and error handling issues were identified that could potentially lead to security vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build errors",
-        "test failures"
+        "Build system errors (autotools, libtool, undefined macros)",
+        "Linking errors (undefined symbols like locale_charset, libiconv_close)",
+        "Test suite failures (parallel execution race conditions, MSYS failures)",
+        "Compilation warnings (format specifiers, memory leaks)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate responsiveness, focusing on build and test issues."
+      "praise_themes": [
+        "Issues tracked with detailed error logs",
+        "Recent CI/build activity (Feb 2025)",
+        "Some technical issues properly resolved"
+      ],
+      "abandonment_signals": true,
+      "summary": "libdatrie shows inconsistent maintenance with recurring build system issues, many unresolved tickets from 2019-2022, but recent CI activity suggests sporadic ongoing work."
     },
     "communication": {
       "helpfulness": 8,
@@ -216,17 +222,20 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No merged PRs in the past six months, indicating a lack of community contribution or approval.",
-        "Zero closed issues and two open PRs suggest that there might be unaddressed problems."
+        "11 open issues with no resolution activity in past 6 months",
+        "No commits, merged PRs, or active contributors for extended period",
+        "Unknown release cadence prevents tracking maintenance velocity",
+        "No pull request activity suggests lack of community/maintainer engagement",
+        "Isolated recent commit does not indicate sustained maintenance"
       ],
       "positive_signals": [
-        "Recent commits within the last year",
-        "One active contributor over the past six months"
+        "Single recent commit on 2026-01-05 indicates project is not completely abandoned",
+        "Issue tracking is still in place"
       ],
-      "summary": "The package is minimally maintained with recent activity but faces concerns regarding community contribution and issue resolution."
+      "summary": "libdatrie is dormant with minimal activity\u2014a recent commit exists but no sustained maintenance pattern, unresolved issues, or active contributors in the past 6 months indicate the project lacks active stewardship."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -237,7 +246,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:29:34.548900+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

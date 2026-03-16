@@ -181,14 +181,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 3,
-      "troubleshooting": 7,
-      "overall": 5,
-      "summary": "The README provides a good introduction to Kubernetes, but lacks clear installation instructions and configuration documentation.",
-      "top_issue": "Installation instructions are incomplete and scattered across different links."
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 1,
+      "troubleshooting": 4,
+      "overall": 3,
+      "summary": "The README effectively describes what Kubernetes is but focuses on building from source rather than guiding end users on how to actually use kubectl or deploy workloads.",
+      "top_issue": "No installation or usage instructions for kubectl (the CLI tool); the README is for the Kubernetes project repository, not the end-user CLI tool installed via Homebrew."
     },
     "security": {
       "overall_score": 7,
@@ -212,15 +212,23 @@
       "summary": "The code has some potential security concerns related to input validation and command injection risks, but overall it appears to be well-structured and follows best practices for error handling and secrets management."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "Pod-level limits defaults not set when all containers have limits set and pod-level request is set"
+        "Scheduling performance and race condition issues",
+        "Long-standing unresolved issues spanning years",
+        "Test flakiness in scheduler integration tests",
+        "Pod safety and data integrity concerns during termination"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health appears neutral with moderate responsiveness, focusing on bug reports without significant praise or complaints."
+      "praise_themes": [
+        "Comprehensive issue labeling and triage practices",
+        "Deep technical discussions with detailed context",
+        "Cross-functional coordination between SIGs",
+        "Recent rapid responses to new bugs"
+      ],
+      "abandonment_signals": true,
+      "summary": "Kubernetes maintains active recent development with responsive triage, but has accumulated several years of unresolved issues (dating to 2021-2023), including one marked lifecycle/rotten, suggesting selective prioritization rather than comprehensive resolution."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,14 +241,19 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide detailed instructions and links for users to follow."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors are actively involved"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "2641 open issues with zero closed in past 6 months indicates severe issue backlog and no triage",
+        "Zero commits, PRs, and contributors active in past 6 months indicates inactive development",
+        "Unknown last release suggests version tracking has broken or been abandoned",
+        "No maintenance activity despite being critical infrastructure tool (kubernetes-cli)"
       ],
-      "summary": "The package is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Very recent commit (today) suggests project not completely dormant",
+        "No open PRs accumulating, indicating some gatekeeping still in place"
+      ],
+      "summary": "Project shows signs of abandonment with massive untriaged issue backlog and zero maintenance activity for 6 months, though a recent commit suggests minimal ongoing monitoring rather than complete abandonment."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -258,7 +271,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The provided documentation lacks details on succession, decision-making, contributor paths, and multiple maintainers."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:05:23.402886+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

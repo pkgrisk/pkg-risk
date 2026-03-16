@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
+      "quick_start": 9,
       "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, with detailed installation instructions and examples, but lacks comprehensive troubleshooting documentation.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "configuration": 7,
+      "troubleshooting": 4,
+      "overall": 8,
+      "summary": "Excellent, well-structured documentation with clear purpose, multiple installation paths, and practical usage examples, but lacks a dedicated troubleshooting section.",
+      "top_issue": "No troubleshooting section \u2014 only a single inline note about non-default Homebrew locations; common issues like no output, performance problems, or encoding issues are unaddressed."
     },
     "security": {
       "overall_score": 7,
@@ -209,18 +209,22 @@
       "summary": "The hgrep package has some security concerns, including potential command injection and lack of input validation, but overall the code appears to be well-structured and secure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "output issues with specific file endings and encodings",
-        "buggy behavior on Windows"
+        "Windows-specific rendering bugs (C# syntax highlighting, line ending handling)",
+        "Character encoding issues (UTF-16 support, BOM interference)",
+        "Platform/distribution gaps (missing Linux package managers, ARM64 binaries)",
+        "CLI regressions (--hidden flag behavior changes between versions)",
+        "Crashes on edge cases (panic with duplicate lines from rg --vimgrep)"
       ],
       "praise_themes": [
-        "enhancement requests for broader platform support"
+        "Active user engagement suggesting tool is valued",
+        "Issues are being triaged and resolved"
       ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate responsiveness from maintainers addressing both bugs and enhancement requests."
+      "summary": "Moderately healthy project with responsive bug fixes, but cross-platform support gaps and encoding handling issues indicate maintenance challenges."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,17 +237,20 @@
       "summary": "The maintainer's responses are clear, helpful, and patient, with a good level of technical depth."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 7,
+      "status": "minimal-maintenance",
+      "confidence": 8,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Only two contributors active in the past six months"
+        "Zero commits in past 6 months despite unresolved issues",
+        "Three open issues with no resolution activity",
+        "No active contributors or maintainers in past 6 months",
+        "No merged PRs or pull request activity in past 6 months",
+        "Unknown release history prevents version assessment"
       ],
       "positive_signals": [
-        "42 commits in the past six months",
-        "Regular issue reporting and resolution"
+        "Recent commit 38 days ago suggests not completely abandoned",
+        "No open pull requests accumulating"
       ],
-      "summary": "The package is maintained with regular activity but could benefit from more contributions."
+      "summary": "Project shows signs of stagnation with minimal maintainer engagement over six months, despite recent commit activity suggesting it hasn't been fully abandoned."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -261,7 +268,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a documented succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:47:51.828293+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

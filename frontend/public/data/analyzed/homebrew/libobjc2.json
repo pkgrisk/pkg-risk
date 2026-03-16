@@ -178,15 +178,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 2,
+      "clarity": 7,
+      "installation": 1,
       "quick_start": 1,
-      "examples": 4,
-      "configuration": 8,
-      "troubleshooting": 3,
-      "overall": 4,
-      "summary": "The documentation is detailed but lacks clear installation and quick start instructions, making it difficult for new users to get started.",
-      "top_issue": "Lack of clear installation instructions"
+      "examples": 1,
+      "configuration": 4,
+      "troubleshooting": 2,
+      "overall": 3,
+      "summary": "The README provides solid technical background on ABI variants and runtime features but completely lacks installation instructions, usage examples, and practical guidance for new users.",
+      "top_issue": "No installation instructions or usage examples \u2014 a developer cannot get started from this README alone."
     },
     "security": {
       "overall_score": 7,
@@ -213,16 +213,22 @@
       "summary": "The code has some security concerns related to input validation and error handling, but no critical vulnerabilities were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "build errors with gcc",
-        "undefined references"
+        "GCC compiler compatibility (unrecognized -Xclang flag, ivar_align_mask enum issues)",
+        "Linker compatibility issues (lld segfaults, libc++ configuration, gnustep-2.2 linker errors)",
+        "Runtime crashes with ENABLE_TRACING enabled on amd64",
+        "Build failures across multiple compiler/linker combinations"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Proactive code quality improvements and cleanup proposals",
+        "Professional technical discussions on complex linking issues",
+        "Systematic issue documentation and tracking"
+      ],
       "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate frustration due to ongoing build issues and undefined references."
+      "summary": "Project shows moderate maintenance activity with responsive issue handling, but multiple unresolved compiler/linker compatibility issues and one critical runtime bug create some community friction."
     },
     "communication": {
       "helpfulness": 8,
@@ -235,20 +241,26 @@
       "summary": "The maintainer responses are clear, helpful, and technically deep. They show patience with new contributors."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "minimal-maintenance",
       "confidence": 8,
       "concerns": [
-        "\u8f83\u591a\u7684\u672a\u89e3\u51b3\u95ee\u9898",
-        "\u8fd1\u671f\u5408\u5e76\u7684PR\u5c11\u4e8e\u6253\u5f00\u7684PR"
+        "Zero commits in past 6 months despite recent activity",
+        "36 open issues with zero closed in the past 6 months",
+        "No active contributors in the past 6 months",
+        "No merged PRs in the past 6 months",
+        "Unknown last release date suggests stalled release cycle"
       ],
       "positive_signals": [
-        "\u6700\u8fd1\u516d\u4e2a\u6708\u670927\u4e2a\u63d0\u4ea4",
-        "\u6700\u8fd1\u516d\u4e2a\u6708\u670915\u4e2a\u5408\u5e76\u7684PR"
+        "Recent commit activity (2026-02-10, 33 days ago) indicates project is not completely abandoned",
+        "No backlog of open PRs to suggest neglected contributions"
       ],
-      "summary": "\u9879\u76ee\u6709\u4e00\u5b9a\u7684\u7ef4\u62a4\u6d3b\u52a8\uff0c\u4f46\u5b58\u5728\u4e00\u4e9b\u95ee\u9898\u9700\u8981\u5173\u6ce8"
+      "summary": "libobjc2 shows signs of stagnation with accumulating unresolved issues and minimal recent development, despite a solitary February commit."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:17:59.022191+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

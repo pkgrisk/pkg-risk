@@ -163,15 +163,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 8,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 5,
+      "examples": 4,
+      "configuration": 4,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a good introduction to the package and its features, but lacks clear troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "overall": 5,
+      "summary": "The README clearly describes what lf is and covers installation well, but defers most practical guidance to external links rather than providing inline examples or configuration documentation.",
+      "top_issue": "No inline quick-start example or configuration snippet \u2014 users are immediately redirected to external wiki/doc links for anything beyond basic invocation."
     },
     "security": {
       "overall_score": 5,
@@ -198,16 +198,22 @@
       "summary": "The provided Go code has several security concerns, including potential injection risks, inadequate input validation, and error exposure issues, which require attention to ensure a secure application."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "feature requests",
-        "enhancements"
+        "Child process management - previewer scripts hang or dangle after lf exits",
+        "Path handling edge cases - linefeed characters and special Unicode in filenames not properly supported",
+        "Tag tracking not synced with file move/delete operations",
+        "Mouse input mapping partially broken (buttons 4-8 non-functional)",
+        "Shell configuration and aliases not inherited in lf shell context"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Issues are well-documented with detailed reproduction steps and screenshots",
+        "Active community engagement on complex issues (36 comments on path delimiter discussion)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively requesting new features and enhancements, but the maintainer's responsiveness is moderate, indicating a relatively healthy project with room for improvement."
+      "summary": "lf shows moderate health with recent activity and issue closures, but several long-standing open issues (since 2023) around process management and path handling suggest technical debt that needs attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,16 +228,19 @@
       "summary": "The maintainer provides clear and technically detailed responses, but can be somewhat abrupt with repeated or basic questions and may not always prioritize user convenience."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (182)",
-        "Recent last commit (2026-01-01)",
-        "Active issue and PR management (89 closed issues, 178 merged PRs)",
-        "Multiple active contributors (5) in the past 6 months"
+      "status": "minimal-maintenance",
+      "confidence": 7,
+      "concerns": [
+        "49 open issues with zero closed in past 6 months indicates unresolved community problems",
+        "Zero active contributors in past 6 months suggests low project engagement",
+        "No releases documented despite recent commit activity",
+        "Zero merged PRs in 6 months indicates either no submissions or non-responsive to contributions"
       ],
-      "summary": "The lf package appears to be actively maintained with frequent commits, recent updates, and engaged contributors."
+      "positive_signals": [
+        "Recent commit 3 days ago shows some activity",
+        "No open PRs suggests backlog is not overwhelming maintainers"
+      ],
+      "summary": "Project shows minimal maintenance with a recent commit but stalled issue resolution, no releases, and no active contributors over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -249,7 +258,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the homebrew package 'lf' lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:36:41.580904+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

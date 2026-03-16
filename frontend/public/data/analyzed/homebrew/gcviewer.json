@@ -173,14 +173,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
+      "installation": 5,
       "quick_start": 7,
-      "examples": 9,
-      "configuration": 5,
-      "troubleshooting": 4,
+      "examples": 6,
+      "configuration": 7,
+      "troubleshooting": 3,
       "overall": 6,
-      "summary": "The documentation is detailed and provides many examples, but could be improved with clearer installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions for users who are not familiar with Java or the Homebrew package ecosystem."
+      "summary": "GCViewer has solid coverage of supported formats and chart interpretation, but lacks installation steps, prerequisites beyond Java 1.8, and troubleshooting guidance.",
+      "top_issue": "No installation instructions \u2014 the README assumes users already have the JAR and know where to get it, with no download/build steps provided."
     },
     "security": {
       "overall_score": 7,
@@ -206,16 +206,20 @@
       "summary": "GCViewer has some security concerns, including potential command injection and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "log parsing issues",
-        "startup errors on macOS"
+        "Java/JVM version compatibility issues (Java 21 ZGC, OpenJDK 11/9, G1GC parsing)",
+        "macOS startup errors and incompatibilities",
+        "GC log parsing bugs across various formats",
+        "Graph display issues with log series",
+        "Build tool restrictions (git requirement, JAVA_HOME issues)",
+        "Missing visualization features (metaspace display, interactive tooltips)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is facing some common issues, but there are no signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "The project shows critical abandonment signals with numerous unresolved bugs and feature requests dating back to 2019, an explicit unanswered request for a new release since December 2023, and zero response to a maintainer seeking help request."
     },
     "communication": {
       "helpfulness": 8,
@@ -228,20 +232,26 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No merged PRs in the past six months",
-        "Last release was over two years ago"
+        "84 open issues with no resolution activity",
+        "No commits in past 6 months despite having a recent commit",
+        "Zero active contributors in past 6 months",
+        "No PRs or releases in recent months",
+        "Unknown last release date suggests poor release cadence"
       ],
       "positive_signals": [
-        "Commits in the past six months",
-        "Active contributor"
+        "Last commit was only 3 months ago (2025-12-06)",
+        "Project has historical development history"
       ],
-      "summary": "The package shows minimal maintenance with occasional commits but no recent releases or merged PRs."
+      "summary": "Project is stale with no maintenance activity and a large backlog of unaddressed issues, indicating abandonment or minimal care mode."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:14:53.172050+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

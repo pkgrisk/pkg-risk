@@ -169,15 +169,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 4,
-      "configuration": 7,
-      "troubleshooting": 1,
-      "overall": 5,
-      "summary": "The documentation is thorough in some areas, such as installation and configuration, but lacks a clear quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a concise quick start example to help new users understand the basic usage of the package."
+      "clarity": 6,
+      "installation": 7,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 5,
+      "troubleshooting": 2,
+      "overall": 4,
+      "summary": "The README covers installation reasonably well but lacks any usage examples, API documentation, or quick-start guide, leaving users with no guidance on how to actually use the library after installing it.",
+      "top_issue": "No quick-start example or usage documentation \u2014 users have no idea how to interact with the library after installation"
     },
     "security": {
       "overall_score": 7,
@@ -198,16 +198,22 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of proper input validation, but does not appear to have any critical vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "bugs",
-        "compatibility issues"
+        "Windows compatibility issues (unicode filepaths, large file support, HDF5 corruption)",
+        "Build system problems (CMake configuration, compiler warnings)",
+        "Parallel processing limitations (2GB-4GB array size limits)",
+        "Infrastructure gaps (CI/testing coverage)"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The cgns community is moderately active, with some open issues and bugs, but maintainers are responsive to user concerns."
+      "praise_themes": [
+        "Issues get resolved when addressed",
+        "Some bugs receive substantive engagement (10-15 comments)",
+        "Mixed new and old activity shows ongoing maintenance"
+      ],
+      "abandonment_signals": true,
+      "summary": "CGNS shows concerning stagnation with multiple critical/major bugs open 1-2+ years (unicode paths, large files, CI improvements), while some resolved issues indicate sporadic maintenance activity\u2014suggesting resource constraints or deprioritization."
     },
     "communication": {
       "helpfulness": 9,
@@ -220,20 +226,27 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient, providing a good balance of technical depth and welcoming tone."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "high number of open issues",
-        "low number of active contributors"
+        "Zero commits in past 6 months despite 169 open issues",
+        "Zero merged PRs in past 6 months - no active development",
+        "Zero contributors active in past 6 months",
+        "Zero closed issues in past 6 months - issues accumulating without resolution",
+        "No releases available - users cannot access new versions",
+        "Data contradiction: last commit timestamp recent but zero commits past 6 months"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active merging of PRs"
+        "Repository still exists and has a commit history",
+        "No open PRs creating maintenance burden"
       ],
-      "summary": "The cgns package appears to be maintained, with regular updates and a decent level of community engagement, but may benefit from more contributors to address the backlog of open issues."
+      "summary": "The cgns package is abandoned with 169 unresolved issues and zero maintenance activity (commits, PRs, releases, contributors) over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:13:20.796730+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "maintained",

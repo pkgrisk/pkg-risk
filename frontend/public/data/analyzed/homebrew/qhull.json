@@ -170,15 +170,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 5,
+      "clarity": 6,
+      "installation": 8,
+      "quick_start": 5,
+      "examples": 4,
+      "configuration": 3,
       "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The README provides detailed installation instructions and some examples, but could be improved with clearer explanations of the package's purpose and more concise troubleshooting information.",
-      "top_issue": "Lack of clear and concise introduction to the package's purpose and functionality"
+      "overall": 5,
+      "summary": "Qhull's README provides thorough build/install instructions across multiple platforms but lacks a concise quick-start and has minimal usage examples or configuration documentation.",
+      "top_issue": "No quick-start example showing basic programmatic or CLI usage for a new user \u2014 the purpose is clear but getting from install to working output requires digging through separate documentation."
     },
     "security": {
       "overall_score": 7,
@@ -192,16 +192,22 @@
       "summary": "The code has some security concerns, including lack of input validation and potential for NULL pointer dereferences, but does not appear to have any critical vulnerabilities related to injection risks or secrets exposure."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 5,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "compatibility issues",
-        "crashes"
+        "Build system compatibility (CMake 4, WebAssembly/emscripten support)",
+        "Algorithm correctness and crash issues (fuzzing crashes, overlapping simplices, qsort comparison bug)",
+        "Memory safety concerns (sanitizer issues)",
+        "API design concerns (non-const char* parameters)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Library is valuable for important downstream projects (MuJoCo, igraph, R geometry package)",
+        "Users are respectful and collaborative in reporting issues",
+        "Some issues receive good engagement (up to 8 comments) and are resolved"
+      ],
       "abandonment_signals": false,
-      "summary": "The qhull community is moderately active, with some users experiencing compatibility and crash issues, but maintainers are responsive to reported problems."
+      "summary": "Qhull shows moderate health with engaged but potentially resource-constrained maintainers; users value the library and report issues constructively, but several critical bugs (fuzzing crashes, memory safety) remain open and response times are uneven."
     },
     "communication": {
       "helpfulness": 8,
@@ -214,21 +220,25 @@
       "summary": "The maintainer's responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "low number of contributors",
-        "old last release",
-        "many open issues"
+        "No commits in the past 6 months",
+        "29 unaddressed open issues",
+        "Zero active contributors",
+        "No merged PRs or closed issues in 6 months",
+        "Last release date unknown"
       ],
       "positive_signals": [
-        "recent commits",
-        "active PR merging"
+        "Last commit exists from 6 months ago (not completely abandoned)"
       ],
-      "summary": "The qhull package appears to be receiving minimal maintenance with some recent activity, but concerns around contributor count and issue backlog remain."
+      "summary": "qhull is in a stale maintenance state with no activity, active contributors, or issue resolution in the past 6 months despite 29 open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:32:31.250079+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "minimal-maintenance",

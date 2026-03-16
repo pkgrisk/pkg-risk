@@ -177,14 +177,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 2,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 4,
+      "installation": 1,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation provides a good overview of the package's purpose and features, but lacks clear installation instructions, quick start examples, and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions and quick start examples"
+      "overall": 3,
+      "summary": "The README clearly explains what Grizzly does and what it supports, but contains virtually no installation instructions, examples, configuration docs, or troubleshooting \u2014 just links to external docs.",
+      "top_issue": "No installation instructions, quick start, or examples are provided in the README itself; all substantive content is deferred to external documentation links."
     },
     "security": {
       "overall_score": 7,
@@ -210,18 +210,24 @@
       "summary": "The code has some potential security vulnerabilities, including a possible command injection attack and lack of input validation, but overall it appears to be well-structured and follows good security practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "documentation issues",
-        "bug reports"
+        "Missing deletion/cleanup functionality (create-only tool)",
+        "Resource dependency ordering bugs (AlertRuleGroup created before ContactPoint)",
+        "Poor credential/secret management support",
+        "Missing advanced features (jsonnet ext.vars, year-based durations)",
+        "Private probe definitions showing as blank",
+        "Library file modification causing manifest failures"
       ],
       "praise_themes": [
-        "feature requests for improved functionality"
+        "Tool simplicity and ease of dashboard management",
+        "Appreciation for project reducing operational burden",
+        "Constructive feature requests indicate continued interest"
       ],
       "abandonment_signals": false,
-      "summary": "The community is actively engaging with the project, but there are ongoing documentation and bug issues that may cause frustration."
+      "summary": "Active but unevenly maintained project with engaged users who appreciate its core functionality, but frustrated by unresolved bugs, missing features, and at least one issue receiving no maintainer response."
     },
     "communication": {
       "helpfulness": 6,
@@ -237,17 +243,20 @@
       "summary": "The maintainer's responses vary in quality, with some being clear and technical but others lacking depth or being dismissive."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues and PRs suggests potential unresolved problems or feature requests."
+        "No commits in past 6 months (last commit 8+ months ago)",
+        "50 open issues with zero closed in past 6 months",
+        "Zero merged PRs in past 6 months",
+        "No active contributors in past 6 months",
+        "No releases in unknown time period",
+        "Zero pull request activity despite open issues"
       ],
       "positive_signals": [
-        "Contributors are still active, which could indicate some level of interest in maintaining the package.",
-        "Recent closed issue and merged PRs show that there has been some activity to address outstanding matters."
+        "Project has a commit history (not immediately deleted)"
       ],
-      "summary": "The package is in minimal maintenance with occasional contributions but lacks recent development efforts."
+      "summary": "The grizzly package is effectively abandoned with no maintenance activity, unaddressed issues, or contributor engagement for over 8 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -265,7 +274,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, indicating high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:59:24.495031+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

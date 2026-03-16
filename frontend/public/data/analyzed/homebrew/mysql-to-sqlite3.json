@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
-      "configuration": 9,
+      "quick_start": 8,
+      "examples": 5,
+      "configuration": 8,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The documentation is generally well-structured and provides clear installation instructions, but lacks a concise quick start example and troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "summary": "Clear, well-structured documentation covering installation and all CLI options, but lacks practical usage examples and troubleshooting guidance.",
+      "top_issue": "No troubleshooting section or common usage examples (e.g. a full command transferring a real database) \u2014 users only get a raw options list with no worked examples."
     },
     "security": {
       "overall_score": 7,
@@ -220,16 +220,17 @@
       "summary": "The code has some security concerns, including potential SQL injection risks and lack of proper input validation, but overall it appears to be well-structured and follows best practices for secure coding."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "FOREIGN Key problems",
-        "Non-unique indexes are quietly omitted"
+        "Silent failures without user notification (non-unique indexes omitted)",
+        "Edge cases in SQL conversion (text column defaults, MariaDB compatibility)",
+        "stderr/logging behavior issues with progress bars"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is experiencing some issues but the project seems to be actively maintained."
+      "summary": "Active project with responsive maintainers addressing reported bugs and features, but users experience frustration with silent data loss and edge case handling in database conversion."
     },
     "communication": {
       "helpfulness": 8,
@@ -242,15 +243,19 @@
       "summary": "The maintainer's responses are clear, helpful, and patient. They provide technical depth in explanations and encourage new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged PRs in the past six months",
-        "No open issues"
+      "concerns": [
+        "Zero commits in the past 6 months",
+        "Unknown last release date",
+        "One open issue with no response",
+        "Zero active contributors in the past 6 months",
+        "No merged PRs or issue resolution activity"
       ],
-      "summary": "The package is actively maintained with recent activity and no open concerns."
+      "positive_signals": [
+        "Repository still exists and is indexed in homebrew"
+      ],
+      "summary": "This package has no maintenance activity for at least 6 months with an unresolved open issue and unknown release status, indicating a stale project."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -268,7 +273,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:21:02.997588+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

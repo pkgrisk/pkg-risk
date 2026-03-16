@@ -174,15 +174,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
-      "quick_start": 7,
+      "clarity": 7,
+      "installation": 6,
+      "quick_start": 6,
       "examples": 5,
-      "configuration": 4,
-      "troubleshooting": 3,
-      "overall": 5,
-      "summary": "The README provides a good overview of the package's purpose and functionality, but lacks clear and concise instructions for installation, usage, and troubleshooting.",
-      "top_issue": "Insufficient examples and documentation for common use cases and configuration options."
+      "configuration": 7,
+      "troubleshooting": 6,
+      "overall": 6,
+      "summary": "Bubblewrap's README is thorough on security concepts and sandboxing features but skews toward background context over practical usage guidance for new users.",
+      "top_issue": "The single usage example is explicitly labeled 'incomplete' and the README lacks a clear, end-to-end practical example showing a real sandboxing use case."
     },
     "security": {
       "overall_score": 7,
@@ -209,18 +209,20 @@
       "summary": "The code has some security concerns, including potential injection risks and insufficient input validation, but overall it appears to be well-structured and follows good practices for error handling and secrets management."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 7,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "--clearenv leaks environment",
-        "bwrap refuses to run with ambient capabilities"
+        "Signal handling issues (ctrl+c sent to bwrap instead of child process)",
+        "Symlink and bind mounting problems with complex directory structures",
+        "Platform-specific crashes (Fedora Linux 43)",
+        "Docker compatibility limitations (unprivileged containers)",
+        "Resource/argument limits (9000 args ceiling)",
+        "Missing advanced security features (UID/GID mapping, Landlock integration)"
       ],
-      "praise_themes": [
-        "Add support for Landlock"
-      ],
+      "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community is moderately active, with some open issues and suggestions for improvement, but no clear signs of frustration or abandonment."
+      "summary": "Active project with recent engagement but significant unfixed bugs dating back years (particularly symlink handling and signal propagation), creating moderate user frustration despite ongoing maintenance."
     },
     "communication": {
       "helpfulness": 7,
@@ -236,20 +238,25 @@
       "summary": "The maintainer provides technically deep explanations but could improve clarity and patience with more detailed guidance and encouragement for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "Low number of commits in the past six months (only 2)",
-        "High number of open issues (144)"
+        "177 open issues with zero closed in past 6 months",
+        "Zero commits in past 6 months despite recent commit date",
+        "No active contributors in past 6 months",
+        "Last release date unknown",
+        "No merged pull requests in past 6 months"
       ],
       "positive_signals": [
-        "Regular release updates (last release on 2024-10-30)",
-        "Some recent PR activity (1 merged PR in the past six months)"
+        "One recent commit 39 days ago suggests minimal past activity"
       ],
-      "summary": "The package is minimally maintained with occasional releases and some recent PR activity, but faces a high issue backlog."
+      "summary": "Bubblewrap appears abandoned with a growing backlog of 177 unresolved issues and no maintenance activity in the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:07:22.324692+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

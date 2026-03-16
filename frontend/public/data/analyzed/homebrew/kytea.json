@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 2,
+      "clarity": 6,
+      "installation": 5,
+      "quick_start": 1,
       "examples": 1,
-      "configuration": 2,
-      "troubleshooting": 1,
-      "overall": 3,
-      "summary": "The documentation is lacking in key areas, making it difficult for new users to get started with the package.",
-      "top_issue": "Insufficient examples and quick start guide"
+      "configuration": 1,
+      "troubleshooting": 2,
+      "overall": 2,
+      "summary": "Extremely minimal README that only covers basic build steps, deferring all real documentation to an external website.",
+      "top_issue": "No usage examples or quick start \u2014 users must visit an external URL to learn anything about how to actually use the tool."
     },
     "security": {
       "overall_score": 6,
@@ -201,16 +201,21 @@
       "summary": "The KyTea codebase has some security concerns, including potential command-line argument injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "installation issues",
-        "compilation errors"
+        "Compilation errors (-fPIC, linker failures, missing headers)",
+        "String length limit causing fatal errors",
+        "No releases despite fixes being available in PRs",
+        "Installation failures on various platforms"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with some open installation and compilation issues, but no signs of abandonment."
+      "praise_themes": [
+        "Library functionality appreciated when it works",
+        "Interest in using as alternative to established tools (Mecab)"
+      ],
+      "abandonment_signals": true,
+      "summary": "The project shows strong abandonment signals with unresolved build issues spanning 2019-2022, a stalled v0.4.7 release, and zero maintainer engagement despite users requesting release of fixes available in merged PRs."
     },
     "communication": {
       "helpfulness": 8,
@@ -223,17 +228,18 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 10,
       "concerns": [
-        "No commits in the past six months",
-        "Multiple open issues and no recent PR activity"
+        "Last commit was over 5 years ago (2020-04-03)",
+        "Zero commits in past 6 months",
+        "Zero active contributors in past 6 months",
+        "8 open issues with no recent activity or resolution",
+        "No recent releases or merged PRs",
+        "Complete stagnation with no indication of maintenance"
       ],
-      "positive_signals": [
-        "9 contributors active over the past six months",
-        "No merged PRs but this could indicate a focus on issue resolution rather than feature development"
-      ],
-      "summary": "The package shows minimal maintenance with some contributor activity, but lacks recent code updates."
+      "positive_signals": [],
+      "summary": "kytea is abandoned with the last commit dating to April 2020 and zero development activity for over 5 years."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -244,7 +250,10 @@
       "overall_score": 2,
       "summary": "The changelog is incomplete, not well-organized, and lacks clarity for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:35:34.364057+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

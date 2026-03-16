@@ -174,14 +174,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 4,
+      "installation": 7,
+      "quick_start": 3,
+      "examples": 4,
+      "configuration": 5,
+      "troubleshooting": 6,
       "overall": 6,
-      "summary": "The README provides detailed information about the package, but lacks a clear and concise quick start guide.",
-      "top_issue": "Lack of a simple, step-by-step example to get new users started with using libfuse."
+      "summary": "Well-structured library documentation with solid installation and security coverage, but lacks a quick-start code example for building a FUSE filesystem.",
+      "top_issue": "No code example showing how to implement a basic filesystem \u2014 users are directed to example files in the source tree rather than shown anything inline."
     },
     "security": {
       "overall_score": 8,
@@ -192,15 +192,21 @@
       "summary": "The provided code appears to be a low-level FUSE API implementation with no major security concerns found, but some input validation and error handling improvements are recommended."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
+      "sentiment": "mixed",
+      "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "API changes without full compatibility"
+        "Permission caching bugs with non-zero attr_timeout",
+        "Compiler compatibility issues (Clang 21.1.8)",
+        "io_uring concurrency and thread safety problems",
+        "Memory performance overhead in data handling"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Performance optimization efforts (memmove elimination)",
+        "Ongoing development activity (recent 2026 issues)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is moderately engaged, with concerns around API changes and some open issues, but no clear signs of abandonment."
+      "summary": "Project shows active recent development (March 2026) but inconsistent maintainer engagement, with critical 10-year-old bugs unresolved and zero response to compiler compatibility issues alongside some performance improvements."
     },
     "communication": {
       "helpfulness": 7,
@@ -216,18 +222,25 @@
       "summary": "The maintainer is generally helpful and clear, but could be more welcoming to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Recent release date",
-        "Multiple contributors active in the last six months"
+      "status": "stale",
+      "confidence": 8,
+      "concerns": [
+        "67 open issues with zero closed in past 6 months",
+        "No merged pull requests in past 6 months",
+        "No active contributors in past 6 months",
+        "No commits in past 6 months prior to today's anomalous commit",
+        "Unknown last release date"
       ],
-      "summary": "The package is actively maintained with regular updates and contributions."
+      "positive_signals": [
+        "Very recent commit timestamp (2026-03-15, today)"
+      ],
+      "summary": "Project appears abandoned with minimal recent activity; today's commit is likely automated (CI rebuild, sync) rather than active maintenance given zero contributor engagement and unresolved backlog."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:44:39.382747+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

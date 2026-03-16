@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 9,
-      "configuration": 9,
-      "troubleshooting": 5,
-      "overall": 7,
-      "summary": "The documentation is comprehensive and provides detailed information about the package, but could be improved with clearer installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of clear installation instructions for users who are not familiar with Unix or shell scripts."
+      "clarity": 9,
+      "installation": 4,
+      "quick_start": 5,
+      "examples": 5,
+      "configuration": 8,
+      "troubleshooting": 6,
+      "overall": 6,
+      "summary": "Excellent conceptual overview and thorough option documentation, but lacks a concrete quick-start example and explicit installation instructions.",
+      "top_issue": "No installation instructions \u2014 the README jumps straight to usage syntax without explaining how to install makeself itself."
     },
     "security": {
       "overall_score": 5,
@@ -218,12 +218,15 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "extraction issues",
-        "security concerns"
+        "Missing dependencies cause unhelpful error messages (tar, dd not found)",
+        "Performance regressions in recent versions (2.4.2+)",
+        "Option combinations cause conflicts and syntax errors",
+        "Security/privacy concern: passphrase exposure via command line",
+        "Dangerous default behavior with chown/chmod affecting unrelated files"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The makeself community is moderately active with some open issues and security concerns, but maintainers are responsive to user reports."
+      "abandonment_signals": true,
+      "summary": "Moderate maintenance activity with recent fixes, but critical long-standing issues (2016 chown bug, 2023 feature request) and performance regressions indicate incomplete attention to user concerns."
     },
     "communication": {
       "helpfulness": 8,
@@ -239,17 +242,19 @@
       "summary": "The maintainer provides generally helpful, clear, and technically sound responses, but could improve in terms of patience and welcomingness towards new contributors."
     },
     "maintenance": {
-      "status": "maintained",
-      "confidence": 8,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "relatively low number of closed issues",
-        "open issues outnumber merged PRs"
+        "51 open issues with zero closed in past 6 months",
+        "No commits in the past 6 months despite recent activity noted",
+        "Zero active contributors",
+        "No pull request activity or reviews",
+        "Unknown last release - no clear release cadence"
       ],
       "positive_signals": [
-        "recent commits and release",
-        "active contributors in the past 6 months"
+        "Last commit relatively recent (January 2026)"
       ],
-      "summary": "The makeself package appears to be maintained, with recent activity and a steady stream of commits, but could improve issue resolution and community engagement."
+      "summary": "Makeself appears abandoned with accumulating unresolved issues and no maintenance activity for at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -260,7 +265,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-structured and comprehensive, but lacks explicit breaking change markers and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:50:41.053228+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

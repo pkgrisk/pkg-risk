@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
       "quick_start": 8,
       "examples": 9,
       "configuration": 7,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The README provides clear and concise information on the package's purpose, installation, and usage, but lacks sufficient troubleshooting documentation.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Well-structured documentation with clear installation options and strong command examples, but lacks troubleshooting guidance and the README appears truncated mid-sentence.",
+      "top_issue": "No troubleshooting section \u2014 common issues like credential errors, token expiration, or authentication failures are not addressed anywhere."
     },
     "security": {
       "overall_score": 6,
@@ -234,12 +234,17 @@
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "authentication issues",
-        "compatibility problems"
+        "STDOUT/STDERR mixing breaks shell scripts (breaking CI/automation)",
+        "Long-standing unresolved feature requests (id_token JWT support since 2021)",
+        "Credential/authentication handling issues (gcloud fallback, cache validation)",
+        "Windows/platform compatibility problems",
+        "Docker image access/availability issues"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The oauth2l community is experiencing a mix of frustration and engagement, with users reporting various issues and maintainers responding moderately to address these concerns."
+      "praise_themes": [
+        "Appreciation for project maintenance work (limited but present)"
+      ],
+      "abandonment_signals": true,
+      "summary": "oauth2l shows mixed health with moderate maintainer engagement: recent vulnerabilities were fixed and some issues resolved, but several impactful usability bugs (stderr mixing, gcloud fallback) and feature requests (id_token JWT) have languished for 1-4+ years, suggesting low prioritization or capacity constraints."
     },
     "communication": {
       "helpfulness": 9,
@@ -252,21 +257,26 @@
       "summary": "The maintainer's responses are extremely helpful, clear, patient, and welcoming, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "stale",
+      "status": "minimal-maintenance",
       "confidence": 8,
       "concerns": [
-        "no commits in the past 6 months",
-        "unaddressed open issues",
-        "no recent PR activity"
+        "22 open issues with no recent resolution or triage",
+        "No commits, closed issues, or merged PRs in past 6 months despite 0 reported commits",
+        "No active contributors in the past 6 months",
+        "Unknown last release date suggests stalled release cycle",
+        "No PR activity indicates no community engagement or feature development"
       ],
       "positive_signals": [
-        "recent release",
-        "large number of contributors"
+        "Last commit occurred 20 days ago (2026-02-23), suggesting minimal ongoing maintenance",
+        "No open PRs indicates a clean state with no pending changes"
       ],
-      "summary": "The oauth2l package appears to be stale due to a lack of recent commits and unaddressed open issues, despite having a recent release and a large number of potential contributors."
+      "summary": "oauth2l appears to be in minimal-maintenance mode with a stalled release cycle and growing backlog of unaddressed issues despite recent isolated activity."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:04:28.724367+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

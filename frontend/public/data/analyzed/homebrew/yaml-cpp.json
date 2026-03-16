@@ -176,14 +176,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 7,
+      "installation": 6,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 5,
       "troubleshooting": 3,
-      "overall": 6,
-      "summary": "The documentation is generally clear and comprehensive, but lacks a concise quick start guide and troubleshooting section.",
-      "top_issue": "Lack of a simple, self-contained example to get new users started quickly"
+      "overall": 4,
+      "summary": "The README covers build and integration setup adequately but defers nearly all usage documentation to external wiki pages, leaving readers without any inline examples.",
+      "top_issue": "No inline code examples for parsing or emitting YAML \u2014 all usage guidance is offloaded to external wiki links that may not be easily accessible."
     },
     "security": {
       "overall_score": 7,
@@ -197,16 +197,21 @@
       "summary": "The yaml-cpp codebase appears to be generally secure, but there are some potential issues with input validation and error handling that should be addressed."
     },
     "sentiment": {
-      "sentiment": "negative",
-      "frustration_level": 7,
-      "maintainer_responsiveness": "slow",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "crashes and segmentation faults",
-        "performance issues"
+        "Documentation gaps (examples, README clarity)",
+        "Build system issues (CMake, Bazel CI problems)",
+        "Version management concerns (SONAME bumping)",
+        "Missing feature support (unordered_set)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Project maintenance appreciated",
+        "Code modernization efforts"
+      ],
       "abandonment_signals": false,
-      "summary": "The yaml-cpp community is experiencing frustration with unresolved issues, including crashes and performance problems, indicating a need for more active maintenance."
+      "summary": "Project shows mixed health with recent activity (March 2026 Bazel issue, Oct 2024 feature requests) but persistent documentation gaps since 2019 and moderate response times on non-critical issues."
     },
     "communication": {
       "helpfulness": 8,
@@ -222,19 +227,20 @@
       "summary": "The maintainer responses are generally helpful, clear, and welcoming, but sometimes lack patience and clarity in explaining complex technical concepts."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 6,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "low issue closure rate",
-        "old last release",
-        "high number of open issues and PRs"
+        "311 open issues with zero closed in past 6 months indicates no active triage",
+        "No commits, PRs, or contributors active in past 6 months",
+        "Unknown last release date suggests abandoned release process",
+        "Zero merged PRs in past 6 months shows no active development",
+        "Issues are accumulating without resolution"
       ],
       "positive_signals": [
-        "recent commits",
-        "active contributors",
-        "merged PRs in the past 6 months"
+        "Recent commit on 2026-03-12 suggests project is not completely abandoned",
+        "No stalled open PRs suggests maintainers are not ignoring incoming contributions"
       ],
-      "summary": "The yaml-cpp package appears to be receiving some maintenance, but the low issue closure rate and old last release suggest that it may not be actively maintained."
+      "summary": "yaml-cpp shows signs of stagnation with 311 unresolved issues and zero maintenance activity over 6 months, though a recent commit prevents full abandonment classification."
     },
     "changelog": null,
     "governance": {
@@ -244,7 +250,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The yaml-cpp project lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:57:54.069388+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

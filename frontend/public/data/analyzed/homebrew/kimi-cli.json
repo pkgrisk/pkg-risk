@@ -169,14 +169,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
+      "installation": 4,
+      "quick_start": 3,
+      "examples": 7,
       "configuration": 6,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and informative, but lacks troubleshooting information.",
-      "top_issue": "Lack of troubleshooting section or common problem solutions"
+      "overall": 5,
+      "summary": "The README effectively showcases features with good examples but defers all installation and getting-started content to external documentation, leaving the README itself incomplete as a standalone resource.",
+      "top_issue": "Installation instructions are entirely absent \u2014 the README just links to external docs, meaning users can't get started without leaving GitHub."
     },
     "security": {
       "overall_score": 5,
@@ -214,13 +214,19 @@
       "summary": "The code has several security concerns, including command injection vulnerabilities, lack of input validation, and exposure of sensitive information, which need to be addressed to ensure the security of the application."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 2,
-      "maintainer_responsiveness": "unresponsive",
-      "common_complaints": [],
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
+      "common_complaints": [
+        "Platform-specific bugs (Windows character encoding, macOS shortcuts, Linux terminal)",
+        "Excessive logging exposing sensitive data (system_prompt in logs)",
+        "Fixed 60-second timeout blocking legitimate workflows",
+        "Terminal integration failures (VS Code, IDEA)",
+        "API access restrictions for external integrations"
+      ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is relatively inactive with only one open issue and no recent maintainer responses, indicating a need for more engagement and support."
+      "abandonment_signals": true,
+      "summary": "Community health is deteriorating with multiple unresolved cross-platform bugs, poor maintainer responsiveness (most issues unanswered), and low-quality issue reports suggesting reduced moderation."
     },
     "communication": {
       "helpfulness": 8,
@@ -233,16 +239,19 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient, providing a positive experience for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (888)",
-        "Recent last commit (2026-01-01)",
-        "Many merged PRs in the past 6 months (232)",
-        "Large number of active contributors in the past 6 months (37)"
+      "concerns": [
+        "213 open issues with zero closures in past 6 months indicates unaddressed backlog",
+        "Zero commits, merged PRs, and active contributors in past 6 months despite recent commit timestamp",
+        "No known last release suggests extended period without updates",
+        "Lack of community engagement despite high issue volume",
+        "Data inconsistency between recent commit and zero 6-month activity metrics"
       ],
-      "summary": "The kimi-cli package is actively maintained with frequent commits, a high volume of merged pull requests, and a large number of recent contributors."
+      "positive_signals": [
+        "Repository still has recent commit activity (2026-03-13)"
+      ],
+      "summary": "Package is effectively stale with a massive unaddressed issue backlog and no meaningful maintenance activity over the past 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -260,7 +269,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for Kimi CLI lacks a clear succession plan, decision-making process, and contributor ladder, indicating a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:43:32.088274+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

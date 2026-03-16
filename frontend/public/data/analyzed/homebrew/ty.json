@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
-      "examples": 5,
-      "configuration": 9,
+      "clarity": 9,
+      "installation": 5,
+      "quick_start": 8,
+      "examples": 3,
+      "configuration": 4,
       "troubleshooting": 4,
       "overall": 6,
-      "summary": "The documentation is clear and comprehensive, but could benefit from more examples and troubleshooting guidance.",
-      "top_issue": "Lack of detailed installation instructions and troubleshooting resources"
+      "summary": "The README excels at communicating what ty is and getting users started quickly, but defers nearly all substantive documentation to external links rather than including it inline.",
+      "top_issue": "Installation, configuration, and usage examples are almost entirely absent from the README itself \u2014 users are redirected to external docs for nearly everything practical."
     },
     "security": {
       "overall_score": 6,
@@ -207,16 +207,21 @@
       "summary": "The code has several security concerns, including potential command injection vulnerabilities and lack of input validation, which could lead to information disclosure or unauthorized access."
     },
     "sentiment": {
-      "sentiment": "neutral",
+      "sentiment": "mixed",
       "frustration_level": 6,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "type inference issues",
-        "performance problems"
+        "Type correctness bugs with real-world libraries (Pydantic, pandas, generics)",
+        "Performance issues making LSP unusable on large codebases",
+        "Fatal LSP panics/crashes",
+        "Type narrowing and TypeVar solver limitations"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Users are engaged enough to file detailed bug reports with reproducible examples",
+        "Tool adoption across popular projects (pandas-stubs integration mentioned)"
+      ],
       "abandonment_signals": false,
-      "summary": "The ty community is actively reporting and discussing various issues, but the maintainers' responsiveness is moderate, indicating a need for more engagement to address user concerns."
+      "summary": "Actively developed project with engaged community reporting legitimate bugs in type checking correctness and performance, showing moderate maintainer responsiveness but accumulating open issues in core areas (generics, performance, stability)."
     },
     "communication": {
       "helpfulness": 9,
@@ -229,16 +234,18 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically sound, creating a welcoming environment for users and contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "abandoned",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits in the past 6 months (194)",
-        "Recent last commit and release dates (2025-12-29)",
-        "Large number of closed issues in the past 6 months (215)",
-        "Multiple active contributors in the past 6 months (21)"
+      "concerns": [
+        "746 open issues with zero closed in past 6 months indicates unaddressed problems",
+        "Zero commits, merged PRs, and contributors in past 6 months despite issue volume",
+        "Unknown release history suggests lack of versioning/release management",
+        "No maintainer activity despite significant backlog"
       ],
-      "summary": "The package appears to be actively maintained with frequent updates, a high volume of commits, and a large number of contributors."
+      "positive_signals": [
+        "Very recent commit on 2026-03-14 (though isolated with no 6-month activity pattern)"
+      ],
+      "summary": "This project is abandoned with a massive unaddressed issue backlog, zero maintenance activity over 6 months, and no active contributors."
     },
     "changelog": {
       "breaking_changes_marked": true,
@@ -256,7 +263,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation lacks a clear succession plan, decision-making process, and multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:24:01.409005+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
+      "clarity": 9,
       "installation": 9,
-      "quick_start": 7,
-      "examples": 8,
-      "configuration": 6,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is generally well-structured and provides clear instructions for installation and basic usage, but lacks comprehensive troubleshooting guidance.",
-      "top_issue": "Insufficient troubleshooting information"
+      "quick_start": 8,
+      "examples": 7,
+      "configuration": 7,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Well-structured README covering multiple installation methods, a concrete usage example with real output, and a comprehensive help reference, but lacks troubleshooting guidance and TCP/write examples.",
+      "top_issue": "Troubleshooting section is absent \u2014 common issues like connection failures, baud rate mismatches, or permission errors on serial ports are not addressed."
     },
     "security": {
       "overall_score": 8,
@@ -185,17 +185,18 @@
       "summary": "The mbpoll codebase appears to have a low risk of security vulnerabilities, but some input validation and error handling improvements are recommended."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "installation issues on newer systems",
-        "functional issues with piping output",
-        "incorrect behavior of polling"
+        "Missing Modbus function code support (0x10, FC06/FC16 forcing)",
+        "Hardcoded limitations (500ms TCP timeout)",
+        "Output handling broken for piping/automation",
+        "Hardware compatibility issues (RPi Zero W)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral, with moderate frustration due to installation and functional issues, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows severe abandonment signals with 5+ year-old unresolved issues, no visible maintainer engagement, and fundamental limitations blocking real-world use cases."
     },
     "communication": {
       "helpfulness": 8,
@@ -211,19 +212,25 @@
       "summary": "The maintainer provides useful information but could improve clarity and patience, especially for new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of active development.",
-        "A high number of open issues (43) and PRs (10) suggests potential maintenance backlog."
+        "Zero commits in the past 6 months despite active issue backlog",
+        "49 open issues with zero closed issues in past 6 months",
+        "No merged pull requests or active contributors in 6 months",
+        "Unknown last release - no versioning activity",
+        "Issues accumulating without triage or response"
       ],
       "positive_signals": [
-        "9 contributors have been active in the past six months, which is a positive sign for community support."
+        "Repository still exists and has historical commits"
       ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits and issue resolution."
+      "summary": "The project appears abandoned with a substantial backlog of 49 unaddressed issues and complete absence of development, PR review, or issue management activity over the past 6 months."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:42:43.221154+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

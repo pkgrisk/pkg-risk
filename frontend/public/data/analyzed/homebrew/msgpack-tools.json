@@ -166,15 +166,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
+      "clarity": 9,
+      "installation": 8,
+      "quick_start": 9,
       "examples": 9,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The documentation is clear and provides many examples, but lacks information on configuration options and troubleshooting.",
-      "top_issue": "Lack of documentation on configuration options and troubleshooting"
+      "configuration": 6,
+      "troubleshooting": 5,
+      "overall": 8,
+      "summary": "Well-structured README with clear purpose, strong examples, and solid installation coverage across platforms, but lacks option/flag reference documentation and troubleshooting guidance.",
+      "top_issue": "No documentation of available flags/options (e.g., what -d, -b, -l, -i mean) beyond inferring from examples"
     },
     "security": {
       "overall_score": 7,
@@ -201,16 +201,21 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but overall it appears to be well-structured and maintained."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "AUR package installation error",
-        "Compilation fails on GCC v14.2"
+        "Build failures with GCC 14.2 and modern compilers",
+        "CMake version incompatibility (requires update from 3.5)",
+        "Segmentation faults and stability issues (SEGV in json2msgpack, core dumps)",
+        "Missing msgpack timestamp extension support",
+        "Platform-specific build issues (Cygwin, AUR)",
+        "Missing continuous mode (-c) for json2msgpack",
+        "Cross-language data format interoperability challenges"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to open issues and lack of maintainer responsiveness, but no clear signs of abandonment."
+      "abandonment_signals": true,
+      "summary": "Project shows signs of abandonment with critical unaddressed bugs (security-relevant SEGV), build failures on modern platforms, and zero responses to recent issues despite open issues dating back 8+ years."
     },
     "communication": {
       "helpfulness": 9,
@@ -223,17 +228,21 @@
       "summary": "The maintainer provides clear, helpful, and technically deep responses while maintaining patience and a welcoming attitude."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "abandoned",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months, indicating a lack of recent development or updates.",
-        "Open issues and PRs suggest potential unresolved problems or feature requests."
+        "No commits in past 6 months",
+        "Zero active contributors in past 6 months",
+        "8 open issues with no recent resolution activity",
+        "No PRs merged or closed in past 6 months",
+        "Unknown last release - cannot verify stable version availability",
+        "Complete absence of maintenance signals across all metrics"
       ],
       "positive_signals": [
-        "Contributors are still active, which could indicate some level of interest in maintaining the project.",
-        "Recent activity (issues and contributors) within the past six months"
+        "No stalled/broken open PRs requiring cleanup",
+        "Repository still accessible"
       ],
-      "summary": "The package shows minimal maintenance with recent contributor activity but lacks recent commits or updates."
+      "summary": "Project shows signs of abandonment with zero activity across all maintenance indicators over the past 6 months and 8 unresolved issues."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -244,7 +253,10 @@
       "overall_score": 6,
       "summary": "The changelog is well-categorized but lacks clear marking of breaking changes and migration guides, making it somewhat incomplete and unclear for users."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:51:42.262432+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -187,15 +187,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 2,
-      "quick_start": 4,
-      "examples": 6,
-      "configuration": 7,
-      "troubleshooting": 5,
-      "overall": 5,
-      "summary": "The README provides detailed information about the package's features and compatibility, but lacks clear installation instructions and a quick start guide.",
-      "top_issue": "Lack of clear installation instructions"
+      "clarity": 9,
+      "installation": 3,
+      "quick_start": 2,
+      "examples": 2,
+      "configuration": 5,
+      "troubleshooting": 6,
+      "overall": 4,
+      "summary": "Excellent conceptual documentation explaining why UDF formatting is complex, but critically lacking installation instructions, usage examples, and command syntax.",
+      "top_issue": "No installation instructions or basic usage examples showing how to actually run the script against a device"
     },
     "security": {
       "overall_score": 7,
@@ -222,16 +222,24 @@
       "summary": "The script has some security concerns, including potential command injection vulnerabilities and lack of proper input validation, but overall it appears to be well-structured and follows good security practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "UDF partition support",
-        "Windows compatibility issues"
+        "Windows compatibility issues across multiple OS versions (7, 8.1, 10, 21H2)",
+        "Cross-platform partition read/write compatibility (Linux + Windows)",
+        "Device detection validation too restrictive",
+        "macOS write performance significantly slower than Linux",
+        "CHKDSK false errors on Windows 7",
+        "NVMe disk detection issues in Windows 10 installer"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health is neutral with moderate frustration due to ongoing Windows compatibility and UDF partition issues, but there are no signs of abandonment."
+      "praise_themes": [
+        "Tool works reliably on Linux",
+        "Successfully formats basic USB drives",
+        "Appreciation for the project's existence"
+      ],
+      "abandonment_signals": true,
+      "summary": "The project appears abandoned with critical Windows/macOS compatibility issues unresolved for 6+ years, enhancement requests from 2016-2018 still open, and no evidence of maintainer engagement on reported problems."
     },
     "communication": {
       "helpfulness": 7,
@@ -244,20 +252,24 @@
       "summary": "The maintainer's responses are generally clear and helpful, showing patience with new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "No commits in the past six months",
-        "Multiple open issues and no recent PR activity"
+        "No commits in over 2 years (last commit October 2023)",
+        "Zero activity in past 6 months across all metrics",
+        "8 open issues with no triage or closure",
+        "No active contributors",
+        "No releases documented",
+        "No pull request activity"
       ],
-      "positive_signals": [
-        "Recent contributors (past six months)",
-        "A release exists, though it is older"
-      ],
-      "summary": "The package shows minimal maintenance with some recent contributor activity but lacks active development."
+      "positive_signals": [],
+      "summary": "format-udf is stale and effectively unmaintained with complete inactivity for 2+ years and unaddressed open issues."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:39:48.885065+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

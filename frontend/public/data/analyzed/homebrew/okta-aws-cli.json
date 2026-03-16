@@ -167,14 +167,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 6,
-      "quick_start": 9,
-      "examples": 8,
-      "configuration": 9,
-      "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and concise overview of the package's functionality, but lacks detailed installation instructions and troubleshooting guidance.",
-      "top_issue": "Lack of troubleshooting documentation"
+      "installation": 5,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 7,
+      "troubleshooting": 3,
+      "overall": 6,
+      "summary": "Well-structured README with clear purpose and quick-start examples, but installation instructions are buried/incomplete in the visible content and troubleshooting is essentially absent.",
+      "top_issue": "No troubleshooting section visible \u2014 common auth failures, credential errors, and Okta configuration mistakes are undocumented."
     },
     "security": {
       "overall_score": 5,
@@ -201,16 +201,18 @@
       "summary": "The code has some security concerns, including potential injection risks and lack of input validation, but does not appear to have any critical vulnerabilities."
     },
     "sentiment": {
-      "sentiment": "negative",
+      "sentiment": "mixed",
       "frustration_level": 7,
       "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "authentication issues",
-        "configuration problems"
+        "Build instructions and toolchain configuration issues",
+        "Windows platform incompatibility (--exec flag failures, missing amd64 binaries)",
+        "Unaddressed security vulnerabilities (CVE-2025-68121, CVE-2025-22869)",
+        "Feature gaps (IAM role handling in specific scenarios, Device MFA enforcement, FastPass support)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The okta-aws-cli community is experiencing frustration with unresolved authentication and configuration issues, indicating a need for more active maintainer engagement."
+      "abandonment_signals": true,
+      "summary": "okta-aws-cli exhibits signs of slow maintenance with multiple open issues from 2-5 months ago showing zero engagement, including unaddressed security concerns and critical platform bugs, though some CVE issues have been previously closed."
     },
     "communication": {
       "helpfulness": 9,
@@ -223,18 +225,19 @@
       "summary": "The maintainer responses are highly helpful, clear, patient, and technically deep, making them an exemplary model for open-source project maintenance."
     },
     "maintenance": {
-      "status": "maintained",
+      "status": "stale",
       "confidence": 8,
       "concerns": [
-        "relatively low number of closed issues",
-        "open issues outnumber merged PRs"
+        "24 open issues with no resolution in past 6 months",
+        "No merged PRs or active contributors in past 6 months",
+        "No known release date - last version may be significantly outdated",
+        "Long dormancy period before recent single commit suggests inconsistent maintenance"
       ],
       "positive_signals": [
-        "recent commits and releases",
-        "active contributors",
-        "steady merge of PRs"
+        "Recent commit activity on 2026-02-27 indicates project is not completely abandoned",
+        "Repository still receives some attention"
       ],
-      "summary": "The okta-aws-cli package appears to be maintained with regular updates, active contributors, and a steady flow of pull requests being merged."
+      "summary": "This project is stale with sporadic activity\u2014recent single commit breaks a 6-month dormancy, but lack of issue resolution and contributor engagement suggests maintenance is not actively sustained."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +255,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for the okta-aws-cli package lacks a clear succession plan, decision-making process, and indication of multiple maintainers, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:02:37.807971+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

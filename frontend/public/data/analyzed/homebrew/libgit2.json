@@ -181,19 +181,33 @@
     }
   },
   "llm_assessments": {
-    "readme": null,
+    "readme": {
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 7,
+      "examples": 3,
+      "configuration": 4,
+      "troubleshooting": 5,
+      "overall": 6,
+      "summary": "Well-structured library README with clear purpose and build instructions, but lacks code examples and detailed configuration docs.",
+      "top_issue": "No code examples showing actual API usage \u2014 a new user has no idea how to call libgit2 functions after installing it."
+    },
     "security": null,
     "sentiment": {
       "sentiment": "mixed",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "frustration_level": 7,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Cloning large repo in libgit2 slower than `git clone`",
-        "longpaths support still b0rked for (nested) submodules on MS Windows"
+        "Performance degradation on large repository operations (delta resolution, clone speed)",
+        "Critical memory safety bugs unaddressed (memory corruption in config backend)",
+        "Parsing bugs with Git reference syntax (@~1 notation, commitish references)",
+        "Long-standing unresolved issues persisting for 8+ years",
+        "Platform-specific failures (Windows longpaths, CMake FetchContent integration)",
+        "Missing feature implementations (bundle support, worktree reference support)"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community health of the libgit2 project shows a mix of ongoing issues and feature requests, with some long-standing problems like slow cloning performance and path length limitations. While there are no explicit praises in the recent issues, the presence of labeled 'up for grabs' issues suggests an active effort to engage contributors."
+      "abandonment_signals": true,
+      "summary": "libgit2 shows concerning signs of maintainer disengagement: recent critical bugs (2026-02-16 through 2026-03-12) remain unanswered, decade-old performance regressions persist, and multiple serious issues lack responses despite active community reporting."
     },
     "communication": {
       "helpfulness": 8,
@@ -206,23 +220,25 @@
       "summary": "The maintainer responses are generally helpful, clear, and patient. They provide technical depth in explaining decisions and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 9,
       "concerns": [
-        "High number of open issues (210) and PRs (126), indicating unresolved problems or pending contributions.",
-        "Low rate of issue closure and PR merging in the past six months compared to the number of new issues and PRs."
+        "539 open issues with zero closed in past 6 months",
+        "No merged PRs in past 6 months despite active repository",
+        "Zero active contributors in past 6 months",
+        "Unknown last release - cannot assess release cadence",
+        "Issue triage and PR review completely halted"
       ],
       "positive_signals": [
-        "Regular commits in the last six months (94 commits).",
-        "Active contributors in the last six months (14 contributors)."
+        "Very recent commit on 2026-03-14 shows repository is not completely dormant"
       ],
-      "summary": "The package libgit2 shows signs of minimal maintenance with regular contributions but a backlog of unresolved issues and pending pull requests."
+      "summary": "libgit2 exhibits stale maintenance patterns with a massive backlog of 539 unresolved issues and no contributor activity over 6 months, despite a recent commit suggesting possible sporadic updates."
     },
     "changelog": null,
     "governance": null,
-    "llm_provider": null,
-    "llm_model": null,
-    "llm_analyzed_at": null
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:49:53.591068+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

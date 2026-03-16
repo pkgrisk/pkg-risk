@@ -172,15 +172,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 9,
-      "installation": 8,
+      "clarity": 10,
+      "installation": 9,
       "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
+      "examples": 8,
+      "configuration": 5,
       "troubleshooting": 2,
       "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the syft package, but lacks comprehensive documentation on configuration and troubleshooting.",
-      "top_issue": "Insufficient troubleshooting documentation"
+      "summary": "Excellent clarity and quick-start experience with well-structured examples, but configuration and troubleshooting are deferred entirely to external docs rather than covered inline.",
+      "top_issue": "No troubleshooting section whatsoever \u2014 common issues like authentication, rate limits, or unsupported image formats are not addressed in the README."
     },
     "security": {
       "overall_score": 7,
@@ -207,16 +207,20 @@
       "summary": "The codebase has some potential security risks, including injection vulnerabilities and insecure default configurations, but overall appears to be well-structured and follows best practices."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
+      "sentiment": "mixed",
+      "frustration_level": 3,
       "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "binary detection issues",
-        "cataloging support for specific packages"
+        "Missing file format support (.bpl, Redis .so modules)",
+        "Incomplete SBOM generation for certain package types",
+        "Lack of license override mechanisms for languages without native license metadata"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Performance optimization work completed and closed",
+        "Willingness to tackle feature requests"
+      ],
       "abandonment_signals": false,
-      "summary": "The syft community is actively reporting issues and requesting enhancements, with maintainers showing moderate responsiveness to these concerns."
+      "summary": "Syft shows moderate health with active bug fixes and feature development, but slow issue engagement and minimal community discussion suggests either a small maintenance team or users filing tickets without much back-and-forth."
     },
     "communication": {
       "helpfulness": 9,
@@ -229,18 +233,19 @@
       "summary": "The maintainer's responses are extremely helpful, clear, patient, and technically deep, making them an exemplary model for open-source project maintainers."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
+      "status": "minimal-maintenance",
+      "confidence": 6,
       "concerns": [
-        "high number of open issues"
+        "546 open issues with zero closed in past 6 months indicates backlog not being addressed",
+        "No commits, merged PRs, or active contributors over 6-month period despite recent commit",
+        "Unknown last release - unable to assess release cadence",
+        "Zero contributors active in past 6 months suggests inadequate maintainer capacity"
       ],
       "positive_signals": [
-        "frequent commits",
-        "recent release",
-        "many merged PRs",
-        "multiple active contributors"
+        "Repository was touched 2 days ago indicating not completely abandoned",
+        "No open pull requests suggests PRs are being handled (though merged count is zero)"
       ],
-      "summary": "The syft package appears to be actively maintained with a high volume of recent activity, despite having a notable number of open issues."
+      "summary": "The recent commit activity contradicts the absence of 6-month development metrics; the large unaddressed issue backlog and lack of releases indicate minimal active maintenance despite repository not being completely dormant."
     },
     "changelog": null,
     "governance": {
@@ -250,7 +255,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The governance documentation for Syft lacks a clear succession plan and decision-making process, posing a high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:00:19.270455+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

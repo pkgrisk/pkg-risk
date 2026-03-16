@@ -171,14 +171,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 6,
-      "examples": 7,
+      "installation": 7,
+      "quick_start": 4,
+      "examples": 4,
       "configuration": 5,
       "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally well-structured and informative, but lacks a clear quick start example and troubleshooting section.",
-      "top_issue": "Lack of a dedicated troubleshooting section"
+      "overall": 5,
+      "summary": "Well-structured README with clear project goals and multiple installation paths, but lacks concrete usage examples and troubleshooting guidance.",
+      "top_issue": "No quick-start code example showing basic database operations (open, query, insert) \u2014 a C++ library needs at least one working snippet to be immediately useful."
     },
     "security": {
       "overall_score": 7,
@@ -205,18 +205,18 @@
       "summary": "The SQLiteCpp library has some security concerns, including potential SQL injection risks and insufficient input validation, but overall it appears to be a well-structured and secure library."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "API feature requests",
-        "Build and compatibility issues"
+        "Compiler errors with missing includes (#include <cstdint>)",
+        "Security vulnerability in database key handling (std::string usage)",
+        "Missing modern C++ feature support (std::string_view, prepared statement flags)",
+        "Platform-specific bugs (Windows UTF-8, iOS encryption detection)"
       ],
-      "praise_themes": [
-        "Positive feedback on library functionality"
-      ],
-      "abandonment_signals": false,
-      "summary": "The community is engaged with both positive feedback and constructive suggestions, but there are ongoing API feature requests and build issues that indicate moderate frustration."
+      "praise_themes": [],
+      "abandonment_signals": true,
+      "summary": "Project shows signs of slow maintenance with multiple unaddressed issues including security concerns, though some historical responsiveness is evident."
     },
     "communication": {
       "helpfulness": 8,
@@ -229,17 +229,19 @@
       "summary": "The maintainer responses are clear, helpful, and patient. They address issues effectively while maintaining a welcoming tone."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "Few merged PRs in the past six months",
-        "No new releases since May"
+        "92 open issues with zero closed in past 6 months",
+        "No merged PRs or commits in past 6 months despite activity",
+        "Zero active contributors for 6 months",
+        "Unknown or missing release information",
+        "Large unaddressed issue backlog indicates no triage"
       ],
       "positive_signals": [
-        "Commits in the past six months",
-        "Some contributor activity"
+        "One commit 35 days ago suggests project is not completely abandoned"
       ],
-      "summary": "The package shows minimal maintenance with occasional commits and contributors, but lacks recent releases or active PR merging."
+      "summary": "Project is stale with minimal sporadic activity; open issues are accumulating without resolution, indicating lack of active maintenance."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -250,7 +252,10 @@
       "overall_score": 8,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clarity in marking breaking changes and providing migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:56:26.851978+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

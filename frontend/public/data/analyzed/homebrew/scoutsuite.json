@@ -180,14 +180,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 4,
-      "quick_start": 6,
-      "examples": 5,
-      "configuration": 2,
+      "installation": 2,
+      "quick_start": 3,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The README provides a good introduction to the package, but lacks detailed installation and configuration instructions.",
-      "top_issue": "Installation instructions are incomplete and only refer to an external wiki without providing clear steps."
+      "overall": 3,
+      "summary": "The README clearly describes what ScoutSuite does but defers almost all practical guidance to an external wiki, leaving the README itself nearly useless as a standalone reference.",
+      "top_issue": "Installation instructions are just a link to the wiki with no inline content \u2014 users cannot install or use the tool without leaving the README."
     },
     "security": {
       "overall_score": 5,
@@ -250,30 +250,35 @@
       "summary": "The ScoutSuite package has several security concerns, including potential injection risks, lack of input validation, hardcoded secrets, and insecure default configurations."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "negative",
+      "frustration_level": 8,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "bug",
-        "enhancement"
+        "False positive security findings (root account MFA, ACM transparency logging, Azure alerts)",
+        "Report generation/loading failures",
+        "Python version compatibility (3.14 support missing)",
+        "Dependency version constraints (python-dateutil) preventing multi-tool usage",
+        "Resource parsing failures stopping scans prematurely"
       ],
       "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is actively reporting issues and enhancements, but there's a moderate level of frustration due to unaddressed bugs and lack of responsiveness from maintainers."
+      "abandonment_signals": true,
+      "summary": "Declining community health: critical bugs from 2020-2023 remain unresolved, minimal maintainer engagement on recent issues, and dependency/compatibility problems accumulating without response."
     },
     "communication": null,
     "maintenance": {
-      "status": "minimal-maintenance",
-      "confidence": 7,
+      "status": "stale",
+      "confidence": 8,
       "concerns": [
-        "No commits in the past six months",
-        "Low number of merged PRs in the past six months"
+        "No commits in past 6 months despite last commit in September 2025",
+        "287 open issues with zero closures in past 6 months",
+        "No active contributors for 6+ months",
+        "No merged PRs in past 6 months",
+        "Unknown last release date"
       ],
       "positive_signals": [
-        "Recent release on May 10, 2024",
-        "Active contributors (10) in the past six months"
+        "Last commit is relatively recent (September 2025)"
       ],
-      "summary": "The package is minimally maintained with recent contributions but lacks active development."
+      "summary": "Project has been inactive for 6 months with a large unaddressed issue backlog, indicating abandonment after the most recent commit."
     },
     "changelog": null,
     "governance": {
@@ -283,7 +288,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The project lacks a succession plan and contributor ladder but documents the decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:48:23.000793+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

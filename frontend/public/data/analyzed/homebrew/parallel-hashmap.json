@@ -185,14 +185,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 9,
-      "examples": 7,
-      "configuration": 6,
+      "installation": 7,
+      "quick_start": 8,
+      "examples": 6,
+      "configuration": 5,
       "troubleshooting": 2,
-      "overall": 7,
-      "summary": "The README provides a clear and concise introduction to the package, but lacks comprehensive documentation on configuration and troubleshooting.",
-      "top_issue": "Insufficient troubleshooting information"
+      "overall": 6,
+      "summary": "Well-structured README with clear purpose and a good quick-start example, but lacks troubleshooting guidance and the README appears truncated mid-sentence.",
+      "top_issue": "README is cut off mid-sentence in the 'Key decision points' section, and there is no troubleshooting section covering common issues like hash collisions, performance tuning, or thread-safety gotchas."
     },
     "security": {
       "overall_score": 7,
@@ -203,16 +203,21 @@
       "summary": "The code appears to be a configuration file for the parallel-hashmap library, with no major security concerns found but some potential issues related to input validation and assumptions about platform characteristics."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 5,
+      "sentiment": "mixed",
+      "frustration_level": 4,
       "maintainer_responsiveness": "active",
       "common_complaints": [
-        "compilation issues",
-        "undefined behavior"
+        "Clang deprecation warnings (pointer, const_pointer, is_always_equal) blocking builds",
+        "Platform-specific compatibility (ARM hash differences, Windows chrono errors)",
+        "Build system fragility (gtest version incompatibility)",
+        "Concurrency and threading safety concerns (use-after-poison, unsafe concurrent extraction)",
+        "Namespace pollution (umul128 in global namespace)"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active usage in production (R packages, complex projects)"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is facing several technical challenges, but the maintainers are actively addressing them."
+      "summary": "Healthy, actively-maintained library with responsive issue closure, though recent compiler deprecation warnings and platform-specific compatibility issues require attention."
     },
     "communication": {
       "helpfulness": 8,
@@ -225,18 +230,26 @@
       "summary": "Maintainer responses are clear, helpful, and demonstrate a good level of technical depth while maintaining patience with new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
-      "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "Recent commits in the past six months",
-        "Multiple merged pull requests in the past six months",
-        "Regular issue closure"
+      "status": "minimal-maintenance",
+      "confidence": 8,
+      "concerns": [
+        "No commits in past 6 months despite open issues",
+        "4 unresolved open issues with no activity",
+        "No closed issues or merged PRs in past 6 months",
+        "Zero active contributors",
+        "No identified releases"
       ],
-      "summary": "The package is actively maintained with recent activity and contributions."
+      "positive_signals": [
+        "Recent last commit (December 2025, ~3 months old)",
+        "Repository has not been deleted or archived"
+      ],
+      "summary": "Project shows signs of minimal activity with a recent commit but no ongoing maintenance, issue resolution, or contributor engagement."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:59:41.028417+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

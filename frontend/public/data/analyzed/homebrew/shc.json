@@ -188,14 +188,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
+      "installation": 7,
       "quick_start": 7,
-      "examples": 6,
-      "configuration": 5,
+      "examples": 5,
+      "configuration": 3,
       "troubleshooting": 4,
       "overall": 6,
-      "summary": "The README provides a good introduction to the package, but lacks comprehensive examples and troubleshooting guidance.",
-      "top_issue": "Insufficient documentation of common use cases and troubleshooting scenarios."
+      "summary": "README clearly explains what shc does and covers basic usage, but lacks detailed configuration options, flag documentation, and troubleshooting guidance beyond a vague limitations warning.",
+      "top_issue": "Configuration and flags are barely documented \u2014 only a few options are shown with minimal explanation, and the full options list is relegated to an external man page rather than included in the README."
     },
     "security": {
       "overall_score": 5,
@@ -237,13 +237,16 @@
       "frustration_level": 8,
       "maintainer_responsiveness": "unresponsive",
       "common_complaints": [
-        "security issues",
-        "compatibility problems",
-        "lack of documentation"
+        "Security vulnerabilities - source code visible via ps output after execution",
+        "Binary portability failures - doesn't work reliably across container instances or after OS reboot",
+        "Incompatible shebang support - fails with #!/usr/bin/env bash, requires specific format",
+        "Missing/unclear documentation - security flags (-r option), compatibility requirements, shell support",
+        "glibc compatibility issues when deploying across different OS versions",
+        "Process visibility pollution - scripts exposed in ps/top output"
       ],
       "praise_themes": [],
       "abandonment_signals": true,
-      "summary": "The shc community is struggling with numerous unresolved issues, security concerns, and a lack of maintainer engagement, indicating a declining project health."
+      "summary": "The shc project appears abandoned with critical unresolved security vulnerabilities (source code exposure via process inspection), multiple years-old open issues (since 2021), zero maintainer engagement on recent reports, and a mysteriously closed 'major security hole' issue with no explanation."
     },
     "communication": {
       "helpfulness": 6,
@@ -262,17 +265,21 @@
       "status": "abandoned",
       "confidence": 9,
       "concerns": [
-        "no commits in the past 6 months",
-        "unaddressed open issues and PRs",
-        "last release over 3 years ago"
+        "Zero commits in past 6 months",
+        "78 open issues with no triage or response",
+        "No active contributors in past 6 months",
+        "No merged PRs in past 6 months",
+        "No closed issues in past 6 months",
+        "Unknown/very old last release"
       ],
-      "positive_signals": [
-        "some contributors are still listed as active in the past 6 months"
-      ],
-      "summary": "The package appears to be abandoned due to a lack of recent commits, unaddressed issues, and no recent releases."
+      "positive_signals": [],
+      "summary": "The shc package shows no maintenance activity for 6+ months with accumulating open issues and zero contributor engagement, indicating complete project abandonment."
     },
     "changelog": null,
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:22:57.999052+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

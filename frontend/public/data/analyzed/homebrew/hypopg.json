@@ -182,15 +182,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 8,
-      "installation": 6,
-      "quick_start": 7,
+      "clarity": 9,
+      "installation": 7,
+      "quick_start": 9,
       "examples": 9,
-      "configuration": 4,
-      "troubleshooting": 2,
-      "overall": 6,
-      "summary": "The documentation is generally clear and provides many examples, but lacks detailed installation instructions and troubleshooting information.",
-      "top_issue": "Insufficient troubleshooting section"
+      "configuration": 5,
+      "troubleshooting": 4,
+      "overall": 7,
+      "summary": "Excellent conceptual explanation and rich usage examples, but lacks troubleshooting guidance and configuration details beyond basic setup.",
+      "top_issue": "No troubleshooting section for common issues (e.g., extension not loading, permission errors, PostgreSQL version incompatibilities)."
     },
     "security": {
       "overall_score": 7,
@@ -217,18 +217,22 @@
       "summary": "The hypopg package has some potential security concerns, including SQL injection risks and insufficient input validation, but overall it appears to be a relatively secure extension."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 5,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "PostgreSQL version support",
-        "Windows binary availability"
+        "PostgreSQL version compatibility gaps (pg19, pg18, pg17 support delays)",
+        "Missing Windows binaries for recent PostgreSQL versions",
+        "Lack of support for modern index types (pgvector HNSW/IVFFlat, GIN indexes)",
+        "Edge cases with quoted column names and string literals in index definitions"
       ],
       "praise_themes": [
-        "Project is considered awesome by users"
+        "Users appreciate the project as useful and 'awesome'",
+        "Thoughtful feature requests showing real use cases",
+        "Some bugs have been fixed (column quoting issue resolved)"
       ],
       "abandonment_signals": false,
-      "summary": "The community shows mixed sentiment with active maintainer responsiveness, but there are ongoing issues related to version and platform support."
+      "summary": "Moderately maintained project with responsive but resource-constrained maintainers struggling to keep pace with PostgreSQL releases and emerging vector database needs."
     },
     "communication": {
       "helpfulness": 8,
@@ -241,17 +245,19 @@
       "summary": "Maintainer responses are clear, helpful, and patient. They provide technical depth and encourage new contributors."
     },
     "maintenance": {
-      "status": "minimal-maintenance",
+      "status": "stale",
       "confidence": 7,
       "concerns": [
-        "Low commit frequency in the past six months",
-        "No open PRs or merged PRs in the past six months"
+        "Zero commits merged to main branch in past 6 months despite recent commit timestamp",
+        "Five open issues with no closure or activity for 6+ months",
+        "No merged pull requests for 6 months",
+        "Zero active contributors for past 6 months",
+        "Unknown last release date suggests long gap since versioned release"
       ],
       "positive_signals": [
-        "Recent commits and releases within the last year",
-        "One contributor has been active in the past six months"
+        "Recent commit activity on 2026-02-22 suggests repository is not completely abandoned"
       ],
-      "summary": "The package is minimally maintained with occasional updates but could benefit from increased contribution activity."
+      "summary": "Hypopg shows stale maintenance with recent commit activity but no merged changes, closed issues, or active contributors over the past 6 months, indicating the project is not actively maintained."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -262,7 +268,10 @@
       "overall_score": 7,
       "summary": "The changelog is well-categorized and appears comprehensive, but lacks clear marking of breaking changes and migration guides."
     },
-    "governance": null
+    "governance": null,
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:42:13.098947+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {

@@ -172,14 +172,14 @@
   "llm_assessments": {
     "readme": {
       "clarity": 8,
-      "installation": 9,
-      "quick_start": 2,
-      "examples": 6,
-      "configuration": 8,
-      "troubleshooting": 4,
-      "overall": 6,
-      "summary": "The README provides a comprehensive overview of RabbitMQ, but lacks a clear quick start guide and concise troubleshooting section.",
-      "top_issue": "Lack of a simple, step-by-step quick start example to get new users up and running with the package."
+      "installation": 5,
+      "quick_start": 1,
+      "examples": 1,
+      "configuration": 3,
+      "troubleshooting": 1,
+      "overall": 3,
+      "summary": "The README is a well-organized index of external links but contains almost no inline content \u2014 no quick start, no examples, and no troubleshooting guidance.",
+      "top_issue": "No quick start example or inline usage guidance; the README is entirely a link directory that defers all practical content to external documentation."
     },
     "security": {
       "overall_score": 5,
@@ -217,16 +217,21 @@
       "summary": "The code has several security concerns, including potential injection risks, insufficient input validation, and exposure of sensitive information, which need to be addressed to ensure the security and integrity of the application."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "active",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "moderate",
       "common_complaints": [
-        "configuration issues",
-        "plugin compatibility"
+        "Quorum queue reliability issues (duplicate delivery, crashes, replica rejoin bugs)",
+        "Configuration edge cases when nodes are down during queue declaration",
+        "Feature requests (SAC notifications, hash_password algorithm support) lacking engagement"
       ],
-      "praise_themes": [],
+      "praise_themes": [
+        "Active bug reporting and community engagement on critical issues",
+        "Bugs are being closed and fixed (not abandoned)",
+        "Users leveraging advanced features like quorum queues and streams"
+      ],
       "abandonment_signals": false,
-      "summary": "The community is actively reporting and resolving issues, indicating a healthy and maintained project."
+      "summary": "RabbitMQ shows active maintenance with serious bugs being addressed, but recent feature requests receive no engagement and quorum queue stability has been a recurring pain point."
     },
     "communication": {
       "helpfulness": 8,
@@ -242,19 +247,20 @@
       "summary": "The maintainer's responses are generally helpful and technically sound, but could improve in terms of clarity, patience, and welcomingness to new contributors."
     },
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
       "concerns": [
-        "relatively high number of open issues",
-        "low ratio of closed to open issues"
+        "No commits in past 6 months despite active development claims",
+        "267 open issues with zero closures in 6 months",
+        "No contributor activity for 6+ months",
+        "No merged pull requests or releases in 6 months",
+        "Large unaddressed issue backlog suggests possible abandonment"
       ],
       "positive_signals": [
-        "high commit activity",
-        "frequent releases",
-        "many active contributors",
-        "significant merged PRs"
+        "Single commit recorded on 2026-03-15 (today), though appears isolated",
+        "No accumulating open pull requests blocking the queue"
       ],
-      "summary": "The rabbitmq package appears to be actively maintained with a high volume of commits, releases, and contributor activity, despite some concerns regarding issue management."
+      "summary": "RabbitMQ shows signs of stagnation with zero maintenance activity over 6 months, 267 open issues, and no recent releases, suggesting the project may be unmaintained despite a recent single commit."
     },
     "changelog": null,
     "governance": {
@@ -264,7 +270,10 @@
       "indicates_multiple_maintainers": true,
       "bus_factor_risk": "medium",
       "summary": "The RabbitMQ project has a clear contributor path and multiple maintainers, but lacks a documented succession plan and decision-making process."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:18:58.189290+00:00"
   },
   "analysis_summary": {
     "maintenance_status": "actively-maintained",

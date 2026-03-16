@@ -179,15 +179,15 @@
   },
   "llm_assessments": {
     "readme": {
-      "clarity": 6,
-      "installation": 8,
+      "clarity": 4,
+      "installation": 5,
       "quick_start": 2,
-      "examples": 4,
-      "configuration": 3,
+      "examples": 2,
+      "configuration": 1,
       "troubleshooting": 1,
-      "overall": 4,
-      "summary": "The documentation is comprehensive but lacks a clear and concise introduction to the package, making it difficult for new users to quickly understand its purpose and usage.",
-      "top_issue": "Lack of a quick start guide or basic usage example"
+      "overall": 3,
+      "summary": "This README is for the Mattermost server, not mmctl (the CLI tool), making it nearly useless for understanding or using mmctl.",
+      "top_issue": "Wrong README: mmctl is a CLI admin tool for Mattermost, but this README describes the Mattermost server itself with no mention of mmctl's commands, usage, or purpose."
     },
     "security": {
       "overall_score": 6,
@@ -214,27 +214,36 @@
       "summary": "The code has some security concerns, including potential XML injection vulnerabilities and lack of input validation, but no critical secrets or error exposure issues were found."
     },
     "sentiment": {
-      "sentiment": "neutral",
-      "frustration_level": 4,
-      "maintainer_responsiveness": "moderate",
+      "sentiment": "mixed",
+      "frustration_level": 6,
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "UI/UX issues on small screens",
-        "Broken functionality when editing messages"
+        "Accessibility/localization issues (HTML lang attribute)",
+        "Interactive UI bugs (dialog default values not working)",
+        "Missing feature for permanent deletion of DMs and group messages"
       ],
-      "praise_themes": [],
-      "abandonment_signals": false,
-      "summary": "The community is reporting functional and UI issues, but there are no signs of abandonment or severe frustration."
+      "praise_themes": [
+        "Community-friendly labeling with 'Good First Issue' and 'Help Wanted' tags"
+      ],
+      "abandonment_signals": true,
+      "summary": "Project shows concerning maintenance delays with critical issues from 2024 still unresolved, though active labeling for community contributions indicates partial engagement."
     },
     "communication": null,
     "maintenance": {
-      "status": "actively-maintained",
+      "status": "stale",
       "confidence": 9,
-      "concerns": [],
-      "positive_signals": [
-        "High number of commits and merged PRs in the past six months",
-        "Multiple contributors are actively involved"
+      "concerns": [
+        "831 open issues with zero closed in past 6 months",
+        "No commits in past 6 months (despite last commit timestamp showing today - likely data inconsistency)",
+        "Zero active contributors for 6+ months",
+        "No merged PRs in past 6 months",
+        "Unknown last release - cannot assess release cadence",
+        "Massive backlog of unaddressed issues suggests maintainers inactive"
       ],
-      "summary": "The package mmctl is actively maintained with a high level of community involvement."
+      "positive_signals": [
+        "Last commit timestamp exists (though appears to be anomalous data point)"
+      ],
+      "summary": "mmctl is stale with no active maintenance despite 831 open issues - maintainers have not engaged with the project for at least 6 months."
     },
     "changelog": {
       "breaking_changes_marked": false,
@@ -252,7 +261,10 @@
       "indicates_multiple_maintainers": false,
       "bus_factor_risk": "high",
       "summary": "The documentation lacks a succession plan and contributor ladder, posing high bus factor risk."
-    }
+    },
+    "llm_provider": "claude",
+    "llm_model": "haiku/sonnet",
+    "llm_analyzed_at": "2026-03-16T00:10:35.048756+00:00"
   },
   "supply_chain": null,
   "aggregator_data": {
