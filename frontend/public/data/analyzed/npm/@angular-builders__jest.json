@@ -10,12 +10,12 @@
     "repo": "angular-builders",
     "subpath": null
   },
-  "install_count_30d": 732168,
+  "install_count_30d": 747311,
   "data_availability": "available",
   "unavailable_reason": null,
   "scores": {
-    "overall": 81.0,
-    "grade": "B",
+    "overall": 72.9,
+    "grade": "C",
     "percentile": null,
     "risk_tier": "conditional",
     "update_urgency": "high",
@@ -23,7 +23,7 @@
     "confidence_factors": [],
     "project_age_band": "legacy",
     "security": {
-      "score": 90.0,
+      "score": 63.0,
       "weight": 30,
       "key_factors": [
         "Weak branch protection"
@@ -40,7 +40,7 @@
       "key_factors": []
     },
     "bus_factor": {
-      "score": 73.9,
+      "score": 74.2,
       "weight": 10,
       "key_factors": [
         "Low contributor diversity (Scorecard)"
@@ -62,13 +62,13 @@
       "owner": "just-jeb",
       "name": "angular-builders",
       "description": "Angular build facade extensions (Jest and custom webpack configuration) ",
-      "stars": 1161,
-      "forks": 212,
-      "open_issues": 85,
-      "watchers": 1161,
+      "stars": 1162,
+      "forks": 211,
+      "open_issues": 82,
+      "watchers": 1162,
       "created_at": "2018-07-03T14:15:02Z",
-      "updated_at": "2026-03-14T16:29:17Z",
-      "pushed_at": "2026-03-14T16:29:13Z",
+      "updated_at": "2026-02-24T19:54:47Z",
+      "pushed_at": "2026-02-24T21:25:27Z",
       "default_branch": "master",
       "license": "MIT",
       "language": "TypeScript",
@@ -102,17 +102,17 @@
     "contributors": {
       "total_contributors": 55,
       "active_contributors_6mo": 3,
-      "top_contributor_pct": 48.3,
+      "top_contributor_pct": 46.7,
       "contributors_over_5pct": 4,
       "contributors_prev_6mo": 3,
       "contributor_trend": "stable",
       "first_time_contributors_6mo": 1,
-      "contributor_entropy": 2.36
+      "contributor_entropy": 2.4
     },
     "commits": {
-      "last_commit_date": "2026-03-14T16:29:13Z",
-      "commits_last_6mo": 195,
-      "commits_last_year": 217
+      "last_commit_date": "2026-02-24T19:54:42Z",
+      "commits_last_6mo": 149,
+      "commits_last_year": 171
     },
     "issues": {
       "open_issues": 79,
@@ -123,9 +123,9 @@
       "regression_issue_count": 0
     },
     "prs": {
-      "open_prs": 6,
-      "merged_prs_6mo": 162,
-      "closed_prs_6mo": 169,
+      "open_prs": 3,
+      "merged_prs_6mo": 118,
+      "closed_prs_6mo": 125,
       "stale_prs": 3,
       "avg_merge_time_hours": null
     },
@@ -140,7 +140,7 @@
     "security": {
       "has_security_md": false,
       "has_security_policy": false,
-      "signed_commits_pct": 91.0,
+      "signed_commits_pct": 87.0,
       "has_dependabot": false,
       "has_codeql": false,
       "has_security_ci": true,
@@ -181,7 +181,7 @@
     "ci": {
       "has_github_actions": true,
       "workflow_count": 3,
-      "recent_runs_pass_rate": 93.8,
+      "recent_runs_pass_rate": 74.0,
       "has_tests_workflow": true,
       "has_lint_workflow": false,
       "has_security_workflow": false,
@@ -191,17 +191,40 @@
   },
   "llm_assessments": {
     "readme": null,
-    "security": null,
+    "security": {
+      "overall_score": 6,
+      "injection_risks": [
+        {
+          "file": "packages/jest/src/index.ts",
+          "line": 26,
+          "severity": "high",
+          "description": "The `argv` array is constructed based on user-provided options which are converted to CLI arguments. If these options aren't properly sanitized, this could allow command injection or execution of arbitrary commands."
+        },
+        {
+          "file": "packages/bazel/src/index.ts",
+          "line": 15,
+          "severity": "medium",
+          "description": "The `spawn` function executes Bazel commands with user-provided `bazelCommand` and `targetLabel`. Improper validation could lead to command injection."
+        }
+      ],
+      "input_validation_score": 2,
+      "secrets_found": [],
+      "critical_findings": [
+        "Potential command injection in Jest CLI argument construction",
+        "Possible command injection via Bazel command execution"
+      ],
+      "summary": "The code has significant security concerns related to potential command injection vulnerabilities, particularly in the handling of Jest and Bazel commands."
+    },
     "sentiment": {
       "sentiment": "neutral",
       "frustration_level": 3,
-      "maintainer_responsiveness": "moderate",
+      "maintainer_responsiveness": "slow",
       "common_complaints": [
-        "Dependency Dashboard issue with no comments or labels"
+        "Dependency Dashboard issue with blocked updates"
       ],
       "praise_themes": [],
       "abandonment_signals": false,
-      "summary": "The community health for the @angular-builders/jest package appears neutral, with a single open issue related to dependency management that has not received any comments or attention. There are no clear signs of frustration or praise."
+      "summary": "The community health for the @angular-builders/jest package appears neutral, with a minor frustration level due to an open issue regarding dependency updates being blocked. There are no clear signs of praise or abandonment."
     },
     "communication": {
       "helpfulness": 8,
@@ -211,24 +234,23 @@
       "welcomingness": 7,
       "communication_style": "good",
       "red_flags": [
-        "Some responses can be terse and may not provide enough context for very basic questions.",
-        "A few responses indicate frustration with users who do not follow the issue template."
+        "Some responses could be more detailed for less experienced users",
+        "A few responses seem dismissive of basic questions"
       ],
-      "summary": "The maintainer provides helpful and clear explanations, shows technical depth in some areas, and encourages new contributors. However, there is room for improvement in handling repeated or basic questions and maintaining a consistently welcoming tone."
+      "summary": "The maintainer provides helpful and clear explanations, shows technical depth in some areas, and encourages new contributors, though there's room for improvement in handling repeated or basic questions."
     },
     "maintenance": {
       "status": "minimal-maintenance",
       "confidence": 7,
       "concerns": [
-        "Low number of commits in the past 6 months",
-        "No recent releases",
-        "High number of open issues"
+        "Last release was in 2019, indicating a long gap without new versions.",
+        "High number of open issues (79) suggests unresolved problems or feature requests."
       ],
       "positive_signals": [
-        "Active contributors in the past 6 months",
-        "Merged PRs in the past 6 months"
+        "Regular commits over the past six months (149).",
+        "Active merging of pull requests (118 merged in the last 6 months)."
       ],
-      "summary": "The package @angular-builders/jest shows signs of minimal maintenance with low commit activity and no recent releases, but it has active contributors and merged pull requests."
+      "summary": "The package shows some level of maintenance with regular commits and merged PRs, but it is concerning that there has been no new release since 2019 and there are many unresolved issues."
     },
     "changelog": null,
     "governance": null,
@@ -581,15 +603,15 @@
   },
   "aggregator_data": {
     "scorecard": {
-      "overall_score": 4.9,
-      "score_date": "2026-03-02T00:00:00Z",
+      "overall_score": 4.7,
+      "score_date": "2026-02-16T00:00:00Z",
       "checks": {
-        "Code-Review": 6.0,
-        "Maintained": 10.0,
-        "Packaging": -1.0,
-        "Token-Permissions": 0.0,
-        "CII-Best-Practices": 0.0,
         "Dangerous-Workflow": 10.0,
+        "Packaging": -1.0,
+        "Maintained": 10.0,
+        "Code-Review": 4.0,
+        "CII-Best-Practices": 0.0,
+        "Token-Permissions": 0.0,
         "Binary-Artifacts": 10.0,
         "Pinned-Dependencies": 0.0,
         "Security-Policy": 0.0,
@@ -599,7 +621,7 @@
         "Branch-Protection": -1.0,
         "SAST": 0.0
       },
-      "code_review_score": 6.0,
+      "code_review_score": 4.0,
       "maintained_score": 10.0,
       "branch_protection_score": -1.0,
       "dangerous_workflow_score": 10.0,
@@ -609,9 +631,9 @@
       "cii_badge": false
     },
     "project_metrics": {
-      "stars": 1161,
-      "forks": 212,
-      "open_issues": 84,
+      "stars": 1162,
+      "forks": 211,
+      "open_issues": 92,
       "license": "MIT",
       "description": "Angular build facade extensions (Jest and custom webpack configuration) ",
       "oss_fuzz_line_count": null,
@@ -619,14 +641,14 @@
     },
     "dependency_graph": {
       "direct_count": 5,
-      "transitive_count": 116,
+      "transitive_count": 122,
       "vulnerable_direct": 0,
       "vulnerable_transitive": 0,
-      "max_depth": 6
+      "max_depth": 9
     },
     "slsa_attestation": false,
     "slsa_level": null,
-    "fetched_at": "2026-03-14T16:30:22.703318Z",
+    "fetched_at": "2026-02-24T21:55:06.316769Z",
     "sources_available": [
       "deps.dev:version",
       "deps.dev:dependencies",
@@ -638,27 +660,29 @@
     "security_summary": "No issues",
     "doc_summary": "",
     "concerns": [
-      "Low number of commits in the past 6 months",
-      "No recent releases",
-      "High number of open issues",
-      "Community: Dependency Dashboard issue with no comments or labels",
-      "Communication: Some responses can be terse and may not provide enough context for very basic questions.",
-      "Communication: A few responses indicate frustration with users who do not follow the issue template.",
+      "Last release was in 2019, indicating a long gap without new versions.",
+      "High number of open issues (79) suggests unresolved problems or feature requests.",
+      "Community: Dependency Dashboard issue with blocked updates",
+      "Communication: Some responses could be more detailed for less experienced users",
+      "Communication: A few responses seem dismissive of basic questions",
+      "Security: Potential command injection in Jest CLI argument construction",
+      "Security: Possible command injection via Bazel command execution",
+      "Security: The `argv` array is constructed based on user-provided options which are converted to CLI arguments. If these options aren't properly sanitized, this could allow command injection or execution of arbitrary commands.",
       "Supply Chain: Publisher not in maintainers list",
       "Weak branch protection settings"
     ],
     "highlights": [
-      "Active contributors in the past 6 months",
-      "Merged PRs in the past 6 months",
+      "Regular commits over the past six months (149).",
+      "Active merging of pull requests (118 merged in the last 6 months).",
       "Actively maintained",
       "CI/CD configured"
     ],
     "community_sentiment": "neutral",
     "communication_style": "good",
     "supply_chain_risk": "medium",
-    "scorecard_score": 4.9,
-    "dependency_count": 121
+    "scorecard_score": 4.7,
+    "dependency_count": 127
   },
-  "analyzed_at": "2026-03-14T16:35:26.028035Z",
-  "data_fetched_at": "2026-03-14T16:35:26.028036Z"
+  "analyzed_at": "2026-02-24T22:00:10.903965Z",
+  "data_fetched_at": "2026-02-24T22:00:10.903968Z"
 }
